@@ -23,6 +23,7 @@ const IndexPage = () => (
                   body={node.excerpt}
                   date={node.frontmatter.date}
                   fluid={node.frontmatter.featuredImage}
+                  tags={node.frontmatter.tags}
                 />
               ))}
             </div>
@@ -33,7 +34,7 @@ const IndexPage = () => (
       </Col>
       <Col md="4">
       <div style={{width: "100%", height:"100%", backgroundColor:"rgba(0,0,0,0,4)"}}>
-        
+
       </div>
      
    
@@ -54,6 +55,7 @@ query {
           date(formatString: "Do MMM YYYY")
           title
           path
+          tags
           featuredImage{
             childImageSharp{
               sizes(maxWidth: 600){

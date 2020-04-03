@@ -5,6 +5,8 @@ author: 'Aneesh Mistry'
 path: '/first-post'
 featuredImage: ../images/london.jpg
 image: ..image/london.jpg
+tags:
+- java
 ---
 
 Welcome to the first post. Hello world
