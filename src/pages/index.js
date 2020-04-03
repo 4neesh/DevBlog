@@ -3,13 +3,15 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import  {graphql, StaticQuery} from "gatsby"
 import Post from '../components/Post'
-
+import {Row, Col} from "reactStrap"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <h1>Home</h1>
-    <StaticQuery
+    <Row>
+      <Col md="8">
+      <StaticQuery
         query={indexQuery}
         render={data => {
           return (
@@ -20,12 +22,23 @@ const IndexPage = () => (
                   author={node.frontmatter.author}
                   body={node.excerpt}
                   date={node.frontmatter.date}
+                  fluid={node.frontmatter.featuredImage}
                 />
               ))}
             </div>
+           
           )
         }}
       />
+      </Col>
+      <Col md="4">
+      <div style={{width: "100%", height:"100%", backgroundColor:"rgba(0,0,0,0,4)"}}>
+        
+      </div>
+     
+   
+      </Col>
+    </Row>
     
   </Layout>
 )
@@ -41,6 +54,13 @@ query {
           date(formatString: "Do MMM YYYY")
           title
           path
+          featuredImage{
+            childImageSharp{
+              sizes(maxWidth: 600){
+                ...GatsbyImageSharpSizes
+              }
+            }
+          }
         }
         excerpt
       }
