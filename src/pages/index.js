@@ -4,6 +4,7 @@ import SEO from "../components/seo"
 import  {graphql, StaticQuery} from "gatsby"
 import Post from '../components/Post'
 import {Row, Col} from "reactStrap"
+import Sidebar from "../components/Sidebar"
 
 const IndexPage = () => (
   <Layout>
@@ -33,8 +34,8 @@ const IndexPage = () => (
       />
       </Col>
       <Col md="4">
-      <div style={{width: "100%", height:"100%", backgroundColor:"rgba(0,0,0,0,4)"}}>
-
+      <div>
+        <Sidebar/>
       </div>
      
    
