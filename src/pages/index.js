@@ -13,7 +13,7 @@ const IndexPage = () => (
     </br>
     <h1>Home</h1>
     <Row>
-      <Col md="8">
+      <Col md="6">
       <StaticQuery
         query={indexQuery}
         render={data => {
