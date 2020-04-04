@@ -3,9 +3,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import  {graphql, StaticQuery} from "gatsby"
 import Post from '../components/Post'
-import {Row, Col} from "reactstrap"
-import Sidebar from "../components/Sidebar"
-
 
 
 const IndexPage = () => (
@@ -14,8 +11,8 @@ const IndexPage = () => (
     <br>
     </br>
     
-    <Row>
-      <Col md="8">
+    {/* <Row>
+      <Col md="8"> */}
       <StaticQuery
         query={indexQuery}
         render={data => {
@@ -38,7 +35,7 @@ const IndexPage = () => (
           )
         }}
       />
-      </Col>
+      {/* </Col>
       <Col md="4">
       <div>
         <Sidebar/>
@@ -46,7 +43,7 @@ const IndexPage = () => (
      
    
       </Col>
-    </Row>
+    </Row> */}
     
   </Layout>
 )

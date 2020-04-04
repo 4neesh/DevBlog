@@ -4,6 +4,7 @@ import { Card, CardTitle, Form,Input, CardBody, FormGroup } from 'reactstrap'
 const Sidebar = () => (
 
     <div>
+        <br></br>
         <Card>
             <CardBody>
                 <CardTitle className="text-center text-uppercase">

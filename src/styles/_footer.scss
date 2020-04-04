@@ -18,16 +18,17 @@
           &.instagram:hover {
             color: #e95950;
           }
-          &.facebook:hover {
-            color: rgb(66, 103, 178);
-          }
+          
           &.twitter:hover {
             color: rgb(56, 161, 243);
           }
-          &.google:hover {
-            color: rgb(221, 75, 57);
+          &.github:hover {
+            color: rgb(0, 0, 0);
           }
           &.linkedin:hover {
+            color: rgb(0, 119, 181);
+          }
+          &.hackerrank:hover {
             color: rgb(0, 119, 181);
           }
         }

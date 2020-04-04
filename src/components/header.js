@@ -40,6 +40,7 @@ class Header extends React.Component {
               <NavItem>
                 <a href="https://www.hackerrank.com/4neesh"
                   target="_blank"
+                  style={{color:"red"}}
                   rel="noopener noreferrer">
                   <i className="fab fa-hackerrank fa-2x" />
                 </a>
@@ -47,6 +48,7 @@ class Header extends React.Component {
               <NavItem>
                 <a href="https://www.linkedin.com/in/aneeshmistry/"
                   target="_blank"
+                  style={{color:"#2867B2"}}
                   rel="noopener noreferrer">
                   <i className="fab fa-linkedin fa-2x" />
                 </a>
@@ -54,6 +56,7 @@ class Header extends React.Component {
               <NavItem>
                 <a href="https://www.twitter.com/aneesh_95/"
                   target="_blank"
+                  style={{color:"#1DA1F2"}}
                   rel="noopener noreferrer">
                   <i className="fab fa-twitter fa-2x" />
                 </a>
@@ -62,6 +65,7 @@ class Header extends React.Component {
               <NavItem>
                 <a href="https://www.github.com/4neesh"
                   target="_blank"
+                  style={{color:"black"}}
                   rel="noopener noreferrer">
                   <i className="fab fa-github fa-2x" />
                 </a>
