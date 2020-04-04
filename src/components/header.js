@@ -31,46 +31,43 @@ class Header extends React.Component {
         <div className="container">
           <NavbarBrand href="/">{this.props.siteTitle}</NavbarBrand>
           <NavbarToggler onClick={this.state.isOpen} navbar />
-          
+
           <div className="ml-auto" navbar>
-            <Nav className="mr-2" >
-              <NavItem>
-              <a href="https://www.hackerrank.com/4neesh"
-                target="_blank"
-                className="facebook"
-                rel="noopener noreferrer">
-                <i className="fab fa-hackerrank fa-2x" />
-              </a>
-              </NavItem>
-              <NavItem>
-              <a href="https://www.linkedin.com/in/aneeshmistry/" 
-                        target="_blank" 
-                        className="facebook"
-                        rel="noopener noreferrer">
-                        <i className="fab fa-linkedin fa-2x"/>
-                    </a>
-              </NavItem>
-              <NavItem>
-              <a  href="https://www.twitter.com/aneesh_95/" 
-                        target="_blank" 
-                        className="facebook"
-                        rel="noopener noreferrer">
-                        <i className="fab fa-twitter fa-2x"/>
-                    </a>
-                
-              </NavItem>
-              <NavItem>
-              <a  href="https://www.github.com/4neesh" 
-                        target="_blank" 
-                        className="facebook"
-                        rel="noopener noreferrer">
-                            <i className="fab fa-github fa-2x"/>
-                    </a>
-              </NavItem>
-              
+            <Nav  >
               <NavItem>
                 <NavLink href="/about">About</NavLink>
               </NavItem>
+              <NavItem>
+                <a href="https://www.hackerrank.com/4neesh"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  <i className="fab fa-hackerrank fa-2x" />
+                </a>
+              </NavItem>
+              <NavItem>
+                <a href="https://www.linkedin.com/in/aneeshmistry/"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  <i className="fab fa-linkedin fa-2x" />
+                </a>
+              </NavItem>
+              <NavItem>
+                <a href="https://www.twitter.com/aneesh_95/"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  <i className="fab fa-twitter fa-2x" />
+                </a>
+
+              </NavItem>
+              <NavItem>
+                <a href="https://www.github.com/4neesh"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  <i className="fab fa-github fa-2x" />
+                </a>
+              </NavItem>
+
+
             </Nav>
           </div>
         </div>

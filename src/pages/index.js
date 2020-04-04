@@ -6,14 +6,16 @@ import Post from '../components/Post'
 import {Row, Col} from "reactstrap"
 import Sidebar from "../components/Sidebar"
 
+
+
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <br>
     </br>
-    <h1>Home</h1>
+    
     <Row>
-      <Col md="6">
+      <Col md="8">
       <StaticQuery
         query={indexQuery}
         render={data => {
@@ -27,7 +29,7 @@ const IndexPage = () => (
                   author={node.frontmatter.author}
                   body={node.excerpt}
                   date={node.frontmatter.date}
-                  fluid={node.frontmatter.featuredImage}
+                  fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
                   image={node.frontmatter.image}
                   tags={node.frontmatter.tags}
                 />
@@ -63,8 +65,8 @@ query {
           image
           featuredImage{
             childImageSharp{
-              sizes(maxWidth: 600){
-                ...GatsbyImageSharpSizes
+              fluid(maxWidth: 600){
+                ...GatsbyImageSharpFluid
               }
             }
           }

@@ -3,9 +3,9 @@ import Layout from '../components/layout'
 import Sidebar from '../components/Sidebar'
 import { graphql, Link } from 'gatsby'
 import SEO from "../components/seo"
-import {slugify} from "../util/utilityFunctions"
-import { Row, Col, Card, CardBody,Badge, CardSubtitle } from 'reactstrap'
-
+import { slugify } from "../util/utilityFunctions"
+import { Row, Col, Card, CardBody, Badge, CardSubtitle } from 'reactstrap'
+import Img from "gatsby-image"
 const SinglePost = ({ data }) => {
     const post = data.markdownRemark.frontmatter
 
@@ -13,10 +13,12 @@ const SinglePost = ({ data }) => {
         <Layout>
             <SEO title={post.title} />
             <br></br>
-            <h1>{post.title}</h1>
+            
             <Row>
                 <Col md="8">
+               
                     <Card>
+                        <Img className="card-image-top" fluid={post.featuredImage.childImageSharp.fluid}/>
                         <CardBody>
                             <CardSubtitle>
                                 <span className="text-info">{post.date}</span> by{' '}
@@ -36,6 +38,7 @@ const SinglePost = ({ data }) => {
                     </Card>
                 </Col >
                 <Col md="4">
+                 
                     <Sidebar />
                 </Col>
 
@@ -57,6 +60,13 @@ export const postQuery = graphql`
                 author
                 date(formatString: "MMM Do YYYY")
                 tags
+                featuredImage{
+                    childImageSharp{
+                      fluid(maxWidth: 600){
+                        ...GatsbyImageSharpFluid
+                      }
+                    }
+                  }
             }
         }
     }
