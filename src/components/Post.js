@@ -1,15 +1,15 @@
 import React from "react"
 import {Link} from "gatsby"
-import {Card, CardTitle, CardText, CardSubtitle, CardBody,CardImg, Badge} from 'reactstrap'
+import {Card, CardTitle, CardText, CardSubtitle, CardBody, Badge} from 'reactstrap'
 import {slugify} from "../util/utilityFunctions"
 import Image from "./image"
-const Post = ({title, author, path, date, body, fluid, tags}) =>(
+const Post = ({title, author, slug, date, body, fluid, tags,image}) =>(
 
         <Card>
-            <Image/>
+            <Image imageName={image}/>
             <CardBody>
                 <CardTitle>
-                    <Link to={path}>{title}</Link>
+                    <Link to={slug}>{title}</Link>
                 </CardTitle>
                 <CardSubtitle>
                     <span className="text-info">{date}</span> by{' '} <span className="text-info">{author}</span>
@@ -26,7 +26,7 @@ const Post = ({title, author, path, date, body, fluid, tags}) =>(
                         </li>
                     ))}
                 </ul>
-                <Link to={path} 
+                <Link to={slug} 
                 className="btn-outline-primary float-right">Read more
                 </Link>
             </CardBody>

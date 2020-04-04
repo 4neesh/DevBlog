@@ -8,7 +8,7 @@ const Footer = () => (
         <div className="footer-social-links">
             <ul className="social-links-list">
                 <li>
-                    <a  href="www.github.com/4neesh" 
+                    <a  href="https://www.github.com/4neesh" 
                         target="_blank" 
                         className="facebook"
                         rel="noopener noreferrer">
@@ -17,7 +17,7 @@ const Footer = () => (
                 
                 </li>
                 <li>
-                    <a  href="www.linkedin.com" 
+                    <a  href="https://www.hackerrank.com/4neesh" 
                         target="_blank" 
                         className="facebook"
                         rel="noopener noreferrer">
@@ -26,11 +26,11 @@ const Footer = () => (
                 
                 </li>
                 <li>
-                    <a  href="www.linkedin.com/aneeshmistry" 
+                    <a  href="https://www.linkedin.com/in/aneeshmistry/" 
                         target="_blank" 
                         className="facebook"
                         rel="noopener noreferrer">
-                            <i className="fab fa-linkedin fa-2x"/>
+                        <i className="fab fa-linkedin fa-2x"/>
                     </a>
                 
                 </li>

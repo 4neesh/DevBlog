@@ -1,10 +1,9 @@
 ---
-title: 'Third post - Introduction'
+title: 'Third post'
 date: 2020-04-02 16:34:00
 author: 'Aneesh Mistry'
-path: '/third-post'
 featuredImage: ../images/london.jpg
-image: ..image/london.jpg
+image: 'london.jpg'
 tags:
 - design
 ---

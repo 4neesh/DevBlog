@@ -3,9 +3,11 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 
-const Image = () => {
-  const data = useStaticQuery(graphql`
-    query {
+const Image = (imageName) => {
+
+  const data= useStaticQuery(graphql`
+
+    query  {
       placeholderImage: file(relativePath: { eq: "london.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 300) {

@@ -9,6 +9,8 @@ import Sidebar from "../components/Sidebar"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
+    <br>
+    </br>
     <h1>Home</h1>
     <Row>
       <Col md="8">
@@ -18,12 +20,15 @@ const IndexPage = () => (
           return (
             <div>
               {data.allMarkdownRemark.edges.map(({ node }) => (
-                <Post
+                <Post 
+                  key={node.id}
                   title={node.frontmatter.title}
+                  slug={node.fields.slug}
                   author={node.frontmatter.author}
                   body={node.excerpt}
                   date={node.frontmatter.date}
                   fluid={node.frontmatter.featuredImage}
+                  image={node.frontmatter.image}
                   tags={node.frontmatter.tags}
                 />
               ))}
@@ -54,8 +59,8 @@ query {
           author
           date(formatString: "Do MMM YYYY")
           title
-          path
           tags
+          image
           featuredImage{
             childImageSharp{
               sizes(maxWidth: 600){
@@ -63,6 +68,9 @@ query {
               }
             }
           }
+        }
+        fields{
+          slug
         }
         excerpt
       }
