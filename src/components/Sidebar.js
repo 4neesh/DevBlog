@@ -1,12 +1,12 @@
 import React from "react"
-import { Card, CardTitle, Button, Form,Input, CardBody, FormGroup } from 'reactstrap'
+import { Card, CardTitle, Form,Input, CardBody, FormGroup } from 'reactstrap'
 
 const Sidebar = () => (
 
     <div>
         <Card>
             <CardBody>
-                <CardTitle clasName="text-center text-uppercase">
+                <CardTitle className="text-center text-uppercase">
                 Newsletter
             </CardTitle>
             <Form className="text-centre">
@@ -14,10 +14,10 @@ const Sidebar = () => (
                     <Input 
                     type="email" 
                     name="email" 
-                    placeholder="enter"/>
+                    placeholder="Enter your email"/>
                 </FormGroup>
-                <Button className="btn btn-outline-success text-uppercase">
-                    Subscribe</Button>
+                <button className="btn btn-outline-success text-uppercase">
+                    Subscribe</button>
             </Form>
             </CardBody>
         </Card>

@@ -1,11 +1,12 @@
 import React from "react"
 import {Link} from "gatsby"
-import {Card, CardTitle, CardText, CardSubtitle, CardBody, Badge} from 'reactstrap'
-import Img from "gatsby-image"
+import {Card, CardTitle, CardText, CardSubtitle, CardBody,CardImg, Badge} from 'reactstrap'
 import {slugify} from "../util/utilityFunctions"
+import Image from "./image"
 const Post = ({title, author, path, date, body, fluid, tags}) =>(
 
         <Card>
+            <Image/>
             <CardBody>
                 <CardTitle>
                     <Link to={path}>{title}</Link>

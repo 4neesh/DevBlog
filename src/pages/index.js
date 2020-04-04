@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import  {graphql, StaticQuery} from "gatsby"
 import Post from '../components/Post'
-import {Row, Col} from "reactStrap"
+import {Row, Col} from "reactstrap"
 import Sidebar from "../components/Sidebar"
 
 const IndexPage = () => (
@@ -28,7 +28,6 @@ const IndexPage = () => (
                 />
               ))}
             </div>
-           
           )
         }}
       />
