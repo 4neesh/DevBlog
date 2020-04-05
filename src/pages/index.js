@@ -37,15 +37,7 @@ const IndexPage = () => (
           )
         }}
       />
-      {/* </Col>
-      <Col md="4">
-      <div>
-        <Sidebar/>
-      </div>
-     
-   
-      </Col>
-    </Row> */}
+      {}
     
   </Layout>
 )

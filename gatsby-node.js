@@ -1,7 +1,7 @@
 
 const path = require('path')
 const { slugify } = require('./src/util/utilityFunctions')
-
+const _ = require("lodash")
 
 exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions
@@ -17,8 +17,12 @@ exports.onCreateNode = ({ node, actions }) => {
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
-  const post = path.resolve('src/templates/single-post.js')
 
+  const templates = {
+    singPost: path.resolve('src/templates/single-post.js'),
+    tagsPage: path.resolve('src/templates/tags-page.js')
+  
+  }
   return graphql(`
     {
     allMarkdownRemark {
@@ -26,7 +30,7 @@ exports.createPages = async ({ actions, graphql }) => {
         node {
           frontmatter {
             author
-            
+            tags
           }
           fields {
             slug
@@ -37,23 +41,49 @@ exports.createPages = async ({ actions, graphql }) => {
   }
     
     
-    `).then(res =>{
-      if (res.errors) return Promise.reject(res.errors)
+    `).then(res => {
+    if (res.errors) return Promise.reject(res.errors)
 
-      const posts = res.data.allMarkdownRemark.edges
-      // Create single post pages
-      posts.forEach(({ node }) => {
-        createPage({
-          path: node.fields.slug,
-          component: post,
-          context: {
-            
-            slug: node.fields.slug,
-           
-          },
-        })
-      
+    const posts = res.data.allMarkdownRemark.edges
+    // Create single post pages
+    posts.forEach(({ node }) => {
+      createPage({
+        path: node.fields.slug,
+        component: templates.singPost,
+        context: {
+
+          slug: node.fields.slug,
+
+        },
+      })
+
     })
 
-  })
+    let tags = []
+    _.each(posts, edge => {
+      if (_.get(edge, 'node.frontmatter.tags')) {
+        tags = tags.concat(edge.node.frontmatter.tags)
+      }
+    })
+
+    let tagPostCount = {}
+    tags.forEach(tag => {
+      tagPostCount[tag] = (
+        tagPostCount[tag] || 0) + 1
+    })
+    tags = _.uniq(tags)
+
+    console.log(tagPostCount)
+    console.log(tags)
+    createPage({
+      path: '/tags',
+      component: templates.tagsPage,
+      context:{
+        tags,
+        tagPostCount
+      },
+    })
+
+
+  })  
 }

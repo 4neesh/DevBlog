@@ -8,6 +8,7 @@ import {
   NavLink,
 } from 'reactstrap'
 
+
 class Header extends React.Component {
 
   render() {
@@ -16,7 +17,6 @@ class Header extends React.Component {
       <Navbar fixed="top" light expand="md" >
         <div className="container">
           <NavbarBrand href="/">Aneesh</NavbarBrand>
-
           <div className="ml-auto" navbar>
             <Nav>
               <NavItem>
