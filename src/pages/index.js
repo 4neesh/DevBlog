@@ -11,8 +11,7 @@ const IndexPage = () => (
     <br>
     </br>
     
-    {/* <Row>
-      <Col md="8"> */}
+
       <StaticQuery
         query={indexQuery}
         render={data => {
@@ -27,7 +26,6 @@ const IndexPage = () => (
                   body={node.excerpt}
                   date={node.frontmatter.date}
                   fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
-                  image={node.frontmatter.image}
                   tags={node.frontmatter.tags}
                   subtitle={node.frontmatter.subtitle}
                   time={node.frontmatter.time}
