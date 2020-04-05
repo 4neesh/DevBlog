@@ -7,7 +7,7 @@ import Footer from "./footer"
 import { Row, Col } from "reactstrap"
 import Sidebar from "./Sidebar"
 
-const Layout = ({ children, pageTitle }) => (
+const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
     query SiteTitleQuery {

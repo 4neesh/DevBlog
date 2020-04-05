@@ -13,8 +13,9 @@ const SinglePost = ({ data, pageContext }) => {
             <SEO title={post.title} />
             <br></br>
             <Card>
-                <Img className="card-image-top"
+                <Img className="card-image-top" 
                     fluid={post.featuredImage.childImageSharp.fluid} />
+                    
                 <CardBody>
                     <CardSubtitle>
                         <span className="text-info">{post.date}</span> by{' '}
@@ -30,6 +31,7 @@ const SinglePost = ({ data, pageContext }) => {
                             </li>
                         ))}
                     </ul>
+                    <br></br>
                 </CardBody>
             </Card>
             <h3 className="text-center">Share this post</h3>

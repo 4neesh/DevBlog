@@ -29,6 +29,8 @@ const IndexPage = () => (
                   fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
                   image={node.frontmatter.image}
                   tags={node.frontmatter.tags}
+                  subtitle={node.frontmatter.subtitle}
+                  time={node.frontmatter.time}
                 />
               ))}
             </div>
@@ -59,7 +61,8 @@ query {
           date(formatString: "Do MMM YYYY")
           title
           tags
-          image
+          time
+          subtitle
           featuredImage{
             childImageSharp{
               fluid(maxWidth: 600){
