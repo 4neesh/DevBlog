@@ -73,8 +73,7 @@ exports.createPages = async ({ actions, graphql }) => {
     })
     tags = _.uniq(tags)
 
-    console.log(tagPostCount)
-    console.log(tags)
+  
     //create tag page
     createPage({
       path: '/tags',

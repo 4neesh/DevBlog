@@ -7,7 +7,7 @@ body {
 
 }
 a {
-  color: #0056b3;
+  color: #45156c;
   &:hover {
     color: purple;
     text-decoration: none;
@@ -17,6 +17,7 @@ a {
 h1 {
   margin-bottom: 20px;
   text-align: center;
+  color: #45156c;
 }
 .navbar {
   background-color: white;
@@ -27,9 +28,9 @@ h1 {
 }
 .navbar-light .navbar-nav .nav-link,
 .navbar-light .navbar-brand {
-  color: #0056b3;
+  color: #45156c;
   &:hover {
-    color: #007bff;
+    color: #45156c;
   }
 }
 ul {

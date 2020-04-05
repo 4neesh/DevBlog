@@ -7,8 +7,7 @@ const AboutPage = () => (
   <Layout>
   
     <SEO title="About" />
-   
-    <h1>About</h1>
+   <br></br>
     <p>
       Hello this is Aneesh's web page
     </p>

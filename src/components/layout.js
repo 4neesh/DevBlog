@@ -31,9 +31,8 @@ const Layout = ({ children }) => (
 
         <div className="container" id="content" >
           <br></br>
-
+          <h1>{data.site.siteMetadata.title}</h1>
           <Row>
-
             <Col md="8">{children}</Col>
             <Col md="4"><Sidebar /></Col>
           </Row>

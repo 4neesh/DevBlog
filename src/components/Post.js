@@ -14,7 +14,7 @@ const Post = ({slug, date,  time, fluid, tags,  subtitle }) => (
         <CardBody>
      
             <CardSubtitle>
-                <span className="text-info">{date}</span> 
+                <span >{date}</span> 
                 <span className="float-right"><strong>
                     <i class="far fa-clock"></i>
                      {' '}{' '}{time} mins</strong></span>
@@ -32,7 +32,7 @@ const Post = ({slug, date,  time, fluid, tags,  subtitle }) => (
                 ))}
             </ul>
             <Link to={slug}
-                className="btn-outline-primary float-right">Read more
+                 className=" float-right">Read more
                 </Link>
         </CardBody>
 
