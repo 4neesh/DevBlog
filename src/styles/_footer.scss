@@ -20,18 +20,20 @@
           }
           
           &.twitter:hover {
-            color: rgb(56, 161, 243);
+            color: rgb(110, 9, 183);
           }
           &.github:hover {
-            color: rgb(0, 0, 0);
+            color: rgb(110, 9, 180);
           }
           &.linkedin:hover {
-            color: rgb(0, 119, 181);
+            color: rgb(110, 9, 181);
           }
           &.hackerrank:hover {
-            color: rgb(0, 119, 181);
+            color: rgb(110, 9, 181);
           }
-        }
+          &.google:hover {
+            color: rgb(221, 75, 57);
+        }}
       }
     }
   }
