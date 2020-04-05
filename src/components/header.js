@@ -13,16 +13,16 @@ class Header extends React.Component {
   constructor(props) {
     super(props)
 
-    this.toggle = this.toggle.bind(this)
-    this.state = {
-      isOpen: false,
-    }
+    // this.toggle = this.toggle.bind(this)
+    // this.state = {
+    //   isOpen: false,
+    // }
   }
-  toggle() {
-    this.setState({
-      isOpen: !this.state.isOpen,
-    })
-  }
+  // toggle() {
+  //   this.setState({
+  //     isOpen: !this.state.isOpen,
+  //   })
+  // }
 
   render() {
     return (
@@ -30,7 +30,7 @@ class Header extends React.Component {
       <Navbar fixed="top" light expand="md" >
         <div className="container">
           <NavbarBrand href="/">{this.props.siteTitle}</NavbarBrand>
-          <NavbarToggler onClick={this.state.isOpen} navbar />
+          {/* <NavbarToggler onClick={this.state.isOpen} navbar /> */}
 
           <div className="ml-auto" navbar>
             <Nav>
