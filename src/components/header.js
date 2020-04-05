@@ -29,7 +29,7 @@ class Header extends React.Component {
 
       <Navbar fixed="top" light expand="md" >
         <div className="container">
-          <NavbarBrand href="/">{this.props.siteTitle}</NavbarBrand>
+          <NavbarBrand href="/">Aneesh Dev Blog</NavbarBrand>
           {/* <NavbarToggler onClick={this.state.isOpen} navbar /> */}
 
           <div className="ml-auto" navbar>
@@ -55,15 +55,7 @@ class Header extends React.Component {
                 </a>
               </NavItem>
 
-              <NavItem>
-                <a href="https://www.twitter.com/aneesh_95/"
-                  target="_blank"
-                  style={{"padding-right":"15px",hover:{"color":"yellow"}}}
-                  rel="noopener noreferrer">
-                  <i className="fab fa-twitter fa-2x" />
-                </a>
-
-              </NavItem>
+              
               <NavItem>
                 <a href="https://www.github.com/4neesh"
                   target="_blank"
