@@ -6,7 +6,7 @@ import Header from "./header"
 import Footer from "./footer"
 import { Row, Col } from "reactstrap"
 import Sidebar from "./Sidebar"
-
+import Img from "gatsby-image"
 const Layout = ({ children }) => (
 
   <StaticQuery
@@ -33,7 +33,9 @@ const Layout = ({ children }) => (
 
         <div className="container" id="content" >
           <br></br>
+          
           <h1>{data.site.siteMetadata.title}</h1>
+          <h4 align="center">Java · AWS · Spring</h4>
           <Row>
             <Col md="8">{children}</Col>
             <Col md="4"><Sidebar></Sidebar></Col>

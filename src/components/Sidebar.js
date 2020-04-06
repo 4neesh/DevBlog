@@ -1,7 +1,7 @@
 import React from "react"
 import { Card, CardTitle, Badge, Button, CardBody } from 'reactstrap'
 import { graphql, StaticQuery } from 'gatsby'
-import { slugify } from '../util/utilityFunctions'
+// import { slugify } from '../util/utilityFunctions'
 
 
 const Sidebar = () => (
@@ -15,7 +15,7 @@ const Sidebar = () => (
                     <Card>
                         <CardTitle className="text-center text-uppercase">
                             <br></br>
-                            Browse by Tags
+                            <h5>Browse by Tags</h5>
                     </CardTitle>
                         <CardBody>
                               {/* {data.allMarkdownRemark.edges.map(({node}) => (
@@ -39,9 +39,9 @@ const Sidebar = () => (
 
                             </ul> */}
                             <ul>
-                                <li style={{ marginBottom: '10px' }}>
-                                    <Button className="text-uppercase" color="primary" href={`/tag/java`}>
-                                        Java ~ <Badge color="light" >{` 1`}</Badge></Button>
+                            <li style={{ marginBottom: '10px' }}>
+                                    <Button className="text-uppercase" color="primary" href={`/tag/design`}>
+                                        Design ~ <Badge color="light" >{` 2`}</Badge></Button>
                                 </li>
                                 <li style={{ marginBottom: '10px' }}>
                                     <Button className="text-uppercase" color="primary" href={`/tag/algorithms`}>
@@ -52,13 +52,16 @@ const Sidebar = () => (
                                         Collections ~ <Badge color="light" >{` 1`}</Badge></Button>
                                 </li>
                                 <li style={{ marginBottom: '10px' }}>
+                                    <Button className="text-uppercase" color="primary" href={`/tag/java`}>
+                                        Java ~ <Badge color="light" >{` 1`}</Badge></Button>
+                                </li>
+                               
+                                
+                                <li style={{ marginBottom: '10px' }}>
                                     <Button className="text-uppercase" color="primary" href={`/tag/personal`}>
                                         Personal ~ <Badge color="light" >{` 1`}</Badge></Button>
                                 </li>
-                                <li style={{ marginBottom: '10px' }}>
-                                    <Button className="text-uppercase" color="primary" href={`/tag/design`}>
-                                        Design ~ <Badge color="light" >{` 2`}</Badge></Button>
-                                </li>
+                                
                             </ul>
 
                         </CardBody>

@@ -102,7 +102,7 @@ export const postQuery = graphql`
             frontmatter{
                 title
                 author
-                date(formatString: "MMM Do YYYY")
+                date(formatString: "Do MMM YYYY")
                 tags
                 featuredImage{
                     childImageSharp{
