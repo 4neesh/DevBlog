@@ -3,15 +3,13 @@ const path = require('path')
 const { slugify } = require('./src/util/utilityFunctions')
 const _ = require("lodash")
 
-let tags = ['Personal']
-let tagPostCount = {}
+let tags = []
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
 
   const templates = {
     singPost: path.resolve('src/templates/single-post.js'),
-    tagsPage: path.resolve('src/templates/tags-page.js'),
     tagPost: path.resolve('src/templates/tag-posts.js')
   }
   return graphql(`
@@ -21,7 +19,6 @@ exports.createPages = async ({ actions, graphql }) => {
         node {
           frontmatter {
             author
-            
             tags
           }
           fields {
@@ -68,29 +65,10 @@ exports.createPages = async ({ actions, graphql }) => {
           name: 'tagsForPosts',
           value: tags,
         })
-
-      
-      
-
     }
 
-    
-    tags.forEach(tag => {
-      tagPostCount[tag] = (
-        tagPostCount[tag] || 0) + 1
-    })
     tags = _.uniq(tags)
-    console.log(tagPostCount)
-    //create tag page
-    createPage({
-      path: '/tags',
-      component: templates.tagsPage,
-      context: {
-        tags,
-        tagPostCount
-      },
-    })
-
+   
     //create tag post pages
     tags.forEach(tag => {
       createPage({
@@ -118,6 +96,12 @@ exports.onCreateNode = async({ node, actions }) => {
       name: 'slug',
       value: slugFromTitle,
     })
+
   }
+  createNodeField({
+    node,
+    name: 'postTagsAll',
+    value: 'lol',
+    })
 
 }

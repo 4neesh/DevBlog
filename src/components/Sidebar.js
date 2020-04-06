@@ -9,7 +9,7 @@ const Sidebar = () => (
     < StaticQuery
         query={sideBarQuery}
         render={data => {
-            
+
             return (
                 <div className="container" id="content">
                     <Card>
@@ -18,7 +18,14 @@ const Sidebar = () => (
                             Browse by Tags
                     </CardTitle>
                         <CardBody>
-                            <ul>
+                              {/* {data.allMarkdownRemark.edges.map(({node}) => (
+
+                                    <li key={node.fields.postTagsAll} style={{ marginBottom: '10px' }}>
+                                        <Button className="text-uppercase" color="primary" href={`/tag/${slugify(node.fields.postTagsAll)}`}>
+                                            {node.fields.postTagsAll} <Badge color="light"></Badge>
+                                        </Button>
+                                    </li> */}
+                            {/* <ul>
                                 {data.sitePage.fields.tagsForPosts.map(tag => (
 
                                     <li key={tag} style={{ marginBottom: '10px' }}>
@@ -28,24 +35,34 @@ const Sidebar = () => (
                                     </li>
                                 ))}
 
-                            </ul>
-                    
-                </CardBody>
+                            </ul> */}
+
+                        </CardBody>
                     </Card>
                 </div>
             )
-            
+
         }} />
 
 )
 
 const sideBarQuery = graphql`
 query MyQuery {
+    allMarkdownRemark {
+      edges {
+        node {
+          fields {
+            postTagsAll
+          }
+        }
+      }
+    }
     sitePage {
       fields {
         tagsForPosts
       }
     }
   }
+  
 `
 export default Sidebar
