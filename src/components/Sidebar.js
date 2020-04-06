@@ -41,23 +41,23 @@ const Sidebar = () => (
                             <ul>
                                 <li style={{ marginBottom: '10px' }}>
                                     <Button className="text-uppercase" color="primary" href={`/tag/java`}>
-                                        Java</Button>
+                                        Java ~ <Badge color="light" >{` 2`}</Badge></Button>
                                 </li>
                                 <li style={{ marginBottom: '10px' }}>
                                     <Button className="text-uppercase" color="primary" href={`/tag/algorithms`}>
-                                        Algorithms</Button>
+                                        Algorithms ~ <Badge color="light" >{` 1`}</Badge></Button>
                                 </li>
                                 <li style={{ marginBottom: '10px' }}>
                                     <Button className="text-uppercase" color="primary" href={`/tag/collections`}>
-                                        Collections</Button>
+                                        Collections ~ <Badge color="light" >{` 1`}</Badge></Button>
                                 </li>
                                 <li style={{ marginBottom: '10px' }}>
                                     <Button className="text-uppercase" color="primary" href={`/tag/personal`}>
-                                        Personal</Button>
+                                        Personal ~ <Badge color="light" >{` 1`}</Badge></Button>
                                 </li>
                                 <li style={{ marginBottom: '10px' }}>
                                     <Button className="text-uppercase" color="primary" href={`/tag/design`}>
-                                        Design</Button>
+                                        Design ~ <Badge color="light" >{` 1`}</Badge></Button>
                                 </li>
                             </ul>
 
