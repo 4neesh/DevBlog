@@ -15,8 +15,8 @@ class Header extends React.Component {
     return (
 
       <Navbar fixed="top" light expand="md" >
-        <div className="container">
-          <NavbarBrand href="/">Aneesh</NavbarBrand>
+        <div className="container" >
+          <NavbarBrand style={{"padding-left":"15px"}}href="/">Aneesh</NavbarBrand>
           <div className="ml-auto" navbar>
             <Nav>
               <NavItem>
@@ -49,7 +49,7 @@ class Header extends React.Component {
               <NavItem>
                 <a href="https://www.github.com/4neesh"
                   target="_blank"
-                  style={{ "padding-right": "0" }}
+                  style={{ "padding-right": "15px" }}
                   rel="noopener noreferrer">
                   <i className="fab fa-github fa-2x" />
                 </a>

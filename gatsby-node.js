@@ -3,17 +3,8 @@ const path = require('path')
 const { slugify } = require('./src/util/utilityFunctions')
 const _ = require("lodash")
 
-exports.onCreateNode = ({ node, actions }) => {
-  const { createNodeField } = actions
-  if (node.internal.type === 'MarkdownRemark') {
-    const slugFromTitle = slugify(node.frontmatter.title)
-    createNodeField({
-      node,
-      name: 'slug',
-      value: slugFromTitle,
-    })
-  }
-}
+let tags = []
+
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
@@ -30,6 +21,7 @@ exports.createPages = async ({ actions, graphql }) => {
         node {
           frontmatter {
             author
+            
             tags
           }
           fields {
@@ -45,6 +37,7 @@ exports.createPages = async ({ actions, graphql }) => {
     if (res.errors) return Promise.reject(res.errors)
 
     const posts = res.data.allMarkdownRemark.edges
+
     // Create single post pages
     posts.forEach(({ node }) => {
       createPage({
@@ -58,13 +51,28 @@ exports.createPages = async ({ actions, graphql }) => {
       })
 
     })
-
-    let tags = []
     _.each(posts, edge => {
       if (_.get(edge, 'node.frontmatter.tags')) {
+
+
         tags = tags.concat(edge.node.frontmatter.tags)
       }
     })
+    //console.log(tags)
+
+    exports.onCreateNode = async({node, actions}) =>{
+      console.log(node.internal.type)
+      const { createNodeField } = actions
+     
+        console.log(tags)
+        createNodeField({
+          node,
+          name: 'tagsForPosts',
+          value: tags,
+        })
+      
+
+    }
 
     let tagPostCount = {}
     tags.forEach(tag => {
@@ -73,27 +81,43 @@ exports.createPages = async ({ actions, graphql }) => {
     })
     tags = _.uniq(tags)
 
-  
     //create tag page
     createPage({
       path: '/tags',
       component: templates.tagsPage,
-      context:{
+      context: {
         tags,
         tagPostCount
       },
     })
 
     //create tag post pages
-    tags.forEach(tag =>{
+    tags.forEach(tag => {
       createPage({
         path: `/tag/${slugify(tag)}`,
         component: templates.tagPost,
-        context:{
+        context: {
           tag,
         },
       })
     })
 
-  })  
+  })
+
+
+
+}
+exports.onCreateNode = async({ node, actions }) => {
+
+  const { createNodeField } = actions
+
+  if (node.internal.type === 'MarkdownRemark') {
+    const slugFromTitle = slugify(node.frontmatter.title)
+    createNodeField({
+      node,
+      name: 'slug',
+      value: slugFromTitle,
+    })
+  }
+
 }
