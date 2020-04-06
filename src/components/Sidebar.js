@@ -25,6 +25,8 @@ const Sidebar = () => (
                                             {node.fields.postTagsAll} <Badge color="light"></Badge>
                                         </Button>
                                     </li> */}
+
+
                             {/* <ul>
                                 {data.sitePage.fields.tagsForPosts.map(tag => (
 
@@ -36,6 +38,28 @@ const Sidebar = () => (
                                 ))}
 
                             </ul> */}
+                            <ul>
+                                <li style={{ marginBottom: '10px' }}>
+                                    <Button className="text-uppercase" color="primary" href={`/tag/java`}>
+                                        Java</Button>
+                                </li>
+                                <li style={{ marginBottom: '10px' }}>
+                                    <Button className="text-uppercase" color="primary" href={`/tag/algorithms`}>
+                                        Algorithms</Button>
+                                </li>
+                                <li style={{ marginBottom: '10px' }}>
+                                    <Button className="text-uppercase" color="primary" href={`/tag/collections`}>
+                                        Collections</Button>
+                                </li>
+                                <li style={{ marginBottom: '10px' }}>
+                                    <Button className="text-uppercase" color="primary" href={`/tag/personal`}>
+                                        Personal</Button>
+                                </li>
+                                <li style={{ marginBottom: '10px' }}>
+                                    <Button className="text-uppercase" color="primary" href={`/tag/design`}>
+                                        Design</Button>
+                                </li>
+                            </ul>
 
                         </CardBody>
                     </Card>
