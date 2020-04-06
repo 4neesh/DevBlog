@@ -8,15 +8,15 @@ import Post from '../components/Post'
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <br>
-    </br>
+  
     
 
       <StaticQuery
         query={indexQuery}
         render={data => {
           return (
-            <div>
+            <div className="container" id="content">
+                      
               {data.allMarkdownRemark.edges.map(({ node }) => (
                 <Post 
                   key={node.id}

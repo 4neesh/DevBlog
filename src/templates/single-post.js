@@ -5,13 +5,16 @@ import SEO from "../components/seo"
 import { slugify } from "../util/utilityFunctions"
 import { Card, CardBody, Badge, CardSubtitle } from 'reactstrap'
 import Img from "gatsby-image"
+
+
 const SinglePost = ({ data, pageContext }) => {
     const post = data.markdownRemark.frontmatter
     const basicUrl = "https://aneesh.co.uk/"
     return (
         <Layout pageTitle={post.title}>
+            <div className="container" id="content" >
             <SEO title={post.title} />
-            <br></br>
+           
             <Card>
                 <Img className="card-image-top" 
                     fluid={post.featuredImage.childImageSharp.fluid} />
@@ -85,6 +88,7 @@ const SinglePost = ({ data, pageContext }) => {
 
 
             </div >
+            </div>
         </Layout >
     )
 

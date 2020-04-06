@@ -8,6 +8,7 @@ import { Row, Col } from "reactstrap"
 import Sidebar from "./Sidebar"
 
 const Layout = ({ children }) => (
+
   <StaticQuery
     query={graphql`
     query SiteTitleQuery {
@@ -27,7 +28,7 @@ const Layout = ({ children }) => (
           integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
           crossOrigin="anonymous"
         />
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header/>
 
         <div className="container" id="content" >
           <br></br>
