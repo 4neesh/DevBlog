@@ -6,7 +6,7 @@ featuredImage: ../images/01London.png
 subtitle: 'An introduction to the developer blog'
 time: '2'
 tags:
-- personal
+- Personal
 ---
 <br>
 <h1>Hello World</h1>

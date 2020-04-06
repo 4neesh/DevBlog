@@ -6,10 +6,9 @@ featuredImage: ../images/02Colombia.png
 subtitle: 'Exploring the Big O Notation and efficient algorithms'
 time: '3'
 tags:
-- java
-- algorithms
-- Data structures
-
+- Java
+- Algorithms
+- Collections
 ---
 
 Coming...

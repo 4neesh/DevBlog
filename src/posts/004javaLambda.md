@@ -6,7 +6,7 @@ featuredImage: ../images/04Cors.png
 subtitle: 'An introduction to the blog'
 time: '8'
 tags:
-- design
+- Design
 ---
 
 Coming...

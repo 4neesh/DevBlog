@@ -6,7 +6,7 @@ featuredImage: ../images/03SL.png
 subtitle: 'AWS Lambda'
 time: '3'
 tags:
-- design
+- Design
 ---
 
 Coming...

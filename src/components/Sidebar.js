@@ -8,12 +8,14 @@ const Sidebar = () => (
 
     < StaticQuery
         query={sideBarQuery}
+        
         render={data => {
-            // console.log(data.sitePage.fields.tagsForPosts)
+            
             return (
                 <div className="container" id="content">
                     <Card>
                         <CardTitle className="text-center text-uppercase">
+                            <br></br>
                             Browse by Tags
                     </CardTitle>
                         <CardBody>
@@ -21,7 +23,7 @@ const Sidebar = () => (
                                 {data.sitePage.fields.tagsForPosts.map(tag => (
 
                                     <li key={tag} style={{ marginBottom: '10px' }}>
-                                        <Button color="primary" href={`/tag/${slugify(tag)}`}>
+                                        <Button className="text-uppercase" color="primary" href={`/tag/${slugify(tag)}`}>
                                             {tag} <Badge color="light"></Badge>
                                         </Button>
                                     </li>
@@ -33,6 +35,7 @@ const Sidebar = () => (
                     </Card>
                 </div>
             )
+            
         }} />
 
 )
@@ -42,6 +45,14 @@ query MyQuery {
     sitePage {
       fields {
         tagsForPosts
+        tagPostCount{
+            Collections
+            Personal
+            Design
+            Java
+            Algorithms
+            
+        }
       }
     }
   }

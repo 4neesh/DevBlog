@@ -68,6 +68,12 @@ exports.createPages = async ({ actions, graphql }) => {
           name: 'tagsForPosts',
           value: tags,
         })
+
+        createNodeField({
+          node,
+          name: 'tagPostCount',
+          value: tagPostCount,
+        })
       
 
     }
