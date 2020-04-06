@@ -18,6 +18,11 @@ const Layout = ({ children }) => (
          
         }
       }
+      sitePage{
+        fields{
+          tagsForPosts
+        }
+      }
     }
   `}
     render={data => (
@@ -35,7 +40,7 @@ const Layout = ({ children }) => (
           <h1>{data.site.siteMetadata.title}</h1>
           <Row>
             <Col md="8">{children}</Col>
-            <Col md="4"><Sidebar /></Col>
+            <Col md="4"><Sidebar>{data.sitePage.fields.tagsForLists}</Sidebar></Col>
           </Row>
         </div>
         <Footer />

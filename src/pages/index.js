@@ -9,11 +9,10 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
   
-    
-
       <StaticQuery
         query={indexQuery}
         render={data => {
+          // console.log(data)
           return (
             <div className="container" id="content">
                       
@@ -66,6 +65,11 @@ query {
         }
         excerpt
       }
+    }
+  }
+  sitePage{
+    fields{
+      tagsForPosts
     }
   }
 }

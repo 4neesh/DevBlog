@@ -4,7 +4,7 @@ const { slugify } = require('./src/util/utilityFunctions')
 const _ = require("lodash")
 
 let tags = []
-
+let tagPostCount = {}
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
@@ -61,10 +61,8 @@ exports.createPages = async ({ actions, graphql }) => {
     //console.log(tags)
 
     exports.onCreateNode = async({node, actions}) =>{
-      console.log(node.internal.type)
       const { createNodeField } = actions
      
-        console.log(tags)
         createNodeField({
           node,
           name: 'tagsForPosts',
@@ -74,13 +72,13 @@ exports.createPages = async ({ actions, graphql }) => {
 
     }
 
-    let tagPostCount = {}
+    
     tags.forEach(tag => {
       tagPostCount[tag] = (
         tagPostCount[tag] || 0) + 1
     })
     tags = _.uniq(tags)
-
+    console.log(tagPostCount)
     //create tag page
     createPage({
       path: '/tags',
