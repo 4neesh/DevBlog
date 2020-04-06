@@ -67,12 +67,7 @@ query {
       }
     }
   }
-  sitePage{
-    fields{
-      tagsForPosts
-      
-    }
-  }
+  
 }
 `
 export default IndexPage

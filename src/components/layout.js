@@ -18,11 +18,7 @@ const Layout = ({ children }) => (
          
         }
       }
-      sitePage{
-        fields{
-          tagsForPosts
-        }
-      }
+      
     }
   `}
     render={data => (
