@@ -5,7 +5,7 @@ author: 'Aneesh Mistry'
 featuredImage: ../images/01London.png
 subtitle: 'An introduction to the developer blog'
 time: '2'
-tags:
+tags: 
 - Personal
 ---
 <br>

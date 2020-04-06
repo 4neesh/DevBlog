@@ -3,7 +3,7 @@ const path = require('path')
 const { slugify } = require('./src/util/utilityFunctions')
 const _ = require("lodash")
 
-let tags = []
+let tags = ['Personal']
 let tagPostCount = {}
 
 exports.createPages = async ({ actions, graphql }) => {
@@ -69,11 +69,7 @@ exports.createPages = async ({ actions, graphql }) => {
           value: tags,
         })
 
-        createNodeField({
-          node,
-          name: 'tagPostCount',
-          value: tagPostCount,
-        })
+      
       
 
     }

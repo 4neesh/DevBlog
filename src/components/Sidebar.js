@@ -8,7 +8,6 @@ const Sidebar = () => (
 
     < StaticQuery
         query={sideBarQuery}
-        
         render={data => {
             
             return (
@@ -45,19 +44,8 @@ query MyQuery {
     sitePage {
       fields {
         tagsForPosts
-        tagPostCount{
-            Collections
-            Personal
-            Design
-            Java
-            Algorithms
-            
-        }
       }
     }
   }
-  
-  
-
 `
 export default Sidebar
