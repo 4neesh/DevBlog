@@ -1,40 +1,7 @@
 .site-header {
     background-color: $white;
-    margin-top: 20px;
+    margin-top: 10px;
     padding-right: 10px;
+    padding-left:10px;
     text-align: center;
-  
-    .footer-social-links {
-      text-align: center;
-  
-      ul.social-links-list {
-        li {
-          margin-right: 25px;
-          display: inline-block;
-  
-          a {
-            color: $dark-gray;
-  
-            &.instagram:hover {
-              color: #e95950;
-            }
-            
-            &.twitter:hover {
-              color: #e95950;
-            }
-            &.github:hover {
-              color: #e95950;
-            }
-            &.linkedin:hover {
-              color: #e95950;
-            }
-            &.hackerrank:hover {
-              color: #e95950;
-            }
-            &.google:hover {
-              color: #e95950;
-          }}
-        }
-      }
-    }
   }

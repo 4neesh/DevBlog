@@ -3,38 +3,4 @@
   margin-top: 20px;
   padding: 10px;
   text-align: center;
-
-  .footer-social-links {
-    text-align: center;
-
-    ul.social-links-list {
-      li {
-        margin-right: 25px;
-        display: inline-block;
-
-        a {
-          color: $dark-gray;
-
-          &.instagram:hover {
-            color: #e95950;
-          }
-          
-          &.twitter:hover {
-            color: rgb(110, 9, 183);
-          }
-          &.github:hover {
-            color: rgb(110, 9, 180);
-          }
-          &.linkedin:hover {
-            color: rgb(110, 9, 181);
-          }
-          &.hackerrank:hover {
-            color: rgb(110, 9, 181);
-          }
-          &.google:hover {
-            color: rgb(221, 75, 57);
-        }}
-      }
-    }
-  }
 }

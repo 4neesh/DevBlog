@@ -16,16 +16,21 @@ class Header extends React.Component {
 
       <Navbar fixed="top" light expand="md" >
         <div className="container" >
-          <NavbarBrand style={{"padding-left":"15px"}}href="/"><i class="fas fa-home"></i></NavbarBrand>
+          <NavbarBrand href="/"><i class="fas fa-home fa-lg"></i></NavbarBrand>
           <div className="ml-auto" navbar>
             <Nav>
               <NavItem>
-                <NavLink href="/about">About</NavLink>
+                <NavLink href="/about">
+                  <strong>
+                    <font size="+1">
+                      About
+                    </font>
+                  </strong>
+                </NavLink>
               </NavItem>
               <NavItem >
                 <a href="https://www.hackerrank.com/4neesh"
                   target="_blank"
-                  style={{ "padding-right": "15px" }}
                   rel="noopener noreferrer">
                   <i className="fab fa-hackerrank fa-2x" />
                 </a>
@@ -33,7 +38,6 @@ class Header extends React.Component {
               <NavItem>
                 <a href="https://www.linkedin.com/in/aneeshmistry/"
                   target="_blank"
-                  style={{ "padding-right": "15px" }}
                   rel="noopener noreferrer">
                   <i className="fab fa-linkedin fa-2x" />
                 </a>
@@ -41,7 +45,6 @@ class Header extends React.Component {
               <NavItem>
                 <a href="https://www.twitter.com/aneesh_95/"
                   target="_blank"
-                  style={{ "padding-right": "15px"}}
                   rel="noopener noreferrer">
                   <i className="fab fa-twitter fa-2x" />
                 </a>
@@ -49,7 +52,6 @@ class Header extends React.Component {
               <NavItem>
                 <a href="https://www.github.com/4neesh"
                   target="_blank"
-                  style={{ "padding-right": "15px" }}
                   rel="noopener noreferrer">
                   <i className="fab fa-github fa-2x" />
                 </a>

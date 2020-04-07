@@ -6,7 +6,8 @@ import Header from "./header"
 import Footer from "./footer"
 import { Row, Col } from "reactstrap"
 import Sidebar from "./Sidebar"
-import Img from "gatsby-image"
+// import Brand from "./brand"
+import yourSVG from "../images/logo.svg"
 const Layout = ({ children }) => (
 
   <StaticQuery
@@ -32,13 +33,14 @@ const Layout = ({ children }) => (
         <Header/>
 
         <div className="container" id="content" >
-          <br></br>
-          
-          <h1>{data.site.siteMetadata.title}</h1>
+        <img alt = "Aneesh Dev Blog" style={{width: "100%",  marginTop: "50px"}}src={yourSVG}/>
+
+          {/* <h1>{data.site.siteMetadata.title}</h1> */}
+          {/* <Brand/> */}
           <h4 align="center">Java · AWS · Spring</h4>
           <Row>
             <Col md="8">{children}</Col>
-            <Col md="4"><Sidebar></Sidebar></Col>
+            <Col md="4"><Sidebar/></Col>
           </Row>
         </div>
         <Footer />

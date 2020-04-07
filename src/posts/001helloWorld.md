@@ -3,7 +3,7 @@ title: 'Hello World'
 date: 2020-04-06 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/01London.png
-subtitle: 'My first blog post! The journey so far and the not so distant future...'
+subtitle: 'My first blog post!'
 time: '3'
 tags: 
 - Personal

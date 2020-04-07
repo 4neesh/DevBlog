@@ -14,11 +14,10 @@ const Sidebar = () => (
                 <div className="container" id="content">
                     <Card>
                         <CardTitle className="text-center text-uppercase">
-                            <br></br>
-                            <h5>Browse by Tags</h5>
-                    </CardTitle>
+                            <h5><strong>View Blogs by Tag</strong></h5>
+                        </CardTitle>
                         <CardBody>
-                              {/* {data.allMarkdownRemark.edges.map(({node}) => (
+                            {/* {data.allMarkdownRemark.edges.map(({node}) => (
 
                                     <li key={node.fields.postTagsAll} style={{ marginBottom: '10px' }}>
                                         <Button className="text-uppercase" color="primary" href={`/tag/${slugify(node.fields.postTagsAll)}`}>
@@ -39,29 +38,27 @@ const Sidebar = () => (
 
                             </ul> */}
                             <ul>
-                            <li style={{ marginBottom: '10px' }}>
+                                <li>
                                     <Button className="text-uppercase" color="primary" href={`/tag/design`}>
                                         Design ~ <Badge color="light" >{` 2`}</Badge></Button>
                                 </li>
-                                <li style={{ marginBottom: '10px' }}>
+                                <li>
                                     <Button className="text-uppercase" color="primary" href={`/tag/algorithms`}>
                                         Algorithms ~ <Badge color="light" >{` 1`}</Badge></Button>
                                 </li>
-                                <li style={{ marginBottom: '10px' }}>
+                                <li >
                                     <Button className="text-uppercase" color="primary" href={`/tag/collections`}>
                                         Collections ~ <Badge color="light" >{` 1`}</Badge></Button>
                                 </li>
-                                <li style={{ marginBottom: '10px' }}>
+                                <li >
                                     <Button className="text-uppercase" color="primary" href={`/tag/java`}>
                                         Java ~ <Badge color="light" >{` 1`}</Badge></Button>
                                 </li>
-                               
-                                
-                                <li style={{ marginBottom: '10px' }}>
+                                <li >
                                     <Button className="text-uppercase" color="primary" href={`/tag/personal`}>
                                         Personal ~ <Badge color="light" >{` 1`}</Badge></Button>
                                 </li>
-                                
+
                             </ul>
 
                         </CardBody>

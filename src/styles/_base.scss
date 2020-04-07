@@ -4,18 +4,19 @@
 body {
   background-color: $light-gray;
   font-family: $site-font;
-
 }
 a {
   color: #45156c;
   &:hover {
-    color: purple;
+    color: blue;
     text-decoration: none;
   }
 }
 
 h1 {
-  margin-bottom: 20px;
+  padding-bottom: 30px;
+  padding-top:30px;
+  margin-top:30px;
   text-align: center;
   color: #45156c;
 }
@@ -31,7 +32,17 @@ h1 {
     color: #45156c;
   }
 }
+.nav-item{
+  padding-right: 15px;
+}
+
+  
 ul {
   list-style: none;
   padding: 0;
+  margin-bottom: 10;
 }
+li{
+  margin-bottom: 10;
+}
+
