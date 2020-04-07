@@ -19,40 +19,50 @@ const AboutPage = () => (
           <Row>
             <Col md="6">
               <Image/>
+              <h5 style={{marginTop:"10px"}}>Technology Stack</h5>
+              <Row>
+                <Col md="4">
+                <h6><u>Back-end</u></h6>
+              Java<br></br>
+              Hibernate<br></br>
+              Spring<br></br>
+              Node.js<br></br>
+              GraphQL<br></br>
+              MySQL<br></br>
+              VBA<br></br>
+
+                </Col>
+                <Col md="4">
+                <h6><u>Front-end</u></h6>
+              HTML5<br></br>
+              CSS3<br></br>
+              D3.js<br></br>
+              React.js<br></br>
+              JavaScript<br></br>
+
+                </Col>
+                <Col md="4">
+                <h6><u>Other</u></h6>
+              Tableau<br></br>
+              Corda<br></br>
+
+                </Col>
+              </Row>
+             
+              
+              
+              
+            
+                            
             </Col>
             <Col md="6">
+
               <p></p>
               Hello!
               <p>Thank you for visiting my website. I am Aneesh Mistry, a passionate
                 software engineer from London, England. 
               </p>
-              <h5>Tech Stack</h5>
-              <p>I currently work across the following technologies:</p>
-              <h6><u>Back-end</u></h6>
-              <ul className="columns" data-columns="2"> 
-                <li style={{listStyleType:"disc"}}>Java 8</li>
-                <li style={{listStyleType:"disc"}}>Spring</li>
-                <li style={{listStyleType:"disc"}}>Node.js</li>
-                <li style={{listStyleType:"disc"}}>Hibernate</li>
-                <li style={{listStyleType:"disc"}}>GraphQL</li>
-                <li style={{listStyleType:"disc"}}>VBA</li>
-                <li style={{listStyleType:"disc"}}>MySQL</li>
-              </ul>
-              <h6><u>Front-end</u></h6>
-              <ul > 
-                <li style={{listStyleType:"disc"}}>HTML5</li>
-                <li style={{listStyleType:"disc"}}>CSS3</li>
-                <li style={{listStyleType:"disc"}}>D3.js</li>
-                <li style={{listStyleType:"disc"}}>React.js</li>
-                <li style={{listStyleType:"disc"}}>JavaScript</li>
-              </ul>
-              <h6><u>Other</u></h6>
-              <ul > 
-                <li style={{listStyleType:"disc"}}>Tableau</li>
-                <li style={{listStyleType:"disc"}}>Corda certified</li>
-              </ul>
-
-              
+             
               </Col>
           </Row>
 
