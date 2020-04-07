@@ -16,7 +16,7 @@ const Post = ({slug, date,  time, fluid, tags,  subtitle }) => (
             <CardSubtitle>
                 <span >{date}</span> 
                 <span className="float-right"><strong>
-                    <i class="far fa-clock"></i>
+                    <i className="far fa-clock"></i>
                      {' '}{' '}{time} mins</strong></span>
             </CardSubtitle>
             <CardText>{subtitle}</CardText>

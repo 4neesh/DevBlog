@@ -19,7 +19,23 @@ const AboutPage = () => (
           <Row>
             <Col md="6">
               <Image/>
-              <h5 style={{marginTop:"10px"}}>Technology Stack</h5>
+              
+              <p></p>
+              Hello!
+              <p>Thank you for visiting my website. I am Aneesh Mistry, a passionate
+                software engineer from London, England. 
+              </p>
+              
+              
+            
+                            
+            </Col>
+            <Col md="6">
+              
+
+
+
+            <h5 style={{marginTop:"10px"}}>Technology Stack</h5>
               <Row>
                 <Col md="4">
                 <h6><u>Back-end</u></h6>
@@ -42,26 +58,15 @@ const AboutPage = () => (
 
                 </Col>
                 <Col md="4">
-                <h6><u>Other</u></h6>
+                <h6><u>Services</u></h6>
               Tableau<br></br>
               Corda<br></br>
-
+              AWS<br></br>
+              
                 </Col>
               </Row>
              
-              
-              
-              
-            
-                            
-            </Col>
-            <Col md="6">
-
-              <p></p>
-              Hello!
-              <p>Thank you for visiting my website. I am Aneesh Mistry, a passionate
-                software engineer from London, England. 
-              </p>
+             
              
               </Col>
           </Row>

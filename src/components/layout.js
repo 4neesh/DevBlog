@@ -7,7 +7,7 @@ import Footer from "./footer"
 import { Row, Col } from "reactstrap"
 import Sidebar from "./Sidebar"
 // import Brand from "./brand"
-import yourSVG from "../images/logo.svg"
+import yourSVG from "../images/logo2.png"
 const Layout = ({ children }) => (
 
   <StaticQuery

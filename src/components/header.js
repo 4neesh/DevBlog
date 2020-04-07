@@ -6,7 +6,7 @@ class Header extends React.Component {
   render() {
     return (
       <Navbar fixed="top" light expand="md">
-        <div className="container" navbar>
+        <div className="container">
           <NavItem>
             <a href="/" rel="noopener noreferrer">
               <i className="fas fa-home fa-2x"></i>
