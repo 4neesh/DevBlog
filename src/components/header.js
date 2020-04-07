@@ -1,7 +1,6 @@
 import PropTypes from "prop-types"
 import React from "react"
-import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from "reactstrap"
-import yourSVG from "../images/logo_icon.svg"
+import { Navbar,  Nav, NavItem, NavLink } from "reactstrap"
 
 class Header extends React.Component {
   render() {

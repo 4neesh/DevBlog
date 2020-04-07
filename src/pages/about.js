@@ -1,24 +1,24 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Card, CardBody,CardTitle,  Badge, CardSubtitle } from "reactstrap"
+import { Card, CardBody,CardTitle } from "reactstrap"
 import { Row, Col } from "reactstrap"
-import yourSVG from "../images/me.png"
-
+import Image from "../components/image"
 const AboutPage = () => (
   <Layout pageTitle="About">
     <div className="container" id="content">
       <Card>
         {/* <Img className="card-image-top" 
                     fluid={post.featuredImage.childImageSharp.fluid} /> */}
+                        <SEO title="About" />
+
 <CardTitle className="text-center text-uppercase">
                             <h5><strong>Meet Aneesh</strong></h5>
                         </CardTitle>
         <CardBody>
           <Row>
             <Col md="6">
-            <img alt = "Aneesh Dev Blog" style={{width: "100%",  marginTop: "30px"}}src={yourSVG}/>
-
+              <Image/>
             </Col>
             <Col md="6">
               <p></p>
