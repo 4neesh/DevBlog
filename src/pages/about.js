@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Card, CardBody,CardTitle,  Badge, CardSubtitle } from "reactstrap"
 import { Row, Col } from "reactstrap"
+import yourSVG from "../images/me.png"
 
 const AboutPage = () => (
   <Layout pageTitle="About">
@@ -16,12 +17,12 @@ const AboutPage = () => (
         <CardBody>
           <Row>
             <Col md="6">
-              <CardSubtitle>
-                <span className="text-info">a</span>
-              </CardSubtitle>
+            <img alt = "Aneesh Dev Blog" style={{width: "100%",  marginTop: "30px"}}src={yourSVG}/>
+
             </Col>
             <Col md="6">
-              <p>Hello!</p>             
+              <p></p>
+              Hello!
               <p>Thank you for visiting my website. I am Aneesh Mistry, a passionate
                 software engineer from London, England. 
               </p>
