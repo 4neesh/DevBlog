@@ -15,7 +15,7 @@ const IndexPage = () => (
           // console.log(data)
           return (
             <div className="container" id="content">
-                      
+ 
               {data.allMarkdownRemark.edges.map(({ node }) => (
                 <Post 
                   key={node.id}

@@ -35,9 +35,9 @@ const Layout = ({ children }) => (
         <div className="container" id="content" >
         <img alt = "Aneesh Dev Blog" style={{width: "100%",  marginTop: "30px"}}src={yourSVG}/>
 
+
           {/* <h1>{data.site.siteMetadata.title}</h1> */}
           {/* <Brand/> */}
-          <h4 align="center" style={{marginTop:"10px"}}>Java · AWS · Spring</h4>
           <Row>
             <Col md="8">{children}</Col>
             <Col md="4"><Sidebar/></Col>

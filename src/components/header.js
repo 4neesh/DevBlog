@@ -16,7 +16,7 @@ class Header extends React.Component {
 
       <Navbar fixed="top" light expand="md" >
         <div className="container" >
-          <NavbarBrand href="/"><i class="fas fa-home fa-lg"></i></NavbarBrand>
+          <NavbarBrand href="/"><i className="fas fa-home fa-md"></i></NavbarBrand>
           <div className="ml-auto" navbar>
             <Nav>
               <NavItem>
