@@ -32,7 +32,7 @@ h5{
 }
 .nav-item{
   padding-right: 25px;
-  padding-top: 10px;
+  padding-top: 13px;
 }
 
   
@@ -47,3 +47,16 @@ li{
   margin-bottom: 10;
 }
 
+
+.social-share-links {
+  ul {
+    display: inline-flex;
+    margin: 20px auto;
+
+    li {
+      margin: auto 20px;
+
+      
+    }
+  }
+}

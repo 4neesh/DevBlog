@@ -16,7 +16,7 @@ class Header extends React.Component {
 
           <div className="ml-auto">
             <Nav>
-              <NavItem>
+              <NavItem style={{paddingRight: "5px"}}>
                 <NavLink href="/about">
                   <strong>
                     <font size="+1">About</font>
