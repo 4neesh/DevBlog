@@ -15,9 +15,14 @@ class Header extends React.Component {
     return (
 
       <Navbar fixed="top" light expand="md" >
-        <div className="container" >
-          <NavbarBrand href="/"><i className="fas fa-home fa-md"></i></NavbarBrand>
-          <div className="ml-auto" navbar>
+        <div className="container" navbar>
+          <NavItem >
+            <a  href="/"
+                rel="noopener noreferrer">
+              <i className="fas fa-home fa-2x"></i>
+            </a>
+          </NavItem>
+          <div className="ml-auto" >
             <Nav>
               <NavItem>
                 <NavLink href="/about">
