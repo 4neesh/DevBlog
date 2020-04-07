@@ -6,14 +6,15 @@ body {
   font-family: $site-font;
 }
 a {
-  color: #45156c;
+  color: rgb(20,162,184);
   &:hover {
-    color: #45156c;
+    color: rgb(20,162,184);
     text-decoration: none;
   }
 }
 h5{
-  color: #45156c;
+  color: black;
+  ;
 
 }
 
@@ -25,9 +26,9 @@ h5{
 }
 .navbar-light .navbar-nav .nav-link,
 .navbar-light .navbar-brand {
-  color: #45156c;
+  color: rgb(20,162,184);
   &:hover {
-    color: #45156c;
+    color: rgb(20,162,184);
   }
 }
 .nav-item{

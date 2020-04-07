@@ -39,23 +39,23 @@ const Sidebar = () => (
                             </ul> */}
                             <ul>
                                 <li>
-                                    <Button className="text-uppercase" color="primary" href={`/tag/design`}>
+                                    <Button className="text-uppercase" color="info" href={`/tag/design`}>
                                         Design ~ <Badge color="light" >{` 2`}</Badge></Button>
                                 </li>
                                 <li>
-                                    <Button className="text-uppercase" color="primary" href={`/tag/algorithms`}>
+                                    <Button className="text-uppercase" color="info" href={`/tag/algorithms`}>
                                         Algorithms ~ <Badge color="light" >{` 1`}</Badge></Button>
                                 </li>
                                 <li >
-                                    <Button className="text-uppercase" color="primary" href={`/tag/collections`}>
+                                    <Button className="text-uppercase" color="info" href={`/tag/collections`}>
                                         Collections ~ <Badge color="light" >{` 1`}</Badge></Button>
                                 </li>
                                 <li >
-                                    <Button className="text-uppercase" color="primary" href={`/tag/java`}>
+                                    <Button className="text-uppercase" color="info" href={`/tag/java`}>
                                         Java ~ <Badge color="light" >{` 1`}</Badge></Button>
                                 </li>
                                 <li >
-                                    <Button className="text-uppercase" color="primary" href={`/tag/personal`}>
+                                    <Button className="text-uppercase" color="info" href={`/tag/personal`}>
                                         Personal ~ <Badge color="light" >{` 1`}</Badge></Button>
                                 </li>
 
