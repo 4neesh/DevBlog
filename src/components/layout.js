@@ -8,7 +8,7 @@ import { Row, Col } from "reactstrap"
 import Sidebar from "./Sidebar"
 import StickyHeader from "../components/stickyHeader"
 
-const isBrowser = typeof window !== 'undefined'
+const isBrowser = typeof window !== `undefined`
 
 const Layout = ({ children }) => (
   <StaticQuery
