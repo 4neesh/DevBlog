@@ -13,6 +13,8 @@ const IndexPage = () => (
         query={indexQuery}
         render={data => {
           // console.log(data)
+          
+console.log(window.location.href)
           return (
             <div className="container" id="content" >
  

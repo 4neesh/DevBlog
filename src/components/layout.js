@@ -20,6 +20,7 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
+
       <>
         <link
           rel="stylesheet"
@@ -40,8 +41,7 @@ const Layout = ({ children }) => (
           /> */}
         <div className="container" id="content">
 
-                  <StickyHeader/>
-
+          {window.location.href==="https://aneesh.co.uk/" ? <StickyHeader/> : null}
 
           {/* <h1>{data.site.siteMetadata.title}</h1> */}
           {/* <Brand/> */}
