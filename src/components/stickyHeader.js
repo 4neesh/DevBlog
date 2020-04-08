@@ -23,8 +23,8 @@ class stickyHeader extends React.Component {
 
   render() {
     return (
-      <div  className= "testa">
-          <h3 className="sheader">
+      <div  className= "testa" style={{textAlign:"center"}}>
+          <h3 className="sheader" >
               Hello! My name is Aneesh, I am a passionate software engineer and enjoy learning about design patterns and algorithms.
           </h3>
       </div>
