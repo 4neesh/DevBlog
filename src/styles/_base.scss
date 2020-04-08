@@ -34,6 +34,7 @@ h5{
 .nav-item{
   padding-right: 25px;
   padding-top: 13px;
+  transition: 3s;
 }
 
   
@@ -60,4 +61,61 @@ li{
       
     }
   }
+}
+.sticky-wrapper {
+  position: relative;
+  height: 3rem; /* We need to change this value */
+}
+
+.sticky .sticky-inner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+.scro{
+position: fixed;
+background-color: orange;
+}
+.aas{
+  background-color: green;
+
+}
+.test{
+background-color:rgb(20,162,184);
+ height:140px;
+ transition: 1s;
+ font-size: 60px;
+}
+.testa{
+  background-color:rgb(20,162,184);
+   height:300px;
+   transition: 1s;
+   font-size: 60px;
+   padding-top: 120px;
+   padding-left: 160px;
+   padding-right: 300px;
+   color: black;
+  }
+
+.testb{
+  height:100px;
+  transition: 1s;
+}
+.testc{
+  height:50px;
+  transition: 1s;
+}
+.bigHead{
+  font-size: 40px;
+  transition: 1s;
+
+}
+.smallHead{
+  transition: 1s;
+
+}
+.sheader{
+  color: white;
 }

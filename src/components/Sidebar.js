@@ -84,7 +84,7 @@ const Sidebar = () => (
               </ul>
             </CardBody>
           </Card>
-
+{/* 
           <Card>
             <CardTitle className="text-center text-uppercase">
               <h5>
@@ -98,7 +98,7 @@ const Sidebar = () => (
                 <li></li>
               </ul>
             </CardBody>
-          </Card>
+          </Card> */}
         </div>
       )
     }}

@@ -1,21 +1,46 @@
 import PropTypes from "prop-types"
 import React from "react"
-import { Navbar,  Nav, NavItem, NavLink } from "reactstrap"
-
+import { Navbar, Nav, NavItem, NavLink } from "reactstrap"
 class Header extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      scrolled: false,
+    }
+  }
+
+  componentDidMount() {
+    window.addEventListener("scroll", () => {
+      const isTop = window.scrollY < 100
+
+      if (isTop !== true) {
+        this.setState({ scrolled: true })
+      } else {
+        this.setState({ scrolled: false })
+      }
+    })
+  }
+
   render() {
     return (
-      <Navbar fixed="top" light expand="md">
+    
+      <Navbar
+        className={this.state.scrolled ? "testc" : "testb"}
+        fixed="top"
+        light
+        expand="md"
+      >
         <div className="container">
           <NavItem>
-            <a href="/" rel="noopener noreferrer">
-              <i className="fas fa-home fa-2x"></i>
+            <a className={this.state.scrolled ? "smallHead" : "bigHead"} href="/" rel="noopener noreferrer">
+              <strong>aneesh.co.uk</strong>
+              {/* <i className="fas fa-home fa-2x"></i> */}
             </a>
           </NavItem>
 
           <div className="ml-auto">
             <Nav>
-              <NavItem style={{paddingRight: "5px"}}>
+              <NavItem style={{ paddingRight: "5px" }}>
                 <NavLink href="/about">
                   <strong>
                     <font size="+1">About</font>
@@ -41,13 +66,7 @@ class Header extends React.Component {
                   <i className="fab fa-linkedin fa-2x" />
                 </a>
               </NavItem>
-              {/* <NavItem>
-                <a href="https://www.twitter.com/aneesh_95/"
-                  target="_blank"
-                  rel="noopener noreferrer">
-                  <i className="fab fa-twitter fa-2x" />
-                </a>
-              </NavItem> */}
+
               <NavItem>
                 <a
                   href="https://www.github.com/4neesh"
@@ -61,6 +80,7 @@ class Header extends React.Component {
           </div>
         </div>
       </Navbar>
+  
     )
   }
 }
