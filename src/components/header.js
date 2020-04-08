@@ -25,14 +25,13 @@ class Header extends React.Component {
     return (
     
       <Navbar
-        className={this.state.scrolled ? "testc" : "testb"}
         fixed="top"
         light
         expand="md"
       >
         <div className="container">
           <NavItem>
-            <a className={this.state.scrolled ? "smallHead" : "bigHead"} href="/" rel="noopener noreferrer">
+            <a  href="/" rel="noopener noreferrer">
               <strong>aneesh.co.uk</strong>
               {/* <i className="fas fa-home fa-2x"></i> */}
             </a>
