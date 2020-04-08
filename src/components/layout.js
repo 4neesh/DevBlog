@@ -8,6 +8,8 @@ import { Row, Col } from "reactstrap"
 import Sidebar from "./Sidebar"
 import StickyHeader from "../components/stickyHeader"
 
+const isBrowser = typeof window !== 'undefined'
+
 const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
@@ -41,8 +43,9 @@ const Layout = ({ children }) => (
           /> */}
         <div className="container" id="content">
 
-          {window.location.href==="https://aneesh.co.uk/" ? <StickyHeader/> : null}
-
+          
+             {isBrowser && window.location.href==="https://aneesh.co.uk/" ? <StickyHeader/> : null}
+          
           {/* <h1>{data.site.siteMetadata.title}</h1> */}
           {/* <Brand/> */}
           <Row>
