@@ -23,7 +23,6 @@ h5{
   border-bottom: 2px solid rgba(0, 0, 0, 0.4);
   line-height: 1;
   height: 45px;
-  padding-top: 10px;
 }
 .navbar-light .navbar-nav .nav-link,
 .navbar-light .navbar-brand {
@@ -33,8 +32,8 @@ h5{
   }
 }
 .nav-item{
-  padding-right: 15px;
-  // padding-top: 13px;
+  padding-right: 1px;
+margin:5px;
   transition: 3s;
 }
 
@@ -91,6 +90,8 @@ background-color:rgb(20,162,184);
 .testa{
   background-color:rgb(20,162,184);
    height:300px;
+   padding: 20px;
+
    transition: 1s;
    color: black;
    margin: 0auto;
@@ -115,6 +116,5 @@ background-color:rgb(20,162,184);
 .sheader{
   color: white;
   // margin: 0;
-  // padding: 0;
   // display: flex;
 }
