@@ -32,8 +32,8 @@ class Header extends React.Component {
         <div className="container">
           <NavItem>
             <a  href="/" rel="noopener noreferrer">
-              {/* <strong>aneesh.co.uk</strong> */}
-              <i className="fas fa-home fa-2x"></i>
+              <strong>aneesh.co.uk</strong>
+              {/* <i className="fas fa-home fa-2x"></i> */}
             </a>
           </NavItem>
 
