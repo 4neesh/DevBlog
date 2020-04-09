@@ -10,7 +10,7 @@ class stickyHeader extends React.Component {
   }
   componentDidMount() {
    
-    {window.location.href==="http://localhost:8001/" ?
+    {window.location.href==="https://aneesh.co.uk/" ?
       this.setState({showHead: true}) :
       this.setState({showHead: false})}
 
