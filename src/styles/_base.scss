@@ -91,7 +91,8 @@ background-color:rgb(20,162,184);
   background-color:rgb(20,162,184);
    height:300px;
    padding: 20px;
-
+  display:flex;
+  flex-direction: row;
    transition: 1s;
    color: black;
    margin: 0auto;
@@ -101,7 +102,8 @@ background-color:rgb(20,162,184);
 .sheader{
   color: white;
   float: left;
-  
+  margin:0;
+
 }
 .showSticky{
   height:300px;
@@ -110,4 +112,15 @@ background-color:rgb(20,162,184);
 .hideSticky{
   height:0px;
   display: none;
+}
+.stickyHeaderImage{
+  height: 50%;
+  width:50%;  
+  padding: 10px;
+}
+.stickyHeaderText{
+
+}
+.card-image-top{
+  border-radius: 10px 10px 10px 10px;
 }

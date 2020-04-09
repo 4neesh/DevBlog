@@ -61,7 +61,7 @@ const Sidebar = () => (
                     color="info"
                     href={`/tag/collections`}
                   >
-                    Collections ~ <Badge color="light">{` 1`}</Badge>
+                    Collections ~ <Badge color="light">{` 2`}</Badge>
                   </Button>
                 </li>
                 <li>
@@ -70,7 +70,7 @@ const Sidebar = () => (
                     color="info"
                     href={`/tag/java`}
                   >
-                    Java ~ <Badge color="light">{` 1`}</Badge>
+                    Java ~ <Badge color="light">{` 2`}</Badge>
                   </Button>
                 </li>
                 <li>
@@ -80,6 +80,15 @@ const Sidebar = () => (
                     href={`/tag/personal`}
                   >
                     Personal ~ <Badge color="light">{` 1`}</Badge>
+                  </Button>
+                </li>
+                <li>
+                  <Button
+                    className="text-uppercase"
+                    color="info"
+                    href={`/tag/maps`}
+                  >
+                    Maps ~ <Badge color="light">{` 1`}</Badge>
                   </Button>
                 </li>
               </ul>

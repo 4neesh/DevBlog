@@ -15,7 +15,7 @@ const Image = () => {
     }
   `)
 
-  return <Img imgStlye={{objectFit: "contain"}}fluid={data.placeholderImage.childImageSharp.fluid} />
+  return <Img imgStyle={{objectFit: "contain"}}fluid={data.placeholderImage.childImageSharp.fluid} />
 }
 
 export default Image

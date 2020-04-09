@@ -9,7 +9,7 @@ import Img from "gatsby-image"
 
 const SinglePost = ({ data, pageContext }) => {
     const post = data.markdownRemark.frontmatter
-    const basicUrl = "https://aneesh.co.uk/"
+    const basicUrl = "http://aneesh.co.uk/"
     return (
         <Layout pageTitle={post.title}>
             <div className="container" id="content" >
