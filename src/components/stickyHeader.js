@@ -27,9 +27,9 @@ class stickyHeader extends React.Component {
           </div>
 
           <div className="stickyHeaderText">
-            <h3 className="sheader" >
-              Hello! My name is Aneesh Mistry, Welcome to my developer blog that focuses on Java, AWS, and algorithms.
-            </h3>
+            <h4 className="sheader" >
+              Hi, I'm Aneesh Mistry. Welcome to my developer blog, where I write about the challenges I tackle and the technology I use.
+            </h4>
          </div>
         
         </div>

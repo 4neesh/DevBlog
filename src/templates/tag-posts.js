@@ -15,7 +15,7 @@ const tagPosts = ({ data, pageContext }) => {
 
     <Layout pageTitle={pageHeader}>
       <div className="container" id="content" >
-        <h3>{pageHeader}</h3>
+        {/* <h3>{pageHeader}</h3> */}
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <Post
             key={node.id}

@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Card, CardBody, CardTitle } from "reactstrap"
 import { Row, Col } from "reactstrap"
-import Image from "../components/image"
+
 const AboutPage = () => (
   <Layout pageTitle="About">
     <div className="container" id="content">

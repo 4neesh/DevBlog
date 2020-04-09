@@ -7,7 +7,7 @@ import Img from "gatsby-image"
 
 const Post = ({slug, date,  time, fluid, tags,  subtitle }) => (
 
-    <Card >
+    <Card className="indexCard">
         <Link to={slug}>
         <Img  className="card-image-top" fluid={fluid} />
         </Link>
@@ -32,13 +32,12 @@ const Post = ({slug, date,  time, fluid, tags,  subtitle }) => (
                 ))}
             </ul>
             <Link to={slug}
-                 className=" float-right">Read more
+                 className=" float-right"><strong>Read more</strong>
                 </Link>
         </CardBody>
 
 
     </Card>
-
 
 )
 

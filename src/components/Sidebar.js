@@ -7,7 +7,6 @@ const Sidebar = () => (
   <StaticQuery
     query={sideBarQuery}
     render={data => {
-     
       return (
         <div className="container" id="content">
           <Card>
@@ -39,16 +38,16 @@ const Sidebar = () => (
               <ul>
                 <li>
                   <Button
-                    className="text-uppercase"
+                    className="tagButton"
                     color="info"
                     href={`/tag/design`}
-                    >
-                      Design ~ <Badge color="light">{` 2`}</Badge>
+                  >
+                    Design ~ <Badge color="light">{` 2`}</Badge>
                   </Button>
                 </li>
                 <li>
                   <Button
-                    className="text-uppercase"
+                    className="tagButton"
                     color="info"
                     href={`/tag/algorithms`}
                   >
@@ -57,7 +56,7 @@ const Sidebar = () => (
                 </li>
                 <li>
                   <Button
-                    className="text-uppercase"
+                    className="tagButton"
                     color="info"
                     href={`/tag/collections`}
                   >
@@ -65,17 +64,13 @@ const Sidebar = () => (
                   </Button>
                 </li>
                 <li>
-                  <Button
-                    className="text-uppercase"
-                    color="info"
-                    href={`/tag/java`}
-                  >
+                  <Button className="tagButton" color="info" href={`/tag/java`}>
                     Java ~ <Badge color="light">{` 2`}</Badge>
                   </Button>
                 </li>
                 <li>
                   <Button
-                    className="text-uppercase"
+                    className="tagButton"
                     color="info"
                     href={`/tag/personal`}
                   >
@@ -83,18 +78,14 @@ const Sidebar = () => (
                   </Button>
                 </li>
                 <li>
-                  <Button
-                    className="text-uppercase"
-                    color="info"
-                    href={`/tag/maps`}
-                  >
+                  <Button className="tagButton" color="info" href={`/tag/maps`}>
                     Maps ~ <Badge color="light">{` 1`}</Badge>
                   </Button>
                 </li>
               </ul>
             </CardBody>
           </Card>
-{/* 
+          {/* 
           <Card>
             <CardTitle className="text-center text-uppercase">
               <h5>
