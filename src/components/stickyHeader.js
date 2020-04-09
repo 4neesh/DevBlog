@@ -1,5 +1,5 @@
 import React from "react"
-
+import Image from "./image"
 class stickyHeader extends React.Component {
   constructor() {
     super()
@@ -9,7 +9,7 @@ class stickyHeader extends React.Component {
   }
   componentDidMount() {
     
-      window.location.href === "https://aneesh.co.uk/"
+      window.location.href === "http://localhost:8001/"
         ? this.setState({ showHead: true })
         : this.setState({ showHead: false })
     
@@ -17,11 +17,16 @@ class stickyHeader extends React.Component {
 
   render() {
     return (
-      <div className={this.state.showHead ? "hell" : "heaven"}>
-        <div  className= "testa" style={{textAlign:"center"}}>
+      <div className={this.state.showHead ? "showSticky" : "hideSticky"}>
+        <div  className= "testa" >
           <h3 className="sheader" >
               Hello! My name is Aneesh, I am a passionate software engineer and enjoy learning about design patterns and algorithms.
           </h3>
+          <div style={{height: "25%",width:"25%",marginBottom:"10px", float:"right"}}>
+          <Image/>
+
+          </div>
+
       </div>
       </div>
     )

@@ -20,7 +20,6 @@ const AboutPage = () => (
         <CardBody>
           <Row>
             <Col md="7">
-              <Image />
               <p></p>
               Hello!
               <p>

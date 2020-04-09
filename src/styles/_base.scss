@@ -97,32 +97,17 @@ background-color:rgb(20,162,184);
    margin: 0auto;
   }
 
-.testb{
-  height:100px;
-  transition: 1s;
-}
-.testc{
-  height:50px;
-  transition: 1s;
-}
-.bigHead{
-  transition: 1s;
 
-}
-.smallHead{
-  transition: 1s;
-
-}
 .sheader{
   color: white;
-  // margin: 0;
-  // display: flex;
+  float: left;
+  
 }
-.hell{
+.showSticky{
   height:300px;
 
 }
-.heaven{
+.hideSticky{
   height:0px;
   display: none;
 }
