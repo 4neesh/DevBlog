@@ -112,6 +112,14 @@ background-color:rgb(20,162,184);
     padding:0;
     vertical-align: middle;
   }
+
+  @media screen and (max-width: 500px) {
+    .sheader{
+      font-size: 18px;
+      
+    }
+  }
+
   .showSticky{
     height:200px;
     border-radius: 10px 10px 10px 10px;

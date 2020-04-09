@@ -10,6 +10,14 @@
   text-transform: uppercase;
 
 }
+.tagButton:focus{
+  background-color: green;
+}
 .tagButton:active{
   background-color: green;
+
+}
+.tagButton:target{
+  background-color: green;
+
 }
