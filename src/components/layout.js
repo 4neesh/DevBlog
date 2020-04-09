@@ -6,10 +6,13 @@ import Header from "./header"
 import Footer from "./footer"
 import { Row, Col } from "reactstrap"
 import Sidebar from "./Sidebar"
-import StickyHeader from "../components/stickyHeader"
-import { Route, BrowserRouter } from "react-router-dom";
+import StickyHeader from "./stickyHeader"
+
+
+
 
 const Layout = ({ children }) => (
+
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -20,7 +23,10 @@ const Layout = ({ children }) => (
         }
       }
     `}
+
+
     render={data => (
+     
       <>
         <link
           rel="stylesheet"
@@ -30,30 +36,19 @@ const Layout = ({ children }) => (
         />
         <Header />
 
-        {/*  */}
-
         {/* //insert sticky header */}
 
-        {/* <img
-            alt="Aneesh Dev Blog"
-            style={{ width: "100%", marginTop: "30px" }}
-            src={yourSVG}
-          /> */}
         <div className="container" id="content">
-          {/* {isBrowser && window.location.href==="http://localhost:8001/" ? <StickyHeader/> : null} */}
-          <BrowserRouter><Route exact path="/" component={StickyHeader}/></BrowserRouter>
-          
-
-          {/* <Route path="/">
-            <StickyHeader />
-          </Route> */}
-
+          <StickyHeader/>
+       {/* {window.location.href==="http://localhost:8001/" ? <StickyHeader/> : null} */}
+       
+          {/* <BrowserRouter><Route exact path="/" component={StickyHeader}/></BrowserRouter> */}
+         
           {/* {location.pathname === "/" ? <StickyHeader /> : null} */}
-          {/* <h1>{data.site.siteMetadata.title}</h1> */}
-          {/* <Brand/> */}
+
           <Row>
-            <Col md="8">{children}</Col>
-            <Col md="4">
+            <Col md="7">{children}</Col>
+            <Col md="5">
               <Sidebar />
             </Col>
           </Row>

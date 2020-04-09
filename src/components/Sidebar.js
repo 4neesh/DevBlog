@@ -7,6 +7,7 @@ const Sidebar = () => (
   <StaticQuery
     query={sideBarQuery}
     render={data => {
+     
       return (
         <div className="container" id="content">
           <Card>
@@ -41,8 +42,8 @@ const Sidebar = () => (
                     className="text-uppercase"
                     color="info"
                     href={`/tag/design`}
-                  >
-                    Design ~ <Badge color="light">{` 2`}</Badge>
+                    >
+                      Design ~ <Badge color="light">{` 2`}</Badge>
                   </Button>
                 </li>
                 <li>
