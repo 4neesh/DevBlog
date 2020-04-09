@@ -24,8 +24,7 @@ const AboutPage = () => (
               <p></p>
               Hello!
               <p>
-                Thank you for visiting my website. I am Aneesh Mistry, a
-                passionate software engineer from London, England.
+                Thank you for visiting my website.
               </p>
             </Col>
             <Col md="5">

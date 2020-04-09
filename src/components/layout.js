@@ -36,15 +36,10 @@ const Layout = ({ children }) => (
         />
         <Header />
 
-        {/* //insert sticky header */}
-
         <div className="container" id="content">
+          
           <StickyHeader/>
-       {/* {window.location.href==="http://localhost:8001/" ? <StickyHeader/> : null} */}
-       
-          {/* <BrowserRouter><Route exact path="/" component={StickyHeader}/></BrowserRouter> */}
-         
-          {/* {location.pathname === "/" ? <StickyHeader /> : null} */}
+   
 
           <Row>
             <Col md="7">{children}</Col>
