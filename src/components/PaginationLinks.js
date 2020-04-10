@@ -8,7 +8,7 @@ const PaginationLinks = ({ currentPage, numberOfPages }) => {
     currentPage - 1 === 1 ? '/' : '/page/' + (currentPage - 1).toString()
   const nextPage = '/page/' + (currentPage + 1).toString()
   return (
-    <Pagination aria-label="Page navigation example">
+    <Pagination >
       {isFirst ? (
         <PaginationItem disabled>
           <PaginationLink previous href="/" />
@@ -20,11 +20,12 @@ const PaginationLinks = ({ currentPage, numberOfPages }) => {
       )}
 
       
-      {Array.from({ length: numberOfPages }, (_, i) =>
+      {Array.from({ length: 3 }, (_, i) =>
         currentPage === i + 1 ? (
           <PaginationItem active key={`page-number${i + 1}`}>
             <PaginationLink href={`/${i === 0 ? '' : 'page/' + (i + 1)}`}>
               {i + 1}
+
             </PaginationLink>
           </PaginationItem>
         ) 
