@@ -42,7 +42,7 @@ class Header extends React.Component {
               <NavItem style={{ paddingRight: "5px" }}>
                 <NavLink href="/about">
                   <strong>
-                    <font size="+1">About</font>
+                    <font>About</font>
                   </strong>
                 </NavLink>
               </NavItem>

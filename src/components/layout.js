@@ -34,6 +34,7 @@ const Layout = ({ children }) => (
           integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
           crossOrigin="anonymous"
         />
+
         <Header />
 
         <div className="container" id="content">

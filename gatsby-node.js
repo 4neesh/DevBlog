@@ -101,6 +101,7 @@ exports.createPages = async ({ actions, graphql }) => {
           skip: index * postsPerPage,
           numberOfPages: numberOfPages,
           currentPage: currentPage,
+          
         },
       })
 

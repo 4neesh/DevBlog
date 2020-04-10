@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 import Post from "../components/Post"
 import { graphql } from "gatsby"
+import PaginationLinks from "../components/PaginationLinks"
 
 const postList = props => {
 
@@ -33,6 +34,8 @@ const postList = props => {
 
         ))
         }
+
+        <PaginationLinks currentPage={currentPage} numberOfPages={numberOfPages} />
       </div>
     </Layout>
     )

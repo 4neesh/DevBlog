@@ -7,13 +7,15 @@ import AboutImage from "../components/aboutImage"
 const AboutPage = () => (
   <Layout pageTitle="About">
     <div className="container" id="content">
+      
       <Card>
         {/* <Img className="card-image-top" 
                     fluid={post.featuredImage.childImageSharp.fluid} /> */}
         <SEO title="About" />
 
         <CardTitle className="text-center">
-          <h2>Hi! I'm Aneesh</h2>
+          <h2>Hello! I'm Aneesh       
+          </h2>
         </CardTitle>
         <CardBody>
           <p>Thank you for visiting my website.</p>
@@ -34,7 +36,7 @@ const AboutPage = () => (
             in 2017. The degree included one year in industry where I obtained
             experience developing tools within the Fixed Income team at UBS
             Asset Management. My introduction to software development sparked 
-            a passion that I pursued further. In 2018 I graduated from{" "}
+            a passion that I am continuing to pursue. In 2018 I graduated from{" "}
             <a
               rel="noopener noreferrer"
               href="https://www.st-andrews.ac.uk/"

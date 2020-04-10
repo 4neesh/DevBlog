@@ -9,8 +9,8 @@ class stickyHeader extends React.Component {
   }
   componentDidMount() {
     
-      window.location.href === "https://aneesh.co.uk/" 
-      // window.location.href === "http://localhost:8001/"
+      // window.location.href === "https://aneesh.co.uk/" 
+      window.location.href === "http://localhost:8001/"
 
       ? this.setState({ showHead: true })
         : this.setState({ showHead: false })
@@ -27,7 +27,7 @@ class stickyHeader extends React.Component {
           </div>
 
           <div className="stickyHeaderText">
-              Hi, I'm Aneesh Mistry. Welcome to my developer blog, where I write about the software problems I face and the technology I use.
+              Hi, I'm Aneesh Mistry. Welcome to my developer blog where I write about the software solutions I create and the technology I use.
            
          </div>
         

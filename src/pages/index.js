@@ -3,16 +3,23 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import  {graphql, StaticQuery} from "gatsby"
 import Post from '../components/Post'
+import PaginationLinks from "../components/PaginationLinks"
 
+const IndexPage = () => {
 
-const IndexPage = () => (
+  const postsPerPage = 2;
+  let numberOfPages
+return(
   <Layout>
     <SEO title="Home" />
   
       <StaticQuery
         query={indexQuery}
         render={data => {
-          
+          numberOfPages = Math.ceil(
+            data.allMarkdownRemark.totalCount / postsPerPage
+          )
+                    
           return (
             <div className="container" id="content" >
  
@@ -30,14 +37,17 @@ const IndexPage = () => (
                   time={node.frontmatter.time}
                 />
               ))}
+              <PaginationLinks currentPage={1} numberOfPages={numberOfPages} />
+
             </div>
           )
         }}
       />
-      {}
+     
     
   </Layout>
 )
+}
 
 const indexQuery = graphql`
 query {
