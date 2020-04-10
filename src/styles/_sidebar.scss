@@ -8,16 +8,29 @@
 }
 .tagButton{
   text-transform: uppercase;
-
+  background-color: rgb(20,162,184);
 }
 .tagButton:focus{
-  background-color: green;
+  // background-color: green;
 }
 .tagButton:active{
-  background-color: green;
+  // background-color: green;
 
 }
 .tagButton:target{
-  background-color: green;
+  // background-color: green;
+
+}
+.tagButton:hover{
+  background-color: rgb(20,162,184);
+
+}
+.selectedButton{
+  background-color: blue;
+  text-transform: uppercase;
+
+}
+.selectedButton:hover{
+  background-color: blue;
 
 }

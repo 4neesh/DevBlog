@@ -2,6 +2,7 @@ import React from "react"
 import { Card, CardTitle, Badge, Button, CardBody } from "reactstrap"
 import { graphql, StaticQuery } from "gatsby"
 
+
 const Sidebar = () => (
   <StaticQuery
     query={sideBarQuery}
@@ -38,7 +39,6 @@ const Sidebar = () => (
                 <li>
                   <Button
                     className="tagButton"
-                    color="info"
                     href={`/tag/design`}
                   >
                     Design ~ <Badge color="light">{` 2`}</Badge>
@@ -47,7 +47,6 @@ const Sidebar = () => (
                 <li>
                   <Button
                     className="tagButton"
-                    color="info"
                     href={`/tag/algorithms`}
                   >
                     Algorithms ~ <Badge color="light">{` 1`}</Badge>
@@ -56,21 +55,19 @@ const Sidebar = () => (
                 <li>
                   <Button
                     className="tagButton"
-                    color="info"
                     href={`/tag/collections`}
                   >
                     Collections ~ <Badge color="light">{` 1`}</Badge>
                   </Button>
                 </li>
                 <li>
-                  <Button className="tagButton" color="info" href={`/tag/java`}>
+                  <Button className="tagButton"  href={`/tag/java`}>
                     Java ~ <Badge color="light">{` 2`}</Badge>
                   </Button>
                 </li>
                 <li>
                   <Button
                     className="tagButton"
-                    color="info"
                     href={`/tag/personal`}
                   >
                     Personal ~ <Badge color="light">{` 1`}</Badge>
@@ -79,7 +76,6 @@ const Sidebar = () => (
                 <li>
                   <Button
                     className="tagButton"
-                    color="info"
                     href={`/tag/data-structures`}
                   >
                     Data Structures ~ <Badge color="light">{` 1`}</Badge>

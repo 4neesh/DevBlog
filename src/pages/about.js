@@ -2,7 +2,6 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Card, CardBody, CardTitle } from "reactstrap"
-import { Row, Col } from "reactstrap"
 import AboutImage from "../components/aboutImage"
 
 const AboutPage = () => (
@@ -47,14 +46,14 @@ const AboutPage = () => (
           </p>
           <p>
             I currently work for Accenture as a software engineer. I have been
-            able to build upon my skills broadly, but focus specifically with
+            able to open build upon my skills, but focus specifically with
             Java and AWS. I continue to broaden my understanding of financial
             services; I am a committee member of the UKI Accenture Blockchain
             community of practice and work predominantly with financial services
             clients.
           </p>
           <p>
-            From a young age, I have spent my free time playing golf; at the height
+            Outside engineering, I play golf. Golf has been a hobby from a young age that I carry through today; at the height
             of my amateur career, I represented my respective University as well as Middlesex
             County in tournaments across the UK. I currently have a handicap of
             3.
