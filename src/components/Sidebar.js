@@ -1,7 +1,6 @@
 import React from "react"
 import { Card, CardTitle, Badge, Button, CardBody } from "reactstrap"
 import { graphql, StaticQuery } from "gatsby"
-// import { slugify } from '../util/utilityFunctions'
 
 const Sidebar = () => (
   <StaticQuery
@@ -9,7 +8,7 @@ const Sidebar = () => (
     render={data => {
       return (
         <div className="container" id="content">
-          <Card>
+          <Card className="sidebarCard">
             <CardTitle className="text-center text-uppercase">
               <h5>
                 <strong>View Blogs by Tag</strong>
@@ -60,7 +59,7 @@ const Sidebar = () => (
                     color="info"
                     href={`/tag/collections`}
                   >
-                    Collections ~ <Badge color="light">{` 2`}</Badge>
+                    Collections ~ <Badge color="light">{` 1`}</Badge>
                   </Button>
                 </li>
                 <li>
@@ -78,28 +77,18 @@ const Sidebar = () => (
                   </Button>
                 </li>
                 <li>
-                  <Button className="tagButton" color="info" href={`/tag/maps`}>
-                    Maps ~ <Badge color="light">{` 1`}</Badge>
+                  <Button
+                    className="tagButton"
+                    color="info"
+                    href={`/tag/data-structures`}
+                  >
+                    Data Structures ~ <Badge color="light">{` 1`}</Badge>
                   </Button>
                 </li>
-              </ul>
+               </ul>
             </CardBody>
           </Card>
-          {/* 
-          <Card>
-            <CardTitle className="text-center text-uppercase">
-              <h5>
-                <strong>Current learning</strong>
-              </h5>
-            </CardTitle>
-            <CardBody>
-              <ul>
-                <li>Chad Darby Spring/Hibernate Udemy Course</li>
-                <li>HackerRank </li>
-                <li></li>
-              </ul>
-            </CardBody>
-          </Card> */}
+        
         </div>
       )
     }}

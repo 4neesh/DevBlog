@@ -7,8 +7,7 @@ subtitle: 'A dive into the difference between maps and the various collection im
 time: '9'
 tags:
 - Java
-- Maps
-- Collections
+- Data Structures
 ---
 
 Coming...

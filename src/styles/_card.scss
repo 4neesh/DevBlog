@@ -1,6 +1,5 @@
 .card {
   margin-bottom: 30px;
-  box-shadow: 0 5px  15px black;
   border-radius: 10px 10px 10px 10px;
 }
 ul.post-tags {
@@ -16,5 +15,9 @@ ul.post-tags {
 }
 li{
   margin-bottom: 10px;
+}
+.indexCard{
+  box-shadow: 0 5px  15px black;
+
 }
 

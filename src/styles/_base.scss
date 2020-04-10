@@ -113,12 +113,7 @@ background-color:rgb(20,162,184);
     vertical-align: middle;
   }
 
-  @media screen and (max-width: 500px) {
-    .sheader{
-      font-size: 18px;
-      
-    }
-  }
+  
 
   .showSticky{
     height:200px;
@@ -142,4 +137,18 @@ background-color:rgb(20,162,184);
 }
 .testa .stickyHeaderImage .Image{
   max-width: 100%;
+}
+
+
+@media screen and (max-width: 426px) {
+  .sheader{
+    font-size: 18px;
+    
+  }
+}
+@media screen and (max-width: 500px) {
+  .sheader{
+    font-size: 21px;
+    
+  }
 }
