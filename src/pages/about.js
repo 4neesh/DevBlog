@@ -48,7 +48,7 @@ const AboutPage = () => (
           </p>
           <p>
             I currently work for Accenture as a software engineer. I have been
-            able to open build upon my skills, but focus specifically with
+            able to build upon my skills in many areas, but focussing specifically with
             Java and AWS. I continue to broaden my understanding of financial
             services; I am a committee member of the UKI Accenture Blockchain
             community of practice and work predominantly with financial services
