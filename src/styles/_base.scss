@@ -150,21 +150,29 @@ background-color:rgb(20,162,184);
     
   }
 }
-@media  (min-width: 450px) {
+@media  (min-width: 440px) {
 
   .stickyHeaderText{
     font-size: 18px;
     
   }
 }
-@media  (min-width: 520px) {
+@media  (min-width: 490px) {
 
   .stickyHeaderText{
     font-size: 20px;
     
   }
 }
-@media  (min-width: 780px) {
+@media  (min-width: 550px) {
+
+  .stickyHeaderText{
+    font-size: 22px;
+    
+  }
+}
+
+@media  (min-width: 770px) {
 
   .stickyHeaderText{
     font-size: 24px;
@@ -174,7 +182,14 @@ background-color:rgb(20,162,184);
 @media  (min-width: 980px) {
 
   .stickyHeaderText{
-    font-size: 28px;
+    font-size: 30px;
+    
+  }
+}
+@media  (min-width: 1210px) {
+
+  .stickyHeaderText{
+    font-size: 34px;
     
   }
 }
