@@ -11,20 +11,20 @@ const PaginationLinks = ({ currentPage, numberOfPages }) => {
   return (
     <Pagination >
       {isFirst ? (
-        <PaginationItem disabled>
-          <PaginationLink previous href="/" />
+        <PaginationItem disabled >
+          <PaginationLink  style={{color:"black"}} previous href="/" />
         </PaginationItem>
       ) : (
-        <PaginationItem>
-          <PaginationLink previous href={previousPage} />
+        <PaginationItem >
+          <PaginationLink style={{color:"black"}} previous href={previousPage} />
         </PaginationItem>
       )}
 
       
       {Array.from({ length: numberOfPages }, (_, i) =>
         currentPage === i + 1 ? (
-          <PaginationItem active key={`page-number${i + 1}`}>
-            <PaginationLink href={`/${i === 0 ? '' : 'page/' + (i + 1)}`}>
+          <PaginationItem  active key={`page-number${i + 1}`}>
+            <PaginationLink style={{backgroundColor:"rgb(20,162,184)", borderColor:"black"}} href={`/${i === 0 ? '' : 'page/' + (i + 1)}`}>
               {i + 1}
 
             </PaginationLink>
@@ -32,7 +32,7 @@ const PaginationLinks = ({ currentPage, numberOfPages }) => {
         ) 
         : (
           <PaginationItem key={`page-number${i + 1}`}>
-            <PaginationLink href={`/${i === 0 ? '' : 'page/' + (i + 1)}`}>
+            <PaginationLink style={{color:"black"}} href={`/${i === 0 ? '' : 'page/' + (i + 1)}`}>
               {i + 1}
             </PaginationLink>
           </PaginationItem>
@@ -42,11 +42,11 @@ const PaginationLinks = ({ currentPage, numberOfPages }) => {
 
       {isLast ? (
         <PaginationItem disabled>
-          <PaginationLink next href={nextPage} />
+          <PaginationLink style={{color:"black"}} next href={nextPage} />
         </PaginationItem>
       ) : (
         <PaginationItem>
-          <PaginationLink next href={nextPage} />
+          <PaginationLink style={{color:"black"}} next href={nextPage} />
         </PaginationItem>
       )}
     </Pagination>
