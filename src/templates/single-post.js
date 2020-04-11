@@ -5,6 +5,7 @@ import SEO from "../components/seo"
 import { slugify } from "../util/utilityFunctions"
 import { Card, CardBody, Badge, CardSubtitle } from 'reactstrap'
 import Img from "gatsby-image"
+import Helmet from "react-helmet"
 
 
 const SinglePost = ({ data, pageContext }) => {
@@ -14,7 +15,10 @@ const SinglePost = ({ data, pageContext }) => {
         <Layout pageTitle={post.title}>
             <div className="container" id="content" >
             <SEO title={post.title} />
-           
+           <Helmet>
+               <title>{post.title}</title>
+               <meta name={post.subtitle}/>
+           </Helmet>
             <Card>
                 <Img className="card-image-top" 
                     fluid={post.featuredImage.childImageSharp.fluid} />
@@ -101,6 +105,7 @@ export const postQuery = graphql`
             html
             frontmatter{
                 title
+                subtitle
                 author
                 date(formatString: "Do MMM YYYY")
                 tags
