@@ -4,7 +4,9 @@
 body {
   background-color: $light-gray;
   font-family: $site-font;
+  color: black;
 }
+
 a {
   color: rgb(20,162,184);
   &:hover {
