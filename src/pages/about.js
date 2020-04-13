@@ -55,10 +55,10 @@ const AboutPage = () => (
             clients.
           </p>
           <p>
-            Outside engineering, I play golf. Golf has been a hobby from a young age that I carry through today; at the height
-            of my amateur career, I represented my respective University as well as Middlesex
-            County in tournaments across the UK. I currently have a handicap of
-            3.
+            Outside engineering, I am an avid Fantasy Football manager and I also enjoy playing golf. 
+            Golf has been a hobby from a young age that I carry through today; at the height
+            of my amateur career, I represented my respective University Athletic Union as well as Middlesex
+            County in tournaments across the UK. I currently have a handicap of 3.
           </p>
           <AboutImage />
         </CardBody>
