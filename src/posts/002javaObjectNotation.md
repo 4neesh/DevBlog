@@ -14,12 +14,12 @@ tags:
 <br>
 <h4>What is Time Complexity?</h4>
 <p>
-The terms ‘Time Complexity’ and ‘Big O Notation’ are often used synonymously to describe the efficiency of an algorithm with respect to its number of input elements. Calculating the efficiency of an algorithm can be difficult to define with variables such as memory, disk, and network usage; the Big O Notation provides a classification to define the upper-bound runtime that can be expected from an algorithm CPU usage only, therefore discarding the other variables from calculation. </p>
+The terms ‘Time Complexity’ and ‘Big O Notation’ are often used synonymously to describe the efficiency of an algorithm with respect to its number of input elements. Calculating the efficiency of an algorithm can be difficult to define with variables such as memory, disk, and network usage; the Big O Notation provides a classification to define the upper-bound runtime that can be expected from an algorithm's CPU usage alone, therefore discarding the other variables from consideration. </p>
 <p>
-The Big O is part of a family of asymptotic notations, including Big Theta Θ and Big Omega Ω. The notations categorise what the upper and lower asymptotic bounds are for an algorithm. The Big O is only concerned with the approximate worst-case complexity of an algorithm, therefore the complexity of the algorithm with larger sets of data.</p>
+The Big O is part of a family of asymptotic notations, including Big Theta Θ and Big Omega Ω. The notations categorise what the upper and lower asymptotic bounds are for an algorithm. The Big O is only concerned with the approximate worst-case complexity of an algorithm, therefore the complexity of the algorithm with larger sets of data will move it's complexity closer towards the Big O.</p>
 <p>
-Big O defines the platform-independent complexity of the algorithm: how the resources required (from the steps taken) in the algorithm scale as the input elements grow. The Big O does not reflect the performance of an algorithm, which would encapsulate how much time or memory is consumed when the algorithm is executed. As larger sets of data are applied as input to an algorithm, the time complexity of the algorithm will slowly apprach its limiting
-asymptotic value. This limitation is important to understand for an algorithm that is expected to operate on large data sets. The graph below highlight 5 key classifications an algorithm can fall into:</p>
+Big O defines how the resources required (from the steps taken) in the algorithm scale as the input elements grow. The Big O does not reflect the performance of an algorithm, which otherwise would capture how much time or memory is consumed when the algorithm is executed. As larger sets of data are input to an algorithm, the time complexity of the algorithm will slowly approach its limiting asymptotic value. 
+The graph below highlights 5 classifications an algorithm can fall into:</p>
 
 
 ![Graph image](../../src/images/002Graph.png)
@@ -94,8 +94,10 @@ Working from the least-efficient classifications of Exponential growth, back to 
 &#8226; Constant time: &#10004;
 </p>
 <p>
-As we can see from the above checklist, the algorithm satisfies the Linear time complexity first, due to the for-loop. Therefore the algorithm has a Big O Notation of: O(n).
+As we can see from the above checklist, the algorithm satisfies the Linear time complexity first, due to the for-loop. Therefore the algorithm has a Big O Notation of: O(n).<br>
+With an understanding of what The Big O notation is, and how we can calculate it for our algorithms, it will allow us to better understand the potential cost of our algorithm to CPU usage as datasets become larger.
+By practicing efficient design in algorithms, you will also begin to explore and utilise the various data structures available within Java and to understand their benefits and costs with a different perspective. 
 </p>
 <br>
 <small style="float: right;" >Picture: Cocora Valley, Salento. </small><br>
-<a target="_blank" href="https://unsplash.com/@shawn_appel"><small style="float: right;" >Image by: Shawn Appel</small></a>
+<a target="_blank" href="https://unsplash.com/@shawn_appel"><small style="float: right;" >Image by: Shawn Appel</small></a><br>
