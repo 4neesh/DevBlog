@@ -2,7 +2,6 @@ import React from "react"
 import { Link } from "gatsby"
 import { Card, CardText, CardSubtitle, CardBody, Badge } from 'reactstrap'
 import { slugify } from "../util/utilityFunctions"
-
 import Img from "gatsby-image"
 
 const Post = ({slug, date,  time, fluid, tags,  subtitle }) => (
