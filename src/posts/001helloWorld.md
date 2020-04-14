@@ -23,5 +23,5 @@ My expectations for this blog are that it will surround my current preferred sta
 Enjoy!
 </p>
 <br>
-<small style="float: right;" >Picture: London Bridge, England. </small><br>
-<a target="_blank" href="https://unsplash.com/@ashkya"><small style="float: right;" >Image by: Robert Tudor</small></a>
+<small style="float: right;" >Picture: London Bridge, England by <a target="_blank" href="https://unsplash.com/@ashkya">Robert Tudor</small></a><br>
+
