@@ -39,26 +39,26 @@ We are able to identify the Big O classification of each operation with the help
 Below are two examples of algorithms that capture a classifcation themselves from a single operation:<br>
 
 <span style="background-color: rgb(0,176,80)">Constant O(1)</span> translates to ‘Order of 1’. The resources required to complete the operation will not change as the input size grows. The below example illustrates an O(1) operation:<br>
+</p>
 
-<script src=https://gist.github.com/4neesh/a2eb40bfa3bf0cc139a440e123ca4614.js></script>
-
-```java
+```java{numberLines: true}
     public void algorithm(List<Integer> values){
     System.out.println(values.get(0));
     }
 ```
 
-<br>
+<p>
 <span style="background-color: #FFFF00">Linear complexity O(n)</span>, defines a linear growth of algorithm complexity in-line with the growth of elements. The below code snippet illustrates an operation of O(n)<br>
+</p>
 
-```java
+```java{numberLines: true}
     public void algorithm(int n){
     for (int i = 0; i<n; i++){
         System.out.println("got the value: " + i);
     }
 }
+
 ```
-</p>
 <p>
 The remaining classifications follow the linear complexity pattern, where the resources required will inflate at the respective growth of n. For (n Log (n)), this would mean as the input elements increase, the resources required would approximately increase at the rate of (n log (n)), and so on.
 </p>
@@ -68,7 +68,7 @@ The remaining classifications follow the linear complexity pattern, where the re
 We will use the below example to calculate the Time Complexity of an algorithm:<br>
 </p>
 
-```java
+```java{numberLines: true}
 public void calculateMaxValue(List<Integer> values){
     int max = 0;
     for(int i=0; i< values.size(); i++){
@@ -76,8 +76,9 @@ public void calculateMaxValue(List<Integer> values){
             max = values.get(i);
         }
     }
-    System.out.println("The largest value in the list is: " + max);
+    System.out.println("Max Value is: " + max);
 }
+
 ```
 <p>
 Line 2 has a time complexity of O(1). When we initialise a variable, it is not influenced by the size of 'values' as the input.<br>
@@ -108,5 +109,5 @@ The Big O notation enables us to better understand the potential CPU consumption
 By acknowledging the Big O when we design algorithms, we will begin to understand and utilise the efficiencies available to us from various data structures to create CPU-optimized algorithms. 
 </p>
 <br>
-<small style="float: right;" >Picture: Cocora Valley, Salento by <a style="float: right;" target="_blank" href="https://unsplash.com/@shawn_appel">Shawn Appel</a></small><br>
+<small style="float: right;" >Picture: Cocora Valley, Salento by <a style="float: right;" target="_blank" href="https://unsplash.com/@shawn_appel"> Shawn Appel</a></small><br>
 
