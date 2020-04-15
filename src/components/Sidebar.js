@@ -2,7 +2,6 @@ import React from "react"
 import { Card, CardTitle, Badge, Button, CardBody } from "reactstrap"
 import { graphql, StaticQuery } from "gatsby"
 
-
 const Sidebar = () => (
   <StaticQuery
     query={sideBarQuery}
@@ -37,54 +36,33 @@ const Sidebar = () => (
                             </ul> */}
               <ul>
                 <li>
-                  <Button
-                    className="tagButton"
-                    href={`/tag/design`}
-                  >
-                    Design ~ <Badge color="light">{` 2`}</Badge>
-                  </Button>
-                </li>
-                <li>
-                  <Button
-                    className="tagButton"
-                    href={`/tag/algorithms`}
-                  >
+                  <Button className="tagButton" href={`/tag/algorithms`}>
                     Algorithms ~ <Badge color="light">{` 1`}</Badge>
                   </Button>
                 </li>
                 <li>
-                  <Button
-                    className="tagButton"
-                    href={`/tag/collections`}
-                  >
-                    Collections ~ <Badge color="light">{` 1`}</Badge>
-                  </Button>
-                </li>
-                <li>
-                  <Button className="tagButton"  href={`/tag/java`}>
+                  <Button className="tagButton" href={`/tag/java`}>
                     Java ~ <Badge color="light">{` 2`}</Badge>
                   </Button>
                 </li>
                 <li>
-                  <Button
-                    className="tagButton"
-                    href={`/tag/personal`}
-                  >
+                  <Button className="tagButton" href={`/tag/personal`}>
                     Personal ~ <Badge color="light">{` 1`}</Badge>
                   </Button>
                 </li>
                 <li>
-                  <Button
-                    className="tagButton"
-                    href={`/tag/data-structures`}
-                  >
+                  <Button className="tagButton" href={`/tag/data-structures`}>
                     Data Structures ~ <Badge color="light">{` 1`}</Badge>
                   </Button>
                 </li>
-               </ul>
+                <li>
+                  <Button className="tagButton" href={`/tag/spring`}>
+                    Spring ~ <Badge color="light">{` 1`}</Badge>
+                  </Button>
+                </li>
+              </ul>
             </CardBody>
           </Card>
-        
         </div>
       )
     }}

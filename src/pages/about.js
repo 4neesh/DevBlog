@@ -60,6 +60,7 @@ const AboutPage = () => (
             of my amateur career, I represented my respective University Athletic Union as well as Middlesex
             County in tournaments across the UK. I currently have a handicap of 3.
           </p>
+                
           <AboutImage />
         </CardBody>
       </Card>
