@@ -109,5 +109,5 @@ The Big O notation enables us to better understand the potential CPU consumption
 By acknowledging the Big O when we design algorithms, we will begin to understand and utilise the efficiencies available to us from various data structures to create CPU-optimized algorithms. 
 </p>
 <br>
-<small style="float: right;" >Picture: Cocora Valley, Salento by <a style="float: right;" target="_blank" href="https://unsplash.com/@shawn_appel"> Shawn Appel</a></small><br>
+<small style="float: right;" >Picture: Cocora Valley, Salento by <a target="_blank" href="https://unsplash.com/@shawn_appel">Shawn Appel</small></a><br>
 
