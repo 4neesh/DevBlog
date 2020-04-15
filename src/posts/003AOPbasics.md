@@ -11,9 +11,12 @@ tags:
 ---
 
 <strong>Key Takeaways</strong>
-&#8226; AOP is useful for separating cross-cutting concerns
-&#8226; PointCut Expressions enable fine-grained AOP implementations
-&#8226; Spring AOP incorporates light-weight AspectJ AOP classes and methods
+&#8226; AOP is useful for separating cross-cutting concerns<br>
+&#8226; PointCut Expressions enable fine-grained AOP implementations<br>
+&#8226; Spring AOP incorporates light-weight AspectJ AOP classes and methods<br>
+
+<br>
+<h4>What is time complexity?</h4>
 
 
 Aspect-orientated programming provides a tool we can implement in our applications to provide modular separation of cross-cutting concerns. Cross-cutting concerns depend upon core elements of a system, but do not fit appropriately into design. For example, you may consider logging within your application. It wouldn’t be long before you realise the logging of methods being called, or results being returned can quickly clutter your source code thus impeding the reading experience. Other uses for AOP may be for exception logging or audit trails. Spring AOP provides a lightweight AOP implementation that uses AspectJ annotations and classes, it is best practice to use AOP for cheap operations and short functions to run.<br>

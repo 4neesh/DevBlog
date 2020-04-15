@@ -12,9 +12,9 @@ tags:
 ---
 
 <strong>Key Takeaways</strong>
-&#8226; Time complexity expresses the efficiency of an algorithm. The Big O is one such measure
-&#8226; The Big O Notation classifies the type of growth an algorithm implies to CPU has as input elements increase
-&#8226; The time complexity of an algorithm is only as efficient as it’s least efficient operation
+&#8226; Time complexity expresses the efficiency of an algorithm. The Big O is one such measure<br>
+&#8226; The Big O Notation classifies the type of growth an algorithm implies to CPU has as input elements increase<br>
+&#8226; The time complexity of an algorithm is only as efficient as it’s least efficient operation<br>
 
 
 <br>
@@ -92,6 +92,7 @@ public void calculateMaxValue(List<Integer> values){
 Line 2 is used to initialise a variable. As this line is not influenced by the size of 'values' as the input, line 2 has a Big O of O(1). <br>
 From lines 3 to 7, the function will loop through each member of the values and identify if it is the maximum value of the List. If the List values = {1,2,3,6,3}, the number of elements, n, will be 5. <br>
 The code block will run a total of 5 times in order to validate that the largest value is found within the list. It will run for int i = 0,1,2,3, and 4 as values.size() = 5. A total of 5 operations for an elements size of 5 means the code block has a Big O of O(n).<br>
+From lines 3 to 7, if List values = {1,2,3}, then values.size() will equal 3, and the number of operations ran will also be 3. Therefore supporting the linear time classification.
 Line 8 is used to print the result of the algorithm. This line is not influenced by the number of input values, therefore it is constant time and has a Big O of O(1).
 </p>
 <p>
