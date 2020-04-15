@@ -135,10 +135,9 @@ background-color:rgb(20,162,184);
   }
   
   .gatsby-highlight pre[class*="language-"] {
-    // background-color: transparent;
     margin: 0;
     padding: 0;
-    overflow: initial;
+    overflow: auto;
     float: left; /* 1 */
     min-width: 100%; /* 2 */
   }

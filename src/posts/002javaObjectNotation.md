@@ -42,9 +42,9 @@ Below are two examples of algorithms that capture a classifcation themselves fro
 </p>
 
 ```java{numberLines: true}
-    public void algorithm(List<Integer> values){
+public void algorithm(List<Integer> values){
     System.out.println(values.get(0));
-    }
+}
 ```
 
 <p>
@@ -52,7 +52,7 @@ Below are two examples of algorithms that capture a classifcation themselves fro
 </p>
 
 ```java{numberLines: true}
-    public void algorithm(int n){
+public void algorithm(int n){
     for (int i = 0; i<n; i++){
         System.out.println("got the value: " + i);
     }
