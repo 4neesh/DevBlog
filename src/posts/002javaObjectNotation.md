@@ -10,8 +10,8 @@ tags:
 - Algorithms
 - Data Structures
 ---
-
-<strong>Key Takeaways</strong>
+<br>
+<strong>Key Takeaways</strong><br>
 &#8226; Time complexity expresses the efficiency of an algorithm. The Big O is one such measure<br>
 &#8226; The Big O Notation classifies the type of growth an algorithm implies to CPU has as input elements increase<br>
 &#8226; The time complexity of an algorithm is only as efficient as it’s least efficient operation<br>
@@ -20,12 +20,15 @@ tags:
 <br>
 <h4>What is time complexity?</h4>
 <p>
-The term ‘time complexity’ is used to describe the efficiency of an algorithm with respect to its number of input elements. Defining the efficiency of an algorithm can be difficult while accounting for variables such as memory, disk, and network usage. The Big O Notation is used to identify time complexity through a classification to define the upper-bound runtime; the Big O is expressed for an algorithm's CPU usage alone, therefore discarding the other variables from consideration. </p>
+The term ‘time complexity’ is used to describe the efficiency of an algorithm with respect to its number of input elements. Defining the efficiency of an algorithm can be difficult while accounting for variables such as memory, disk, and network usage. The Big O Notation is used to classify time complexity for the upper-bound runtime; the Big O is expressed for an algorithm's CPU usage alone, therefore discarding the other variables from consideration.
+</p>
 <p>
-The Big O is part of a family of asymptotic notations which, include Big Theta Θ and Big Omega Ω. The notations define the upper and lower asymptotic bounds for an algorithm. The Big O is only concerned with the approximate worst-case complexity of an algorithm; in other words, the guaranteed time in which an algorithm will complete.</p>
+The Big O is part of a family of asymptotic notations which, include Big Theta Θ and Big Omega Ω. The notations define the upper and lower asymptotic bounds for an algorithm. The Big O is only concerned with the approximate worst-case complexity of an algorithm; in other words, the guaranteed time in which an algorithm will complete.
+</p>
 <p>
 Big O defines how the resources required (from the steps taken) in the algorithm scale up as the input elements grow. The Big O does not reflect the performance of an algorithm. The performance of an algorithm would capture how much time or memory is consumed when the algorithm is executed.
-The graph below illustrates the 5 classifications an algorithm can have:</p>
+The graph below illustrates the 5 classifications an algorithm can have:
+</p>
 
 
 ![Big O categorization](../../src/images/002Graph.png)
@@ -69,7 +72,7 @@ public void algorithm(int n){
 The remaining classifications follow the linear time pattern, where the resources required will increase at the respective growth of n. For (n log (n)), this would mean as the input elements grow, the resources required would approximately increase at the rate of (n log (n)), and so on.
 </p>
 <br>
-<h4>Calculating the Big O of an algorithm</h4>
+<h4>How do we calculate the Big O of an algorithm?</h4>
 <p>
 As algorithms will usually consist of multiple operations, we will use the example below to understand how we consider multiple operations into a Big O calculation.<br>
 </p>
@@ -89,10 +92,10 @@ public void calculateMaxValue(List<Integer> values){
 
 
 <p>
-Line 2 is used to initialise a variable. As this line is not influenced by the size of 'values' as the input, line 2 has a Big O of O(1). <br>
-From lines 3 to 7, the function will loop through each member of the values and identify if it is the maximum value of the List. If the List values = {1,2,3,6,3}, the number of elements, n, will be 5. <br>
-The code block will run a total of 5 times in order to validate that the largest value is found within the list. It will run for int i = 0,1,2,3, and 4 as values.size() = 5. A total of 5 operations for an elements size of 5 means the code block has a Big O of O(n).<br>
-From lines 3 to 7, if List values = {1,2,3}, then values.size() will equal 3, and the number of operations ran will also be 3. Therefore supporting the linear time classification.
+Line 2 is used to initialise a variable. As this line is not influenced by the size of <code class="language-java">values</code> as the input, line 2 has a Big O of O(1). <br>
+From lines 3 to 7, the function will loop through each member of the <code class="language-java">values</code> and identify if it is the maximum value of the List. If <code class="language-java">values</code> = {1,2,3,6,3}, the number of elements, n, will be 5. <br>
+The code block will run a total of 5 times in order to validate that the largest value is found within the list. It will run for int i = 0,1,2,3, and 4 as <code class="language-java">values.size()</code> = 5. A total of 5 operations for an elements size of 5 means the code block has a Big O of O(n).<br>
+From lines 3 to 7, if <code class="language-java">values</code> = {1,2,3}, then <code class="language-java">values.size()</code> will equal 3, and the number of operations ran will also be 3. Therefore supporting the linear time classification.
 Line 8 is used to print the result of the algorithm. This line is not influenced by the number of input values, therefore it is constant time and has a Big O of O(1).
 </p>
 <p>
@@ -103,7 +106,7 @@ As we understand that it is only the type of growth we will consider, we can rem
 As a result, 2 O(1) + O(n) is reduced to: O(1) + O(n).<br>
 <p>
 With multiple operations within an algorithm, we are able to obtain the Big O of an algorithm by releasing the non-dominant terms.<br>
-Working from the least-efficient classifications of Exponential growth, back to Constant growth, we can identify the category the algorithm belongs as soon as any of its operations satisfies a classification.<br><br>
+Working from the least-efficient classifications of Exponential growth, back to constant growth, we can identify the category the algorithm belongs as soon as any of its operations satisfies a classification.<br><br>
 &#8226; Exponential/Polynomial time: &#10008;<br>
 &#8226; N logarithmic time: &#10008;<br>
 &#8226; Linear time: &#10003;<br>
@@ -111,7 +114,7 @@ Working from the least-efficient classifications of Exponential growth, back to 
 &#8226; Constant time: &#10003;
 </p>
 <p>
-As we can see from the above checklist, the algorithm satisfies the Linear time complexity first (due to the for-loop). It later satisfies the constant time, however this is discounted as it is not first satisfied classification. As a result, the algorithm has a Big O Notation of: O(n).<br>
+We can see from the above checklist, the algorithm satisfies the linear time complexity first (due to the for-loop). It later satisfies constant time, however this is discounted as it is not first satisfied classification. As a result, the algorithm has a Big O Notation of: O(n).<br>
 </p>
 <p>
 The Big O notation enables us to better understand how the individual operations within an algrithm can contribute to its upper-bound CPU consumption.<br>
