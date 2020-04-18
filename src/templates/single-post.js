@@ -6,13 +6,13 @@ import { slugify } from "../util/utilityFunctions"
 import { Card, CardBody, Badge, CardSubtitle } from 'reactstrap'
 import Img from "gatsby-image"
 import Helmet from "react-helmet"
-
+import LayoutPost from '../components/layoutPost'
 
 const SinglePost = ({ data, pageContext }) => {
     const post = data.markdownRemark.frontmatter
     const basicUrl = "http://aneesh.co.uk/"
     return (
-        <Layout pageTitle={post.title}>
+        <LayoutPost  pageTitle={post.title}>
             <div className="container" id="content" >
             <SEO title={post.title} />
            <Helmet>
@@ -41,6 +41,13 @@ const SinglePost = ({ data, pageContext }) => {
                     <br></br>
                 </CardBody>
             </Card>
+
+
+
+
+
+
+
             <h3 className="text-center">Share this post</h3>
             <div className="text-center social-share-links">
                 <ul>
@@ -80,7 +87,7 @@ const SinglePost = ({ data, pageContext }) => {
 
             </div >
             </div>
-        </Layout >
+        </LayoutPost >
     )
 
 }
