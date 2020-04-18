@@ -60,6 +60,11 @@ const Sidebar = () => (
                     Spring ~ <Badge color="light">{` 1`}</Badge>
                   </Button>
                 </li>
+                <li>
+                  <Button className="tagButton" href={`/tag/maven`}>
+                    Maven ~ <Badge color="light">{` 1`}</Badge>
+                  </Button>
+                </li>
               </ul>
             </CardBody>
           </Card>

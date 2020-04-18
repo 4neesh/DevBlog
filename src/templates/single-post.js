@@ -74,20 +74,7 @@ const SinglePost = ({ data, pageContext }) => {
                         className="linkedin" target="_blank" rel="noopener noreferrer">
                         <i className="fab fa-linkedin fa-2x" />
                     </a></li>
-                    <li>
-                        <a
-                            href={
-                                'https://plus.google.com/share?url=' +
-                                basicUrl +
-                                pageContext.slug
-                            }
-                            className="google"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <i className="fab fa-google fa-2x" />
-                        </a>
-                    </li>
+                  
                 </ul>
 
 
