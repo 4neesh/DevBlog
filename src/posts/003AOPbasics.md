@@ -12,14 +12,16 @@ tags:
 ---
 <br>
 <strong>Key Takeaways</strong><br>
-&#8226; AOP provides modular implementations for separating cross-cutting concerns<br>
+&#8226; AOP enables us to separate cross-cutting concerns from within our application<br>
 &#8226; Pointcut expressions enable fine-grained AOP implementations<br>
 &#8226; Spring AOP makes use of light-weight AspectJ AOP classes and methods<br>
 
 <br>
 <h4>What is AOP?</h4>
 <p>
-Aspect-orientated programming provides a tool we can implement in our applications to provide modular separation of cross-cutting concerns. Cross-cutting concerns depend upon core elements of a system, but do not fit appropriately into design.<br> For example, you may consider logging within your application. Logging can be a great way to debug and record the progress of an application, but if you need to apply it to multiple methods and classes, it wouldn’t be long before you realise clutter being created in your source code thus impeding the reading experience. <br>Other uses for AOP may be for security plug-ins or audit trails. Spring AOP provides a lightweight AOP implementation that uses AspectJ annotations and classes, it is best practice to use AOP for cheap operations and short functions to run.<br>
+AOP enables us to apply additional functionality to our application to seperate cross-cutting concerns without updating the business logic source code.<br>
+A cross cutting concern, for example, may include security, logging, or analytics.<br>
+Spring provides a lightweight AOP implementation that uses AspectJ annotations and classes; it is best practice to use AOP for cheap operations and short functions to implement as additional functionality to our source code.<br>
 </p>
 <p>
 AOP introduces many keywords with its implementation that can quickly become confusing.<br>
@@ -34,10 +36,10 @@ public class FootballGame {
 }
 ```
 <p>
-The method 'playGame' is known as the <strong>Joinpoint</strong>. The Joinpoint is an exact point within the execution of a program and can be defined upon the thread. An example of a Joinpoint can be calling a constructor or method, or throwing an exception.<br>
-We are able to define different Joinpoints within our application by using <strong>Pointcut expressions</strong>. A Pointcut expression is a predicate that can match different Joinpoints. We define Pointcut expressions to pin-point certain Joinpoints within the application that we would like to apply our cross-cutting concerns to. If we defined a Pointcut expression for the above example, it would define the package, classname and method signature exactly.<br> In AOP, <strong>Advice</strong> is the action that is taken when a Pointcut expression is satisfied. The Advice is the method that is called, which for example can be logging, calling a security concern, or other business logic. Both the Pointcut expressions and the Advice are defined together within an <strong>Aspect</strong> class. The Aspect class is a handy way Spring can identify if, and where, to find possible AOP implementations to be made before processing a Joinpint. <br>You may be wondering when, in relation to the Joinpoint execution, that the Advice method is called. Advice methods contain 5 different types that define this exactly.
+The method <code class="language-java">playGame()</code> is known as the <strong>Joinpoint</strong>. The Joinpoint is an exact point within the execution of a program and can be defined upon the thread. An example of a Joinpoint can be calling a constructor or method, or throwing an exception.<br>
+We are able to define different Joinpoints within our application by using <strong>Pointcut expressions</strong>. A Pointcut expression is a predicate that can match different Joinpoints. We define Pointcut expressions to pin-point certain Joinpoints within the application that we would like to apply our cross-cutting concerns to. If we defined a Pointcut expression for the above example, it would define the package, classname and method signature exactly.<br> In AOP, <strong>Advice</strong> is the action that is taken when a Pointcut expression is satisfied. Both the Pointcut expressions and the Advice are defined together within an <strong>Aspect</strong> class. The Aspect class is a handy way Spring can identify if, and where, to find possible AOP implementations to be applied in conjunction with a Joinpoint. <br>You may be wondering when, in relation to the Joinpoint execution, that the Advice method is called. Advice methods contain 5 different types that define this exactly.
 <br>
-The diagram below illustrates the 5 types of Advice that exist for our Joinpoint, which is calling the method <i>playGame()</i>:<br>
+The diagram below illustrates the 5 types of Advice that exist for our Joinpoint <code class="language-java">playGame()</code>:<br>
 </p>
 
 ![Advice in AOP](../../src/images/03Flow.png)
@@ -51,7 +53,7 @@ The diagram below illustrates the 5 types of Advice that exist for our Joinpoint
 
 <h4>Implementing AOP step by step</h4>
 <p>
-AOP requires two dependencies to our spring project, we will define them in our POM.xml file:
+AOP requires two dependencies to our Spring project, we will define them in our POM.xml file:
 </p>
 
 ```
@@ -73,11 +75,11 @@ AOP requires two dependencies to our spring project, we will define them in our 
 ```
 
 <p>
-We will be using the spring-context dependency for defining and using Spring components and aspectj for the Aspect class and Advice implementations.
+We will be using the <code>spring-context</code> dependency for defining and using Spring components and <code>aspectj</code> for the Aspect class and Advice implementations.
 </p>
 
 <p>
-We will begin by instructing the main thread to call a Joinpoint called playGame().<br>
+We will begin by instructing the main thread to call a Joinpoint called <code class="language-java">playGame()</code>.<br>
 <strong>AnnotationConfigApplicationContext</strong> is used to import the Spring Configuration class that defines the package to scan for Spring components.<br>
 The <code class="language-java">context</code> will be used to obtain a Spring bean to which it will define a new Joinpoint in the application. 
 </p>
@@ -109,13 +111,13 @@ public class SpringConfig {
 ```
 <p>
 The <strong>@Configuration</strong> annotation defines the class as a configuration class.<br>
-<strong>@EnableAspectJAutoProxy</strong> enables the configuration class to find all the classes that are Aspects.CHECK<br>
+<strong>@EnableAspectJAutoProxy</strong> enables support for handling Aspect classes.<br>
 <strong>@ComponentScan("com.aneesh.aopdemo")</strong> directs the Spring application on where to search for components.<br>
 
 </p>
 
 <p>
-The FootballGame class is very simple. It will start with a single void method that starts a football game.
+The  <code class="language-java">public class FootballGame</code> is very simple. It will begin with a single void method that prints "Game has started.".
 </p>
 
 ```java{numberLines: true}
@@ -129,12 +131,12 @@ public class FootballGame {
 }
 ```
 <p>
-The class FooballGame includeds the <strong>@Component</strong> annotation to ensure it is scanned upon by <code class="language-java">class SpringConfig</code>:
+The above class includeds the <strong>@Component</strong> annotation to ensure it is scanned upon by <code class="language-java">class SpringConfig</code>:
 </p>
 
 
 <p>
-Now that we have defined our business logic class (FootballGame) and the configuration class, we are able to create the Aspect class that will hold the Advice and Pointcut expressions:
+We will now build the Aspect class that will hold the Advice and Pointcut expressions to our business logic:
 </p>
 
 
@@ -149,7 +151,7 @@ public class footballAspect {
 ```
 
 <p>
-The <strong>@Aspect</strong> annotation directs Spring to look for Advice within this class.
+The <strong>@Aspect</strong> annotation informs Spring that there may be Advice within this class to process.
 </p>
 
 <h5>Defining Pointcut expressions</h5>
@@ -175,10 +177,10 @@ Scan all private access modifiers, void return types for only the FootballGame c
 Scan all public access modifiers, void return types for only the FootballGame class within the com.aneesh.aopdemo package with the method name "playGame" and arguments of String followed by int<br><br>
 
 <p>
-We can see from the above examples that the Pointcut expressions can be very specific across the entire application.<br>
-The granularity of Pointcut expressions enable us to explicitly define which method calls we want to be scanned.<br>
-We can use the 5 Advice types then provide further granularity to specify where in the Joinpoint we would like to implement the advice.<br>
-The below example will implement before and after advice on our playGame Joinpoint:
+The examples above illustrate how specific, or generic a Pointcut expression can be.<br>
+The granularity of Pointcut expressions enable us to explicitly define which Joinpint(s) we want to be scanned.<br>
+We can use the 5 Advice types to then provide further granularity to specify where in the Joinpoint we would like to implement the Advice.<br>
+The below example will implement before and after Advice on our <code class="language-java">playGame()</code> Joinpoint:
 </p>
 
 ```java{numberLines: true}
@@ -202,7 +204,7 @@ public class footballAspect {
 ```
 
 <p>
-The outcome follows:
+The outcome produced:
 </p>
 
 ```t
@@ -213,8 +215,8 @@ Maintain hydration after the game.
 
 <p>
 The <strong>@Around</strong>, <strong>@AfterReturning</strong>, and <strong>@AfterThrowing</strong> Advice are implemented slightly differently, introducing a few more variables.<br>
-To illustrate the annotations, we will introduce a new method, <code class="language-java">countPlayers()</code>, that returns the number of players on the pitch if it is equal to 22, otherwise will throw an Exception.<br>
-The FootballGame class has been updated (below) and the main class will now call <code class="language-java">countPlayers()</code> instead of <code class="language-java">playGame()</code>.
+To illustrate the annotations, we will introduce a new method, <code class="language-java">countPlayers()</code>, that returns the number of players on the pitch if it is equal to 22, otherwise it will throw an Exception.<br>
+<code class="language-java">class FootballGame</code> has been updated (below) and the main class will now call <code class="language-java">countPlayers()</code> instead of <code class="language-java">playGame()</code>.
 </p>
 
 ```java{numberLines: true}
@@ -251,7 +253,6 @@ public static void main(String[] args) {
 
 		FootballGame footballGame = context.getBean("footballGame", FootballGame.class);
 
-//		footballGame.playGame();
 		try {
 			System.out.println("Main method has counted players value of: " + footballGame.countPlayers());
 		}
@@ -265,7 +266,7 @@ public static void main(String[] args) {
 
 ```
 <p>
-We will create new Advice methods in the Aspect class to process the information from the new Joinpoint, both around its execution and upon returning a value or exception.
+We will create new Advice methods in the Aspect class to process the information from the new Joinpoint. We will include around the execution, and upon returning an int or Exception.
 </p>
 
 ```java{numberLines: true}
@@ -297,28 +298,28 @@ We will create new Advice methods in the Aspect class to process the information
 On line 1 we use the <strong>@Around</strong> type Advice. The Around Advice is much different to Before or After as it is intercepting the method call to the application.
 You will see on line 2 that the method returns an <code class="language-java">Object</code>.<br>
 The business logic expects the call to countPlayers to return an int. The Around Advice will intercept that method, but it now has the responsibility to retain the business logic and return an int.<br>
-This is achieved in 3 key sections of the Around Advice type: {line 4}, {line 6}, and {lines 8 & 9}.<br>
+The process of receiving, processing, and returning the int is achieved in 3 key sections of the Around Advice type: {line 4}, {line 6}, and {lines 8 & 9}.<br>
 Line 4 will be the business logic processed Before the countPlayers method is called. <br>
-Line 6 will utilise the <strong>ProceedingJoinPoint</strong> to execute the actual countPlayers method.<br>
-PJP for short, acts as the connection between the Advice and the countPlayers method. By using <code class="language-java">.proceed()</code>, we are telling the Advice to allow the method to be executed in the application.<br>
-PJP.proceed is a unique method to the @Around Advice as it sits on both sides of the Joinpoint.<br>
+Line 6 will use the <strong>ProceedingJoinPoint</strong> to execute the actual countPlayers method.<br>
+ProceedingJoinPoint acts as the connection between the Advice and the <code class="language-java">countPlayers()</code> Joinpoint. By calling <code class="language-java">.proceed()</code>, we are telling the Advice to continue with executing the Joinpoint in the application.<br>
+<code class="language-java">proceedingJoinPoint.proceed()</code> is a unique method to the @Around Advice as it sits on both sides of the Joinpoint.<br>
 By default, the <code class="language-java">.proceed()</code> method will return an Object. We have defined an Object as the result on line 6, however this can be wrapped in an Integer and returned.<br>
-On Lines 8 and 9, we process the business logic for after the method has returned and then return the int back to the application as it would have expected had the Advice not been called.
+On lines 8 and 9, we process the business logic for after the method has returned and then return the int back to the application as it would have expected had the Advice not been used.
 </p>
 <p>
-On Line 12 we use the <strong>@AfterReturning</strong> Advice to process information after countPlayers has returned an Object (int).<br>
+On Line 12 we use the <strong>@AfterReturning</strong> Advice to process information after <code class="language-java">countPlayers()</code> has returned an Object (otherwise an int).<br>
 The argument to the Advice, however, does not only consist of a Pointcut expression. We define the Pointcut to the variable "pointcut", then we also define a String called "return" to the "returning" property.<br>
-The value of "returning" is used in the Advice method. The "returning" value is obtained from the countPlayers method and passed into the Advice method which is then used with business logic.<br>
-We could use the result in the business logic and return it to the application adjusting the method signature (on line 13) and returning int, however this example will only return void.<br>
-On line 13 we can see the method will take in an int which comes directly from the countPlayers method. The business logic is processed on line 15. <br>
-The AfterReturning Advice intercepts the method response from countPlayers which sends the int back to the application by processing a small piece of business logic before returning the int to the application.<br>
-The diagram below illustrates the movement of values between the countPlayers method and the Advice, before being returned to the application:
+The value of "returning" is used in the Advice method. The "returning" value is obtained from <code class="language-java">countPlayers()</code> and passed into the Advice method which is then passed back to the main method.<br>
+We could use the result from <code class="language-java">countPlayers()</code> in the Advice and return it to the application by adjusting the method signature (on line 13) and returning int at the end of the method, however this example will only return void.<br>
+On line 13 we can see the method will take an int argument which comes directly from <code class="language-java">countPlayers()</code>. The business logic is processed on line 15. <br>
+The AfterReturning Advice intercepts the method response from <code class="language-java">countPlayers()</code> which sends the int back to the application by processing a small piece of business logic.<br>
+The diagram below illustrates the movement of Objects between the <code class="language-java">countPlayers()</code> and the Advice, before being returned to the main method:
 </p>
 
 ![AfterReturning Advice flow](../../src/images/03AfterReturning.png)
 
 <p>
-The current application does not throw an Exception, but if we were to change the playersOnPitch value in the FootballGame class, the countPlayers method would throw an Exception.<br>
+The current application does not throw an Exception, but if we were to change the <code class="language-java">playersOnPitch</code> value in the FootballGame class, <code class="language-java">countPlayers()</code> would throw an Exception.<br>
 On line 18 we have defined the Advice in a similar pattern to the AfterReturning Advice. Instead of using the "returning" parameter, we are using "throwing", and we pass the Exception into the Advice method as a Throwable on line 19.<br>
 On line 21, we simply process the message of the exception before allowing the Exception to be sent to the application.<br>
 In real business logic, we may log the Exception or transform it before sending it back to the application. <br>
@@ -334,7 +335,7 @@ Main method has counted players value of: 22
 
 ```
 <p>
-If we change the number of players so an Exception is thrown, the AfterThrowing Advice would be called to return:
+If we change the number of players so an Exception is thrown, the AfterThrowing Advice would return:
 </p>
 
 ```
@@ -351,8 +352,7 @@ The AfterThrowing Advice is acknowledged and run before the Exception is sent ba
 </p>
 <h4>Conclusion</h4>
 <p>
-Spring AOP provides simple and effective tools that enable us to implement AOP into our applications. By defining Pointcut expressions, we are able to specify exact Joinpoints that we would like to add additional processing to. We use Advice types to specify when we define processing to happen, and as a result, we are able to precisely add additional functionality to our application.<br>
-AOP provides a unique, modular, perspective to inspecting our application that can be used to a great effect.
+Spring provides simple and effective tools that enable us to implement AOP into our applications. By defining Pointcut expressions, we are able to specify exact Joinpoints that we would like to add additional processing to. We use Advice types to  define when we would like the processing to happen, and as a result, we are able to delicately add additional functionality to our application.
 </p>
 
 
