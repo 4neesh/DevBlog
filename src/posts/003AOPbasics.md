@@ -202,8 +202,6 @@ public class footballAspect {
 ```
 
 <p>
-The Before Advice will print "Make sure players warm up before the game." before the Pointcut that is satisfied is executed.<br>
-The After Advice will print "Make sure you warm down after the game." after the Pointcut that is satisfied is executed.<br>
 The outcome follows:
 </p>
 
@@ -214,8 +212,8 @@ Maintain hydration after the game.
 ```
 
 <p>
-The <strong>@Around</strong>, <strong>@AfterReturning</strong>, and <strong>@AfterThrowing</strong> Advice are implemented slightly differently with a few more complications.<br>
-For this, we will introduce a new method, countPlayers(), that returns the number of players on the pitch if it is equal to 22, otherwise will throw an Exception.<br>
+The <strong>@Around</strong>, <strong>@AfterReturning</strong>, and <strong>@AfterThrowing</strong> Advice are implemented slightly differently, introducing a few more variables.<br>
+To illustrate the annotations, we will introduce a new method, <code class="language-java">countPlayers()</code>, that returns the number of players on the pitch if it is equal to 22, otherwise will throw an Exception.<br>
 The FootballGame class has been updated (below) and the main class will now call <code class="language-java">countPlayers()</code> instead of <code class="language-java">playGame()</code>.
 </p>
 
