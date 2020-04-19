@@ -54,7 +54,7 @@ The diagram below illustrates the 5 types of Advice that exist for our Joinpoint
 AOP requires two dependencies to our spring project, we will define them in our POM.xml file:
 </p>
 
-```t
+```
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
         <dependency>
@@ -161,7 +161,7 @@ By default, the access modifier is 'Public', therefore it can be left undefined 
 For each of the other input values, you can specify custom values or leave it open with an asterisk (*). <br>
 </p>
 
-<code class="language-java">"execution(* com.aneesh.aopdemo.* .* () )"</code><br>  
+<code class="language-java">"execution(* com.aneesh.aopdemo.* .* () )"</code><br>
 Scan all public access modifiers, all return types for all classes within the com.aneesh.aopdemo package with all method names and no arguments<br><br>
 <code class="language-java">"execution(* com.aneesh.aopdemo.FootballGame .* () )"</code><br>
 Scan all public access modifiers, all return types for only the FootballGame class within the com.aneesh.aopdemo package with all method names and no arguments<br><br>
@@ -227,17 +227,42 @@ public class FootballGame {
 	}
 
 	public int countPlayers() throws Exception{
-		
+
 		if (playersOnPitch == 22){
+			System.out.println("FootballGame Class has successfully got 22 players.");
 			return playersOnPitch;
 		}
 		else{
-			throw new Exception("Incorrect number of players.");
+			System.out.println("FootballGame Class has not got 22 players and will throw Exception.");
+			throw new Exception("FootballGame class Exception: Incorrect number of players.");
 		}
 
 	}	
 
 }
+```
+
+```java{numberLines: true}
+
+public static void main(String[] args) {
+		
+		AnnotationConfigApplicationContext context
+		= new AnnotationConfigApplicationContext(SpringConfig.class);
+
+		FootballGame footballGame = context.getBean("footballGame", FootballGame.class);
+
+//		footballGame.playGame();
+		try {
+			System.out.println("Main method has counted players value of: " + footballGame.countPlayers());
+		}
+		catch (Exception e){
+			System.out.println("Main method has caught exception: " + e.getMessage());
+		}
+
+		context.close();
+		
+	}
+
 ```
 <p>
 We will create new Advice methods in the Aspect class to process the information from the new Joinpoint, both around its execution and upon returning a value or exception.
@@ -247,24 +272,24 @@ We will create new Advice methods in the Aspect class to process the information
 @Around( "execution(  int com.aneesh.aop.* .countPlayers (..))")
 	public Object aroundAspect(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
 
-		System.out.println("Count the players on the pitch...");
+		System.out.println("Around: Count the players on the pitch...");
 
 		Object result = proceedingJoinPoint.proceed();
 
-		System.out.println("Count is done.");
+		System.out.println("Around: Count is done.");
 		return result;
 	}
 
 @AfterReturning(pointcut = "execution( int com.aneesh.aop.* .countPlayers (..))", returning="result")
 	public void afterReturningAspect(int result)  {
 
-		System.out.println("After returning has the result: " + result);
+		System.out.println("AfterReturning has the result: " + result);
 	}
 
 @AfterThrowing(pointcut = "execution( int com.aneesh.aop.* .countPlayers (..))", throwing = "thrownExpression")
 	public void afterThrowingAspect(Throwable thrownExpression)  {
 
-		System.out.println("After throwing has received a message: " + thrownExpression.getMessage());
+		System.out.println("AfterThrowing has received a message: " + thrownExpression.getMessage());
 	}
 
 ```
@@ -296,15 +321,38 @@ The diagram below illustrates the movement of values between the countPlayers me
 The current application does not throw an Exception, but if we were to change the playersOnPitch value in the FootballGame class, the countPlayers method would throw an Exception.<br>
 On line 18 we have defined the Advice in a similar pattern to the AfterReturning Advice. Instead of using the "returning" parameter, we are using "throwing", and we pass the Exception into the Advice method as a Throwable on line 19.<br>
 On line 21, we simply process the message of the exception before allowing the Exception to be sent to the application.<br>
-In real business logic, we may log the Exception or transform it before sending it back to the application. 
+In real business logic, we may log the Exception or transform it before sending it back to the application. <br>
+The AfterReturning Advice will return the following:
 </p>
 
+```
+Around: Count the players on the pitch...
+FootballGame Class has successfully got 22 players.
+Around: Count is done.
+AfterReturning has the result: 22
+Main method has counted players value of: 22
 
+```
+<p>
+If we change the number of players so an Exception is thrown, the AfterThrowing Advice would be called to return:
+</p>
+
+```
+Around: Count the players on the pitch...
+FootballGame Class has not got 22 players and will throw Exception.
+AfterThrowing has received a message: FootballGame class Exception: Incorrect number of players.
+Main method has caught exception: FootballGame class Exception: Incorrect number of players.
+
+```
+
+<p>
+Note that the second Around Advice has not been called as an Object was not returned to the Advice. Instead, the thread has thrown an Exception that is caught in the main method.<br>
+The AfterThrowing Advice is acknowledged and run before the Exception is sent back to the main method.
+</p>
 <h4>Conclusion</h4>
 <p>
 Spring AOP provides simple and effective tools that enable us to implement AOP into our applications. By defining Pointcut expressions, we are able to specify exact Joinpoints that we would like to add additional processing to. We use Advice types to specify when we define processing to happen, and as a result, we are able to precisely add additional functionality to our application.<br>
 AOP provides a unique, modular, perspective to inspecting our application that can be used to a great effect.
-
 </p>
 
 
