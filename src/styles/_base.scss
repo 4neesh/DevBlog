@@ -134,16 +134,28 @@ background-color:rgb(20,162,184);
     overflow: auto;
   }
   
+
+
   .gatsby-highlight pre[class*="language-"] {
     margin: 0;
-    padding: 0;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
     overflow: auto;
-    float: left; /* 1 */
-    min-width: 100%; /* 2 */
+    float: left; 
+    min-width: 100%;
+  
   }
   
   .gatsby-highlight pre[class*="language-"].line-numbers {
-    padding-left: 2.8em; /* 3 */
+    padding-left:  2.5em; 
+  }
+  
+  .line-numbers .line-numbers-rows{
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-right: 0em;
+    padding-left: 0.5em;
+
   }
 
 .card-image-top{
