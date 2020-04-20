@@ -48,7 +48,7 @@ We are able to define different Joinpoints within our application by using <stro
 &#8226; <strong>@Around</strong> is called both before and after playGame is executed.<br>
 &#8226; <strong>@AfterReturning</strong> is called after playGame is executed and returns a value.<br>
 &#8226; <strong>@AfterThrowing</strong> is called after playGame is executed, and if it throws an Exception.<br><br>
-
+<br>
 <h4>Implementing AOP step by step</h4>
 <p>
 AOP requires two dependencies in our Spring project, we will define them in our POM.xml file:
@@ -151,7 +151,7 @@ public class footballAspect {
 <p>
 The <strong>@Aspect</strong> annotation informs Spring that there may be Advice within this class to process.
 </p>
-
+<br>
 <h5>Defining Pointcut expressions</h5>
 <p>
 Before we define the Advice, we need to understand which Joinpoint(s) we would like the Advice to be called upon.<br>
@@ -180,7 +180,7 @@ The granularity of Pointcut expressions enable us to define explicitly which Joi
 We can then use the 5 Advice types to provide further granularity to specify where in the Joinpoint we would like to implement the Advice.<br>
 The below example will implement before and after Advice on our <code class="language-java">playGame()</code> Joinpoint:
 </p>
-
+<br>
 <h5>Using @Before and @After</h5>
 
 ```java{numberLines: true}
@@ -267,7 +267,7 @@ public static void main(String[] args) {
 	}
 
 ```
-
+<br>
 <h5>Using @Around</h5>
 
 <p>
@@ -299,7 +299,7 @@ ProceedingJoinPoint acts as the connection between the Advice and the <code clas
 By default, the <code class="language-java">.proceed()</code> method will return an Object. We have defined an Object as the result on line 6, however this can be wrapped in an Integer and returned.<br>
 On lines 8 and 9, we process the business logic <u>after</u> the method has returned from <code class="language-java">countPlayers()</code>. The int is then sent to the main application as it would have expected to be delivered had the Advice not been used. In this example, the int is packaged as an Object.
 </p>
-
+<br>
 <h5>Using @AfterReturning</h5>
 
 <p>
@@ -338,6 +338,8 @@ AfterReturning has the result: 22
 Main method has counted players value of: 22
 
 ```
+
+<br>
 <h5>Using @AfterThrowing</h5>
 
 <p>
@@ -377,6 +379,7 @@ Main method has caught exception: FootballGame class Exception: Incorrect number
 Notice that the second Around Advice has not been called as an Object was not returned to the Advice. Instead, the thread has thrown an Exception.<br>
 The AfterThrowing Advice is acknowledged when the Exception is thrown and run before the Exception is sent back to the main method.
 </p>
+<br>
 <h4>Conclusion</h4>
 <p>
 Spring provides simple and effective tools that enable us to implement AOP into our applications. <br>
