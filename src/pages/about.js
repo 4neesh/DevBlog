@@ -50,7 +50,7 @@ const AboutPage = () => (
             I currently work for Accenture as a software engineer. I have been
             able to build upon my skills in many areas, but focussing specifically with
             Java and AWS. I continue to broaden my understanding of financial
-            services; I am a committee member of the UKI Accenture Blockchain
+            services; I actively participate in the UKI Blockchain
             community of practice and work predominantly with financial services
             clients.
           </p>

@@ -2,7 +2,7 @@
 title: 'Calculating the time complexity of Algorithms'
 date: 2020-04-13 16:34:00
 author: 'Aneesh Mistry'
-featuredImage: ../images/02Colombia.png
+featuredImage: ../images/002Colombia.png
 subtitle: 'A look into the Big O Notation, how it is applied to various data structures in Java and how it can be used to calculate the efficiency of an algorithm.'
 time: '10'
 tags:

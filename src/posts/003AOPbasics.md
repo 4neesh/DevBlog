@@ -1,8 +1,8 @@
 ---
 title: 'Implementing AOP in your Spring Application'
-date: 2020-04-22 16:34:00
+date: 2020-04-20 16:34:00
 author: 'Aneesh Mistry'
-featuredImage: ../images/03Rio.png
+featuredImage: ../images/003Rio.png
 subtitle: 'Applying aspect-orientated programming to your application to support additional behaviours within your application processes.'
 time: '15'
 tags:
@@ -40,7 +40,7 @@ We are able to define different Joinpoints within our application by using <stro
 
 </p>
 
-![Advice in AOP](../../src/images/03Flow.png)
+![Advice in AOP](../../src/images/003Flow.png)
 
 
 &#8226; <strong>@Before</strong> is called before playGame is executed. <br>
@@ -207,7 +207,7 @@ public class footballAspect {
 The outcome produced from running the application:
 </p>
 
-```t
+```
 Make sure players warm up before game.
 Game has started.
 Maintain hydration after the game.
@@ -323,7 +323,7 @@ On line 2 we can see the method will take an int argument which comes directly f
 The diagram below illustrates the movement of Objects between the <code class="language-java">countPlayers()</code> and the Advice, before being returned to the main method:
 </p>
 
-![AfterReturning Advice flow](../../src/images/03AfterReturning.png)
+![AfterReturning Advice flow](../../src/images/003AfterReturning.png)
 
 
 <p>

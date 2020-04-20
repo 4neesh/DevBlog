@@ -2,7 +2,7 @@
 title: 'Hello World'
 date: 2020-04-06 16:34:00
 author: 'Aneesh Mistry'
-featuredImage: ../images/01London.png
+featuredImage: ../images/001London.png
 subtitle: 'My first blog post! How I started engineering and what I aim to acheive'
 time: '3'
 tags: 
