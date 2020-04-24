@@ -12,9 +12,9 @@ tags:
 ---
 <br>
 <strong>Key Takeaways</strong><br>
-&#8226; AOP enables us to separate cross-cutting concerns from within our application<br>
-&#8226; Pointcut expressions enable fine-grained AOP implementations<br>
-&#8226; Spring AOP makes use of light-weight AspectJ AOP classes and methods<br>
+&#8226; AOP enables us to separate cross-cutting concerns from within our application.<br>
+&#8226; Pointcut expressions enable fine-grained AOP implementations.<br>
+&#8226; Spring AOP makes use of light-weight AspectJ AOP classes and methods.<br>
 
 <br>
 <h4>What is AOP?</h4>
@@ -23,7 +23,7 @@ AOP enables us to apply additional functionality to our application to separate 
 A cross cutting concern, for example, may include security, logging, or analytics.<br>
 </p>
 <p>
-AOP introduces several keywords in it's best-pratice.<br>
+AOP introduces several keywords during its best-practice.<br>
 We will use the below example to describe a simple business logic application.<br>
 
 ```java{numberLines: true}
@@ -36,7 +36,7 @@ public class FootballGame {
 ```
 <p>
 The method <code class="language-java">playGame()</code> is known as the <strong>Joinpoint</strong>. The Joinpoint is an exact point within the execution of an application that can be defined on the thread. An example of a Joinpoint can be calling a constructor or method, or throwing an Exception.<br>
-We are able to define different Joinpoints within our application by using <strong>Pointcut expressions</strong>. A Pointcut expression is a predicate that can match different Joinpoints. We define Pointcut expressions to pin-point certain Joinpoints within the application that we would like to apply our cross-cutting concerns to. If we defined a Pointcut expression for the above example, it would define the package, classname and method signature exactly.<br> In AOP, <strong>Advice</strong> is the action that is taken when a Pointcut expression is satisfied. Both the Pointcut expressions and the Advice are defined together within an <strong>Aspect</strong> class. The Aspect class is a handy way Spring can identify if, and where, to find possible AOP implementations to be applied in conjunction with a Joinpoint. <br>You may be wondering when, in relation to the Joinpoint execution, that the Advice method is called. The exact position in relation to the Joinpoint can be defined by the of 5 different types of Advice, illustrated below:
+We are able to define different Joinpoints within our application by using <strong>Pointcut expressions</strong>. A Pointcut expression is a predicate that can match different Joinpoints. We define Pointcut expressions to pin-point certain Joinpoints within the application that we would like to apply our cross-cutting concerns to. If we defined a Pointcut expression for the above example, it would define the package, class name and method signature exactly.<br> In AOP, <strong>Advice</strong> is the action that is taken when a Pointcut expression is satisfied. Both the Pointcut expressions and the Advice are defined together within an <strong>Aspect</strong> class. The Aspect class is a handy way Spring can identify if, and where, to find possible AOP implementations to be applied in conjunction with a Joinpoint. <br>You may be wondering when, in relation to the Joinpoint execution, that the Advice method is called. The exact position in relation to the Joinpoint can be defined by the of 5 different types of Advice, illustrated below:
 
 </p>
 
@@ -129,7 +129,7 @@ public class FootballGame {
 }
 ```
 <p>
-The above class includes the <strong>@Component</strong> annotation to ensure it is scanned by <code class="language-java">SpringConfig</code>:
+The above class includes the <strong>@Component</strong> annotation to ensure it is scanned by <code class="language-java">SpringConfig</code>.
 </p>
 
 

@@ -42,7 +42,7 @@ const Sidebar = () => (
                 </li>
                 <li>
                   <Button className="tagButton" href={`/tag/java`}>
-                    Java ~ <Badge color="light">{` 2`}</Badge>
+                    Java ~ <Badge color="light">{` 3`}</Badge>
                   </Button>
                 </li>
                 <li>
@@ -57,12 +57,12 @@ const Sidebar = () => (
                 </li>
                 <li>
                   <Button className="tagButton" href={`/tag/spring`}>
-                    Spring ~ <Badge color="light">{` 1`}</Badge>
+                    Spring ~ <Badge color="light">{` 2`}</Badge>
                   </Button>
                 </li>
                 <li>
                   <Button className="tagButton" href={`/tag/maven`}>
-                    Maven ~ <Badge color="light">{` 1`}</Badge>
+                    Maven ~ <Badge color="light">{` 2`}</Badge>
                   </Button>
                 </li>
               </ul>

@@ -21,7 +21,7 @@ tags:
 <h4>What is time complexity?</h4>
 <p>
 The term ‘time complexity’ is used to describe the efficiency of an algorithm with respect to its number of input elements. Defining the efficiency of an algorithm can be difficult while accounting for variables such as memory, disk, and network usage.<br>
-The Big O Notation is used to descrribe time complexity for the upper-bound runtime; the Big O is expressed for an algorithm's CPU usage alone, therefore discarding the other variables from consideration.
+The Big O Notation is used to describe time complexity for the upper-bound runtime; the Big O is expressed for an algorithm's CPU usage alone, therefore discarding the other variables from consideration.
 </p>
 <p>
 The Big O is part of a family of asymptotic notations which, include Big Theta Θ and Big Omega Ω.<br>
