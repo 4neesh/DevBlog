@@ -125,6 +125,7 @@ Working from the least-efficient classification of exponential growth, back to c
 We can see from the above checklist, the algorithm satisfies the linear time complexity first (from top-down).<br>
 It later satisfies constant time, however this is discounted as it is not the least efficient classification. As a result, the algorithm has a Big O Notation of constant time: O(n).<br>
 </p>
+<br>
 <h4>Conclusion</h4>
 <p>
 The Big O notation enables us to better understand how the individual operations within an algorithm can contribute to its upper-bound CPU consumption.<br>
