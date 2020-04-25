@@ -20,12 +20,12 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    {
-      resolve: 'gatsby-plugin-mailchimp',
-      options: {
-          endpoint: '', // add your MC list endpoint here; see instructions below
-      },
-  },
+    // {
+    //   resolve: 'gatsby-plugin-mailchimp',
+    //   options: {
+    //       endpoint: '', // add your MC list endpoint here; see instructions below
+    //   },
+  // },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
