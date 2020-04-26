@@ -10,6 +10,17 @@ const Sidebar = () => (
     render={data => {
       return (
         <div className="container" id="content">
+            <Card>
+         <CardTitle className="newslettertitle">
+              <h5>
+                <strong>Join the newsletter</strong>
+              </h5>
+            </CardTitle>
+           <CardBody>
+
+            <MailChimp/>
+            </CardBody>
+         </Card>
           <Card className="sidebarCard">
             <CardTitle className="text-center text-uppercase">
               <h5>
@@ -70,17 +81,7 @@ const Sidebar = () => (
               </ul>
             </CardBody>
           </Card>
-         <Card>
-         <CardTitle className="newslettertitle">
-              <h5>
-                <strong>Join the newsletter</strong>
-              </h5>
-            </CardTitle>
-           <CardBody>
-
-            <MailChimp/>
-            </CardBody>
-         </Card>
+       
         </div>
       )
     }}
