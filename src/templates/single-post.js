@@ -1,5 +1,4 @@
 import React from 'react'
-import Layout from '../components/layout'
 import { graphql, Link } from 'gatsby'
 import SEO from "../components/seo"
 import { slugify } from "../util/utilityFunctions"
@@ -33,7 +32,7 @@ const SinglePost = ({ data, pageContext }) => {
                         {post.tags.map(tag => (
                             <li key={tag}>
                                 <Link to={`/tag/${slugify(tag)}`}>
-                                    <Badge className="text-uppercase" color="info">{tag}</Badge>
+                                    <Badge className="postBadge">{tag}</Badge>
                                 </Link>
                             </li>
                         ))}

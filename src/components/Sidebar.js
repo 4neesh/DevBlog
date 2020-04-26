@@ -1,6 +1,8 @@
 import React from "react"
 import { Card, CardTitle, Badge, Button, CardBody } from "reactstrap"
 import { graphql, StaticQuery } from "gatsby"
+import MailChimp from "./mailChimp"
+
 
 const Sidebar = () => (
   <StaticQuery
@@ -68,6 +70,17 @@ const Sidebar = () => (
               </ul>
             </CardBody>
           </Card>
+         <Card>
+         <CardTitle className="newslettertitle">
+              <h5>
+                <strong>Join the newsletter</strong>
+              </h5>
+            </CardTitle>
+           <CardBody>
+
+            <MailChimp/>
+            </CardBody>
+         </Card>
         </div>
       )
     }}

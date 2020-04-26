@@ -7,9 +7,9 @@ body {
 }
 
 a {
-  color: rgb(20,162,184);
+  color: $main;
   &:hover {
-    color: rgb(20,162,184);
+    color: $main;
     text-decoration: none;
   }
 }
@@ -18,7 +18,9 @@ h5{
   ;
 
 }
-
+.text-info{
+  color: $main;
+}
 .navbar {
   background-color: white;
   border-bottom: 2px solid rgba(0, 0, 0, 0.4);
@@ -27,9 +29,9 @@ h5{
 }
 .navbar-light .navbar-nav .nav-link,
 .navbar-light .navbar-brand {
-  color: rgb(20,162,184);
+  color: $main;
   &:hover {
-    color: rgb(20,162,184);
+    color: $main;
   }
 }
 .nav-item{
@@ -81,12 +83,12 @@ background-color: orange;
 }
 
 .test{
-background-color:rgb(20,162,184);
+background-color:$main;
  height:140px;
  transition: 1s;
 }
 .testa{
-  background-color:rgb(20,162,184);
+  background-color:$main;
    height:200px;
    padding: 20px;
   display:flex;
@@ -157,7 +159,14 @@ background-color:rgb(20,162,184);
     padding-left: 0.5em;
 
   }
-
+.postBadge{
+  background-color: $main;
+text-transform: uppercase;
+}
+.paginationLinks{
+ background-color:$main !important;
+    border-color:$main !important;
+}
 .card-image-top{
   border-radius: 10px 10px 10px 10px;
 }
@@ -168,8 +177,19 @@ background-color:rgb(20,162,184);
   max-width: 100%;
 }
 
-
-
+.subscribeButton{
+  background-color: $main;
+}
+.subscribeButton:hover{
+  background-color: $main;
+}
+.subscribeButton:active{
+  background-color: $main;
+}
+.newslettertitle{
+  text-transform: uppercase;
+  text-align: center;
+}
 @media  (min-width: 366px) {
   .stickyHeaderText{
     font-size: 14px;

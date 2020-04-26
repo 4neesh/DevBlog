@@ -9,7 +9,7 @@
 .tagButton{
   font-size: 14px;
   text-transform: uppercase;
-  background-color: rgb(20,162,184);
+  background-color:$main;
 }
 .tagButton:focus{
   // background-color: green;
@@ -23,15 +23,6 @@
 
 }
 .tagButton:hover{
-  background-color: rgb(20,162,184);
-
-}
-.selectedButton{
-  background-color: blue;
-  text-transform: uppercase;
-
-}
-.selectedButton:hover{
-  background-color: blue;
+  background-color: $main;
 
 }

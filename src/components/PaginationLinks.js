@@ -7,7 +7,6 @@ const PaginationLinks = ({ currentPage, numberOfPages }) => {
   const previousPage =
     currentPage - 1 === 1 ? '/' : '/page/' + (currentPage - 1).toString()
   const nextPage = '/page/' + (currentPage + 1).toString()
-  console.log(numberOfPages)
   return (
     <Pagination >
       {isFirst ? (
@@ -24,7 +23,7 @@ const PaginationLinks = ({ currentPage, numberOfPages }) => {
       {Array.from({ length: numberOfPages }, (_, i) =>
         currentPage === i + 1 ? (
           <PaginationItem  active key={`page-number${i + 1}`}>
-            <PaginationLink style={{backgroundColor:"rgb(20,162,184)", borderColor:"black"}} href={`/${i === 0 ? '' : 'page/' + (i + 1)}`}>
+            <PaginationLink className="paginationLinks" href={`/${i === 0 ? '' : 'page/' + (i + 1)}`}>
               {i + 1}
 
             </PaginationLink>

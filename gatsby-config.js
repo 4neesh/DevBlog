@@ -20,12 +20,12 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    // {
-    //   resolve: 'gatsby-plugin-mailchimp',
-    //   options: {
-    //       endpoint: '', // add your MC list endpoint here; see instructions below
-    //   },
-  // },
+    {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+          endpoint: 'https://aneesh.us8.list-manage.com/subscribe/post?u=f3fabd8a5e7676e82b093004b&amp;id=d5cbf8e826',
+      },
+  },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
