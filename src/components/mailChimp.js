@@ -34,13 +34,14 @@ export default class mailChimp extends React.Component {
         .then(data => {
             console.log(data)
             this.setState({
-                email: ''
+                email: 'Thank you for subscribing!'
             })
         })
         // this.setState({email: event.target.value})
     }
     onEmailChange(event){
         this.setState({email: event.target.value})
+
     }
 
   render () {
