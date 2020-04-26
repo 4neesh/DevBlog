@@ -23,7 +23,7 @@ tags:
 
 I have recently been developing applications that perform small and simple tasks to eliminate the repetitive work from my daily activity.
 The applications are packaged into an executable JAR file and run on a rota through a batch job.<br>
-Each time I create an application, I repeatedly deploy a similar project structure that allows me to include dependencies within the JAR and external logging of the runtime. The JAR is designed to be either run from a server and will provide debugging and context in the form of logging to the runtime execution.<br>
+Each time I create an application, I repeatedly deploy a similar project structure that allows me to include dependencies within the JAR and external logging of the runtime. The JAR is designed to be run from a server and will provide debugging and context in the form of logging to the runtime execution.<br>
 </p>
 
 <p>
@@ -76,11 +76,11 @@ Hello from your Java application.
 </p>
 
 <br>
-<h4>Injecting dependencies to our JAR file</h4>
+<h4>Injecting dependencies into a JAR file</h4>
 <p>
 Our current JAR file will compile the classes and run the main thread as per the Manifest file.<br>
-I will now introduce a new Class that uses the <strong>jackson.databind</strong> dependency to convert JSON files to and from POJO's.<br>
-The purpose of this example is to introduce a dependency into our application, but for your understanding, the main thread will simply create a POJO and return the 'firstName' property as per the JSON file.<br>
+I will now introduce a new Class that uses the <strong>jackson.databind</strong> dependency to convert a JSON file to and from a POJO.<br>
+The purpose of this example is to introduce a dependency into our application; the main thread will create a POJO and return the 'firstName' property as per the JSON file.<br>
 The pom.xml will include a new dependency:
 </p>
 
@@ -162,7 +162,7 @@ Once we have configured our pom.xml file, we can build our new JAR by selecting 
 <strong>Maven Install</strong> will build a new JAR in the <strong>target</strong> directory with the dependencies included.<br>
 Before we run the new JAR file, it is important to remember that any relative file locations you may specify in the application (such as a properties file) must also be
 moved relative to where the JAR file is located, otherwise the JAR will not be able to resolve the location.<br>
-If we navigate to the taget directory at the command line, we can run the JAR file to successfully include the dependencies and print the result:<br>
+If we navigate to the target directory at the command line, we can run the JAR file to successfully include the dependencies and print the result:<br>
 </p>
 
 ```
@@ -179,14 +179,14 @@ Running our packaged application with Maven dependencies is the first step to cr
 &#8226; What happens if the application throws an exception?<br>
 &#8226; How can we verify that the application is working as expected?<br>
 &#8226; How can we debug our application if any unexpected results occur?<br>
-The concerns outlined above can be resolved with logging which will provide us with a window into the runtime activity of our application.<br> 
-Logging will provide a persisted and structured document from the application that can be referenced for debugging or runtime information. The log file can be generated at custom intervals such as each day, each hour, or each execution.<br>
+The concerns outlined above can be resolved with logging which will provide us with a view into the runtime activity of our application.<br> 
+Logging will create a persisted document from the application that can be referenced for debugging or runtime information. The log file can be generated at custom intervals such as each day, each hour, or each execution.<br>
 </p>
 <strong>Log4J</strong>
 <p>
 Log4J is a popular package that we can implement into our application to provide a detailed logging context.<br>
 We will register Log4J to our application and append records to it throughout the life of the application. Each record will include information or debugging context from the application.<br>
-We can format the log files to be conveniently stored alongside the JAR file in a seperate directory, named with the time and date for ease of access. 
+We can format the log files to be conveniently stored alongside the JAR file in a separate directory, named with the time and date for ease of access. 
 Log4J will be included in our application with the following Maven dependency in our pom.xml file:<br>
 </p>
 
@@ -218,7 +218,7 @@ log4j.appender.fileAppender.File=log/${current.date.time}_Application.log
 ```
 <p>
 The above file makes use of the Log4J interfaces to define and create two different logs.<br>
-On line 1, the <strong>rootLogger</strong> defines varibles that we will use to assign different logs.<br>
+On line 1, the <strong>rootLogger</strong> defines variables that we will use to assign different logs.<br>
 From line 3 onwards, we use the <strong>log4j.appender</strong> interface to create and design the layout of our logs:<br>
 On lines 3 to 5, we are defining a pattern layout for a log to the console.<br>
 On lines 7 to 10, we are creating a <strong>File</strong> for each log. The format for the log is also defined and the creation of the log will append the current date and time of the machine to the filename.
@@ -252,7 +252,7 @@ Using the class name helps us to avoid name duplication and also provides descri
 On line 10 we use the <code class="language-java">PropertyConfigurator</code> which allows our logger to be configured by an external file.
 </p>
 <p>
-Now that the logger is successfully configured to the applicaiton, we can begin writing logger records that will provide information and debugging context to our log file:<br>
+Now that the logger is successfully configured to the application, we can begin writing logger records that will provide information and debugging context to our log file:<br>
 </p>
 
 ```java{numberLines:true}
@@ -289,7 +289,7 @@ However, if an exception is thrown, we may see more detail:<br>
 <br>
 <h4>Conclusion</h4>
 <p>
-Packaging and logging are both frequent utilities to implement into our applications; they are two important foundations to any new application we build to enable transparency and ease of use to the application.<br>
+Packaging and logging are both frequent utilities to implement in our applications; they are two important foundations to any new application we build to enable transparency and ease of use to the application.<br>
 The example we have used has only touched upon the various message types and formatting that is available with Log4J. I would encourage you to explore Log4J functionality 
  <a target = "_blank" href="https://logging.apache.org/log4j/2.x/manual/index.html">here</a> to enhance your logging to be succinct and effective.<br>
 If you would like to implement logging across your application with enhanced control and structure, please visit my blog on aspect-orientated-programming <a target = "_blank" href="https://aneesh.co.uk/implementing-aop-in-your-spring-application">here</a>.<br>
