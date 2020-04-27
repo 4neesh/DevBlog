@@ -55,7 +55,7 @@ const Sidebar = () => (
                 </li>
                 <li>
                   <Button className="tagButton" href={`/tag/java`}>
-                    Java ~ <Badge color="light">{` 3`}</Badge>
+                    Java ~ <Badge color="light">{` 2`}</Badge>
                   </Button>
                 </li>
                 <li>

@@ -6,7 +6,6 @@ featuredImage: ../images/002Colombia.png
 subtitle: 'Understand what the Big O Notation is, how it is applied to various data structures in Java, and how it can be used to calculate the efficiency of an algorithm.'
 time: '10'
 tags:
-- Java
 - Algorithms
 - Data Structures
 ---
