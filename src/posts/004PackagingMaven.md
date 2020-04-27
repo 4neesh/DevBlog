@@ -1,9 +1,9 @@
 ---
-title: 'Running Applications from a JAR file'
+title: 'Packaging and logging a Java application'
 date: 2020-04-27 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/004MachuPicchu.png
-subtitle: 'Packaging your Spring project into a convenient JAR file and applying logging to them for feedback.'
+subtitle: 'Using JAR files to package your application to be run from a server and implementing logging to provide transparency to runtime activity.'
 time: '10'
 tags:
 - Spring

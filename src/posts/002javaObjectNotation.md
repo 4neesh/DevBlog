@@ -1,9 +1,9 @@
 ---
-title: 'Calculating the time complexity of Algorithms'
+title: 'Calculating the time complexity of algorithms'
 date: 2020-04-13 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/002Colombia.png
-subtitle: 'A look into the Big O Notation, how it is applied to various data structures in Java and how it can be used to calculate the efficiency of an algorithm.'
+subtitle: 'Understand what the Big O Notation is, how it is applied to various data structures in Java, and how it can be used to calculate the efficiency of an algorithm.'
 time: '10'
 tags:
 - Java
@@ -107,7 +107,7 @@ Lastly, line 8 is used to print the result of the algorithm. This line is not in
 <p>
 As we account for the three operations within the algorithm, we have accumulated a Big O of: O(1) + O(n) + O(1).<br>
 The accumulation can be summarised into: 2 O(1) + O(n).<br>
-One defining characteristic of the Big O is that it is not concerned with the <u>rate</u> of growth, but it is concerned with the <u>type</u> of growth. Big O will not define how tightly an algorithm fits within the classification, but it will define the type of classification it falls within.</p>
+One defining characteristic of the Big O is that it is only defined by the <u>rate</u> of growth. Big O will not define how tightly an algorithm fits within the classification, but it will define the type of classification it falls within.</p>
 <p>
 As we understand that it is only the type of growth we will consider, we can remove the constants from the accumulated Big O value.<br>
 As a result, 2 O(1) + O(n) is reduced to: O(1) + O(n).<br>

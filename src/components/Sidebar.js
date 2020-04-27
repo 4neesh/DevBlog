@@ -50,12 +50,12 @@ const Sidebar = () => (
               <ul>
                 <li>
                   <Button className="tagButton" href={`/tag/algorithms`}>
-                    Algorithms ~ <Badge color="light">{` 1`}</Badge>
+                    Algorithms ~ <Badge color="light">{` 2`}</Badge>
                   </Button>
                 </li>
                 <li>
                   <Button className="tagButton" href={`/tag/java`}>
-                    Java ~ <Badge color="light">{` 3`}</Badge>
+                    Java ~ <Badge color="light">{` 4`}</Badge>
                   </Button>
                 </li>
                 <li>
@@ -65,7 +65,7 @@ const Sidebar = () => (
                 </li>
                 <li>
                   <Button className="tagButton" href={`/tag/data-structures`}>
-                    Data Structures ~ <Badge color="light">{` 1`}</Badge>
+                    Data Structures ~ <Badge color="light">{` 2`}</Badge>
                   </Button>
                 </li>
                 <li>
