@@ -20,8 +20,8 @@ const AboutPage = () => (
         <CardBody>
           <p>Thank you for visiting my website.</p>
           <p>
-            I am a software engineer and enjoy building tools and applications
-            with tech.
+            I am a software engineer and enjoy building applications
+            with technology, focussing on performance and optimization.
           </p>
           <p>
             I completed my bachelors degree in Banking, Finance, and Management

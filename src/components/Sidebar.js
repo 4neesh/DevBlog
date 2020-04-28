@@ -1,5 +1,5 @@
 import React from "react"
-import { Card, CardTitle, Badge, Button, CardBody } from "reactstrap"
+import { Card, CardTitle, Button, CardBody } from "reactstrap"
 import { graphql, StaticQuery } from "gatsby"
 import MailChimp from "./mailChimp"
 
@@ -13,7 +13,7 @@ const Sidebar = () => (
             <Card>
          <CardTitle className="newslettertitle">
               <h5>
-                <strong>Join the newsletter</strong>
+                <strong>Subscribe to new posts</strong>
               </h5>
             </CardTitle>
            <CardBody>
@@ -50,34 +50,35 @@ const Sidebar = () => (
               <ul>
                 <li>
                   <Button className="tagButton" href={`/tag/algorithms`}>
-                    Algorithms ~ <Badge color="light">{` 1`}</Badge>
-                  </Button>
-                </li>
-                <li>
-                  <Button className="tagButton" href={`/tag/java`}>
-                    Java ~ <Badge color="light">{` 2`}</Badge>
-                  </Button>
-                </li>
-                <li>
-                  <Button className="tagButton" href={`/tag/personal`}>
-                    Personal ~ <Badge color="light">{` 1`}</Badge>
+                    Algorithms 
                   </Button>
                 </li>
                 <li>
                   <Button className="tagButton" href={`/tag/data-structures`}>
-                    Data Structures ~ <Badge color="light">{` 1`}</Badge>
+                    Data Structures 
                   </Button>
                 </li>
                 <li>
-                  <Button className="tagButton" href={`/tag/spring`}>
-                    Spring ~ <Badge color="light">{` 2`}</Badge>
+                  <Button className="tagButton" href={`/tag/java`}>
+                    Java 
                   </Button>
                 </li>
                 <li>
                   <Button className="tagButton" href={`/tag/maven`}>
-                    Maven ~ <Badge color="light">{` 2`}</Badge>
+                    Maven 
                   </Button>
                 </li>
+                <li>
+                  <Button className="tagButton" href={`/tag/personal`}>
+                    Personal 
+                  </Button>
+                </li>
+              
+                <li>
+                  <Button className="tagButton" href={`/tag/spring`}>
+                    Spring 
+                  </Button>
+                </li>               
               </ul>
             </CardBody>
           </Card>
