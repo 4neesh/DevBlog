@@ -12,9 +12,9 @@ const Sidebar = () => (
         <div className="container" id="content">
             <Card>
          <CardTitle className="newslettertitle">
-              <h5>
+              
                 <strong>Subscribe to new posts</strong>
-              </h5>
+              
             </CardTitle>
            <CardBody>
 
@@ -22,10 +22,10 @@ const Sidebar = () => (
             </CardBody>
          </Card>
           <Card className="sidebarCard">
-            <CardTitle className="text-center text-uppercase">
-              <h5>
+            <CardTitle className="viewBlogsHeadline">
+              
                 <strong>View Blogs by Tag</strong>
-              </h5>
+             
             </CardTitle>
             <CardBody>
               {/* {data.allMarkdownRemark.edges.map(({node}) => (

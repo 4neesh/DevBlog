@@ -3,7 +3,7 @@ title: 'Resolving hash conflicts with hash tables'
 date: 2020-05-04 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/005Riobamba.png
-subtitle: 'Understand the use of hash function in data structures and the techniques used to resolve hash collisions.'
+subtitle: 'Understand the use of hash functions in data structures and the techniques used to resolve hash collisions.'
 time: '8'
 tags:
 - Data Structures
@@ -22,17 +22,17 @@ tags:
 <p>
 Hash functions are used to map data of any arbitrary size into a fixed length. Java uses hash functions in hash maps and hash tables as key-value data structures.<br>
 Hash map and hash table are both efficient data structures to use for dictionary operations (insert, search, delete). There are just a few differences between hash map and hash table:<br>
-&#8226; Hash map data is not synchronized, hash table data is synchronized.<br>
-&#8226; Due to synchronization, hash map operations can be performed faster than hash table.<br>
+&#8226; Hash map data is not synchronised, hash table data is synchronised.<br>
+&#8226; Due to synchronisation, hash map operations can be performed faster than hash table.<br>
 &#8226; Hash map allows one null key and any null values, hash table does not allow any null keys or values.<br>
 </p>
 <p>
-As hash map and hash table use similar structures, the remainder of this post will reflect upon hash table for simplicity.<br>
-Hash tables store data in a key-value pair that use a fast-access location known as a bucket for storing the value. Buckets are stored in an array; when an entry is made to a hash table, the position that the value is stored within the array is calculated through the key of the entry. Hash tables can be designed for 'direct-addressing' where each key is an integer and is directly used as the index position for where the corresponding value is stored in the array. Direct-addressing can create a problem as the size of the array used for storing keys can become excessively large. The number of keys stored within the array may be relatively small thus meaning the majority of the array space (and computer memory) assigned to the hash table is not utilised.<br>
-Hash functions provide a solution to direct-addressing by reducing the array size for storage, but keeping a reasonable number of open spaces. Each entry will use the key as an input to a hash function which will produce the index position to the bucket that the value is stored in.<br>
+As the differences between a hash maps and hash tables are negligible, the remainder of this post will use hash tables for consistency. The context of hash functions are equally as applicable to hash maps.<br>
+Hash tables store data in a key-value pair that use a fast-access location known as a "bucket" for storing the value. Buckets are stored in an array; when an entry is made to a hash table, the position in which the value is stored within the array is calculated through the key of the entry. Hash tables can be designed for "direct-addressing" where each key is an integer and is directly used as the index position for where the corresponding value is stored in the array. Direct-addressing can create a problem as the size of the array used for storing keys can become excessively large. The number of keys stored within the array may be relatively small thus meaning the majority of the array space (and computer memory) assigned to the hash table is not utilised.<br>
+Hash functions provide a solution to direct-addressing by reducing the array size for storage, but keeping an appropriate number of open buckets to store values. Each entry will use the key as an input to a hash function which will produce the index position to the bucket that the value is stored in.<br>
 
 
-The hash function is defined by the <code class="language-java">public int hashCode()</code> method of the key. The example below demonstrates how a key-value pair of {String, Integer} can be placed within a hash table; H({key}) is read as 'hash of {key}' and describes the use of the hash function to obtain the index position.<br>
+The hash function is defined by the <code class="language-java">public int hashCode()</code> method of the key. The example below demonstrates how a key-value pair of {String, Integer} can be placed within a hash table; H({key}) is read as "hash of {key}" and describes the use of the hash function to obtain the index position.<br>
 
 ![hash table visualisation](../../src/images/005HashTable.png)
 
@@ -43,7 +43,7 @@ The hash function is defined by the <code class="language-java">public int hashC
 <strong>The benefit of using a hash table</strong>
 <br>
 <p>
-Hash table resolves the time-complexity problem for searching, inserting, or deleting a value within an array when the index position is unknown. If an array has 100 integers, a for-each loop would result in up to 100 searches, and a time-complexity of O(n) - learn more on the time complexity <a target="_blank" href = "https://aneesh.co.uk/calculating-the-time-complexity-of-algorithms">here</a>. Hash tables support the direct searching of a value based upon it's key. As a result, the hash table can pinpoint the index of the value instantly, regardless to the number of elements within the hash table. Hash tables support dictionary operations with a constant time O(1).
+Hash table resolves the time-complexity problem for searching, inserting, or deleting a value within an array when the index position is unknown. If an array has 100 integers, a for-each loop would result in up to 100 searches, and a time-complexity of O(n) - learn more on the time complexity <a target="_blank" href = "https://aneesh.co.uk/calculating-the-time-complexity-of-algorithms">here</a>. Hash tables support the direct searching of a value based upon its key. As a result, the hash table can pinpoint the index of the value instantly, regardless of the number of elements within the hash table. Hash tables support dictionary operations with a constant time O(1).
 </p>
 
 <br>
@@ -79,7 +79,7 @@ There are two strategies used for resolving collisions:<br>
 
 <strong>Linear probing</strong>
 <p>
-Linear probing will re-direct the index to point to the next available bucket that is available in the hash table. For the case of "George", which otherwise would fall into bucket 7, the next available bucket would be bucket 0. As a result, the value of George will be stored in bucket 0. If another key is added to the hash table with a hash function of 7, the value will instead be stored in bucket 1. 
+Linear probing will re-direct the index to point to the next available bucket in the hash table. For the case of "George", which otherwise would fall into bucket 7, the next available bucket would be bucket 0. As a result, the value of George will be stored in bucket 0. If another key is added to the hash table with a hash function of 7, the value will instead be stored in bucket 1. 
 </p>
 <u>Cluster effects</u>
 <p>
@@ -91,7 +91,7 @@ Linear probing can create high amounts of clustering within an array as buckets 
 </p>
 <strong>Quadratic probing</strong>
 <p>
-Quadratic probing resolves collisions by using a quadratic equation to compute the new index away from the original hash function index. The following indexes would be sequentially checked for the example of "George" (also assuming a much larger size array):<br>
+Quadratic probing resolves collisions by using a quadratic equation to compute the new index away from the original hash function index. The following indices would be checked sequentially for the example of "George" (also assuming a much larger size array):<br>
 &#8226; 7 + (1*1) = index 8. <br>
 &#8226; 7 + (2*2) = index 11. <br>
 &#8226; 7 + (3*3) = index 16. <br>
@@ -113,7 +113,7 @@ Double-hash probing resolves collisions by applying a secondary hash to the comp
 </p>
 <br>
 <p>
-Open addressing can enable collisions to be resolved with loose clustering to reduce the chance of repeated collisions. The use of quadratic and double-hashing algorithms, however, increases the compute time of the hash function. When a search operation is performed on a hash table, the computational cost will accumulate through the additional probing algorithms and the degree of clustering within the hash table. Closed addressing resolves collision hashing by placing multiple values in the same bucket, thus avoiding the need for expensive computations to find new index positions.
+Open addressing can enable collisions to be resolved with loose clustering to reduce the chance of repeated collisions. The use of quadratic and double-hashing algorithms, however, increases the compute time of the hash function. When a search operation is performed on a hash table, the computational cost will accumulate through the additional probing algorithms and the degree of clustering within the hash table. Closed addressing offers a resolution to collision hashing which avoids the need for expensive computations to find new index positions.
 
 </p>
 <br>
@@ -130,8 +130,8 @@ When a search is conducted upon the hash table, the hash function will identify 
 <br>
 <h4>Conclusion</h4>
 <p>
-Hash functions are algorithms that are used to convert a key into an arbitrary integer. Hash functions enable the hash table to have an efficient computer memory consumption by defining the boundaries of possible index positions a value can be stored. Collision resolution techniques are important to understand as they support the use of hash functions by maintaining the integrity and performance of the hash table.<br>
-By understanding the differences between open and closed addressing, a hash table can be designed to store collided hash values in an optimized manner. 
+Hash functions are algorithms that are used to convert a key into an arbitrary integer. Hash functions enable the hash table to have an efficient computer memory consumption by defining the boundaries of possible index positions in which a value can be stored. Collision resolution techniques are important to understand as they support the use of hash functions by maintaining the integrity and performance of the hash table.<br>
+By understanding the differences between open and closed addressing, a hash table can be designed to store collided hash values in an optimised manner. 
 </p>
 <br>
 <small style="float: right;" >Picture: Riobamba, Ecuador by <a target="_blank" href="https://unsplash.com/@ezekiel">Fernando Tapia</small></a><br>

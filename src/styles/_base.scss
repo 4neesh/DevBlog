@@ -174,30 +174,43 @@ text-transform: uppercase;
 .testa .stickyHeaderImage .Image{
   max-width: 100%;
 }
+.viewBlogsHeadline{
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 20px;
 
-.subscribeButton{
-  background-color: $main;
 }
+.newslettertitle{
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 20px;
+}
+
 .subscribeButton:hover{
   background-color: $main;
 }
 .subscribeButton:active{
   background-color: $main;
 }
-.newslettertitle{
-  text-transform: uppercase;
-  text-align: center;
-}
+
 @media  (min-width: 366px) {
   .stickyHeaderText{
     font-size: 14px;
     
+  }
+  .newslettertitle{
+   
+    font-size: 18px;
   }
 }
 @media  (min-width: 400px) {
   .stickyHeaderText{
     font-size: 16px;
     
+  }
+  .newslettertitle{
+   
+    font-size: 18px;
   }
 }
 @media  (min-width: 440px) {
@@ -206,6 +219,10 @@ text-transform: uppercase;
     font-size: 18px;
     
   }
+  .newslettertitle{
+   
+    font-size: 18px;
+  }
 }
 @media  (min-width: 490px) {
 
@@ -213,12 +230,20 @@ text-transform: uppercase;
     font-size: 20px;
     
   }
+  .newslettertitle{
+   
+    font-size: 18px;
+  }
 }
 @media  (min-width: 550px) {
 
   .stickyHeaderText{
     font-size: 22px;
     
+  }
+  .newslettertitle{
+   
+    font-size: 18px;
   }
 }
 
@@ -228,11 +253,35 @@ text-transform: uppercase;
     font-size: 24px;
     
   }
+  .newslettertitle{
+   
+    font-size: 18px;
+  }
 }
-@media  (min-width: 980px) {
+@media  (min-width: 978px) {
+
+  .stickyHeaderText{
+    font-size: 28px;
+    
+  }
+  
+  .newslettertitle{
+   
+    font-size: 18px;
+  }
+  
+}
+@media  (min-width: 998px) {
 
   .stickyHeaderText{
     font-size: 30px;
+    
+  }
+}
+@media  (min-width: 1010px) {
+
+  .stickyHeaderText{
+    font-size: 31px;
     
   }
 }
