@@ -1,5 +1,5 @@
 ---
-title: 'Resolving hash conflicts with hash tables'
+title: 'Resolving hash collisions'
 date: 2020-05-04 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/005Riobamba.png
