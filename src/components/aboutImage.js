@@ -16,7 +16,7 @@ const Image = () => {
     }
   `)
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+  return <Img  rel="noopener noreferrer" fluid={data.placeholderImage.childImageSharp.fluid} />
 }
 
 export default Image

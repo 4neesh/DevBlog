@@ -12,21 +12,7 @@ export default class mailChimp extends React.Component {
         }
     }
 
-    // _handleSubmit = e => {
-    //     e.preventDefault();
-    //     addToMailchimp(email)
-    //     .then(data => {
-    //         console.log(data)
-    //     })
-    // }
-
-
-    // _handleSubmit = async (e) => {
-        
-    //     e.preventDefault();
-    //     const result = await addToMailchimp(email)
-
-    // }
+ 
 
     _handleChange = e => {
         e.preventDefault();

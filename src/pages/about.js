@@ -21,7 +21,7 @@ const AboutPage = () => (
           <p>Thank you for visiting my website.</p>
           <p>
             I am a software engineer and enjoy building applications
-            with technology, focussing on performance and optimization.
+            with consideration to performance and optimization.
           </p>
           <p>
             I completed my bachelors degree in Banking, Finance, and Management
@@ -34,7 +34,7 @@ const AboutPage = () => (
               <strong>Loughborough University</strong>
             </a>{" "}
             in 2017. The degree included one year in industry where I obtained
-            experience developing tools within the Fixed Income team at UBS
+            experience developing tools for portfolio managers within the fixed income capability at UBS
             Asset Management. My introduction to software development sparked 
             a passion that I am continuing to pursue. In 2018 I graduated from{" "}
             <a

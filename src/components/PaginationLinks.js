@@ -18,7 +18,7 @@ const PaginationLinks = ({ currentPage, numberOfPages }) => {
           <PaginationLink style={{color:"black"}} previous href={previousPage} />
         </PaginationItem>
       )}
-
+  
       
       {Array.from({ length: numberOfPages }, (_, i) =>
         currentPage === i + 1 ? (

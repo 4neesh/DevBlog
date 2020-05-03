@@ -15,7 +15,7 @@ const Image = () => {
     }
   `)
 
-  return <Img imgStyle={{objectFit: "contain"}}fluid={data.placeholderImage.childImageSharp.fluid} />
+  return <Img rel="noopener noreferrer" imgStyle={{objectFit: "contain"}}fluid={data.placeholderImage.childImageSharp.fluid} />
 }
 
 export default Image
