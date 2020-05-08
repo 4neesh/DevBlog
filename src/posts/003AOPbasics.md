@@ -9,6 +9,7 @@ tags:
 - Spring
 - Java
 - Maven
+- Patterns
 ---
 <br>
 <strong>Key Takeaways</strong><br>

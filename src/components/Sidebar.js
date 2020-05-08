@@ -69,6 +69,11 @@ const Sidebar = () => (
                   </Button>
                 </li>
                 <li>
+                  <Button className="tagButton" href={`/tag/patterns`}>
+                    Patterns 
+                  </Button>
+                </li> 
+                <li>
                   <Button className="tagButton" href={`/tag/personal`}>
                     Personal 
                   </Button>
