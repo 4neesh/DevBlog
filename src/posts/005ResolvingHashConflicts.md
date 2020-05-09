@@ -57,11 +57,11 @@ The example above does not explain how the hash function actually derived the In
 
 <p>
 A collision will occur when the hash function computes two different keys into the same index position of the array.<br>
-If a fourth entry with a key-value pair of: {"George" , 81} was added to the hash table, the index position would equal 7 if we follow the same hash function:<br>
-1. "George" ASCII value = 441<br>
-2. 441 / 8 = 55<br>
-3. 55 % 8 = 7<br>
-The addition of a new key, "George", will create a collision with "Eliza", which is also stored at index 7. Without a collision resolution, {"Eliza" , 97} will be replaced by the key-value pair {"George" , 81}.
+If a fourth entry with a key-value pair of: {"Phillip" , 19} was added to the hash table, the index position would equal 7 if we follow the same hash function:<br>
+1. "Phillip" ASCII value = 722<br>
+2. 722 / 8 = 90<br>
+3. 90 % 8 = 2<br>
+The addition of a new key, "Phillip", will create a collision with "Alex", which is also stored at index 2. Without a collision resolution, {"Alex" , 47} will be replaced by the key-value pair {"Phillip" , 19}.
 </p>
 <p>
 As the hash table is populated with more entries, the potential for collisions increase.<br>
@@ -79,7 +79,7 @@ There are two strategies used for resolving collisions:<br>
 
 <strong>Linear probing</strong>
 <p>
-Linear probing will re-direct the index to point to the next available bucket in the hash table. For the case of "George", which otherwise would fall into bucket 7, the next available bucket would be bucket 0. As a result, the value of George will be stored in bucket 0. If another key is added to the hash table with a hash function of 7, the value will instead be stored in bucket 1. 
+Linear probing will re-direct the index to point to the next available bucket in the hash table. For the case of "Phillip", which otherwise would fall into bucket 2, the next available bucket would be bucket 3. As a result, the value of "Phillip" will be stored in bucket 3. If another key is added to the hash table with a hash function of 2, the value will instead be stored in bucket 4. 
 </p>
 <u>Cluster effects</u>
 <p>
