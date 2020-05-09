@@ -57,7 +57,7 @@ The example above does not explain how the hash function actually derived the In
 
 <p>
 A collision will occur when the hash function computes two different keys into the same index position of the array.<br>
-If a fourth entry with a key-value pair of: {"Phillip" , 19} was added to the hash table, the index position would equal 7 if we follow the same hash function:<br>
+If a fourth entry with a key-value pair of: {"Phillip" , 19} was added to the hash table, the index position would equal 2 if we follow the same hash function:<br>
 1. "Phillip" ASCII value = 722<br>
 2. 722 / 8 = 90<br>
 3. 90 % 8 = 2<br>
@@ -91,7 +91,7 @@ Linear probing can create high amounts of clustering within an array as buckets 
 </p>
 <strong>Quadratic probing</strong>
 <p>
-Quadratic probing resolves collisions by using a quadratic equation to compute the new index away from the original hash function index. The following indices would be checked sequentially for the example of "George" (also assuming a much larger size array):<br>
+Quadratic probing resolves collisions by using a quadratic equation to compute the new index away from the original hash function index. The following indices would be checked sequentially for the example of "Phillip" (also assuming a much larger size array):<br>
 &#8226; 7 + (1*1) = index 8. <br>
 &#8226; 7 + (2*2) = index 11. <br>
 &#8226; 7 + (3*3) = index 16. <br>
