@@ -8,7 +8,6 @@ time: '8'
 tags:
 - Data Structures
 - Java
-- Algorithms
 ---
 <br>
 <strong>Key Takeaways</strong><br>
@@ -32,7 +31,7 @@ Hash tables store data in a key-value pair that use a fast-access location known
 Hash functions provide a solution to direct-addressing by reducing the array size for storage, but keeping an appropriate number of open buckets to store values. Each entry will use the key as an input to a hash function which will produce the index position to the bucket that the value is stored in.<br>
 
 
-The hash function is defined by the <code class="language-java">public int hashCode()</code> method of the key. The example below demonstrates how a key-value pair of {String, Integer} can be placed within a hash table; H({key}) is read as "hash of {key}" and describes the use of the hash function to obtain the index position.<br>
+The hash function is defined by the <code class="language-java">public int hashCode()</code> method of the key. The example below demonstrates how a key-value pair of peoples names and age {String, Integer} can be placed within a hash table; H({key}) is read as "hash of {key}" and describes the use of the hash function to obtain the index position.<br>
 
 ![hash table visualisation](../../src/images/005HashTable.png)
 
