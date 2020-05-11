@@ -7,6 +7,7 @@ import Footer from "./footer"
 import { Row, Col } from "reactstrap"
 import Sidebar from "./Sidebar"
 import StickyHeader from "./stickyHeader"
+import { Helmet } from "react-helmet"
 
 
 
@@ -27,6 +28,10 @@ const Layout = ({ children }) => (
     render={data => (
      
       <>
+      <Helmet>
+        <title>{children.title}</title>
+
+      </Helmet>
         <link
           rel="stylesheet"
           href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"

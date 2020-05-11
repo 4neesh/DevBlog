@@ -2,7 +2,7 @@
 title: 'Memory management techniques'
 date: 2020-05-11 16:34:00
 author: 'Aneesh Mistry'
-featuredImage: ../images/006California.png
+featuredImage: ../images/006California.jpg
 subtitle: 'Exploring the different techniques and ways that a garbage collector can manage memory.'
 time: '10'
 tags:

@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import SEO from "../components/seo"
 import { slugify } from "../util/utilityFunctions"
-import { Card, CardBody, Badge, CardSubtitle } from 'reactstrap'
+import { Card, CardBody, Badge, CardSubtitle, CardTitle } from 'reactstrap'
 import Img from "gatsby-image"
 import Helmet from "react-helmet"
 import LayoutPost from '../components/layoutPost'
@@ -16,13 +16,16 @@ const SinglePost = ({ data, pageContext }) => {
             <SEO title={post.title} />
            <Helmet>
                <title>{post.title}</title>
-               <meta name={post.subtitle}/>
+               <meta name="description" content={post.subtitle}/>
+               <meta property="og:title" content={post.title} key="ogtitle"/>
+               <meta property="og:description" content={post.description} key="ogdesc"/>
            </Helmet>
             <Card>
-                <Img className="card-image-top" 
-                    fluid={post.featuredImage.childImageSharp.fluid} />
-                    
+                {/* <Img className="card-image-top" 
+                    fluid={post.featuredImage.childImageSharp.fluid} /> */}
                 <CardBody>
+                <CardTitle className="postTitle">{post.title}</CardTitle>    
+
                     <CardSubtitle>
                         <span className="text-info">{post.date}</span> by{' '}
                         <span className="text-info">{post.author}</span>

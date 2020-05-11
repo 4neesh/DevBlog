@@ -2,7 +2,7 @@
 title: 'Implementing closed addressing'
 date: 2020-05-18 16:34:00
 author: 'Aneesh Mistry'
-featuredImage: ../images/007_Bariloche.png
+featuredImage: ../images/007_Bariloche.jpg
 subtitle: 'A demonstration how a hash function can be designed and written to implement chaining / closed addressing'
 time: '8'
 tags:

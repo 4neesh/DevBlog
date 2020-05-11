@@ -2,7 +2,7 @@
 title: 'Resolving hash collisions'
 date: 2020-05-04 16:34:00
 author: 'Aneesh Mistry'
-featuredImage: ../images/005Riobamba.png
+featuredImage: ../images/005Riobamba.jpg
 subtitle: 'Understand the use of hash functions in data structures and the techniques used to resolve hash collisions.'
 time: '8'
 tags:
