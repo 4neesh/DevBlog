@@ -10,6 +10,7 @@ import LayoutPost from '../components/layoutPost'
 const SinglePost = ({ data, pageContext }) => {
     const post = data.markdownRemark.frontmatter
     const basicUrl = "http://aneesh.co.uk/"
+    // const thumbnail = post.frontmatter.thumbnail
     return (
         <LayoutPost  pageTitle={post.title}>
             <div className="container" id="content" >

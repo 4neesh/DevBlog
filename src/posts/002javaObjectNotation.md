@@ -3,7 +3,7 @@ title: 'Calculating the time complexity of algorithms'
 date: 2020-04-13 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/002Colombia.jpg
-subtitle: 'Understand what the Big O Notation is, how it is applied to various data structures in Java, and how it can be used to calculate the efficiency of an algorithm.'
+subtitle: 'Understand why the Big O Notation is important and how it applies to different data structures in the context of an algorithm.'
 time: '10'
 tags:
 - Algorithms
