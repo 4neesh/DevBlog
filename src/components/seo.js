@@ -31,7 +31,7 @@ function SEO({ description,subtitle, lang, meta, title, thumbnail }) {
         lang,
       }}
       title={title}
-      subtitle={subtitle}
+      description={subtitle}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
@@ -64,7 +64,7 @@ function SEO({ description,subtitle, lang, meta, title, thumbnail }) {
         },
         {
           name: `twitter:description`,
-          content: subtitle,
+          content: description,
         },
         {
           name: `twitter:image`,
