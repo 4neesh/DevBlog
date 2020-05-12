@@ -16,7 +16,7 @@ const SinglePost = ({ data, pageContext }) => {
             <div className="container" id="content" >
             <SEO
                 title={post.title}
-                description={post.description}
+                description={post.subtitle}
                 thumbnail={thumbnail}
             />
            <Helmet>

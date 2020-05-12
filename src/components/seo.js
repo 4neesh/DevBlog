@@ -25,7 +25,6 @@ function SEO({ description,subtitle, lang, meta, title, thumbnail }) {
     origin = window.location.origin;
   }
   const image = origin + imageSrc
-  const subtitle = {subtitle}
   return (
     <Helmet
       htmlAttributes={{
