@@ -9,8 +9,18 @@ import LayoutPost from '../components/layoutPost'
 
 const SinglePost = ({ data, pageContext }) => {
     const post = data.markdownRemark.frontmatter
-    const basicUrl = "http://aneesh.co.uk/"
+    const basicUrl = "https://aneesh.co.uk/"
     const thumbnail = post.thumbnail
+
+    const imageSrc = thumbnail && thumbnail.childImageSharp.sizes.src;
+    let origin = ""
+    if (typeof window !== "undefined"){
+      origin = window.location.origin;
+    }
+    const image = origin + imageSrc
+    console.log(image)
+
+
     return (
         <LayoutPost  pageTitle={post.title}>
             <div className="container" id="content" >
@@ -27,7 +37,7 @@ const SinglePost = ({ data, pageContext }) => {
                <meta property="description" content={post.description}/>
                 <meta name="keywords" content={post.tags}/>
                 <meta property="og:type" content="website"/>
-                <meta property="og:image" content={post.thumbnail}/>
+                <meta property="og:image" content={image}/>
                 <meta property="og:locale" content="en_UK"/>
                 <meta property="og:url" content={`${basicUrl}${pageContext.slug}`}/>
                 <link rel="canonical" href={`${basicUrl}${pageContext.slug}`}/>
