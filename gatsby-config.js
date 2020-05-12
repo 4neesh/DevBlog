@@ -3,7 +3,7 @@ module.exports = {
     title: `Aneesh Mistry | Software Engineer`,
     description: `Aneesh is a Java software engineer based in London.`,
     author: `Aneesh Mistry`,
-    frontImage: "../images/me3.png",
+    keywords: `blog, java, spring, algorithms, software development`,
   },
   plugins: [
 

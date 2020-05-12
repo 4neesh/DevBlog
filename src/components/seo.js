@@ -13,7 +13,6 @@ function SEO({ description,subtitle, lang, meta, title, thumbnail }) {
             title
             description
             author
-            frontImage
           }
         }
       }
@@ -72,7 +71,7 @@ function SEO({ description,subtitle, lang, meta, title, thumbnail }) {
         },
         {
           name: `twitter:image`,
-          content: site.siteMetadata.frontImage,
+          content: image,
         },
       ].concat(meta)}
     />

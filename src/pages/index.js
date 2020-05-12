@@ -4,6 +4,7 @@ import SEO from "../components/seo"
 import  {graphql, StaticQuery} from "gatsby"
 import Post from '../components/Post'
 import PaginationLinks from "../components/PaginationLinks"
+import Helmet from "react-helmet"
 
 const IndexPage = () => {
 
@@ -23,6 +24,19 @@ return(
           return (
             <div className="container" id="content" >
  
+              <Helmet>
+                <title>Aneesh Mistry | Software Engineer</title>
+                <meta name="description" content={data.site.siteMetadata.description}/>
+                <meta name="keywords" content={data.site.siteMetadata.keywords}/>
+                <meta property="og:title" content={data.site.siteMetadata.title}/>
+                <meta property="og:type" content="website"/>
+                <meta property="og:description" content={data.site.siteMetadata.description}/>
+                <meta property="og:image" content=""/>
+                <meta property="og:locale" content="en_UK"/>
+                <meta property="og:url" content="https://www.aneesh.co.uk"/>
+                <link rel="canonical" href="https://www.aneesh.co.uk"/>
+
+              </Helmet>
               {data.allMarkdownRemark.edges.map(({ node }) => (
                 <Post 
                   key={node.id}
@@ -53,6 +67,14 @@ return(
 
 const indexQuery = graphql`
 query {
+  site {
+    siteMetadata {
+      title
+      description
+      author
+      keywords
+    }
+  }
   allMarkdownRemark(sort: {fields:[frontmatter___date], order:DESC}
     limit: 4
 

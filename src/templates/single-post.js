@@ -24,6 +24,14 @@ const SinglePost = ({ data, pageContext }) => {
                <meta name="description" content={post.subtitle}/>
                <meta property="og:title" content={post.title} key="ogtitle"/>
                <meta property="og:description" content={post.description} key="ogdesc"/>
+               <meta property="description" content={post.description}/>
+                <meta name="keywords" content={post.tags}/>
+                <meta property="og:type" content="website"/>
+                <meta property="og:image" content={post.thumbnail}/>
+                <meta property="og:locale" content="en_UK"/>
+                <meta property="og:url" content={`${basicUrl}${pageContext.slug}`}/>
+                <link rel="canonical" href={`${basicUrl}${pageContext.slug}`}/>
+              
            </Helmet>
             <Card>
                 {/* <Img className="card-image-top" 
