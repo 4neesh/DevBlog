@@ -3,7 +3,7 @@ title: 'Calculating the time complexity of algorithms'
 date: 2020-04-13 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/002Colombia.jpg
-thumbnail: '../images/002Colombia.jpg'
+thumbnail: '../images/002Graphtn.jpg'
 subtitle: 'Understand why the Big O is an important notation to reference when designing optimized algorithms.'
 time: '10'
 tags:

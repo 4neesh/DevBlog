@@ -3,7 +3,7 @@ title: 'How the JVM manages memory'
 date: 2020-05-11 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/006California.jpg
-thumbnail: '../images/006California.jpg'
+thumbnail: '../images/006Garbagetn.jpg'
 subtitle: 'Explore the different types of garbage collectors and how the JVM uses them to manage memory.'
 time: '10'
 tags:
