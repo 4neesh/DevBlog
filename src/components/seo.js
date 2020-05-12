@@ -26,7 +26,6 @@ function SEO({ description,subtitle, lang, meta, title, thumbnail }) {
   }
   const image = origin + imageSrc
   console.log(image)
-
   return (
     <Helmet
       htmlAttributes={{

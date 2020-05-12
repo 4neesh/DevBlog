@@ -28,6 +28,7 @@ const SinglePost = ({ data, pageContext }) => {
                 title={post.title}
                 description={post.subtitle}
                 thumbnail={thumbnail}
+                
             />
            <Helmet>
                <title>{post.title}</title>
@@ -39,7 +40,7 @@ const SinglePost = ({ data, pageContext }) => {
                 <meta property="og:type" content="website"/>
                 <meta property="og:image" content={image}/>
                 <meta property="og:locale" content="en_UK"/>
-                <meta property="og:url" content={`${basicUrl}${pageContext.slug}`}/>
+                <meta property="og:url" content={`${basicUrl}${pageContext.slug}/`}/>
                 <link rel="canonical" href={`${basicUrl}${pageContext.slug}`}/>
               
            </Helmet>
