@@ -31,6 +31,7 @@ function SEO({ description,subtitle, lang, meta, title, thumbnail }) {
         lang,
       }}
       title={title}
+      subtitle={subtitle}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
