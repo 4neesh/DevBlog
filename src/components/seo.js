@@ -20,7 +20,7 @@ function SEO({ description,subtitle, lang, meta, title, thumbnail }) {
   )
   const imageSrc = thumbnail && thumbnail.childImageSharp.sizes.src;
   const metaDescription = description || site.siteMetadata.description;
-  let origin = ""
+  let origin = "https://aneesh.co.uk/"
   if (typeof window !== "undefined"){
     origin = window.location.origin;
   }
@@ -33,7 +33,7 @@ function SEO({ description,subtitle, lang, meta, title, thumbnail }) {
       }}
       title={title}
       description={subtitle}
-      image={image}
+      // image={image}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {

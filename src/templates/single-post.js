@@ -40,7 +40,7 @@ const SinglePost = ({ data, pageContext }) => {
                 <meta property="og:type" content="website"/>
                 <meta property="og:image" content={image}/>
                 <meta property="og:locale" content="en_UK"/>
-                <meta property="og:url" content={`${basicUrl}${pageContext.slug}/`}/>
+                <meta property="og:url" content={`${basicUrl}${pageContext.slug}`}/>
                 <link rel="canonical" href={`${basicUrl}${pageContext.slug}`}/>
               
            </Helmet>
