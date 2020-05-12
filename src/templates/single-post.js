@@ -3,18 +3,22 @@ import { graphql, Link } from 'gatsby'
 import SEO from "../components/seo"
 import { slugify } from "../util/utilityFunctions"
 import { Card, CardBody, Badge, CardSubtitle, CardTitle } from 'reactstrap'
-import Img from "gatsby-image"
+// import Img from "gatsby-image"
 import Helmet from "react-helmet"
 import LayoutPost from '../components/layoutPost'
 
 const SinglePost = ({ data, pageContext }) => {
     const post = data.markdownRemark.frontmatter
     const basicUrl = "http://aneesh.co.uk/"
-    // const thumbnail = post.frontmatter.thumbnail
+    const thumbnail = post.thumbnail
     return (
         <LayoutPost  pageTitle={post.title}>
             <div className="container" id="content" >
-            <SEO title={post.title} />
+            <SEO
+                title={post.title}
+                description={post.description}
+                thumbnail={thumbnail}
+            />
            <Helmet>
                <title>{post.title}</title>
                <meta name="description" content={post.subtitle}/>
@@ -106,13 +110,20 @@ export const postQuery = graphql`
                 author
                 date(formatString: "Do MMM YYYY")
                 tags
+                thumbnail {
+                    childImageSharp {
+                      sizes(maxWidth: 600) {
+                        ...GatsbyImageSharpSizes
+                      }
+                    }
+                  }
                 featuredImage{
                     childImageSharp{
                       fluid(maxWidth: 600){
                         ...GatsbyImageSharpFluid
                       }
                     }
-                  }
+                }
             }
         }
     }
