@@ -1,5 +1,5 @@
 ---
-title: 'Memory management techniques'
+title: 'How the JVM manages memory'
 date: 2020-05-11 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/006California.jpg
