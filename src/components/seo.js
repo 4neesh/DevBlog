@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, title, thumbnail }) {
+function SEO({ description,subtitle, lang, meta, title, thumbnail }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -18,11 +18,11 @@ function SEO({ description, lang, meta, title, thumbnail }) {
       }
     `
   )
-  const imageSrc = thumbnail && thumbnail.childImageSharp.sizes.src
-  const metaDescription = description || site.siteMetadata.description
+  const imageSrc = thumbnail && thumbnail.childImageSharp.sizes.src;
+  const metaDescription = description || site.siteMetadata.description;
   let origin = ""
   if (typeof window !== "undefined"){
-    origin = window.location.origin
+    origin = window.location.origin;
   }
   const image = origin + imageSrc
 
@@ -64,7 +64,7 @@ function SEO({ description, lang, meta, title, thumbnail }) {
         },
         {
           name: `twitter:description`,
-          content: description,
+          content: subtitle,
         },
         {
           name: `twitter:image`,
