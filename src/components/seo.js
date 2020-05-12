@@ -13,13 +13,13 @@ function SEO({ description,subtitle, lang, meta, title, thumbnail }) {
             title
             description
             author
+            frontImage
           }
         }
       }
     `
   )
   const imageSrc = thumbnail && thumbnail.childImageSharp.sizes.src;
-  console.log(imageSrc)
   const metaDescription = description || site.siteMetadata.description;
   let origin = ""
   if (typeof window !== "undefined"){
@@ -72,7 +72,7 @@ function SEO({ description,subtitle, lang, meta, title, thumbnail }) {
         },
         {
           name: `twitter:image`,
-          content: image,
+          content: site.siteMetadata.frontImage,
         },
       ].concat(meta)}
     />
