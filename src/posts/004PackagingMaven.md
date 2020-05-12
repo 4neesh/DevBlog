@@ -3,8 +3,8 @@ title: 'Packaging and logging a Java application'
 date: 2020-04-27 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/004MachuPicchu.jpg
-thumbnail: ../images/004MachuPicchu.jpg
-subtitle: 'Using JAR files to package your application to be run from a server and implementing logging to provide transparency to runtime activity.'
+thumbnail: '../images/004MachuPicchu.jpg'
+subtitle: 'Create JAR files to package your Java application and implement logging to provide transparency into runtime activity.'
 time: '10'
 tags:
 - Spring

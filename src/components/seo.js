@@ -19,12 +19,15 @@ function SEO({ description,subtitle, lang, meta, title, thumbnail }) {
     `
   )
   const imageSrc = thumbnail && thumbnail.childImageSharp.sizes.src;
+  console.log(imageSrc)
   const metaDescription = description || site.siteMetadata.description;
   let origin = ""
   if (typeof window !== "undefined"){
     origin = window.location.origin;
   }
   const image = origin + imageSrc
+  console.log(image)
+
   return (
     <Helmet
       htmlAttributes={{

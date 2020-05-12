@@ -3,7 +3,7 @@ title: 'Implementing closed addressing'
 date: 2020-05-18 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/007_Bariloche.jpg
-subtitle: 'A demonstration how a hash function can be designed and written to implement chaining / closed addressing'
+subtitle: 'Create a hash table that uses closed addressing to resolve hash collisions and rehashing to satisfy the load factor.'
 time: '8'
 tags:
 - Java
