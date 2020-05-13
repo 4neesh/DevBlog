@@ -20,7 +20,7 @@ Fast-forward to the present day and I am starting a blog to document the areas o
 My experience with writing a dissertation, where I had to introduce the technologies involved (Big Data and Blockchain) allowed me to appreciate the process and value of understanding a technical concept to its core. My blog will support me with the opportunity to write bite-sized posts on how and why the technologies I use work.
 </p>
 <p>
-My expectations for this blog are that it will surround all areas of Java, Spring, and AWS.<br>
+My expectations for this blog are that it will surround all areas of Java, Spring, and algorithms.<br>
 Despite this, the deluge of questions that arrive each day from my search for answers will no doubt broaden the context.<br>
 Nevertheless, I am creating this website for my enjoyment and with the hope that you, the reader, may also benefit from one of the many challenges I overcome as an engineer.
 </P>

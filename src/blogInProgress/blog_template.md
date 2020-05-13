@@ -3,6 +3,7 @@ title: 'xxx'
 date: 2020-04-27 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/xxx.png
+thumbnail: ''
 subtitle: 'xxx'
 time: 'xx'
 tags:

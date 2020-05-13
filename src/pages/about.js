@@ -20,8 +20,8 @@ const AboutPage = () => (
         <CardBody>
           <p>Thank you for visiting my website.</p>
           <p>
-            I am a software engineer and enjoy building applications
-            with consideration to performance and optimization.
+            I am a software engineer and enjoy building full-stack applications, 
+            learning about the latest technologies and designing efficient algorithms.
           </p>
           <p>
             I completed my bachelors degree in Banking, Finance, and Management
@@ -49,7 +49,7 @@ const AboutPage = () => (
           <p>
             I currently work for Accenture as a software engineer. I have been
             able to build upon my skills in many areas, but focusing specifically with
-            Java and AWS. I continue to broaden my understanding of financial
+            Java, microservices and AWS. I continue to broaden my understanding of financial
             services; I actively participate in the UKI Blockchain
             community of practice and work predominantly with financial services
             clients.
