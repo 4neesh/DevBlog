@@ -46,7 +46,7 @@ const Layout = ({ children }) => (
           <StickyHeader/>
 
           {/* <img src={Graph} alt="graph"/> */}
-          <Row>
+          <Row >
             <Col md="7">{children}</Col>
             <Col md="5">
 

@@ -41,7 +41,7 @@ const LayoutPost = ({ children }) => (
           <StickyHeader/>
 
           {/* <img src={Graph} alt="graph"/> */}
-          <Row>
+          <Row className="singlePostCentralCard">
             <Col >{children}</Col>
            
           </Row>

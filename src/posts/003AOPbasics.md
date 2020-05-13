@@ -9,7 +9,6 @@ time: '15'
 tags:
 - Spring
 - Java
-- Maven
 - Patterns
 ---
 <br>

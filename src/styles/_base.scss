@@ -1,6 +1,9 @@
 .container#content {
   margin-top: 40px;
+  font-size: 20px;
+ 
 }
+
 body {
   background-color: $light-gray;
   font-family: $site-font;
@@ -52,6 +55,11 @@ li{
   margin-bottom: 10;
 }
 
+.singlePostCentralCard{
+  // margin-right: 70px;
+  // margin-left: 70px;
+  // max-width: 1000px;
+}
 
 .social-share-links {
   ul {

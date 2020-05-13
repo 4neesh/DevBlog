@@ -9,7 +9,6 @@ time: '10'
 tags:
 - Spring
 - Java
-- Maven
 ---
 <br>
 <strong>Key Takeaways</strong><br>
