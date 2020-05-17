@@ -8,7 +8,6 @@ subtitle: 'Understand how hash functions are used with hash collections and the 
 time: '8'
 tags:
 - Data Structures
-- Java
 ---
 <br>
 <strong>Key Takeaways</strong><br>

@@ -8,7 +8,6 @@ subtitle: 'Apply aspect-orientated programming to a Spring application to suppor
 time: '15'
 tags:
 - Spring
-- Java
 - Patterns
 ---
 <br>
