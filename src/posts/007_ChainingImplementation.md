@@ -203,7 +203,7 @@ If the array position is null, the put method will create a new EntryLinkedList 
 <br>
 <h5>Using the hash table from the main method</h5>
 <p>
-The main method will begin by instantiating a ChainedHash instance with 8 buckets. The instance will then call the put method followed by the <code class="language-java">printEntryLinkedList()</code> method which will will print each entry of the hash table to the console.<br>
+The main method will begin by instantiating a ChainedHash instance with 8 buckets. The instance will then call the put method followed by the <code class="language-java">printEntryLinkedList()</code> method which will print each entry of the hash table to the console.<br>
 </p>
 
 ```java{numberLines: true}
@@ -306,7 +306,7 @@ Total collisions: 1
 <h4>Conclusion</h4>
 <p>
 The implementation of chaining in a hash table can be achieved with just a few methods that cover the load factor evaluation, rehash, and put. By experimenting with the hash function, MAX_LOAD_FACTOR and the number of buckets from instantiation, the performance of the hash table can be altered to reduce the number of rehashes required, the bunching of values in buckets and collision frequency.<br>
-Feel free to clone the source code from this blog on <a target="_blank" href="https://github.com/4neesh/HashTableChainingDemo"><u>GitHub</u></a> to see the impact of more entries on the performance of the hash table.
+Feel free to clone the source code from this blog on <a target="_blank" href="https://github.com/4neesh/HashTableChainingDemo"><u>GitHub</u></a> to test the impact of more entries on the performance of the hash table.
 </p>
 
 <br>

@@ -1,13 +1,13 @@
 ---
-title: 'xxx'
+title: 'The String Object class'
 date: 2020-06-01 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/xxx.png
 thumbnail: ''
-subtitle: 'xxx'
+subtitle: 'A look into the properties of the String class, one of the most used Objects across the Java API.'
 time: 'xx'
 tags:
-- xxx
+- Java
 ---
 <br>
 <strong>Key Takeaways</strong><br>
