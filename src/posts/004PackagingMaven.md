@@ -245,11 +245,11 @@ Once we have the properties configured, we can implement Log4J in our main class
 ```
 
 <p>
-The <code class="language-java">static</code> block at the top of the main class will set the system property we define as <strong>current.date.time</strong>.<br>
+The <code class="java">static</code> block at the top of the main class will set the system property we define as <strong>current.date.time</strong>.<br>
 You may recognise the system property from the properties file as it is used to append the date and time for log filenames.<br>
 On line 6, we create an instance of the logger. As we may create many different loggers in our application, we name our logger after the class. 
 Using the class name helps us to avoid name duplication and also provides descriptive detail in the log file for which logger within the application is being used.<br>
-On line 10 we use the <code class="language-java">PropertyConfigurator</code> which allows our logger to be configured by an external file.
+On line 10 we use the <code class="java">PropertyConfigurator</code> which allows our logger to be configured by an external file.
 </p>
 <p>
 Now that the logger is successfully configured to the application, we can begin writing logger records that will provide information and debugging context to our log file:<br>

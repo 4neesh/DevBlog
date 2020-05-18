@@ -21,7 +21,7 @@ tags:
 <h4>Automated memory collection in Java</h4>
 <p>
 Memory management is the process of assigning memory to Objects created by an application and releasing the memory when the Object is no longer required.<br>
-In languages such as C++ and C, the developer will need to manually allocate Objects memory using methods such as <code class="language-c++">malloc()</code> and <code class="language-c++">calloc()</code>. If the developer does not remember to release the Object from the memory, a <i>Memory leak</i> could occur.<br>
+In languages such as C++ and C, the developer will need to manually allocate Objects memory using methods such as <code class="java">malloc()</code> and <code class="java">calloc()</code>. If the developer does not remember to release the Object from the memory, a <i>Memory leak</i> could occur.<br>
 <p>
 <strong><i>Memory leak: when an Object continues to consume memory even after it is needed or when an Object stored in memory cannot be accessed by the programme.</i></strong> 
 </p>

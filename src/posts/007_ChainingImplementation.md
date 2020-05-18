@@ -28,8 +28,8 @@ In this post, I will implement chaining with a hash table. The hash table will r
 <h4>Implementing chaining</h4>
 <p>
 The hash table design will consist of two classes:<br>
-&#8226; <code class="language-java">ChainedHash</code>: the hash table class.<br>
-&#8226; <code class="language-java">EntryLinkedList</code>: the LinkedList Object appended to each bucket of the ChainedHash instance.<br>
+&#8226; <code class="java">ChainedHash</code>: the hash table class.<br>
+&#8226; <code class="java">EntryLinkedList</code>: the LinkedList Object appended to each bucket of the ChainedHash instance.<br>
 The diagram below illustrates how the two classes will be used together. The numbers inside the EntryLinkedList Objects represent the values from their key:<br>
 </p>
 
@@ -38,16 +38,16 @@ The diagram below illustrates how the two classes will be used together. The num
 <br>
 <p>
 The ChainedHash class will use the following methods to implement chaining:<br>
-&#8226; <code class="language-java">put(key, value)</code> to place key-value pairs in the hash table.<br>
-&#8226; <code class="language-java">hashFunction(key)</code> to calculate the hash value of the key.<br>
-&#8226; <code class="language-java">validateLoadFactor()</code> to ensure the load factor of the hash table is monitored and adjusted as new entries are made.
+&#8226; <code class="java">put(key, value)</code> to place key-value pairs in the hash table.<br>
+&#8226; <code class="java">hashFunction(key)</code> to calculate the hash value of the key.<br>
+&#8226; <code class="java">validateLoadFactor()</code> to ensure the load factor of the hash table is monitored and adjusted as new entries are made.
 <br>
 </p>
 <p>
 The buckets within the ChainedHash class will be an array of EntryLinkedList Objects. Each EntryListObject will contain the following variables:<br>
-&#8226; <code class="language-java">String key</code> to store the key.<br>
-&#8226; <code class="language-java">int value</code> to store the value.<br>
-&#8226; <code class="language-java">EntryLinkedList nextListEntry</code> to link additional key-value pairs to the bucket.<br>
+&#8226; <code class="java">String key</code> to store the key.<br>
+&#8226; <code class="java">int value</code> to store the value.<br>
+&#8226; <code class="java">EntryLinkedList nextListEntry</code> to link additional key-value pairs to the bucket.<br>
 </p>
 <br>
 <h5>Class: EntryLinkedList</h5>
@@ -71,7 +71,7 @@ There are getters and setters for the value and nextListEntry, and a getter for 
 <br>
 <h5>Class: ChainedHash</h5>
 <p>
-The ChainedHash class instantiates its buckets from the constructor. The load factor for the hash table will be evaluated against a static constant: <code class="language-java">MAX_LOAD_FACTOR</code>. The MAX_LOAD_FACTOR represents the upper-bound value of the load factor. The constructor will take an argument to define the initial number of buckets and it will instantiate all buckets to null.
+The ChainedHash class instantiates its buckets from the constructor. The load factor for the hash table will be evaluated against a static constant: <code class="java">MAX_LOAD_FACTOR</code>. The MAX_LOAD_FACTOR represents the upper-bound value of the load factor. The constructor will take an argument to define the initial number of buckets and it will instantiate all buckets to null.
 <br>
 
 ```java{numberLines: true}
@@ -93,7 +93,7 @@ The ChainedHash class instantiates its buckets from the constructor. The load fa
 ```
 
 <br>
-The <code class="language-java">hashFunction(String key)</code> method is used to calculate the hash value of the key passed in. The hash function will sum the ascii values of the String (lines 4 to 6) and return the modulo of the sum against the number of buckets (line 9 and 11):<br>
+The <code class="java">hashFunction(String key)</code> method is used to calculate the hash value of the key passed in. The hash function will sum the ascii values of the String (lines 4 to 6) and return the modulo of the sum against the number of buckets (line 9 and 11):<br>
 
 ```java{numberLines: true}
     public static int hashFunction(String key) {
@@ -110,7 +110,7 @@ The <code class="language-java">hashFunction(String key)</code> method is used t
     }
 ```
 <br>
-The <code class="language-java">validateLoadFactor()</code> method is called within the put(key, value) method to ensure the load factor of the hash table is not greater than the MAX_LOAD_FACTOR constant. If the load factor is greater than MAX_LOAD_FACTOR, the numberOfBuckets static value is doubled (line 4) and the hash table is replaced by calling the <code class="language-java">rehash()</code> method (line 6).
+The <code class="java">validateLoadFactor()</code> method is called within the put(key, value) method to ensure the load factor of the hash table is not greater than the MAX_LOAD_FACTOR constant. If the load factor is greater than MAX_LOAD_FACTOR, the numberOfBuckets static value is doubled (line 4) and the hash table is replaced by calling the <code class="java">rehash()</code> method (line 6).
 
 ```java{numberLines: true}
     private void validateLoadFactor() {
@@ -127,11 +127,11 @@ The <code class="language-java">validateLoadFactor()</code> method is called wit
 The rehash method will recreate the hash table using the updated number of buckets in 4 steps:<br>
 1. On line 3, a temporary EntryLinkedList array is created as a replica of the existing array.<br>
 2. On line 5, the existing EntryLinkedList is replaced by a new array with the new number of buckets.<br>
-3. On line 6, the <code class="language-java">numberOfEntries</code> static value is reset to ensure the new load factor is correctly recalculated.<br>
-4. From line 7, the new hash table is created by looping through the previous entries in the <code class="language-java">temp</code> array and appending them into the new EntryLinkedList.<br>
+3. On line 6, the <code class="java">numberOfEntries</code> static value is reset to ensure the new load factor is correctly recalculated.<br>
+4. From line 7, the new hash table is created by looping through the previous entries in the <code class="java">temp</code> array and appending them into the new EntryLinkedList.<br>
 </p>
 <p>
-Note, the hash function is also adjusted to the new <code class="language-java">numberOfEntries</code> value and will therefore compute new index positions for each key into the new EntryLinkedList array. 
+Note, the hash function is also adjusted to the new <code class="java">numberOfEntries</code> value and will therefore compute new index positions for each key into the new EntryLinkedList array. 
 </p>
 
 ```java{numberLines:true}
@@ -164,8 +164,8 @@ The diagram below illustrates the change made to the hash table following a reha
 
 <br>
 <p>
-The <code class="language-java">put(key, value)</code> method is used to add a new key-value pair into the hash table. The put method consists of 4 key steps:<br>
-1. The <code class="language-java">hashFunction(key)</code> method is used on line 2 to calculate the hash value for the key.<br>
+The <code class="java">put(key, value)</code> method is used to add a new key-value pair into the hash table. The put method consists of 4 key steps:<br>
+1. The <code class="java">hashFunction(key)</code> method is used on line 2 to calculate the hash value for the key.<br>
 2. On line 5, the load factor is verified against the MAX_LOAD_FACTOR. <br>
 3. On line 7, the put method checks if the existing hashFunction value already has an EntryLinkedList Object in the array.
 If the array position is null, the put method will create a new EntryLinkedList and populate the first position with the value (line 9).<br> 
@@ -203,7 +203,7 @@ If the array position is null, the put method will create a new EntryLinkedList 
 <br>
 <h5>Using the hash table from the main method</h5>
 <p>
-The main method will begin by instantiating a ChainedHash instance with 8 buckets. The instance will then call the put method followed by the <code class="language-java">printEntryLinkedList()</code> method which will print each entry of the hash table to the console.<br>
+The main method will begin by instantiating a ChainedHash instance with 8 buckets. The instance will then call the put method followed by the <code class="java">printEntryLinkedList()</code> method which will print each entry of the hash table to the console.<br>
 </p>
 
 ```java{numberLines: true}

@@ -37,7 +37,7 @@ public class FootballGame {
 
 </p>
 <p>
-The method <code class="language-java">playGame()</code> is known as the <strong>Joinpoint</strong>. The Joinpoint is an exact point within the execution of an application that can be defined on the thread. An example of a Joinpoint can be calling a constructor or method, or throwing an <code class="language-java">Exception</code>.<br>
+The method <code class="java">playGame()</code> is known as the <strong>Joinpoint</strong>. The Joinpoint is an exact point within the execution of an application that can be defined on the thread. An example of a Joinpoint can be calling a constructor or method, or throwing an <code class="java">Exception</code>.<br>
 We are able to define different Joinpoints within our application by using <strong>Pointcut expressions</strong>. A Pointcut expression is a predicate that can match different Joinpoints. We define Pointcut expressions to pin-point certain Joinpoints within the application that we would like to apply our cross-cutting concerns to. If we defined a Pointcut expression for the above example, it would define the package, class name and method signature exactly.<br> In AOP, <strong>Advice</strong> is the action that is taken when a Pointcut expression is satisfied. Both the Pointcut expressions and the Advice are defined together within an <strong>Aspect</strong> class. The Aspect class is a handy way Spring can identify if, and where, to find possible AOP implementations to be applied in conjunction with a Joinpoint. <br>You may be wondering when, in relation to the Joinpoint execution, that the Advice method is called. The exact position in relation to the Joinpoint can be defined by the of 5 different types of Advice, illustrated below:
 
 </p>
@@ -45,11 +45,11 @@ We are able to define different Joinpoints within our application by using <stro
 ![Advice in AOP](../../src/images/003Flow.png)
 
 
-&#8226; <strong>@Before</strong> is called before <code class="language-java">playGame()</code> is executed. <br>
-&#8226; <strong>@After</strong> is called after <code class="language-java">playGame()</code> is executed.<br>
-&#8226; <strong>@Around</strong> is called both before and after <code class="language-java">playGame()</code> is executed.<br>
-&#8226; <strong>@AfterReturning</strong> is called after <code class="language-java">playGame()</code> is executed and returns a value.<br>
-&#8226; <strong>@AfterThrowing</strong> is called after <code class="language-java">playGame()</code> is executed, and if it throws an <code class="language-java">Exception</code>.<br><br>
+&#8226; <strong>@Before</strong> is called before <code class="java">playGame()</code> is executed. <br>
+&#8226; <strong>@After</strong> is called after <code class="java">playGame()</code> is executed.<br>
+&#8226; <strong>@Around</strong> is called both before and after <code class="java">playGame()</code> is executed.<br>
+&#8226; <strong>@AfterReturning</strong> is called after <code class="java">playGame()</code> is executed and returns a value.<br>
+&#8226; <strong>@AfterThrowing</strong> is called after <code class="java">playGame()</code> is executed, and if it throws an <code class="java">Exception</code>.<br><br>
 <br>
 <h4>Implementing AOP step by step</h4>
 <p>
@@ -75,7 +75,7 @@ AOP requires two dependencies in our Spring project, we will define them in our 
 ```
 
 <p>
-We will be using the <code class="language-java">spring-context</code> dependency for supporting Spring components and <code class="language-java">aspectj</code> for supporting the Aspect class and Advice implementations.
+We will be using the <code class="java">spring-context</code> dependency for supporting Spring components and <code class="java">aspectj</code> for supporting the Aspect class and Advice implementations.
 </p>
 
 
@@ -91,9 +91,9 @@ public static void main(String[] args) {
 
 ```
 <p>
-We will begin by instructing the main thread to call a Joinpoint called <code class="language-java">playGame()</code>.<br>
+We will begin by instructing the main thread to call a Joinpoint called <code class="java">playGame()</code>.<br>
 <strong>AnnotationConfigApplicationContext</strong> is used to import the Spring Configuration class that defines the package to scan for Spring components.<br>
-<code class="language-java">Context</code> will be used to obtain a Spring bean to which it will later be used to call <code class="language-java">playGame()</code>.
+<code class="java">Context</code> will be used to obtain a Spring bean to which it will later be used to call <code class="java">playGame()</code>.
 </p>
 <p>
 The Spring configuration class exists as below:
@@ -116,7 +116,7 @@ The <strong>@Configuration</strong> annotation defines the class as a configurat
 </p>
 
 <p>
-Business logic is processed in <code class="language-java">public class FootballGame</code>. This class will begin with a single void method that prints "Game has started.".
+Business logic is processed in <code class="java">public class FootballGame</code>. This class will begin with a single void method that prints "Game has started.".
 </p>
 
 ```java{numberLines: true}
@@ -130,7 +130,7 @@ public class FootballGame {
 }
 ```
 <p>
-The above class includes the <strong>@Component</strong> annotation to ensure it is scanned by <code class="language-java">SpringConfig</code>.
+The above class includes the <strong>@Component</strong> annotation to ensure it is scanned by <code class="java">SpringConfig</code>.
 </p>
 
 
@@ -157,29 +157,29 @@ The <strong>@Aspect</strong> annotation informs Spring that there may be Advice 
 <p>
 Before we define the Advice, we need to understand which Joinpoint(s) we would like the Advice to be called upon.<br>
 When applying our Pointcut expressions, we use the term "execution". "execution" is the primary method of implementing Pointcut expressions in the following structure: <br>
-<code class="language-java">"execution([optional]{access modifier} {return type} {package} {class} {method name} {arguments}")</code><br>
+<code class="java">"execution([optional]{access modifier} {return type} {package} {class} {method name} {arguments}")</code><br>
 By default, the access modifier is 'Public', therefore it can be left undefined from the expression.<br>
 For each of the other input values, you can specify custom values or leave it open with an asterisk (*). <br>
 </p>
 
-<code class="language-java">"execution(* com.aneesh.aopdemo.* .* () )"</code><br>
+<code class="java">"execution(* com.aneesh.aopdemo.* .* () )"</code><br>
 Scan all public access modifiers, all return types for all classes within the com.aneesh.aopdemo package with all method names and no arguments<br><br>
-<code class="language-java">"execution(* com.aneesh.aopdemo.FootballGame .* () )"</code><br>
+<code class="java">"execution(* com.aneesh.aopdemo.FootballGame .* () )"</code><br>
 Scan all public access modifiers, all return types for only the FootballGame class within the com.aneesh.aopdemo package with all method names and no arguments<br><br>
-<code class="language-java">"execution(* com.aneesh.aopdemo.FootballGame .playGame () )"</code><br>
+<code class="java">"execution(* com.aneesh.aopdemo.FootballGame .playGame () )"</code><br>
 Scan all public access modifiers, all return types for only the FootballGame class within the com.aneesh.aopdemo package with the method name "playGame" and no arguments<br><br>
-<code class="language-java">"execution(* com.aneesh.aopdemo.FootballGame .playGame (..) )"</code><br>
+<code class="java">"execution(* com.aneesh.aopdemo.FootballGame .playGame (..) )"</code><br>
 Scan all public access modifiers, all return types for only the FootballGame class within the com.aneesh.aopdemo package with the method name "playGame" and all possible arguments<br><br>
-<code class="language-java">"execution(private void com.aneesh.aopdemo.FootballGame .playGame (..) )"</code><br>
+<code class="java">"execution(private void com.aneesh.aopdemo.FootballGame .playGame (..) )"</code><br>
 Scan all private access modifiers, void return types for only the FootballGame class within the com.aneesh.aopdemo package with the method name "playGame" and all possible arguments<br><br>
-<code class="language-java">"execution(public void com.aneesh.aopdemo.FootballGame .playGame (String, int) )"</code><br>
+<code class="java">"execution(public void com.aneesh.aopdemo.FootballGame .playGame (String, int) )"</code><br>
 Scan all public access modifiers, void return types for only the FootballGame class within the com.aneesh.aopdemo package with the method name "playGame" and arguments of String followed by int<br><br>
 
 <p>
 The examples above illustrate how specific or generic a Pointcut expression can be.<br>
 The granularity of Pointcut expressions enable us to define explicitly which Joinpoint(s) we want to be scanned.<br>
 We can then use the 5 Advice types to provide further granularity to specify where in the Joinpoint we would like to implement the Advice.<br>
-The below example will implement before and after Advice on our <code class="language-java">playGame()</code> Joinpoint:
+The below example will implement before and after Advice on our <code class="java">playGame()</code> Joinpoint:
 </p>
 <br>
 <h5>Using @Before and @After</h5>
@@ -218,8 +218,8 @@ The application has run the Before and After methods in their respective order a
 </p>
 <p>
 The <strong>@Around</strong>, <strong>@AfterReturning</strong>, and <strong>@AfterThrowing</strong> Advice are implemented slightly differently, introducing a few more variables.<br>
-To illustrate the annotations, we will introduce a new method, <code class="language-java">countPlayers()</code>, that returns the number of players on the pitch if it is equal to 22, otherwise it will throw an code class="language-java">Exception</code>.<br>
-<code class="language-java">class FootballGame</code> has been updated (below) and the main class will now call <code class="language-java">countPlayers()</code> instead of <code class="language-java">playGame()</code>.
+To illustrate the annotations, we will introduce a new method, <code class="java">countPlayers()</code>, that returns the number of players on the pitch if it is equal to 22, otherwise it will throw an <code class="java">Exception</code>.<br>
+<code class="java">class FootballGame</code> has been updated (below) and the main class will now call <code class="java">countPlayers()</code> instead of <code class="java">playGame()</code>.
 </p>
 
 ```java{numberLines: true}
@@ -272,7 +272,7 @@ public static void main(String[] args) {
 <h5>Using @Around</h5>
 
 <p>
-We will create new Advice methods in the Aspect class to process the information from the new Joinpoint. We will include around the execution, and upon returning an <code class="language-java">int</code> or <code class="language-java">Exception</code>.
+We will create new Advice methods in the Aspect class to process the information from the new Joinpoint. We will include around the execution, and upon returning an <code class="java">int</code> or <code class="java">Exception</code>.
 </p>
 
 ```java{numberLines: true}
@@ -289,16 +289,16 @@ We will create new Advice methods in the Aspect class to process the information
 
 ```
 <p>
-On line 1 we use the <strong>@Around</strong> type Advice. The Around Advice is very different to Before or After as it is intercepting the method call from the main method to <code class="language-java">countPlayers()</code>.
-You will see on line 2 that the method returns an <code class="language-java">Object</code>.<br>
-The business logic expects the call to <code class="language-java">countPlayers()</code> to return an <code class="language-java">int</code>. The Around Advice will intercept that method, but it now has the responsibility to retain the business logic and return an <code class="language-java">int</code>.<br>
+On line 1 we use the <strong>@Around</strong> type Advice. The Around Advice is very different to Before or After as it is intercepting the method call from the main method to <code class="java">countPlayers()</code>.
+You will see on line 2 that the method returns an <code class="java">Object</code>.<br>
+The business logic expects the call to <code class="java">countPlayers()</code> to return an <code class="java">int</code>. The Around Advice will intercept that method, but it now has the responsibility to retain the business logic and return an <code class="java">int</code>.<br>
 The process of receiving, processing, and returning the int is achieved in 3 key sections: {line 4}, {line 6}, and {lines 8 & 9}.<br>
-Line 4 will be the business logic processed <u>before</u> <code class="language-java">countPlayers()</code> is called. <br>
-Line 6 will use the <strong>ProceedingJoinPoint</strong> to execute the actual <code class="language-java">countPlayers()</code> method.<br>
-ProceedingJoinPoint acts as the connection between the Advice and the <code class="language-java">countPlayers()</code> Joinpoint. By calling <code class="language-java">.proceed()</code>, we are telling the Advice to continue with executing the Joinpoint in the application.<br>
-<code class="language-java">proceedingJoinPoint.proceed()</code> is a unique method to the <strong>@Around</strong> Advice as it sits on both sides of the Joinpoint.<br>
-By default, the <code class="language-java">.proceed()</code> method will return an <code class="language-java">Object</code>. We have defined an <code class="language-java">Object</code> as the result on line 6, however this can be wrapped in an <code class="language-java">Integer</code> and returned.<br>
-On lines 8 and 9, we process the business logic <u>after</u> the method has returned from <code class="language-java">countPlayers()</code>. The <code class="language-java">int</code> is then sent to the main application as it would have expected to be delivered had the Advice not been used. In this example, the int is packaged as an <code class="language-java">Object</code>.
+Line 4 will be the business logic processed <u>before</u> <code class="java">countPlayers()</code> is called. <br>
+Line 6 will use the <strong>ProceedingJoinPoint</strong> to execute the actual <code class="java">countPlayers()</code> method.<br>
+ProceedingJoinPoint acts as the connection between the Advice and the <code class="java">countPlayers()</code> Joinpoint. By calling <code class="java">.proceed()</code>, we are telling the Advice to continue with executing the Joinpoint in the application.<br>
+<code class="java">proceedingJoinPoint.proceed()</code> is a unique method to the <strong>@Around</strong> Advice as it sits on both sides of the Joinpoint.<br>
+By default, the <code class="java">.proceed()</code> method will return an <code class="java">Object</code>. We have defined an <code class="java">Object</code> as the result on line 6, however this can be wrapped in an <code class="java">Integer</code> and returned.<br>
+On lines 8 and 9, we process the business logic <u>after</u> the method has returned from <code class="java">countPlayers()</code>. The <code class="java">int</code> is then sent to the main application as it would have expected to be delivered had the Advice not been used. In this example, the int is packaged as an <code class="java">Object</code>.
 </p>
 <br>
 <h5>Using @AfterReturning</h5>
@@ -316,12 +316,12 @@ The below example uses <strong>@AfterReturning</strong>:
 
 ```
 <p>
-On Line 1 we use the <strong>@AfterReturning</strong> Advice to process information after <code class="language-java">countPlayers()</code> has returned an <code class="language-java">Object</code> (otherwise an <code class="language-java">int</code>).<br>
-The argument to the Advice, however, does not only consist of a Pointcut expression. We define the Pointcut to the variable "pointcut", then we also define a <code class="language-java">String</code> called "return" to the "returning" property.<br>
-The value of "returning" is used in the Advice method. The "returning" value is equal to what is returned from <code class="language-java">countPlayers()</code>. The "returning" value is later back to the main method after the Advice.<br>
-We could use the result from <code class="language-java">countPlayers()</code> in the Advice and return it to the application by adjusting the method signature (on line 2) and returning an int at the end of the method (line 5), however this example will only return void.<br>
-On line 2 we can see the method will take an <code class="language-java">int</code> argument which comes directly from <code class="language-java">countPlayers()</code>. The business logic is processed on line 4. <br>
-The diagram below illustrates the movement of Objects between the <code class="language-java">countPlayers()</code> and the Advice, before being returned to the main method:
+On Line 1 we use the <strong>@AfterReturning</strong> Advice to process information after <code class="java">countPlayers()</code> has returned an <code class="java">Object</code> (otherwise an <code class="java">int</code>).<br>
+The argument to the Advice, however, does not only consist of a Pointcut expression. We define the Pointcut to the variable "pointcut", then we also define a <code class="java">String</code> called "return" to the "returning" property.<br>
+The value of "returning" is used in the Advice method. The "returning" value is equal to what is returned from <code class="java">countPlayers()</code>. The "returning" value is later back to the main method after the Advice.<br>
+We could use the result from <code class="java">countPlayers()</code> in the Advice and return it to the application by adjusting the method signature (on line 2) and returning an int at the end of the method (line 5), however this example will only return void.<br>
+On line 2 we can see the method will take an <code class="java">int</code> argument which comes directly from <code class="java">countPlayers()</code>. The business logic is processed on line 4. <br>
+The diagram below illustrates the movement of Objects between the <code class="java">countPlayers()</code> and the Advice, before being returned to the main method:
 </p>
 
 ![AfterReturning Advice flow](../../src/images/003AfterReturning.png)
@@ -344,8 +344,8 @@ Main method has counted players value of: 22
 <h5>Using @AfterThrowing</h5>
 
 <p>
-The current application does not throw an <code class="language-java">Exception</code>, but if we were to change the <code class="language-java">playersOnPitch</code> value in <code class="language-java">class FootballGame</code>, <code class="language-java">countPlayers()</code> would throw an <code class="language-java">Exception</code>.<br>
-The example below demonstrates how an <code class="language-java">Exception</code> would be handled with Advice.
+The current application does not throw an <code class="java">Exception</code>, but if we were to change the <code class="java">playersOnPitch</code> value in <code class="java">class FootballGame</code>, <code class="java">countPlayers()</code> would throw an <code class="java">Exception</code>.<br>
+The example below demonstrates how an <code class="java">Exception</code> would be handled with Advice.
 </p>
 
 ```java{numberLines:true}
@@ -359,13 +359,13 @@ The example below demonstrates how an <code class="language-java">Exception</cod
 ```
 <p>
 
-On line 2 we have defined the Advice in a similar pattern to the <strong>AfterReturning</strong> Advice. Instead of using the "returning" parameter, we are using "throwing", and we pass the <code class="language-java">Exception</code> into the Advice method as a Throwable on line 3.<br>
-On line 5, we simply process the message of the <code class="language-java">Exception</code> before allowing the <code class="language-java">Exception</code> to be sent back to the main method.<br>
-In real business logic, we may log the <code class="language-java">Exception</code> or transform it before sending it back. <br>
+On line 2 we have defined the Advice in a similar pattern to the <strong>AfterReturning</strong> Advice. Instead of using the "returning" parameter, we are using "throwing", and we pass the <code class="java">Exception</code> into the Advice method as a Throwable on line 3.<br>
+On line 5, we simply process the message of the <code class="java">Exception</code> before allowing the <code class="java">Exception</code> to be sent back to the main method.<br>
+In real business logic, we may log the <code class="java">Exception</code> or transform it before sending it back. <br>
 </p>
 
 <p>
-If we change the number of players so an <code class="language-java">Exception</code> is thrown, the <strong>AfterThrowing</strong> Advice would return:
+If we change the number of players so an <code class="java">Exception</code> is thrown, the <strong>AfterThrowing</strong> Advice would return:
 </p>
 
 ```
@@ -377,8 +377,8 @@ Main method has caught exception: FootballGame class Exception: Incorrect number
 ```
 
 <p>
-Notice that the second Around Advice has not been called as an <code class="language-java">Object</code> was not returned to the Advice. Instead, the thread has thrown an <code class="language-java">Exception</code>.<br>
-The <strong>AfterThrowing</strong> Advice is acknowledged when the <code class="language-java">Exception</code> is thrown and run before the <code class="language-java">Exception</code> is sent back to the main method.
+Notice that the second Around Advice has not been called as an <code class="java">Object</code> was not returned to the Advice. Instead, the thread has thrown an <code class="java">Exception</code>.<br>
+The <strong>AfterThrowing</strong> Advice is acknowledged when the <code class="java">Exception</code> is thrown and run before the <code class="java">Exception</code> is sent back to the main method.
 </p>
 <br>
 <h4>Conclusion</h4>

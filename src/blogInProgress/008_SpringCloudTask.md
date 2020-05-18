@@ -73,7 +73,7 @@ The main class is annotated with <strong>@EnableTask</strong> to bootstrap the f
 ```
 <p>
 A sub-class that implements CommandLineRunner is used to execute the business logic.<br> 
-The CommandLineRunner interface is one of two interfaces (along with ApplicationRunner) that allows methods to be run once a Spring Boot application has started. The CommandLineRunner interface provides access to the arguments passed into the application at runtime; the <code class="language-java">run(String... args)</code> method is overridden with access to the arguments.<br>
+The CommandLineRunner interface is one of two interfaces (along with ApplicationRunner) that allows methods to be run once a Spring Boot application has started. The CommandLineRunner interface provides access to the arguments passed into the application at runtime; the <code class="java">run(String... args)</code> method is overridden with access to the arguments.<br>
 If the microservice has multiple implementations of CommandLineRunner, the classes can be ordered with the <strong>@Order</strong> annotation. 
 </p>
 

@@ -96,12 +96,12 @@ public void calculateMaxValue(List<Integer> values){
 
 
 <p>
-Line 2 is used to initialise a variable. As this line is not influenced by the size of input <code class="language-java">values</code>, line 2 has a Big O of O(1). <br>
-From lines 3 to 7, the function will loop through each member of <code class="language-java">values</code> and identify if it is the maximum value of the List.<br>
-If <code class="language-java">values</code> = {1,2,3,6,3}, the number of elements, n, will be 5. <br>
+Line 2 is used to initialise a variable. As this line is not influenced by the size of input <code class="java">values</code>, line 2 has a Big O of O(1). <br>
+From lines 3 to 7, the function will loop through each member of <code class="java">values</code> and identify if it is the maximum value of the List.<br>
+If <code class="java">values</code> = {1,2,3,6,3}, the number of elements, n, will be 5. <br>
 The code block will run a total of 5 times in order to validate that the largest value is found within the list.<br>
-It will run for <code class="language-java">int i</code> = 0,1,2,3, and 4 as <code class="language-java">values.size()</code> = 5. A total of 5 operations for an input size of 5 means the code block has a Big O of O(n).<br>
-We can run through the code block again to support the Big O classification. If <code class="language-java">values</code> = {1,2,3}, then <code class="language-java">values.size()</code> will equal 3, and the number of operations ran will also be 3 (checking values of 1, 2, and 3).<br>
+It will run for <code class="java">int i</code> = 0,1,2,3, and 4 as <code class="java">values.size()</code> = 5. A total of 5 operations for an input size of 5 means the code block has a Big O of O(n).<br>
+We can run through the code block again to support the Big O classification. If <code class="java">values</code> = {1,2,3}, then <code class="java">values.size()</code> will equal 3, and the number of operations ran will also be 3 (checking values of 1, 2, and 3).<br>
 Lastly, line 8 is used to print the result of the algorithm. This line is not influenced by the number of input values, therefore it is constant time and has a Big O of O(1).
 </p>
 <p>
