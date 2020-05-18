@@ -4,6 +4,8 @@
         "Middlesex",
         "behaviour",
         "calloc",
-        "malloc"
+        "malloc",
+        "stringtwo",
+        "uluru"
     ]
 }
