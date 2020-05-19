@@ -1,5 +1,5 @@
 ---
-title: 'Implementing chaining in hash tables'
+title: 'Implementing chaining with a hash table'
 date: 2020-05-18 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/007_Bariloche.jpg
