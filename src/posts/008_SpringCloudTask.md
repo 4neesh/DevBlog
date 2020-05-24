@@ -188,7 +188,7 @@ The tables show the following information:<br>
 &#8226; <strong>task_execution</strong>: key details about when the task runtime such as id, start time, end time, exit code and exit message.<br>
 &#8226; <strong>task_execution_params</strong>: log of the parameters passed into the Spring Cloud Task.<br>
 &#8226; <strong>task_lock</strong>: stores information when Spring Cloud Task restrictions are applied.<br>
-&#8226; <strong>task_seq</strong>: an incremental id is stored and obtained as a reference for the next execution.<br>
+&#8226; <strong>task_seq</strong>: an incremental Id is stored and obtained as a reference for the next execution.<br>
 &#8226; <strong>task_task_batch</strong>: links the task execution with the batch execution.<br>
 </p>
 <p>
