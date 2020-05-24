@@ -54,6 +54,11 @@ const Sidebar = () => (
                   </Button>
                 </li>
                 <li>
+                  <Button className="tagButton" href={`/tag/databases`}>
+                    Databases 
+                  </Button>
+                </li>  
+                <li>
                   <Button className="tagButton" href={`/tag/data-structures`}>
                     Data Structures 
                   </Button>
@@ -63,6 +68,11 @@ const Sidebar = () => (
                     Java 
                   </Button>
                 </li>
+                <li>
+                  <Button className="tagButton" href={`/tag/microservices`}>
+                    Microservices 
+                  </Button>
+                </li>  
                 <li>
                   <Button className="tagButton" href={`/tag/patterns`}>
                     Patterns 

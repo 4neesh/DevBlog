@@ -24,14 +24,14 @@ tags:
 An asynchronous task is a parallel function that is executed separately from the main application thread. Asynchronous tasks are designed to be stateless and have a distinct start and end time. Without asynchronous tasks, microservices may wait upon other microservices to finish executing their task before they resume processing. As a result, application performance can risk a latency build-up due to a single task execution.
 
 Spring Cloud Task enables asynchronous tasks to be performed within a Spring Boot application. 
-One example of an asynchronous task may be messaging. Rather than a microservice depending on feedback that a message has been processed and executed, the message can be sent to a bus using Spring Cloud Task. As a result, the dependency of message processing is decoupled from the microservice and the bus can be independently scaled to process messages with event-driven computing.
+One example of an asynchronous task may involve messaging. Rather than a microservice depending on feedback that a message has been processed and executed, the message can be sent to a bus using Spring Cloud Task. As a result, the dependency of message processing is decoupled from the microservice and the bus can be independently scaled to process messages with event-driven computing.
 
-In this post, Spring Cloud Task will be used to execute some simple business logic. The runtime execution of the task generates a log with default fields which can be reviewed in a MySQL database.
+In this post, Spring Cloud Task will be used to execute simple business logic. The runtime execution of the task generates a log of default fields that can be persisted in a MySQL database.
 </p>
 <br>
 <h4>Creating a Spring Cloud Task</h4>
 <p>
-A Spring Cloud Task can be created through the Spring initializer. The dependencies of a MySQL Driver and JDBC API are also necessary for connection the MySQL Database:<br>
+A Spring Cloud Task can be created through the Spring initializer. The dependencies of a MySQL Driver and JDBC API are also necessary for connecting with a MySQL Database:<br>
     &#8226; Spring Cloud Task.<br>
     &#8226; MySQL Driver.<br>
     &#8226; JDBC API.<br>
@@ -56,7 +56,7 @@ A Spring Cloud Task can be created through the Spring initializer. The dependenc
 ```
 
 <p>
-The main class is annotated with <strong>@EnableTask</strong> to bootstrap the functionality of Spring Cloud Task. By default, the annotation will equip the microservice with a default log of data from the runtime execution, known as the TaskRepository, stored in-memory.
+The main class is annotated with <strong>@EnableTask</strong> to bootstrap the functionality of Spring Cloud Task. By default, the annotation will equip the microservice with a log of data from the runtime execution, known as the TaskRepository, stored in-memory.
 </p>
 
 
@@ -73,7 +73,7 @@ The main class is annotated with <strong>@EnableTask</strong> to bootstrap the f
 ```
 <p>
 A sub-class that implements CommandLineRunner is used to execute the business logic.<br> 
-The CommandLineRunner interface is one of two interfaces (along with ApplicationRunner) that allows methods to be run once a Spring Boot application has started. The CommandLineRunner interface provides access to the arguments passed into the application at runtime; the <code class="java">run(String... args)</code> method is overridden with access to the arguments.<br>
+The CommandLineRunner interface is one of two interfaces (along with ApplicationRunner) that allows methods to be run once a Spring Boot application has started. The CommandLineRunner interface provides access to the arguments passed into the application by overriding the <code class="java">run(String... args)</code> method.<br>
 If the microservice has multiple implementations of CommandLineRunner, the classes can be ordered with the <strong>@Order</strong> annotation. 
 </p>
 
@@ -165,8 +165,8 @@ Creating: TaskExecution{executionId=0, ..., taskName='Concatenate Task', startTi
 Concatenated arguments: runmyspringbootapp
 ```
 <p>
-The Spring Cloud Task has executed and has shown the start and end time of the task along with the arguments that have been processed.<br>
-The execution has also created 5 new tables in the database that can be found through the MySQL CLI:</p>
+The Spring Cloud Task has executed and shown the start and end time of the task along with the arguments that have been processed.<br>
+The execution has also created 5 new tables in the database, found through the MySQL CLI:</p>
 
 ```
 mysql> show tables;
@@ -214,8 +214,8 @@ Task execution parameters table:
 <br>
 <h4>Conclusion</h4>
 <p>
-Spring Cloud Tasks provide a functionality to microservices to decouple tasks that have a set start and end time. The tasks run asynchronously to therefore remain decoupled from the application. With just a few dependencies and lines in the application.properties file, task execution can be logged into a persistent database.<br>
-The Spring Cloud Task can be taken further by deploying it into a maven repository where it can be called upon by other microservices.
+Spring Cloud Tasks enable tasks with a set start and end time to be decoupled within a microservices architecture. With just a few dependencies and lines in the application.properties file, task execution can be logged into a persistent database.<br>
+The Spring Cloud Task can be taken further by deploying it into a Maven repository where it can be called upon by other microservices.
 </p>
 
 <br>
