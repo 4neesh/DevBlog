@@ -84,7 +84,7 @@ The below example demonstrates the use of <code language="java">intern()</code>:
 <h4>Comparing Strings</h4>
 <p>
 String Objects can be compared with either <code language="java">==</code> or <code language="java">.equals()</code>. <code language="java">==</code> is a reference comparator and will compare the memory locations of the two Strings. <code language="java">.equals()</code> is a content comparator and will compare the value of the two Strings.<br>
-By using the <code language="java">intern()</code> method, the String Object will evaluate to true when using <code language="java">==</code> to compare references with a String literal of the same value. While the <code language="java">==</code> method is a more time efficient comparator, the equality of two String Objects is dependent upon their location reference and not their content. As a result, two Strings with the same value may not evaluate to true if one was create in the heap area. 
+By using the <code language="java">intern()</code> method, the String Object will evaluate to true when using <code language="java">==</code> to compare references with a String literal of the same value. While the <code language="java">==</code> method is a more time efficient comparator, the equality of two String Objects is dependent upon their location reference and not their content. As a result, two Strings with the same value may not evaluate to true if one was created in the heap area. 
 The code sample below demonstrates how different String Objects can be compared using their memory address and value:
 </p>
 
