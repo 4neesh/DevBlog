@@ -1,10 +1,10 @@
 ---
-title: 'Java Strings'
+title: 'The String Class'
 date: 2020-06-01 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/009Uluru.jpg
 thumbnail: '../images/009Uluru.png'
-subtitle: 'A look into the properties of the String class, one of the most used classes across the Java API.'
+subtitle: 'Understand how the JVM manages String Objects in memory and at runtime. Review the functionality of the StringBuffer and StringBuilder class.'
 time: '6'
 tags:
 - Java
