@@ -17,7 +17,7 @@ Two lessons were taken from that day: there are many doors in technology that al
 </p>
 </p>
 Fast-forward to the present day and I am starting a blog to document the areas of technology that I explore, find interesting, and am challenged by on a daily basis.<br>
-My experience with writing a dissertation, where I had to introduce the technologies involved (Big Data and Blockchain) allowed me to appreciate the process and value of understanding a technical concept to its core. My blog will support me with the opportunity to write bite-sized posts on how and why the technologies I use work.
+My experience with writing a dissertation, where I had to introduce the technologies involved (Big Data and Blockchain) allowed me to appreciate the process and value of understanding a technical concept to its core. My blog will support me as I use the Feynman technique to learn and write bite-sized posts on how and why the technologies I use work.
 </p>
 <p>
 My expectations for this blog are that it will surround all areas of Java, Spring, and algorithms.<br>
