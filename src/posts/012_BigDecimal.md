@@ -12,39 +12,37 @@ tags:
 ---
 <br>
 <strong>Key Takeaways</strong><br>
-&#8226; Understand why floating point precision may not always produce predictable results.<br>
-&#8226; Understand how the float and decimal primitives deduce values in the JVM.<br>
+&#8226; Understand why floating point precision does not always created expected results.<br>
+&#8226; Understand how the float and double primitives are created in the JVM.<br>
 &#8226; Use the math.BigDecimal class to resolve floating point precision inaccuracies.<br>
 
 <br>
 <h4>Floating point primitives</h4>
 <p>
-The primitive data types <code>float</code> and <code>double</code> offer floating point values to be used for non-whole numbers. Floating point numbers store a fixed number of binary digits: <code>float</code> has a storage of 4 bytes, whereas <code>double</code> has 8 bytes. As a result <code>double</code> can scale up to 15 digits compared to just 9 for <code>float</code>.<br>
+The primitive data types <code>float</code> and <code>double</code> offer floating point values to be used for non-whole numbers. The JVM allocates floating point numbers a fixed size of memory: <code>float</code> consumes 4 bytes (32 bits), whereas <code>double</code> consumes 8 bytes (64 bits).<br>
 The benefits of using floating point numbers are their speed and efficiency. The JVM is able to very quickly calculate and store the values. 
 </p>
 <br>
-<h4>Binary digits and floating point inaccuracies</h4>
+<h4>Binary fractions and floating point inaccuracies</h4>
 <p>
-The JVM stores floating points values as a binary representation of a fraction and exponent. As a result, floating point values are calculated using a Base 2 notation.<br>
+The JVM stores floating points values as a binary representation of a fraction and exponent; floating point values are calculated using a Base 2 notation.<br>
 In calculus, the value of 0.1 can be calculated as 10<sup>-1</sup>. Similarly, the value of 0.55 can be calculated as 55 * 10<sup>-2</sup>.<br>
-The JVM, however, interprets floating point numbers to the Base of 2. When a decimal is defined, the JVM will represent it using the base of 2. The JVM is able to interpret the values without conversion and therefore creates the property of speed that floating points exude.
+The JVM calculates floating point numbers to the Base of 2. The Base 2 calculation is optimized within computers as their binary representation of 0's and 1's can be efficiently computed. The JVM is able to interpret the values without conversion and therefore enable floating point numbers to realise a benefit of efficiency with computational cost.
 </p>
 <p>
-The example below demonstrates how the value of 0.1 can be defined in binary code.<br>
-The base of 2 is sequentially halved  with the power of -1, -2, and so on. The binary value indicates whether or not the value of Base 2 can increment towards the value of 0.1.<br>
-As Base 2 increments, the Base value is reduced and the accumulative value nears 0.1.
+The example below demonstrates how the value of 0.01 can be defined in binary code.<br>
+The base of 2 is sequentially reduced by 1 from -1. The binary value indicates whether or not the value of Base 2 can increment the accumulative value towards 0.01.<br>
 </p>
 
 ![Floating points](../../src/images/012BinaryDec.png)
 
 
 <p>
-The binary code of 0001100 will continue infinitely into 0001100110011001100. The float and double primitive values will however round the value according to their memory limit (4 and 8 bytes respectively). If the double value was 0.75, it would be represented as expected as 2<sup>-1</sup> + 2<sup>-2</sup> = 0.5 + 0.25 = 0.72. 0.75 can therefore be represented as a binary fraction of finite length.<br>
+The binary code of 0001100 will continue infinitely as 0's and 1's are added in pairs. The float and double primitive values will however round the value once their memory limit is reached. Some double values can be represented by a binary fraction within a finite length of the primitive data type and therefore does not require rounding. One example may be 0.75, it would be represented as 2<sup>-1</sup> + 2<sup>-2</sup> = 0.5 + 0.25 = 0.75.<br>
 As float and double primitives are not able to define the exact value of the decimal, they create unexpected results when applied to operations:
 </p>
 
 ```java{numberLines:true}
-
     double a = 0.2;
     double b = 0.19;
 
@@ -64,7 +62,7 @@ As float and double primitives are not able to define the exact value of the dec
 <br>
 <h4>Resolving floating point precision with math.BigDecimal</h4>
 <p>
-The math package of Java introduces a class called <code>BigDecimal</code> to provide control over the scale and precision of decimal numbers. The following example demonstrates how BigDecimal resolves the problem of floating point values:
+The Java math package introduces the <code>BigDecimal</code> class to enable control over the scale and precision of decimal numbers. The following example demonstrates how BigDecimal can resolve the precision inaccuracies of floating point values:
 </p>
 
 ```java{numberLines:true}
@@ -82,8 +80,8 @@ The math package of Java introduces a class called <code>BigDecimal</code> to pr
 <br>
 <h4>How BigDecimal works</h4>
 <p>
-As previously mentioned, BigDecimal provides control over the scale and precision of decimal numbers. With the example of 1.23, scale refers to the number of decimal places with a base of 10 (2), and precision refers to the length of arbitrary numbers (3). BigDecimal uses the unscaled value (123) and the scale (10<sup>-2</sup>) to create the precision value 1.23<br>
-As BigDecimal employs Base 10 calculations for the decimals, it can precisely represent all 2 decimal placed numbers. BigDecimal therefore plays a valuable role with applications that deal with currency representation. 
+With the example of 1.23, scale refers to the number of decimal places with a base of 10 (2), and precision refers to the length of arbitrary numbers (3). BigDecimal uses the unscaled value (123) and the scale (10<sup>-2</sup>) to create the precision value 1.23<br>
+As BigDecimal employs Base 10 calculations for the decimals, it can precisely represent all 2 decimal placed numbers. BigDecimal is typically used within applications that compute with currencies to ensure they are correctly represented. 
 </p>
 <strong>Constructors</strong>
 <p>
@@ -119,9 +117,9 @@ BigDecimal (BigInteger, scale): 12.34
 The example above illustrates several ways a BigDecimal can be instantiated.<br>
 The use of double <code>a3</code> on line 9 prints the binary value of 2.4 as a 32-bit integer. The String constructor on line 10 however prints the expected value of 2.4. Line 12 and 13 demonstrate how BigInteger can be used with a scale operation to build a decimal number.
 </p>
-<strong>Why use the String constructor</strong>
+<strong>Good practices: String constructor</strong>
 <p>
-The example above demonstrates the successful use of the String constructor with BigDecimal. Unlike the constructor that takes a double, by passing in a String, the BigDecimal no longer relies upon the binary fraction to create the value, and instead uses the Base 10 to represent the value.
+The example above demonstrates the successful use of the String constructor with BigDecimal. The String constructor represents good practice as the BigDecimal no longer uses the binary fractions to create the value, and instead employs Base 10.
 </p>
 <br>
 <strong>Methods</strong>
