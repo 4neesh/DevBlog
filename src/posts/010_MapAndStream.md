@@ -25,7 +25,7 @@ The Stream API creates a pipeline to process and transform data in bulk operatio
 <p>
 Stream operations are categorised as either <strong>terminal</strong> or <strong>intermediate</strong>:
 
-&#8226; <strong>Intermediate operations</strong> will listen to elements being passed within the stream and will perform an function on the data. Together, intermediate operations form a pipeline for which the data is processed through.<br>
+&#8226; <strong>Intermediate operations</strong> will listen to elements being passed within the stream and will perform a function on the data. Together, intermediate operations form a pipeline for which the data is processed.<br>
 &#8226; <strong>Terminal operations</strong> will invoke the intermediate operations of a stream to return a single result.<br>
 All streams <u>must</u> contain a single terminal operation and zero or more intermediate operations.
 </p>
@@ -59,7 +59,7 @@ The Stream API introduces 4 features for processing data in bulk operations:<br>
 <br>
 <h4><strong>Obtaining elements from a Map</strong></h4>
 <p>
-Each Map has three key collections that can be derived from the key-value pairs:<br>
+Each Map instance crated has three key collections that can be derived from the key-value pairs:<br>
 &#8226; entrySet() returns the key-value pairs as a Set of Map.Entry casted to the key and value types.<br>
 &#8226; keySet() returns the keys in a Set casted to the key type.<br>
 &#8226; values() returns the values as a Collection casted to the value type.<br>
@@ -67,7 +67,7 @@ Each Map has three key collections that can be derived from the key-value pairs:
 <br>
 <h4><strong>Transforming a Map</strong></h4>
 <p>
-The <code language="java">Collectors.toMap()</code> method is a terminal operation that will pass the stream into a Map. The <code language="java">toMap()</code> method is overloaded three ways to support different aggregations of the Map. To demonstrate how the <code language="java">toMap()</code> method can be used, the below Map of United States Presidents and their inauguration age will be used:
+The <code language="java">Collectors.toMap()</code> method is a terminal operation that will pass the stream into a Map. The <code language="java">toMap()</code> method is overloaded three ways to support different aggregations of the Map. To demonstrate how the <code language="java">toMap()</code> method can be used, the below Map of United States Presidents and their age at inauguration will be used:
 
 ```java{numberLines:true}
     Map<String, Integer> presidentMap = new HashMap<>();
@@ -85,7 +85,7 @@ The <code language="java">Collectors.toMap()</code> method is a terminal operati
 </p>
 
 <p>
-<code language="java"><strong>toMap(Function key, Function value)</strong></code> take two arguments that will transform the Collection into a new Map. Functions are used to determine the key and values to be added. A lambda expression can be used to obtain the entry set from the Map: <code language="java">entryInstance -> entryInstance.getKey()</code> will obtain the key from each entry. Similarly, <code language="java">entryInstance -> entryInstance.getValue()</code> can be used to obtain the entry value. It is possible to pass the entryInstance into a method that accepts and returns an int to perform business logic. In the below example, a function is used to double the value and assign it into the Map:
+<code language="java"><strong>toMap(Function key, Function value)</strong></code> takes two arguments that will transform the Collection into a new Map. Functions are used to determine the key and values to be added. A lambda expression can be used to obtain the entry set from the Map: <code language="java">entryInstance -> entryInstance.getKey()</code> will obtain the key from each entry. Similarly, <code language="java">entryInstance -> entryInstance.getValue()</code> can be used to obtain the entry value. It is possible to pass the entryInstance into a method that accepts and returns an int to perform business logic. In the below example, a function is used to double the value and assign it into the Map:
 
 
 ```java{numberLines:true}
@@ -177,7 +177,7 @@ Output:
 <p>
 The Stream API introduces a new paradigm of functional programming that Java did not have prior to Java 8. The use of intermediate operations allow data to be aggregated and transformed before being collected into a new data structure. <br>
 The <code language="java">Collectors.toMap()</code> method can been overloaded with 3 implementations to provide different levels of Map transformations.
-The source code from the example in this blog can be found on GitHub <a href="https://github.com/4neesh/toMapDemo">here.</a>
+The source code from the example in this blog can be found on GitHub <a target="_blank" href="https://github.com/4neesh/toMapDemo">here.</a>
 </p>
 
 <br>
