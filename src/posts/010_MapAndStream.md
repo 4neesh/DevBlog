@@ -7,8 +7,8 @@ thumbnail: '../images/010Bastroptn.jpg'
 subtitle: 'Use the Stream API from Java 8 to navigate and transform a Map collection.'
 time: '8'
 tags:
-- Data structures
 - Java
+- Data structures
 ---
 <br>
 <strong>Key Takeaways</strong><br>
