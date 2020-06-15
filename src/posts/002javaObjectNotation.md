@@ -8,7 +8,7 @@ subtitle: 'Understand why the Big O is an important notation to reference when d
 time: '10'
 tags:
 - Algorithms
-- Data Structures
+- Data structures
 ---
 <br>
 <strong>Key Takeaways</strong><br>

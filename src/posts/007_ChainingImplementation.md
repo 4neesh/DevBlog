@@ -8,7 +8,7 @@ subtitle: 'Create a hash table that uses chaining to resolve hash collisions and
 time: '8'
 tags:
 - Java
-- Data Structures
+- Data structures
 ---
 <br>
 <strong>Key Takeaways</strong><br>
