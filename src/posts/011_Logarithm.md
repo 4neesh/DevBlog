@@ -8,7 +8,7 @@ subtitle: 'Explore the context of logarithms with data structures and understand
 time: '6'
 tags:
 - Java
-- Data structures
+- Data Structures
 - Algorithms
 ---
 <br>

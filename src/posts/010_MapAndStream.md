@@ -8,7 +8,7 @@ subtitle: 'Use the Stream API from Java 8 to navigate and transform a Map collec
 time: '8'
 tags:
 - Java
-- Data structures
+- Data Structures
 ---
 <br>
 <strong>Key Takeaways</strong><br>
