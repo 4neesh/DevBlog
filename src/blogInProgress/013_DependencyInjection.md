@@ -25,7 +25,7 @@ tags:
 Dependency injection is a technique used to decouple classes that depend upon each other within an application.
 A class is deemed to be dependent on another class when it uses the functionality of the other class. 
 Classes are deemed to have a <i>hard dependency</i> if their invocation creates a 'new' instance of another class. In the example below, the client, <code>Student</code> has a dependency on the <code>SchoolService</code>. 
-The SchoolService Object is therefore injected into the Student Object to be used. Dependency injection falls under the broader design of 'Inversion of control'. Inversion of control states that a class's dependencies should not be hard coded, but instead injected. As a result, inversion of control enforces the fifth principle of SOLID whereby a client is not responsible for injecting its own dependencies, but has delegated it to an injector class.
+The SchoolService Object is therefore injected into the Student Object to be used. Dependency injection falls under the broader design of 'inversion of control'. Inversion of control enforces the fifth principle of SOLID whereby a client is not responsible for injecting its own dependencies, but has delegated it to an injector class. Inversion of control transfers the control of Objects to a framework. 
 Dependency injection is used when a class requires an instance of another class to be used 'as a service'. In the example below, the SchoolService is used to find the classes the student would have from the learn() method.
 </p>
 
@@ -47,7 +47,7 @@ Dependency injection is used when a class requires an instance of another class 
 ```
 
 <p>
-The Student Object above will create the ArtSchool at compile time, however a problem may arise if the we want the Student to instead attend the LiteratureSchool. The code will need to change its dependency accordingly:
+The Student Object will create the ArtSchool at compile time, however a problem may arise if the we want the Student to instead attend the LiteratureSchool. The code will need to change its dependency accordingly:
 </p>
 
 ```java{numberLines:true}
@@ -58,13 +58,18 @@ public Student(){
 
 ```
 
+<br>
+<h4>The benefits of dependency injection</h4>
+<p>
+By using dependency injection, the application has delegated the responsibility of creating Objects away from the individual classes, and into a single framework. The task execution is decoupled from implementation and a further degree of modularity is achieved. Further benefits can be seen from unit-testing where components can be mocked and passed with dependency injection for more concise testing units.
+</p>
+
 <h4>Implementing dependency injection</h4>
 <p>
-Dependency injection will refactor the Student class so it references pre-existing instances rather than creating new Objects.
-As a result, each class is no longer responsible for creating instances of other classes, and their dependency is instead <i>injected</i> through an argument.
+By using dependency injection, the Student class will be refactored so that it references a pre-existing instance of the SchoolService rather than instantiating it itself.
 </p>
 <p>
-A simple solution to the above code problem could be to inject the dependency as an argument. The Spring framework offers two other ways to inject dependency through the constructor and through a setter method:<br>
+The most common methods to implement dependency injection are through the constructor or by using the Spring framework:<br>
 &#8226; Constructor injection: using the client constructor to take in the service injection as an argument.<br>
 &#8226; Spring constructor injection: using a Spring bean and @Autowired to inject the bean as a dependency.<br>
 &#8226; Spring setter injection: .<br>
@@ -72,8 +77,8 @@ A simple solution to the above code problem could be to inject the dependency as
 
 <strong>Constructor dependency injection</strong>
 <p>
-A constructor parameter can take in a dependency as an argument to assign the Object to the class.
-Rather than the Student class defining the type of SchoolService, the responsibility is delegated from the class that instantiates the Student to define.
+A constructor parameter can take a dependency as an argument to be used by the class.
+Rather than the Student class defining the type of SchoolService it depends upon, the responsibility is delegated to the class that instantiates the Student instance:
 </p>
 
 ```java{numberLines:true}
@@ -87,10 +92,14 @@ public class Student{
     }
 
 ```
+
+<p>
+As a result, the Student class will use the argument to define which schoolService it will depend upon.
+</p>
 <strong>Spring Constructor dependency injection</strong>
 <p>
-The Spring framework offers annotations that, when used together, can inject dependencies into the application:<br>
-Before using Spring for dependency injection, it is important to ensure the annotation0driven injection is enabled in the AnnotationConfigApplicationContext class:
+The Spring framework offers annotations that can inject dependencies into the class.<br>
+Before using Spring for dependency injection, it is important to ensure the annotation-driven injection is enabled in the AnnotationConfigApplicationContext class:
 </p>
 
 ```java{numberLines:true}
@@ -102,9 +111,9 @@ public class AppConfig{
     ...
 
 ```
-<strong>The @Autowired annotation</strong>
+<strong>The @AutoWired annotation</strong>
 <p>
-The Autowired annotation is used in Spring 
+The AutoWired annotation is used in Spring 
 
 </p>
 
