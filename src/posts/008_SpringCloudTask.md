@@ -215,7 +215,8 @@ Task execution parameters table:
 <h4>Conclusion</h4>
 <p>
 Spring Cloud Tasks enable tasks with a set start and end time to be decoupled within a microservices architecture. With just a few dependencies and lines in the application.properties file, task execution can be logged into a persistent database.<br>
-The Spring Cloud Task can be taken further by deploying it into a Maven repository where it can be called upon by other microservices.
+The Spring Cloud Task can be taken further by deploying it into a Maven repository where it can be called upon by other microservices. <br>
+The code sample from this blog can be found on GitHub <a target="_blank" href="https://github.com/4neesh/DeveloperBlogDemos/tree/master/SpringCloudTask">here</a>.
 </p>
 
 <br>

@@ -4,6 +4,7 @@
         "Middlesex",
         "aspectj",
         "aspectjweaver",
+        "autowired",
         "bastrop",
         "behaviour",
         "behaviours",
