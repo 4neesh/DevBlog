@@ -292,7 +292,7 @@ However, if an exception is thrown, we may see more detail:<br>
 Packaging and logging are both frequent utilities to implement in our applications; they are two important foundations to any new application we build to enable transparency and ease of use to the application.<br>
 The example we have used has only touched upon the various message types and formatting that is available with Log4J. I would encourage you to explore Log4J functionality 
  <a target = "_blank" href="https://logging.apache.org/log4j/2.x/manual/index.html">here</a> to enhance your logging to be succinct and effective.<br>
-If you would like to implement logging across your application with enhanced control and structure, please visit my blog on aspect-orientated-programming <a target = "_blank" href="https://aneesh.co.uk/implementing-aop-in-your-spring-application">here</a>.<br>
+If you would like to implement logging across your application with enhanced control and structure, please visit my blog on aspect-orientated-programming <a target = "_blank" href="https://aneesh.co.uk/implementing-aop-in-a-spring-application">here</a>.<br>
 Finally, you can find the source code from this blog via GitHub <a target = "_blank" href="https://github.com/4neesh/JavaToolBoilerplate">here</a>.
 </p>
 
