@@ -1,12 +1,20 @@
-import React from "react"
+import React, {useEffect} from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import  {graphql, StaticQuery} from "gatsby"
 import Post from '../components/Post'
 import PaginationLinks from "../components/PaginationLinks"
 import Helmet from "react-helmet"
+import ReactGa from 'react-ga'
 
-const IndexPage = () => {
+function IndexPage () {
+
+  useEffect(() => {
+    ReactGa.initialize('UA-167453984-1')
+
+    ReactGa.pageview('/')
+
+  }, [])
 
   const postsPerPage = 4;
   let numberOfPages

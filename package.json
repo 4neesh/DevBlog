@@ -29,6 +29,7 @@
     "react-bootstrap": "^1.0.0",
     "react-dom": "^16.13.1",
     "react-dynamic-font": "^2.0.1",
+    "react-ga": "^3.0.0",
     "react-helmet": "^5.2.1",
     "react-native": "^0.62.2",
     "react-router-dom": "^5.1.2",

@@ -1,5 +1,5 @@
 ---
-title: 'Stock price microservice part one'
+title: 'Spring cloud configuration'
 date: 2020-06-01 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/xxx.png
@@ -67,7 +67,79 @@ The config server will act as an intermediary between the spring application and
 <br>
 <h4>Connecting the server to the configuration files</h4>
 <p>
-In the server application.properties file, we are able to connect to the configuration files in github. 
+In the server application.properties file, we are able to connect to the configuration files in github. <br>
+In the application.yml file, the below lines are added:
+
+</p>
+
+```{numberLines:true}
+server:
+  port: 8888
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/4neesh/StockPriceMicroservice
+          searchPaths:
+          - 'ConfigFiles/tech*'
+          - 'Config*'
+```
+
+<p>
+Lines 1 and 2 set the server port to 8888, this is a conventional port number used for the configuration server.
+The remaining lines allow the server to connect to the GitHub repository to obtain the config files.<br> 
+The uri value is where the .git file exists within the repository. It is important to point directly to the area of the .git file as the configuration server will clone the repository before using it.<br>
+The searchPaths include the sub-directories for the configuration files. In the github repository, the config files are stored in the ConfigFiles sub-directory. Further config files are stored in a directory called "tech". 
+
+</p>
+
+```
+
+├── ConfigFiles
+│   ├── application.properties
+│   ├── application-dev.properties
+│   └── tech
+│         ├── acn.properties
+│         └── acn-dev.properties
+
+
+```
+
+<br>
+<h4>Browsing Config Files</h4>
+<p>
+The config server can be browsed by sending GET requests to the 8888 port.<br>
+I am using the Postman API development tool to make the requests and to illustrate the different values that can be returned.
+</p>
+<p>
+We are able to send a request to the port 8888 with the following name convention:<br>
+localhost:8000/{application}/{profile}</p>
+<p>
+The application and profile variables are required parameters when making calls to the configuration server.<br>
+The application specifies the first part of the file name that is reviewed. In this instance, the available names are "application" and "acn". By default, "application" is returned.</p>
+<p>
+The profile is used to specify the environment of the configuration file. The "default" profile will return the files without a profile, however if "dev" was entered, the dev property files will be returned. The profile tells the config server which files to prioritise when processing, however the application name is considered as the first place to look following the exact profile and application combination.</p>
+<p>
+For example, the following queries will return the following results:<br>
+1. localhost:8888/acn/dev -> acn-dev.properties -> acn.properties -> application.properties
+2. localhost:8888/application/default -> application.properties
+3. localhost:8888/acb/dev -> application-dev.properties -> application.properties
+4. localhost:8888/acn/default -> acn.properties -> application.properties
+</p>
+<p>
+As the config server works its way down the chain of files to review, it will populate config values that are not already populated.
+</p>
+<p>
+By sending a request to: localhost:8888/acn/master, the configuration files returned will be the application.properties file and the acn.properties file.<br>
+This means it will reach acn.properties first, then populate other configuration values from the application.properties file after.</p>
+<p>
+If an invalid application or profile name is entered, the returned values will be for the application.properties file.<br>
+</p>
+
+<br>
+<h4>Consuming the configuration server</h4>
+<p>
 
 </p>
 <br>
