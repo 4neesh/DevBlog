@@ -82,8 +82,8 @@ spring:
         git:
           uri: https://github.com/4neesh/StockPriceMicroservice
           searchPaths:
-          - 'ConfigFiles/tech*'
-          - 'Config*'
+          - Config*
+          - ConfigFiles/tech*
 ```
 
 <p>
