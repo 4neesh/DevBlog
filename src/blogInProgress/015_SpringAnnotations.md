@@ -12,9 +12,9 @@ tags:
 ---
 <br>
 <strong>Key Takeaways</strong><br>
-&#8226; The .<br>
-&#8226; The .<br>
-&#8226; The.<br>
+&#8226; Understand the key layers to a Spring application architecture.<br>
+&#8226; Explore the role and importance of the Spring IoC container.<br>
+&#8226; Understand the significance and differences between the @Component, @Controller, @Service and @Repository class annotations.<br>
 
 ![Merge sort step 2](../../src/images/011MergeSort2.png)
 
@@ -22,26 +22,32 @@ tags:
 <br>
 <h4>Spring application architecture</h4>
 <p>
-The design architecture of an application is necessary to consider to ensure a the Separation of Concerns (SoC) principle is implemented. SoC is a design principle to ensure an application has delegated sections to address separate concerns. By using SoC, understanding where responsibilities lie within a complex application can be improved and handled more efficiently.<br>
-The Spring framework offers 3 key layers that can be used to designate classes and functions of an application during the design phase.</p>
+The architecture of a Spring application relates to the organisation of classes and functions. The Separation of Concern (SoC) design principle is used to ensure an application has delegated sections to address separate concerns. By separating the different classes of an application based upon its responsibility, the overall architecture of the application supports the long-term maintenance and growth of the application and discourages code rot.<br>
+The Spring framework architecture uses 3 key layers that can be used to designate classes and functions based upon their responsibility.</p>
 <p>
-The Spring layered architecture is designed such that each layer can communicate with the layer either above or below it. The different layers include:<br>
-&#8226; API layer. Used to authenticate and handle HTTP requests. This layer is concerned with the front-end interface of the application.<br>
-&#8226; Service layer. Interacts with the API layer to provide authorization and processing of custom business logic. The business layer uses services to perform logic.<br>
-&#8226; Persistence layer. Also known as the repository layer, the persistence later interacts between the service and database layer to translate service objects to and from the database.<br>
-&#8226; Data access layer. Use to perform CRUD operations upon the database as requested by the persistance layer. <br>
-
+Each layer within the architecture is designed to communicate with the layer above and/or below it. The layers include:<br>
+&#8226; API/Web layer. Used to accept and authenticate user input and handle HTTP requests. Spring MVC is used to separate the web view, the servlet controller and the model objects which are later handled by the service layer.<br>
+&#8226; Service layer. Interacts with the API layer to provide authorization and processing of custom business logic. <br>
+&#8226; Data access/integration layer, also known as Repository layer. The basic CRUD operations are exposed in the data access layer to send operations to the database. Object to relational mapping (ORM) is used to integrate data to and from the database. <br>
 </p>
+
 <br>
 <h4>Separating layers into a request and response</h4>
 <p>
-The below example illustrates the layers of an application and how it would be handled by a request made from a user.
+The below example illustrates the layers of a Spring application and how it would be handled by a request made by a user.
 </p>
+
+![Spring layers](../../src/images/015layers.png)
 
 <p>
-When a user makes a request, it is first intercepted by the Presentation layer. The service 
+When a user makes a request, it is first intercepted by the API layer. The API layer is used to handle HTTP requests such as GET, PUT, DELETE and POST.
 </p>
-
+<p>
+The request can then be processed by the service later to implement business logic. Such logic may include authorizing the request, transforming the request or logging. 
+</p>
+<p>
+The data access/integration layer receives the request by the user and transforms the request using ORM to interact with the database. The database is persisted outside the layer and will return a response that is then relayed back to the user.
+</p>
 
 <br>
 <h4>Spring IoC Container</h4>
@@ -60,6 +66,10 @@ There are two types of containers within the Spring Framework:<br>
 <strong>BeanFactory</strong><br>
 The BeanFactory is responsible for maintaining the registry of different beans and their dependencies.<br>
 Beans are then injected into the classes that depend upon them. 
+</p>
+<p>
+<strong>ApplicationContext</strong><br>
+The ApplicationContext container contains the same functionality of the BeanFactory, however it also includes functionality load file resources, to publish events to event listeners and to resolve messages for internationalisation support.
 </p>
 
 <br>
