@@ -4,7 +4,7 @@ date: 2020-06-29 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/013Tissamaharama.jpg
 thumbnail: '../images/013tn.png'
-subtitle: 'Dependency injection is a valuable pattern used to decouple classes within an application. Explore how dependency injection can be implemented.'
+subtitle: 'Dependency injection is a design pattern used to decouple classes within an application. Explore how dependency injection can be implemented within class design and by using the Spring framework.'
 time: '8'
 tags:
 - Java

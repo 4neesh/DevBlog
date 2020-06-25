@@ -75,10 +75,36 @@ The ApplicationContext container contains the same functionality of the BeanFact
 <br>
 <h4>Spring class annotations</h4>
 <p>
-@Service is used for the business logic
-@Controller is used for the API layer
-@Repository is used for the data access layer
+The Spring class-level annotations are used to add the class as a bean into the ApplicationContext.
+The class-bean is then used within the IoC container of Spring to inject dependencies into the application.
+The following annotations are applied on-top of a class depending upon the layer they are present within, and carries certain benefits to the class implementation.
 </p>
+<strong>@Component</strong><br>
+<p>
+The @Component annotation is the parent annotation to the other layer-level annotations @Controller, @Service, and @Repository.<br>
+Classes marked with @Component will be automatically detected by the Spring framework and added to the ApplicationContext.<br>
+The @Controller, @Service, and @Repository annotations all use @Component in their definition, therefore their use also results in the class being added into the ApplicationContext.
+</p>
+
+<strong>@Controller</strong><br>
+<p>
+@Controller is a specialised version of @Component to be used for classes at the API/web layer. 
+</p>
+
+<strong>@Service</strong><br>
+<p>
+@Service is a specialised version of @Component and is used to mark the class as a service. The service class will provide business logic functionality to process requests before passing them to the data access layer for persistence.
+</p>
+<p>
+
+</p>
+
+<strong>@Repository</strong><br>
+<p>
+
+</p>
+
+
 <br>
 <h4>Conclusion</h4>
 <p>

@@ -90,8 +90,8 @@ spring:
 Lines 1 and 2 set the server port to 8888, this is a conventional port number used for the configuration server.
 The remaining lines allow the server to connect to the GitHub repository to obtain the config files.<br> 
 The uri value is where the .git file exists within the repository. It is important to point directly to the area of the .git file as the configuration server will clone the repository before using it.<br>
-The searchPaths include the sub-directories for the configuration files. In the github repository, the config files are stored in the ConfigFiles sub-directory. Further config files are stored in a directory called "tech". 
-
+The searchPaths include the sub-directories for the configuration files. In the github repository, the config files are stored in the ConfigFiles sub-directory. Further config files are stored in a directory called "tech". <br>
+When defining the searchPaths, it is important to define them in order of granularity. If ConfigFiles/tech* was placed before Config*, the searchPaths would not perform as expected.
 </p>
 
 ```
@@ -122,7 +122,7 @@ The application specifies the first part of the file name that is reviewed. In t
 The profile is used to specify the environment of the configuration file. The "default" profile will return the files without a profile, however if "dev" was entered, the dev property files will be returned. The profile tells the config server which files to prioritise when processing, however the application name is considered as the first place to look following the exact profile and application combination.</p>
 <p>
 For example, the following queries will return the following results:<br>
-1. localhost:8888/acn/dev -> acn-dev.properties -> acn.properties -> application.properties
+1. localhost:8888/acn/dev -> acn-dev.properties -> acn.properties -> application-dev.properties
 2. localhost:8888/application/default -> application.properties
 3. localhost:8888/acb/dev -> application-dev.properties -> application.properties
 4. localhost:8888/acn/default -> acn.properties -> application.properties
