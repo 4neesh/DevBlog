@@ -21,7 +21,7 @@ const AboutPage = () => (
           <p>Thank you for visiting my website.</p>
           <p>
             I am a software engineer and enjoy solving problems, building applications,
-             and learning about the tools and techniques I can use for optimization.
+             and learning about the technologies and techniques that can optimized my code.
           </p>
           <p>
             I completed my bachelors degree in Banking, Finance, and Management
