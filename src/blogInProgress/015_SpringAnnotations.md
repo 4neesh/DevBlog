@@ -1,32 +1,34 @@
 ---
 title: 'Architecture levels in Spring'
-date: 2020-06-01 16:34:00
+date: 2020-07-13 16:34:00
 author: 'Aneesh Mistry'
-featuredImage: ../images/xxx.png
-thumbnail: ''
-subtitle: 'Understand the three layers of a  Spring application and the convenient annotations used to label classes of each layer. Compare the annotations against each other to understand why they add value to the application and for the developer.'
-time: '10'
+featuredImage: ../images/015Wellington.jpg
+thumbnail: '../images/015tn.jpg'
+subtitle: 'The Spring framework works across three layers within the application architecture. This post will look into the convenient annotations used to label classes of each layer and how the beans created from the annotations add value to the application and for the developer.'
+time: '8'
 tags:
 - Spring
 - Patterns
 ---
 <br>
 <strong>Key Takeaways</strong><br>
-&#8226; Understand the different layers to a Spring application.<br>
-&#8226; Explore the role and importance of the Spring IoC container.<br>
-&#8226; Understand the differences between the @Component, @Controller, @Service and @Repository class annotations.<br>
+&#8226; Compare the properties of the different layers within a Spring application.<br>
+&#8226; Review the importance of the Spring IoC container, BeanFactory, and ApplicationContext.<br>
+&#8226; Understand the differences between the beans created when a class is annotated with either @Component, @Controller, @Service or @Repository.<br>
 
 <br>
 <h4>Spring application architecture</h4>
 <p>
-The architecture of a Spring application may refer to the organisation of packages and classes between each other and functions in and around each class. The Separation of Concern (SoC) design principle aims to achieve an architecture where delegated sections address related functions of the application. SoC greatly supports the long-term maintenance and growth of the application and discourages code rot.
+The architecture of a Spring application may reflect upon the intent and organisation of packages and classes.<br>
+The Separation of Concern (SoC) design principle aims to create a modular architecture where delegated classes address well-defined functions of the application. SoC supports the long-term maintenance and growth of the application and discourages code rot.
 </p>
 <p>
-The Spring framework architecture uses 3 layers to separate concerns between classes and functions based upon their responsibility.
+The Spring framework architecture uses 3 layers to offer a degree to separate concerns between classes based upon their responsibility within the application.<br>
 Each layer is placed to communicate with the layer above and/or below it. The layers include:<br>
-&#8226; API/Web layer. Used to accept and authenticate user input and handle HTTP requests. Spring MVC is used to separate the web view, the servlet controller and the model objects.<br>
-&#8226; Service layer. Interacts with the API layer and model objects to provide authorization and custom business logic processing. <br>
-&#8226; Data access/integration layer, also known as Repository layer. The basic CRUD operations are exposed in the data access layer to send operations to the database. Object to relational mapping (ORM) is used to integrate data to and from the database with DAO. <br>
+
+&#8226; <strong>API/Web layer</strong>. Used to accept and authenticate user input and handle HTTP requests. Spring MVC is used to separate the web view, the servlet controller and the model objects.<br>
+&#8226; <strong>Service layer</strong>. Interacts with the API layer and model objects to provide authorization and custom business logic processing. <br>
+&#8226; <strong>Data access/integration layer</strong>, also known as Repository layer. The basic CRUD operations are exposed in the data access layer to send operations to the database. Object to relational mapping (ORM) is used to map data to and from the database. <br>
 </p>
 
 <br>
@@ -50,10 +52,10 @@ The data access/integration layer transforms the request using ORM to interact w
 <br>
 <h4>Spring Inversion of Control Container</h4>
 <p>
-Before we look into the different Spring class annotations, we will review the Spring IoC container and the role of beans. Different class annotations will influence the automatic properties of the beans they create. The beans are customised to accommodate to the functions of the layer.
+The Spring IoC Container is a core Spring Framework component responsible for creating, wiring, managing and configuring objects to be used by the application. The components enable Spring to perform dependency injection as they are wired into classes that require them.
 </p>
 <p>
-The Spring IoC Container is a core Spring Framework component. The IoC container is responsible for creating, wiring, managing and configuring objects to be used by the application. The components that make the application are injected by the framework using dependency injection.
+The objects that are configured by the IoC container are known as Spring beans. Each bean contains metadata that includes information for how to create the bean, the bean's dependencies, and the lifecycle details.
 </p>
 <p>
 There are two types of containers within the Spring Framework:<br>
@@ -63,55 +65,67 @@ There are two types of containers within the Spring Framework:<br>
 <p>
 <strong>BeanFactory</strong><br>
 The BeanFactory is responsible for maintaining the registry of different beans and their dependencies.<br>
-Beans are then injected into the classes that depend upon them. 
+Beans are injected into the classes that depend upon them with lazy loading and is therefore only used when memory consumption is critical.
 </p>
 <p>
 <strong>ApplicationContext</strong><br>
-The ApplicationContext container contains the same functionality of the BeanFactory, however it also includes functionality load file resources, to publish events to event listeners and to resolve messages for internationalisation support.
+The ApplicationContext container can perform all the functions of the BeanFactory with additional functionality:<br>
+&#8226; Load file resources.<br>
+&#8226; Publish events to event listeners.<br>
+&#8226; Resolve messages for internationalisation support.<br>
+&#8226; Support for Annotation-based dependency injection.<br>
+&#8226; Integration with Spring AOP.<br>
+</p>
+<p>
+Unlike the lazy-loading of bean from the BeanFactory, the ApplicationContext will load all beans upon instantiation and is therefore considered heavy-weight in comparison to BeanFactory.
 </p>
 
 <br>
 <h4>Spring class annotations</h4>
 <p>
-The Spring class-level annotations are used during automatic bean detection using the classpath scan of the Spring framework.
-The class-level bean is then used within the IoC container of Spring to inject dependencies within the application.<br>
-The following annotations are applied to a class according to layer they fall within. Each annotation carries certain benefits to the class implementation and to the developer for readability.
+The Spring class-level annotations are used to register beans into the Spring IoC container. Class-level annotations are detected by the ApplicationContext container during a classpath scan of the application.<br>
+The following annotations are applied at the class level according to layer they are responsible within. Each annotation except for @Service contains unique properties to the bean that support their function at the layer.
 </p>
 <strong>@Component</strong><br>
 <p>
-The @Component annotation is the parent annotation to the other layer-level annotations @Controller, @Service, and @Repository.<br>
-Classes marked with @Component will be automatically detected by the Spring framework and added to the ApplicationContext.<br>
-The @Controller, @Service, and @Repository annotations all use @Component in their definition, therefore their use also results in the class being added into the ApplicationContext.
+The <strong>@Component</strong> annotation is the parent annotation to the other layer-level annotations <strong>@Controller</strong>, <strong>@Service</strong> and <strong>@Repository</strong>.<br>
+Classes marked with <strong>@Component</strong> will be automatically detected by the Spring framework and added to the ApplicationContext.<br>
+The <strong>@Controller</strong>, <strong>@Service</strong>, and <strong>@Repository</strong> annotations all use <strong>@Component</strong> in their definition, therefore their use also results in the class being added into the ApplicationContext.
 </p>
 
-<strong>@Controller</strong><br>
-<p>
-@Controller is a specialised version of @Component to be used for classes at the API/web layer. When a class is marked with @Controller, the Spring ApplicationContext will register the class as a bean, and the class will be looked upon differently for web-specific tools and services.
-Dispatcher servlet will look for @RequestMapping annotated classes within all @Controller classes for instructions. 
-</p>
+![Annotation relationships](../../src/images/015Annotations.png)
 
-<strong>@Service</strong><br>
+
+<strong><u>@Controller</u></strong><br>
 <p>
-@Service is a wrapper version of @Component and is used to mark the class as a service.
+<strong>@Controller</strong> is a specialised version of <strong>@Component</strong> to be used for classes at the API/web layer. When a class is marked with <strong>@Controller</strong>, the ApplicationContext will register the class as a bean, and the class will be looked upon differently for web-specific tools and services.<br>
+When a client request is made to the Spring Application, the dispatcher servlet is responsible as a single entry point to forward the request to the Spring MVC controllers. The dispatcher servlet will scan all classes marked as <strong>@Controller</strong> to find a <strong>@RequestMapping</strong> annotation to further handle the request.
+</p>
+<br>
+<strong><u>@Service</u></strong><br>
+<p>
+<strong>@Service</strong> is a wrapper version of <strong>@Component</strong> and is used to mark the class as a service.
 The service class will provide business logic functionality to process requests before passing them to the data access layer for persistence.
 </p>
 <p>
-The @Service annotation does have any specific behaviour that is different to @Component, however service classes should be marked with @Service to mark the intent of the class to the service layer within the application.
+The <strong>@Service</strong> annotation does have include further behaviour that is different to <strong>@Component</strong>, however service classes should be marked with <strong>@Service</strong> to mark the intent of the class within the application.
 </p>
-
-<strong>@Repository</strong><br>
+<br>
+<strong><u>@Repository</u></strong><br>
 <p>
-The @Repository annotation differs from @Component for the single purpose of catching persistence-specific exceptions.<br>
-The @Repository annotation will import the DAO beans into the ApplicationContext container and change the unchecked exceptions eligible for translation into a DataAccessException.
+The <strong>@Repository</strong> annotation differs from <strong>@Component</strong> for the single purpose of catching persistence-specific exceptions.<br>
+The <strong>@Repository</strong> annotation will import the ORM beans into the ApplicationContext container and change the unchecked exceptions eligible for translation into a DataAccessException.
 The annotation provides enhanced functionality for exception handling.
 </p>
 
 <br>
 <h4>Conclusion</h4>
 <p>
-
-
+The Spring IoC container allows the framework to provide dependency injection across the application.<br>
+The Spring framework is constructed of 3 layers that separate the responsibility of the class when handling requests and responses.<br>
+The ApplicationContext container is a heavy-weight framework for dependency injection that supports annotation-based injection. The <strong>@Component</strong> annotation is used to register a bean at the class-level into the ApplicationContext. 
+The Spring framework offers three further annotations that extend from <strong>@Component</strong> to provide unique properties the bean generated to assist with the responsibility of each layer.
 </p>
 
 <br>
-<small style="float: right;" >Picture: xxx, xxx by <a target="_blank" href="https://unsplash.com/@xxx">xxx</small></a><br>
+<small style="float: right;" >Picture: Wellington, New Zealand by <a target="_blank" href="https://unsplash.com/@glebelt_">Guillaume Lebelt</small></a><br>
