@@ -4,7 +4,7 @@ date: 2020-06-29 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/013Tissamaharama.jpg
 thumbnail: '../images/013tn.png'
-subtitle: 'Dependency injection is a design pattern used to decouple classes within an application. Explore how dependency injection can be implemented within class design and by using the Spring framework.'
+subtitle: 'Dependency injection is a design pattern used to decouple classes within an application and to delegate the implementation of an application to a framework. Explore how dependency injection can be implemented within class design and by using the Spring framework.'
 time: '8'
 tags:
 - Java
@@ -13,9 +13,9 @@ tags:
 ---
 <br>
 <strong>Key Takeaways</strong><br>
-&#8226; Understand what dependency injection is and why it is used.<br>
-&#8226; Implement the three most common techniques for dependency injection.<br>
-&#8226; Review the benefits and drawbacks to each type of dependency injection.<br>
+&#8226; Understand the importance of dependency injection and why it supports modular code design.<br>
+&#8226; Implement dependency injection with three different techniques.<br>
+&#8226; Review the benefits and drawbacks to each dependency injection technique.<br>
 
 
 <br>
@@ -24,7 +24,7 @@ tags:
 Dependency injection is a technique used to decouple classes that depend upon each other. Class dependency arises when once class uses the functionality (method) of another class 'as a service'. 
 <br>Classes are deemed to have a <i>hard dependency</i> if their invocation creates a 'new' instance of another class. 
 Dependency injection falls under the broader design of 'inversion of control'. Inversion of control enforces the fifth principle of SOLID whereby a client's implementation is transferred from the class itself to a framework. 
-In the example below, the client, <code>Student</code> has a hard dependency on the <code>SchoolService</code>. The SchoolService is used to return a List of classes the student would have from the learn() method.
+In the example below, the client, <code>Student</code> has a hard dependency on the <code>SchoolService</code>. The SchoolService is used to return a List of classes the student would have within the learn() method.
 </p>
 
 ```java{numberLines:true}
@@ -64,7 +64,7 @@ public Student(){
 <p>
 By using dependency injection, the application will delegate the responsibility of creating Objects away from the individual classes, and into a single framework.<br>
 The task execution is decoupled from implementation and a further degree of modularity is achieved. <br>
-Further benefits can be reaped during unit-testing where components can be mocked and passed with dependency injection for more concise and light-weight tests.
+Further benefits can be seen during unit-testing where components can be mocked and passed with dependency injection for more concise and light-weight tests.
 </p>
 <br>
 <h4>Implementing dependency injection</h4>
@@ -144,7 +144,7 @@ public class Config {
 ```
 
 <p>
-The <strong>@Configuration</strong> annotation indicates that the class declares bean definitions. The class is therefore processed by the Spring container at runtime to create the beans. 
+The <strong>@Configuration</strong> annotation indicates that the class declares bean definitions. The class is therefore processed by the Spring IoC container at runtime to create the beans. 
 The Bean <code>schoolService</code> returns a new instance of <code>ArtSchool</code>.
 In the Student bean, the SchoolService is injected with the bean definition of ArtSchool. The Spring framework is now responsible for the schoolService injection, and not the Student class itself.
 </p>
@@ -170,7 +170,7 @@ In the Student bean, the SchoolService is injected with the bean definition of A
 <strong>The @Autowired annotation</strong>
 <p>
 The <Strong>@Autowired</Strong> annotation is used in Spring to implicitly inject dependencies into a class. 
-It is not necessary to use the @Autowired annotation if the Student class only defines a single constructor. If more than one constructor is defined, @Autowired must be used to instruct the Spring container to inject the dependency into the class.
+It is not necessary to use the <strong>@Autowired</strong> annotation if the Student class only defines a single constructor. If more than one constructor is defined, <strong>@Autowired</strong> must be used to instruct the Spring container to inject the dependency into the class.
 </p>
 <br>
 <strong><u>Spring setter dependency injection</u></strong>
@@ -193,7 +193,7 @@ In the Configuration class, the Student bean is updated to create a Student inst
 
 <p>
 The Student class must now define the new no-argument constructor. 
-If the Bean for the Student class was not defined, the dependency injection will no longer work with two constructors. Instead, the @Autowired annotation is necessary to ensure the schoolService is injected with the Bean when a Student is instantiated:
+If the Bean for the Student class was not defined, the dependency injection will no longer work with two constructors. Instead, the <strong>@Autowired</strong> annotation is necessary to ensure the schoolService is injected with the Bean when a Student is instantiated:
 </p>
 
 ```java{numberLines:true}
@@ -217,16 +217,20 @@ public class Student {
 <p>
 The constructor and setter dependency injection achieve the same objective in slightly different ways.
 The setter method can be seen as more readable against the constructor injection. Setter injections can also resolve a potential <i>ObjectCurrentlyInCreationException</i> where a circular dependency between two Objects arise.
-<br>The constructor injection, however, ensures that the Object is not created without the dependency injected. It may still be possible to create a Student class with an incomplete dependency if relying upon the setter injection. The constructor is also not liable to being overriden by child classes, while the setter method can be, introducing an implementation security concern.
+</p>
+<p>
+The constructor injection, however, ensures that the Object is not created without the dependency injected. It may still be possible to create a Student class with an incomplete dependency if relying upon the setter injection. The constructor is also not liable to being overridden by child classes, while the setter method can be, introducing an implementation security concern.
 </p>
 
 <br>
 <h4>Conclusion</h4>
 <p>
-Dependency injection is technique used to enable Objects and the services they depend upon to be created in a modular design.<br>
-This blog has review three of the most common ways of implementing dependency injection, however there are other annotations such as @Resource and @Inject that can achieve similar outcomes and are worth exploring in Spring.<br>
-When using test-driven-development or any kind of unit test, dependency injection can greatly reduce the weight and complexity of unit tests through mocking frameworks.
-As well as improving code readability and reducing boilerplate, dependency injection shifts the implementation of an application away from individual classes, and into a modular framework. <br>
+Dependency injection is technique used to enable Objects and the services they depend upon to be created as separate entities.<br>
+This blog has reviewed three of the most common ways of implementing dependency injection, however there are other annotations such as <strong>@Resource</strong> and <strong>@Inject</strong> that can achieve similar outcomes and are worth exploring in Spring.
+</p>
+<p>
+When using test-driven-development, or any kind of unit test, dependency injection can greatly reduce the weight and complexity of unit tests through mocking frameworks.
+As well as improving code readability and reducing boilerplate code, dependency injection shifts the implementation of an application away from individual classes, and into a modular framework. <br>
 The code sample from this blog can be found on GitHub <a target="_blank" href="https://github.com/4neesh/DeveloperBlogDemos/tree/master/DependencyInjectionDemo">here.</a>
 </p>
 

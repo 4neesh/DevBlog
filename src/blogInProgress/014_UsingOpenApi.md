@@ -26,7 +26,8 @@ APIs are all around us in the applications we use; they provide new bounds of op
 <br>
 <h4>RESTful APIs and CRUD</h4>
 <p>
-The term "REST" in computer systems stands for "Representational state transfer". A RESTful API uses HTTP requests to access and modify the data. As a result, RESTful APIs expose data to the be consumed by our applications.</p>
+The term "REST" in computer systems stands for "Representational state transfer". REST defines a standard to make it easier for computer systems to communicate over the internet. REST-compliant systems are stateless and separate of concerns between client and server.<br>
+A RESTful API uses HTTP requests to access and modify the data. As a result, RESTful APIs expose data to the be consumed by our applications.</p>
 <p>
 CRUD operations are the four basic functions of persistent storage. RESTful APIs allow CRUD operations to be performed:</p>
 <p>

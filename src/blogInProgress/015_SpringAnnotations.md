@@ -1,5 +1,5 @@
 ---
-title: 'Architecture levels in Spring'
+title: 'Spring architecture layers'
 date: 2020-07-13 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/015Wellington.jpg
@@ -55,7 +55,7 @@ The data access/integration layer transforms the request using ORM to interact w
 The Spring IoC Container is a core Spring Framework component responsible for creating, wiring, managing and configuring objects to be used by the application. The components enable Spring to perform dependency injection as they are wired into classes that require them.
 </p>
 <p>
-The objects that are configured by the IoC container are known as Spring beans. Each bean contains metadata that includes information for how to create the bean, the bean's dependencies, and the lifecycle details.
+The objects that are configured by the IoC container are known as Spring beans. Each bean contains metadata that includes information for how to create the bean, the bean's dependencies, and the lifecycle details. 
 </p>
 <p>
 There are two types of containers within the Spring Framework:<br>
@@ -99,7 +99,7 @@ The <strong>@Controller</strong>, <strong>@Service</strong>, and <strong>@Reposi
 <strong><u>@Controller</u></strong><br>
 <p>
 <strong>@Controller</strong> is a specialised version of <strong>@Component</strong> to be used for classes at the API/web layer. When a class is marked with <strong>@Controller</strong>, the ApplicationContext will register the class as a bean, and the class will be looked upon differently for web-specific tools and services.<br>
-When a client request is made to the Spring Application, the dispatcher servlet is responsible as a single entry point to forward the request to the Spring MVC controllers. The dispatcher servlet will scan all classes marked as <strong>@Controller</strong> to find a <strong>@RequestMapping</strong> annotation to further handle the request.
+When a client request is made to the Spring Application, the dispatcher servlet, which is responsible for forwarding requests to the MVC controllers, will scan all classes marked as <strong>@Controller</strong> to find the appropriate <strong>@RequestMapping</strong> annotation to handle the request.
 </p>
 <br>
 <strong><u>@Service</u></strong><br>
