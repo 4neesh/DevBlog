@@ -2,9 +2,9 @@
 title: 'xxx'
 date: 2020-06-01 16:34:00
 author: 'Aneesh Mistry'
-featuredImage: ../images/xxx.png
+featuredImage: ../images/xxx.jpg
 thumbnail: ''
-subtitle: 'The immutable class design is a common strategy used to combat multi-threading race conditions. Explore how the race condition arises and the different strategies that can be used to prevent it.'
+subtitle: 'xxx'
 time: 'xx'
 tags:
 - xxx

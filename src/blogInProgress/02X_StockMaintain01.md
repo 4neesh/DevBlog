@@ -45,6 +45,7 @@ Configuration is externalised for a modular architecture.
 By centralising configuration, the risk of different environment relying on a local file or falling out of sync is reduced. Environment variables can be tracked and maintained across environments. Services may also require restarting if they rely on environment variables, whereas with a config server, they will not.
 
 In this example, I will use GitHub to host the configuration server for remote configuration.
+We use Spring Cloud Config server
 </p>
 
 <br>

@@ -19,11 +19,12 @@ tags:
 
 
 <br>
-<h4>Obtaining the stock prices</h4>
+<h4>The spring cloud task will be used to register a new customer to the hotel</h4>
 <p>
-The stock prices will be received into the microservice from AlphaVantage, an open API. 
-The crazzyghost wrapper class is used to read into the API and obtain the latest value.
-A Stock class is created as an entity and a controller class is used to post the instance to the database.
+The spring cloud task will be used to run an asynchronous activity.
+It will need to connect with the config server to obtain the rates that they will have to pay.
+It will also need to connect to a database to record the values that are received each time.
+The users will be stored as arguments into the task.
 
 </p>
 
@@ -42,31 +43,40 @@ If you are using MacOS, the following steps can be used for connecting to the My
 2. Connect to MySQL CLI: mysql --user=root -p (enter password)
 3. create database stockPriceTaskRun;
 4. show databases;
-
-
 </p>
 <br>
 <h4>Connecting the Task to the MySql Database</h4>
 <p>
-Important to have the following dependencies:<br>
+Important to have the following dependencies: mysql connector, config client, spring data jdbc and spring cloud task:<br>
 
 ```
     <dependency>
         <groupId>mysql</groupId>
         <artifactId>mysql-connector-java</artifactId>
     </dependency>
-			
+
+    <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-config</artifactId>
+    </dependency>
+            
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-jdbc</artifactId>
     </dependency>
 
+    <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-task</artifactId>
+        <version>2.2.3.RELEASE</version>
+    </dependency>
 ```
 </p>
 <p>
 
 </p>
 
+</p>
 <br>
 <h4>Conclusion</h4>
 <p>
