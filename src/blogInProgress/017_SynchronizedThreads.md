@@ -1,5 +1,5 @@
 ---
-title: 'xxx'
+title: 'Resolving race condition with synchronized methods'
 date: 2020-06-01 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/xxx.png
@@ -10,6 +10,7 @@ tags:
 - Java
 - Patterns
 - Multi-threading
+- Testing
 ---
 <br>
 <strong>Key Takeaways</strong><br>
