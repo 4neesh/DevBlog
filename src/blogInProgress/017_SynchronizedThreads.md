@@ -8,7 +8,6 @@ subtitle: 'The immutable class design is a common strategy used to combat multi-
 time: '10'
 tags:
 - Java
-- Patterns
 - Multi-threading
 - Testing
 ---
