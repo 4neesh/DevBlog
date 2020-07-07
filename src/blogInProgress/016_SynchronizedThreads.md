@@ -1,24 +1,20 @@
 ---
-title: 'Testing for race conditions'
-date: 2020-06-01 16:34:00
+title: 'Resolving the race condition'
+date: 2020-07-20 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/xxx.png
 thumbnail: ''
-subtitle: 'This post will explore how the race condition arises within multi-threaded applications, and how you can resolve it with atomic and volatile values.'
+subtitle: 'This post will explore how the race condition arises within multi-threaded applications, and how you can resolve it with atomic values and synchronization.'
 time: '10'
 tags:
 - Java
 - Multi-threading
-- Testing
 ---
 <br>
 <strong>Key Takeaways</strong><br>
 &#8226; Explore the different ways a race condition can be mitigated within multi-threaded applications.<br>
 &#8226; Implement the Immutable class design pattern.<br>
 &#8226; Understand the differences between various strategies to resolve race conditions.<br>
-
-![Merge sort step 2](../../src/images/011MergeSort2.png)
-
 
 <br>
 <h4>What is race condition?</h4>
@@ -177,103 +173,95 @@ Actual   :40
 ```
 </p>
 <p>
-The separation between reading a balance and withdrawing against it can be create further problems if the account were to become overdrawn.
+The separation between reading a balance and withdrawing against it can be create further problems if the account were to become overdrawn:
 </p>
 
 <br>
 <h4>Resolving the race condition</h4>
 <p>
-We can resolve the race condition by asserting that only one thread can access a shared resource at any one time or by ensuring all threads are aware of the balance at any one time.
+We can resolve the race condition by asserting that only one thread can access a shared resource at any one time or by ensuring all threads are aware of the balance at any one time. In our BankAccount so far, we have already utilised one of the keywords used to create thread-safety: <code>synchronized</code>.
 </p>
 <p>
 <strong>Synchronized methods</strong><br>
-The <i>Synchronized</i> keyword in Java can be applied to either a method signature or a block of code to ensure that only one thread can access it at a single time. The <code>public int spend(int amount)</code> method of the Person class can be changed to <code>public int synchronized spend(int amount)</code> signature to ensure only one thread can check the balance and perform the withdrawal at any one time. <i>Synchronized</i> applies a lock to the method to ensure only one thread can access it.
+The <i>Synchronized</i> keyword in Java can be applied to either a method signature or a block of code to ensure that only one thread can access it at a single time. The <code>withdraw()</code> method is changed to a <code>public void synchronized withdraw()</code> signature to ensure only one thread can obtain the lock for the method at a single time. When the thread reaches the <code>wait()</code> method, it releases the lock allowing another thread to enter the method. The synchronized keyword is used to control access into the method. 
 
 ![Transaction flow diagram](../../src/images/016_synchronized.png)
 
 </p>
 
-<h5>But can we perform an if statement on the bank's withdraw method?</h5>
+<strong>Thread communication</strong>
 <p>
-Below is the method for the bank's withdraw method that is called on line 11 when the Person makes a withdrawal from above:<br>
-
-```java{numberLines:true}
-  public void withdraw( int spend){
-        balance = balance - spend;
-        System.out.println(Thread.currentThread().getName() + " withdraws " + spend + ". Balance is now: " + balance);
-    }
-```
-</p>
-<p>
-If lines 2 and 3 were encapsulated with a further if statement to check if the balance is greater than or equal to the withdrawal amount, a race condition can still occur where Alice has deducted the balance, but not completed the method causing the balance to remain positive for other threads such as for Bob. To demonstrate the race condition as it remains, I have also added a delay in the thread within the if statement:
-
-```java{numberLines:true}
-public void withdraw( int spend) throws InterruptedException {
-
-        if(balance >= spend) {
-            Thread.sleep(2000);
-
-            balance = balance - spend;
-                System.out.println(Thread.currentThread().getName() + " withdraws " + spend + ". Balance is now: " + balance);
-            }
-    }
-```
+Our <code>withdraw()</code> method may be able to stop multiple threads from accessing the method together, however the <code>wait()</code> method call means all the threads are executing the <code>spend()</code> function together. As a result, they all make a transaction against the balance of 50 that they had read in earlier. To resolve the problem, all Thread instances must be able to see the updates that are made, and all updates made must be publicly visible to all threads.
 </p>
 
-<p>
-The following output is created:
-
-```
-Alice is going to withdraw 10 from the account with 50.
-Bob is going to withdraw 10 from the account with 50.
-Bob withdraws 10. Balance is now: 40
-Alice withdraws 10. Balance is now: 40
-Alice is going to withdraw 10 from the account with 40.
-Bob is going to withdraw 10 from the account with 40.
-Bob withdraws 10. Balance is now: 30
-Alice withdraws 10. Balance is now: 30
-Bob is going to withdraw 10 from the account with 30.
-Alice is going to withdraw 10 from the account with 30.
-Bob withdraws 10. Balance is now: 20
-Alice withdraws 10. Balance is now: 10
-Bob is going to withdraw 10 from the account with 10.
-Alice is going to withdraw 10 from the account with 10.
-Bob withdraws 10. Balance is now: -10
-Alice withdraws 10. Balance is now: -10
-
-```
-</p>
-<br>
-<h4>Creating thread safety in variables</h4>
-<p>
-Thread safety can be created by ensuring updates made to a variable is seen by all threads in the application.<br>
-If all threads can receive the latest update of the bank account balance, they will be able to make an informed judgement on whether they can make a withdrawal.
-</p>
-
-<p>
-<strong>Transient variables</strong><br>
-Transient variables resolve a visibility problem across variables with different threads.
-</p>
-
-
-<p>
 <strong>Atomic variables</strong><br>
-The atomic variables within Java aim to resolve the synchronization problem that can occur between two threads of an application. 
-When Alice and Bob read in the balance from the account, it will reflect the current balance as per the local cache of the thread. 
+<p>
+The atomic variables within Java aim to resolve the visibility problem that can occur between two threads of an application. 
+When two threads read in the balance from the account, it will reflect the current balance as per the local cache of the thread. 
 Even if the account balance is marked as transient, the operation performed on the account balance is made to the local value.
 The table below illustrates how the threads will see the value and perform the operation:
+</p>
 
 ![Without Atomic variable table](../../src/images/016_nonAtomic.png)
 
-
+<p>
 Atomic variables within Java provide values that are updated across all threads of the application at the same time.
-An atomic value can be useful if an if statement was made on the 
+An atomic value in this context is useful to ensure all the threads can see the latest balance before making a transaction. This way, the if statement will be applied to the most up-to-date value of the balance. The BankAccount is updated to use AtomicIntegers accordingly:
 </p>
+
+```java{numberLines:true}
+public class BankAccount {
+
+    private volatile AtomicInteger balance = new AtomicInteger(50);
+
+    public synchronized void withdraw(int spend) throws InterruptedException{
+
+        System.out.println("Withdrawing from balance: " + balance);
+        wait(100);
+        if(balance.get() - spend >= 0) {
+            balance.addAndGet(-spend);
+            System.out.println(Thread.currentThread().getName() +  " has withdrawn " + spend + ". New balance: " + balance);
+        }
+    }
+
+    public AtomicInteger getBalance(){
+        return this.balance;
+    }
+
+}
+```
+<p>
+The shared cache between the threads means the update to balance that is made is visible across all threads. 
+As a result, the second thread is able to see the updated <code>balance</code> value and will evaluate the if statement appropriately.
+
+![Atomic variable table](../../src/images/016_atomic.png)
+</p>
+
+<p>
+The AtomicInteger is used to communicate across the threads. When the penultimate thread is executed, the balance is atomically updated to 0 across all threads. Therefore the final thread evaluates the bank account balance to 0 and is no longer able to make the final -10 transaction. 
+</p>
+
+```
+Withdrawing from balance: 50
+Withdrawing from balance: 50
+Withdrawing from balance: 50
+Withdrawing from balance: 50
+Withdrawing from balance: 50
+Withdrawing from balance: 50
+pool-1-thread-1 has withdrawn 10. New balance: 40
+pool-1-thread-2 has withdrawn 10. New balance: 30
+pool-1-thread-3 has withdrawn 10. New balance: 20
+pool-1-thread-4 has withdrawn 10. New balance: 10
+pool-1-thread-5 has withdrawn 10. New balance: 0
+```
 
 <br>
 <h4>Conclusion</h4>
 <p>
-
+Multi-threading allows our code to utilise the multiple cores of the CPU. The danger of multi-threading however leads to potential errors between the threads, one of which is known as race condition.<br>
+The synchronized keyword in Java allows a thread to obtain a key to a code block or method during its execution to ensure no other thread is able to access the code at the same time. The concurrent.atomic package in Java includes many Atomic variables that can be used to provide cross-thread visibility of changes to a shared value.
+</p>
+<p>
 
 </p>
 

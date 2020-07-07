@@ -3,7 +3,7 @@ title: 'Using a RESTful API'
 date: 2020-07-06 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/014Ella.jpg
-thumbnail: '../images/014tn.jpg'
+thumbnail: '../images/014tn.png'
 subtitle: 'Consume RESTful APIs with a Spring service and deserialise the JSON data into custom values.'
 time: '8'
 tags:
