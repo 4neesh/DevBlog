@@ -22,7 +22,11 @@ tags:
 <h4>Title</h4>
 <p>
 
-
+<p>
+<strong>Atomic variables</strong><br>
+Atomic variables within Java provide values that are updated across all threads of the application at the same time.
+An atomic value can be useful if an if statement was made on the 
+</p>
 </p>
 
 <h4></h4>
