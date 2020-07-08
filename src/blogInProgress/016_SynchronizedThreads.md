@@ -2,7 +2,7 @@
 title: 'Resolving the race condition'
 date: 2020-07-20 16:34:00
 author: 'Aneesh Mistry'
-featuredImage: ../images/xxx.png
+featuredImage: ../images/016_Williamsburg.jpg
 thumbnail: ''
 subtitle: 'This post will explore how the race condition arises within multi-threaded applications, and how you can resolve it with atomic values and synchronization.'
 time: '10'
@@ -261,9 +261,5 @@ pool-1-thread-5 has withdrawn 10. New balance: 0
 Multi-threading allows our code to utilise the multiple cores of the CPU. The danger of multi-threading however leads to potential errors between the threads, one of which is known as race condition.<br>
 The synchronized keyword in Java allows a thread to obtain a key to a code block or method during its execution to ensure no other thread is able to access the code at the same time. The concurrent.atomic package in Java includes many Atomic variables that can be used to provide cross-thread visibility of changes to a shared value.
 </p>
-<p>
-
-</p>
-
 <br>
-<small style="float: right;" >Picture: xxx, xxx by <a target="_blank" href="https://unsplash.com/@xxx">xxx</small></a><br>
+<small style="float: right;" >Picture: Williamsburg, United States by <a target="_blank" href="https://unsplash.com/@benst287">Ben Stern</small></a><br>
