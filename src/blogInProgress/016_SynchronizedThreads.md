@@ -13,7 +13,7 @@ tags:
 <br>
 <strong>Key Takeaways</strong><br>
 &#8226; Explore the different ways a race condition can be mitigated within multi-threaded applications.<br>
-&#8226; Implement the Immutable class design pattern.<br>
+&#8226; Use Atomic values to create thread-safe operations.<br>
 &#8226; Understand the differences between various strategies to resolve race conditions.<br>
 
 <br>
