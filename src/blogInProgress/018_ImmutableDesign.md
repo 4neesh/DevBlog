@@ -1,6 +1,6 @@
 ---
 title: 'xxx'
-date: 2020-06-01 16:34:00
+date: 2020-08-03 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/xxx.jpg
 thumbnail: ''
