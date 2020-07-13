@@ -1,5 +1,5 @@
 ---
-title: 'Resolving the race condition'
+title: 'Creating multi-threaded visibility'
 date: 2020-07-20 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/016_Williamsburg.jpg
@@ -12,47 +12,50 @@ tags:
 ---
 <br>
 <strong>Key Takeaways</strong><br>
-&#8226; Explore the different ways a race condition can be mitigated within multi-threaded applications.<br>
-&#8226; Use Atomic values to create thread-safe operations.<br>
-&#8226; Understand the differences between various strategies to resolve race conditions.<br>
+&#8226; Understand how a race condition can arise in a multi-threaded application.<br>
+&#8226; Use Atomic values to create thread-safe variables.<br>
+&#8226; Use Synchronized blocks to control accessibility of code blocks to threads.<br>
 
 <br>
-<h4>What is race condition?</h4>
+<h4>What is a race condition in multi-threading?</h4>
 <p>
-Race condition is a term that originates from electronics to describe a condition where a systems behaviour is dependent on the timing of uncontrollable events.
+The <i>race condition</i> is a term that originates from electronics to describe a condition where a systems behaviour is dependent on the timing of uncontrollable events.
 </p>
 <p>
-In the context of a multi-threaded application, race condition can arise where two threads are performing an activity simultaneously where the context of the outcome is stateful. Stateful Objects contain data that is represented by the business logic in the current state of the application. A stateless Object will contain data that is not in any way impacted by the state of the application.
+In the context of a multi-threaded application, race condition can arise where multiple threads are performing simultaneously upon a stateful session. Stateful sessions contain data that is represented by the current state of the application; the existence of the session variables are dependent on the previous execution of other methods. A stateless session will therefore encounter data that is not impacted by the state or execution of the application.
 </p>
 <p>
-A static variable may be one example of a stateful object. It's existence can be dependent on the interactions it has with other instances of the class, whereas a method-local variable does not carry such a relationship. 
+A static variable is an example of a stateful object. The static variable's existence is dependent on the interactions it has with other instances of the class, whereas a method-local variable is stateless and does not carry such a relationship. 
 </p>
-<h4>A shared bank account</h4>
+<h4>Multi-threading on a shared bank account</h4>
 <p>
-To describe the how a race condition may arise, I will use a scenario of a shared bank account. The bank account is now allowed to go into overdraft, therefore when a request is made, it should only be processed if there is sufficient funds in the account.
+To describe the how a race condition may arise, I will use a scenario of a shared bank account. The bank account is not allowed to go into overdraft, therefore when a request is made, it should only be processed if there are sufficient funds in the account.
 </p>
 <p>
-A race condition can occur when both people make a transaction at similar times using different threads.<br>
-The process of checking the balance and withdrawing funds is completed in multiple steps of the same method; it can be possible that in the time between checking the balance and withdrawing the funds, the balance has been reduced by a different thread therefore causing the balance to become overdrawn by the transaction in process.
+Each transaction will first check the balance and make a withdrawal if the balance exceeds, or is equal to the withdrawal amount.
+</p>
+<p>
+A race condition can occur when multiple withdrawal requests are made at a similar time to the bank account using different threads.<br>
+Each thread will read the bank balance as containing a sufficient amount, however when both transactions are made, the bank account becomes overdrawn. 
 </p>
 
 ![Transaction flow diagram](../../src/images/016_flow.png)
 
 <p>
-The diagram above illustrates how both threads perform the balance followed by a short wait (for theoretical processing time), and then make the withdrawal against the balance.<br>
-The race condition occurs as the outcome of the transaction is deterministic upon the internal method thread speeds.
+The diagram above illustrates how both threads record the balance and make the withdrawal against the balance.<br>
+The race condition occurs as the outcome of the transaction is deterministic upon the thread speeds synchronization with each other.
 </p>
 <br>
 <h4>The possible stateful outcomes</h4>
 <p>
 The outcome from the scenario can be one of three:<br>
-1. Alice can spend the money and Bob is not able to.<br>
-2. Bob can spend the money and Alice is not able to.<br>
-3. Alice and Bob can spend the money, thus causing the account to become overdrawn.<br>
+1. Thread 1 can spend the money and Thread 2 is not able to.<br>
+2. Thread 2 can spend the money and Thread 1 is not able to.<br>
+3. Thread 1 and Thread 2 can spend the money, thus causing the account to become overdrawn.<br>
 </p>
 <p>
-To implement the race condition, I will create a BankAccount class that has a withdraw method.<br> 
-The below code sample demonstrates how the race condition can occur within the <code>spend(int amount)</code> method of the Person class:
+To implement the race condition, I will create a BankAccount class with a withdraw method.<br> 
+The below code sample enables a race condition to occur:
 
 ```java{numberLines:true}
 public class BankAccount {
@@ -62,15 +65,16 @@ public class BankAccount {
     public  void withdraw(int spend){
 
         int temp = balance;
-        System.out.println("Withdrawing from balance: " + balance);
+        System.out.println(Thread.currentThread().getName() + " withdrawing from balance: " + balance);
         balance = temp - spend;
-        System.out.println(spend + " withdrawn. New balance: " + balance);
+        System.out.println(Thread.currentThread().getName() + " has withdrawn " + spend + ". New balance: " + balance);
 
     }
 
     public int getBalance(){
         return this.balance;
     }
+
 
 }
 ```
@@ -95,18 +99,23 @@ If I were to run the following single-threaded test, the application would perfo
 ```
 
 ```{numberLines:true}
-Balance: 40
-Balance: 30
-Balance: 20
-Balance: 10
-Balance: 0
+main withdrawing from balance: 50
+main has withdrawn 10. New balance: 40
+main withdrawing from balance: 40
+main has withdrawn 10. New balance: 30
+main withdrawing from balance: 30
+main has withdrawn 10. New balance: 20
+main withdrawing from balance: 20
+main has withdrawn 10. New balance: 10
+main withdrawing from balance: 10
+main has withdrawn 10. New balance: 0
 ```
 
 </p>
 <br>
 <h4>Introducing latency and a possible race condition</h4>
 <p>
-The current execution of the single thread acts as expected as the <code>withdraw()</code> method is only called once at any one time. I can introduce latency into the application by using the <code>wait()</code> method that causes all threads to stop before before continuing. The <code>withdraw()</code> method must become synchronized to ensure only one thread enters the method at a single time.
+The current execution of the single thread acts as expected as the <code>withdraw()</code> method is only called once at any one time. Latency can be introduced into the application by using the <code>wait()</code> method which causes all threads to stop before continuing. The <code>withdraw()</code> method must be marked within a synchronized block to ensure only one thread accesses the method at a single time.
 </p>
 <p>
 The following update to the <code>withdraw()</code> method will cause the threads to check the balance, wait for each other, then to complete the transaction. As a result, each thread will read in the opening balance before making a transaction against the balance:
@@ -116,11 +125,11 @@ The following update to the <code>withdraw()</code> method will cause the thread
    public synchronized void withdraw(int spend) throws InterruptedException{
 
         int temp = balance;
-        System.out.println("Withdrawing from balance: " + balance);
+        System.out.println(Thread.currentThread().getName() + " withdrawing from balance: " + balance);
         wait(100);
         if(balance - spend >=0){
             balance = temp - spend;
-            System.out.println(spend + " withdrawn. New balance: " + balance);
+            System.out.println(Thread.currentThread().getName() + " has withdrawn " + spend + ". New balance: " + balance);
         }
     }
 ```
@@ -155,57 +164,70 @@ The single threaded test will continue to behave as expected, however multiple t
 ```
 
 ```
-Withdrawing from balance: 50
-Withdrawing from balance: 50
-Withdrawing from balance: 50
-Withdrawing from balance: 50
-Withdrawing from balance: 50
-10 withdrawn. New balance: 40
-10 withdrawn. New balance: 40
-10 withdrawn. New balance: 40
-10 withdrawn. New balance: 40
-10 withdrawn. New balance: 40
-```
-```java
-java.lang.AssertionError: 
-Expected :0
-Actual   :40
+pool-1-thread-1 withdrawing from balance: 50
+pool-1-thread-2 withdrawing from balance: 50
+pool-1-thread-3 withdrawing from balance: 50
+pool-1-thread-4 withdrawing from balance: 50
+pool-1-thread-5 withdrawing from balance: 50
+pool-1-thread-1 has withdrawn 10. New balance: 40
+pool-1-thread-2 has withdrawn 10. New balance: 30
+pool-1-thread-3 has withdrawn 10. New balance: 20
+pool-1-thread-4 has withdrawn 10. New balance: 10
+pool-1-thread-5 has withdrawn 10. New balance: 0
 ```
 </p>
 <p>
-The separation between reading a balance and withdrawing against it can be create further problems if the account were to become overdrawn:
+The threads all read in the balance together, then reduce the balance one, by one. <br>
+The class appears to be thread-safe as the balance is reduced as expected, however if we introduce a 6th thread on line 4 of the test, the account becomes overdrawn:
 </p>
 
+```
+pool-1-thread-1 withdrawing from balance: 50
+pool-1-thread-2 withdrawing from balance: 50
+pool-1-thread-3 withdrawing from balance: 50
+pool-1-thread-4 withdrawing from balance: 50
+pool-1-thread-5 withdrawing from balance: 50
+pool-1-thread-6 withdrawing from balance: 50
+pool-1-thread-1 has withdrawn 10. New balance: 40
+pool-1-thread-3 has withdrawn 10. New balance: 30
+pool-1-thread-2 has withdrawn 10. New balance: 20
+pool-1-thread-4 has withdrawn 10. New balance: 10
+pool-1-thread-5 has withdrawn 10. New balance: 0
+pool-1-thread-6 has withdrawn 10. New balance: -10
+```
 <br>
 <h4>Resolving the race condition</h4>
 <p>
-We can resolve the race condition by asserting that only one thread can access a shared resource at any one time or by ensuring all threads are aware of the balance at any one time. In our BankAccount so far, we have already utilised one of the keywords used to create thread-safety: <code>synchronized</code>.
+We can resolve the race condition by asserting that only one thread can access the <code>withdraw()</code> method at any one time, or by ensuring all threads are aware of the balance as it is updated. In our BankAccount class so far, we have already utilised one of the keywords used to create thread-safety: <code>synchronized</code>.
 </p>
 <p>
 <strong>Synchronized methods</strong><br>
-The <i>Synchronized</i> keyword in Java can be applied to either a method signature or a block of code to ensure that only one thread can access it at a single time. The <code>withdraw()</code> method is changed to a <code>public void synchronized withdraw()</code> signature to ensure only one thread can obtain the lock for the method at a single time. When the thread reaches the <code>wait()</code> method, it releases the lock allowing another thread to enter the method. The synchronized keyword is used to control access into the method. 
+The <i>Synchronized</i> keyword in Java can be applied to either a method signature or a block of code to ensure that only one thread can access it at a single time. The <code>withdraw()</code> signature is changed to <code>public void synchronized withdraw()</code> to ensure only one thread can obtain the lock for the method at a single time. When the thread reaches the <code>wait()</code> method, it releases the lock allowing another thread to enter the method. The use of the <i>synchronized</i> keyword is not completely effective as it only allows one thread at a time to read the balance. The withdrawal of the fund still remains as a separate action that can be performed by multiple threads at a time.
 
 ![Transaction flow diagram](../../src/images/016_synchronized.png)
 
 </p>
-
-<strong>Thread communication</strong>
 <p>
-Our <code>withdraw()</code> method may be able to stop multiple threads from accessing the method together, however the <code>wait()</code> method call means all the threads are executing the <code>spend()</code> function together. As a result, they all make a transaction against the balance of 50 that they had read in earlier. To resolve the problem, all Thread instances must be able to see the updates that are made, and all updates made must be publicly visible to all threads.
+The problem of the overdrawn account occurs in the following steps:<br>
+1. The first thread withdraws the funds.<br>
+2. The if statement for all other threads are evaluated to the balance that was read <u>before</u> thread 1 makes a withdrawal.<br>
+3. The bank will become overdrawn as the balance from each thread is not updated with the withdrawal from thread 1.
+</p>
+<strong>Thread communication and visibility</strong>
+<p>
+The <code>withdraw()</code> method may be able to stop multiple threads from accessing the bank balance together, however the <code>wait()</code> method enables withdrawals of the balance to be made by all threads together.. To resolve the remaining race condition problem, all Thread instances must be able to see the updates that are made to the balance as each withdrawal is made by other threads. If the threads are able to see the latest balance update, they will correctly determine if a withdrawal can be made without becoming overdrawn.
 </p>
 
 <strong>Atomic variables</strong><br>
 <p>
-The atomic variables within Java aim to resolve the visibility problem that can occur between two threads of an application. 
-When two threads read in the balance from the account, it will reflect the current balance as per the local cache of the thread. 
-Even if the account balance is marked as transient, the operation performed on the account balance is made to the local value.
-The table below illustrates how the threads will see the value and perform the operation:
+The atomic variables within Java aim to resolve the visibility problem that can occur between multiple threads of an application. 
+The table below illustrates how the threads will obtain the value and perform the operation:
 </p>
 
 ![Without Atomic variable table](../../src/images/016_nonAtomic.png)
 
 <p>
-Atomic variables within Java provide values that are updated across all threads of the application at the same time.
+Atomic variables within Java provide variables that are updated across all threads of the application at the same time.
 An atomic value in this context is useful to ensure all the threads can see the latest balance before making a transaction. This way, the if statement will be applied to the most up-to-date value of the balance. The BankAccount is updated to use AtomicIntegers accordingly:
 </p>
 
@@ -222,6 +244,10 @@ public class BankAccount {
             balance.addAndGet(-spend);
             System.out.println(Thread.currentThread().getName() +  " has withdrawn " + spend + ". New balance: " + balance);
         }
+        else{
+            System.out.println(Thread.currentThread().getName() + " is unable to  withdraw " + spend + " from a balance of " + balance);
+        }
+
     }
 
     public AtomicInteger getBalance(){
@@ -232,7 +258,7 @@ public class BankAccount {
 ```
 <p>
 The shared cache between the threads means the update to balance that is made is visible across all threads. 
-As a result, the second thread is able to see the updated <code>balance</code> value and will evaluate the if statement appropriately.
+As a result, the second thread is able to see the updated <code>balance</code> value and will evaluate the if statement appropriately. As a result, stage 4 will never be executed as the balance is to become overdrawn. 
 
 ![Atomic variable table](../../src/images/016_atomic.png)
 </p>
@@ -242,24 +268,28 @@ The AtomicInteger is used to communicate across the threads. When the penultimat
 </p>
 
 ```
-Withdrawing from balance: 50
-Withdrawing from balance: 50
-Withdrawing from balance: 50
-Withdrawing from balance: 50
-Withdrawing from balance: 50
-Withdrawing from balance: 50
-pool-1-thread-1 has withdrawn 10. New balance: 40
-pool-1-thread-2 has withdrawn 10. New balance: 30
-pool-1-thread-3 has withdrawn 10. New balance: 20
-pool-1-thread-4 has withdrawn 10. New balance: 10
-pool-1-thread-5 has withdrawn 10. New balance: 0
+pool-1-thread-1 withdrawing from balance: 50
+pool-1-thread-2 withdrawing from balance: 50
+pool-1-thread-3 withdrawing from balance: 50
+pool-1-thread-4 withdrawing from balance: 50
+pool-1-thread-5 withdrawing from balance: 50
+pool-1-thread-6 withdrawing from balance: 50
+pool-1-thread-2 has withdrawn 10. New balance: 40
+pool-1-thread-4 has withdrawn 10. New balance: 30
+pool-1-thread-5 has withdrawn 10. New balance: 20
+pool-1-thread-6 has withdrawn 10. New balance: 10
+pool-1-thread-3 has withdrawn 10. New balance: 0
+pool-1-thread-1 is unable to  withdraw 10 from a balance of 0
 ```
 
 <br>
 <h4>Conclusion</h4>
 <p>
-Multi-threading allows our code to utilise the multiple cores of the CPU. The danger of multi-threading however leads to potential errors between the threads, one of which is known as race condition.<br>
-The synchronized keyword in Java allows a thread to obtain a key to a code block or method during its execution to ensure no other thread is able to access the code at the same time. The concurrent.atomic package in Java includes many Atomic variables that can be used to provide cross-thread visibility of changes to a shared value.
+Multi-threading allows our code to utilise the multiple cores of the CPU. The danger of multi-threading however leads to potential errors of visibility and synchronisation between the threads, one of which is known as race condition.<br>
+The synchronized keyword in Java allows a thread to obtain a key to a code block or method during its execution to ensure no other thread is able to access the code at the same time. The concurrent.atomic package in Java includes different Atomic variables that provide cross-thread visibility to a shared value.
+</p>
+<p>
+The Atomic package and synchronized keyword are common tools that enforce an element of determinism about a multi-threaded application. These tools enable execution order to be achieved and cached memory to be shared to eliminate non-deterministic behaviour within their domains.
 </p>
 <br>
 <small style="float: right;" >Picture: Williamsburg, United States by <a target="_blank" href="https://unsplash.com/@benst287">Ben Stern</small></a><br>

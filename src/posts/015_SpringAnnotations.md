@@ -4,8 +4,8 @@ date: 2020-07-13 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/015Wellington.jpg
 thumbnail: '../images/015tn.jpg'
-subtitle: 'The Spring framework works across three layers within the application architecture. This post will look into the convenient annotations used to label classes of each layer and how the beans created from the annotations add value to the application and for the developer.'
-time: '8'
+subtitle: 'The Spring framework can work across three layers of an application architecture. This post will look into the annotations used to label classes of each layer and how the beans created from the annotations are customised to the application.'
+time: '6'
 tags:
 - Spring
 - Patterns
@@ -14,7 +14,7 @@ tags:
 <strong>Key Takeaways</strong><br>
 &#8226; Compare the properties of the different layers within a Spring application.<br>
 &#8226; Review the importance of the Spring IoC container, BeanFactory, and ApplicationContext.<br>
-&#8226; Understand the differences between the beans created when a class is annotated with either @Component, @Controller, @Service or @Repository.<br>
+&#8226; Understand the differences between the beans created from @Component, @Controller, @Service or @Repository.<br>
 
 <br>
 <h4>Spring application architecture</h4>
