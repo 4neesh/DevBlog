@@ -1,13 +1,14 @@
 ---
-title: 'xxx'
+title: 'Spring cloud task'
 date: 2020-06-01 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/xxx.png
 thumbnail: ''
 subtitle: 'xxx'
-time: 'xx'
+time: '6'
 tags:
-- xxx
+- Spring
+- Microservices
 ---
 <br>
 <strong>Key Takeaways</strong><br>
@@ -76,6 +77,13 @@ Important to have the following dependencies: mysql connector, config client, sp
 
 </p>
 
+
+<br>
+<h4>Creating the customer service</h4>
+<p>
+In our example, we will be using two separate databases to create our customer.
+First we will have a customer name service
+and second we will have a customer id service. The two services are separate as one stores the membership id of certain individuals and returns a discount percentage depending on their years as a member. 
 </p>
 <br>
 <h4>Conclusion</h4>

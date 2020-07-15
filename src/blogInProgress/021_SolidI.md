@@ -1,6 +1,6 @@
 ---
-title: 'xxx'
-date: 2020-08-03 16:34:00
+title: 'Interface segregation principle'
+date: 2020-08-31 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/xxx.jpg
 thumbnail: ''
@@ -23,9 +23,7 @@ tags:
 <p>
 
 <p>
-<strong>Atomic variables</strong><br>
-Atomic variables within Java provide values that are updated across all threads of the application at the same time.
-An atomic value can be useful if an if statement was made on the 
+
 </p>
 </p>
 
