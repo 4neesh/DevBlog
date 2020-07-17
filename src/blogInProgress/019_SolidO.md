@@ -1,13 +1,14 @@
 ---
-title: 'Open closed principle'
+title: 'Open-closed principle'
 date: 2020-08-17 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/xxx.jpg
 thumbnail: ''
-subtitle: 'xxx'
-time: 'xx'
+subtitle: 'The open-closed responsibility principle represents the 'O' in the 5 mnemonic acronym 'SOLID' for design principles. Software entities must be open for extension, but closed for modification.'
+time: '5'
 tags:
-- xxx
+- Patterns
+- Java
 ---
 <br>
 <strong>Key Takeaways</strong><br>

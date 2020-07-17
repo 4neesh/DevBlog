@@ -82,8 +82,58 @@ Important to have the following dependencies: mysql connector, config client, sp
 <h4>Creating the customer service</h4>
 <p>
 In our example, we will be using two separate databases to create our customer.
-First we will have a customer name service
-and second we will have a customer id service. The two services are separate as one stores the membership id of certain individuals and returns a discount percentage depending on their years as a member. 
+First we will have a customer details service
+and second we will have a customer id service. The two services are separate as one stores the membership id of certain individuals and returns a discount percentage depending on their years as a member and the other will contain details about the customer themselves.
+</p>
+<p>
+Creating the customer details service.
+Customer: Id, First name, Last name, Email, Favourite colour
+I create a mySQL database for the customer details.
+
+I apply the following in the application properties file to connect:
+
+```
+server.port=8883
+spring.datasource.url=jdbc:mysql://localhost:3306/customerDetails?useSSL=FALSE
+spring.datasource.username=root
+spring.datasource.password=java
+```
+
+Next I create the entity class that will store the customer details.
+This involves using the javax.persistence package to store the entity and column names against fields of the CustomerDetailsEntity class.
+
+Next I create the data access object class which is used as a service to interact with the database. This class will extend the JpaRepository for all the expected values. JPA repository comes from the Spring data rest dependency. We then create an implementation of the repository.
+
+The CustomerDetailsService uses the repository implementation as a service to perform requests upon the database.
+
+In the controller, the CustomerDetailsService is passed in as a service and used to return the user values.
+
+PostMapping is used for adding customers into the database.
+It uses the detailsService for saving JpaRepository.
+
+We can now make requests to the database for individual players and make post requests to add customers.
+
+</p>
+
+
+<p>
+Creating the customer members service.
+
+Customer Member: Id, Membership type
+
+
+
+
+
+</p>
+
+<p>
+
+Customer Service
+
+takes the customer details and the customer membership to create Customer item
+
+
 </p>
 <br>
 <h4>Conclusion</h4>

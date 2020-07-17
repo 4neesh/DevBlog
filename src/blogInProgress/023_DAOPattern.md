@@ -1,14 +1,13 @@
 ---
-title: 'Liskov substitution principle'
-date: 2020-08-24 16:34:00
+title: 'Dependency inversion principle'
+date: 2020-09-14 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/xxx.jpg
 thumbnail: ''
-subtitle: 'The Liskov substitution principle represents the 'L' in the 5 mnemonic acronym 'SOLID' for design principles. {enter brief desc}'
-time: '5'
+subtitle: 'xxx'
+time: 'xx'
 tags:
-- Patterns
-- Java
+- xxx
 ---
 <br>
 <strong>Key Takeaways</strong><br>

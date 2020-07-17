@@ -4,10 +4,11 @@ date: 2020-09-07 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/xxx.jpg
 thumbnail: ''
-subtitle: 'xxx'
-time: 'xx'
+subtitle: 'The dependency inversion principle represents the 'S' in the 5 mnemonic acronym 'SOLID' for design principles. {enter brief desc}'
+time: '5'
 tags:
-- xxx
+- Patterns
+- Java
 ---
 <br>
 <strong>Key Takeaways</strong><br>
