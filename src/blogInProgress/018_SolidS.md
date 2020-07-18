@@ -16,18 +16,16 @@ tags:
 &#8226; The .<br>
 &#8226; The.<br>
 
-![Merge sort step 2](../../src/images/011MergeSort2.png)
-
-
 <br>
 <h4>The SOLID principles of design</h4>
 <p>
-This blog post will be the first of a series of 5 posts that cover the SOLID principles of design. The SOLID principles were coined by Robert C. Martin in his paper <i>Design Principles and Design Patterns</i>.
-The SOLID acronym was later defined by Michael Feathers.
-The SOLID principles apply to object orientated programming and encourage the creation of maintainable software that prevents code rot from accumulating. As software applications scale in size, the design principles from SOLID become more and more important to prevent complex issues from arising and to enable a more efficient process for enhancement and bug fixes.
+This blog post will be the first in a series of 5 posts that cover the SOLID principles of design. The SOLID principles were introduced by Robert C. Martin in his paper Design Principles and Design Patterns.
+The SOLID acronym was later defined by Michael Feathers.</p>
+<p>
+The SOLID principles encourage the creation of maintainable software that prevents code rot from accumulating within object orientated programming. As software applications scale in size, the design principles from SOLID become more and more valuable to prevent complex issues from arising and to enable a more efficient process for application enhancement and bug fixes.
 <p>
 <p>
-The SOLID principles consist of:<br>
+The SOLID acronym is defined accordingly:<br>
 S - Single responsibility principle<br>
 O - Open-closed principle<br>
 L - Liskov substitution principle<br>
@@ -35,29 +33,89 @@ I - Interface segregation principle<br>
 D - Dependency inversion principle<br>
 </p>
 <p>
-This blog post will focus upon the Single responsibility principle (SRP).
+This blog post will focus upon the single responsibility principle (SRP).
 </p>
 
 <br>
 <h4>Single responsibility principle</h4>
 <p>
-The single responsibility principle asserts that any one class must have one single responsibility, and therefore just <strong>one reason to change</strong>.
-The SRP ensures that classes contain behaviour they are expected to have and changes to them do not create unrelated behaviour or side effects from a change.
-Classes that are designed by the single responsibility principle are described as being cohesive and robust.
+The single responsibility principle asserts that any one class must have just one responsibility, and therefore just <strong>one reason to change</strong>. When classes are designed, component that all change for the same reason are grouped under the same responsibility under one class.<br>
+The SRP defines classes to contain behaviours that always correlate back to their defined responsibility. Classes that use SRP will be able to correlate each function they have back to the single responsibility. Classes that have multiple responsibilities may contain many reasons to change, and as a result, may create unrelated behaviour or side effects when they are later updated.
 </p>
-<br>
-<h4>Class cohesion and robustness</h4>
 <p>
-The word <i>cohesion</i> describes the action of formed a united whole. In object orientated programming, classes are cohesive when they can be used together without conflict.
-Class cohesion is achieved within object orientated programming through the design and implementation of a class to a single purpose. 
-If you
+The SRP creates classes that can be described as being <i>cohesive</i> and <i>robust</i>. A sign that a class has a well defined purpose and singular responsibility can arise when you are naming them against the responsibility. If you find it difficult to define a name of a class based upon its responsibility, it is likely the class has many responsibilities or is not clear to a single purpose. </p>
+<br>
+<h4>Class cohesion</h4>
+<p>
+The word <i>cohesion</i> describes the action of forming a united whole. In object orientated programming, classes are cohesive when they can be used together without conflict.
+Class cohesion is achieved through the design and implementation of a class to a single purpose. Class cohesion facilitates greater potential for class reusability and implementations of the application. 
+</p>
+<p>
+The implementation of class cohesion can be visually demonstrated through the blocks below:
+
+![Non Cohesion](../../src/images/018_nonco.png)
+
+![Cohesion](../../src/images/018_co.png)
 
 </p>
-
+<p>
+While the blocks are only rotated on the x axis, it becomes evident that when classes consume just a single responsibility, they become more modular and can be combined with different classes together to form different outputs.
+</p>
 <br>
 <h4>Implementing SRP by design</h4>
 <p>
+The implementation of SRP will be used to demonstrate how side effects can arise from changing a class with multiple responsibilities, and how the use of SRP can avoid such errors form occurring. 
+</p>
+<p>
+In our example, the application will be used for renting a car. The class <code>Car</code> exists as an entity to be stored within a database of all cars to be rented. The class will also return properties of the car such as brand, colour and engine size. <br>
+The Car class will also include a method called "rent" which sends a request to the database to rent the car.
+</p>
+<p>
+The Car class has more than one responsibility. It is responsible for holding information about each car instance, but it is also responsible for managing the rental of the car with the database.
 
+```java{numberLines:true}
+public class Car {
+
+    private String brand;
+    private BigInteger price;
+    private String colour;
+    private String key;
+    private InventoryService inventoryService;
+    
+    public void rent(){
+
+        if(inventoryService.getInventory(key) > 0){
+            
+            ...
+
+        }
+        
+    }
+
+}
+```
+</p>
+<p>
+The <code>rent()</code> method will verify with the Inventory class (not demonstrated in this post) to check the car is available, and then connect with the database using object to relational mapping in a DAO pattern to reduce the number of cars available.
+</p>
+<p>
+The following changes are made to the application:<br>
+1. The number of cars has increased in the inventory.<br>
+2. The renter must verify their credentials before renting a car.
+</p>
+<h5>Increasing the car inventory</h5>
+<p>
+The Car class uses the InventoryService to check how many cars are available for rent. When the number of inventory is increased, the Car class, which is responsible for holding information about a car instance should not be effected. After all, the number of instances of a car does not relate to the properties of a car. As a result, the InventoryService, which is responsible for managing the inventory of the car instances will be updated. This example demonstrates how SRP creates a single change in a single class that is responsible for a property.
+</p>
+<h5>Verify renter credentials before renting</h5>
+<p>
+The verification of user credentials is a pre-requisite before enabling a car to be rented. As a result, the Car class must use another service to access the credentials during the <code>rent()</code> method. The Car class, which is meant to be responsible for the car descriptive information, will now have the RenterDetails class to access information about the renter. 
+</p>
+<p>
+The result of verifying credentials of a renter has created unexpected growth and unrelated dependency of the Car class upon the RenterDetails class. The additional responsibility of the <code>rent()</code> method in the Car class has created two further dependencies on the RenterDetails and InventoryManager classes that otherwise would be completely unrelated to the Car descriptive properties.
+</p>
+<h5>Reviewing SRP in the Car class</h5>
+<p>
 
 
 </p>
