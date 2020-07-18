@@ -116,25 +116,49 @@ The result of verifying credentials of a renter has created unexpected growth an
 </p>
 <h5>Reviewing SRP in the Car class</h5>
 <p>
+Before the SRP is applied to the Car class, it has a dependency upon the InventoryManager to accommodate for the rent() method. This dependency expands the single responsibility of providing descriptive details of a single car into obtaining further responsibility in renting an instance of the car through an interaction with the database.
+</p>
+<p>
+When the application introduces two further requirements, the InventoryManager is not changed, however the Car class must now depend upon the RenterDetails class to verify the person renting the car. The additional dependency breaks the responsibility of the Car class further:
+
+![Multiple responsibility of car](../../src/images/018_beforeCarSRP.png)
 
 
 </p>
+<p>
+If the Car class had a single responsibility, it would not contain a <code>rent()</code> method and therefore the InventoryManager would not be injected. The <code>rent()</code> method could belong within a different class, "CarRental", that is responsible for leasing cars. CarRental will use the InventoryManager to obtain inventory levels for each car.
+</p>
+<p>
+The further requirements of the application can be introduced by updating the inventory in the InventoryManager and by injecting the UserDetails class into the CarRental class. Each class maintains its single responsibility, however the updates made to the classes have not increased their responsibility and kept the functions of the application separate from each other.
 
+![Single responsibility of car](../../src/images/018_afterCarSRP.png)
+
+</p>
 <br>
 <h4>The benefits of SRP</h4>
 <p>
-Testing: Single responsibility classes have less testing required as there are fewer variations within the class to perform.
-
-Loose-coupling: classes will have fewer dependencies upon other classes
-
-Debugging: Smaller and well defined classes are easier to search and debug.
+In the example above, SRP has been used to separate the responsibilities of the classes. The update and enhancement to the application has been made in expected classes and have not expanded their responsibility beyond their original design. The SRP version of the application promotes the <i>single reason for change</i> as the enhancements only prompt a single change in the class with the responsibility for handling the inventory and for the user verification.
+</p>
+<p>
+<strong>Debugging</strong><br>
+If the application were to experience a bug with inventory handling or user validation, the debugging process would initially begin with the expected classes with the responsibility that handles the functions. Without the SRP, the debugging process would have been slightly more complex as the Car class had the excess dependencies upon the InventoryManager and RenterDetails classes. SRP improved debugging an application as responsibilities are specific and adhered to within each class.
+</p>
+<p>
+<strong>Loose coupling</strong><br>
+The Car class that uses the SRP has de-coupled the responsibility of rental from the responsibility of obtaining Car details. SRP promotes the loose coupling of responsibilities within an application to promote code reuse.
+</p>
+<p>
+<strong>Testing</strong><br>
+Automated testing such as unit tests are typically designed to test the functionality of a class. Each class will have several tests to ensure it is able to comply to its responsibilities. SRP will naturally decrease the number of tests required for a class that previously contained multiple responsibilities. While the test will be transported to another class, the tests required for each class will be reduced in bulk. The rent method would have required two dependencies that are only required once in the Car class to be used, whereas in the InventoryManager class, the dependencies used are more likely to be functional across the class and therefore less novel.
 </p>
 <br>
 <h4>Conclusion</h4>
 <p>
-
-
+The single responsibility principle asserts that each class will have a single defined responsibility and therefore just a single reason to change.<br>
+An application that implements SRP into its class design will enable the developer to understand the code dependencies and complex relationships in a more natural sense, and will facilitate the debugging and enhancement of the code with new functionalities.
 </p>
-
+<p>
+The SRP is the first of 5 design principles introduced by Robert C. Martin. The principle elevates the importance in defining and understanding the single responsibility of each class and how they form dependencies upon other classes during the design phase of software development. 
+</p>
 <br>
 <small style="float: right;" >Picture: xxx, xxx by <a target="_blank" href="https://unsplash.com/@xxx">xxx</small></a><br>
