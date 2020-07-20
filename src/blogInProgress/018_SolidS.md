@@ -2,8 +2,8 @@
 title: 'Single responsibility principle'
 date: 2020-08-10 16:34:00
 author: 'Aneesh Mistry'
-featuredImage: ../images/xxx.jpg
-thumbnail: ''
+featuredImage: ../images/018_StJoseph.jpg
+thumbnail: '../images/018_th.png'
 subtitle: 'The single responsibility principle represents the 'S' in the 5 mnemonic acronym 'SOLID' for design principles. Classes must have one defined responsibility to promote class modularity and cohesion.'
 time: '5'
 tags:
@@ -12,9 +12,9 @@ tags:
 ---
 <br>
 <strong>Key Takeaways</strong><br>
-&#8226; The .<br>
-&#8226; The .<br>
-&#8226; The.<br>
+&#8226; Introduction to the SOLID principles of design.<br>
+&#8226; Understand how the first principle of Single Responsibility can be applied to object orientated classes.<br>
+&#8226; Review the benefits of the SRP to minimise the potential of code rot.<br>
 
 <br>
 <h4>The SOLID principles of design</h4>
@@ -89,7 +89,7 @@ public class Car {
             ...
 
         }
-        
+
     }
 
 }
@@ -161,4 +161,4 @@ An application that implements SRP into its class design will enable the develop
 The SRP is the first of 5 design principles introduced by Robert C. Martin. The principle elevates the importance in defining and understanding the single responsibility of each class and how they form dependencies upon other classes during the design phase of software development. 
 </p>
 <br>
-<small style="float: right;" >Picture: xxx, xxx by <a target="_blank" href="https://unsplash.com/@xxx">xxx</small></a><br>
+<small style="float: right;" >Picture: St. Joseph, IL by <a target="_blank" href="https://unsplash.com/@drice22">Danielle Rice</small></a><br>
