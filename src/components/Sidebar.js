@@ -73,6 +73,13 @@ const Sidebar = () => (
                     Microservices 
                   </Button>
                 </li>  
+
+                <li>
+                  <Button className="tagButton" href={`/tag/multi-threading`}>
+                    Multi-threading 
+                  </Button>
+                </li> 
+
                 <li>
                   <Button className="tagButton" href={`/tag/patterns`}>
                     Patterns 
