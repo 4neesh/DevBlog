@@ -14,7 +14,7 @@ tags:
 <strong>Key Takeaways</strong><br>
 &#8226; Understand how a race condition can arise in a multi-threaded application.<br>
 &#8226; Use Atomic values to create thread-safe variables.<br>
-&#8226; Use Synchronized blocks to control accessibility of code blocks to threads.<br>
+&#8226; Use Synchronized blocks to control the accessibility of code blocks to different threads.<br>
 
 <br>
 <h4>What is a race condition in multi-threading?</h4>
@@ -43,18 +43,18 @@ Each thread will read the bank balance as containing a sufficient amount, howeve
 
 <p>
 The diagram above illustrates how both threads record the balance and make the withdrawal against the balance.<br>
-The race condition occurs as the outcome of the transaction is deterministic upon the thread speeds synchronization with each other.
+The race condition occurs as the outcome of the transaction is deterministic upon the thread speed and timing between each other.
 </p>
 <br>
 <h4>The possible stateful outcomes</h4>
 <p>
-The outcome from the scenario can be one of three:<br>
+The outcome from the bank account scenario with two threads can be any of following three:<br>
 1. Thread 1 can spend the money and Thread 2 is not able to.<br>
 2. Thread 2 can spend the money and Thread 1 is not able to.<br>
 3. Thread 1 and Thread 2 can spend the money, thus causing the account to become overdrawn.<br>
 </p>
 <p>
-To implement the race condition, I will create a BankAccount class with a withdraw method.<br> 
+The race condition is implemented below with a BankAccount class with a withdraw method.<br> 
 The below code sample enables a race condition to occur:
 
 ```java{numberLines:true}
@@ -115,7 +115,7 @@ main has withdrawn 10. New balance: 0
 <br>
 <h4>Introducing latency and a possible race condition</h4>
 <p>
-The current execution of the single thread acts as expected as the <code>withdraw()</code> method is only called once at any one time. Latency can be introduced into the application by using the <code>wait()</code> method which causes all threads to stop before continuing. The <code>withdraw()</code> method must be marked within a synchronized block to ensure only one thread accesses the method at a single time.
+The current execution of the single thread behaves as expected as the <code>withdraw()</code> method is only called once at any one time. Latency can be introduced into the application by using the <code>wait()</code> method which causes all threads to stop before continuing. The <code>withdraw()</code> method must be marked within a synchronized block to ensure only one thread accesses the method at a single time.
 </p>
 <p>
 The following update to the <code>withdraw()</code> method will cause the threads to check the balance, wait for each other, then to complete the transaction. As a result, each thread will read in the opening balance before making a transaction against the balance:
@@ -177,7 +177,7 @@ pool-1-thread-5 has withdrawn 10. New balance: 0
 ```
 </p>
 <p>
-The threads all read in the balance together, then reduce the balance one, by one. <br>
+Each thread reads in the balance as 50. Each thread will then assume the balance remains at 50 and makes the withdrawal of 10. <br>
 The class appears to be thread-safe as the balance is reduced as expected, however if we introduce a 6th thread on line 4 of the test, the account becomes overdrawn:
 </p>
 
@@ -228,7 +228,7 @@ The table below illustrates how the threads will obtain the value and perform th
 
 <p>
 Atomic variables within Java provide variables that are updated across all threads of the application at the same time.
-An atomic value in this context is useful to ensure all the threads can see the latest balance before making a transaction. This way, the if statement will be applied to the most up-to-date value of the balance. The BankAccount is updated to use AtomicIntegers accordingly:
+An atomic value in this context is useful to ensure all the threads can see the latest balance before making a transaction. This way, the if statement will be applied to the most up-to-date value of the balance. The BankAccount is updated to use AtomicInteger accordingly:
 </p>
 
 ```java{numberLines:true}
@@ -286,10 +286,10 @@ pool-1-thread-1 is unable to  withdraw 10 from a balance of 0
 <h4>Conclusion</h4>
 <p>
 Multi-threading allows our code to utilise the multiple cores of the CPU. The danger of multi-threading however leads to potential errors of visibility and synchronisation between the threads, one of which is known as race condition.<br>
-The synchronized keyword in Java allows a thread to obtain a key to a code block or method during its execution to ensure no other thread is able to access the code at the same time. The concurrent.atomic package in Java includes different Atomic variables that provide cross-thread visibility to a shared value.
+The <i>Synchronized</i> keyword in Java allows a thread to obtain a key to a code block or method during its execution to ensure no other thread is able to access the code at the same time. The concurrent.atomic package in Java includes different Atomic variables that provide cross-thread visibility to a shared value.
 </p>
 <p>
-The Atomic package and synchronized keyword are common tools that enforce an element of determinism about a multi-threaded application. These tools enable execution order to be achieved and cached memory to be shared to eliminate non-deterministic behaviour within their domains.
+The Atomic package and Synchronized keyword are useful tools that assert an element of determinism about a multi-threaded application. These tools enable execution order to be achieved and cached memory to be shared between threads to reduce non-deterministic behaviour within their domains.
 </p>
 <br>
 <small style="float: right;" >Picture: Williamsburg, United States by <a target="_blank" href="https://unsplash.com/@benst287">Ben Stern</small></a><br>
