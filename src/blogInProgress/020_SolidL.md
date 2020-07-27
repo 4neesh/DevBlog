@@ -20,9 +20,9 @@ tags:
 
 
 <br>
-<h4>Title</h4>
+<h4>What is the Liskov Substitution Principle?</h4>
 <p>
-
+Introduced by Barbara Liskov, the Liskov substitution principle (LSV) is used to decide when to extend a class, and when to use other strategies of abstraction to achieve the goal of shared properties between classes. As we have seen in the previous blog
 <p>
 
 </p>
