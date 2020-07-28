@@ -34,7 +34,7 @@ class Header extends React.Component {
                   </strong>
                 </NavLink>
               </NavItem>
-              <NavItem>
+              {/* <NavItem>
                 <a
                   href="https://www.hackerrank.com/4neesh"
                   target="_blank"
@@ -43,7 +43,7 @@ class Header extends React.Component {
                 >
                   <i className="fab fa-hackerrank fa-2x" />
                 </a>
-              </NavItem>
+              </NavItem> */}
               <NavItem>
                 <a
                   href="https://www.linkedin.com/in/aneeshmistry/"

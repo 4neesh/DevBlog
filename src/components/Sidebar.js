@@ -2,6 +2,7 @@ import React from "react"
 import { Card, CardTitle, Button, CardBody } from "reactstrap"
 import { graphql, StaticQuery } from "gatsby"
 import MailChimp from "./mailChimp"
+import { slugify } from "../util/utilityFunctions"
 
 
 const Sidebar = () => (
@@ -28,26 +29,26 @@ const Sidebar = () => (
              
             </CardTitle>
             <CardBody>
-              {/* {data.allMarkdownRemark.edges.map(({node}) => (
+              {/* data.allMarkdownRemark.edges.map(({node}) => (
 
                                     <li key={node.fields.postTagsAll} style={{ marginBottom: '10px' }}>
-                                        <Button className="text-uppercase" color="primary" href={`/tag/${slugify(node.fields.postTagsAll)}`}>
+                                        <Button className="tagButton" href={`/tag/${slugify(node.fields.postTagsAll)}`}>
                                             {node.fields.postTagsAll} <Badge color="light"></Badge>
                                         </Button>
-                                    </li> */}
+                                    </li>  */}
 
-              {/* <ul>
+                            <ul>
                                 {data.sitePage.fields.tagsForPosts.map(tag => (
 
                                     <li key={tag} style={{ marginBottom: '10px' }}>
-                                        <Button className="text-uppercase" color="primary" href={`/tag/${slugify(tag)}`}>
-                                            {tag} <Badge color="light"></Badge>
+                                        <Button className="tagButton" href={`/tag/${slugify(tag)}`}>
+                                            {tag}
                                         </Button>
                                     </li>
                                 ))}
 
-                            </ul> */}
-              <ul>
+                            </ul> 
+              {/* <ul>
                 <li>
                   <Button className="tagButton" href={`/tag/algorithms`}>
                     Algorithms 
@@ -96,7 +97,7 @@ const Sidebar = () => (
                     Spring 
                   </Button>
                 </li>               
-              </ul>
+              </ul> */}
             </CardBody>
           </Card>
        
