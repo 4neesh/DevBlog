@@ -59,7 +59,16 @@ exports.createPages = async ({ actions, graphql }) => {
     })
     //console.log(tags)
 
- 
+    exports.onCreateNode = async({node, actions}) =>{
+      const { createNodeField } = actions
+     
+        createNodeField({
+          node,
+          name: 'tagsForPosts',
+          value: tags,
+        })
+    }
+
     tags = _.uniq(tags)
    
     //create tag post pages
@@ -72,15 +81,6 @@ exports.createPages = async ({ actions, graphql }) => {
         },
       })
     })
-    exports.onCreateNode = async({node, actions}) =>{
-      const { createNodeField } = actions
-     
-        createNodeField({
-          node,
-          name: 'tagsForPosts',
-          value: tags,
-        })
-    }
 
 
     const postsPerPage = 4

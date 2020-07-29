@@ -4,43 +4,43 @@ import { graphql, StaticQuery } from "gatsby"
 import MailChimp from "./mailChimp"
 import { slugify } from "../util/utilityFunctions"
 
-
-const Sidebar = () => (
+const Sidebar = ({pageContext, data}) => (
+  
   <StaticQuery
     query={sideBarQuery}
+    
     render={data => {
-      return (
-        <div className="container" id="content">
-            <Card>
-         <CardTitle className="newslettertitle">
-              
-                <strong>Subscribe to new posts</strong>
-              
-            </CardTitle>
-           <CardBody>
 
-            <MailChimp/>
-            </CardBody>
-         </Card>
+      
+      return (
+        
+        <div className="container" id="content">
+          
+            <Card>
+              
+              <CardTitle className="newslettertitle">    
+                <strong>Subscribe to new posts</strong>
+              </CardTitle>
+              <CardBody><MailChimp/></CardBody>
+          </Card>
           <Card className="sidebarCard">
             <CardTitle className="viewBlogsHeadline">
-              
                 <strong>View Blogs by Tag</strong>
-             
             </CardTitle>
             <CardBody>
-      
-                <ul>
+                {/* <ul>
                      {data.sitePage.fields.tagsForPosts.map(tag => (
                         <li key={tag} style={{ marginBottom: '10px' }}>
                             <Button className="tagButton" href={`/tag/${slugify(tag)}`}>
                                 {tag}
+                                
                             </Button>
                         </li>
                     ))}
 
-                </ul> 
-              {/* <ul>
+                </ul>  */}
+
+              <ul>
                 <li>
                   <Button className="tagButton" href={`/tag/algorithms`}>
                     Algorithms 
@@ -54,6 +54,11 @@ const Sidebar = () => (
                 <li>
                   <Button className="tagButton" href={`/tag/data-structures`}>
                     Data Structures 
+                  </Button>
+                </li>
+                <li>
+                  <Button className="tagButton" href={`/tag/engineering`}>
+                    Engineering 
                   </Button>
                 </li>
                 <li>
@@ -89,7 +94,7 @@ const Sidebar = () => (
                     Spring 
                   </Button>
                 </li>               
-              </ul> */}
+              </ul>
             </CardBody>
           </Card>
        
@@ -101,6 +106,11 @@ const Sidebar = () => (
 
 const sideBarQuery = graphql`
   query MyQuery {
+    allMarkdownRemark {
+      group(field: frontmatter___tags) {
+        tag: fieldValue
+      }
+    }
     sitePage {
       fields {
         tagsForPosts
