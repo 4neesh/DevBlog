@@ -31,10 +31,10 @@ const Sidebar = () => (
             <CardBody>
       
                 <ul>
-                     {data.sitePage.fields.tagsForPosts.map(tags => (
-                        <li key={tags} style={{ marginBottom: '10px' }}>
-                            <Button className="tagButton" href={`/tag/${slugify(tags)}`}>
-                                {tags}
+                     {data.sitePage.fields.tagsForPosts.map(tag => (
+                        <li key={tag} style={{ marginBottom: '10px' }}>
+                            <Button className="tagButton" href={`/tag/${slugify(tag)}`}>
+                                {tag}
                             </Button>
                         </li>
                     ))}
