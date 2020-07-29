@@ -29,25 +29,17 @@ const Sidebar = () => (
              
             </CardTitle>
             <CardBody>
-              {/* data.allMarkdownRemark.edges.map(({node}) => (
+      
+                <ul>
+                     {data.sitePage.fields.tagsForPosts.map(tags => (
+                        <li key={tags} style={{ marginBottom: '10px' }}>
+                            <Button className="tagButton" href={`/tag/${slugify(tags)}`}>
+                                {tags}
+                            </Button>
+                        </li>
+                    ))}
 
-                                    <li key={node.fields.postTagsAll} style={{ marginBottom: '10px' }}>
-                                        <Button className="tagButton" href={`/tag/${slugify(node.fields.postTagsAll)}`}>
-                                            {node.fields.postTagsAll} <Badge color="light"></Badge>
-                                        </Button>
-                                    </li>  */}
-
-                            <ul>
-                                {data.sitePage.fields.tagsForPosts.map(tag => (
-
-                                    <li key={tag} style={{ marginBottom: '10px' }}>
-                                        <Button className="tagButton" href={`/tag/${slugify(tag)}`}>
-                                            {tag}
-                                        </Button>
-                                    </li>
-                                ))}
-
-                            </ul> 
+                </ul> 
               {/* <ul>
                 <li>
                   <Button className="tagButton" href={`/tag/algorithms`}>
@@ -109,15 +101,6 @@ const Sidebar = () => (
 
 const sideBarQuery = graphql`
   query MyQuery {
-    allMarkdownRemark {
-      edges {
-        node {
-          fields {
-            postTagsAll
-          }
-        }
-      }
-    }
     sitePage {
       fields {
         tagsForPosts

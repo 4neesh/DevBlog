@@ -125,10 +125,4 @@ exports.onCreateNode = async({ node, actions }) => {
     })
 
   }
-  createNodeField({
-    node,
-    name: 'postTagsAll',
-    value: 'lol',
-    })
-
 }
