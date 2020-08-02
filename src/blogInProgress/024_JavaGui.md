@@ -1,6 +1,6 @@
 ---
 title: 'xxx'
-date: 2020-09-28 16:34:00
+date: 2020-09-21 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/xxx.jpg
 thumbnail: ''
@@ -21,7 +21,11 @@ tags:
 <br>
 <h4>Title</h4>
 <p>
-
+Use JFrame
+Understand JTable
+Use DefaultTableModel
+Use Renderer for this
+Understand how to link all of them together.
 
 </p>
 <br>
@@ -39,4 +43,4 @@ tags:
 </p>
 
 <br>
-<small style="float: right;" >Picture: xxx, xxx by <a target="_blank" href="http">xxx</small></a><br>
+<small style="float: right;" >Picture: xxx, xxx by <a target="_blank" href="https://unsplash.com/@xxx">xxx</small></a><br>

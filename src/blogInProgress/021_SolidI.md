@@ -2,7 +2,7 @@
 title: 'Interface segregation principle'
 date: 2020-08-31 16:34:00
 author: 'Aneesh Mistry'
-featuredImage: ../images/xxx.jpg
+featuredImage: ../images/021_parker.jpg
 thumbnail: ''
 subtitle: 'The Interface segregation principle represents the 'I' in the 5 mnemonic acronym 'SOLID' for design principles. {enter brief desc}'
 time: '5'
@@ -25,9 +25,11 @@ tags:
 
 <p>
 
-</p>
+<p>
+
 </p>
 
+<br>
 <h4></h4>
 <p>
 
@@ -42,4 +44,4 @@ tags:
 </p>
 
 <br>
-<small style="float: right;" >Picture: xxx, xxx by <a target="_blank" href="https://unsplash.com/@xxx">xxx</small></a><br>
+<small style="float: right;" >Picture by <a target="_blank" href="https://unsplash.com/@pkripperprivate">Parker Johnson</small></a><br>

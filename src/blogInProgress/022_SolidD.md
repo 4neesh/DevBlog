@@ -2,7 +2,7 @@
 title: 'Dependency inversion principle'
 date: 2020-09-07 16:34:00
 author: 'Aneesh Mistry'
-featuredImage: ../images/xxx.jpg
+featuredImage: ../images/022_Winterthur.jpg
 thumbnail: ''
 subtitle: 'The dependency inversion principle represents the 'S' in the 5 mnemonic acronym 'SOLID' for design principles. {enter brief desc}'
 time: '5'
@@ -42,4 +42,4 @@ tags:
 </p>
 
 <br>
-<small style="float: right;" >Picture: xxx, xxx by <a target="_blank" href="https://unsplash.com/@xxx">xxx</small></a><br>
+<small style="float: right;" >Picture by <a target="_blank" href="https://unsplash.com/@debidiemski">Deborah Diem</small></a><br>

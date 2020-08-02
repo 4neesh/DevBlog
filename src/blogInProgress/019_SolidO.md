@@ -2,7 +2,7 @@
 title: 'Open-closed principle'
 date: 2020-08-17 16:34:00
 author: 'Aneesh Mistry'
-featuredImage: ../images/xxx.jpg
+featuredImage: ../images/019_langston.jpg
 thumbnail: '../images/019_th.png'
 subtitle: 'The open-closed principle represents 'O' in the mnemonic acronym of design principles 'SOLID'. Software components must be open for extension, but closed to modification. This blog reviews how open-closed can be implemented by design using the Strategy pattern.'
 time: '5'
@@ -149,4 +149,4 @@ If it does, use the Strategy technique to apply the open-closed principle to the
 </p>
 
 <br>
-<small style="float: right;" >Picture: xxx, xxx by <a target="_blank" href="https://unsplash.com/@xxx">xxx</small></a><br>
+<small style="float: right;" >Picture by <a target="_blank" href="https://unsplash.com/@slangston">Langston</small></a><br>
