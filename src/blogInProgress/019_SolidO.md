@@ -4,7 +4,7 @@ date: 2020-08-17 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/019_langston.jpg
 thumbnail: '../images/019_th.png'
-subtitle: 'The open-closed principle represents 'O' in the mnemonic acronym of design principles 'SOLID'. Software components must be open for extension, but closed to modification. This blog reviews how open-closed can be implemented by design using the Strategy pattern.'
+subtitle: 'The open-closed principle represents "O" in the mnemonic acronym of design principles "SOLID". Software components must be open for extension, but closed to modification. This blog reviews how open-closed can be implemented by design using the Strategy pattern.'
 time: '5'
 tags:
 - Patterns

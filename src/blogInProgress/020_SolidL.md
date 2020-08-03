@@ -4,7 +4,7 @@ date: 2020-08-24 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/020_zhen.jpg
 thumbnail: ''
-subtitle: 'The Liskov substitution principle represents the 'L' in the 5 mnemonic acronym 'SOLID' for design principles. When applying inheritance to parent and child classes, it is important the child class is appropriately designed to replace any instance of the parent class. Therefore the behaviour of the class must be reviewed and applied.'
+subtitle: 'The Liskov substitution principle represents the "L" in the 5 mnemonic acronym "SOLID" for design principles. When applying inheritance to parent and child classes, it is important the child class is appropriately designed to replace any instance of the parent class. Therefore the behaviour of the class must be reviewed and applied.'
 time: '5'
 tags:
 - Patterns

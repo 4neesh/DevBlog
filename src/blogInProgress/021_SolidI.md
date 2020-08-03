@@ -4,7 +4,7 @@ date: 2020-08-31 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/021_parker.jpg
 thumbnail: ''
-subtitle: 'The Interface segregation principle represents the 'I' in the 5 mnemonic acronym 'SOLID' for design principles. {enter brief desc}'
+subtitle: 'The interface segregation principle represents the "I" in the 5 mnemonic acronym 'SOLID' for design principles. We design application structure using interfaces to imply behaviour of the classes that implement them. Interface segregation ensures behaviours are only implemented as required.'
 time: '5'
 tags:
 - Patterns
