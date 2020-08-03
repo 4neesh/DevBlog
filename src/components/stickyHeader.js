@@ -9,8 +9,8 @@ class stickyHeader extends React.Component {
   }
   componentDidMount() {
     
-      window.location.href === "https://aneesh.co.uk/" 
-      //window.location.href === "https://localhost:8000/" 
+      //window.location.href === "https://aneesh.co.uk/" 
+      window.location.href === "http://localhost:8000/" 
 
       ? this.setState({ showHead: true })
         : this.setState({ showHead: false })
@@ -20,7 +20,7 @@ class stickyHeader extends React.Component {
   render() {
     return (
       <div className={this.state.showHead ? "showSticky" : "hideSticky"}>
-        <div  className= "testa" >
+        <div  className= "stickyHeaderBar" >
 
           <div className="stickyHeaderImage">
             <Image/>

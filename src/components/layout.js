@@ -41,9 +41,10 @@ const Layout = ({ children }) => (
 
         <Header />
 
+        <StickyHeader/>
         <div className="container" id="content">
           
-          <StickyHeader/>
+          
 
           {/* <img src={Graph} alt="graph"/> */}
           <Row >

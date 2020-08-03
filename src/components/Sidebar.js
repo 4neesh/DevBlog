@@ -3,6 +3,8 @@ import { Card, CardTitle, Button, CardBody } from "reactstrap"
 import { graphql, StaticQuery } from "gatsby"
 import MailChimp from "./mailChimp"
 
+
+
 const Sidebar = ({pageContext, data}) => (
   
   <StaticQuery

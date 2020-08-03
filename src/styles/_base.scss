@@ -36,12 +36,8 @@ code{
 .text-info{
   color: $main;
 }
-.navbar {
-  background-color: white;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.4);
-  line-height: 1;
-  height: 45px;
-}
+
+
 .navbar-light .navbar-nav .nav-link,
 .navbar-light .navbar-brand {
   color: $main;
@@ -101,17 +97,25 @@ background-color:$main;
  height:140px;
  transition: 1s;
 }
-.testa{
+.stickyHeaderBar{
   background-color:$main;
-  height:200px;
-  padding: 20px;
+  height:220px;
+  padding-top: 45px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
   display:flex;
   flex-direction: row;
   transition: 1s;
   color: black;
   margin: 0auto;
-  border-radius: 5px 5px 5px 5px;
 
+  }
+  .stickyHeaderBar .stickyHeaderImage{
+    flex:0 0 170px;
+  }
+  .stickyHeaderBar .stickyHeaderImage .Image{
+    max-width: 100%;
   }
 
 
@@ -131,7 +135,6 @@ background-color:$main;
 
   .showSticky{
     height:200px;
-    border-radius: 10px 10px 10px 10px;
   }
   .hideSticky{
     height:0px;
@@ -149,8 +152,6 @@ background-color:$main;
     padding: 1em;
     overflow: auto;
   }
-  
-
 
   .gatsby-highlight pre[class*="language-"] {
     margin: 0;
@@ -161,7 +162,14 @@ background-color:$main;
     min-width: 100%;
   
   }
-  
+
+  .navbar {
+    background-color: white;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.4);
+    line-height: 1;
+    height: 45px;
+  }
+
   .gatsby-highlight pre[class*="language-"].line-numbers {
     padding-left:  2.5em; 
   }
@@ -182,12 +190,7 @@ text-transform: uppercase;
     border-color:$main !important;
 }
 
-.testa .stickyHeaderImage{
-  flex:0 0 170px;
-}
-.testa .stickyHeaderImage .Image{
-  max-width: 100%;
-}
+
 .viewBlogsHeadline{
   text-transform: uppercase;
   text-align: center;
@@ -216,7 +219,7 @@ text-transform: uppercase;
 }
 @media  (min-width: 366px) {
   .stickyHeaderText{
-    font-size: 14px;
+    font-size: 17px;
     
   }
   .newslettertitle{
@@ -224,9 +227,9 @@ text-transform: uppercase;
     font-size: 18px;
   }
 }
-@media  (min-width: 400px) {
+@media  (min-width: 406px) {
   .stickyHeaderText{
-    font-size: 16px;
+    font-size: 18px;
     
   }
   .newslettertitle{
@@ -237,7 +240,7 @@ text-transform: uppercase;
 @media  (min-width: 440px) {
 
   .stickyHeaderText{
-    font-size: 18px;
+    font-size: 20px;
     
   }
   .newslettertitle{
@@ -248,7 +251,7 @@ text-transform: uppercase;
 @media  (min-width: 490px) {
 
   .stickyHeaderText{
-    font-size: 20px;
+    font-size: 22px;
     
   }
   .newslettertitle{
@@ -259,7 +262,7 @@ text-transform: uppercase;
 @media  (min-width: 550px) {
 
   .stickyHeaderText{
-    font-size: 22px;
+    font-size: 24px;
     
   }
   .newslettertitle{
@@ -268,10 +271,32 @@ text-transform: uppercase;
   }
 }
 
+@media  (min-width: 630px) {
+
+  .stickyHeaderText{
+    font-size: 25px;
+    
+  }
+  .newslettertitle{
+   
+    font-size: 18px;
+  }
+}
+
+@media (max-width:766px){
+
+  .navbar {
+    line-height: 1;
+    padding-bottom:40px;
+    height: 45px;
+  }
+
+}
+
 @media  (min-width: 770px) {
 
   .stickyHeaderText{
-    font-size: 24px;
+    font-size: 28px;
     
   }
   .newslettertitle{
@@ -282,7 +307,7 @@ text-transform: uppercase;
 @media  (min-width: 978px) {
 
   .stickyHeaderText{
-    font-size: 28px;
+    font-size: 30px;
     
   }
   

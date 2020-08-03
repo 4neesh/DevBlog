@@ -1,5 +1,6 @@
 import PropTypes from "prop-types"
 import React from "react"
+
 import { Navbar, Nav, NavItem, NavLink } from "reactstrap"
 class Header extends React.Component {
   constructor() {
@@ -17,7 +18,6 @@ class Header extends React.Component {
         light
         expand="md"
       >
-        <div className="container">
           <NavItem>
             <a  href="/" rel="noopener noreferrer">
               <strong>aneesh.co.uk</strong>
@@ -34,16 +34,6 @@ class Header extends React.Component {
                   </strong>
                 </NavLink>
               </NavItem>
-              {/* <NavItem>
-                <a
-                  href="https://www.hackerrank.com/4neesh"
-                  target="_blank"
-                  style={{ paddingTop: "10px" }}
-                  rel="noopener noreferrer"
-                >
-                  <i className="fab fa-hackerrank fa-2x" />
-                </a>
-              </NavItem> */}
               <NavItem>
                 <a
                   href="https://www.linkedin.com/in/aneeshmistry/"
@@ -65,9 +55,8 @@ class Header extends React.Component {
               </NavItem>
             </Nav>
           </div>
-        </div>
       </Navbar>
-  
+ 
     )
   }
 }
