@@ -131,7 +131,9 @@ background-color:$main;
     vertical-align: middle;
   }
 
-  
+  .hideSideBar{
+    display:none;
+  }
 
   .showSticky{
     height:200px;

@@ -4,18 +4,31 @@ import { graphql, StaticQuery } from "gatsby"
 import MailChimp from "./mailChimp"
 
 
+class Sidebar extends React.Component{
 
-const Sidebar = ({pageContext, data}) => (
-  
-  <StaticQuery
-    query={sideBarQuery}
+  constructor() {
+    super()
+    this.state = {
+      showSideBar: false,
+    }
+  }
+
+  componentDidMount() {
     
-    render={data => {
+    window.location.href === "https://aneesh.co.uk/" 
+    //window.location.href === "http://localhost:8000/" 
+
+    ? this.setState({ showSideBar: true })
+      : this.setState({ showSideBar: false })
+  
+}
+  
+    render() {
 
       
       return (
         
-        <div className="container" id="content">
+        <div className={this.state.showSideBar ? "container" : "hideSideBar"} id="content">
           
             <Card>
               
@@ -29,17 +42,6 @@ const Sidebar = ({pageContext, data}) => (
                 <strong>View Blogs by Tag</strong>
             </CardTitle>
             <CardBody>
-                {/* <ul>
-                     {data.sitePage.fields.tagsForPosts.map(tag => (
-                        <li key={tag} style={{ marginBottom: '10px' }}>
-                            <Button className="tagButton" href={`/tag/${slugify(tag)}`}>
-                                {tag}
-                                
-                            </Button>
-                        </li>
-                    ))}
-
-                </ul>  */}
 
               <ul>
                 <li>
@@ -116,22 +118,8 @@ const Sidebar = ({pageContext, data}) => (
        
         </div>
       )
-    }}
-  />
-)
-
-const sideBarQuery = graphql`
-  query MyQuery {
-    allMarkdownRemark {
-      group(field: frontmatter___tags) {
-        tag: fieldValue
-      }
-    }
-    sitePage {
-      fields {
-        tagsForPosts
-      }
     }
   }
-`
+  
+
 export default Sidebar
