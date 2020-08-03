@@ -1,6 +1,5 @@
 import React from "react"
 import { Card, CardTitle, Button, CardBody } from "reactstrap"
-import { graphql, StaticQuery } from "gatsby"
 import MailChimp from "./mailChimp"
 
 
@@ -15,9 +14,11 @@ class Sidebar extends React.Component{
 
   componentDidMount() {
     
-    window.location.href === "https://aneesh.co.uk/" 
-    //window.location.href === "http://localhost:8000/" 
-
+    window.location.href === "https://aneesh.co.uk/"  
+    ||
+    window.location.href.includes("tag")
+    ||
+    window.location.href === "https://aneesh.co.uk/about"
     ? this.setState({ showSideBar: true })
       : this.setState({ showSideBar: false })
   

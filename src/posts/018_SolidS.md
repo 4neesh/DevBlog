@@ -151,7 +151,7 @@ The Car class that uses the SRP has decoupled the responsibility of rental from 
 </p>
 <p>
 <strong>Testing</strong><br>
-Automated testing (unit testing) is typically designed to test the functionality of a class. Each class will have several tests to ensure it is able to complete its responsibilities. SRP will naturally decrease the collective number of tests required for the application as there are fewer behaviours that can be combined within a single class.
+Automated testing (unit testing) is typically designed to test the functionality of a class. Each class will have several tests to ensure it is able to complete it's responsibilities. SRP will naturally decrease the collective number of tests required for the application as there are fewer behaviours that can be combined within a single class.
 </p>
 <br>
 <h4>Conclusion</h4>
