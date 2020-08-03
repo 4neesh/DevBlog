@@ -57,6 +57,11 @@ const Sidebar = ({pageContext, data}) => (
                   </Button>
                 </li>
                 <li>
+                  <Button className="tagButton" href={`/tag/design`}>
+                    Design 
+                  </Button>
+                </li>
+                <li>
                   <Button className="tagButton" href={`/tag/engineering`}>
                     Engineering 
                   </Button>
@@ -66,6 +71,11 @@ const Sidebar = ({pageContext, data}) => (
                     Java 
                   </Button>
                 </li>
+                <li>
+                  <Button className="tagButton" href={`/tag/memory`}>
+                    Memory 
+                  </Button>
+                </li> 
                 <li>
                   <Button className="tagButton" href={`/tag/microservices`}>
                     Microservices 
@@ -81,6 +91,11 @@ const Sidebar = ({pageContext, data}) => (
                 <li>
                   <Button className="tagButton" href={`/tag/patterns`}>
                     Patterns 
+                  </Button>
+                </li> 
+                <li>
+                  <Button className="tagButton" href={`/tag/performance`}>
+                    Performance 
                   </Button>
                 </li> 
                 <li>
