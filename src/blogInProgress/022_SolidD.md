@@ -4,7 +4,7 @@ date: 2020-09-07 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/022_Winterthur.jpg
 thumbnail: ''
-subtitle: 'The dependency inversion principle represents the 'S' in the 5 mnemonic acronym 'SOLID' for design principles. {enter brief desc}'
+subtitle: 'The dependency inversion principle represents the "S" in the 5 mnemonic acronym "SOLID" for design principles. Dependency inversion enables loose-coupling of services to promote reusable code and '
 time: '5'
 tags:
 - Patterns

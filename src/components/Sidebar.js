@@ -2,7 +2,6 @@ import React from "react"
 import { Card, CardTitle, Button, CardBody } from "reactstrap"
 import { graphql, StaticQuery } from "gatsby"
 import MailChimp from "./mailChimp"
-import { slugify } from "../util/utilityFunctions"
 
 const Sidebar = ({pageContext, data}) => (
   
