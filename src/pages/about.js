@@ -103,10 +103,10 @@ const AboutPage = (props) => {
                     <u><strong>Java</strong></u>
                     <p>
                     <ul>
-                      <li>[book] <a href="https://books.google.co.uk/books/about/OCP_Oracle_Certified_Professional_Java_S.html?id=bvYbCQAAQBAJ&source=kp_book_description&redir_esc=y">OCP Study guide</a></li>
-                      <li>[book] <a href="https://www.goodreads.com/book/show/3735293-clean-code">Clean Code</a></li>
-                      <li>[blog] <a href="https://javarevisited.blogspot.com/">Java revisited</a></li>
-                      <li>[blog] <a href="https://www.baeldung.com/">Baeldung</a></li>
+                      <li>[book] <a target="_blank" href="https://books.google.co.uk/books/about/OCP_Oracle_Certified_Professional_Java_S.html?id=bvYbCQAAQBAJ&source=kp_book_description&redir_esc=y">OCP Study guide</a></li>
+                      <li>[book] <a target="_blank" href="https://www.goodreads.com/book/show/3735293-clean-code">Clean Code</a></li>
+                      <li>[blog] <a target="_blank" href="https://javarevisited.blogspot.com/">Java revisited</a></li>
+                      <li>[blog] <a target="_blank" href="https://www.baeldung.com/">Baeldung</a></li>
                     </ul>
                     </p>
                     <br></br>
@@ -114,9 +114,9 @@ const AboutPage = (props) => {
                     <u><strong>Spring</strong></u>
                     <p>
                     <ul>
-                      <li>[video] <a href="https://www.luv2code.com/category/spring/">Chad Darby</a></li>
-                      <li>[video] <a href="https://www.pluralsight.com/authors/richard-seroter">Richard Seroter</a></li>
-                      <li>[blog] <a href="https://vladmihalcea.com/">Vlad Mihalcea</a></li>
+                      <li>[video] <a target="_blank" href="https://www.luv2code.com/category/spring/">Chad Darby</a></li>
+                      <li>[video] <a target="_blank" href="https://www.pluralsight.com/authors/richard-seroter">Richard Seroter</a></li>
+                      <li>[blog] <a target="_blank" href="https://vladmihalcea.com/">Vlad Mihalcea</a></li>
                     </ul>
                     </p>
                     <br></br>
@@ -124,16 +124,16 @@ const AboutPage = (props) => {
                     <u><strong>Data structures and Algorithms</strong></u>
                     <p>
                     <ul>
-                      <li>[book] <a href="https://en.wikipedia.org/wiki/Introduction_to_Algorithms">Introduction to Algorithms</a></li>
-                      <li>[book] <a href="https://en.wikipedia.org/wiki/Cracking_the_Coding_Interview">Cracking the coding interview</a></li>
+                      <li>[book] <a target="_blank" href="https://en.wikipedia.org/wiki/Introduction_to_Algorithms">Introduction to Algorithms</a></li>
+                      <li>[book] <a target="_blank" href="https://en.wikipedia.org/wiki/Cracking_the_Coding_Interview">Cracking the coding interview</a></li>
                     </ul>
                     </p>
                     <br></br>
                     <u><strong>Finance</strong></u>
                     <p>
                     <ul>
-                      <li>[video] <a href="https://www.youtube.com/c/MoneyWeekVideos">MoneyWeek</a></li>
-                      <li>[news] <a href="https://www.ft.com/">Financial times</a></li>
+                      <li>[video] <a target="_blank" href="https://www.youtube.com/c/MoneyWeekVideos">MoneyWeek</a></li>
+                      <li>[news] <a target="_blank" href="https://www.ft.com/">Financial times</a></li>
                     </ul>
                     </p>
                   </CardBody>
