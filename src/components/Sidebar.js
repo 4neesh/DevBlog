@@ -16,9 +16,13 @@ class Sidebar extends React.Component{
     
     window.location.href === "https://aneesh.co.uk/"  
     ||
+    window.location.href === "https://aneesh.co.uk"  
+    ||
     window.location.href.includes("tag")
     ||
     window.location.href === "https://aneesh.co.uk/about"
+    ||
+    window.location.href === "https://aneesh.co.uk/about/"
     ? this.setState({ showSideBar: true })
       : this.setState({ showSideBar: false })
   
