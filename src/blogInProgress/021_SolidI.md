@@ -20,11 +20,10 @@ tags:
 
 
 <br>
-<h4>Title</h4>
+<h4>Interface segregation</h4>
 <p>
-
-<p>
-
+The interface segregation principle (ISP) aims to create well-defined and meaningful interfaces to be implemented without the potential for unwanted behaviours asserted upon different classes. Much like the Liskov substitution principle, where we aims to design inherited classes with the appropriate behaviours, the ISP aims to achieve a similar separation of behaviours for each implementation of an interface.
+</p>
 <p>
 
 </p>
