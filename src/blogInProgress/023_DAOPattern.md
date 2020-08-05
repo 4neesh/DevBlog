@@ -1,6 +1,6 @@
 ---
 title: 'Dependency inversion principle'
-date: 2020-09-14 16:34:00
+date: 2020-09-07 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/xxx.jpg
 thumbnail: ''

@@ -1,6 +1,6 @@
 ---
 title: 'Open-closed principle'
-date: 2020-08-17 16:34:00
+date: 2020-08-10 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/019_langston.jpg
 thumbnail: '../images/019_th.png'

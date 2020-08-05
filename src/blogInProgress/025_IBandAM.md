@@ -1,6 +1,6 @@
 ---
 title: 'Understanding investment banking and asset management'
-date: 2020-09-28 16:34:00
+date: 2020-09-21 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/xxx.jpg
 thumbnail: ''

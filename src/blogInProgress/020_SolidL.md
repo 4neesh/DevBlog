@@ -1,6 +1,6 @@
 ---
 title: 'Liskov substitution principle'
-date: 2020-08-24 16:34:00
+date: 2020-08-17 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/020_zhen.jpg
 thumbnail: ''
