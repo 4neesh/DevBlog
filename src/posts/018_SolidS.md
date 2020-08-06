@@ -4,7 +4,7 @@ date: 2020-08-03 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/018_StJoseph.jpg
 thumbnail: '../images/018_th.png'
-subtitle: 'The single responsibility principle represents "S" in the mnemonic acronym of design principles "SOLID". Classes must have one defined responsibility to promote class modularity and cohesion.'
+subtitle: 'The single responsibility principle is the first of the SOLID design principles. The single responsibility of classes promotes modularity and cohesion.'
 time: '10'
 tags:
 - Patterns

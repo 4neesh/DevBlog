@@ -4,7 +4,7 @@ date: 2020-09-21 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/xxx.jpg
 thumbnail: ''
-subtitle: 'Understand the differences between the services provided by investment banks and asset managers. This post will cover how the two services create the epicenter of financial services and why they are so important to global corporations and independent investors.'
+subtitle: 'An introduction to financial services and the various divisions and functions of an investment bank.'
 time: '8'
 tags:
 - Finance
@@ -15,52 +15,114 @@ tags:
 &#8226; The .<br>
 &#8226; The.<br>
 
-![Merge sort step 2](../../src/images/011MergeSort2.png)
 
 
 <br>
-<h4>Introducing blog posts about financial services</h4>
+<h4>My first blog about financial services...</h4>
 <p>
-I have been posting blogs about software engineering practices for the past 5 months and have decided to begin writing about financial services. The importance of understanding technical concepts within my job is equally as important as understanding the business decisions and operations.
+For the past 5 months, (my first 5 months of blogging) I have written about the software engineering practices I use in my job. I have decided to begin writing about financial services as well as software engineering to reflect upon the context of my job, and to consolidate my understanding for the business I work within. I find the financial services industry to be engaging to learn and follow with the growing role of technology to shape the strategies of banks.
 </p>
 <p>
-This blog post will kick off a series of other posts that look into the financial services industry, how it works, and how technology is forcing major players to transform their traditional practices to remain competitive.
-</p>
-
-<br>
-<h4>Financial services: Matching buyers and seller</h4>
-<p>
-Financial services can be split into two broad categories: retail and investment banking. Both services involve the matching of buyers and sellers, however the scale and characteristics of the instrument being bought and sold, and the customers involved, are what separate the two. 
-</p>
-<p>
-When we think about retail banking, this is a service often provided to families and homeowners who would like a loan or mortgage for their livelihoods. The bank will offer a loan to the mortgage buyers with an interest rate of 'r' on the repayments. The bank will also accept deposits from their customers who wish to save their excess money. The deposits are enticed for the customers as they will receive an interest on their savings at an interest rate of 's'. The retail bank will earn money through the loan repayments where 'r' is greater than 's'. This is a very general idea of retail banking in the public sector, however the remainder of this post will look into the operations of an investment bank.
-</p>
-<p>
-An investment bank, on the other hand, deals with the buyers and sellers that are corporations, high net worth individuals, and government entities. Investment banking is often thought of as a more attractive side of banking as the quantities of money handled are greater, and therefore the risk and return opportunities are larger. Alongside investment banking come a whole new set of ever changing regulation, controls, and mitigation that are required to assert the responsible management of funds.
-
-//image of buyers and sellers with AM, IB and brokers.
-</p>
-<p>
-The following section looks into the 'sell' and 'buy' side of investment banking. Just like retail banking involves selling mortgages to customers and buying savings from customers, investment banking involves services to match the two sides of banking.
-</p>
-<br>
-<h4>Buy side vs sell side</h4>
-<p>
-The umbrella term 'investment banking' can often take different definitions and meaning. Within the context of this blog post, I have separated 'financial services' into 'retail' and 'investment' banking, and I will begin breaking investment banking into 'buy' and 'sell' side services. Investment banking is often associated with the 'sell' side of banking, whereas 'asset management' is associated with the 'buy' side of financial services. In reality, 'Investment banks' can offer both buy and sell services, whereas asset management banks will offer only buy services.
-</p>
-<br>
-<h4>Investment banking 'sell side' services</h4>
-<p>
-
-Within investment banking, there are several services provided that account for the 
+This blog post will dive into the financial services industry, how it works, and how technology is forcing major players to transform their traditional practices to remain competitive.
 </p>
 
 <br>
-<h4>Asset management 'buy side' services</h4>
+<h4>Introduction to financial services</h4>
 <p>
+Financial services can be split into two broad categories: retail and investment banking. Both services involve the matching of buyers and sellers, however the two categories differ by the scale and instruments that are consulted upon, and the characteristics of the customer to the bank.
+</p>
+<p>
+When we think about retail banking, this is a service often provided to families and homeowners who would like a loan or mortgage for their livelihoods. The bank will offer a loan to the mortgage buyers with an interest rate of 'r' on the repayments. On the other side, the retail bank will also accept deposits from their customers who wish to save their excess money. The customer is enticed to deposit their excess money for an interest repayment on their savings, let's say at a rate of 's'. The retail bank will earn a profit through the loan repayments where 'r' is greater than 's'. This is a general idea of retail banking in the public sector, however the remainder of this post will look into the operations of an investment bank.
+</p>
+<p>
+An investment bank, on the other hand, deals with buyers and sellers that are corporations, high net worth individuals, and government entities. Investment banking is often thought of as a larger sums of money are handled and the opportunity for larger profits and bonuses are prevalent. 
+</p>
+
+<br>
+<h4>Divisions of an investment bank</h4>
+<p>
+The umbrella term 'investment bank' can often take different definitions and meaning. 'Investment bank' must not be mistaken for 'investment banking division' which describes collectives activities of an investment bank. The investment bank will include many divisions which can help group the services provided by the bank, whether that be based upon the information they require or the clients they cater towards. The divisions of a bank also supports the regulatory compliance towards information sharing, I will later touch upon this topic.
+</p>
+<p>
+The image below illustrates the divisions that can exist within an investment bank. 
+
+![Investment bank divisions](../../src/images/025_divisions.png)
+
+The 'Chinese wall' that splits the investment banking division from the rest is a virtual information barrier to separate non-public information and public information. The investment banking division will often have access to non-public information due to their research services, and must therefore comply to a chinese wall to prevent insider information from spilling into the other divisions.
+</p>
+<br>
+<h4>Core services provided within the investment bank</h4>
+<p>
+In the following section, I will describe the core services of each division. The terms 'buy side' and 'sell side' are often used to describe the nature of revenue generation for the service, I have briefly defined them:
+<br>
+<i>Buy side: services involved with directly investing capital.</i><br>
+<i>Sell side: services involved with raising capital for a client.</i>
+</p>
+<h5><strong>Investment banking division</strong></h5>
+<p>
+<strong>Underwriting and market making</strong><br>
+
+
+</p>
+<p>
+<strong>Advisory</strong><br>
+
+
+
+
+</p>
+<p>
+<strong>IPO</strong><br>
+
+</p>
+<p>
+<strong>M&A</strong><br>
+
+</p>
+<br>
+<h5><strong>Asset management division</strong></h5>
+<p>
+The asset management division is responsible for growing a fund with investments that cater to the client's risk tolerance and short and long term goals. Investments will be made across many instruments including stocks, bonds, real estate, commodities and derivatives. The client can be high net worth individuals as well as high-end institutions. The relationship between a client and the fund manager is important to maintain to reevaluate the client's goals and to explain the opportunities that lie ahead.
+</p>
+<p>
+<strong>Open ended funds management</strong><br>
+
+
+</p>
+<p>
+<strong>Closed ended fund management</strong><br>
+
+</p>
+<br>
+<h5><strong>Capital Markets division</strong></h5>
+<p>
+Intro to capital markets
+</p>
+<p>
+<strong>Sales</strong><br>
+
+</p>
+<p>
+<strong>Proprietary Trading</strong><br>
+</p>
+
+<p>
+<strong>Structuring</strong><br>
 
 </p>
 
+<br>
+<h5><strong>Private Banking division</strong></h5>
+<p>
+Wealth management for HNWI
+</p>
+
+<br>
+<h5><strong>Private Equity division</strong></h5>
+<p>
+Merchant banking
+
+</p>
 
 <br>
 <h4>Conclusion</h4>
