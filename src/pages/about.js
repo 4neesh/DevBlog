@@ -134,6 +134,7 @@ const AboutPage = (props) => {
                     <ul>
                       <li>[video] <a target="_blank" href="https://www.youtube.com/c/MoneyWeekVideos">MoneyWeek</a></li>
                       <li>[news] <a target="_blank" href="https://www.ft.com/">Financial times</a></li>
+                      <li>[website] <a target="_blank" href="https://www.investopedia.com/">Investopedia</a></li>
                     </ul>
                     </p>
                   </CardBody>

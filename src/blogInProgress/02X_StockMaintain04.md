@@ -58,7 +58,7 @@ Spring cloud sleuth
 
 </p>
 <p>
-
+Next we need to add the name of the service to each of their application properties. I will also include a debug logger to enhance the feedback we receive for tracing.
 
 </p>
 <b>
