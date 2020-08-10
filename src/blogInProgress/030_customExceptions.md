@@ -11,15 +11,15 @@ tags:
 ---
 <br>
 <strong>Key Takeaways</strong><br>
-&#8226; Understand the differences between a mutual fund and exchange traded fund.<br>
-&#8226; Understand how mutual funds and ETFs are used within finance.<br>
-&#8226; Review the redemption mechanism that enables ETFs to be traded like a stock.<br>
+&#8226; The .<br>
+&#8226; The .<br>
+&#8226; The.<br>
 
 ![Merge sort step 2](../../src/images/011MergeSort2.png)
 
 
 <br>
-<h4>Mutual fund and the Exchange traded fund</h4>
+<h4>How to write a custom exception and why we use them</h4>
 <p>
 
 
