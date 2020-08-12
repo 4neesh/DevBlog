@@ -29,6 +29,23 @@ this way the customer details are encrypted and the other is not.
 
 
 </p>
+<br>
+<h4>Creating the MemberDetails service</h4>
+<p>
+
+</p>
+
+<h4>Creating the CustomerDetails service</h4>
+<p>
+
+
+
+</p>
+
+<br>
+<h4>Creating the MemberService</h4>
+<p>
+
 
 
 </p>
