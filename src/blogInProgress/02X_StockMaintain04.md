@@ -109,6 +109,18 @@ We will now link the microservices with Zipkin to achieve the appropriate visual
 We can now send requests across the services and view them in the Zipkin UI.
 Select the search button on Zipkin and see all the traces come in.
 </p>
+<p>
+The trace from Zipkin can provide many details for us. 
+- dependencies between services
+- find traces and find details. see the key value pairs and annotated values. and the spans it contains
+- query annotations/paths for investigation
+- look for duration (latency) within the microservices
+
+</p>
+<p>
+View dependencies<br>
+
+</p>
 <b>
 <h4>Conclusion</h4>
 <p>
