@@ -35,7 +35,7 @@ Allows you to understand architecture and automating communication of channels.
 </p>
 
 <br>
-<h4>Anatomy of a call</h4>
+<h4>Anatomy of a trace</h4>
 <p>
 Span is the individual operation that happens (includes timestamps)
 Trace is an end to end latency graph that is made up of spans
@@ -119,6 +119,28 @@ The trace from Zipkin can provide many details for us.
 </p>
 <p>
 View dependencies<br>
+
+</p>
+
+<br>
+<h4>Create a custom span</h4>
+<p>
+We can create a custom span to find unique information within the trace of a call.
+Such as finding information within the trace.
+You can add tags and event data to the span for more information (metadata) which can support searching.
+</p>
+<p>
+To do this, we first add a tracer from the sleuth-brave package.
+We will autowire into the controller.
+
+Next, the tracer is used to create a new span in the controller where the call is made.
+
+```java{numberLines:true}
+Span span = tracer.nextSpan().name("memberDetailSpan").start();
+
+```
+
+We will then add add a tag to the span:
 
 </p>
 <b>
