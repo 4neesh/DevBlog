@@ -131,7 +131,6 @@ The private equity division will invest in private institutions with the objecti
 <h4>Conclusion</h4>
 <p>
 Financial services is a major industry that incorporates a vast array of services from advisory and research to execution and market making. The differences between these services can depend upon the client being served, the institutions being managed, and the active involvement with investments themselves. Services can be split between 'buy side' and 'sell side', however the overarching principle within financial services is to aid in the movement of money. This blog has only touched upon the differences between the services, I will use this to reflect upon in later posts when I look slightly deeper into how financial services works and why technology is playing such an influential role in strategy.
-
 </p>
 
 <br>
