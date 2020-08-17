@@ -13,17 +13,17 @@ tags:
 <br>
 <strong>Key Takeaways</strong><br>
 &#8226; Understand the importance of the Liskov substitution principle to inheritance and shared class behaviour.<br>
-&#8226; Review the rules that the inherited behaviours of subclasses are as expected.<br>
+&#8226; Review the rules that ensure the inherited behaviours of subclasses from their parents are as expected.<br>
 &#8226; Design tests to ensure the behaviour of a parent class is not modified by its subclasses.<br>
 
 <br>
 <h4>What is the Liskov Substitution Principle?</h4>
 <p>
-Introduced by Barbara Liskov, the Liskov substitution principle (LSP) is used to decide when to extend a class, and when to use other strategies of abstraction to achieve the goal of shared properties between classes. As we have seen in the previous <a href="www.aneesh.co.uk/open-closed-principle">blog</a>, the open-closed principle can be used to abstract the behaviours of a method; the Liskov substitution principle is used to extend upon the <i>design by contract</i> design where the behaviour of the class is the primary concern.
+Introduced by Barbara Liskov, the Liskov substitution principle (LSP) is used to decide when it is appropriate to extend a class as opposed to other strategies of abstraction to achieve the goal of shared properties between classes. As we have seen in the previous <a href="https://www.aneesh.co.uk/open-closed-principle" target="_blank">blog</a>, the open-closed principle can be used to abstract the behaviours of a method; the Liskov substitution principle is used to extend upon the <i>design by contract</i> approach where the behaviour of the class is the primary concern.
 </p>
 
 <p>
-The Liskov substitution principle is used to make assertions upon the substitution of behaviours that are imposed to a subclass.
+The Liskov substitution principle is used to make assertions upon the substitution of behaviours that are implied by a subclass from its parent.
 When a class is extended, we are in effect implying that the subclass "IS A" extension of the parent class. While the open-closed principle is a focussed upon the structure of a class, LSP promotes strong <strong>behaviour</strong> sub-typing of classes to the parent class to ensure the expected behaviour of the methods are applicable to the extension.
 </p>
 <p>
@@ -33,7 +33,7 @@ The below quote is often used to describe the importance of behaviours between i
 <br>
 <h4>Liskov Substitution by design</h4>
 <p>
-When we use inheritance to share class methods and properties, we are implying that the subclass can be used to replace instances of the parent class as the subclass <i>IS A</i> variance of the parent class.<br>
+When we use inheritance to share class methods and properties, we are implying that the subclass can be used to replace instances of the parent class.<br>
 The LSP asserts three rules when applying inheritance with subclasses:<br>
 &#8226; The subclass cannot enforce stricter rules than the parent class.<br>
 &#8226; The return value of a subclass method can only differ as a subclass of the return type from the parent.<br>
@@ -43,13 +43,15 @@ The LSP asserts three rules when applying inheritance with subclasses:<br>
 <br>
 <h4>Implementing LSP by design</h4>
 <p>
-If we reflect upon the rules above, the first two can be checked through the Java compiler and are therefore inherent with Java.
+If we reflect upon the rules above, the first two can be validated through the Java compiler and are therefore inherent with Java.
 A problem can arise with ensuring the behaviour of each method is appropriate for the subclass of the parent.
 </p>
+<br>
+<h4>Demonstration: Is a Penguin a bird?</h4>
 <p>
-The below code example demonstrates how easily behaviour can be modified from the intuition that a subclass IS A extension of a parent class. When we design an application of Birds, Penguins, and Seagull Objects, we may reflect upon the use of class inheritance by saying, out loud, "a Penguin is a Bird, and a Seagull is also a Bird". In our source code, we may therefore create the Seagull and Penguin as subclasses of Bird. 
+The below code example demonstrates how easily behaviour can be modified from the intuition that a subclass IS AN extension of a parent class. When we design an application of Birds, Penguins, and Seagull Objects, we may reflect upon the use of class inheritance by saying, out loud, "a Penguin is a Bird, and a Seagull is also a Bird". In our source code, we may therefore create the Seagull and Penguin as subclasses of Bird. 
 
-![Image of the classes](../../src/images/011MergeSort2.png)
+![Image of the classes](../../src/images/020_bird.png)
 
 ```java{numberLines:true}
 class Bird{
@@ -77,6 +79,8 @@ In our example above, we have confused the <u>properties</u> of the Bird class w
 <p>
 The LSP has been breached as the Penguin class is now capable of calling the <code>.fly()</code> method; a behaviour that should not be possible.
 </p>
+<br>
+<h4>Complying with LSP</h4>
 <p>
 To resolve the problem, the behaviour of the Bird class can be further split into two: BirdCanFly and BirdCannotFly:
 
@@ -124,10 +128,10 @@ The example above illustrates the potential conflict that can arise with the imp
 <br>
 <h4>Conclusion</h4>
 <p>
-The LSP is applied to application design when we consider the behaviours of classes that are inherited from other parent classes. <i>Inheritance</i> is one of the most valuable OOP concepts and therefore LSP is an important consideration to make upon child classes whenever a class is extended.
+The LSP is applied to application design when we consider the <u>behaviours</u> of classes that are inherited from other parent classes. <i>Inheritance</i> is one of the most valuable OOP concepts and therefore LSP is an important consideration to make upon child classes whenever a class is extended.
 </p>
 <p>
-While it may seem natural to extend classes that fit into the "IS A" Object construct, we must consider how the <u>behaviours</u> of a class are inherited, and not the <u>properties</u>. LSP can be implemented by reviewing the behaviours each class will inherit before adding behaviours to a parent class or extending them, or they can be implemented through unit testing of a parent class with each of their child classes.
+While it may seem natural to extend classes that fit into the "IS A" Object construct, we must consider how the <u>behaviours</u> of a class are inherited, and not just the <u>properties</u>. LSP can be implemented by reviewing the behaviours each class will inherit before adding behaviours to a parent class or extending them, or they can be implemented through unit testing of a parent class with each of their child classes.
 </p>
 
 <br>
