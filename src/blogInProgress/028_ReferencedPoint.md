@@ -1,5 +1,5 @@
 ---
-title: 'xxx'
+title: 'Pass by reference and value'
 date: 2020-09-28 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/xxx.jpg
@@ -11,9 +11,9 @@ tags:
 ---
 <br>
 <strong>Key Takeaways</strong><br>
-&#8226; The .<br>
-&#8226; The .<br>
-&#8226; The.<br>
+&#8226; Java uses both pass by reference and pass by value.<br>
+&#8226; Understand the differences between stack and heap memory.<br>
+&#8226; Java primitives and Objects behave differently when passed between methods.<br>
 
 ![Merge sort step 2](../../src/images/011MergeSort2.png)
 
