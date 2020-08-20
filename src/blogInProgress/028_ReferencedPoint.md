@@ -19,18 +19,26 @@ tags:
 
 
 <br>
-<h4>What does passed by value mean?</h4>
+<h4>What does 'pass by' mean within development?</h4>
 <p>
-
-
+We often pass Objects or values around our application to perform miniscule activities to transform or create further Objects. We are able to do so by passing in arguments to a method and returning Objects or primitives back to the calling method.
+</p>
+<p>
+The 'stack' is used to store the sequential calls made between methods to 
 </p>
 <br>
-<h4></h4>
+<h4>Pass by reference</h4>
 <p>
 
 
 </p>
 
+<br>
+<h4>Pass by value</h4>
+<p>
+
+
+</p>
 <br>
 <h4>Conclusion</h4>
 <p>
