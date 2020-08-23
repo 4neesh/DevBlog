@@ -28,7 +28,7 @@ tags:
 <br>
 <h4>Merge sort</h4>
 <p>
-
+//run through merge sort
 
 </p>
 
