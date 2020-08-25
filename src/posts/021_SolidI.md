@@ -9,6 +9,7 @@ time: '5'
 tags:
 - Patterns
 - Java
+- Design
 ---
 <br>
 <strong>Key Takeaways</strong><br>
