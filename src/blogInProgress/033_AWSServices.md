@@ -1,5 +1,5 @@
 ---
-title: 'xxx'
+title: 'Exploring the AWS Services'
 date: 2020-09-28 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/xxx.jpg
@@ -74,7 +74,7 @@ AWS Aurora is a MySQL compatible database stored in the cloud for secure, highly
 <br>
 <h4>Data warehouse: RedShift</h4>
 <p>
-RedShift makes it simple and cost effective to manage multiple databases. Data is later optimised to perform data analytics for business intelligence. Database is optimised for transactions, warehouse is for data analyticsperform a column-based output. It allows you to combine queries to large data sets. Useful for databases with heavy read requests. It stores data in columnar style. Means data can be compressed to make the read operations easier. All the data is stored in a single row. RedShift compresses it nicely. The Warehouse consists of clusters of nodes. The cluster contains an engine of databases. DynamoDB is only ever available in one AZ as it tends to not be critical. RedShift can restore snapshots to other AZs to replicate data. 
+RedShift makes it simple and cost effective to manage multiple databases. Data is later optimised to perform data analytics for business intelligence. Database is optimised for transactions, warehouse is for data analytics perform a column-based output. It allows you to combine queries to large data sets. Useful for databases with heavy read requests. It stores data in columnar style. Means data can be compressed to make the read operations easier. All the data is stored in a single row. RedShift compresses it nicely. The Warehouse consists of clusters of nodes. The cluster contains an engine of databases. DynamoDB is only ever available in one AZ as it tends to not be critical. RedShift can restore snapshots to other AZs to replicate data. 
 </p>
 <p>
 Single source of truth is structuring data in one place. 
