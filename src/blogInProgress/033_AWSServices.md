@@ -72,9 +72,21 @@ DynamoDB is a fully managed NoSQL database that supports performance at scale an
 AWS Aurora is a MySQL compatible database stored in the cloud for secure, highly available and reliable databases. The serverless design will automatically scale with requirement 
 </p>
 <br>
-<h4>Data warehouse: RedShift</h4>
+<h4>Data warehouse: RedShift and Data lake</h4>
+<p>
+Data warehousing is required to provide aggregate data in the format suitable for decision making. Data is collected from different databases. It is integrated to the data warehouse through a staging area where formats are standardised (extract, transform, loaded). The warehouse stores all data in standardised manner. Data marts (subsets) are then created with prepared answers for different queries. Querying a mart will not hit the data warehouse.
+Data warehouse is a placed where data assets is stored. The defacto source of truth. Used for data recording and purpose. Information revolves around a subject, not all information, just the subject-related information. Information is integrated to common standards. Data cannot be changed once in. It is often aggregated and segmented for analysis. 
+</p>
+<p>
+AWS Redshift is designed for online analytical processing. This is analysis of multidimensional data for complex calculations. Such as what-if statements and business intelligence forecasting. It supports complex queries. Redshift stores data in a columnar storage for more efficient querying of indexes. Each field is held in a file(or files) and is queries rather than the entire table to return the values needed. 
+
+</p>
 <p>
 RedShift makes it simple and cost effective to manage multiple databases. Data is later optimised to perform data analytics for business intelligence. Database is optimised for transactions, warehouse is for data analytics perform a column-based output. It allows you to combine queries to large data sets. Useful for databases with heavy read requests. It stores data in columnar style. Means data can be compressed to make the read operations easier. All the data is stored in a single row. RedShift compresses it nicely. The Warehouse consists of clusters of nodes. The cluster contains an engine of databases. DynamoDB is only ever available in one AZ as it tends to not be critical. RedShift can restore snapshots to other AZs to replicate data. 
+</p>
+<p>
+Difference between row databases and columnar databases.
+
 </p>
 <p>
 Single source of truth is structuring data in one place. 
@@ -82,8 +94,25 @@ Single source of truth is structuring data in one place.
 <br>
 <h4>Kinesis</h4>
 <p>
+When using Kinesis, the unit of scale for data ingestion is known as a shard. Shards scale linearly, so more shards means more capacity to ingest and emit data. When a stream is created, the number of shards are defined and remain final for that stream. Resharding is possible however not through the GUI. Adding shards will split existing ones while removing will merger shards. Within a stream, shards are distinguished by their partition key. As each shard ingests data, each record has a sequence number that is incremented.
+</p>
+<p>
 AWS Kinesis is a data streaming service that allows you to inject large amounts of real-time data into EC2 instances. Data is captured, stored and processed from large distributed streams such as event logs and social media feeds to be consumed by other services simultaneously. 
 The throughput for a Kinesis stream is realised through the data shards. Each Shard will support 1MB/sec of data input and 2MB/sec of data output. Each shard support 1000 PUT records per second. Each shard will store records of data. A record will contain information such as sequence number, partition key and data blob of up to 1MB. The partition key is used to route records to specific shards
+</p>
+<p>
+Two of the main services within Kinesis include Kinesis Firehose and Kinesis Streams.
+Streams
+Streams will capture large volumes of data and replicate it across 3 AZs. Data is available for 24 hours in the stream by default.
+
+Firehose
+Used to capture and load streaming data into other AWS services such as S3 and Redshift. From there, you can load data into EMR, Elasticsearch etc. It automatically scales unlike streams. 
+
+Analytics
+Allows you to run SQL queries against data streams and send it to monitoring tools. This removes the necessity of storing data before analysing it. It integrates with AWS services so SQL queries can be performed on the data. Java developers can build streaming applications to integrate and analyse data in real time. It scales automatically. 
+</p>
+<p>
+Kinesis differs from SQS as it allows real-time processing, applications to consume the data concurrently and for producers and consumers to meet the demand of data.
 </p>
 <br>
 <h4>Monitoring</h4>
