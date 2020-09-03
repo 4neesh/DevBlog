@@ -20,9 +20,19 @@ tags:
 
 
 <br>
-<h4>Amazon Web Services</h4>
+<h4>Amazon Web Services Analytics</h4>
 <p>
-
+In this blog, I will introduce some of the core AWS services that make up the AWS analytics services. This blog will introduce what the different services are used for, why AWS is advantageous to use and how they might differ from a non-cloud solution.<br>
+The services discussed include:<br>
+&#8226; EC2 compute capabilities.<br>
+&#8226; S3, EFS and EBS storage solutions.<br>
+&#8226; DynamoDB and .<br>
+&#8226; Athena query servicing.<br>
+&#8226; Elastic MapReduce data processing.<br>
+&#8226; Redshift data warehousing.<br>
+&#8226; Kinesis data streaming.<br>
+&#8226; AWS Data pipeline.<br>
+&#8226; AWS Elasticsearch searching service.<br>
 
 </p>
 <p>
@@ -34,6 +44,21 @@ Within AWS, we will visit a few fully-managed AWS services that do not require p
 &#8226; Simple storage service (S3).<br>
 &#8226; Lambda.<br>
 &#8226; Elastic compute cloud (EC2).<br>
+</p>
+<br>
+<h4>The AWS Analytics architecture</h4>
+<p>
+An all-AWS architecture for data analytics can include many different services and keywords that interact with each other. This section will briefly mention some of the services used before I dive slightly deeper on each one.<br>
+AWS EC2 provides a secure and resizable compute capacity where application servers can be hosted. Data can then be then be sent to other services via a streaming service such as Kinesis. 
+Kinesis is a data streaming service that offers two main solutions: Kinesis Streams which can offer storage of data and Kinesis firehose which will ingest the data in real time directly to S3, Redshift or Elasticsearch. 
+Similar to Kinesis, AWS Data pipeline provides a service to transport and transform data across sources. The pipeline can define activities to be completed after data is stored. Kinesis provides real-time analysis of data, whereas the pipeline is more step-by-step. Kinesis performs the analysis whereas Pipeline transports the data to be processed.
+AWS S3 is an object-level storage solution for write-once-read-many service to other AWS services. Elastic block store (EBS) and Elastic file system (EFS) are block-level storage services for frequently updated data. EBS is attached to a single EC2 instance, whereas EFS provides access to other services and multiple instances. 
+AWS Redshift is a data warehousing solution where columnar data is stored for efficient querying, data analysis and business intelligence solutions. 
+DynamoDB provides a fully managed NoSQL database service for fast and predictable performance. DynamoDB is not for mission-critical requests and provides singular database solutions of data. 
+AWS Athena provides an interactive SQL service to query data stored in S3 buckets. Rather than polluting SQL queries to a Redshift cluster, queries can be processed with AWS Athena to the data stored in S3 buckets. Athena provides out-of-the-box data analysis for S3 data.
+Amazon Elasticsearch uses the open source analytics engine from Apache Lucene to provide log analytics, full-text search, business analytics and intelligence use cases. The API uses Kinesis to conduct RESTful searches upon documentation.
+Amazon Elastic MapReduce uses the open source Apache Hadoop framework to support large scale data processing. Hadoop contains a distributed files system and processor to perform large scale operations. AWS provides a managed service where servers and processors are spun up on demand to the compute power necessary for the data.
+
 </p>
 <br>
 <h4>EC2 virtual machines</h4>
@@ -59,7 +84,11 @@ EFS enables shared high volume storage across virtual machines.
 S3 acts as a useful service to access files across AWS services beyond EC2. For example, CloudFront may use S3 to access website content and media. Its object-level storage should be used for write-once read-many times storage. 
 S3 supports static website hosting. It provides secure, scalable and available access to resources. S3 provides reliable disaster recovery, backup and restoration. S3 provides a greater level of security with authority and access control. 
 </p>
-
+<br>
+<h4>AWS Athena</h4>
+<p>
+AWS Athena allows you to analyse data from S3 buckets in a serverless manner. It is serverless so no clusters are required to use it. It is used to run queries against large volumes of data without having to launch clusters of databases or warehouses to do so. You simply connect Athena to a datastore in S3, specify the schema, and run queries against it. 
+</p>
 <br>
 <h4>Databases: Aurora and DynamoDB</h4>
 <p>
@@ -79,17 +108,26 @@ Data warehouse is a placed where data assets is stored. The defacto source of tr
 </p>
 <p>
 AWS Redshift is designed for online analytical processing. This is analysis of multidimensional data for complex calculations. Such as what-if statements and business intelligence forecasting. It supports complex queries. Redshift stores data in a columnar storage for more efficient querying of indexes. Each field is held in a file(or files) and is queries rather than the entire table to return the values needed. 
-
 </p>
 <p>
-RedShift makes it simple and cost effective to manage multiple databases. Data is later optimised to perform data analytics for business intelligence. Database is optimised for transactions, warehouse is for data analytics perform a column-based output. It allows you to combine queries to large data sets. Useful for databases with heavy read requests. It stores data in columnar style. Means data can be compressed to make the read operations easier. All the data is stored in a single row. RedShift compresses it nicely. The Warehouse consists of clusters of nodes. The cluster contains an engine of databases. DynamoDB is only ever available in one AZ as it tends to not be critical. RedShift can restore snapshots to other AZs to replicate data. 
+AWS Datalake is a service that is used to store large unstructured data as a repository. It is not processed in any way, unlike Redshift where data is compiled into files and ready for analysis. 
+</p>
+<p>
+RedShift makes it simple and cost effective to manage multiple databases. Data is later optimised to perform data analytics for business intelligence. Database is optimised for transactions, warehouse is for data analytics perform a column-based output. It allows you to combine queries to large data sets. Useful for databases with heavy read requests. It stores data in columnar style. Means data can be compressed to make the read operations easier. All the data is stored in a single row. RedShift compresses it nicely. The Warehouse consists of clusters of nodes. The cluster contains an engine of databases. DynamoDB is only ever available in one AZ as it tends to not be critical. RedShift can restore snapshots to other AZs to replicate data. Redshift is scalable and offers SQL, ETL and BI tools for optimised queries. No pain in managing infrastructure with Redshift.
 </p>
 <p>
 Difference between row databases and columnar databases.
-
+If you need to query a row database such as transactions and users, it will scan the whole database and return a join operation between the two databases. 
+With Columnar databases, data is not stored in rows, but in single files with all the data itself. If you want the first name and transaction made, it will scan just these files to perform the query. Therefore columnar is far more efficient. 
 </p>
 <p>
-Single source of truth is structuring data in one place. 
+Columnar data requires less reads to store. All data types in the file are the same so it is easier to compress. Redshift warehouse uses nodes to form a cluster. The Redshift engine will contain the databases. Redshift cluster has lead and compute nodes to direct queries. Redshift is available for all zones unlike DynamoDB. DynamoDB is not business critical. Redshift is charged on compute hours and backup.s
+</p>
+
+<br>
+<h4>AWS Glue</h4>
+<p>
+AWS Glue is an extract, transform and load service (ETL) for loading data to be ready for analytics. AWS Glue provides data crawlers to scan over data (such as in a Data lake) and to prepare metadata so it is ready to be queried. 
 </p>
 <br>
 <h4>Kinesis</h4>
@@ -101,29 +139,33 @@ AWS Kinesis is a data streaming service that allows you to inject large amounts 
 The throughput for a Kinesis stream is realised through the data shards. Each Shard will support 1MB/sec of data input and 2MB/sec of data output. Each shard support 1000 PUT records per second. Each shard will store records of data. A record will contain information such as sequence number, partition key and data blob of up to 1MB. The partition key is used to route records to specific shards
 </p>
 <p>
-Two of the main services within Kinesis include Kinesis Firehose and Kinesis Streams.
-Streams
-Streams will capture large volumes of data and replicate it across 3 AZs. Data is available for 24 hours in the stream by default.
+Three of the main services within Kinesis include Kinesis Firehose and Kinesis Streams.
+Data Streams
+Streams will capture large volumes of data and replicate it across 3 AZs. Data is available for 24 hours in the stream by default. Data can be processed and stored. 
 
 Firehose
-Used to capture and load streaming data into other AWS services such as S3 and Redshift. From there, you can load data into EMR, Elasticsearch etc. It automatically scales unlike streams. 
+Used to load streaming data into other AWS services such as S3 and Redshift. From there, you can load data into EMR, Elasticsearch etc. It automatically scales unlike Data Stream. 
 
 Analytics
-Allows you to run SQL queries against data streams and send it to monitoring tools. This removes the necessity of storing data before analysing it. It integrates with AWS services so SQL queries can be performed on the data. Java developers can build streaming applications to integrate and analyse data in real time. It scales automatically. 
+Allows you to run SQL queries and Java against data streams and send it to monitoring tools. This removes the necessity of storing data before analysing it. It integrates with AWS services so SQL queries can be performed on the data. Java developers can build streaming applications to integrate and analyse data in real time. It scales automatically. 
+
 </p>
 <p>
 Kinesis differs from SQS as it allows real-time processing, applications to consume the data concurrently and for producers and consumers to meet the demand of data.
 </p>
-<br>
-<h4>Monitoring</h4>
-<p>
 
-</p>
 <br>
 <h4>Elastic MapReduce EMR</h4>
 <p>
-EMR is a data processing service offered to perform analysis of data using the open-source Hadoop framework.
+EMR is a data processing service offered to perform analysis of data using the open-source Hadoop framework. With AWS, you are able to distribute your data and processing across EC2 instances with Hadoop. 
 </p>
+<p>
+EMR enables you to use Hive and Pig and Spark to query data. 
+</p>
+<p>
+Apache Hive is used to convert SQL-like queries into MapReduce Jobs to perform queries. 
+</p>
+
 <br>
 <h4>Launching services: Elastic beanstalk and Cloudformation</h4>
 <p>
@@ -132,6 +174,8 @@ Elastic beanstalk is a platform-as-a-service layer on top of the AWS Infrastruct
 <p>
 CloudFormation is a method used to define resources for deployment in a JSON file. It is a large configuration file used to deploy AWS services. 
 </p>
+
+
 <br>
 <h4>Web hosting: CloudFront</h4>
 <p>
