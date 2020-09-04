@@ -49,6 +49,7 @@ Within AWS, we will visit a few fully-managed AWS services that do not require p
 <h4>The AWS Analytics architecture</h4>
 <p>
 An all-AWS architecture for data analytics can include many different services and keywords that interact with each other. This section will briefly mention some of the services used before I dive slightly deeper on each one.<br>
+
 AWS EC2 provides a secure and resizable compute capacity where application servers can be hosted. Data can then be then be sent to other services via a streaming service such as Kinesis. 
 Kinesis is a data streaming service that offers two main solutions: Kinesis Streams which can offer storage of data and Kinesis firehose which will ingest the data in real time directly to S3, Redshift or Elasticsearch. 
 Similar to Kinesis, AWS Data pipeline provides a service to transport and transform data across sources. The pipeline can define activities to be completed after data is stored. Kinesis provides real-time analysis of data, whereas the pipeline is more step-by-step. Kinesis performs the analysis whereas Pipeline transports the data to be processed.
@@ -95,7 +96,7 @@ AWS Athena allows you to analyse data from S3 buckets in a serverless manner. It
 AWS provides support to serverless databases to be consumed by other AWS services. The tables are scaled and priced on a pay-as-you-go basis. 
 </p>
 <p>
-DynamoDB is a fully managed NoSQL database that supports performance at scale and low-latency transactions. Full ACID support is enabled by DynamoDB. DynamoDB is a serverless database that will automatically scale up and down as required to support tables, key value pairs and indexing. 
+DynamoDB is a fully managed NoSQL database that supports performance at scale and low-latency transactions. Full ACID support is enabled by DynamoDB. DynamoDB is a serverless database that will automatically scale up and down as required to support tables, key value pairs and indexing. While RDBS use indexing to increase the performance of data searches, DynamoDB supports secondary indexing where 
 </p>
 <p>
 AWS Aurora is a MySQL compatible database stored in the cloud for secure, highly available and reliable databases. The serverless design will automatically scale with requirement 
@@ -135,13 +136,13 @@ AWS Glue is an extract, transform and load service (ETL) for loading data to be 
 When using Kinesis, the unit of scale for data ingestion is known as a shard. Shards scale linearly, so more shards means more capacity to ingest and emit data. When a stream is created, the number of shards are defined and remain final for that stream. Resharding is possible however not through the GUI. Adding shards will split existing ones while removing will merger shards. Within a stream, shards are distinguished by their partition key. As each shard ingests data, each record has a sequence number that is incremented.
 </p>
 <p>
-AWS Kinesis is a data streaming service that allows you to inject large amounts of real-time data into EC2 instances. Data is captured, stored and processed from large distributed streams such as event logs and social media feeds to be consumed by other services simultaneously. 
+AWS Kinesis is a data streaming service that allows you to ingest large amounts of real-time data into EC2 instances. Data is captured, stored and processed from large distributed streams such as event logs and social media feeds to be consumed by other services simultaneously. 
 The throughput for a Kinesis stream is realised through the data shards. Each Shard will support 1MB/sec of data input and 2MB/sec of data output. Each shard support 1000 PUT records per second. Each shard will store records of data. A record will contain information such as sequence number, partition key and data blob of up to 1MB. The partition key is used to route records to specific shards
 </p>
 <p>
-Three of the main services within Kinesis include Kinesis Firehose and Kinesis Streams.
+Three of the main services within Kinesis include Kinesis Firehose Kinesis data analytics, and Kinesis Streams.
 Data Streams
-Streams will capture large volumes of data and replicate it across 3 AZs. Data is available for 24 hours in the stream by default. Data can be processed and stored. 
+Data Streams are not managed, you must manually Shard the streams. Streams will capture large volumes of data and replicate it across 3 AZs. Data is available for 24 hours in the stream by default. Data can be processed and stored. 
 
 Firehose
 Used to load streaming data into other AWS services such as S3 and Redshift. From there, you can load data into EMR, Elasticsearch etc. It automatically scales unlike Data Stream. 
