@@ -23,17 +23,9 @@ tags:
 <h4>Amazon Web Services Analytics</h4>
 <p>
 In this blog, I will introduce some of the core AWS services that make up the AWS analytics services. This blog will introduce what the different services are used for, why AWS is advantageous to use and how they might differ from a non-cloud solution.<br>
-The services discussed include:<br>
-&#8226; EC2 compute capabilities.<br>
-&#8226; S3, EFS and EBS storage solutions.<br>
-&#8226; DynamoDB and .<br>
-&#8226; Athena query servicing.<br>
-&#8226; Elastic MapReduce data processing.<br>
-&#8226; Redshift data warehousing.<br>
-&#8226; Kinesis data streaming.<br>
-&#8226; AWS Data pipeline.<br>
-&#8226; AWS Elasticsearch searching service.<br>
-
+</p>
+<p>
+AWS Analytics is specifically focussed on processing structured, semi-structured and unstructured data. Structured data can be directly stored within a relational database. Semi-structured data could be JSON or XML files that have a partially fulfilled structure. Unstructured data has no pre-defined model such as documents, audio, video and metadata.
 </p>
 <p>
 <strong>What is serverless?</strong><br>
@@ -71,7 +63,7 @@ The AMI is a template for the configuration. When an EC2 instance is launched, a
 <br>
 <h4>Storage: S3, EFS and EBS</h4>
 <p>
-AWS provides several storage technologies, namely S3, Elastic file system (EFS) and Elastic block store (EBS). EBS and EFS provide a block storage where you can edit and update a section of a file. S3 provides an object-level storage where the entire object must be replaced. If you have high volume read and write operations, you would want block-level storage. S3 is not optimal for OS and database storage as it works at Object-level storage.
+AWS provides several storage technologies, namely S3, Elastic file system (EFS) and Elastic block store (EBS). EBS and EFS provide a block storage where files are split into blocks that support file updates. S3 provides an object-level storage for durable and highly available storage of data as a single object. The performance implication of object level storage means S3 is more suitable for write-once data. The block storage can be directly accessed by the operating system and is therefore a mounted drive volume. If you have high volume read and write operations, you would want block-level storage. S3 is not optimal for OS and database storage as it works at Object-level storage.
 </p>
 <p>
 EBS provides high-availability block-level storage for EC2 instances. Data is retained after the EC2 instance is shut down. It connects to a single EC2 instance. 
@@ -125,11 +117,7 @@ With Columnar databases, data is not stored in rows, but in single files with al
 Columnar data requires less reads to store. All data types in the file are the same so it is easier to compress. Redshift warehouse uses nodes to form a cluster. The Redshift engine will contain the databases. Redshift cluster has lead and compute nodes to direct queries. Redshift is available for all zones unlike DynamoDB. DynamoDB is not business critical. Redshift is charged on compute hours and backup.s
 </p>
 
-<br>
-<h4>AWS Glue</h4>
-<p>
-AWS Glue is an extract, transform and load service (ETL) for loading data to be ready for analytics. AWS Glue provides data crawlers to scan over data (such as in a Data lake) and to prepare metadata so it is ready to be queried. 
-</p>
+
 <br>
 <h4>Kinesis</h4>
 <p>
@@ -141,30 +129,39 @@ The throughput for a Kinesis stream is realised through the data shards. Each Sh
 </p>
 <p>
 Three of the main services within Kinesis include Kinesis Firehose Kinesis data analytics, and Kinesis Streams.
-Data Streams
-Data Streams are not managed, you must manually Shard the streams. Streams will capture large volumes of data and replicate it across 3 AZs. Data is available for 24 hours in the stream by default. Data can be processed and stored. 
-
-Firehose
-Used to load streaming data into other AWS services such as S3 and Redshift. From there, you can load data into EMR, Elasticsearch etc. It automatically scales unlike Data Stream. 
-
-Analytics
-Allows you to run SQL queries and Java against data streams and send it to monitoring tools. This removes the necessity of storing data before analysing it. It integrates with AWS services so SQL queries can be performed on the data. Java developers can build streaming applications to integrate and analyse data in real time. It scales automatically. 
-
 </p>
 <p>
-Kinesis differs from SQS as it allows real-time processing, applications to consume the data concurrently and for producers and consumers to meet the demand of data.
+Data Streams
+Data Streams are not managed, you must manually Shard the streams. Streams will capture large volumes of data and replicate it across 3 AZs. Data is available for 24 hours in the stream by default. Data can be processed and stored. 
 </p>
+<p>
+Firehose
+Used to load streaming data into other AWS services such as S3 and Redshift. From there, you can load data into EMR, Elasticsearch etc. It automatically scales unlike Data Stream. 
+</p>
+<p>
+Analytics
+Allows you to run SQL queries and Java against data streams and send it to monitoring tools. This removes the necessity of storing data before analysing it. It integrates with AWS services so SQL queries can be performed on the data. Java developers can build streaming applications to integrate and analyse data in real time. It scales automatically. 
+</p>
+
 
 <br>
 <h4>Elastic MapReduce EMR</h4>
 <p>
-EMR is a data processing service offered to perform analysis of data using the open-source Hadoop framework. With AWS, you are able to distribute your data and processing across EC2 instances with Hadoop. 
+AWS EMR is used for data processing. Data processing comprises the series of steps required to transform raw data into a computer-readable format. The Hadoop open source framework offers two services: HDFS and MapReduce to provide a concurrent service to data processing. EMR supports the Hadoop framework by running the processes on EC2 instances that scale to the required performance and data load. 
+</p>
+<p>
+Amazon EMR supports the use of accompanying frameworks such as Apache Hive to run declarative MapReduce jobs, Apache Spark to run enhanced MapReduce jobs, and Apache Pig to run procedural processes.
 </p>
 <p>
 EMR enables you to use Hive and Pig and Spark to query data. 
 </p>
 <p>
 Apache Hive is used to convert SQL-like queries into MapReduce Jobs to perform queries. 
+</p>
+<br>
+<h4>AWS Glue</h4>
+<p>
+AWS Glue is an extract, transform and load service (ETL) for loading data to be ready for analytics. AWS Glue provides data crawlers to scan over data (such as in a Data lake) and to prepare metadata so it is ready to be queried. AWS Glue and Amazon EMR offer similar solutions for data processing, however the difference lies in the infrastructure requirement. While Glue is serverless, EMR can provide faster and more stable performance from the Hadoop framework.
 </p>
 
 <br>
