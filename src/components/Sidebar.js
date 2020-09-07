@@ -77,6 +77,11 @@ class Sidebar extends React.Component{
                   </Button>
                 </li>
                 <li>
+                  <Button className="tagButton" href={`/tag/finance`}>
+                    Finance 
+                  </Button>
+                </li>
+                <li>
                   <Button className="tagButton" href={`/tag/java`}>
                     Java 
                   </Button>

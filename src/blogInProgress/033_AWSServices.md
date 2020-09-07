@@ -22,7 +22,7 @@ tags:
 <br>
 <h4>Amazon Web Services Analytics</h4>
 <p>
-In this blog, I will introduce some of the core AWS services that make up the AWS analytics services. This blog will introduce what the different services are used for, why AWS is advantageous to use and how they might differ from a non-cloud solution.<br>
+In this blog, I will introduce some of the core AWS services that make up AWS analytics. This blog will introduce what the different services are used for, why AWS is advantageous to use and how they might differ from a non-cloud solution.<br>
 </p>
 <p>
 AWS Analytics is specifically focussed on processing structured, semi-structured and unstructured data. Structured data can be directly stored within a relational database. Semi-structured data could be JSON or XML files that have a partially fulfilled structure. Unstructured data has no pre-defined model such as documents, audio, video and metadata.
