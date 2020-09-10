@@ -124,16 +124,44 @@ The JTable and JScrollPane are defined in the main method. The frame then takes 
 ```
 When we run the application, we will see the following GUI with the rows and columns:
 
-![Single Column Table](../../src/images/024_Table.png)
+![Single Column Table](../../src/images/024_table.png)
 
 </p>
 <p>
-We can further enhance the table to include more descriptive column names and values that are passed into 
+We can further enhance the table to include more descriptive column names and values that are passed into the table.
+For this example, I will use the final league table of the Championship from 2019-20.
+</p>
+<p>
+The new data we will insert to the table can be defined within a <code>DefaultTableModel</code> that can then be passed into the JTable for content. The DefaultTableModel class supports the use of vectors to populate the data and columns of a table. 
+
+```java{numberLines:true}
+
+    String[][] data = {{/*data for table */}}
+    String[] columns = {"Pos", "Team", "Won", "Drawn", "Lost", "Points"};
+
+    DefaultTableModel model = new DefaultTableModel(data, columns);
+    table = new JTable(model);
+
+```
+</p>
+<p>
+The current table appears below:
+
+![Championship Table](../../src/images/024_smallTable.png)
+
+However if we remove the <code>setSize()</code> method and replace it with <code>pack()</code> in the main method, the table GUI will automatically adapt to the size of the table upon opening:
+
+![Championship flex Table](../../src/images/024_flexTable.png)
+
 </p>
 <br>
 <h4>Custom styling of the GUI</h4>
 <p>
-In our current demo, we have passed in the table columns and data into the table, passed the table into a JScrollPane and then passed the JScrollPane into the JFrame to create the visualisation of the Table in the GUI. To implement custom styling, we need to add a model to the table which we can then
+In our current demo, we have passed in the table columns and data into the table, passed the table into a JScrollPane and then passed the JScrollPane into the JFrame to create the visualisation of the Table in the GUI.
+
+//insert diagram to visualise this so far.
+
+To implement custom styling, we need to add a model to the table which we can then
 </p>
 <p>
 To provide custom styling to the GUI, we can use the TableCellRenderer interface form the Java Swing package. I will create a new class called <code>CustomRenderer</code> to implement the <code>TableCellRenderer</code> and override the getTableCellRendererComponent method.
@@ -141,11 +169,17 @@ To provide custom styling to the GUI, we can use the TableCellRenderer interface
 <p>
 The <code>getTableCellRendererComponent</code> method will take in 6 arguments. These include the table, cell value, boolean isSelected, boolean hasFocus, int row and int column. The arguments provide the method with all the details required to implement bespoke design into the cells for the table.
 </p>
+
+<br>
+<h4>Bonus features from JFrame</h4>
+<p>
+The benefit behind JFrame can be realised from it's ability to transform the table through sorting and view modifications. 
+</p>
 <br>
 <h4>Conclusion</h4>
 <p>
-
-
+The Java swing package provides a 
+The source code from this blog can be found on GitHub <a href="https://github.com/4neesh/DeveloperBlogDemos/tree/master/JavaGui">here</a>. 
 </p>
 
 <br>
