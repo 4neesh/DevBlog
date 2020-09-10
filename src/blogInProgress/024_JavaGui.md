@@ -2,9 +2,9 @@
 title: 'Creating a Java GUI'
 date: 2020-09-14 16:34:00
 author: 'Aneesh Mistry'
-featuredImage: ../images/xxx.jpg
+featuredImage: ../images/024_gui.jpg
 thumbnail: ''
-subtitle: 'Create a GUI with a Java application by using the JFrame and JTable packages.'
+subtitle: 'Create a GUI with a Java application by using the Java Swing package.'
 time: '8'
 tags:
 - Java
@@ -15,8 +15,6 @@ tags:
 &#8226; Explore the Java Swing package to create a GUI with Java.<br>
 &#8226; Understand how JFrame, JTable and Renderer can be used together for custom GUI views.<br>
 &#8226; Create a simple Java GUI to display array data within a column.<br>
-
-
 
 <br>
 <h4>The Java Swing package</h4>
@@ -161,13 +159,28 @@ In our current demo, we have passed in the table columns and data into the table
 
 //insert diagram to visualise this so far.
 
-To implement custom styling, we need to add a model to the table which we can then
+The Java Swing package includes a <code>TableCellRenderer</code> interface for rendering cells within JTable with custom styling. The single overridden method <code>getTableCellRendererComponent</code> takes in arguments such as the table, cell value, isSelected, hasFocus, row and column for evaluation to provide a fine-grained processor of rendering. 
 </p>
 <p>
-To provide custom styling to the GUI, we can use the TableCellRenderer interface form the Java Swing package. I will create a new class called <code>CustomRenderer</code> to implement the <code>TableCellRenderer</code> and override the getTableCellRendererComponent method.
-</p>
-<p>
-The <code>getTableCellRendererComponent</code> method will take in 6 arguments. These include the table, cell value, boolean isSelected, boolean hasFocus, int row and int column. The arguments provide the method with all the details required to implement bespoke design into the cells for the table.
+To use the TableCellRenderer, I will implement in into a new class and override the <code>getTableCellRendererComponent</code> method. From the main class, I will use the <code>setDefaultRenderer</code> method to pass in the String.class argument and an instance of the TableCellRenderer implementation itself:
+
+```java{numberLines:true}
+public class CustomRenderer implements TableCellRenderer {
+
+    @Override
+    public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+
+        return null;
+    }
+}
+
+```
+
+```java{numberLines:true}
+    //main method
+    table.setDefaultRenderer(Object.class, new CustomRenderer());
+
+```
 </p>
 
 <br>
@@ -183,4 +196,4 @@ The source code from this blog can be found on GitHub <a href="https://github.co
 </p>
 
 <br>
-<small style="float: right;" >Picture: xxx, xxx by <a target="_blank" href="https://unsplash.com/@xxx">xxx</small></a><br>
+<small style="float: right;" >Picture: Roma, Italy by <a target="_blank" href="https://unsplash.com/@cristina_gottardi">Cristina Gottardi</small></a><br>
