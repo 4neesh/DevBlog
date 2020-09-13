@@ -3,7 +3,7 @@ title: 'Creating a Java GUI'
 date: 2020-09-14 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/024_gui.jpg
-thumbnail: ''
+thumbnail: '../images/024_structure.png'
 subtitle: 'Create a GUI from a Java application by using the Java Swing package.'
 time: '8'
 tags:
@@ -19,25 +19,24 @@ tags:
 <br>
 <h4>The Java Swing package</h4>
 <p>
-This blog post will use the Java Swing package to create a GUI from array data within a Java application. The data will be formatted into a table within a GUI and will render custom styling upon on values.
+This blog post will use the Java Swing package to create a GUI from array data. The data will be formatted into a table and will render custom styling according to the values.
 </p>
 <p>
 The following three classes from the Swing package are used to create the GUI:<br>
-&#8226; JFrame to create a top-level container for the GUI.<br>
-&#8226; JTable to create and populate a 2-dimensional data within a table.<br>
-&#8226; TableCellRenderer to provide custom formatting to the cells of the table.<br>
+&#8226; JFrame: a top-level container.<br>
+&#8226; JTable: a 2-dimensional table.<br>
+&#8226; TableCellRenderer: custom formatting to the cells of the table.<br>
 </p>
 <p>
-For this blog, the data will come from the English Championship Football table for the 2019-20 season:
+This blog will create a table of the English Championship Football table for the 2019-20 season:
 
 ![Final table output](../../src/images/024_finalTable.png)
-
 </p>
 
 <br>
 <h4>Creating the GUI container</h4>
 <p>
-The <code>JFrame</code> class from the Java Swing package is used to create the GUI container. The class <code>Frame</code> is created to extend JFrame to create an instance. The <code>Frame</code> class has optionally used the Singleton design pattern to ensure we always reference the same container within the application.
+The <code>JFrame</code> class is used to create the GUI container. The class <code>Frame</code> extends JFrame to create an instance. The <code>Frame</code> class has optionally used the Singleton design pattern to ensure we always reference the same container within the application.
 </p>
 <p>
 The Frame class is created with the Singleton design pattern to ensure the application consistently refers to the same GUI instance.
@@ -180,13 +179,12 @@ public class TableCellRendererImpl implements TableCellRenderer {
         return null;
     }
 }
-
 ```
 </p>
 
 
 <p>
-The TableCellRendererImpl class will define an instance of the defaultTableCellRenderer which is used to define returned styled component back to the table. 
+The TableCellRendererImpl class will define an instance of the defaultTableCellRenderer which is used to return a styled component back to the table. 
 
 
 ```java{numberLines:true}
@@ -215,19 +213,18 @@ The TableCellRendererImpl class will define an instance of the defaultTableCellR
 
         return editor;
     }
-
 ```
 </p>
 <p>
 The following business logic is applied to enable the table to reflect the 1st position and final 3 positions in the table:
 Line 8: The <code>editor</code> is instantiated to define the table contents.<br>
-Lines 9 & 10: The basic background and foreground colours are set.<br>
+Lines 9 & 10: The default background and foreground colours are set.<br>
 Lines 12 to 14: A soft background is applied to all even rows for visual effects.<br>
 Lines 15 to 23: The foreground colours are defined based upon the value of the "Pos" column of the row.
 </p>
 
 <p>
-Lastly, the implementation of TableCellRenderer is passed into the table through the <code>setDefaultRenderer</code> method. The first argument of 'Object.class' is used to specify the type 
+Lastly, the implementation of TableCellRenderer is passed into the table through the <code>setDefaultRenderer</code> method. The first argument of 'Object.class' is used to set the default cell renderer for the column class. If the table consisted of an entity class, this could be used as the first argument to provide direct access to the class in the renderer.
 
 ```java{numberLines:true}
     //main method
@@ -235,11 +232,17 @@ Lastly, the implementation of TableCellRenderer is passed into the table through
 
 ```
 </p>
-
+<p>
+The finished GUI will show the table data with custom styling for the first and final 3 rows to highlight the champions and relegated clubs. As a built-in feature, JTable enables the columns to be switched around with a drag and drop to order the fields as desired.
+</p>
 <br>
 <h4>Conclusion</h4>
 <p>
-The Java Swing package provides a 
+The Java Swing package supports the creation of components into a GUI for a Java application. In this blog, JTable has been used to summarise data into a table with further styling from the custom renderer.
+To capacity for creating a GUI with Java extends much further than the JFrame and JTable; the Renderer interface supports dynamic styling and there is capability such as buttons, sub-component design and mouse-listeners.
+</p>
+<p>
+Creating a GUI can prove valuable for resolving data analysis and algorithmic solutions, I would encourage you to explore how the capacity for Java as a front-end component can be used to improve the interaction that can be achieved with Java as a stand-alone application.
 The source code from this blog can be found on GitHub <a href="https://github.com/4neesh/DeveloperBlogDemos/tree/master/JavaGui">here</a>. 
 </p>
 

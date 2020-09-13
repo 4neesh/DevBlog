@@ -12,7 +12,7 @@ tags:
 ---
 <br>
 <strong>Key Takeaways</strong><br>
-&#8226; Look into the core services of AWS.<br>
+&#8226; Understand how into the core services of AWS.<br>
 &#8226; Understand how the services are linked together.<br>
 &#8226; Begin using the AWS console with intent across the services provided.<br>
 
@@ -83,7 +83,7 @@ S3 supports static website hosting. It provides secure, scalable and available a
 AWS Athena allows you to analyse data from S3 buckets in a serverless manner. It is serverless so no clusters are required to use it. It is used to run queries against large volumes of data without having to launch clusters of databases or warehouses to do so. You simply connect Athena to a datastore in S3, specify the schema, and run queries against it. 
 </p>
 <br>
-<h4>Databases: Aurora and DynamoDB</h4>
+<h4>Aurora and DynamoDB</h4>
 <p>
 AWS provides support to serverless databases to be consumed by other AWS services. The tables are scaled and priced on a pay-as-you-go basis. 
 </p>
