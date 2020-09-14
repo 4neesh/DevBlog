@@ -8,13 +8,12 @@ subtitle: 'Create a GUI from a Java application by using the Java Swing package.
 time: '8'
 tags:
 - Java
-- Design
 ---
 <br>
 <strong>Key Takeaways</strong><br>
 &#8226; Explore the Java Swing package to create a GUI with Java.<br>
-&#8226; Understand the Renderer interface can be used to create custom formatting.<br>
-&#8226; Create a Java GUI to display array data into a table.<br>
+&#8226; Understand how the Renderer interface can be used to create custom formatting.<br>
+&#8226; Use JTable to summarise array data into a table.<br>
 
 <br>
 <h4>The Java Swing package</h4>
@@ -28,7 +27,7 @@ The following three classes from the Swing package are used to create the GUI:<b
 &#8226; TableCellRenderer: custom formatting to the cells of the table.<br>
 </p>
 <p>
-This blog will create a table of the English Championship Football table for the 2019-20 season:
+The final GUI will show the English Championship Football table for the 2019-20 season:
 
 ![Final table output](../../src/images/024_finalTable.png)
 </p>
@@ -36,7 +35,7 @@ This blog will create a table of the English Championship Football table for the
 <br>
 <h4>Creating the GUI container</h4>
 <p>
-The <code>JFrame</code> class is used to create the GUI container. The class <code>Frame</code> extends JFrame to create an instance. The <code>Frame</code> class has optionally used the Singleton design pattern to ensure we always reference the same container within the application.
+The <code>JFrame</code> class is extended by the class <code>Frame</code> to create the GUI container. The <code>Frame</code> class has optionally used the Singleton design pattern to ensure we always reference the same container within the application.
 </p>
 <p>
 The Frame class is created with the Singleton design pattern to ensure the application consistently refers to the same GUI instance.
@@ -83,10 +82,10 @@ An alternative to the <code>setSize(x,y)</code> method is <code>pack()</code> wh
 <br>
 <h4>Adding a Table to the GUI</h4>
 <p>
-The JTable class from the Swing package will be used to create the table. The JTable works similarly to a spreadsheet where each cell will have an x and y coordinate which is populated with data. 
+The <code>JTable</code> class from the Swing package will be used to create the table. The JTable works similarly to a spreadsheet where each cell will have an x and y coordinate which is populated with data. 
 </p>
 <p>
-The class <code>TableBuilder</code> will be used to create a JTable. It will contain a static instance of the table which will populate data through the JTable constructor that accepts (Object[][], Object[]) to define the data and columns:
+The class <code>TableBuilder</code> will be used to create a JTable. It will contain a static instance of the table which will populate data through the JTable constructor that accepts (Object[][], Object[]) to define the data and columns respectively:
 
 ```java{numberLines:true}
 public class TableBuilder{
@@ -114,8 +113,7 @@ The JTable class offers further methods that can be used to modify the table inc
 <p>
 The JFrame container is used to display 'Components' that render information from the application. 
 After creating the instance of the JTable in the main method through the TableBuilder class, the table can be added into the JFrame container through as a component.<br> 
-The <code>JScrollPane</code> class provides a scrollable view component for the GUI. From our main method, we will pass our table into a JScrollPane instance which is then added into the JFrame.<br> 
-The JTable we create is passed in as an argument as it extends from Component in the following hierarchy: Component > Container > JComponent > JTable.
+The <code>JScrollPane</code> class provides a scrollable view component for the GUI. From our main method, we will pass our table into a JScrollPane instance which is then added into the JFrame.
 </p>
 
 ![Structure of components](../../src/images/024_structure.png)
@@ -217,14 +215,14 @@ The TableCellRendererImpl class will define an instance of the defaultTableCellR
 </p>
 <p>
 The following business logic is applied to enable the table to reflect the 1st position and final 3 positions in the table:
-Line 8: The <code>editor</code> is instantiated to define the table contents.<br>
-Lines 9 & 10: The default background and foreground colours are set.<br>
-Lines 12 to 14: A soft background is applied to all even rows for visual effects.<br>
-Lines 15 to 23: The foreground colours are defined based upon the value of the "Pos" column of the row.
+Line 6: The <code>editor</code> is instantiated to define the table contents.<br>
+Lines 7 & 8: The default background and foreground colours are set.<br>
+Lines 10 to 12: A soft background is applied to all even rows for visual effects.<br>
+Lines 13 to 21: The foreground colours (red or green) are defined based upon the value of the "Pos" column of the row.
 </p>
 
 <p>
-Lastly, the implementation of TableCellRenderer is passed into the table through the <code>setDefaultRenderer</code> method. The first argument of 'Object.class' is used to set the default cell renderer for the column class. If the table consisted of an entity class, this could be used as the first argument to provide direct access to the class in the renderer.
+Lastly, the implementation of TableCellRenderer is passed into the table through the <code>setDefaultRenderer</code> call from the main method. The first argument of 'Object.class' is used to set the default cell renderer for the column class. If the table consisted of an entity class, this could be used as the first argument to provide direct access to the class in the renderer.
 
 ```java{numberLines:true}
     //main method
@@ -234,15 +232,18 @@ Lastly, the implementation of TableCellRenderer is passed into the table through
 </p>
 <p>
 The finished GUI will show the table data with custom styling for the first and final 3 rows to highlight the champions and relegated clubs. As a built-in feature, JTable enables the columns to be switched around with a drag and drop to order the fields as desired.
+
+![Final table output](../../src/images/024_finalTable.png)
+
 </p>
 <br>
 <h4>Conclusion</h4>
 <p>
 The Java Swing package supports the creation of components into a GUI for a Java application. In this blog, JTable has been used to summarise data into a table with further styling from the custom renderer.
-To capacity for creating a GUI with Java extends much further than the JFrame and JTable; the Renderer interface supports dynamic styling and there is capability such as buttons, sub-component design and mouse-listeners.
+The capacity for creating a GUI with Java extends much further than the JFrame and JTable; the Renderer interface supports dynamic styling and the capability for further components such as buttons and mouse-listeners.
 </p>
 <p>
-Creating a GUI can prove valuable for resolving data analysis and algorithmic solutions, I would encourage you to explore how the capacity for Java as a front-end component can be used to improve the interaction that can be achieved with Java as a stand-alone application.
+Creating a GUI can prove valuable for resolving data analysis and algorithmic solutions; I would encourage you to explore how the capacity for Java as a front-end component can be used to improve user interaction as a stand-alone application.
 The source code from this blog can be found on GitHub <a href="https://github.com/4neesh/DeveloperBlogDemos/tree/master/JavaGui">here</a>. 
 </p>
 

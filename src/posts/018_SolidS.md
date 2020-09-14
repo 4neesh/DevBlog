@@ -159,5 +159,8 @@ Automated testing (unit testing) is typically designed to test the functionality
 The single responsibility principle asserts that each class will have a single defined responsibility and therefore just a single reason to change.<br>
 An application that complies with the SRP will enable the developer to understand the class dependencies and relationships in a more natural sense. The SRP will facilitate the debugging and enhancement of the code as new responsibilities and functionality is introduced.
 </p>
+
+<strong>Series link: Go to the next SOLID principle: <a href="https://aneesh.co.uk/open-closed-principle">Open-Closed Principle</a></strong>
+
 <br>
 <small style="float: right;" >Picture: St. Joseph, IL by <a target="_blank" href="https://unsplash.com/@drice22">Danielle Rice</small></a><br>

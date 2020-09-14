@@ -201,5 +201,7 @@ If you would like to dive deeper into the ways dependency inversion can be appli
 
 </p>
 
+
+
 <br>
 <small style="float: right;" >Picture by <a target="_blank" href="https://unsplash.com/@debidiemski">Deborah Diem</small></a><br>

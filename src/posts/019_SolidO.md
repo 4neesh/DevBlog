@@ -148,5 +148,7 @@ The open-closed principle supports the growth of application behaviours with mai
 When we are designing our applications, it is important to always consider if a behaviour is likely to exist in another manner. The strategy pattern becomes a more and more valuable design to use as the application behaviours and complexity grows with the addition of new behaviours. The three components of the strategy pattern: context, strategy and extension are valuable components to understand and practice as they will appear more and more frequently during application design processes. 
 </p>
 
+<strong>Series link: Go to the next SOLID principle: <a href="https://aneesh.co.uk/liskov-substitution-principle">Liskov Substitution Principle</a></strong>
+
 <br>
 <small style="float: right;" >Picture by <a target="_blank" href="https://unsplash.com/@slangston">Langston</small></a><br>

@@ -134,5 +134,8 @@ The LSP is applied to application design when we consider the <u>behaviours</u> 
 While it may seem natural to extend classes that fit into the "IS A" Object construct, we must consider how the <u>behaviours</u> of a class are inherited, and not just the <u>properties</u>. LSP can be implemented by reviewing the behaviours each class will inherit before adding behaviours to a parent class or extending them, or they can be implemented through unit testing of a parent class with each of their child classes.
 </p>
 
+<strong>Series link: Go to the next SOLID principle: <a href="https://aneesh.co.uk/interface-segregation-principle">Interface segregation Principle</a></strong>
+
+
 <br>
 <small style="float: right;" >Picture by <a target="_blank" href="https://unsplash.com/@zhenhu2424">Zhen Hu</small></a><br>

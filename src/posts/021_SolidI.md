@@ -111,5 +111,7 @@ The interface segregation principle extends upon previous SOLID principles inclu
 The interface segregation principle leverages the inheritance of interfaces to break-down and separate behaviours, while class design enables a class to implement multiple interfaces to loosely regroup the behaviours that are required.
 </p>
 
+<strong>Series link: Go to the next SOLID principle: <a href="https://aneesh.co.uk/dependency-inversion-principle">Dependency Inversion Principle</a></strong>
+
 <br>
 <small style="float: right;" >Picture by <a target="_blank" href="https://unsplash.com/@pkripperprivate">Parker Johnson</small></a><br>
