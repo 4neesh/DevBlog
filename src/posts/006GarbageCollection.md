@@ -8,7 +8,6 @@ subtitle: 'Explore the different types of garbage collectors and how the JVM use
 time: '10'
 tags:
 - Java
-- Performance
 - Memory
 ---
 <br>

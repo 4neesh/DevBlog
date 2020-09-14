@@ -1,13 +1,15 @@
 ---
-title: 'Dependency inversion principle'
+title: 'Data Access Object pattern'
 date: 2020-09-07 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/xxx.jpg
 thumbnail: ''
-subtitle: 'xxx'
-time: 'xx'
+subtitle: 'Use the data access object pattern to isolate the business and persistance layers within a Spring application.'
+time: '8'
 tags:
-- xxx
+- Java
+- Spring
+- Databases
 ---
 <br>
 <strong>Key Takeaways</strong><br>
