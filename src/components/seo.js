@@ -90,11 +90,13 @@ function SEO({
       ]
       .concat(meta)
       .concat(
-        tags.length > 0 ? {
+        [
+          {
           name: `tags`,
           content: tags.join(`, `)
-        }
-        :[]
+          }
+        ]
+        
       )
     }
     />
