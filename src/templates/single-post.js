@@ -18,7 +18,6 @@ const SinglePost = ({ data, pageContext }) => {
       origin = window.location.origin;
     }
     const image = origin + imageSrc
-    console.log(image)
 
 
     return (

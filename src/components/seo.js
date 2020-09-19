@@ -33,7 +33,7 @@ function SEO({ description,subtitle, lang, meta, title, thumbnail }) {
       }}
       title={title}
       description={subtitle}
-      // image={image}
+
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
@@ -47,6 +47,10 @@ function SEO({ description,subtitle, lang, meta, title, thumbnail }) {
         {
           property: `og:description`,
           content: metaDescription,
+        },
+        {
+          property:`og:image`,
+          content:image,
         },
         {
           property: `og:type`,
