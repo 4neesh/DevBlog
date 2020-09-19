@@ -1,5 +1,5 @@
 ---
-title: 'Pass by reference and value'
+title: 'How Java references memory within the stack'
 date: 2020-09-28 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/xxx.jpg
