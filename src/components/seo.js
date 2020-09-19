@@ -11,7 +11,7 @@ function SEO({
   meta, 
   title, 
   thumbnail,
-  tags
+  tags,
 })
   {
   const { site } = useStaticQuery(
@@ -27,7 +27,7 @@ function SEO({
       }
     `
   )
-  
+
   const imageSrc = thumbnail && thumbnail.childImageSharp.sizes.src;
   const metaDescription = description || site.siteMetadata.description;
 
