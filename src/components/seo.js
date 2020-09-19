@@ -66,15 +66,15 @@ function SEO({ description,subtitle, lang, meta, title, thumbnail }) {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: `title`,
         },
         {
           name: `twitter:description`,
-          content: description,
+          content: `description`,
         },
         {
           name: `twitter:image`,
-          content: image,
+          content: `image`,
         },
       ].concat(meta)}
     />
