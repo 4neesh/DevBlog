@@ -10,7 +10,8 @@ function SEO({
   lang, 
   meta, 
   title, 
-  thumbnail 
+  thumbnail,
+  tags
 })
   {
   const { site } = useStaticQuery(
@@ -26,8 +27,10 @@ function SEO({
       }
     `
   )
+  
   const imageSrc = thumbnail && thumbnail.childImageSharp.sizes.src;
   const metaDescription = description || site.siteMetadata.description;
+
   let origin = "https://aneesh.co.uk/"
   if (typeof window !== "undefined"){
     origin = window.location.origin;
@@ -84,7 +87,16 @@ function SEO({
           name: `twitter:image`,
           content: thumbnail,
         },
-      ].concat(meta)}
+      ]
+      .concat(meta)
+      .concat(
+        tags.length > 0 ? {
+          name: `tags`,
+          content: tags.join(`, `)
+        }
+        :[]
+      )
+    }
     />
   )
 }
@@ -100,6 +112,7 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
+  tags: PropTypes.arrayOf(PropTypes.string)
 }
 
 export default SEO
