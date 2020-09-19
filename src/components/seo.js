@@ -93,7 +93,7 @@ function SEO({
         [
           {
           name: `tags`,
-          content: tags.join(`, `)
+          content: tags,
           }
         ]
         
