@@ -11,7 +11,7 @@ function SEO({
   meta, 
   title, 
   thumbnail,
-  tags,
+  
 })
   {
   const { site } = useStaticQuery(
@@ -69,7 +69,7 @@ function SEO({
         },
         {
           name: `twitter:card`,
-          content: `summary`,
+          content: image,
         },
         {
           name: `twitter:creator`,
@@ -85,19 +85,20 @@ function SEO({
         },
         {
           name: `twitter:image`,
-          content: thumbnail,
+          content: image,
         },
       ]
       .concat(meta)
-      .concat(
-        [
-          {
-          name: `tags`,
-          content: tags,
-          }
-        ]
-        
-      )
+      // .concat(
+      //   keywords.length > 0
+      //   ? 
+      //     {
+      //     name: `keywords`,
+      //     content: keywords.join(`, `),
+      //     }
+      //   :[]
+        // 
+      // )
     }
     />
   )
@@ -114,7 +115,7 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
-  tags: PropTypes.arrayOf(PropTypes.string)
+  // keywords: PropTypes.arrayOf(PropTypes.string)
 }
 
 export default SEO

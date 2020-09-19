@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: `Aneesh Mistry | Software Engineer`,
-    description: `Aneesh is a Java software engineer based in London.`,
+    description: `Aneesh is a software engineer within financial services based in London.`,
     author: `Aneesh Mistry`,
-    keywords: `blog, java, spring, algorithms, software development`,
+    keywords: `blog, java, spring, algorithms, software engineer, finance`,
   },
   plugins: [
 
