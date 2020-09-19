@@ -23,6 +23,7 @@ const SinglePost = ({ data, pageContext }) => {
     return (
         <LayoutPost  pageTitle={post.title}>
             <div className="container" id="content" >
+                <head>
             <SEO
                 title={post.title}
                 description={post.subtitle}
@@ -43,6 +44,7 @@ const SinglePost = ({ data, pageContext }) => {
                 <link rel="canonical" href={`${basicUrl}${pageContext.slug}`}/>
               
            </Helmet>
+           </head>
             <Card>
                 {/* <Img className="card-image-top" 
                     fluid={post.featuredImage.childImageSharp.fluid} /> */}
