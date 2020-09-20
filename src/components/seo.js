@@ -47,7 +47,7 @@ function SEO({
       }}
       title={title}
       description={subtitle}
-      
+
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
@@ -72,7 +72,7 @@ function SEO({
         },
         {
           property:`og:image`,
-          content: "https://assets.coderrocketfuel.com/twitter-post-with-node-js.png",
+          content:image,
         },
         {
           property: `og:type`,
@@ -100,7 +100,7 @@ function SEO({
         },
         {
           name: `twitter:image`,
-          content: "https://assets.coderrocketfuel.com/twitter-post-with-node-js.png",
+          content: image,
         },
       ]
       .concat(meta)
