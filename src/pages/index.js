@@ -45,6 +45,7 @@ return(
                 <link rel="canonical" href="https://www.aneesh.co.uk"/>
 
               </Helmet>
+              
               {data.allMarkdownRemark.edges.map(({ node }) => (
                 <Post 
                   key={node.id}
@@ -60,7 +61,7 @@ return(
                 />
               ))}
               <PaginationLinks currentPage={1} numberOfPages={numberOfPages} />
-
+                
 
             </div>
             

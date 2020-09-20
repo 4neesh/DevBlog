@@ -11,7 +11,6 @@ const Post = ({slug, date,  time, fluid, tags,  subtitle }) => (
         <Img  className="card-image-top" fluid={fluid} />
         </Link>
         <CardBody>
-     
             <CardSubtitle>
                 <span >{date}</span> 
                 <span className="float-right"><strong>
@@ -33,6 +32,7 @@ const Post = ({slug, date,  time, fluid, tags,  subtitle }) => (
             <Link to={slug}
                  className=" float-right"><strong>Read more</strong>
                 </Link>
+                
         </CardBody>
 
 

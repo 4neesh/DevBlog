@@ -17,15 +17,6 @@ function SEO({
   const { site } = useStaticQuery(
     graphql`
       query {
-        allMarkdownRemark {
-          edges {
-            node {
-              fields {
-                slug 
-              }
-            }
-          }
-        }
         site {
           siteMetadata {
             title
@@ -40,7 +31,8 @@ function SEO({
   const imageSrc = thumbnail && thumbnail.childImageSharp.sizes.src;
   const metaDescription = description || site.siteMetadata.description;
   const { slugify } = require('../util/utilityFunctions')
-
+  
+  
   let origin = "https://aneesh.co.uk/"
   if (typeof window !== "undefined"){
     origin = window.location.origin;
@@ -95,6 +87,10 @@ function SEO({
         {
           name: `twitter:creator`,
           content: site.siteMetadata.author,
+        },
+        {
+          name:`twitter:site`,
+          content:`@Anee5h`,
         },
         {
           name: `twitter:title`,

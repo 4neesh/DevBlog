@@ -3,7 +3,6 @@ import { graphql, Link } from 'gatsby'
 import SEO from "../components/seo"
 import { slugify } from "../util/utilityFunctions"
 import { Card, CardBody, Badge, CardSubtitle, CardTitle } from 'reactstrap'
-// import Img from "gatsby-image"
 import Helmet from "react-helmet"
 import LayoutPost from '../components/layoutPost'
 
@@ -30,6 +29,7 @@ const SinglePost = ({ data, pageContext }) => {
                 thumbnail={thumbnail}
                 
             />
+          
            <Helmet>
                <title>{post.title}</title>
                <meta name="description" content={post.subtitle}/>
@@ -45,7 +45,7 @@ const SinglePost = ({ data, pageContext }) => {
                 <meta name="twitter:title" content={post.title}/>
                 <meta name="twitter:description" content={post.subtitle}/>
                 <meta name="twitter:image" content={post.thumbnail}/>
-
+                
                 <link rel="canonical" href={`${basicUrl}${pageContext.slug}`}/>
               
            </Helmet>
@@ -96,6 +96,7 @@ const SinglePost = ({ data, pageContext }) => {
                             'https://twitter.com/share?url=' +
                             basicUrl +
                             pageContext.slug +
+                            '/'+
                             '&text=' +
                             post.title +
                             '&via' +
