@@ -37,7 +37,7 @@ function SEO({
     origin = window.location.origin;
   }
 
-  const image = origin + imageSrc
+  const image = `${origin}${imageSrc}`
   var isHome = (title === "Home")
   const url = isHome ? `${origin}`: `${origin}/${slugify(title)}`
   return (
@@ -72,7 +72,7 @@ function SEO({
         },
         {
           property:`og:image`,
-          content: `https://aneesh.co.uk/static/8d7eac5591342d1b24db421fdfd48183/aab46/024_th.png`,
+          content: image,
         },
         {
           property: `og:type`,
@@ -100,7 +100,7 @@ function SEO({
         },
         {
           name: `twitter:image`,
-          content: `https://aneesh.co.uk/static/8d7eac5591342d1b24db421fdfd48183/aab46/024_th.png`,
+          content: image,
         },
       ]
       .concat(meta)
