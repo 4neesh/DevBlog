@@ -1,6 +1,6 @@
 
 import React from "react"
-import PropTypes, { node } from "prop-types"
+import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -46,7 +46,9 @@ function SEO({
   }
 
   const image = origin + imageSrc
-  console.log(`${origin}/${slugify(title)}`)
+  var isHome = (title == "Home")
+  const url = isHome ? `${origin}`: `${origin}/${slugify(title)}`
+  
   return (
     <Helmet
       htmlAttributes={{
@@ -59,7 +61,7 @@ function SEO({
       meta={[
         {
           property: `og:url`,
-          content: `${origin}/${slugify(title)}`,
+          content: `${url}`,
         },
         {
           name: `description`,
