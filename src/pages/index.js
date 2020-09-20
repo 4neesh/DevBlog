@@ -42,6 +42,9 @@ return(
                 <meta property="og:image" content=""/>
                 <meta property="og:locale" content="en_UK"/>
                 <meta property="og:url" content="https://www.aneesh.co.uk"/>
+                <meta name="twitter:card" content="summary_large_image"/>
+                <meta name="twitter:title" content={data.site.siteMetadata.title}/>
+                <meta name="twitter:description" content={data.site.siteMetadata.description}/>
                 <link rel="canonical" href="https://www.aneesh.co.uk"/>
 
               </Helmet>

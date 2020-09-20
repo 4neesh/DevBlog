@@ -102,7 +102,7 @@ function SEO({
         },
         {
           name: `twitter:data1`,
-          content: `${time} minutes read`,
+          content: `${site.siteMetadata.time} minutes read`,
         },
         {
           name: `twitter:image`,
