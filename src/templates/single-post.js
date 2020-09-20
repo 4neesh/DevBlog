@@ -11,12 +11,12 @@ const SinglePost = ({ data, pageContext }) => {
     const basicUrl = "https://aneesh.co.uk/"
     const thumbnail = post.thumbnail
 
-    const imageSrc = thumbnail && thumbnail.childImageSharp.sizes.src;
+    const imageSrc = `${post.thumbnail}${thumbnail.childImageSharp.sizes.src}`;
     let origin = ""
     if (typeof window !== "undefined"){
       origin = window.location.origin;
     }
-    const image = origin + imageSrc
+    const image = `${origin}${imageSrc}`
 
 
     return (
@@ -37,13 +37,13 @@ const SinglePost = ({ data, pageContext }) => {
                <meta property="description" content={post.subtitle}/>
                 <meta name="keywords" content={post.tags}/>
                 <meta property="og:type" content="website"/>
-                <meta property="og:image" content={`${image}`}/>
+                <meta property="og:image" content={image}/>
                 <meta property="og:locale" content="en_UK"/>
                 <meta property="og:url" content={`${basicUrl}${pageContext.slug}`}/>
                 <meta name="twitter:card" content="summary_large_image"/>
                 <meta name="twitter:title" content={post.title}/>
                 <meta name="twitter:description" content={post.subtitle}/>
-                <meta name="twitter:image" content={`${image}`}/>
+                <meta name="twitter:image" content={image}/>
 
                 <link rel="canonical" href={`${basicUrl}${pageContext.slug}`}/>
               
