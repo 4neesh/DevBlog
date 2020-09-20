@@ -3,7 +3,7 @@ title: 'Creating a Java GUI'
 date: 2020-09-14 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/024_gui.jpg
-thumbnail: '../images/024_structure.png'
+thumbnail: '../images/024_th.png'
 subtitle: 'Create a GUI from a Java application by using the Java Swing package.'
 time: '8'
 tags:
