@@ -26,15 +26,15 @@ const SinglePost = ({ data, pageContext }) => {
             <SEO
                 title={post.title}
                 description={post.subtitle}
-                thumbnail={thumbnail}
+                thumbnail={post.thumbnail}
             />
           
            <Helmet>
                <title>{post.title}</title>
                <meta name="description" content={post.subtitle}/>
-               <meta property="og:title" content={post.title} key="ogtitle"/>
-               <meta property="og:description" content={post.description} key="ogdesc"/>
-               <meta property="description" content={post.description}/>
+               <meta property="og:title" content={post.title} />
+               <meta property="og:description" content={post.subtitle} />
+               <meta property="description" content={post.subtitle}/>
                 <meta name="keywords" content={post.tags}/>
                 <meta property="og:type" content="website"/>
                 <meta property="og:image" content={image}/>
@@ -44,7 +44,7 @@ const SinglePost = ({ data, pageContext }) => {
                 <meta name="twitter:title" content={post.title}/>
                 <meta name="twitter:description" content={post.subtitle}/>
                 <meta name="twitter:image" content={image}/>
-                    
+
                 <link rel="canonical" href={`${basicUrl}${pageContext.slug}`}/>
               
            </Helmet>

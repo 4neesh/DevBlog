@@ -11,7 +11,6 @@ function SEO({
   meta, 
   title, 
   thumbnail,
-  time,
 })
   {
   const { site } = useStaticQuery(
@@ -41,7 +40,6 @@ function SEO({
   const image = origin + imageSrc
   var isHome = (title === "Home")
   const url = isHome ? `${origin}`: `${origin}/${slugify(title)}`
-  console.log(image)
   return (
     <Helmet
       htmlAttributes={{
