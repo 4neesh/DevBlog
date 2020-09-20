@@ -72,7 +72,7 @@ function SEO({
         },
         {
           property:`og:image`,
-          content: image,
+          content: `https://aneesh.co.uk/static/c077d20103168955b9bdbaebc1d3ca7d/5a46d/socialCard.png`,
         },
         {
           property: `og:type`,
@@ -100,7 +100,7 @@ function SEO({
         },
         {
           name: `twitter:image`,
-          content: image,
+          content: `https://aneesh.co.uk/static/c077d20103168955b9bdbaebc1d3ca7d/5a46d/socialCard.png`,
         },
       ]
       .concat(meta)
