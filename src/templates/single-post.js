@@ -43,7 +43,7 @@ const SinglePost = ({ data, pageContext }) => {
                 <meta name="twitter:card" content="summary_large_image"/>
                 <meta name="twitter:title" content={post.title}/>
                 <meta name="twitter:description" content={post.subtitle}/>
-                <meta name="twitter:image" content={`${image}`}/>
+                <meta name="twitter:image" content={`${origin}${post.thumbnail}${post.thumbnail.childImageSharp.sizes.src}`}/>
 
                 <link rel="canonical" href={`${basicUrl}${pageContext.slug}`}/>
               
