@@ -5,7 +5,7 @@ import { slugify } from "../util/utilityFunctions"
 import Img from "gatsby-image"
 
 const Post = ({slug, date,  time, fluid, tags,  subtitle }) => (
-
+    
     <Card className="indexCard">
         <Link to={slug}>
         <Img  className="card-image-top" fluid={fluid} />

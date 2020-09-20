@@ -17,7 +17,6 @@ const AboutPage = (props) => {
     <Layout pageTitle="About">
       <div className="container" id="content">
       <SEO title="About" />
-        {/*to add: page on my reading (books, blogs), one on series, and one on my portfolio */}
 
         <Nav tabs>
           <NavItem><NavLink
