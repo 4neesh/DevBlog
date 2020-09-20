@@ -52,7 +52,7 @@ function SEO({
       meta={[
         {
           property: `og:url`,
-          content: `${url}`,
+          content: url,
         },
         {
           name: `author`,
@@ -99,12 +99,8 @@ function SEO({
           content: metaDescription,
         },
         {
-          name: `twitter:data1`,
-          content: `${site.siteMetadata.time} minutes read`,
-        },
-        {
           name: `twitter:image`,
-          content: image,
+          content: "https://assets.coderrocketfuel.com/twitter-post-with-node-js.png",
         },
       ]
       .concat(meta)

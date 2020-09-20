@@ -3,20 +3,12 @@ import { graphql, Link } from 'gatsby'
 import SEO from "../components/seo"
 import { slugify } from "../util/utilityFunctions"
 import { Card, CardBody, Badge, CardSubtitle, CardTitle } from 'reactstrap'
-import Helmet from "react-helmet"
 import LayoutPost from '../components/layoutPost'
 
 const SinglePost = ({ data, pageContext }) => {
     const post = data.markdownRemark.frontmatter
     const basicUrl = "https://aneesh.co.uk/"
-    const thumbnail = post.thumbnail
 
-    const imageSrc = thumbnail && thumbnail.childImageSharp.sizes.src;
-    let origin = ""
-    if (typeof window !== "undefined"){
-      origin = window.location.origin;
-    }
-    const image = origin + imageSrc
 
 
     return (
@@ -26,29 +18,9 @@ const SinglePost = ({ data, pageContext }) => {
             <SEO
                 title={post.title}
                 description={post.subtitle}
-                thumbnail={post.thumbnail}
+                thumbnail={post.thumbnail}                
                    />
-          
-           {/* <Helmet>
-               <title>{post.title}</title>
-               <meta name="description" content={post.subtitle}/>
-               <meta property="og:title" content={post.title} />
-               <meta property="og:description" content={post.subtitle} />
-               <meta property="description" content={post.subtitle}/>
-                <meta name="keywords" content={post.tags}/>
-                <meta property="og:type" content="website"/>
-                <meta property="og:image" content={image}/>
-                <meta property="og:locale" content="en_UK"/>
-                <meta property="og:url" content={`${basicUrl}${pageContext.slug}`}/>
-                <meta name="twitter:card" content="summary_large_image"/>
-                <meta name="twitter:title" content={post.title}/>
-                <meta name="twitter:description" content={post.subtitle}/>
-                <meta name="twitter:image" content={image}/>
-
-                <link rel="canonical" href={`${basicUrl}${pageContext.slug}`}/>
-              
-           </Helmet> */}
-
+        
             <Card>
                 <CardBody>
                 <CardTitle className="postTitle">{post.title}</CardTitle>    
