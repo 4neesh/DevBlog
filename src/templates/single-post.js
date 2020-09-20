@@ -37,13 +37,13 @@ const SinglePost = ({ data, pageContext }) => {
                <meta property="description" content={post.subtitle}/>
                 <meta name="keywords" content={post.tags}/>
                 <meta property="og:type" content="website"/>
-                <meta property="og:image" content={post.thumbnail}/>
+                <meta property="og:image" content={post.thumbnail.childImageSharp.sizes.src}/>
                 <meta property="og:locale" content="en_UK"/>
                 <meta property="og:url" content={`${basicUrl}${pageContext.slug}`}/>
                 <meta name="twitter:card" content="summary_large_image"/>
                 <meta name="twitter:title" content={post.title}/>
                 <meta name="twitter:description" content={post.subtitle}/>
-                <meta name="twitter:image" content={post.thumbnail}/>
+                <meta name="twitter:image" content={post.thumbnail.childImageSharp.sizes.src}/>
 
                 <link rel="canonical" href={`${basicUrl}${pageContext.slug}`}/>
               
