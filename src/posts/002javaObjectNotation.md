@@ -33,6 +33,8 @@ The Big O does not reflect the performance of an algorithm. The performance of a
 The graph below illustrates the 5 classifications an algorithm can have:
 </p>
 
+![Big O categorization](../../src/images/socialCard.png)
+
 
 ![Big O categorization](../../src/images/002Graph.png)
 
