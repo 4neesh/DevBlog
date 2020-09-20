@@ -41,6 +41,11 @@ const SinglePost = ({ data, pageContext }) => {
                 <meta property="og:image" content={image}/>
                 <meta property="og:locale" content="en_UK"/>
                 <meta property="og:url" content={`${basicUrl}${pageContext.slug}`}/>
+                <meta name="twitter:card" content="summary_large_image"/>
+                <meta name="twitter:title" content={post.title}/>
+                <meta name="twitter:description" content={post.subtitle}/>
+                <meta name="twitter:image" content={post.thumbnail}/>
+
                 <link rel="canonical" href={`${basicUrl}${pageContext.slug}`}/>
               
            </Helmet>

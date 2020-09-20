@@ -49,7 +49,7 @@ function SEO({
   const image = origin + imageSrc
   var isHome = (title === "Home")
   const url = isHome ? `${origin}`: `${origin}/${slugify(title)}`
-  
+  console.log(image)
   return (
     <Helmet
       htmlAttributes={{
