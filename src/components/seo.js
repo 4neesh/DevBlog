@@ -1,6 +1,6 @@
 
 import React from "react"
-import PropTypes from "prop-types"
+import PropTypes, { node } from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -11,12 +11,20 @@ function SEO({
   meta, 
   title, 
   thumbnail,
-  
 })
   {
   const { site } = useStaticQuery(
     graphql`
       query {
+        allMarkdownRemark {
+          edges {
+            node {
+              fields {
+                slug 
+              }
+            }
+          }
+        }
         site {
           siteMetadata {
             title
@@ -30,13 +38,15 @@ function SEO({
 
   const imageSrc = thumbnail && thumbnail.childImageSharp.sizes.src;
   const metaDescription = description || site.siteMetadata.description;
+  const { slugify } = require('../util/utilityFunctions')
 
   let origin = "https://aneesh.co.uk/"
   if (typeof window !== "undefined"){
     origin = window.location.origin;
   }
+
   const image = origin + imageSrc
-  console.log(image)
+  console.log(`${origin}/${slugify(title)}`)
   return (
     <Helmet
       htmlAttributes={{
@@ -47,6 +57,10 @@ function SEO({
 
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
+        {
+          property: `og:url`,
+          content: `${origin}/${slugify(title)}`,
+        },
         {
           name: `description`,
           content: metaDescription,
@@ -97,7 +111,7 @@ function SEO({
       //     content: keywords.join(`, `),
       //     }
       //   :[]
-        // 
+      // 
       // )
     }
     />

@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import AboutImage from "../components/aboutImage"
-import { TabContent, TabPane, Nav, NavItem, NavLink, Card, CardBody, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
+import { TabContent, TabPane, Nav, NavItem, NavLink, Card, CardBody, CardTitle, Row } from 'reactstrap';
 import classnames from 'classnames';
 
 
