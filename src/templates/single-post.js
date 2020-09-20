@@ -29,7 +29,7 @@ const SinglePost = ({ data, pageContext }) => {
                 thumbnail={post.thumbnail}
                    />
           
-           <Helmet>
+           {/* <Helmet>
                <title>{post.title}</title>
                <meta name="description" content={post.subtitle}/>
                <meta property="og:title" content={post.title} />
@@ -37,21 +37,19 @@ const SinglePost = ({ data, pageContext }) => {
                <meta property="description" content={post.subtitle}/>
                 <meta name="keywords" content={post.tags}/>
                 <meta property="og:type" content="website"/>
-                <meta property="og:image" content={`${image}`}/>
+                <meta property="og:image" content={image}/>
                 <meta property="og:locale" content="en_UK"/>
                 <meta property="og:url" content={`${basicUrl}${pageContext.slug}`}/>
                 <meta name="twitter:card" content="summary_large_image"/>
                 <meta name="twitter:title" content={post.title}/>
                 <meta name="twitter:description" content={post.subtitle}/>
-                <meta name="twitter:image" content={`${origin}${post.thumbnail}${post.thumbnail.childImageSharp.sizes.src}`}/>
+                <meta name="twitter:image" content={image}/>
 
                 <link rel="canonical" href={`${basicUrl}${pageContext.slug}`}/>
               
-           </Helmet>
+           </Helmet> */}
 
             <Card>
-                {/* <Img className="card-image-top" 
-                    fluid={post.featuredImage.childImageSharp.fluid} /> */}
                 <CardBody>
                 <CardTitle className="postTitle">{post.title}</CardTitle>    
 
@@ -72,12 +70,6 @@ const SinglePost = ({ data, pageContext }) => {
                     <br></br>
                 </CardBody>
             </Card>
-
-
-
-
-
-
 
             <h3 className="text-center">Share this post</h3>
             <div className="text-center social-share-links">
