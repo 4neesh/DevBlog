@@ -11,6 +11,7 @@ function SEO({
   meta, 
   title, 
   thumbnail,
+  time,
 })
   {
   const { site } = useStaticQuery(
@@ -46,7 +47,7 @@ function SEO({
   }
 
   const image = origin + imageSrc
-  var isHome = (title == "Home")
+  var isHome = (title === "Home")
   const url = isHome ? `${origin}`: `${origin}/${slugify(title)}`
   
   return (
@@ -62,6 +63,10 @@ function SEO({
         {
           property: `og:url`,
           content: `${url}`,
+        },
+        {
+          name: `author`,
+          content: site.siteMetadata.author,
         },
         {
           name: `description`,
@@ -97,7 +102,11 @@ function SEO({
         },
         {
           name: `twitter:description`,
-          content: description,
+          content: metaDescription,
+        },
+        {
+          name: `twitter:data1`,
+          content: `${time} minutes read`,
         },
         {
           name: `twitter:image`,
