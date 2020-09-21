@@ -14,8 +14,8 @@ tags:
 <br>
 <strong>Key Takeaways</strong><br>
 &#8226; Understand when to use the DAO pattern and the benefits it brings to software design.<br>
-&#8226; Explore the use of Spring data JPA as the repository layer.<br>
-&#8226; Implement the DAO pattern to support different repository layer implementations.<br>
+&#8226; Explore the use of Spring data JPA as a repository layer.<br>
+&#8226; Implement the DAO pattern to support multiple repository layer implementations.<br>
 
 <br>
 <h4>The Data Access Object (DAO) pattern</h4>
@@ -29,11 +29,11 @@ The DAO pattern uses dependency inversion to loosely couple the service layer fr
 
 <h4>A top-down view of the DAO pattern</h4>
 <p>
-The DAO pattern is divided between the service layer which intercepts a request from the controller, and the repository layer which is used within the service layer to persist the change within the data store.
+The DAO pattern is divided between the service layer which intercepts a request from the controller, and the repository layer which is used within the service layer to persist the change to the data store.
 
 ![Layers of the application](../../src/images/025_layers.png)
 
-The DAO pattern introduces an abstracted relationship between the service layer and the repository layer such that the service layer becomes agnostic to the implementations of the data store as implemented by the DAO implementations:
+The DAO pattern introduces an abstracted relationship between the service layer and the data stores such that the service layer becomes agnostic to the implementations of the data store by the DAO:
 
 ![Layers of the application with DAO pattern](../../src/images/025_daoPattern.png)
 
@@ -64,7 +64,7 @@ The DAO defines 6 key participants involved with the creation and execution of a
 <br>
 <h4>Implementing the DAO</h4>
 <p>
-The DAO is implemented as an interface for the CRUD operations to be performed upon the datastore. The implementations of the interface enable the growth of the application to support further data stores as the DAO interface is passed as a service to the service layer to use.
+The DAO is implemented as an interface for the CRUD operations to be performed upon the data store. The implementations of the interface enable the growth of the application to support further data stores as the DAO interface is passed as a service to the service layer to use.
 </p>
 <p>
 The DAO interface exists below with descriptive operations to be performed upon the database:
@@ -84,7 +84,7 @@ public interface PropertyDao {
 
 ```
 
-the DAO Implementation will use the Hibernate SessionFactory to create transactions to the data store:
+The DAO Implementation uses the Hibernate SessionFactory to create transactions to the data store:
 
 ```java{numberLines:true}
 @Repository
@@ -130,7 +130,7 @@ public class PropertyDaoImpl implements PropertyDao {
 <br>
 <h4>Implementing the service layer</h4>
 <p>
-The service layer will be used to obtain requests from the controller to be passed down to the repository layer.
+The service layer is used to obtain requests from the controller to be passed down to the repository layer.
 
 ```java{numberLines:true}
 @Service
@@ -191,10 +191,10 @@ public interface JpaRepositoryImpl extends JpaRepository<Property, Integer>{
 	
 }
 ```
-The <code>JpaRepositoryImpl</code> extends the <code>JpaRepository</code> interface and introduces two generic values for the interface. The <code>Property</code> generic is used to identify the entity each record of the datastore will coincide with. The <code>Integer</code> identifies the type the primary key is for the table.
+The <code>JpaRepositoryImpl</code> extends the <code>JpaRepository</code> interface and introduces two generic values for the interface. The <code>Property</code> generic is used to identify the entity each record of the data store will coincide with. The <code>Integer</code> identifies the type the primary key is for the table.
 </p>
 <p>
-The interface is autowired into an application and provides the following methods amongst many others to support interaction with the data store:<br>
+The interface is autowired into the service layer and provides the following methods amongst many others to support interaction with the data store:<br>
 &#8226; <code>findAll()</code> to return a list of all records as Property instances from the data store.<br>
 &#8226; <code>findById(int id)</code> to return a single record as a Property instance, identified by the primary key.<br>
 &#8226; <code>save(Property)</code> to update or save a record to the data store.<br>
@@ -202,7 +202,7 @@ The interface is autowired into an application and provides the following method
 
 <p>
 By implementing Spring data JPA into the application, the DAO is pre-defined to cover all the actions required to the data store. As a result, the extension of behaviour from the interface can be defined where the methods are hidden by the JPA abstraction. We can create a new extension of the interface with a different Entity Object as the Generic to define a new data store for the repository layer.<br>
-The Spring data package encapsulates all method calls to the interface with @Transaction behind the scenes. The service layer will no longer require the @Transactional annotation as it is in-built. 
+The Spring data package encapsulates all method calls to the interface with @Transaction behind the scenes. As a result, the service layer will no longer require the @Transactional annotation upon each method. 
 </p>
 <p>
 The updated Service layer will use the Spring data JPA interface:
@@ -245,11 +245,11 @@ As the extension of the repository layer is enabled by the DAO, we can use alter
 <h4>Conclusion</h4>
 <p>
 The data access object pattern is used to separate the service layer from the repository layer. As a result, multiple implementations of the repository layer can be used to represent different data stores and abstractions of the repository layer.<br>
-The Hibernate and Spring data Spring packages support different designs of the repository layer to provide varying abstractions of the Session and Transactions made to the data store. Furthermore, the DAO pattern enables the support of multiple data stores and repository layer.
+The Hibernate and Spring data packages support multiple designs of the repository layer to provide varying abstractions of the transactions made to the data store. Furthermore, the DAO pattern enables the support of multiple data stores and repository layers.
 </p>
 <p>
-This blog has used the DAO pattern to implement two different strategies for the repository layer that can be easily used within the same abstraction to represent interactions with different data stores and transaction semantics for the same service layer in an open-closed design.
-You can find the source code from this blog on GitHub <a href="https://github.com/4neesh/DeveloperBlogDemos/tree/master/DAO">here</a>.
+This blog has used the DAO pattern to support the growth of an application with multiple data stores. Two different strategies have been used to demonstrate how the DAO can be applied to different levels of abstractions of the repository layer. The specific support for database sessions and transactions can therefore be delegated to the implementations of the DAO to enable the repository layer to remain open to extension.
+You can find the source code from this blog on GitHub <a target="_blank" href="https://github.com/4neesh/DeveloperBlogDemos/tree/master/DAO">here</a>.
 </p>
 
 <br>
