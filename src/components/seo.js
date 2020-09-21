@@ -72,7 +72,7 @@ function SEO({
         },
         {
           property:`og:image`,
-          content: `https://aneesh.co.uk/static/c077d20103168955b9bdbaebc1d3ca7d/5a46d/socialCard.png`,
+          content: `https://aneesh.co.uk/static/e325f4b55d67b2ffd2ff1ca7ef887ee8/5a46d/socialCard.png`,
         },
         {
           property: `og:type`,
@@ -100,7 +100,7 @@ function SEO({
         },
         {
           name: `twitter:image`,
-          content: `https://aneesh.co.uk/static/c077d20103168955b9bdbaebc1d3ca7d/5a46d/socialCard.png`,
+          content: `https://aneesh.co.uk/static/e325f4b55d67b2ffd2ff1ca7ef887ee8/5a46d/socialCard.png`,
         },
       ]
       .concat(meta)
