@@ -1,13 +1,13 @@
 ---
-title: 'Using recursion in java'
+title: 'Applying continuous integration to teams'
 date: 2020-10-05 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/xxx.jpg
 thumbnail: ''
-subtitle: 'xxx'
-time: 'xx'
+subtitle: 'Understand how the value of continuous integration can be realised amongst teams of multiple developers.'
+time: '8'
 tags:
-- xxx
+- DevOps
 ---
 <br>
 <strong>Key Takeaways</strong><br>
