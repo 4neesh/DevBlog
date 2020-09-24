@@ -12,9 +12,9 @@ tags:
 ---
 <br>
 <strong>Key Takeaways</strong><br>
-&#8226; Understand the challenges of integrating code within teams of multiple developers.<br>
-&#8226; Review the phases of an application build and the responsibilities of each phase.<br>
-&#8226; Understand the benefits of creating a continuous integration pipeline for code builds.<br>
+&#8226; Understand the processes .<br>
+&#8226; .<br>
+&#8226; .<br>
 
 ![Merge sort step 2](../../src/images/011MergeSort2.png)
 
@@ -22,75 +22,66 @@ tags:
 <br>
 <h4>What is continuous delivery?</h4>
 <p>
-Continuous integration is a development practice that automates the compiling, building, testing and packaging of source code. As software is more and more frequently updated, the cost of integrating code into the latest package can be timely to the developer. Furthermore, the cooperation between teams of multiple developers and the presence of merge conflicts can make the integration of source code even more burdensome.
+In my previous <a target="_blank" href="">blog</a>, I have introduced continuous integration (CI) as a solution to automate the building and verification of code updates within teams of developers into software. Continuous delivery (CD) extends from CI for verifying the integration of the software into testing and production environments to be ready for deployment. CD ensures there is always a deployment-ready build to be sent into production. 
 </p>
 <p>
-
+While CI aims to return feedback to the development team on new application builds, CD aims to manage the movement of the software through various testing environments and into production in a safe, sustainable and predictable manner. While CI ensures the code build has been tested to perform individually as operational units, the combined behaviour and performance of the software is evaluated within CD.
 </p>
 <p>
-As a solution, continuous integration enables code builds to be performed autonomously. The process for compiling, testing, building and packaging code is performed through an automated pipeline that reduces the burden for the developers. As a result, continuous integration encourages the practice of small and frequent integrations amongst developers to lower the potential of  conflict from merge conflicts. Continuous integration encourages integrations to be made on a daily basis. 
-</p>
-
-<br>
-<h4>Build tools</h4>
-<p>
-//introduce maven (mention Ant, Gradle etc.)
-
+Similarly to the CI where code merges that are frequent and small are beneficial to minimise the pain of poor integrations, continuous delivery aims to minimise the pain to releases from code builds. <br>
+Continuous delivery is different from continuous deployment as it requires a manual approval stage to move the build into production whereas continuous deployment is fully automated end-to-end.
 </p>
 
 <br>
-<h4>The lifecycle of a build</h4>
+<h4>The tests performed</h4>
 <p>
-The lifecycle of a build takes source code and compiles it into a packaged artifact. The build contains three different in-built lifecycle: default, clean, and site.<br>
-&#8226; default: handles project deployment.<br>
-&#8226; clean: cleans the project by removing the files generated from the previous build.<br>
-&#8226; site: creates the project's site documentation.<br>
-</p>
-<p>
-The build lifecycle consists of multiple phases that enable the developer to have control over how the code is compiled:<br>
-&#8226; validate: validate the project includes all the necessary information.<br>
-&#8226; compile: compile the source code of the project.<br>
-&#8226; test: test the compiles source code with the unit testing framework.<br>
-&#8226; package: package the compiled code into a distributable format (such as a war or jar file).<br>
-&#8226; verify: perform checks upon quality through integration tests.<br>
-&#8226; install: install the package into the local repository.<br>
-&#8226; deploy: copy the final package into the the remote repository to be shared.<br>
-
-Each phase can be run individually, however the latter stages will always run the former stages before itself. Therefore the install phase will run the validate, compile, test, package and verify phases before install.
+CD enables development teams to automate testing beyond the unit tests of CI and to include UI testing, load testing, integration tests, API testing and more to ensure the build has been thoroughly tested to identify issues that may arise when used. 
 </p>
 
 <p>
-//go over compiling code
+<strong>Integration testing</strong> involves the combination of multiple software modules together to be tested in unison. While unit testing involves the testing of individual components together, 
+
+</p>
+<p>
+User acceptance testing
+
 </p>
 
-<p>
-//go over testing code
-</p>
 
+
+plan
+
+//talk about the different tests and environments that may be used
+//talk about the value the tests provide to the team and to the company
+//talk about the difficulty of this (time and effort to deploy)
+//talk about the features of jenkins that support the automated delivery of software through the environments (stash, parallel execution, research for more)
+
+
+<br>
+<h4>Pipeline stash</h4>
 <p>
-// go over packaging code.
+A stash is a temporary archive in the pipeline. In this case, it is valuable to have for integration testing.
+The code and dependencies can be stashed for faster testing and pipeline use.
+The tests can be performed using integration testing frameworks and then to output the result. 
+
 </p>
 
 <br>
-<h4>CICD tools</h4>
+<h4>Execute parallel testing</h4>
 <p>
-//introducing jenkins + bamboo
+We can increase the node allocation to perform parallel integration testing.
+When a new node is defined, it is possible for it to point to a different workspace (and therefore source code).
+Therefore we need to guarantee the node will access the same workspace.
+When a node is defined, you can remove the file in the there and use the stash.
 
-//building pipelines
+'unstash' will unload all the content in the workspace of the node to ensure consistency.
 
-//access to console output
-
-//information on build times
-
-//automating the build process
-(poll scm or push from GitHub)
-
-//shows all the changes made. 
-
-//you can then configure email notifications to inform the user of the latest build success and failures (exception handling)
 </p>
-<p>
 
+<br>
+<h4>Pipeline agents</h4>
+<p>
+Here you can define new agents, executors, remote locations, labels and usage statistics. Within the node, you can pass in the label of different agent. 
 </p>
 <br>
 <h4>Conclusion</h4>

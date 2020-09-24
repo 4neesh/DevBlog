@@ -60,15 +60,60 @@ place all pipeline in node{
 </p>
 <p>
 Build triggers: poll SCM
+
+Then configure GitHub repo by passing in the url of Jenkins. If using localhost, then use ngrok for hosting a port on the internet. 
+
+Then sending a push request to the repository will trigger the webhook from GitHub to be sent to Jenkins for the pipeline.
 </p>
 
+<br>
+<h4>Sending email notifications</h4>
+<p>
+
+</p>
 
 <h4>Create a delivery pipeline</h4>
 <p>
+First we want to define a temporary archive: stash
 
+```
+stash name: 'all',
+        includes: '**',
+        excludes: 'test/**'
+```
 
 </p>
 
+<br>
+<h4>Execute parallel testing</h4>
+<p>
+We can increase the node allocation 
+
+```
+node{
+
+    sh 'ls'
+    sh 'rm -rf * '
+    unstash 'all'
+    sh 'ls'
+
+}
+```
+To start parallel working:
+use parallel
+
+```
+parallel firstBranch: {
+
+    
+
+}, secondBranch: {
+
+}
+
+```
+
+</p>
 <br>
 <h4>Conclusion</h4>
 <p>

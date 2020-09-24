@@ -1,5 +1,5 @@
 ---
-title: 'Applying continuous integration to teams'
+title: 'The value of Continuous integration'
 date: 2020-10-05 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/xxx.jpg
@@ -23,7 +23,7 @@ tags:
 <br>
 <h4>What is continuous integration?</h4>
 <p>
-Continuous integration is a development practice that automates the combined actions of compiling, building, testing and packaging of source code. As software is more and more frequently updated, the cost of integrating code into the latest package can be timely to the developer. Furthermore, the cooperation between teams of multiple developers and the presence of merge conflicts can make the integration of source code even more burdensome.
+Continuous integration is a development practice that automates the combined actions of compiling, building, testing and packaging of source code into software. As software is more and more frequently updated, the cost of integrating code into the latest package can be timely to the developer. Furthermore, the cooperation between teams of multiple developers and the presence of merge conflicts can make the integration of source code even more burdensome.
 </p>
 <p>
 Merge conflicts arise when multiple developers attempt to integrate code changes that are applied to the same file(s). Each developer may have a different idea for design and implementation of the class or method and therefore whether the code updates implement the same behaviour or not, a further stage of merge conflict must be manually reviewed before the code is updated. As integrations are performed for larger and larger updates at a single time, the potential for merge conflicts increase and the size of the conflicts can become larger and more complex across classes.</p>
@@ -79,8 +79,6 @@ A continuous integration pipeline is used to stitch the various phases of the co
 </p>
 <p>
 The CI platform is used as a centralised repository of build reports, status' and historical build updates for a project. Whereas before a CI platform was used, the console output and report from a build phase remained local to the developers machine, the console output is now available for review by all members of the team.
-
-
 
 </p>
 <p>
