@@ -9,7 +9,6 @@ time: '6'
 tags:
 - DevOps
 - Jenkins
-- Java
 ---
 <br>
 <strong>Key Takeaways</strong><br>

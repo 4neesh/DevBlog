@@ -96,7 +96,7 @@ const AboutPage = (props) => {
                   <CardTitle className="text-center"><h2>Reading List</h2></CardTitle>
                   <CardBody>
                     <p>
-                    The below list of resources are are a combination of books, blogs and videos I find most useful for learning.
+                    The below list of resources are a combination of books, blogs and videos I find most useful for learning.
                     </p>
 
                     <u><strong>Java</strong></u>
