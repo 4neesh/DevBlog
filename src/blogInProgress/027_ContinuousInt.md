@@ -13,33 +13,33 @@ tags:
 <br>
 <strong>Key Takeaways</strong><br>
 &#8226; Understand the challenges of integrating code between multiple developers.<br>
-&#8226; Review the phases of an application build and the responsibilities of each phase.<br>
+&#8226; Review the phases of an application build and the responsibility of each phase.<br>
 &#8226; Understand the benefits of creating a continuous integration pipeline for code builds.<br>
 
 <br>
 <h4>What is continuous integration?</h4>
 <p>
-Continuous integration is a development practice that automates the combined actions of compiling, building, testing and packaging source code into software. As software is frequently updated, the cost of integrating code into the latest build can be timely to the developer. Furthermore, the cooperation between teams of multiple developers and the presence of merge conflicts can make the integration of code even more burdensome.
+Continuous integration is a development practice that automates the combined actions of compiling, building, testing and packaging source code into software. As software is frequently updated, the cost of integrating code into the latest build can be timely to the developer. Furthermore, the coordination between teams of multiple developers and the presence of merge conflicts can make the integration of code even more burdensome.
 </p>
 <p>
-Merge conflicts arise when multiple developers attempt to integrate code changes that are applied to the same file(s). Multiple developers may have a different idea for design and implementation of the class or method and therefore whether the code updates implement the same behaviour or not, a merge conflict must be manually reviewed before the code is updated to the single version. Merge conflicts become increasingly likely as larger integrations are performed at a single time. Therefore by streamlining the process for code integration, smaller integrations are encouraged and the opportunity for merge conflicts decrease.</p>
+Merge conflicts arise when multiple developers attempt to integrate code changes that are applied to the same file(s). Multiple developers may have a different idea for the implementation of a module and therefore a merge conflict must be manually reviewed before the code is updated to the single version. Merge conflicts become increasingly likely as larger integrations are performed at a single time.</p>
 <p>
-Continuous integration enables code builds to be performed autonomously and quickly. The process for compiling, testing, building and packaging code is performed through an automated pipeline. As a result, continuous integration encourages the practice of small, daily integrations amongst developers to lower the potential of merge conflicts. 
+Continuous integration enables code builds to be performed autonomously and quickly. The process for compiling, testing, building and packaging code is performed through an automated pipeline. As a result, continuous integration encourages the practice of small, daily integrations amongst developers to lower the likelihood and impact of merge conflicts. 
 </p>
 
 <br>
 <h4>Build tools</h4>
 <p>
-Build tools automate the individual processes of creating executable applications from the source code. There are individual phases that are used within build tools to separately compile, build, test, package and deploy source code. Some of the popular build tools used are Ant, Maven and Gradle.
+Build tools automate the individual processes of creating executable builds from the source code. There are individual phases that are used within build tools to separately compile, build, test, package and deploy source code. Some of the popular build tools used are Ant, Maven and Gradle.
 </p>
 
 <br>
 <h4>The lifecycle of a build</h4>
 <p>
-The build contains three different in-built life-cycles that : default, clean, and site.<br>
+The build contains three different in-built life-cycles that define how a build is constructed: default, clean, and site.<br>
 &#8226; default: handles project deployment.<br>
 &#8226; clean: cleans the project by removing the files generated from the previous build.<br>
-&#8226; site: creates the project's site documentation.<br>
+&#8226; site: creates the project's site documentation and reports.<br>
 </p>
 <p>
 The build lifecycle consists of multiple phases that enable the developer to have control over how the code is compiled:<br>
@@ -52,8 +52,8 @@ The build lifecycle consists of multiple phases that enable the developer to hav
 &#8226; deploy: copy the final package into the the remote repository to be shared.
 </p>
 <p>
-Each lifecycle phase can be run individually, however the former stages will always be run prior to itself. For example, running the install phase will inadvertently run the validate, compile, test, package and verify phases before install.<br>
-The continuous integration phases consist of compile, test and package. Continuous integration is only concerned with the phases up to package, these are explained to a further depth for a java project:
+Each lifecycle phase can be run individually, however the former stages will always be run prior to the phase defined. For example, running the install phase will inadvertently run the validate, compile, test, package and verify phases before install.<br>
+The continuous integration phases are only relevant up to the package phase. Continuous integration is only concerned with the phases up to package, these are explained to a further depth for a java project:
 </p>
 
 <p>

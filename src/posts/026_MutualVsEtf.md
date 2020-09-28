@@ -105,7 +105,7 @@ The creation and redemption mechanism of the ETF enable the shares of the ETF to
 Pooled funds offer investors the opportunity to diversify their investments and to reduce their exposure to the volatility of a single security. The mutual fund and exchange traded fund are two popular investment funds that endorse different investment strategies to create varied risk exposure and returns for the investor.
 </p>
 
-![Comparison table between mutual fund and ETF]('../../src/images/026_table.png)
+![Comparison table between mutual fund and ETF]('../../src/images/026_table.png')
 
 <p>
 By understanding the differences between fund structures, active and passive management and associate costs, it can become easier to differentiate funds by their objectives and suitability to the investors goals.
