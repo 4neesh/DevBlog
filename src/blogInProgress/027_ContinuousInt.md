@@ -53,17 +53,25 @@ The build lifecycle consists of multiple phases that enable the developer to hav
 </p>
 <p>
 Each lifecycle phase can be run individually, however the former stages will always be run prior to the phase defined. For example, running the install phase will inadvertently run the validate, compile, test, package and verify phases before install.<br>
-The continuous integration phases are only relevant up to the package phase. Continuous integration is only concerned with the phases up to package, these are explained to a further depth for a java project:
+The continuous integration phases are only relevant up to the package; these are explained further depth for a java project:
 </p>
 
+<p>
+<strong>Validate</strong> will not perform any actions unless a 'goal' is specified for this phase within the POM.xml file. A simple validation check could reflect the version naming conventions, artifact ids, descriptions and purpose of each class is defined with JavaDocs etc.  
+</p>
 <p>
 <strong>Compile</strong> will take the source code of the .java files and compile them into bytecode (.class) files for the JVM to later execute at runtime. The JIT Java compiler will then convert the bytecode into machine code to be executed.
 </p>
 <p>
-<strong>Test</strong> will compile the unit test code into bytecode and run each of the unit tests for the project.
+<strong>Test</strong> will compile the unit test code into bytecode and run each of the unit tests for the project. If a test were to fail, the lifecycle will end.
 </p>
 <p>
-<strong>Package</strong> will take the compiled code from the .class files and package them into a executable format such as a .jar file.
+<strong>Package</strong> will take the compiled code from the .class files and package them into a executable format such as a .jar file. The pacakge phase is to be defined within the POM.xml file. For example:
+
+```
+
+
+```
 </p>
 
 <br>
