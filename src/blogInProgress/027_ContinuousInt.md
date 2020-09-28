@@ -1,5 +1,5 @@
 ---
-title: 'The value of Continuous integration'
+title: 'The problem Continuous integration solves'
 date: 2020-10-05 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/xxx.jpg
@@ -69,7 +69,25 @@ The continuous integration phases are only relevant up to the package; these are
 <strong>Package</strong> will take the compiled code from the .class files and package them into a executable format such as a .jar file. The pacakge phase is to be defined within the POM.xml file. For example:
 
 ```
-
+ <plugin>
+    <artifactId>maven-assembly-plugin</artifactId>
+    <configuration>
+        <descriptorRefs>
+            <descriptorRef>jar</descriptorRef>
+        </descriptorRefs>
+        <archive>
+            <manifestFile>src/main/java/META-INF/MANIFEST.MF</manifestFile>
+        </archive>
+    </configuration>
+    <executions>
+        <execution>
+            <phase>package</phase>
+            <goals>
+                <goal>single</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin>
 
 ```
 </p>
@@ -77,34 +95,47 @@ The continuous integration phases are only relevant up to the package; these are
 <br>
 <h4>Continuous integration tools</h4>
 <p>
-Jenkins is an open source automation server that can be used to create pipelines for code integration. Another popular software tool is the Atlassian Bamboo tool. Both tools support the creation of automated pipelines to support continuous integration amongst teams of developers.
+CI tools can be used to streamline the process of compiling, building, testing and packaging software within teams. The tools provide an automated pipeline that can execute each of the phases 
+while provided appropriate feedback, metrics and outcomes of each build as configured. <strong>Jenkins</strong> is a popular open source automation server that offers the capacity of continuous integration 
+for software systems as well as other convenient plugins that can optimise the pipeline for feedback and diagnostics. 
 </p>
 <p>
-A continuous integration pipeline is used to stitch the various phases of the code integration into a sequential production line to integrate code to be delivered by the continuous delivery phase. The goal behind the pipelines is to support the constant flow of software updates from all members of the team, to reduce the time it takes to integrate the code, and thus to encourage the frequent updates of code by the team. A continuous pipeline, as offered by Jenkins and Bamboo however offers much more than just stitching  activities together. 
+A continuous integration pipeline is used to stitch the various phases of code integration into a production line to be delivered into environments. The goal behind the pipelines is to support the constant flow of software updates from all members of the team, to reduce the time it takes to integrate the code, and thus to encourage the frequent updates of code.
 </p>
 <p>
 The CI platform is used as a centralised repository of build reports, status' and historical build updates for a project. Whereas before a CI platform was used, the console output and report from a build phase remained local to the developers machine, the console output is now available for review by all members of the team.
-
 </p>
+<br>
+<h4>Jenkins support for CI</h4>
 <p>
-Jenkins can also offer support into the build times for each phase to help diagnose bottlenecks and to understand the evolution of build times for the project. Jenkins supports the use of concurrent builds and therefore can be evaluated by the team for faster build times.
+Jenkins can offer support into the build times for each phase to help diagnose bottlenecks and to understand the evolution of build times for the project. Jenkins supports the use of concurrent builds and therefore can be evaluated by the team for faster build times.
 In the Jenkins UI, the pipeline can be broken down visually to illustrate the most time-consuming activities to be later reviewed and addressed. You can define stages within the pipeline to segment the data pipeline for developers.
+
+![Stage report from Jenkins](../../src/images/027_stages.png)
 
 </p>
 <p>
 Jenkins can also be integrated with Git repositories to be initiated automatically from a git push or periodically on a daily basis. The shared control of project builds can be distributed to each developer while supporting team-wide visibility of the builds and updates as they are made.
 The changes made by each build are then shown in the changes section of Jenkins.
+
+![Git trigger in Jenkins](../../src/images/027_trigger.png)
+
 </p>
 <p>
-Lastly, Jenkins and other CI platforms support the use of email configuration and other notification services to 
-//you can then configure email notifications to inform the user of the latest build success and failures (exception handling)
+Lastly, Jenkins and other CI platforms support the use of email configuration and other notification services to notify the relevant teams and individuals upon completed builds or, more importantly, build failures for end-to-end exception handling and efficiency.
+
+
 
 </p>
 <br>
 <h4>Conclusion</h4>
 <p>
-
-
+Continuous integration is a valuable framework used within DevOps with the objective of reducing the friction behind code updates across teams and streamlining the process for 
+building a new artefact to be taken through delivery. Continuous integration can be defined by a single pipeline that performs each action upon the.
+</p>
+<p>
+Continuous integration tools can be used to build pipelines that automate the process for integration code updates into builds in a centralised environment.<br>
+Jenkins is one such tool that can be used to build interactive reports to obtain an insight to the step-by-step process for builds. Jenkins also provides useful plugins to trigger builds, visualise performance reports and send email notifications upon events. 
 </p>
 
 <br>
