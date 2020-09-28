@@ -12,9 +12,9 @@ tags:
 ---
 <br>
 <strong>Key Takeaways</strong><br>
-&#8226; Understand the processes .<br>
-&#8226; .<br>
-&#8226; .<br>
+&#8226; Understand the importance of functional testing a build.<br>
+&#8226; Identify the difficulties that arise with functional testing across environments.<br>
+&#8226; Review the benefits of using Jenkins for continuous delivery.<br>
 
 ![Merge sort step 2](../../src/images/011MergeSort2.png)
 

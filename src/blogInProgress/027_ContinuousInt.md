@@ -108,24 +108,30 @@ The CI platform is used as a centralised repository of build reports, status' an
 <br>
 <h4>Jenkins support for CI</h4>
 <p>
-Jenkins can offer support into the build times for each phase to help diagnose bottlenecks and to understand the evolution of build times for the project. Jenkins supports the use of concurrent builds and therefore can be evaluated by the team for faster build times.
-In the Jenkins UI, the pipeline can be broken down visually to illustrate the most time-consuming activities to be later reviewed and addressed. You can define stages within the pipeline to segment the data pipeline for developers.
+With the use of the scripting language <i>groovy</i> and an abundance of plugins, Jenkins provides the opportunity to customise the output of each build to provide insight and functionality to the pipeline.
+</p>
+<p>
+Jenkins can offer support into the build times for each phase to diagnose bottlenecks and to understand the implication of pipeline updates to the project. Jenkins supports the use of concurrent builds and can therefore be leveraged to resolve bottlenecks from independent stages.<br>
+The graphic below provides a clear visualisation of the individual stages that can be defined within the groovy script.
 
 ![Stage report from Jenkins](../../src/images/027_stages.png)
 
 </p>
 <p>
-Jenkins can also be integrated with Git repositories to be initiated automatically from a git push or periodically on a daily basis. The shared control of project builds can be distributed to each developer while supporting team-wide visibility of the builds and updates as they are made.
-The changes made by each build are then shown in the changes section of Jenkins.
+Project build can be triggered within Jenkins in a variety of ways:
 
 ![Git trigger in Jenkins](../../src/images/027_trigger.png)
 
+Jenkins can be integrated with Git repositories to initiate builds from commits. You can also set-up periodic builds to run in a more structured manner. As a centralised build tool between teams, the triggers for the builds can be used to share control of the pipeline across all teams to build as frequently, or infrequently, as desired.
 </p>
 <p>
-Lastly, Jenkins and other CI platforms support the use of email configuration and other notification services to notify the relevant teams and individuals upon completed builds or, more importantly, build failures for end-to-end exception handling and efficiency.
+Jenkins also supports exception handling within the pipeline. The console provides detailed log messages on each build:
 
+![Git trigger in Jenkins](../../src/images/027_console1.png)
 
+![Git trigger in Jenkins](../../src/images/027_console2.png)
 
+Exceptions can be acted upon with email alerts for build successes and failures to alert the relevant teams and individuals for an end-to-end exception handling process to the software. 
 </p>
 <br>
 <h4>Conclusion</h4>
