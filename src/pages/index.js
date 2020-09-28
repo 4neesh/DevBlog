@@ -9,12 +9,12 @@ import ReactGa from 'react-ga'
 
 function IndexPage () {
 
-  useEffect(() => {
-    ReactGa.initialize('UA-167453984-1')
+  // useEffect(() => {
+  //   ReactGa.initialize('UA-167453984-1')
 
-    ReactGa.pageview('/')
+  //   ReactGa.pageview('/')
 
-  }, [])
+  // }, [])
 
   const postsPerPage = 4;
   let numberOfPages
