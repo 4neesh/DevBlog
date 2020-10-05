@@ -2,7 +2,7 @@
 title: 'The problem Continuous integration solves'
 date: 2020-10-05 16:34:00
 author: 'Aneesh Mistry'
-featuredImage: ../images/xxx.jpg
+featuredImage: ../images/027_taba.jpg
 thumbnail: ''
 subtitle: 'Understand how the value of continuous integration can be realised amongst teams of multiple developers.'
 time: '6'
@@ -145,4 +145,4 @@ Jenkins is one such tool that can be used to build interactive reports to obtain
 </p>
 
 <br>
-<small style="float: right;" >Picture: xxx, xxx by <a target="_blank" href="http">xxx</small></a><br>
+<small style="float: right;" >Picture: Taba, Egypt by <a target="_blank" href="https://unsplash.com/@rawanyasser">Rawan Yasser</small></a><br>
