@@ -55,7 +55,7 @@ A mutual fund has it's shares traded at the end of each trading day and is often
 </p>
 <p>
 The price of the mutual fund is derived from the average value of the investments that it holds. 
-The 'Net Asset Value' is used to define the price of each share from the mutual fund calculated as the market value of all assets divided by the total number of fund shares.<br>
+The 'Net Asset Value' is used to define the price of each share from the mutual fund calculated as the market value of all assets less the liabilities divided by the total number of fund shares in circulation.<br>
 For example if mutual fund 'M1' contains:<br>
 5 shares of A at £3<br>
 10 shares of B at £5<br>

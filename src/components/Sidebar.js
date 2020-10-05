@@ -72,6 +72,11 @@ class Sidebar extends React.Component{
                   </Button>
                 </li>
                 <li>
+                  <Button className="tagButton" href={`/tag/devops`}>
+                    DevOps 
+                  </Button>
+                </li>
+                <li>
                   <Button className="tagButton" href={`/tag/engineering`}>
                     Engineering 
                   </Button>
@@ -87,8 +92,13 @@ class Sidebar extends React.Component{
                   </Button>
                 </li>
                 <li>
-                  <Button className="tagButton" href={`/tag/memory`}>
-                    Memory 
+                  <Button className="tagButton" href={`/tag/jenkins`}>
+                    Jenkins 
+                  </Button>
+                </li>
+                <li>
+                  <Button className="tagButton" href={`/tag/jvm`}>
+                    JVM 
                   </Button>
                 </li> 
                 <li>
