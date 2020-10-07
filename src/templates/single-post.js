@@ -8,7 +8,6 @@ import SharePost from '../components/sharePost'
 
 const SinglePost = ({  data }) => {
     const post = data.markdownRemark.frontmatter
-    const url = data.site.siteMetaData.siteUrl
     return (
         <LayoutPost  pageTitle={post.title}>
             <div className="container" id="content" 
