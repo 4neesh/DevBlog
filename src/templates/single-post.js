@@ -6,9 +6,8 @@ import { Card, CardBody, Badge, CardSubtitle, CardTitle } from 'reactstrap'
 import LayoutPost from '../components/layoutPost'
 import SharePost from '../components/sharePost'
 
-const SinglePost = ({ data, pageContext }) => {
+const SinglePost = ({ data }) => {
     const post = data.markdownRemark.frontmatter
-    const basicUrl = "https://aneesh.co.uk/"
 
     return (
         <LayoutPost  pageTitle={post.title}>

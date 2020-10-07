@@ -7,18 +7,13 @@ import PaginationLinks from "../components/PaginationLinks"
 const postList = props => {
 
     const posts = props.data.allMarkdownRemark.edges
-    // const { tag } = pageContext
-    // const { totalCount } = data.allMarkdownRemark
     const {currentPage, numberOfPages} = props.pageContext
-    // const pageHeader = `${totalCount} post${totalCount === 1 ? '' : 's'} tagged "${tag}"`
 
 
     return (
 
-        // <Layout pageTitle={pageHeader}>
-        <Layout>
+<Layout>
       <div className="container" id="content" >
-        {/* <h3>{pageHeader}</h3> */}
         {posts.map(({ node }) => (
           <Post
             key={node.id}
