@@ -32,13 +32,13 @@ function SEO({
   const imageSrc = thumbnail && thumbnail.childImageSharp.sizes.src;
   const metaDescription = description || site.siteMetadata.description;
   const { slugify } = require('../util/utilityFunctions')
-
   let origin = "https://aneesh.co.uk/"
   if (typeof window !== "undefined"){
     origin = window.location.origin;
   }
 
-  
+  const imageOg = origin + imageSrc
+
   var isHome = (title === "Home")
   const url = isHome ? `${origin}`: `${origin}/${slugify(title)}`
   return (
@@ -73,7 +73,7 @@ function SEO({
         },
         {
           property:`og:image`,
-          content: `${site.siteMetadata.siteUrl}${slugify(title)}twitter-card.jpg`,
+          content: imageOg,
         },
         {
           property: `og:type`,
@@ -101,7 +101,7 @@ function SEO({
         },
         {
           name: `twitter:image`,
-          content: imageSrc,
+          content: imageOg,
         },
       ]
       .concat(meta)
