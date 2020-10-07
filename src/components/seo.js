@@ -32,14 +32,13 @@ function SEO({
   const imageSrc = thumbnail && thumbnail.childImageSharp.sizes.src;
   const metaDescription = description || site.siteMetadata.description;
   const { slugify } = require('../util/utilityFunctions')
-  
-  
+
   let origin = "https://aneesh.co.uk/"
   if (typeof window !== "undefined"){
     origin = window.location.origin;
   }
 
-  const image = `${origin}${imageSrc}`
+  
   var isHome = (title === "Home")
   const url = isHome ? `${origin}`: `${origin}/${slugify(title)}`
   return (
@@ -74,7 +73,7 @@ function SEO({
         },
         {
           property:`og:image`,
-          content: `https://aneesh.co.uk/static/e325f4b55d67b2ffd2ff1ca7ef887ee8/5a46d/socialCard.png`,
+          content: `${site.siteMetadata.siteUrl}${slugify(title)}twitter-card.jpg`,
         },
         {
           property: `og:type`,

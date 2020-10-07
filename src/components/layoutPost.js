@@ -18,6 +18,7 @@ const LayoutPost = ({ children }) => (
         site {
           siteMetadata {
             title
+            siteUrl
           }
         }
       }

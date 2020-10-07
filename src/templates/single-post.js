@@ -6,18 +6,18 @@ import { Card, CardBody, Badge, CardSubtitle, CardTitle } from 'reactstrap'
 import LayoutPost from '../components/layoutPost'
 import SharePost from '../components/sharePost'
 
-const SinglePost = ({ data }) => {
+const SinglePost = ({  data }) => {
     const post = data.markdownRemark.frontmatter
-
+    const url = data.site.siteMetaData.siteUrl
     return (
         <LayoutPost  pageTitle={post.title}>
-            <div className="container" id="content" >
+            <div className="container" id="content" 
+>
               
             <SEO
                 title={post.title}
                 description={post.subtitle}
                 thumbnail={post.thumbnail}
-                          
                    />
         
             <Card>
@@ -52,6 +52,12 @@ const SinglePost = ({ data }) => {
 
 export const postQuery = graphql`
     query blogPostBySlug($slug: String!){
+        site {
+            siteMetadata {
+              title
+              siteUrl
+            }
+          }
         markdownRemark(fields:{slug: {eq : $slug}}){
             id
             html
