@@ -19,11 +19,11 @@ const AboutPage = (props) => {
       <SEO title="About" />
 
         <Nav tabs>
-          <NavItem><NavLink
+          <NavItem style={{cursor:'pointer'}}><NavLink
             className={classnames({ active: activeTab === '1' })}
             onClick={() => { toggle('1'); }}
           >About me</NavLink></NavItem>
-          <NavItem><NavLink
+          <NavItem style={{cursor:'pointer'}}><NavLink
             className={classnames({ active: activeTab === '2' })}
             onClick={() => { toggle('2'); }}
           >Reading list</NavLink></NavItem>

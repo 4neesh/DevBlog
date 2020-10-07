@@ -17,7 +17,7 @@ const PrivacyPolicy = () => {
 
                         <h3>Personal Information Sharing</h3>
                         <p>
-                            This Privacy Policy applies to visitors to our site <a href="https://aneesh.co.uk/">https://aneesh.co.uk/</a>.
+                            This Privacy Policy applies to visitors to our site <a rel="noopener noreferrer"href="https://aneesh.co.uk/">https://aneesh.co.uk/</a>.
                         </p>
                         <h5>MailChimp</h5>
                         <p>
@@ -37,7 +37,7 @@ const PrivacyPolicy = () => {
                             MailChimp collects its data by using these data sources:
                             The email address is provided by the subscriber. Also, when a subscriber opens our email or clicks a link found from our email, MailChimp updates the open and click statistics of the email in question.
                             A list of emails sent to the student is updated by MailChimp when we send a new email to the subscribers of our newsletter.
-                            You can find more information about MailChimp <a href="https://mailchimp.com/legal/privacy/" target="_blank">here</a>.
+                            You can find more information about MailChimp <a rel="noopener noreferrer" href="https://mailchimp.com/legal/privacy/" target="_blank">here</a>.
                         </p>
                         <h5>Google Analytics</h5>
                         <p>
@@ -48,9 +48,9 @@ const PrivacyPolicy = () => {
 
                             Google analytics collects data by deploying analytics
                             cookies when the website is visited thereby providing insight to page viewership. The Google privacy statement
-                            can be found <a href="https://www.google.com/intl/en/policies/privacy/" target="_blank">here</a>.
+                            can be found <a rel="noopener noreferrer" href="https://www.google.com/intl/en/policies/privacy/" target="_blank">here</a>.
                             You can opt-out of Google Analytics
-                             <a href="https://tools.google.com/dlpage/gaoptout" target="_blank"> here</a>.
+                             <a rel="noopener noreferrer"href="https://tools.google.com/dlpage/gaoptout" target="_blank"> here</a>.
                         </p>
 
                     </CardBody>
