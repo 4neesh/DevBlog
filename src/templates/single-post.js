@@ -9,8 +9,6 @@ const SinglePost = ({ data, pageContext }) => {
     const post = data.markdownRemark.frontmatter
     const basicUrl = "https://aneesh.co.uk/"
 
-
-
     return (
         <LayoutPost  pageTitle={post.title}>
             <div className="container" id="content" >
@@ -18,7 +16,8 @@ const SinglePost = ({ data, pageContext }) => {
             <SEO
                 title={post.title}
                 description={post.subtitle}
-                thumbnail={post.thumbnail}                
+                thumbnail={post.thumbnail}
+                          
                    />
         
             <Card>

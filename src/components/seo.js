@@ -21,12 +21,14 @@ function SEO({
             title
             description
             author
+            siteUrl
           }
         }
       }
     `
   )
 
+  
   const imageSrc = thumbnail && thumbnail.childImageSharp.sizes.src;
   const metaDescription = description || site.siteMetadata.description;
   const { slugify } = require('../util/utilityFunctions')
@@ -100,7 +102,7 @@ function SEO({
         },
         {
           name: `twitter:image`,
-          content: `https://aneesh.co.uk/static/e325f4b55d67b2ffd2ff1ca7ef887ee8/5a46d/socialCard.png`,
+          content: `${site.siteMetadata.siteUrl}${slugify(title)}twitter-card.jpg`,
         },
       ]
       .concat(meta)
