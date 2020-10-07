@@ -57,7 +57,6 @@ exports.createPages = async ({ actions, graphql }) => {
         tags = tags.concat(edge.node.frontmatter.tags)
       }
     })
-    //console.log(tags)
 
     exports.onCreateNode = async({node, actions}) =>{
       const { createNodeField } = actions

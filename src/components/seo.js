@@ -101,7 +101,7 @@ function SEO({
         },
         {
           name: `twitter:image`,
-          content: `${site.siteMetadata.siteUrl}${slugify(title)}twitter-card.jpg`,
+          content: imageSrc,
         },
       ]
       .concat(meta)

@@ -71,7 +71,7 @@ module.exports = {
               //background: require.resolve('./content/assets/base.png'), // path to 1200x630px file or hex code, defaults to black (#000000)
               titleFontSize: 96, // default
               subtitleFontSize: 60, // default
-              useFrontmatterSlug: false // default, if true it will use the slug defined in the post frontmatter
+              useFrontmatterSlug: true // default, if true it will use the slug defined in the post frontmatter
             },
           },
         
@@ -137,8 +137,6 @@ module.exports = {
         // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+
   ],
 }
