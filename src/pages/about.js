@@ -83,9 +83,10 @@ const AboutPage = (props) => {
                     Golf has been a hobby from a young age that I carry through today; at the height
                     of my amateur career, I represented my respective University Athletic Union as well as Middlesex
                     County in tournaments across the UK. I currently have a handicap of 3.
-  </p>
-
+  </p>        
+  <div style={{width:'50%'}}>
                   <AboutImage />
+                  </div>
                 </CardBody>
               </Card>
             </Row>
