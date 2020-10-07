@@ -25,6 +25,7 @@ text-decoration: underline;
 font-weight: bold;
 padding-bottom: 1rem;
 }
+
 code{
   color:white;
   background-color: black;
@@ -96,17 +97,13 @@ background-color:$main;
 }
 .stickyHeaderBar{
   background-color:$main;
-  height:220px;
-  padding-top: 45px;
-  padding-bottom: 20px;
+  height:175px;
   padding-left: 20px;
   padding-right: 20px;
   display:flex;
   flex-direction: row;
-  transition: 1s;
   color: black;
-  margin: 0auto;
-
+  margin-top: 45px; //sit sticky bar under navbar
   }
   .stickyHeaderBar .stickyHeaderImage{
     flex:0 0 170px;
@@ -121,11 +118,9 @@ background-color:$main;
     float: left;
     margin:0;
     text-align: center;
-    font-size: 12px;    
-    left: 50%;
-    top:50%;
-    padding:0;
+    padding:0.5rem;
     vertical-align: middle;
+    width:100%; 
   }
 
   .hideSideBar{
@@ -218,7 +213,7 @@ text-transform: uppercase;
 }
 @media  (min-width: 366px) {
   .stickyHeaderText{
-    font-size: 17px;
+    font-size: 4vw;
     
   }
   .newslettertitle{
@@ -227,10 +222,6 @@ text-transform: uppercase;
   }
 }
 @media  (min-width: 406px) {
-  .stickyHeaderText{
-    font-size: 18px;
-    
-  }
   .newslettertitle{
    
     font-size: 18px;
@@ -238,10 +229,6 @@ text-transform: uppercase;
 }
 @media  (min-width: 440px) {
 
-  .stickyHeaderText{
-    font-size: 20px;
-    
-  }
   .newslettertitle{
    
     font-size: 18px;
@@ -249,94 +236,46 @@ text-transform: uppercase;
 }
 @media  (min-width: 490px) {
 
-  .stickyHeaderText{
-    font-size: 22px;
-    
-  }
   .newslettertitle{
    
     font-size: 18px;
   }
 }
 @media  (min-width: 550px) {
-
   .stickyHeaderText{
-    font-size: 24px;
+    font-size: 3.5vw;
     
   }
-  .newslettertitle{
-   
-    font-size: 18px;
-  }
-}
 
-@media  (min-width: 630px) {
+}
+@media  (min-width: 800px) {
 
   .stickyHeaderText{
-    font-size: 25px;
-    
-  }
-  .newslettertitle{
-   
-    font-size: 18px;
-  }
-}
-
-@media (max-width:766px){
-
-  // .navbar {
-  
-  //   height: 45px;
-  // }
-
-}
-
-@media  (min-width: 770px) {
-
-  .stickyHeaderText{
-    font-size: 28px;
-    
-  }
-  .newslettertitle{
-   
-    font-size: 18px;
-  }
-}
-@media  (min-width: 978px) {
-
-  .stickyHeaderText{
-    font-size: 30px;
-    
-  }
-  
-  .newslettertitle{
-   
-    font-size: 18px;
-  }
-  
-}
-@media  (min-width: 998px) {
-
-  .stickyHeaderText{
-    font-size: 30px;
+    font-size: 3vw;
     
   }
 }
-@media  (min-width: 1010px) {
 
-  .stickyHeaderText{
-    font-size: 31px;
-    
-  }
-}
 @media  (min-width: 1210px) {
 
   .stickyHeaderText{
-    font-size: 34px;
+    font-size: 2.5vw;
     
   }
 }
+@media  (min-width: 1500px) {
 
+  .stickyHeaderText{
+    font-size: 2vw;
+    
+  }
+}
+@media  (min-width: 1900px) {
 
+  .stickyHeaderText{
+    font-size: 1.5vw;
+    
+  }
+}
 
 

@@ -18,6 +18,8 @@ class Sidebar extends React.Component{
     ||
     window.location.href === "https://aneesh.co.uk"  
     ||
+    window.location.href === "http://localhost:8000/"  
+    ||
     window.location.href.includes("tag")
     ||
     window.location.href.includes("page")
