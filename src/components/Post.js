@@ -7,7 +7,7 @@ import Img from "gatsby-image"
 const Post = ({slug, date,  time, fluid, tags,  subtitle }) => (
     
     <Card className="indexCard">
-        <Link to={slug}>
+        <Link to={`/${slug}`}>
         <Img  className="card-image-top" fluid={fluid} />
         </Link>
         <CardBody>
