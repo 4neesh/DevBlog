@@ -54,7 +54,8 @@ module.exports = {
                 
             },
           },
-          {
+          // basic social card below
+           {
             resolve: `gatsby-remark-social-cards`,
             options: {
               title: {
@@ -71,9 +72,25 @@ module.exports = {
                 y: 260, 
                 size: 32,
               },
-              background: '#85a0d6'
+              background: '#6db3e8'
             }
           }
+          // {
+            
+          //     resolve: `gatsby-remark-twitter-cards`,
+          //     options: {
+          //       title: 'developer blog',
+          //       separator: '|', 
+          //       author: 'Aneesh Mistry',
+          //       background: require.resolve('./src/images/social-card-background.jpg'), // path to 1200x630px file
+          //       fontColor: '#0d1b94', 
+          //       titleFontSize: 160, 
+          //       subtitleFontSize: 75,
+          //       fontStyle: 'monospace', // default
+          //       fontFile: require.resolve("./src/images/TitilliumWeb-Regular.ttf"), 
+
+          //     },
+          // },
         ]
       }
     },
