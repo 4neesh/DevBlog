@@ -27,9 +27,6 @@ Nevertheless, I am creating this website for my enjoyment and with the hope that
 Enjoy!
 </p>
 
-![Aneesh Mistry Developer Blog](../../src/images/socialCard.png)
-
-
 <br>
 <small style="float: right;" >Picture: London Bridge, England by <a target="_blank" href="https://unsplash.com/@ashkya">Robert Tudor</small></a><br>
 
