@@ -3,7 +3,6 @@ title: 'Exploring the AWS Services'
 date: 2020-09-28 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/xxx.jpg
-thumbnail: '../images/_th.png'
 subtitle: 'A look into the core services provided by AWS and other competing cloud providers'
 time: '8'
 tags:

@@ -3,7 +3,6 @@ title: 'Collecting a map in the Stream API'
 date: 2020-06-08 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/010Bastrop.jpg
-thumbnail: '../images/010Bastroptn.jpg'
 subtitle: 'Use the Stream API from Java 8 to navigate and transform a Map collection.'
 time: '8'
 tags:

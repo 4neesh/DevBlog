@@ -3,7 +3,6 @@ title: 'xxx'
 date: 2020-09-28 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/xxx.jpg
-thumbnail: '../images/_th.png'
 subtitle: 'A review and comparison of the most common sorting algorithms: merge sort, bubble sort and quick sort.'
 time: '10'
 tags:

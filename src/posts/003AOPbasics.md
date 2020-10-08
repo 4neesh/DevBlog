@@ -3,7 +3,6 @@ title: 'Implementing AOP in a Spring Application'
 date: 2020-04-20 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/003Rio.jpg
-thumbnail: '../images/003Pointcuttn.jpg'
 subtitle: 'Apply aspect-orientated programming to a Spring application to support cross-cutting behaviours in a clean and modular design.'
 time: '15'
 tags:

@@ -3,7 +3,6 @@ title: 'Open-closed principle'
 date: 2020-08-10 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/019_langston.jpg
-thumbnail: '../images/019_th.png'
 subtitle: 'Software components must be open for extension, but closed to modification. This blog reviews how the open-closed principle can be implemented by design using the Strategy pattern.'
 time: '8'
 tags:

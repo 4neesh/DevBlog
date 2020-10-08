@@ -3,7 +3,6 @@ title: 'Exploring logarithm in computer science'
 date: 2020-06-15 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/011Serengeti.jpg
-thumbnail: '../images/011Serengeti.jpg'
 subtitle: 'Explore the context of logarithms with data structures and understand why a base logarithm of 2 is implicit with Computer Science algorithms.'
 time: '6'
 tags:

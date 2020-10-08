@@ -3,7 +3,6 @@ title: 'How Java uses the heap and stack'
 date: 2020-09-28 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/029_dv.jpg
-thumbnail: '../images/_th.png'
 subtitle: 'Explore how the heap and stack space differ and how the JVM enables Objects to be referenced within the application.'
 time: '6'
 tags:

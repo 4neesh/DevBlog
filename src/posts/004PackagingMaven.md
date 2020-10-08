@@ -3,7 +3,6 @@ title: 'Packaging and logging a Java application'
 date: 2020-04-27 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/004MachuPicchu.jpg
-thumbnail: '../images/004MPtn.jpg'
 subtitle: 'Create JAR files to package your Java application and implement logging to provide transparency into runtime activity.'
 time: '10'
 tags:

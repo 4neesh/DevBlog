@@ -3,7 +3,6 @@ title: 'Understanding investment bank services'
 date: 2020-09-07 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/023_wall.jpg
-thumbnail: '../images/023_wall.jpg'
 subtitle: 'An introduction to financial services and the divisions of an investment bank.'
 time: '10' 
 tags:

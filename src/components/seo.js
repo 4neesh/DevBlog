@@ -10,7 +10,6 @@ function SEO({
   lang, 
   meta, 
   title, 
-  thumbnail,
 })
   {
   const { site } = useStaticQuery(
@@ -29,7 +28,6 @@ function SEO({
   )
 
   
-  const imageSrc = thumbnail && thumbnail.childImageSharp.sizes.src;
   const metaDescription = description || site.siteMetadata.description;
   const { slugify } = require('../util/utilityFunctions')
   let origin = "https://aneesh.co.uk/"
@@ -37,7 +35,6 @@ function SEO({
     origin = window.location.origin;
   }
 
-  const imageOg = origin + imageSrc
 
   var isHome = (title === "Home")
   const url = isHome ? `${origin}`: `${origin}/${slugify(title)}`

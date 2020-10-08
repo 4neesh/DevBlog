@@ -17,7 +17,6 @@ const SinglePost = ({  pageContext, data }) => {
             <SEO
                 title={post.title}
                 description={post.subtitle}
-                thumbnail={post.thumbnail}
                 subtitle={post.subtitle}
                    />
         
@@ -69,13 +68,6 @@ export const postQuery = graphql`
                 author
                 date(formatString: "Do MMM YYYY")
                 tags
-                thumbnail {
-                    childImageSharp {
-                      sizes(maxWidth: 600) {
-                        ...GatsbyImageSharpSizes
-                      }
-                    }
-                  }
                 featuredImage{
                     childImageSharp{
                       fluid(maxWidth: 600){

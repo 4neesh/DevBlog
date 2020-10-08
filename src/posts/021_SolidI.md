@@ -3,7 +3,6 @@ title: 'Interface segregation principle'
 date: 2020-08-24 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/021_parker.jpg
-thumbnail: '../images/021_th.png'
 subtitle: 'Interface segregation ensures the behaviours of an interface that are to be implemented are specifically defined to a single responsibility.'
 time: '5'
 tags:

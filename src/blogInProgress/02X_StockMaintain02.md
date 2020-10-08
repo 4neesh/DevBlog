@@ -3,7 +3,6 @@ title: 'Spring cloud task'
 date: 2020-06-01 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/xxx.png
-thumbnail: ''
 subtitle: 'xxx'
 time: '6'
 tags:

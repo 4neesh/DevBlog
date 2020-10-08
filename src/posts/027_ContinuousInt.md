@@ -3,7 +3,6 @@ title: 'How continuous integration helps developers'
 date: 2020-10-05 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/027_taba.jpg
-thumbnail: '../images/027_taba.jpg'
 subtitle: 'Understand how the value of continuous integration can be realised amongst teams of multiple developers.'
 time: '6'
 tags:

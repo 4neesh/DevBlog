@@ -3,7 +3,6 @@ title: 'Data Access Object pattern'
 date: 2020-09-21 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/025_kyoto.jpg
-thumbnail: '../images/025th.png'
 subtitle: 'Use the data access object pattern to isolate the service and repository layers within a Spring application.'
 time: '8'
 tags:

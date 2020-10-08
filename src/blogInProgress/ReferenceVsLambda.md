@@ -3,7 +3,6 @@ title: 'Using method references and lambda expressions'
 date: 2020-06-01 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/xxx.png
-thumbnail: ''
 subtitle: 'Understand the key differences and advantages between the method reference and lambda expressions when using Java.'
 time: 'xx'
 tags:

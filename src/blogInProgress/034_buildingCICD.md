@@ -3,7 +3,6 @@ title: 'Build a CICD pipeline'
 date: 2020-06-01 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/xxx.png
-thumbnail: ''
 subtitle: 'Use Jenkins to create a CICD pipeline.'
 time: '8'
 tags:

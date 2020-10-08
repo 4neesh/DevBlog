@@ -3,7 +3,6 @@ title: 'Implementing chaining with a hash table'
 date: 2020-05-18 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/007_Bariloche.jpg
-thumbnail: '../images/007ChainedDiatn.jpg'
 subtitle: 'Create a hash table that uses chaining to resolve hash collisions and rehashing to enforce an optimal load factor.'
 time: '8'
 tags:

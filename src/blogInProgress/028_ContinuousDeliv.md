@@ -3,7 +3,6 @@ title: 'How continuous delivery helps developers'
 date: 2020-10-12 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/028_yosemite.jpg
-thumbnail: ''
 subtitle: 'Understand how the value of continuous delivery can be realised amongst teams of multiple developers.'
 time: '8'
 tags:

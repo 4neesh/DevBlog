@@ -3,7 +3,6 @@ title: 'Resolving hash collisions'
 date: 2020-05-04 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/005Riobamba.jpg
-thumbnail: '../images/005Closedtn.jpg'
 subtitle: 'Understand how hash functions are used with hash collections and the different strategies for resolving hash collisions.'
 time: '8'
 tags:

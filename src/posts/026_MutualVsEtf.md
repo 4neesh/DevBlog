@@ -3,7 +3,6 @@ title: 'Comparing the mutual fund and exchange traded fund'
 date: 2020-09-28 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/026_marina.jpg
-thumbnail: '../images/_th.png'
 subtitle: 'Explore how mutual funds and exchange traded funds are created and traded through exchanges.'
 time: '8'
 tags:

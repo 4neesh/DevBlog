@@ -3,7 +3,6 @@ title: 'Dependency inversion principle'
 date: 2020-08-31 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/022_Winterthur.jpg
-thumbnail: ''
 subtitle: 'Dependency inversion enables loose-coupling of services to promote reusable modules and mitigate the risk of side effects from changes to low level classes.'
 time: '8'
 tags:

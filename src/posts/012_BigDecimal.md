@@ -3,7 +3,6 @@ title: 'Floating point precision'
 date: 2020-06-22 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/012BlackRiver.jpg
-thumbnail: '../images/012BlackRivertn.jpg'
 subtitle: 'Understand the problems that can arise from using floating point primitives such as double and float when handling decimals and the cost-benefit that comes with BigDecimal from the java.math package.'
 time: '6'
 tags:
