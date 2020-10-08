@@ -1,5 +1,5 @@
 ---
-title: 'The problem continuous integration solves'
+title: 'How continuous integration helps developers'
 date: 2020-10-05 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/027_taba.jpg

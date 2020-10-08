@@ -1,8 +1,8 @@
 ---
-title: 'How continuous delivery delivers value'
+title: 'How continuous delivery helps developers'
 date: 2020-10-12 16:34:00
 author: 'Aneesh Mistry'
-featuredImage: ../images/xxx.jpg
+featuredImage: ../images/028_yosemite.jpg
 thumbnail: ''
 subtitle: 'Understand how the value of continuous delivery can be realised amongst teams of multiple developers.'
 time: '8'
@@ -12,11 +12,9 @@ tags:
 ---
 <br>
 <strong>Key Takeaways</strong><br>
-&#8226; Understand the importance to functional testing to a build before deployment.<br>
-&#8226; Identify the difficulties that arise with functional testing.<br>
+&#8226; Understand the importance of functional testing to a build before deployment.<br>
+&#8226; Identify the challenges that arise with functional testing.<br>
 &#8226; Review the benefits of using Jenkins for continuous delivery.<br>
-
-![Merge sort step 2](../../src/images/011MergeSort2.png)
 
 <br>
 <h4>What is continuous delivery?</h4>
@@ -24,7 +22,9 @@ tags:
 Continuous delivery (CD) extends from continuous integration by ensuring the latest software artifact is always in a deployment-ready build to be sent into production. You can read about continuous integration from my previous blog <a href="" target="_blank">here</a>.
 </p>
 <p>
-While CI aims to manage the movement of source code into new application builds, CD aims to manage the movement of the build through further functional testing in a safe, sustainable and predictable manner. CD extends upon the unit testing performed within CI to assess the behaviour and compliance of the build to functional requirements. 
+But what does 'deployment-ready' mean? While CI aims to manage the movement of source code branches into new application builds, CD aims to manage the movement of the build through further functional testing in a safe, sustainable and predictable manner. CD achieves deployment-readiness through functional testing. CD extends upon the unit testing performed within CI to assess the behaviour and compliance of the build to functional requirements.
+</p>
+<p>
 CD automates the delivery of software through the testing environments to reduce the time for delivery in production. CD encourages frequent delivery of software components in the same manner that CI automation encourages the frequent integration of source code; CD eliminates repetitive tasks for deployment and returns tighter feedback loops to the developers before deploying the software as a release.
 <br>
 The term 'continuous deployment' may often be misinterpreted with continuous delivery; continuous delivery differs as it requires a single manual approval stage prior to production deployment whereas continuous deployment is fully automated end-to-end.
@@ -33,13 +33,13 @@ The term 'continuous deployment' may often be misinterpreted with continuous del
 <br>
 <h4>What are functional requirements?</h4>
 <p>
-The functional requirements of a system can be described as the behaviours for inputs and outputs the system is expected to produce. The functional requirements can encapsulate all areas of the system from data processing, data manipulation and behaviours. Functional requirements are captured within use cases and enforced against non-functional requirements such as security and performance metrics.</p>
-<p>
-While unit testing appeals to the developers perspective of the problem, functional testing takes the user's perspective. The CD pipeline is responsible for carrying out multiple streams of testing to ensure the latest build adheres to the functional requirements. Functional testing can be divided into further testing domains such as UI testing, load testing, integration testing and API testing. 
+The functional requirements of a system can be described as the behaviours for inputs and outputs the system is expected to produce. The functional requirements can encapsulate all areas of the system from data processing, data manipulation and algorithms. Functional requirements are captured within use cases and enforced against non-functional requirements such as security and performance metrics.
 </p>
-
 <p>
-<strong>Integration testing</strong> involves the combination of software modules to be tested in unison. While unit testing involves the testing of individual components on their own, integration testing identifies dependent modules within the application and tests scenarios that occur between them. The main objective from integration testing is to test the interfaces between the modules. The value behind integration testing is to ensure each module can interact with each other as expected and to identify inconsistencies between module implementation.
+While unit testing appeals to the developers perspective of the problem, functional testing takes the users perspective. The CD pipeline is responsible for carrying out multiple streams of testing to ensure the latest build adheres to the functional requirements. Functional testing can be divided into further testing domains such as UI testing, load testing, integration testing and API testing. 
+</p>
+<p>
+<strong>Integration testing</strong> involves testing a combination of software modules in unison. While unit testing involves the testing of individual components on their own, integration testing identifies dependent modules within the application and tests scenarios that occur between them. The main objective from integration testing is to test the interfaces between the modules. The value behind integration testing is to ensure each module can interact with each other as expected and to identify inconsistencies between module implementation.
 </p>
 
 <p>
@@ -111,4 +111,4 @@ Continuous delivery and continuous deployment play a major role in the modern so
 </p>
 
 <br>
-<small style="float: right;" >Picture: xxx, xxx by <a target="_blank" href="http">xxx</small></a><br>
+<small style="float: right;" >Picture: Yosemite, California by <a target="_blank" href="https://unsplash.com/@annaaelizabeth">Anna Elizabeth</small></a><br>

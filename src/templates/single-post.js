@@ -8,7 +8,6 @@ import SharePost from '../components/sharePost'
 
 const SinglePost = ({  pageContext, data }) => {
     const post = data.markdownRemark.frontmatter
-    const basicUrl = "https://aneesh.co.uk/"
 
     return (
         <LayoutPost  pageTitle={post.title}>
@@ -19,6 +18,7 @@ const SinglePost = ({  pageContext, data }) => {
                 title={post.title}
                 description={post.subtitle}
                 thumbnail={post.thumbnail}
+                subtitle={post.subtitle}
                    />
         
             <Card>
