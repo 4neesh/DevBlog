@@ -73,7 +73,7 @@ function SEO({
         },
         {
           property:`og:image`,
-          content: `${site.siteMetadata.siteUrl}${slugify(title)}/twitter-card.jpg`,
+          content: `${site.siteMetadata.siteUrl}/${slugify(title)}/twitter-card.jpg`,
         },
         {
           property: `og:type`,
@@ -101,7 +101,7 @@ function SEO({
         },
         {
           name: `twitter:image`,
-          content: `${site.siteMetadata.siteUrl}${slugify(title)}/twitter-card.jpg`,
+          content: `${site.siteMetadata.siteUrl}/${slugify(title)}/twitter-card.jpg`,
         },
       ]
       .concat(meta)
