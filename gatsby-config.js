@@ -4,7 +4,7 @@ module.exports = {
     description: `Aneesh is a software engineer within financial services based in London.`,
     author: `Aneesh Mistry`,
     keywords: `blog, java, spring, algorithms, software engineer, finance`,
-    siteUrl:"https://aneesh.co.uk",
+    siteUrl:`https://aneesh.co.uk`,
   },
   plugins: [
 
@@ -13,44 +13,18 @@ module.exports = {
     `gatsby-plugin-react-helmet`, 
     `gatsby-plugin-sass`,
     `gatsby-plugin-catch-links`,
-    
-    {
-      resolve: `gatsby-transformer-remark`,
-      options:{
-        
-        plugins: [
-          {
-            resolve: `gatsby-remark-social-cards`,
-            options: {
-              title: {
-                
-                color: "black", // black|white
-                
-              },
-              meta: {
-      
-                parts: [
-                  "- ",
-                  { field: "author" },
-                  " » ",
-                  { field: "date", format: "dd/mm/yyyy" },
-                ],
-                color: "black", // black|white
-                y: 157, // Will default to cardHeight - yMargin - size
-              },
-              background: '#283040'
-            }
-          }
-        
-        
-        ]
-      }
-    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/src/posts`,
       },
     },
     {
@@ -80,18 +54,28 @@ module.exports = {
                 
             },
           },
-        ],
-      },
+          {
+            resolve: `gatsby-remark-social-cards`,
+            options: {
+              title: {
+                color: "black", 
+              },
+              meta: {
+                parts: [
+                  { field: "author" },
+                  " » ",
+                  { field: "date", format: "dd/mm/yyyy" },
+                ],
+                color: "white", 
+                y: 200, 
+              },
+              background: '#85a0d6'
+            }
+          }
+        ]
+      }
     },
-   
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `posts`,
-        path: `${__dirname}/src/posts`,
-      },
-    },
- 
+
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

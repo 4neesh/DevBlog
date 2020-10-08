@@ -10,7 +10,7 @@ const SinglePost = ({  pageContext, data }) => {
     const post = data.markdownRemark.frontmatter
 
     return (
-        <LayoutPost  pageTitle={post.title}>
+        <LayoutPost  pageTitle={post.title} >
             <div className="container" id="content" 
 >
               
