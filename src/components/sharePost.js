@@ -2,7 +2,7 @@ import React from 'react'
 
 const basicUrl = "https://aneesh.co.uk/"
 
-const SharePost = (pageContext, post) => (
+const SharePost = ({pageContext, post}) => (
 
     
      <div className="text-center social-share-links">

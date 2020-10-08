@@ -6,8 +6,10 @@ import { Card, CardBody, Badge, CardSubtitle, CardTitle } from 'reactstrap'
 import LayoutPost from '../components/layoutPost'
 import SharePost from '../components/sharePost'
 
-const SinglePost = ({  data }) => {
+const SinglePost = ({  pageContext, data }) => {
     const post = data.markdownRemark.frontmatter
+    const basicUrl = "https://aneesh.co.uk/"
+
     return (
         <LayoutPost  pageTitle={post.title}>
             <div className="container" id="content" 
@@ -42,7 +44,8 @@ const SinglePost = ({  data }) => {
             </Card>
 
             <h3 className="text-center">Share this post</h3>
-            <SharePost/>
+           
+            <SharePost post={post} pageContext={pageContext}/>
             </div>
         </LayoutPost >
     )
