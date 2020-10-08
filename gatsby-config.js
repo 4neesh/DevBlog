@@ -62,12 +62,14 @@ module.exports = {
               },
               meta: {
                 parts: [
-                  { field: "author" },
-                  " » ",
-                  { field: "date", format: "dd/mm/yyyy" },
+
+                  "aneesh.co.uk | developer blog",
+                 
                 ],
+                font: "DejaVuSansCondensed",
                 color: "white", 
-                y: 200, 
+                y: 260, 
+                size: 32,
               },
               background: '#85a0d6'
             }
