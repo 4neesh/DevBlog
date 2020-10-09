@@ -52,10 +52,10 @@ code{
   padding: 0.5rem 0rem;
 }
 .nav-item{
-  padding-right: 6px;
+  padding-right: 4px;
   padding-left: 4px;
   padding-top: 3px;
-  padding-bottom: 3px;
+  padding-bottom: 1px;
   margin:1px;
 }
 
@@ -113,7 +113,7 @@ background-color:$main;
   display:flex;
   flex-direction: row;
   color: black;
-  margin-top: 50px; //sit sticky bar under navbar
+  margin-top: 55px; //sit sticky bar under navbar
   }
   .stickyHeaderBar .stickyHeaderImage{
     flex:0 0 170px;
