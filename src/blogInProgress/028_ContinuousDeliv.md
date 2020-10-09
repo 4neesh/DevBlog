@@ -1,5 +1,5 @@
 ---
-title: 'How continuous delivery helps developers'
+title: 'How continuous delivery extends continuous integration'
 date: 2020-10-12 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/028_yosemite.jpg
@@ -28,6 +28,8 @@ CD automates the delivery of software through the testing environments to reduce
 <br>
 The term 'continuous deployment' may often be misinterpreted with continuous delivery; continuous delivery differs as it requires a single manual approval stage prior to production deployment whereas continuous deployment is fully automated end-to-end.
 </p>
+
+![CICD pipeline overview](../src/images/028_cicd.png)
 
 <br>
 <h4>What are functional requirements?</h4>

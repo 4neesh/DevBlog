@@ -81,6 +81,11 @@ exports.createPages = async ({ actions, graphql }) => {
       })
     })
 
+    let tagPostCounts = {} 
+  tags.forEach(tag => {
+    tagPostCounts[tag] = (tagPostCounts[tag] || 0) + 1
+  })
+
 
     const postsPerPage = 4
     const numberOfPages = Math.ceil(posts.length / postsPerPage)
