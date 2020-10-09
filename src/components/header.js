@@ -18,7 +18,7 @@ class Header extends React.Component {
         light
         expand="md"
       >
-          <NavItem>
+          <NavItem style={{'padding-left':'0px'}}>
             <a  style={{'font-size':'18px'}} href="/" rel="noopener noreferrer">
               <strong>aneesh.co.uk</strong>
               {/* <i className="fas fa-home fa-2x"></i> */}
