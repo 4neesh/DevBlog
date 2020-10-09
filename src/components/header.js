@@ -19,7 +19,7 @@ class Header extends React.Component {
         expand="md"
       >
           <NavItem>
-            <a  href="/" rel="noopener noreferrer">
+            <a  style={{'font-size':'18px'}} href="/" rel="noopener noreferrer">
               <strong>aneesh.co.uk</strong>
               {/* <i className="fas fa-home fa-2x"></i> */}
             </a>
@@ -30,7 +30,7 @@ class Header extends React.Component {
               <NavItem >
                 <NavLink href="/about">
                   <strong>
-                    <font>About</font>
+                    <font style={{'font-size':'18px'}}>About</font>
                   </strong>
                 </NavLink>
               </NavItem>

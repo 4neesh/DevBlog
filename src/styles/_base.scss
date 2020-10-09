@@ -36,15 +36,26 @@ code{
 }
 
 
-.navbar-light .navbar-nav .nav-link,
+.navbar-light .navbar-nav 
 .navbar-light .navbar-brand {
   color: $main;
   &:hover {
     color: $main;
   }
 }
+
+.nav-link{
+  color: $main;
+  &:hover {
+    color: $main;
+  }
+  padding: 0.5rem 0rem;
+}
 .nav-item{
-  padding: 3px;
+  padding-right: 6px;
+  padding-left: 4px;
+  padding-top: 3px;
+  padding-bottom: 3px;
   margin:1px;
 }
 
@@ -93,6 +104,7 @@ background-color:$main;
  height:140px;
  transition: 1s;
 }
+
 .stickyHeaderBar{
   background-color:$main;
   height:175px;
@@ -101,7 +113,7 @@ background-color:$main;
   display:flex;
   flex-direction: row;
   color: black;
-  margin-top: 45px; //sit sticky bar under navbar
+  margin-top: 50px; //sit sticky bar under navbar
   }
   .stickyHeaderBar .stickyHeaderImage{
     flex:0 0 170px;
@@ -159,7 +171,6 @@ background-color:$main;
     background-color: white;
     border-bottom: 2px solid rgba(0, 0, 0, 0.4);
     line-height: 1;
-    height: 45px;
   }
 
   .gatsby-highlight pre[class*="language-"].line-numbers {
@@ -214,26 +225,6 @@ text-transform: uppercase;
     font-size: 4vw;
     
   }
-  .newslettertitle{
-   
-    font-size: 18px;
-  }
-}
-@media  (min-width: 406px) {
-  .newslettertitle{
-   
-    font-size: 18px;
-  }
-}
-@media  (min-width: 440px) {
-
-  .newslettertitle{
-   
-    font-size: 18px;
-  }
-}
-@media  (min-width: 490px) {
-
   .newslettertitle{
    
     font-size: 18px;
