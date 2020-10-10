@@ -18,7 +18,7 @@ tags:
 <br>
 <h4>What is continuous delivery?</h4>
 <p>
-Continuous delivery (CD) extends from continuous integration by ensuring the latest software artifact is always in a deployment-ready build to be sent into production. You can read about continuous integration from my previous blog <a href="" target="_blank">here</a>.
+Continuous delivery (CD) extends from continuous integration by ensuring the latest software artifact is always in a deployment-ready build to be sent into production. You can read about continuous integration from my previous blog <a href="https://aneesh.co.uk/how-continuous-integration-helps-developers" target="_blank">here</a>.
 </p>
 <p>
 But what does 'deployment-ready' mean? While CI aims to manage the movement of source code branches into new application builds, CD aims to manage the movement of the build through further functional testing in a safe, sustainable and predictable manner. CD achieves deployment-readiness through functional testing. CD extends upon the unit testing performed within CI to assess the behaviour and compliance of the build to functional requirements.
@@ -29,7 +29,7 @@ CD automates the delivery of software through the testing environments to reduce
 The term 'continuous deployment' may often be misinterpreted with continuous delivery; continuous delivery differs as it requires a single manual approval stage prior to production deployment whereas continuous deployment is fully automated end-to-end.
 </p>
 
-![CICD pipeline overview](../src/images/028_cicd.png)
+![CICD pipeline overview](../../src/images/028_cicd.png)
 
 <br>
 <h4>What are functional requirements?</h4>
