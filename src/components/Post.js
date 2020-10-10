@@ -29,7 +29,7 @@ const Post = ({slug, date,  time, fluid, tags,  subtitle }) => (
                     </li>
                 ))}
             </ul>
-            <Link to={slug}
+            <Link to={`/${slug}`}
                  className=" float-right"><strong>Read more</strong>
                 </Link>
                 
