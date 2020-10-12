@@ -18,7 +18,7 @@ tags:
 <br>
 <h4>What is continuous integration?</h4>
 <p>
-Continuous integration is a development practice that automates the combined actions of compiling, building, testing and packaging source code into software. As software is frequently updated, the cost of integrating code into the latest build can be timely to the developer. Furthermore, the coordination between teams of multiple developers and the presence of merge conflicts can make the integration of code even more burdensome.
+Continuous integration is a development practice that automates the combined actions of compiling, building, testing and packaging source code into software. As software is frequently updated, the time cost of integrating code into the latest build can be high to the developer. Furthermore, the coordination between teams of multiple developers and the presence of merge conflicts can make the integration of code even more burdensome.
 </p>
 <p>
 Merge conflicts arise when multiple developers attempt to integrate code changes that are applied to the same file(s). Multiple developers may have a different idea for the implementation of a module and therefore a merge conflict must be manually reviewed before the code is updated to the single version. Merge conflicts become increasingly likely as larger integrations are performed at a single time.</p>

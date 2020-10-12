@@ -1,9 +1,9 @@
 ---
 title: 'How Java uses the heap and stack'
-date: 2020-09-28 16:34:00
+date: 2020-10-19
 author: 'Aneesh Mistry'
 featuredImage: ../images/029_dv.jpg
-subtitle: 'Explore how the heap and stack space differ and how the JVM enables Objects to be referenced within the application.'
+subtitle: 'Explore the heap and stack: the two locations where the JVM manages its Objects and runtime.'
 time: '6'
 tags:
 - JVM
