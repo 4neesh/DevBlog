@@ -1,5 +1,5 @@
 ---
-title: 'How continuous delivery elevates functional testing'
+title: 'How continuous delivery supports functional testing'
 date: 2020-10-12
 author: 'Aneesh Mistry'
 featuredImage: ../images/028_yosemite.jpg
