@@ -1,12 +1,12 @@
 ---
-title: 'xxx'
-date: 2020-09-28 16:34:00
+title: 'Using lambda expressions in Java'
+date: 2020-10-26
 author: 'Aneesh Mistry'
 featuredImage: ../images/xxx.jpg
 subtitle: 'xxx'
-time: 'xx'
+time: '8'
 tags:
-- xxx
+- Java
 ---
 <br>
 <strong>Key Takeaways</strong><br>
