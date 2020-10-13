@@ -168,6 +168,10 @@ Charlie will be lost after the method as it is no longer referenced within the m
 
 
 </p>
+<br>
+<h4>Passing primitives</h4>
+<p>
+Java extends the use of pass by value to replicate primitive variables and to pass them across methods.
 <p>
 The benefit of using pass by value with reference locations is that the properties of the Object passed in can still be obtained and modified, however they are protected from being realigned elsewhere.
 </p>
