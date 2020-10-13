@@ -26,11 +26,13 @@ tags:
 6. when created, it is matched to the abstract method and turned into a function that implements interface
 7. Uses type inference from method declaration at compile time to know args provided and return type. 
 <br>
-<h4>Lambda functions from Java 8</h4>
+<h4>Lambda and Functional programming</h4>
 <p>
-
-
-
+Lambda functions were introduced to Java in Java 8 as a step towards functional programming within Java.
+Functional programming enables a developer to pass functions around the application without having to create an Object to which the function belongs. The result, is dynamic and flexible code that can be used to perform algorithms upon inputs with minimalistic code.
+</p>
+<p>
+Lambda functions in Java can be used to reduce the boilerplate code required for a functional interface. A functional interface is an interface with a single abstract method. The functional interface will therefore be implemented with a single overridden method. 
 </p>
 <br>
 <h4></h4>
