@@ -1,9 +1,9 @@
 ---
-title: 'How Java uses the heap and stack'
+title: 'How Java uses the heap space and stack memory'
 date: 2020-10-19
 author: 'Aneesh Mistry'
 featuredImage: ../images/029_dv.jpg
-subtitle: 'Explore the heap and stack: the two locations where the JVM manages its Objects and runtime.'
+subtitle: 'Explore how the JVM uses the heap space and stack memory to manage the runtime and Objects.'
 time: '6'
 tags:
 - JVM
@@ -11,46 +11,119 @@ tags:
 ---
 <br>
 <strong>Key Takeaways</strong><br>
-&#8226; Understand the differences between stack and heap memory.<br>
-&#8226; Java uses both pass by reference and pass by value.<br>
-&#8226; Java primitives and Objects behave differently when passed between methods.<br>
+&#8226; Understand the differences between the heap space and stack memory.<br>
+&#8226; Visualise the runtime activity of the stack memory.<br>
+&#8226; Understand how the stack memory and heap space communicate with each other.<br>
+
 
 <br>
-<h4>Where do we store our objects?</h4>
+<h4>How does the JVM store our Objects?</h4>
 <p>
-When discussing the JVM, the terms 'stack' and 'heap' are often used to describe how Objects are assigned memory and how the application is is able to refer to accumulate a runtime list of events.
-By understanding the difference between the stack and heap, and how they work, we can better understand how Objects are created, used, recycled and removed from the application memory. This can 
-enable us to think critically about application memory from a design perspective. In this blog, I will discuss how the memory locations differ and their use by the JVM.
+The JVM divides memory space between two locations known as the heap space and stack memory when managing the application runtime and Objects. The two locations differ by their purpose to the application and have different properties to their process speed and efficiency of memory use. 
+</p>
+<p>
+In this blog, I am going to review the responsibilities between the heap space and stack memory to the JVM. By understanding the differences between the heap space and stack memory, we may be better positioned to further improve our application memory management and runtime performance. 
 </p>
 
 <br>
-<h4>Heap vs Stack</h4>
+<h4>The heap space</h4>
 <p>
-The JVM uses the heap and stack to divide memory locations of how to assign Objects memory and how to define the application runtime. By splitting the memory locations between the two, the requirement upon 
-the RAM from an application can be appropriately managed as the number of referenced Objects increase.  
+The heap space is created when the JVM starts as a dynamic space for allocating storage of Java Objects. The heap space is obtained by the JVM from the operating system as a fixed space for the lifetime of the application. The heap space is described as <i>dynamic</i> as it allocates memory during runtime of the application. 
 </p>
 <p>
-The <strong>heap</strong> memory is used throughout the life of the Java application to allocate memory for Objects and JRE classes. The garbage collector is used to manage objects within the heap to free memory that is no longer referenced by the application. Read more about the garbage collector in my blog <a target="_blank" href="https://aneesh.co.uk/how-the-jvm-manages-memory">here</a>.
+When Objects are assigned to the heap space, they are globally accessible by all threads of the application, however they are not necessarily thread-safe. Objects can be designed as thread safe such as in my blog <a href="https://aneesh.co.uk/creating-multi-threaded-visibility">here</a>.
+</p>
+The heap space is divided into two 'generations' for storage: old and new. The generational divide is used to determine how Objects are stored, retained and removed from the heap space at runtime. The heap space uses a garbage collector to mark and sweep Objects from the heap space when the young generation reaches capacity. You can read more about the garbage collector in my blog <a target="_blank" href="https://aneesh.co.uk/how-the-jvm-manages-memory">here</a>.
 </p>
 <p>
-The stack is used for temporary memory where variables are stored when methods are invoked. When a method is called, its memory is allocated on top of the stack in a first-in-last-out (FILO) order. Once the method has completed, its memory allocation is cleared from the stack. The diagram below represents 4 different method calls made, where the most recent method call sits at the top of the stack and is pointed to by the JVM.
+The impact of the garbage collector upon the JVM performance can be significant, therefore understanding how and why Objects are managed by the heap space can be valuable to improving the efficiency of the application.<br>
+When the heap space is full, java will throw a <code>java.lang.OutOfMemoryError</code> exception which can be addressed by the garbage collector or heap space configuration.
+</p>
+
+<br>
+<h4>The stack memory</h4>
+<p>
+The stack memory contains memory for the execution of application threads. The stack is used for temporary memory where variables are stored when methods are invoked. When a method is called, its memory is allocated on top of the stack in a first-in-last-out (FILO) order. Once the method has completed, its memory allocation is cleared from the stack. The diagram below represents 4 different method calls made, where the most recent method call sits at the top of the stack and is pointed to by the JVM.
 
 ![Stack diagram](../../src/images/029_stack.png)
-
+</p>
+<p>
+The stack uses static memory allocation where the compiler is able to allocate memory to the application before it has been executed. Once the stack has bounded the memory to locations it is able to execute the threads more efficiently with direct addressing. 
+</p>
+<p>
+The stack will store local variables to the methods and the reference addresses of the Objects within the method. The references will point to the Object location with the heap space. When the method is completed, the stack will remove the method from the memory along with the local variables that are referenced by the method. 
+</p>
+<p>
+The stack enables fast access to the memory. The access pattern behind the stack for allocating and removing memory is simply a pointer to the next method or place in the stack. Whereas the heap is far more complex for assigning and freeing space.
+When there is not enough memory left on the stack you get <code>java.lang.StackOverflowError</code> exception. 
+Stack is thread-safe as each thread has its own stack, no two threads share the same stack. 
 </p>
 
 <br>
-<h4>How Objects are referenced within the heap</h4>
+<h4>Using the heap space and stack memory</h4>
 <p>
-Different programming languages will reinforce one of two ways to reference Objects within the heap space: by value or by reference. The reference of Objects is used whenever an instance 
-or primitive value is processed or used by a different method within the application. 
-The method which the Objects are referenced will determine how you manipulate Object properties and how the JVM might determine if the Object is ready for garbage collection.
+The below code snippet will explain how the heap space and stack memory are used for an application run:
+
+```java{numberLines:true}
+public class Sport{
+    String name;
+    int players;
+
+    public Sport(String name, int players){
+        this.name = name;
+        this.players = players;
+    }
+}
+
+```
+```java{numberLines:true}
+public class SportBuilder{
+    public static Sport Build(String name, int players){
+        return new Sport(name, players);
+    }
+}
+
+```
+
+```java{numberLines:true}
+public class Main{
+
+    public static void main(String[] args){
+
+        int players = 2;
+        String sport = "tennis";
+        Sport tennis = null;
+        tennis = SportBuilder.build(sport, players);
+
+    }
+    
+}
+
+```
+<p>
+The code above defines 3 classes, a Sport entity class, a SportBuilder class with a static method to build a Sport Object and a Main class with the main method. 
 </p>
 <p>
-The <i>pass by reference</i> variable movement involves passing the address of the Object from the heap space into the following method. 
+The main method from the Main class will instantiate the creation of the stack memory with a single thread. 
+On line 3 in the Main class, the main method is defined and added into the stack memory. <br>
+On line 5, the primitive int <code>players</code> is added into the main method of the stack memory. <br>
+On lines 6 and 7, Objects of Type String and Sport are created in the heap space; their address is referenced by the main method block in the stack.<br>
+On line 8, when the SportBuilder method is called, a new block is added to the stack on top of the main method block. The new block will contain a reference to the Main class instance that is calling it, the local int <code>players</code> and the reference to the String "tennis". <br>
+In line 3 from the SportBuilder class, a further method is added to the stack as the Sport constructor is called. The third block will contain the primitive int value along with references to the String "tennis". The third block will also contain a reference to the calling Object instance of SportBuilder.
+<br>
+When the Sport Object is created, the third block is swept from the stack, followed by the second block from the SportBuilder class, and finally the Sport Object is populated with the String and primitive value in the heap space. 
+</p>
+
+<br>
+<h4>Referencing Objects from the heap into the stack</h4>
+<p>
+In code sample above has demonstrated how the Heap and Stack work together to store and reference Objects through the lifecycle of a JVM thread. The process for referencing Objects from the Stack to the Heap can impact the efficiency of the JVM and operations that can be performed upon the Objects. This section will review how the two memory areas communicate.
+</p>
+<p>
+The <i>pass by reference</i> approach involves passing the address of the Object from the heap space into the stack. 
 In the below example, an instance of <code>Student</code> is created ('alice') and it is stored in memory location 'a' in the heap space. 
-On line 5, the Student is passed into a method called <code>goToClass()</code>. The goToClass method will receive the location 'a' of Alice and will 
-set the 'attendance' boolean to true on line 9.
+On line 5, the Student is referenced by a method called <code>goToClass()</code> from the stack. The <code>goToClass</code> method will receive the location 'a' of Alice and will 
+set the 'attendance' boolean of the Object to true on line 9.
 
 ```java{numberLines:true}
 public static void main(String[] args){
@@ -64,15 +137,14 @@ private static void goToClass(Student student){
     student.setAttendance(true);
 }
 
-
 ```
 
 ![Pass by reference diagram](../../src/images/029_heapDiagram.png)
 
 </p>
 <p>
-The <i>pass by value</i> variable movement involves passing a copy of the Object itself from the heap space into the following method.
-Using the same example as above, the pass by value movement of the Object would involve creating a new copy of the Object and then passing that into the method.
+The <i>pass by value</i> process involves passing a copy of the Object itself from the heap space into the stack.
+Using the same example as above, the pass by value movement of the Object would involve creating a new copy of the Object and then passing it into the stack.
 
 ![Pass by value diagram](../../src/images/029_pbvDiagram.png)
 
@@ -80,10 +152,9 @@ In the diagram above, an identical copy of <code>alice</code> is made within the
 </p>
 
 <br>
-<h4>How Java passes Objects within the heap space</h4>
+<h4>How Java passes Objects between the heap space and stack</h4>
 <p>
-The JVM uses a combination of pass-by-reference and pass-by-value for managing Objects in the heap space. Technically, Java uses pass-by-value as the characteristics of the heap space show a copy of the Object being passed to the method call, however Java does not make a copy of the Object, however it will pass a copy of the Object address in the heap space.
-
+The JVM uses a combination of pass-by-reference and pass-by-value for managing Objects. Technically, Java uses pass-by-value as the a copy of the Object is passed to the method call, however Java does not make a copy of the Object, it will pass a copy of the Object address in the heap space.
 </p>
 
 ![Pass by value diagram for Java](../../src/images/029_javapbv.png)
@@ -152,7 +223,7 @@ The use of the <code>new</code> keyword within Java will allocate a new memory l
 
 ```java{numberLines:true}
 
-public void changeStudent(Student student){      //student = (copy of) Alice: location a
+public void changeStudent(Student student){ //student = (copy of) Alice: location a
     student.setName("Alex");                //student = location a
     student = new Student("Charlie");       //student = location c
 }
@@ -168,17 +239,13 @@ Charlie will be lost after the method as it is no longer referenced within the m
 
 
 </p>
-<br>
-<h4>Passing primitives</h4>
-<p>
-Java extends the use of pass by value to replicate primitive variables and to pass them across methods.
-<p>
-The benefit of using pass by value with reference locations is that the properties of the Object passed in can still be obtained and modified, however they are protected from being realigned elsewhere.
-</p>
+
 <br>
 <h4>Conclusion</h4>
 <p>
+The heap space and stack memory are two separate areas within the RAM used by the JVm to perform distinct, but dependent functions towards the processing of a Java application. 
 
+By using the pass-by-value referencing between the heap and stack areas, the JVM is able to efficiently reference Objects within the application threads. 
 
 </p>
 
