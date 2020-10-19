@@ -15,7 +15,6 @@ tags:
 &#8226; Visualise the runtime activity of the stack memory.<br>
 &#8226; Understand how the stack memory and heap space communicate with each other.<br>
 
-
 <br>
 <h4>How does the JVM store our Objects?</h4>
 <p>
