@@ -1,5 +1,5 @@
 ---
-title: 'How Java uses the heap space and stack memory'
+title: 'How the JVM uses the heap and stack'
 date: 2020-10-19
 author: 'Aneesh Mistry'
 featuredImage: ../images/029_dv.jpg
@@ -19,10 +19,10 @@ tags:
 <br>
 <h4>How does the JVM store our Objects?</h4>
 <p>
-The JVM divides memory space between two locations known as the heap space and stack memory when managing the application runtime and Objects. The two locations differ by their purpose to the application and have different properties to their process speed and efficiency of memory use. 
+The JVM divides memory between two locations known as the heap space and stack memory for managing the application runtime and Objects. The two locations differ by their design and properties that effect their function and efficiency of memory use. 
 </p>
 <p>
-In this blog, I am going to review the responsibilities between the heap space and stack memory to the JVM. By understanding the differences between the heap space and stack memory, we may be better positioned to further improve our application memory management and runtime performance. 
+In this blog, I am going to review the responsibilities between the heap space and stack memory to the JVM. By understanding the differences between the heap space and stack memory, we may be better positioned to improve our application runtime performance through design. 
 </p>
 
 <br>
@@ -31,38 +31,38 @@ In this blog, I am going to review the responsibilities between the heap space a
 The heap space is created when the JVM starts as a dynamic space for allocating storage of Java Objects. The heap space is obtained by the JVM from the operating system as a fixed space for the lifetime of the application. The heap space is described as <i>dynamic</i> as it allocates memory during runtime of the application. 
 </p>
 <p>
-When Objects are assigned to the heap space, they are globally accessible by all threads of the application, however they are not necessarily thread-safe. Objects can be designed as thread safe such as in my blog <a href="https://aneesh.co.uk/creating-multi-threaded-visibility">here</a>.
+When Objects are assigned to the heap space, they are globally accessible by all threads of the application, however they are not necessarily thread-safe. Objects can be designed to be thread safe as discussed in my blog <a href="https://aneesh.co.uk/creating-multi-threaded-visibility">here</a>.
 </p>
-The heap space is divided into two 'generations' for storage: old and new. The generational divide is used to determine how Objects are stored, retained and removed from the heap space at runtime. The heap space uses a garbage collector to mark and sweep Objects from the heap space when the young generation reaches capacity. You can read more about the garbage collector in my blog <a target="_blank" href="https://aneesh.co.uk/how-the-jvm-manages-memory">here</a>.
+The heap space is divided into two 'generations' for storage: old and new. The generational divide is used to determine how Objects are stored, retained and removed from the heap space at runtime. The heap space uses a garbage collector to mark and sweep Objects when the young generation reaches capacity. You can read more about the garbage collector in my blog <a target="_blank" href="https://aneesh.co.uk/how-the-jvm-manages-memory">here</a>.
 </p>
 <p>
-The impact of the garbage collector upon the JVM performance can be significant, therefore understanding how and why Objects are managed by the heap space can be valuable to improving the efficiency of the application.<br>
-When the heap space is full, java will throw a <code>java.lang.OutOfMemoryError</code> exception which can be addressed by the garbage collector or heap space configuration.
+The impact of the garbage collector upon the JVM performance can be significant. The heap space Object management is therefore a broad area to inspect and resolve for runtime performance enhancement.<br>
+When the heap space is full, java will throw a <code>java.lang.OutOfMemoryError</code> exception.
 </p>
 
 <br>
 <h4>The stack memory</h4>
 <p>
-The stack memory contains memory for the execution of application threads. The stack is used for temporary memory where variables are stored when methods are invoked. When a method is called, its memory is allocated on top of the stack in a first-in-last-out (FILO) order. Once the method has completed, its memory allocation is cleared from the stack. The diagram below represents 4 different method calls made, where the most recent method call sits at the top of the stack and is pointed to by the JVM.
+The stack memory contains space for the execution of application threads. The stack is used for temporary memory where variables are stored when methods are invoked. When a method is called, its memory is allocated on top of the stack in a first-in-last-out (FILO) order. Once the method has completed, its memory allocation is cleared from the stack. The diagram below represents 4 different method calls made, where the most recent method call sits at the top of the stack and is currently pointed to by the JVM.
 
 ![Stack diagram](../../src/images/029_stack.png)
+
 </p>
 <p>
-The stack uses static memory allocation where the compiler is able to allocate memory to the application before it has been executed. Once the stack has bounded the memory to locations it is able to execute the threads more efficiently with direct addressing. 
+The stack uses static memory allocation where the compiler is able to allocate memory to the application before it has been executed. Once the stack has bounded the memory to locations, it is able to execute the threads efficiently with direct addressing. 
 </p>
 <p>
-The stack will store local variables to the methods and the reference addresses of the Objects within the method. The references will point to the Object location with the heap space. When the method is completed, the stack will remove the method from the memory along with the local variables that are referenced by the method. 
+The stack will store local variables to the methods and the reference addresses of the Objects within the method. The references will point to the Object location within the heap space. When the method is completed, the stack will remove the method from the memory along with the local variables that are referenced by the method. 
 </p>
 <p>
-The stack enables fast access to the memory. The access pattern behind the stack for allocating and removing memory is simply a pointer to the next method or place in the stack. Whereas the heap is far more complex for assigning and freeing space.
-When there is not enough memory left on the stack you get <code>java.lang.StackOverflowError</code> exception. 
-Stack is thread-safe as each thread has its own stack, no two threads share the same stack. 
+A key performance advantage of the stack over the heap space is the direct addressing of memory. The complexity of the heap space for storing Objects at runtime is overshadowed by the static memory addressing of the stack from before runtime. The stack is able to efficiently obtain and remove methods from memory unlike the heap.
+When there is insufficient memory on the stack, the JVM throws a <code>java.lang.StackOverflowError</code> exception.
 </p>
 
 <br>
 <h4>Using the heap space and stack memory</h4>
 <p>
-The below code snippet will explain how the heap space and stack memory are used for an application run:
+The below code sample provides a means to explain how the heap space and stack memory coordinate together:
 
 ```java{numberLines:true}
 public class Sport{
@@ -117,7 +117,7 @@ When the Sport Object is created, the third block is swept from the stack, follo
 <br>
 <h4>Referencing Objects from the heap into the stack</h4>
 <p>
-In code sample above has demonstrated how the Heap and Stack work together to store and reference Objects through the lifecycle of a JVM thread. The process for referencing Objects from the Stack to the Heap can impact the efficiency of the JVM and operations that can be performed upon the Objects. This section will review how the two memory areas communicate.
+The code sample above has demonstrated how the heap and stack work together to store and reference Objects through the lifecycle of a JVM thread. The process for referencing Objects from the Stack to the Heap can impact the efficiency of the JVM and operations that can be performed upon the Objects. This section will review how the two memory areas communicate.
 </p>
 <p>
 The <i>pass by reference</i> approach involves passing the address of the Object from the heap space into the stack. 
@@ -199,7 +199,7 @@ class Main{
 ```
 </p>
 <p>
-The output from the above code will be:
+The output from the above code will show:
 ```
 Alice
 ```
@@ -237,16 +237,18 @@ Charlie will be lost after the method as it is no longer referenced within the m
 
 ![Change student diagram](../../src/images/029_changeStudent.png)
 
-
 </p>
 
 <br>
 <h4>Conclusion</h4>
 <p>
-The heap space and stack memory are two separate areas within the RAM used by the JVm to perform distinct, but dependent functions towards the processing of a Java application. 
-
-By using the pass-by-value referencing between the heap and stack areas, the JVM is able to efficiently reference Objects within the application threads. 
-
+The heap space and stack memory are two separate areas within the RAM used by the JVM before and during runtime. The two areas work together by using a pass-by-value process where the address of the Objects within the heap space are copied and passed to the stack memory. The pass-by-value process enables the JVM to access and modify Objects without having to return them back to the calling method.
+</p>
+<p>
+The stack memory is designed with a pointer to quickly navigate methods and remove them once completed. The heap space uses a garbage collector to mark and sweep Objects that are no longer referenced within the application. 
+</p>
+<p>
+Our understanding of the heap and stack can enable us to better understand runtime errors that may arise and how the application can make use of the stack direct addressing and recursive nature to optimise runtime performance. 
 </p>
 
 <br>
