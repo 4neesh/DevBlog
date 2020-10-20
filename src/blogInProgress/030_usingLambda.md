@@ -62,7 +62,7 @@ public void getProperties(){
 }
 ```
 <p>
-The anaonymous function is implemented by creating an instance of Engine with 
+The anonymous function is implemented by creating an instance of Engine with 
 </p>
 
 <br>
