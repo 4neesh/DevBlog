@@ -36,6 +36,7 @@
         "hnwi",
         "initialise",
         "internationalisation",
+        "invokedynamic",
         "joinpoint",
         "joinpoints",
         "jsonplaceholder",
