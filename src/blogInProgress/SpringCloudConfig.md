@@ -15,21 +15,8 @@ tags:
 &#8226; The .<br>
 &#8226; The.<br>
 
-![Merge sort step 2](../../src/images/011MergeSort2.png)
-
-
 <br>
-<h4>Project Outline</h4>
-<p>
-In this series of blog posts, I am going to create an application built with Microservices to read in stock data, to record it, and so act upon changes in stock price intervals.
-</p>
-<p>
-The technologies I will use include:
-Spring cloud task (port 8002)
-Spring server config (port 8888 - conventional number)
-</p>
-
-<h4>The objective of the project</h4>
+<h4>Spring Cloud</h4>
 <p>
 We will be collecting stock prices as they change.
 Using intra-day (0900:1700) stock price of a certain Stock price for a company
