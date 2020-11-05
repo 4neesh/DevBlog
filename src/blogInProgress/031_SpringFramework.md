@@ -1,9 +1,9 @@
 ---
-title: 'Why Spring Boot came about'
+title: 'Why Spring Boot saves the developer'
 date: 2020-10-09
 author: 'Aneesh Mistry'
 featuredImage: ../images/031_tokyo.jpg
-subtitle: 'Understand how Spring Boot emerged as a solution to the pitfalls of the Spring Framework '
+subtitle: 'Understand how Spring Boot emerged as a solution to the challenges from the Spring Framework '
 time: '10'
 tags:
 - Spring
@@ -71,7 +71,7 @@ XML-based
 </beans>
 ```
 
-The race instance will obtain the car through an autowire and assign it to the Car instance it references.
+The race instance will obtain the car through an autowire property and assign it to the Car instance it references.
 
 Annotation-based
 
@@ -101,7 +101,7 @@ public class Race{
 ```
 </p>
 <p>
-The two most common IOC containers, the BeanFactory and ApplicationContext are determined by the developer. The ApplicationContext is significantly more popular as recommended by the <a href="https://docs.spring.io/spring-framework/docs/2.5.x/reference/beans.html#context-introduction-ctx-vs-beanfactory">documentation</a>: <i>'use an ApplicationContext unless you have a really good reason for not doing so.'</i> The motivations for using the BeanFactory over the ApplicationContext are limited to only when memory usage is a valuable metric to the application as this can help reduce the consumption of defaulted ApplicationContext features.
+The two most common IOC containers, the BeanFactory and ApplicationContext are determined by the developer in the Spring framework. The ApplicationContext is significantly more popular as recommended by the <a href="https://docs.spring.io/spring-framework/docs/2.5.x/reference/beans.html#context-introduction-ctx-vs-beanfactory">documentation</a>: <i>'use an ApplicationContext unless you have a really good reason for not doing so.'</i> The motivations for using the BeanFactory over the ApplicationContext are limited to only when memory usage is a valuable metric to the application as the BeanFactory can help reduce the memory-load of default ApplicationContext features.
 </p>
 <h5>BeanFactory</h5>
 <p>
@@ -157,9 +157,9 @@ The beanFactory can be used to obtain the bean:
 
 <h5>ApplicationContext</h5>
 <p>
-The ApplicationContext is a an advanced Spring container available from Spring 3.0 that offers specific enterprise functionality on-top of all BeanFactory features.
-While the BeanFactory supports only xml-configuration of beans, the ApplicationContext differs as it additionally supports annotation-based configuration within the application code. 
-The ApplicationContext extends from the BeanFactory to provide further functionality of bean integration with application-layer features such as AOP, event propagation and message resource handling. The Application context enhances the BeanFactory in a framework-orientated manner. 
+The ApplicationContext is a an advanced Spring container available from Spring 3.0 that offers specific framework-orientated enterprise functionality as well as all BeanFactory features.
+While the BeanFactory supports only xml-configuration of beans, the ApplicationContext differs as it additionally supports annotation-based configuration that can be applied within the application code. 
+The ApplicationContext extends from the BeanFactory to provide further functionality of bean integration with application-layer features such as AOP, event propagation and message resource handling.
 Functionality across the bean lifecycle is further enhanced with ApplicationContext Post Processor, Message Source access and Bean Post Processor registration. 
 </p>
 <p>
@@ -266,30 +266,31 @@ The autoconfiguration will use annotations such as <code>@ConditionalOnMissingBe
 Spring Boot Autoconfiguration also plays a role in the type of IOC container that is used by the Spring Boot application. Spring Boot will use the AnnotationConfigApplicationContext. If, during the Autoconfiguration scan a web starter-project is identified, the IOC container will use the AnnotationConfigServletWebServerApplicationContext. The latter of the ApplicationContext types will create, initialise and run a webserver as required by the starter-projects. The selection of the ApplicationContext further extends the functionality of Autoconfiguration to support the 'convention over configuration' framework.
 </p>
 <p>
-Spring starter-dependencies and @SpringBootApplication 
-
-Embedded server
-
-Reduced LOC
-
-Production-ready features
-
+The Spring Boot starter dependencies act as a package dependency which includes the related technologies required by the application thus eliminating the need to add multiple related dependencies in the same POM.xml file. The starter-dependencies extend the convention-over-configuration of Spring Boot by further reducing the configuration required by the developer.
+If you were to develop a RESTful application, you would require the MVC design pattern along with database connectivity and a web server. The <i>spring-boot-starter-web</i> dependency 
+encapsulates all these requirements in a single dependency.<br>
+Another example could be the <i>spring-boot-starter-data-jpa</i> which provides persistence support for H2, Hsqldb and Derby databases out of the box. 
 </p>
 <p>
-The convenience of Spring Boot to configure and create production-ready applications out-of-the-box can be realised through the 'Spring initializer' at <a href="https://start.spring.io/">start.spring.io</a>. The Spring initializer can also be used through Spring tool suite and allows the developer to specify the starter-dependencies that create the auto-configured environment. 
+Spring Boot provides an embedded server into the jar executable application as default. Without Spring Boot, the developer would be required to install a web server that the application artifact is later deployed to. Spring Boot provides an embedded server to make the server part of the application. Spring Boot offers a default embedded server of Tomcat, however alternatives such as Jetty and UnderTow are also available. Apache Tomcat is an open source web server designed to execute Java servlets and rendering the Java Server Pages. 
 </p>
+<p>
+Spring Boot enables the use of externalised configuration. Beans can use the <code>@Value</code> annotation to obtain their value from an external <i>.properties</i> file that can vary for each environment or use of the application code. The application
+</p>
+
+
 <br>
 <h4>Summary</h4>
 <p>
-- Spring is a lightweight framework for creating applications 
-- It provides IOC container for loose coupling
-- it also provides other features
-- Developers create beans which are instructions for creating objects to be injected
-- this can be configured with XML or annotations
-- The huge amounts of configuration required by Spring framework gave drive to Spring Boot
-- Spring Boot uses Autoconfiguration to scan the jars and create a default implementation of the beans
-- This is called convention over configuration where we can always customise configuration as required.
-
+The convenience of Spring Boot to configure and create production-ready applications out-of-the-box can be realised through the 'Spring initializer' at <a href="https://start.spring.io/">start.spring.io</a>. The Spring initializer can also be used through Spring tool suite and allows the developer to specify the starter-dependencies that create the auto-configured environment. 
+</p>
+<p>
+The Spring framework was introduced as a lightweight solution for loose-coupling and management of Java Objects with an IOC container. 
+Within Spring, developers are able to create beans to be stored within the IOC container which represent instructions for creating and managing Java Objects. 
+The ApplicationContext IOC container introduced annotation-based configuration and enhanced IOC bean management features. 
+Following the growth and popularity of Spring, the developer became overloaded with xml configuration when using the Spring framework. 
+Spring Boot introduced Autoconfiguration that uses convention over configuration to reduce the amount of configuration required when using the Spring framework. 
+As a result, Spring Boot enables the developer to create out-of-the-box production-ready applications with minimal configuration. 
 </p>
 
 <br>
