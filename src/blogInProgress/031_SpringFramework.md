@@ -3,7 +3,7 @@ title: 'The benefits of using Spring Boot'
 date: 2020-10-09
 author: 'Aneesh Mistry'
 featuredImage: ../images/031_tokyo.jpg
-subtitle: 'Understand how Spring Boot emerged as a solution to the challenges from the Spring Framework '
+subtitle: 'Understand how Spring Boot emerged as a solution to the challenges that originated from the Spring Framework '
 time: '10'
 tags:
 - Spring
@@ -19,18 +19,18 @@ tags:
 <p>
 <a href="https://spring.io/" target="_blank">Spring</a> is an open source application framework used with Java. 
 Spring offers comprehensive support to the developer for building applications with features including testing, data access, web frameworks and messaging support. 
-The popularity of Spring, which is over 18 years old, has been realised as a from its light-weight design and features which include inversion of control (IOC).
+The popularity of Spring, which is over 18 years old, has been realised as a from its light-weight design and features that include inversion of control (IOC).
 </p>
 
 <br>
 <h4>Key features of the Spring framework</h4>
 <p>
-The IOC container serves as the most valuable feature Spring offers the developer.
-The IOC container is complementary to the final principle in SOLID <strong>'dependency inversion'</strong>. Dependency inversion creates loosely coupled classes within the application design. Loose coupling will provide benefits such as easier unit testing and support for application growth and behaviours. 
+Spring provides an IOC container which serves as the most valuable feature to the developer.
+The IOC container is complementary to the final principle of SOLID: <strong>'dependency inversion'</strong>. Dependency inversion creates loosely coupled classes within the application design. Loose coupling will provide benefits across unit testing and support for application growth and behaviours. 
 You can read about the dependency inversion in more detail from my previous <a href="https://aneesh.co.uk/dependency-inversion-principle" target="_blank">blog</a>.
 </p>
 <p>
-In addition to the IOC container, the Spring framework also provides out-of-the-box support for bespoke features:
+In addition to the IOC container, the Spring framework also provides out-of-the-box support for further features:
 </p>
 <strong>Aspect-orientated programming</strong>, also known as AOP, enables cross-cutting concerns to be injected for method calls within the application. With AOP, the process of calling methods can be broken down into sections (such as before the call and after the call) where logic can be injected in a modular fashion. You can read more on AOP in my blog <a href="https://aneesh.co.uk/implementing-aop-in-a-spring-application" target="_blank">here</a>.
 </p>
@@ -42,10 +42,11 @@ In addition to the IOC container, the Spring framework also provides out-of-the-
 Spring provides an object relational mapping of data where support for integration with Hibernate, Java persistence API and data access object implementations can be configured for the IOC container.
 </p>
 <p>
-<strong>Model-view controller framework</strong>, also known as MVC, is an industry-standard design pattern used for developing front-end interfaces that support scalable applications. MVC defines three components of the application that allow data to be passed through the application for processing: 
+<strong>Model-view-controller framework</strong>, also known as MVC, is an industry-standard design pattern used for developing front-end interfaces that support scalable applications. 
+MVC defines three components of the application that allow data to be passed through the application for processing: 
 The view, which represents the interface that the user interacts with.<br>
 The controller, which accepts an input from the user and converts the request to the model.<br>
-The model, the central component which manages the request from the controller and manages the business logic to return a response.
+The model, the central component which manages the request from the controller and manages the business logic to return a response for the user.
 
 ![Model view controller diagram](../images/031_mvc.png)
 
@@ -59,8 +60,8 @@ The IOC container can exist with different properties and features, these are la
 </p>
 <h4>Spring Beans</h4>
 <p>
-A Spring Bean contains a set of instructions for creating an Object; by default, the Object is created as a singleton within the application. The bean is later injected as and when it is required. 
-Spring Beans definitions are made dependent to the IOC container that is used. Definitions can be made using XML or annotations. For XML files, beans are defined within a configuration file, and are injected by defining an 'autowire' property to the class configuration or by accessing the bean through its name from the IOC container. Alternatively, beans can be defined within a class marked as '@Configuration' and injected by using the '@Autowired' annotation. We will later visit how to define the IOC container of the application. 
+A Spring Bean contains a set of instructions for creating an Object; by default, the Object is created as a singleton. The bean is later injected as and when it is required. 
+Spring Beans definitions are made dependent to the IOC container that is used. Definitions can be made using XML or annotations. For XML files, beans are defined within a configuration file, and are injected by defining an 'autowire' property to the class configuration or by accessing the bean through its name from the IOC container. Alternatively, beans can be defined within a class marked with '@Configuration' and injected by using the '@Autowired' annotation. We will later visit how to define the IOC container for the application. 
 An example of the two styles for definitions are below:
 
 XML definition and autowire:
@@ -103,7 +104,7 @@ public class Race{
 ```
 </p>
 <p>
-When using the Spring Framework, the type of IOC container is determined by the developer. The ApplicationContext is significantly more popular as recommended by the <a href="https://docs.spring.io/spring-framework/docs/2.5.x/reference/beans.html#context-introduction-ctx-vs-beanfactory">documentation</a>: <i>'use an ApplicationContext unless you have a really good reason for not doing so.'</i> The motivation for using the BeanFactory over the ApplicationContext is limited to only when memory usage is a valuable metric to the application as the BeanFactory can help reduce the memory-load of default ApplicationContext features.
+When using the Spring Framework, the IOC container is determined by the developer. The ApplicationContext is significantly more popular as recommended by the <a href="https://docs.spring.io/spring-framework/docs/2.5.x/reference/beans.html#context-introduction-ctx-vs-beanfactory">documentation</a>: <i>'use an ApplicationContext unless you have a really good reason for not doing so.'</i> The motivation for using the BeanFactory over the ApplicationContext is limited to only when memory usage is a valuable metric to the application as the BeanFactory can help reduce the memory-load of default ApplicationContext features.
 </p>
 <h4>BeanFactory container</h4>
 <p>
@@ -161,7 +162,10 @@ While the BeanFactory supports only xml-configuration of beans, the ApplicationC
 <-- to update below?>
 
 
-The ApplicationContext extends from the BeanFactory to provide further functionality of bean integration with application-layer features such as event propagation and message resource handling. The ApplicationContext can read textual messages from the properties and also to publish events to listeners.
+The ApplicationContext extends from the BeanFactory to provide further functionality of bean integration with application-layer features such as:
+* ApplicationEvent support for creating and listening to events during runtime
+* MessageSource access to support environment-specific configuration and internationalisation
+* BeanPostProcessor for the creation and use of new beans before formal bean creation
 </p>
 <p>
 The ApplicationContext container can be implemented similarly to the XmlBeanFactory with the implementation 'ClassPathXmlApplicationContext':
@@ -296,7 +300,7 @@ Spring Boot applications can be created out-of-the-box from the 'Spring initiali
 <br>
 <h4>AutoConfiguration</h4>
 <p>
-AutoConfiguration is the most valuable feature from Spring Boot as it resolves the excessive configuration required from the developer for the application purpose. 
+AutoConfiguration is the core feature from Spring Boot as it resolves the excessive configuration required from the developer for the application purpose. 
 </p>
 <p>
 As previously visited, Spring MVC is one example where default configuration would always be required to set-up the DispatcherServlet and ViewResolver amongst other infrastructure components.
@@ -312,6 +316,13 @@ Spring Boot AutoConfiguration also plays a role in the default IOC container tha
 </p>
 <br>
 <h4>Other key features with Spring Boot</h4>
+<p>
+The first main feature from a Spring Boot application is the @SpringBootApplication annotation that is added to the main class. 
+The single annotation encapsulates 3 other annotations that are useful for the developer to use the main class for:
+* @Configuration enables Java-based configuration for the class to enable Beans to be defined
+* @ComponentScan to enable component scanning across the application package and sub-packages
+* @EnableAutoConfiguration to enable Spring Boot AutoConfiguration feature
+</p>
 <p>
 As previously mentioned, Spring Boot introduces 'starter-dependencies' that can be selected during creation of a Spring Boot Application, or injected to the pom.xml file. Starter-dependencies  includes the related configurations and beans required by the application thus eliminating the need to add multiple related dependencies in the same POM.xml file. The starter-dependencies extend the convention-over-configuration of Spring Boot by further reducing the configuration required by the developer.
 If you were to develop a RESTful application, you would require the MVC design pattern along with further dependencies for database connectivity and a object to relational mapping. The <i>spring-boot-starter-web</i> dependency encapsulates all these requirements together to include the jar files of the embedded server, AOP, MVC and more.

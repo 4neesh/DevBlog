@@ -168,12 +168,21 @@ You can use a configuration server for determining the port to search or live on
 
 two key points; load balanced and fetchRegistry
 
+1. The service that is being called (PhoneBook) will need to expose the endpoint controller to be called by the other service.
+2. It will return a ResponseEntity<?> as we are sending HTTP messages from client to server. 
+3. We are able to configure a HTTP response by using the ResponseEntity
+<p>
+HTTP Messages (why we are using ResponseEntity<?> and ResponseBody)
+HTTP messages used for exchanging data between a client and a server. These consists of a request and a response. 
+The messages share a similar structure that consists of a start-line describing the request as a header code, optional HTTP headers to describe the message or specifying the request
+a blank line indicating all meta-data for the request has been sent, and an optional body containing the data associated with the request. 
+</p>
 <br>
 <h4>Summary</h4>
 <p>
 The Spring Cloud Eureka Netflix 
 
-You can find the source code from this blog on GitHub <a href="https://github.com/4neesh/DeveloperBlogDemos/tree/master/Eureka">here</a>.
+You can find the source code from this blog on GitHub <a href="https://github.com/4neesh/DeveloperBlogDemos/tree/master/Eureka	">here</a>.
 </p>
 
 <br>
