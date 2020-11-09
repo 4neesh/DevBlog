@@ -1,6 +1,6 @@
 ---
 title: 'The benefits of using Spring Boot'
-date: 2020-10-09
+date: 2020-11-09
 author: 'Aneesh Mistry'
 featuredImage: ../images/031_tokyo.jpg
 subtitle: 'Understand how Spring Boot emerged as a solution to the challenges that originated from the Spring Framework '
