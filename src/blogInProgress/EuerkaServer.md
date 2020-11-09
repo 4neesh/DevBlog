@@ -22,7 +22,6 @@ tags:
 This service registry was built by Netflix and then open sourced.
 </p>
 <p>
-
 It allows you to enable microservices to see each other, to register and be discoverable. The service registry is like a phone-book for services within the microservice architecture. It tells each other where they live and if they exist. 
 Other microservices are discoverable by the server by registering it. In this blog I will create the discovery server. 
 The service discovery allows services to communicate with each other without hard coding the hostname or the port. 
@@ -32,6 +31,9 @@ If the location of a client changes, the consumers will not need to know as the 
 Eureka provides the host name and port to the clients.
 
 </p>
+
+
+
 <br>
 <h4>Creating the registration server</h4>
 <p>
@@ -57,6 +59,10 @@ If we navigate to localhost:9001, we can find the server without any instances r
 
 //image of server.
 </p>
+
+
+
+
 <br>
 <h4>Configuring the client</h4>
 <p>
@@ -153,8 +159,12 @@ This is a marker annotation for others to know it is a Eureka client. We do not 
 Alternatively, you can use @EnableEurekaClient. EnableDiscoveryClient will instead select the implementation (Consul, ZooKeeper, Eureka) from the classpath and assign it. 
 </p>
 
+
+
+
+
 <br>
-<h4>Enabling services to use Eureka for discovery</h4>
+<h4>Enabling microservices to communicate through Eureka</h4>
 <p>
 A strength from the Eureka discovery service is that the services within the infrastructure do not require an understanding of the location of other services, just their name. Therefore the Eureka server is able to map requests to the appropriate service as and when they move location.
 In our example, this will involve moving a service from port 8881 to 8882 and still being able to communicate with it from the second service.

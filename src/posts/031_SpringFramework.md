@@ -4,7 +4,7 @@ date: 2020-10-09
 author: 'Aneesh Mistry'
 featuredImage: ../images/031_tokyo.jpg
 subtitle: 'Understand how Spring Boot emerged as a solution to the challenges that originated from the Spring Framework '
-time: '10'
+time: '12'
 tags:
 - Spring
 ---
@@ -14,11 +14,18 @@ tags:
 &#8226; Review the core IOC containers provided with Spring.<br>
 &#8226; Understand how Spring Boot Autoconfiguration enables convention over configuration.<br>
 
+<p>
+<i>
+In the first year of my career, my manager would often tell me that writing a VBA script would allow me to make a coffee while the computer did my work.
+Fascinated, I started to write more VBA scripts, measuring the productivity of the script as to how many coffees (few minutes) it would save me. This blog will look 
+at how Spring Boot can send your coffee intake through the roof...
+</i>
+</p>
 <br>
 <h4>The Spring framework</h4>
 <p>
 <a href="https://spring.io/" target="_blank">Spring</a> is an open source application framework used with Java. 
-Spring offers comprehensive support to the developer for building applications with features including testing, data access, web frameworks and messaging support. 
+Spring offers comprehensive support to the developer for building applications with in-built support for testing, data access, web frameworks and messaging support. 
 The popularity of Spring, which is over 18 years old, has been realised as a from its light-weight design and features that include inversion of control (IOC).
 </p>
 
@@ -27,15 +34,16 @@ The popularity of Spring, which is over 18 years old, has been realised as a fro
 <p>
 Spring provides an IOC container which serves as the most valuable feature to the developer.
 The IOC container is complementary to the final principle of SOLID: <strong>'dependency inversion'</strong>. Dependency inversion creates loosely coupled classes within the application design. Loose coupling will provide benefits across unit testing and support for application growth and behaviours. 
-You can read about the dependency inversion in more detail from my previous <a href="https://aneesh.co.uk/dependency-inversion-principle" target="_blank">blog</a>.
+You can read about dependency inversion in more detail from my previous <a href="https://aneesh.co.uk/dependency-inversion-principle" target="_blank">blog</a>.
 </p>
 <p>
 In addition to the IOC container, the Spring framework also provides out-of-the-box support for further features:
 </p>
-<strong>Aspect-orientated programming</strong>, also known as AOP, enables cross-cutting concerns to be injected for method calls within the application. With AOP, the process of calling methods can be broken down into sections (such as before the call and after the call) where logic can be injected in a modular fashion. You can read more on AOP in my blog <a href="https://aneesh.co.uk/implementing-aop-in-a-spring-application" target="_blank">here</a>.
+<strong>Aspect-orientated programming</strong>, also known as AOP, enables cross-cutting concerns to be injected for method calls within the application. 
+With AOP, the process of calling methods can be broken down into sections (such as before the call and after the call) where logic can be injected in a modular fashion. You can read more on AOP in my blog <a href="https://aneesh.co.uk/implementing-aop-in-a-spring-application" target="_blank">here</a>.
 </p>
 <p>
-<strong>Security</strong> is supported by Spring for authentication, authorisation and other aspects. Spring security offers popular and supported security mechanisms that can be efficiently implemented and customised into enterprise applications such as authorisation protocols of Kerberos, OAuth and SAML. 
+<strong>Security</strong> is supported by Spring for authentication, authorisation and other aspects. Spring security offers popular security mechanisms that can be efficiently implemented and customised into enterprise applications such as authorisation protocols of Kerberos, OAuth and SAML. 
 </p>
 <p>
 <strong>Transaction management</strong> by Spring ensures database transactions are made in a timely manner using the ACID components. When an application makes a transaction to a database, the ACID components of atomicity, consistency, isolation and durability are important to meet to ensure transactions are orderly, complete and correct. The Spring framework provides an abstract layer underpinning both local transactions (in a centralised system) and global transactions (in a distributed system).
@@ -61,7 +69,7 @@ The IOC container can exist with different properties and features, these are la
 <h4>Spring Beans</h4>
 <p>
 A Spring Bean contains a set of instructions for creating an Object; by default, the Object is created as a singleton. The bean is later injected as and when it is required. 
-Spring Beans definitions are made dependent to the IOC container that is used. Definitions can be made using XML or annotations. For XML files, beans are defined within a configuration file, and are injected by defining an 'autowire' property to the class configuration or by accessing the bean through its name from the IOC container. Alternatively, beans can be defined within a class marked with '@Configuration' and injected by using the '@Autowired' annotation. We will later visit how to define the IOC container for the application. 
+Spring Bean definitions are made dependent to the IOC container that is used. Definitions can be made using XML or annotations. For XML files, beans are defined within a configuration file, and are injected by defining an 'autowire' property to the class configuration or by accessing the bean through its name from the container in the source code. Alternatively, beans can be defined within a class marked with '@Configuration' and injected by using the '@Autowired' annotation. We will later visit how to define the IOC container for the application. 
 An example of the two styles for definitions are below:
 
 XML definition and autowire:
@@ -158,10 +166,6 @@ The beanFactory can be used to obtain the bean:
 <p>
 The ApplicationContext is a an advanced Spring container available from Spring 3.0 that offers specific framework-orientated enterprise functionality as well as all BeanFactory features.
 While the BeanFactory supports only xml-configuration of beans, the ApplicationContext differs as it additionally supports annotation-based configuration that can be used within the application code.
-
-<-- to update below?>
-
-
 The ApplicationContext extends from the BeanFactory to provide further functionality of bean integration with application-layer features such as:
 * ApplicationEvent support for creating and listening to events during runtime
 * MessageSource access to support environment-specific configuration and internationalisation
@@ -183,7 +187,7 @@ The annotation-based container will perform a component scan to the configuratio
 </p>
 
 <br>
-<h4>Some challenges found with the Spring framework</h4>
+<h4>Challenges with the Spring framework</h4>
 <p>
 While Spring provided developers with some great features to transform their application design and complexity, it introduced some unwanted challenges to the developer.
 The complexities of Object management and dependency injection was since replaced with verbose xml configuration, most of which was boilerplate code.
@@ -292,10 +296,10 @@ In April 2014, the advent of Spring Boot came as a solution to resolve the heavy
 <h4>Introduction to Spring Boot</h4>
 <p>
 Spring Boot was introduced with a precendent to <i>convention over configuration</i>: the objective of reducing the number of decisions a developer needs to make when creating an application. But what does this mean?<br>
-The design paradigm of convention over configuration will only require the developer to specify <u>unconventional</u> configurations for the application. A <i>sensible default</i> is however defined for all other infrastructure components (which would include DispatcherServlet and component scanning for MVC).
+The design paradigm of convention over configuration will <i>only</i> require the developer to specify <u>unconventional</u> configurations for the application. A <i>sensible default</i> is however defined for all other infrastructure components (which would include DispatcherServlet and component scanning for MVC - yay).
 </p>
 <p>
-Spring Boot applications can be created out-of-the-box from the 'Spring initializer' at <a href="https://start.spring.io/">start.spring.io</a>. The Spring initializer can also be used through Spring Tool Suite and allows the developer to specify the dependencies that create the environment. 
+Spring Boot applications can be created out-of-the-box from the 'Spring initializer' at <a target="_blank" href="https://start.spring.io/">start.spring.io</a>. The Spring initializer can also be used through Spring Tool Suite and allows the developer to specify the dependencies that create the environment. 
 </p>
 <br>
 <h4>AutoConfiguration</h4>
@@ -304,34 +308,34 @@ AutoConfiguration is the core feature from Spring Boot as it resolves the excess
 </p>
 <p>
 As previously visited, Spring MVC is one example where default configuration would always be required to set-up the DispatcherServlet and ViewResolver amongst other infrastructure components.
-The same principle applies for Hibernate where we need to manually configure a data source and entity manager factory as to our application. 
+The same principle applies for Hibernate where we need to manually configure a data source and entity manager factory to our application. 
 Rather than configuring the xml ourselves, Spring Boot AutoConfiguration will create the beans automatically upon scanning the jar in the class-path and deciding which default beans are required.
 </p>
 <p>
-Spring AutoConfiguration is enabled from the spring-boot-autoconfigure jar in the classpath.
+Spring AutoConfiguration is used from the spring-boot-autoconfigure jar in the classpath.
 The AutoConfiguration class, which is run after all other beans are configured, will appear like any usual Spring @Configuration class. The difference however lies in annotations such as <code>@ConditionalOnMissingBean</code> and <code>@ConditionalOnClass</code> which will configure and activate a bean provided certain classes appear within the classpath. 
 </p>
 <p>
-Spring Boot AutoConfiguration also plays a role in the default IOC container that is used by the Spring Boot application. Spring Boot will default to the <code>AnnotationConfigApplicationContext</code> container. If, during the Autoconfiguration scan a web starter-project is identified, the IOC container will use the <code>AnnotationConfigServletWebServerApplicationContext</code> container instead. The latter of the ApplicationContext types will create, initialise and run a webserver as required by the starter-projects (more on starter projects soon). The selection of the ApplicationContext further extends the functionality of Autoconfiguration to support the 'convention over configuration' framework.
+Spring Boot AutoConfiguration also plays a role in the default IOC container that is used by the Spring Boot application. Spring Boot will default to the <code>AnnotationConfigApplicationContext</code> container. If during the Autoconfiguration scan a web starter-project is identified, the IOC container will use the <code>AnnotationConfigServletWebServerApplicationContext</code> container instead. The latter of the ApplicationContext types will create, initialise and run a webserver as required by the dependencies. The selection of the ApplicationContext further extends the functionality of Autoconfiguration to support the 'convention over configuration' framework.
 </p>
 <br>
 <h4>Other key features with Spring Boot</h4>
 <p>
-The first main feature from a Spring Boot application is the @SpringBootApplication annotation that is added to the main class. 
+The first main feature from a Spring Boot application is the @SpringBootApplication annotation that is added to the main class as default. 
 The single annotation encapsulates 3 other annotations that are useful for the developer to use the main class for:
 * @Configuration enables Java-based configuration for the class to enable Beans to be defined
 * @ComponentScan to enable component scanning across the application package and sub-packages
-* @EnableAutoConfiguration to enable Spring Boot AutoConfiguration feature
+* @EnableAutoConfiguration to enable the Spring Boot AutoConfiguration
 </p>
 <p>
-As previously mentioned, Spring Boot introduces 'starter-dependencies' that can be selected during creation of a Spring Boot Application, or injected to the pom.xml file. Starter-dependencies  includes the related configurations and beans required by the application thus eliminating the need to add multiple related dependencies in the same POM.xml file. The starter-dependencies extend the convention-over-configuration of Spring Boot by further reducing the configuration required by the developer.
-If you were to develop a RESTful application, you would require the MVC design pattern along with further dependencies for database connectivity and a object to relational mapping. The <i>spring-boot-starter-web</i> dependency encapsulates all these requirements together to include the jar files of the embedded server, AOP, MVC and more.
+Spring Boot introduces 'starter-dependencies' that can be selected during creation of a Spring Boot Application, or injected to the pom.xml file. Starter-dependencies  includes the related configurations and beans required by the application thus eliminating the need to add multiple related dependencies in the same pom.xml file. The starter-dependencies extend the convention-over-configuration of Spring Boot by further reducing the configuration required by the developer.
+If you were to develop a RESTful application, you would require the MVC design pattern which includes Spring MVC, Spring REST and Object to relational mapping. The <i>spring-boot-starter-web</i> dependency encapsulates all these requirements together to include the jar files with the application classpath.
 </p>
 <p>
-Spring Boot provides an embedded server into the jar executable application as default. Without Spring Boot, the developer would be required to install a web server that the application artifact is later deployed to. Spring Boot offers a default embedded server of Tomcat, however alternatives such as Jetty and UnderTow are also available. Apache Tomcat is an open source web server designed to execute Java servlets and to render Java Server Pages.
+Spring Boot provides an embedded server into the jar executable application as default. Without Spring Boot, the developer would be required to install a web server that the application artifact is later deployed to. Spring Boot offers a default embedded server of Tomcat, however alternatives such as Jetty and Undertow are also available. Apache Tomcat is an open source web server designed to execute Java servlets and to render Java Server Pages.
 </p>
 <p>
-Spring Boot enables the use of externalised configuration to provide control of the application runtime properties. Beans can use the <code>@Value</code> annotation to obtain their value from an external <i>.properties</i> file. Spring Boot provides a properties file and bootstrap file to priorities configurations that can enable custom application behaviour for different environments. The externalised configuration can be used for changing the URL, username and password accesses, locale for formats and also logging level to the same application in different circumstances. 
+Spring Boot enables the use of externalised configuration to provide control of the application runtime properties. Beans can use the <code>@Value</code> annotation to obtain their value from an external <i>.properties</i> file. Spring Boot provides a properties file and bootstrap file to priorities configurations that can enable custom application behaviour for different environments. The externalised configuration can be used for changing the URL, username and password accesses, locale for formats and also logging level to the same application in different environments. 
 </p>
 
 <br>
@@ -340,9 +344,10 @@ Spring Boot enables the use of externalised configuration to provide control of 
 The Spring framework was introduced as a lightweight solution for loose-coupling and management of Java Objects with an IOC container. 
 Within Spring, developers are able to create beans to be stored within an IOC container which represent instructions for creating and managing Java Objects. 
 The ApplicationContext IOC container introduced annotation-based configuration and enhanced IOC bean management features. 
-Following the growth and popularity of Spring, the developer became overloaded with xml configuration when using the Spring framework thus Spring Boot was invented. 
+Following the growth and popularity of Spring, the developer often wrote excessive xml configuration when using the Spring framework thus Spring Boot offered a solution. 
 Spring Boot introduced Autoconfiguration that uses convention over configuration to create default beans and configuration for the application. 
 As a result, Spring Boot enables the developer to create out-of-the-box production-ready applications with minimal configuration required with the flexibility of customisation. 
+You can read more about Spring and its features from the excellent documentation <a href="https://docs.spring.io/spring-framework/docs/current/reference/html/" target="_blank">here</a>
 </p>
 
 <br>
