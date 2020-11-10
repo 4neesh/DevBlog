@@ -13,14 +13,7 @@ tags:
 &#8226; Understand the popularity of the Spring framework to developers.<br>
 &#8226; Review the core IOC containers provided with Spring.<br>
 &#8226; Understand how Spring Boot Autoconfiguration enables convention over configuration.<br>
-<br>
-<p>
-<i>
-In the first year of my career, my manager would often tell me that writing a VBA script would allow me to make a coffee while the computer did my work.
-Fascinated, I started to write more VBA scripts, measuring the productivity of the script as to how many coffees (few minutes) it would save me. This blog will look 
-at how Spring Boot can send your coffee intake through the roof...
-</i>
-</p>
+
 <br>
 <h4>The Spring framework</h4>
 <p>

@@ -1,10 +1,10 @@
 ---
-title: 'Spring cloud configuration'
-date: 2020-06-01 16:34:00
+title: 'Centralising configuration within a distributed application'
+date: 2020-11-23
 author: 'Aneesh Mistry'
-featuredImage: ../images/xxx.png
-subtitle: 'xxx'
-time: 'xx'
+featuredImage: ../images/032_jordan.png
+subtitle: 'Use Spring Cloud Config to create a configuration server and to use the values within the application'
+time: '10'
 tags:
 - Spring
 - Microservices
@@ -12,8 +12,8 @@ tags:
 <br>
 <strong>Key Takeaways</strong><br>
 &#8226; Use Spring Cloud Config for externalised configuration in a distributed system.<br>
-&#8226; Understand how to configure the server to scan a Git repository for properties.<br>
-&#8226; Understand how the Config server will place a hierarchy on the properties files.<br>
+&#8226; Understand how to configure the server and how properties are scanned with priority.<br>
+&#8226; Consume the config server to represent different environments.<br>
 
 <br>
 <h4>Centralised configuration</h4>
@@ -23,11 +23,81 @@ In this case, I will use the configuration to change the behaviour without havin
 One example may be to change the location of servers of environment variables.
 Configuration is externalised for a modular architecture.
 By centralising configuration, the risk of different environment relying on a local file or falling out of sync is reduced. Environment variables can be tracked and maintained across environments. Services may also require restarting if they rely on environment variables, whereas with a config server, they will not.
-
+We use configurations to represent all the changes that might take place between deployments. For example, this could include login credentials, connections to database versions, hostnames and also logging levels. Configurations for services within a Spring Boot application is often defined within the application.properties file. 
+The externalised configuration provides a configuration to multiple services at the same time to reduce the repetitive configuration code that is required.
+</p>
+<p>
+Spring Cloud Config is designed to store and server distributed configuration to its clients. 
+It uses different storage medium, but is ideally version controlled with git. 
+Services can later use the config server as a REST service to obtain values for their properties.
 In this example, I will use GitHub to host the configuration server for remote configuration.
 We use Spring Cloud Config server.
+
+![Spring Config Server diagram from client to git](../images/032_configDiagram.png)
+
+//insert diagram for it
 </p>
 
+<br>
+<h4>Creating a Config Server</h4>
+<p>
+A Spring Config server can be created by using the Spring Config Server dependency:
+
+```
+<dependency>
+  <groupId>org.springframework.cloud</groupId>
+  <artifactId>spring-cloud-config-server</artifactId>
+</dependency>
+
+```
+The server can be activated through a single annotation in the main class:
+
+```java{numberLines:true}
+@SpringBootApplication
+@EnableConfigServer
+public class ConfigServerApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ConfigServerApplication.class, args);
+	}
+
+}
+```
+
+The <code>@EnableConfigServer</code> annotation will activate the server to act as a REST service to find key-value pairs from properties files to be included for reference by clients.
+</p>
+
+<br>
+<h4>Configuring the server</h4>
+<p>
+The server valuescan use many different medium for storing the configuration values including JDBC, Redis, or AWS S3. The default storage is git as used in this demo.
+The values of the configuration will scan a directory within the server to return a hierarchy of values:
+
+```{numberLines:true}
+server.port= 8888
+spring.cloud.config.server.git.uri = https://github.com/4neesh/StockPriceMicroservice
+spring.cloud.config.server.git.searchPaths=
+          - Config*
+          - ConfigFiles/tech*
+
+```
+The first line will host the Config server on port 8888.
+Line 2 will specify where the server will look up the config git repository
+Line 3 onwards defines the search paths to find the appropriate '.properties' files to be included in the configuration server.
+</p>
+<p>
+The ConfigFiles/tech search path will search all properties files within the ConfigFiles/tech folder:
+- /ConfigFiles//home-prod.properties
+- /Config/home-prod.properties
+
+It is important to point the spring.cloud.config.server.git.uri to the base of the git repository where the properties are stored. The search paths will later provide the appropriate search depth of the repository to find the appropriate files.
+The Config* search path will retrieve all properties files within the /Config folder:
+- /Config/garden-prod.properties
+- /Config/garden-dev.properties
+- /Config/home-prod.properties
+- /Config/home-dev.properties
+
+</p>
 <br>
 <h4>Adding the properties files</h4>
 <p>
@@ -86,14 +156,19 @@ When defining the searchPaths, it is important to define them in order of granul
 ```
 
 <br>
-<h4>Browsing Config Files</h4>
+<h4>Navigating the Config server</h4>
 <p>
 The config server can be browsed by sending GET requests to the 8888 port.<br>
 I am using the Postman API development tool to make the requests and to illustrate the different values that can be returned.
+The naming convention for the config files will be {application name} - {active profile}.
 </p>
 <p>
 We are able to send a request to the port 8888 with the following name convention:<br>
-localhost:8000/{application}/{profile}</p>
+/{application}/{profile}
+/{application}-{profile}
+/{application}-{profile}.properties
+
+</p>
 <p>
 The application and profile variables are required parameters when making calls to the configuration server.<br>
 The application specifies the first part of the file name that is reviewed. In this instance, the available names are "application" and "acn". By default, "application" is returned.</p>
@@ -116,17 +191,51 @@ This means it will reach acn.properties first, then populate other configuration
 If an invalid application or profile name is entered, the returned values will be for the application.properties file.<br>
 </p>
 
+
+
 <br>
 <h4>Consuming the configuration server</h4>
 <p>
-
+Need to load the configuration server before the application uses its local properties by defining the server in the bootstrap.properties file.
+That way the config server takes precedence over the local properties that are defined. 
 </p>
+<p>
+Below property can be used to clone the server into the local service when it starts.
+```
+spring.cloud.config.server.git.clone-on-start
+cloud.config.uri=
+spring.application.name=
+spring.profiles.active=default
+```
+//good one to use. 
+</p>
+
+<p>
+The client can use a RestController to obtain the values from the config server:
+
+```java{numberLines:true}
+@RestController
+public class ClientController{
+
+  @Value
+  public String home;
+
+  @GetMapping("/home")
+  public String getHome(){
+    return home;
+  }
+
+}
+
+```
+</p>
+
 <br>
-<h4>Conclusion</h4>
+<h4>Summary</h4>
 <p>
 
 
 </p>
 
 <br>
-<small style="float: right;" >Picture: xxx, xxx by <a target="_blank" href="https://unsplash.com/@xxx">xxx</small></a><br>
+<small style="float: right;" >Picture: Petra, Jordan by <a target="_blank" href="https://unsplash.com/@aqaisieh">Ahmad Qaisieh</small></a><br>
