@@ -147,7 +147,7 @@ Add the Eureka client dependency
 <h4>Configuring the server properties</h4>
 <p>
 spring.application.name = config-server
-eureka.client.serviceUrl.defaultZone= defaultZone: http://localhost:9001/eureka/
+eureka.client.serviceUrl.defaultZone= http://localhost:9001/eureka/
 eureka.client.registerWithEureka=false
 
 The default zone will tell the client where to look for the eureka server.

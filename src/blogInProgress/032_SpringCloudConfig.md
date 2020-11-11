@@ -12,42 +12,53 @@ tags:
 <br>
 <strong>Key Takeaways</strong><br>
 &#8226; Use Spring Cloud Config for externalised configuration in a distributed system.<br>
-&#8226; Understand how to configure the server and how properties are scanned with priority.<br>
-&#8226; Consume the config server to represent different environments.<br>
+&#8226; Understand how to configure the server and how values are obtained across files.<br>
+&#8226; Consume the Config server from a client.<br>
 
 <br>
 <h4>Centralised configuration</h4>
 <p>
+Configuration is externalised for a modular architecture.
+We use configurations to represent all the changes that might take place between deployments. For example, this could include login credentials, connections to database versions, hostnames and also logging levels. Configurations for services within a Spring Boot application is often defined within the application.properties file. 
+The externalised configuration provides a configuration to multiple services at the same time to reduce the repetitive configuration code that is required.
+
 Configuration in an enterprise environment can be used for different environments.
 In this case, I will use the configuration to change the behaviour without having to change runtime behaviour.
 One example may be to change the location of servers of environment variables.
-Configuration is externalised for a modular architecture.
-By centralising configuration, the risk of different environment relying on a local file or falling out of sync is reduced. Environment variables can be tracked and maintained across environments. Services may also require restarting if they rely on environment variables, whereas with a config server, they will not.
-We use configurations to represent all the changes that might take place between deployments. For example, this could include login credentials, connections to database versions, hostnames and also logging levels. Configurations for services within a Spring Boot application is often defined within the application.properties file. 
-The externalised configuration provides a configuration to multiple services at the same time to reduce the repetitive configuration code that is required.
+
+By centralising configuration, the risk of different environment relying on a local file or falling out of sync is reduced. 
+Environment variables can be tracked and maintained across environments. 
+Services may also require restarting if they rely on environment variables, whereas with a config server, they will not.
 </p>
 <p>
 Spring Cloud Config is designed to store and server distributed configuration to its clients. 
 It uses different storage medium, but is ideally version controlled with git. 
+
 Services can later use the config server as a REST service to obtain values for their properties.
 In this example, I will use GitHub to host the configuration server for remote configuration.
 We use Spring Cloud Config server.
 
 ![Spring Config Server diagram from client to git](../images/032_configDiagram.png)
 
-//insert diagram for it
 </p>
 
 <br>
 <h4>Creating a Config Server</h4>
 <p>
-A Spring Config server can be created by using the Spring Config Server dependency:
+A Spring Config server can be created using the Spring Config Server dependency and Spring web dependency. The Spring web dependency provides the REST functionality of the 
+service while the config server will read the properties files:
 
 ```
 <dependency>
   <groupId>org.springframework.cloud</groupId>
   <artifactId>spring-cloud-config-server</artifactId>
 </dependency>
+
+<dependency>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-web</artifactId>
+</dependency>
+
 
 ```
 The server can be activated through a single annotation in the main class:
@@ -67,36 +78,32 @@ public class ConfigServerApplication {
 The <code>@EnableConfigServer</code> annotation will activate the server to act as a REST service to find key-value pairs from properties files to be included for reference by clients.
 </p>
 
-<br>
-<h4>Configuring the server</h4>
 <p>
-The server valuescan use many different medium for storing the configuration values including JDBC, Redis, or AWS S3. The default storage is git as used in this demo.
-The values of the configuration will scan a directory within the server to return a hierarchy of values:
+The server can use many different medium for storing the configuration values including JDBC, Redis, or AWS S3. The default storage is git as used in this demo.
+The values of the configuration will scan a directory within the server to return a hierarchy of values. In the application.properties file, we will use the following propertiesL
 
 ```{numberLines:true}
 server.port= 8888
-spring.cloud.config.server.git.uri = https://github.com/4neesh/StockPriceMicroservice
-spring.cloud.config.server.git.searchPaths=
-          - Config*
-          - ConfigFiles/tech*
-
+spring.cloud.config.server.git.uri = https://github.com/4neesh/DeveloperBlogDemos
+spring.cloud.config.server.git.searchPaths= SpringConfig/Config-files*, SpringConfig/Config-files/prod*, SpringConfig/Config-files/dev*
 ```
 The first line will host the Config server on port 8888.
-Line 2 will specify where the server will look up the config git repository
-Line 3 onwards defines the search paths to find the appropriate '.properties' files to be included in the configuration server.
+Line 2 will specify where the server will look up the config git repository. This is the home directory of the Git repository (where the .git file is located).
+Line 3 defines the search paths to find the appropriate '.properties' files to be included in the configuration server.
+The search path will first enter the SpringConfig folder, followed by scanning all files within the Config-files sub-directory, and finally the sub-directory of 'prod' and 'dev'.
+The Config server will register all .properties files within these folders to create the values to be upon.
 </p>
 <p>
-The ConfigFiles/tech search path will search all properties files within the ConfigFiles/tech folder:
-- /ConfigFiles//home-prod.properties
-- /Config/home-prod.properties
-
-It is important to point the spring.cloud.config.server.git.uri to the base of the git repository where the properties are stored. The search paths will later provide the appropriate search depth of the repository to find the appropriate files.
-The Config* search path will retrieve all properties files within the /Config folder:
-- /Config/garden-prod.properties
-- /Config/garden-dev.properties
-- /Config/home-prod.properties
-- /Config/home-dev.properties
-
+The search path will scan each of the following folders:
+- /SpringConfig/Config-files/application.properties
+- /SpringConfig/Config-files/prod/drinks-prod.properties
+- /SpringConfig/Config-files/prod/food-prod.properties
+- /SpringConfig/Config-files/dev/drinks-dev.properties
+- /SpringConfig/Config-files/dev/food-dev.properties
+</p>
+<p>
+When the service has started, you will be able to send GET requests to the server to find the proper
+You can call the server from Postman to return the Environment Object. 
 </p>
 <br>
 <h4>Adding the properties files</h4>
@@ -199,6 +206,8 @@ If an invalid application or profile name is entered, the returned values will b
 Need to load the configuration server before the application uses its local properties by defining the server in the bootstrap.properties file.
 That way the config server takes precedence over the local properties that are defined. 
 </p>
+
+![](../images/032_springLoad.png)
 <p>
 Below property can be used to clone the server into the local service when it starts.
 ```
