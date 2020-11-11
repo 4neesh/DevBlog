@@ -44,7 +44,9 @@ export default class Sidebar extends React.Component {
           <CardTitle className="newslettertitle">
             <strong>Subscribe to new posts</strong>
           </CardTitle>
-          <CardBody><MailChimp /></CardBody>
+          <CardBody>
+            <MailChimp />
+            </CardBody>
         </Card>
         <Card className="sidebarCard">
           <CardTitle className="viewBlogsHeadline">

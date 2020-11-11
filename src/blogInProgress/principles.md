@@ -18,9 +18,15 @@ tags:
 
 
 <br>
-<h4>Title</h4>
+<h4>part 1</h4>
 <p>
+life growing up
+starting bridge water associates
 
+entry to china 
+building relationships
+understanding peoplesbperspectives when they differ pge 50
+employed people for the mission of ba
 
 </p>
 <br>

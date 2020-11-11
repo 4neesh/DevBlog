@@ -29,7 +29,13 @@ tags:
 
 
 </p>
+<br>
+<h4>greeks</h4>
+<p>
+market return = beta
+alpha comes from betting against others
 
+</p>
 <br>
 <h4>Conclusion</h4>
 <p>

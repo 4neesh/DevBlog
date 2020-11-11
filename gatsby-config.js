@@ -82,7 +82,7 @@ module.exports = {
             }
           `,
           output: "/rss.xml",
-          title: "aneesh.co.uk RSS Feed",
+          title: "aneesh.co.uk",
           // optional configuration to insert feed reference in pages:
           // if `string` is used, it will be used to create RegExp and then test if pathname of
           // current page satisfied this regular expression;
