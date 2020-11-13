@@ -1,96 +1,20 @@
 ---
-title: 'Ready Set Go Lang'
+title: 'Ready Set Golang'
 date: 2020-12-10
 author: 'Aneesh Mistry'
 featuredImage: ../images/xxx.png
-subtitle: 'Using Go Lang, what it is for, and why it is so popular.'
-time: '10'
+subtitle: 'Visit the Go syntax and design patterns for creating a CRUD web service.'
+time: '15'
 tags:
-- xxx
+- Go
+- Microservices
 ---
 <br>
 <strong>Key Takeaways</strong><br>
-&#8226; The .<br>
-&#8226; The .<br>
-&#8226; The.<br>
+&#8226; Understand how the syntax of Go differs, using Java as a reference.<br>
+&#8226; Explore some of the key methods from the Go standard library for creating a web service.<br>
+&#8226; Handle HTTP requests from a client to perform CRUD operations.<br>
 
-<br>
-<h4>Golang syntax</h4>
-<p>
-When I review the Go syntax, I will often refer to how it would look in Java. With my confidence in Java, it is nice to be able to reflect upon how Go differs. 
-</p>
-<p>
-As a developer who worked mostly with Java before Golang, there were some key distinctions in the syntax between the languages:
-
-Method names start capitalised (inherited from C#)
-
-Functions are defined with func(). Function return type comes after the name.
-
-Go does not handle explicit exceptions, only error values which are returned as values.
-
-</p>
-<p>
-<strong>Naming conventions</strong><br>
-Go uses camelCase naming convention for identifiers. The first letter will also determine the visibility of the type.
-
-The identifier you name things, such as 'person' 'object' etc, are accessible within and outside the package depending on its naming convention. 
-Types can be accessed within their package or both within and outside. If it named with a capital letter (Person) it will be accessible outside the package. 
-Otherwise it is accessed only within (person). 
-</p>
-<p>
-<strong>Passing values</strong><br>
-Go uses pass-by-value within the source code. This means when a parameter is passed between functions, it will always create a copy of the value and pass it through.
-Go however defines two different types of parameters to be passed: the value or a reference.
-As Java uses pass by value, where a copy of the Object reference is passed between the methods, the address of the Object is accessed by the calling method:
-
-```java
-Person alice = new Person("Alice");
-changeName(alice, "Bob");
-System.out.println(alice.getName());
-```
-prints:
-```
-Bob
-```
-The reference of alice is passed into the changeName method that updates the name to "Bob" of the Object. 
-</p>
-<p>
-In Go, trying to achieve the same objective would not update the instance itself:
-
-```go
-func main(){
-    person := Person{"Alice"}
-    changeName(person)
-    fmt.Println(person)
-}
-func changeName(p Person){
-    p.name = "Bob"
-}
-```
-returns:
-```
-{Alice}
-```
-
-Instead, to pass the actual reference of the instance to the <code>changeName</code> method, we need to use an ampersand (&) to send the reference of the instance, and an 
-asterisk (*) to receive an address of the instance:
-
-```go
-func main(){
-    person := Person{"Alice"}
-    changeName(&person)
-    fmt.Println(person)
-}
-func changeName(p *Person){
-    p.name = "Bob"
-}
-```
-returns:
-```
-{Bob}
-```
-The syntax behind the ampersand and asterisk is useful to remember for addressing instances within the application.
-</p>
 <br>
 <h4>Creating a Go web service</h4>
 <p>
@@ -443,15 +367,124 @@ Lastly, the personList is updated to append the newPerson to the list and a resp
 <h4>6. Send PUT requests</h4>
 <p>
 Before we can send a PUT request, we need to create a new handler and pattern. When we need to update a user, we must specify exactly which one by a unique identifier (Id) and this will be passed into the URL for the request. 
-In the <code>main()</code> method, I will therefore create a new HandleFunc:
+In the <code>main()</code> method, I will therefore create a new HandleFunc for a pattern with a trailing forward-slash:
 
 ```go{numberLines:true}
-
+http.HandleFunc("/people/", singlePersonHandler)
 
 ```
-
 </p>
+<p>
+The <code>singlePersonHandler</code> method will be used to update the user from the peopleList accordingly:
 
+```go{numberLines:true}
+func singlePersonHandler(w http.ResponseWriter, r *http.Request){
+
+    urlPathSegments := strings.Split(r.URL.path, "people/")
+    personId, err := strconv.Atoi(urlPathSegments[len(urlPathSegments) -1])
+    if err != nil{
+        w.WriteHeader(http.StatusNotFound)
+        return
+    }
+    person, listItemIndex := findPersonById(personId)
+    if(person == nil){
+        w.WriteHeader(http.StatusNotFound)
+        return
+    }
+
+    var updatedPerson Person
+    body, err := ioutil.ReadAll(r.body)
+    if err != nil{
+        w.WriteHeader(http.StatusBadRequest)
+        return
+    }
+    err = json.Unmarshal(body, &updatedPerson)
+    if err != nil{
+        w.WriteHeader(http.StatusBadRequest)
+        return
+    }
+    person = &updatedPerson
+    personList[listItemIndex] = *person
+    w.WriteHeader(http.StatusOK)
+    return
+}
+
+func findPersonById(personId int) (*Person, int){
+
+    for i, person := range personList{
+        if person.Id == personId{
+            return &person, i
+        }
+    }
+    return nil, 0
+
+}
+
+```
+</p>
+<p>
+The PUT function can be divided into 2 sections: lines 3 to 13 and lines 15 to 29. 
+The first section will obtain the person instance from the list by extracting the id from the url and searching the list of users for the person.
+On line 3, <code>urlPathSegments</code> is is obtained by splitting the url path from 'people/'.
+The <code>personId</code> is then extracted by using the <code>strconv.Atoi</code> method to obtain the final parameter from the url. The error is handled accordingly on lines 5 to 8. 
+On line 9, the person and their index position in the list are obtained through a method call to the function <code>findPersonById</code>. findPersonById will loop through the personList
+to obtain the person instance and their index position i. 
+The first section concludes by handling a nil person that would be returned by findPersonId if no such Id is found for a person in the personList.
+</p>
+<p>
+The second section will create a new person instance <code>updatedPerson</code> and update the list of people with the new request.<br>
+On line 16, the <code>ioutil.ReadAll</code> method is used to read the content of the body from the PUT request. The body of the put request will contain the JSON of the person update. 
+Therefore the variable <code>body</code> contains the JSON for the updated user. An error is handled on lines 17 to 20.
+The JSON body is then extracted into the updatedPerson variables by using the <code>json.Unmarshal</code> method. The error that is returned is then handled. 
+The second section concludes where the person instance is overwritten with the <code>updatedPerson</code> and the index position in the personList is updated to the person.
+A response header of StatusOK is returned. 
+</p>
+<p>
+Section 2 can be converted into a switch statement to satisfy further HTTP methods requests to the url of 'person/' where a GET request would return a single person and a DELETE request would
+remove the person from the personList:
+
+```go{numberLines:true}
+switch r.Method{
+
+    case http.MethodGet:
+        body, err := json.Marshal(person)
+        if err != nil{
+            w.WriteHeader(http.StatusInternalServerError)
+            return
+        }
+        w.Header().set("Content-type", "application/json")
+        return
+    case http.MethodPut:
+        var updatedPerson Person
+        body, err := ioutil.ReadAll(r.body)
+        if err != nil{
+            w.WriteHeader(http.StatusBadRequest)
+            return
+        }
+        err = json.Unmarshal(body, &updatedPerson)
+        if err != nil{
+            w.WriteHeader(http.StatusBadRequest)
+            return
+        }
+        person = &updatedPerson
+        personList[listItemIndex] = *person
+        w.WriteHeader(http.StatusOK)
+        return
+
+    case http.MethodDelete:
+        personList := remove(personList, listItemIndex)
+        w.WriteHeader()
+
+    default:
+        w.WriteHeader(http.StatusMethodNotAllowed)
+}
+
+func remove(list []Person , index int) []Person{
+    list[index] = list[len(list)-1]
+    return list[:len(list)-1]
+}
+```
+</p>
 <br>
 <h4>7. Run the application</h4>
 <p>
