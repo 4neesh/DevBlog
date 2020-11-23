@@ -2,7 +2,7 @@
 title: 'Centralising configuration within a distributed application'
 date: 2020-11-23
 author: 'Aneesh Mistry'
-featuredImage: ../images/032_jordan.png
+featuredImage: ../images/032_jordan.jpg
 subtitle: 'Use Spring Cloud Config to create a configuration server and to use the values within the application'
 time: '10'
 tags:
