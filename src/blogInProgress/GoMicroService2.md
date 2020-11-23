@@ -190,35 +190,235 @@ Therefore the first column will be assigned to the &person.Id, second to &person
 The method completes by returning the personList which will consist of an array populated by each record in the database. 
 </p>
 
+<p>
+The second GET request used will be to obtain a single person from the database:
+
+
+```go
+func getPerson(personId int) (*Person, error) {
+
+	row := database.DbConn.QueryRow(`SELECT Id, Name, Age FROM people where Id = ?`, personId)
+	person := &Person{}
+
+	err := row.Scan(&person.Id, &person.Name, &person.Age)
+	if err == sql.ErrNoRows {
+		return nil, nil
+	} else if err != nil {
+		return nil, err
+	}
+
+	return person, nil
+}
+```
+
+The <code>getPerson(personId int)</code> method will take in an int value to represent the personId and will perform a search for the user. The method will return a Person instance with an error.
+The <code>row</code> item is defined as a single row by using the <a href="https://golang.org/pkg/database/sql/#DB.QueryRow" target="_blank">QueryRow</a> method. The QueryRow method differs from the Query 
+method as it will only return the first result from the database. 
+A new Person is instantiated, which will be populated with the <a href="https://golang.org/pkg/database/sql/#Row.Scan" target="_blank">row.Scan</a> method in line 6. The <code>row.Scan</code>
+method will return the values of the fields as specified by the query. As a result, we pass the values from column 1 into person.Id, column 2 into person.Name and column 3 into person.Age. 
+</p>
+<p>
+The error returned from <code>row.Scan</code> is evaluated against there being 0 records and any other errors which are otherwise returned. 
+Lastly, the complete Person instance is returned.
+</p>
 
 <br>
 <h4>Making POST requests to the database</h4>
 <p>
+The <code>insertPerson</code> method is used for making POST requests to the database. 
 
+```go
+func insertPerson(person Person) (int, error) {
+	result, err := database.DbConn.Exec(`INSERT INTO people (Name, Age) 
+	VALUES (?, ?);`, person.Name, person.Age)
+
+	if err != nil {
+		return 0, err
+	}
+	insertId, err := result.LastInsertId()
+	if err != nil {
+		return 0, nil
+	}
+	return int(insertId), nil
+}
+```
+The method will take a Person instance and return an int (the personId) along with an error. 
+The INSERT statement is made using the <a href="https://golang.org/pkg/database/sql/#DB.Exec" target="_blank">Exec</a> method without returning any rows.
+The result from the <code>Exec</code> method will return information such as the number of rows affected. The <code>lastInsertId</code> method is used to return 
+the latest Id from the database and it is returned from the method. 
 </p>
 
 <br>
 <h4>Making DELETE requests to the database</h4>
 <p>
+The DELETE method is similar to the <code>insertPerson</code> method where the <code>Exec</code> method is used to call a custom SQL query:
 
+```go
+func deletePerson(personId int) error {
+	_, err := database.DbConn.Exec(`DELETE FROM people where Id = ?`,
+		personId)
+	if err != nil {
+		return err
+	}
+	return nil
+}
+```
+</p>
+<p>
+The personId is passed into the method as a parameter and is used to perform the DELETE operation. 
 </p>
 
 <br>
 <h4>Making PUT requests to the database</h4>
 <p>
+The UPDATE method also uses the <code>Exec</code> method to perform an update of a user:
 
+```go
+func updatePerson(person Person) error {
+	_, err := database.DbConn.Exec(`UPDATE people SET Name = ?, Age = ? where Id = ?`,
+		person.Name, person.Age, person.Id)
+	if err != nil {
+		return err
+	}
+	return nil
+}
+```
+</p>
+<p>
+The query will update the Name and Age of the Person instance where the Id is as defined. 
+The handler will define the new Person instance and pass it into the method. An error is returned as per the SQL result. 
 </p>
 
 <br>
 <h4>Updating the handlers for the CRUD requests</h4>
 <p>
-The handler that were previously defined can now be updated to reference the CRUD methods that are defined.
-There were two handlers to update, one for the "/people" pattern and one for the "/people/" pattern where an individual person is accessed. 
+The handler that were previously defined can now be updated to reference the CRUD methods that are defined above. 
+There are two handlers to update, one for the "/people" pattern and one for the "/people/" pattern where an individual person is accessed. 
 </p>
+<p>
+The <code>SinglePersonHandler</code> method will be responsible for extracting the final parameter from the URL to make an update to a single row.
+As the query uses the personId, just 2 HTTP headers are supported: GET and DELETE. 
+The updated method will obtain the Person instance through the new <code>getPerson</code> method:
+
+```go
+person, err := getPerson(personId)
+	if err != nil {
+		w.WriteHeader(http.StatusNotFound)
+		return
+	}
+```
+
+The switch statement responsible for the GET and DELETE methods are updated as follows:
+
+```go
+switch r.Method {
+	case http.MethodGet:
+		personJson, err := json.Marshal(person)
+		if err != nil {
+			w.WriteHeader(http.StatusInternalServerError)
+			return
+		}
+		w.Header().Set("Content-Type", "application/json")
+		w.Write(personJson)
+	case http.MethodDelete:
+		err := deletePerson(personId)
+		if err != nil {
+			w.WriteHeader(http.StatusInternalServerError)
+			return
+		}
+		w.WriteHeader(http.StatusOK)
+		return
+	default:
+		w.WriteHeader(http.StatusMethodNotAllowed)
+	}
+```
+The GET method will return the JSON of the Person instance as returned from the <code>getPerson</code> method by using <code>json.Marshal</code>. 
+The Delete method will use the personId from the URL to perform the update to the database with the <code>deletePerson</code> method. 
+A default <i>Status Method Not Allowed</i> error will be returned if the HTTP request is not GET or DELETE.
+</p>
+<p>
+The PersonHandler will be responsible for handling GET, PUT and POST requests under the "/people" pattern from the URL. 
+The GET method is updated to return a list of people using the <code>getPeople()</code> method:
+
+```go
+case http.MethodGet:
+		personList, err := getPeople()
+		if err != nil {
+			log.Fatal(err)
+		}
+		personJson, err := json.Marshal(personList)
+		if err != nil {
+			w.WriteHeader(http.StatusInternalServerError)
+			return
+		}
+
+		w.Header().Set("Content-Type", "application/json")
+		w.Write(personJson)
+```
+</p>
+<p>
+The PUT request will use the <code>updatePerson</code> method to perform the update once the request body has been processed and extracted. 
+The person.Id from the request is extracted and performed. 
+
+```go
+var updatedPerson Person
+		bodyBytes, err := ioutil.ReadAll(r.Body)
+		if err != nil {
+			w.WriteHeader(http.StatusBadRequest)
+			return
+		}
+		err = json.Unmarshal(bodyBytes, &updatedPerson)
+		if err != nil {
+			w.WriteHeader(http.StatusBadRequest)
+			return
+		}
+
+		err = updatePerson(updatedPerson)
+
+		if err != nil {
+			w.WriteHeader(http.StatusBadRequest)
+			return
+		}
+
+		w.WriteHeader(http.StatusOK)
+		return
+```
+</p>
+<p>
+The POST request uses the uses the <code>insertPerson</code> method to make the POST request:
+
+```go
+var newPerson Person
+
+		personDetails, err := ioutil.ReadAll(r.Body)
+		if err != nil {
+			w.WriteHeader(http.StatusBadRequest)
+			return
+		}
+		err = json.Unmarshal(personDetails, &newPerson)
+		if newPerson.Id != 0 {
+			w.WriteHeader((http.StatusBadRequest))
+			return
+		}
+
+		result, err := insertPerson(newPerson)
+		if err != nil {
+			log.Fatal(err)
+		}
+		if result == 0 {
+			log.Fatal(err)
+		}
+
+		w.WriteHeader(http.StatusCreated)
+		return
+```
+
+</p>
+
 <br>
 <h4>Summary</h4>
 <p>
-
+Go can be used for creating a microservice persisted by the database.
 
 </p>
 

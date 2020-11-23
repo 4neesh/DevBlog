@@ -65,6 +65,7 @@
         "precendent",
         "println",
         "prioritise",
+        "prioritised",
         "prioritises",
         "realised",
         "scrollable",
@@ -81,5 +82,8 @@
         "utilises",
         "visua",
         "zipkin"
+    ],
+    "cSpell.ignoreWords": [
+        "griesemer"
     ]
 }

@@ -6,7 +6,9 @@ featuredImage: ../images/xxx.jpg
 subtitle: 'xxx'
 time: 'xx'
 tags:
-- xxx
+- Java
+- Spring
+- Microservices
 ---
 <br>
 <strong>Key Takeaways</strong><br>
@@ -192,7 +194,7 @@ a blank line indicating all meta-data for the request has been sent, and an opti
 <p>
 The Spring Cloud Eureka Netflix 
 
-You can find the source code from this blog on GitHub <a href="https://github.com/4neesh/DeveloperBlogDemos/tree/master/Eureka	">here</a>.
+You can find the source code from this blog on GitHub <a href="https://github.com/4neesh/DeveloperBlogDemos/tree/master/Eureka">here</a>.
 </p>
 
 <br>
