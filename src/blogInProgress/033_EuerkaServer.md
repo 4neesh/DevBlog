@@ -1,10 +1,10 @@
 ---
-title: 'xxx'
-date: 2020-09-28 16:34:00
+title: 'Service discovery with Spring Eureka'
+date: 2020-12-07 
 author: 'Aneesh Mistry'
 featuredImage: ../images/xxx.jpg
-subtitle: 'xxx'
-time: 'xx'
+subtitle: 'Create and use a discovery service as a registry for all services within a distributed system.'
+time: '10'
 tags:
 - Java
 - Spring
@@ -21,7 +21,7 @@ tags:
 <br>
 <h4>Eureka Server</h4>
 <p>
-This service registry was built by Netflix and then open sourced.
+Netflix Eureka is a tool provided by Netflix 
 </p>
 <p>
 It allows you to enable microservices to see each other, to register and be discoverable. The service registry is like a phone-book for services within the microservice architecture. It tells each other where they live and if they exist. 

@@ -60,6 +60,134 @@ to enable the relationship to exist:
 </p>
 
 <br>
+<h4>Defining relationships in MySQL</h4>
+<p>
+
+</p>
+
+<br>
+<h4>Defining relationships in Spring</h4>
+<p>
+The entity classes which are used for storing representative records in the application will also require configuration to ensure they are mapped to respective entities for relationships. 
+
+
+</p>
+
+<br>
+<h4>Joining tables in SQL</h4>
+<p>
+A join is used in SQL to combine multiple tables together upon a related field between the two. Joins allow you to define records that fulfil a certain condition, and to obtain fields across multiple tables together.
+</p>
+<p>
+In the below table, Football players and their Id are shown in table Footballers:
+
+football_player
+
+```
+| id | name       |
+|----|------------|
+| 1  | Alioski    |
+| 2  | Harrison   |
+| 3  | Bamford    |
+```
+
+The below table contains the player id and their goals scored:
+
+player_goals
+
+```
+| playerId  | goals |
+|-----------|-------|
+| 11        | 2     |
+| 20        | 3     |
+| 3         | 12    |
+
+```
+</p>
+<br>
+<h4>Different types of joins</h4>
+<p>
+The two tables above can be combined in many different ways determined by how the join is performed:
+&#8226; Inner Join to return results that are matching.<br>
+&#8226; Left Join to return all records from the left along with matches to the right.<br>
+&#8226; Right Join to return all records from the right, along with all matches from the left.<br>
+&#8226; Outer Join to return all records that have matched from the left and right.<br>
+</p>
+<br>
+<h4>INNER Join</h4>
+<p>
+An inner join is used to return all the records that a match has been achieved between the tables:
+
+```sql
+SELECT football_player.name, player_goals.goals
+FROM 
+football_player
+INNER JOIN
+player_goals ON football_player.id = player_goals.playerId
+```
+
+Returns:
+
+```
+| name    | goals   |
+|---------|---------|
+| Bamford | 12      |
+```
+
+</p>
+
+<br>
+<h4>Left and Right Joins</h4>
+<p>
+A left and right join will return a result for all members of the left or right side along with the matches 
+for the other table on the other side.
+
+```sql
+SELECT football_player.name, player_goals.goals
+FROM 
+football_player
+LEFT JOIN
+player_goals ON football_player.id = player_goals.playerId
+
+```
+
+Returns:
+
+```
+| name     | goals   |
+|----------|---------|
+| Alioski  | null    |
+| Harrison | null    |
+| Bamford  | 12      |
+
+```
+
+```sql
+SELECT football_player.name, player_goals.goals
+FROM 
+football_player
+RIGHT JOIN
+player_goals ON football_player.id = player_goals.playerId
+
+```
+
+Returns:
+
+```
+| name     | goals   |
+|----------|---------|
+| null     | 2       |
+| null     | 3       |
+| Bamford  | 12      |
+
+```
+
+</p>
+
+<br>
+<h4></h4>
+
+<br>
 <h4>Summary</h4>
 <p>
 
