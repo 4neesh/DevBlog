@@ -38,7 +38,7 @@ const AboutPage = (props) => {
                 
 
                 <CardTitle className="text-center">
-                  <h2>Hello! I'm Aneesh
+                  <h2>About me
   </h2>
                 </CardTitle>
                 <CardBody>
@@ -73,7 +73,7 @@ const AboutPage = (props) => {
                   <p>
                     I currently work for Accenture as a software engineer. I have been
                     able to build upon my skills in many areas, but focusing specifically with
-                    Java, microservices and AWS. I continue to broaden my understanding of financial
+                    Java microservices. I continue to broaden my understanding of financial
                     services; I actively participate in the UKI Blockchain
                     community of practice and work predominantly with financial services
                     clients.
@@ -135,6 +135,14 @@ const AboutPage = (props) => {
                       <li>[video] <a rel="noopener noreferrer" target="_blank" href="https://www.youtube.com/c/MoneyWeekVideos">MoneyWeek</a></li>
                       <li>[news] <a rel="noopener noreferrer" target="_blank" href="https://www.ft.com/">Financial times</a></li>
                       <li>[website] <a rel="noopener noreferrer" target="_blank" href="https://www.investopedia.com/">Investopedia</a></li>
+                    </ul>
+                    </p>
+                    <br></br>
+                    <u><strong>Productivity</strong></u>
+                    <p>
+                    <ul>
+                      <li>[book] <a rel="noopener noreferrer" target="_blank" href="https://www.amazon.co.uk/Atomic-Habits-Proven-Build-Break/dp/1847941834">Atomic habits</a></li>
+                      <li>[book] <a rel="noopener noreferrer" target="_blank" href="https://www.amazon.co.uk/Principles-Life-Work-Ray-Dalio/dp/1501124021">Principles by Ray Dalio</a></li>
                     </ul>
                     </p>
                   </CardBody>
