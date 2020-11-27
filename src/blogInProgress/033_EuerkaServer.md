@@ -19,9 +19,13 @@ tags:
 ![Merge sort step 2](../../src/images/011MergeSort2.png)
 
 <br>
-<h4>Eureka Server</h4>
+<h4>Netflix Eureka Registration service</h4>
 <p>
-Netflix Eureka is a tool provided by Netflix 
+Netflix Eureka is a microservice registration tool developed by Netflix and open-sourced to the community. Within a microservices environment, 
+microservices will be communicating with each other across different urls and ports thus requiring the management of many connection locations that are subject to change. 
+</p>
+<p>
+The Eureka server is itself a microservice that is used to register and store the location of other microservices within the same system. The services register themselves to the server where they can be identified and located by other microservices when required.
 </p>
 <p>
 It allows you to enable microservices to see each other, to register and be discoverable. The service registry is like a phone-book for services within the microservice architecture. It tells each other where they live and if they exist. 
@@ -31,10 +35,10 @@ The discovery server sits centralised to the other clients to enable the consump
 If the location of a client changes, the consumers will not need to know as the server will re-route the clients. 
 
 Eureka provides the host name and port to the clients.
-
 </p>
-
-
+<p>
+As well as service registration, Eureka enables services to call each other by name to support the dynamic nature of the url and port number changing. Eureka also provides other key information about the service health such as available memory, CPU, number of instances launched for each service, their status, and the number of services it is receiving a renewal from. 
+</p>
 
 <br>
 <h4>Creating the registration server</h4>
