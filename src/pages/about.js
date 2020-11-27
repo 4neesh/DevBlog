@@ -100,20 +100,22 @@ const AboutPage = (props) => {
                     The below list of resources are a combination of books, blogs and videos I find most useful for learning.
                     </p>
 
-                    <u><strong>Java</strong></u>
+                    <u><strong>Engineering</strong></u>
                     <p>
                     <ul>
-                      <li>[book] <a rel="noopener noreferrer" target="_blank" href="https://books.google.co.uk/books/about/OCP_Oracle_Certified_Professional_Java_S.html?id=bvYbCQAAQBAJ&source=kp_book_description&redir_esc=y">OCP Study guide</a></li>
                       <li>[book] <a rel="noopener noreferrer" target="_blank" href="https://www.goodreads.com/book/show/3735293-clean-code">Clean Code</a></li>
-                      <li>[blog] <a rel="noopener noreferrer" target="_blank" href="https://javarevisited.blogspot.com/">Java revisited</a></li>
-                      <li>[blog] <a rel="noopener noreferrer" target="_blank" href="https://www.baeldung.com/">Baeldung</a></li>
+                      <li>[book] <a rel="noopener noreferrer" target="_blank" href="https://www.amazon.co.uk/Phoenix-Project-DevOps-Helping-Business-ebook/dp/B00AZRBLHO">The Phoenix Project</a></li>
+                      <li>[book] <a rel="noopener noreferrer" target="_blank" href="https://www.amazon.co.uk/Pragmatic-Programmer-Andrew-Hunt/dp/020161622X">The Pragmatic Programmer</a></li>
                     </ul>
                     </p>
                     <br></br>
 
-                    <u><strong>Spring</strong></u>
+                    <u><strong>Java/Spring</strong></u>
                     <p>
                     <ul>
+                      <li>[book] <a rel="noopener noreferrer" target="_blank" href="https://books.google.co.uk/books/about/OCP_Oracle_Certified_Professional_Java_S.html?id=bvYbCQAAQBAJ&source=kp_book_description&redir_esc=y">OCP Study guide</a></li>
+                      <li>[blog] <a rel="noopener noreferrer" target="_blank" href="https://javarevisited.blogspot.com/">Java revisited</a></li>
+                      <li>[blog] <a rel="noopener noreferrer" target="_blank" href="https://www.baeldung.com/">Baeldung</a></li>
                       <li>[video] <a rel="noopener noreferrer" target="_blank" href="https://www.luv2code.com/category/spring/">Chad Darby</a></li>
                       <li>[video] <a rel="noopener noreferrer"  target="_blank" href="https://www.pluralsight.com/authors/richard-seroter">Richard Seroter</a></li>
                       <li>[blog] <a rel="noopener noreferrer" target="_blank" href="https://vladmihalcea.com/">Vlad Mihalcea</a></li>
