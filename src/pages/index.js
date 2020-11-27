@@ -5,16 +5,16 @@ import  {graphql, StaticQuery} from "gatsby"
 import Post from '../components/Post'
 import PaginationLinks from "../components/PaginationLinks"
 import Helmet from "react-helmet"
-import ReactGa from 'react-ga'
+// import ReactGa from 'react-ga'
 
 function IndexPage () {
 
-  useEffect(() => {
-    ReactGa.initialize('UA-167453984-1')
+  // useEffect(() => {
+  //   ReactGa.initialize('UA-167453984-1')
 
-    ReactGa.pageview('/')
+  //   ReactGa.pageview('/')
 
-  }, [])
+  // }, [])
 
   const postsPerPage = 4;
   let numberOfPages
