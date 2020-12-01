@@ -1,8 +1,8 @@
 ---
-title: 'Service discovery with Spring Eureka'
+title: 'Service discovery and load balancing with Spring Eureka'
 date: 2020-12-07 
 author: 'Aneesh Mistry'
-featuredImage: ../images/xxx.jpg
+featuredImage: ../images/033_philippines.jpg
 subtitle: 'Create and use a discovery service as a registry for all services within a distributed system.'
 time: '10'
 tags:
@@ -14,42 +14,33 @@ tags:
 <strong>Key Takeaways</strong><br>
 &#8226; Create a discovery service with Spring Cloud Netflix for registering and consuming services.<br>
 &#8226; Connect microservices to the eureka discovery service.<br>
-&#8226; Enable services to use Eureka to call each other regardless of client host or port.<br>
-
-![Merge sort step 2](../../src/images/011MergeSort2.png)
+&#8226; Enable services to use Eureka to make load-balanced calls to the services.<br>
 
 <br>
 <h4>Netflix Eureka Registration service</h4>
-
-- Eureka Ribbon will periodically refresh its cache of IP addresses from the discovery service so it doesnt need to keep asking the discovery service for the latest information on services. The cache is eventually consistent and refreshes every 30 seconds
-
 <p>
-Service discovery constitutes the process of finding other services within a distributed architecture. Discovery can be achieved through a properties file, or configuration that is centrally accessed, or more formally using a UDDI. 
 Netflix Eureka is a microservice registration tool developed and open sourced by Netflix. 
 Within a microservices environment, microservices will be communicating with each other across different IP addresses and ports thus requiring the management of many connection locations that may be subject to change. 
-Service discovery supports the horizontal scaling  of services. Development teams are able to see the number of services and instances/CPU that are available for each service from a single point. 
-For a monolithic application, this would result in vertical scaling across the group, whereas service discovery supports the view across services and to reinforce individuals with horizontal scaling. 
+Service discovery constitutes the process of finding other services within a distributed architecture. Discovery can be achieved through a properties file, or configuration that is centrally accessed, or more formally using a UDDI. 
+Service discovery supports the horizontal scaling  of services. Development teams are able to see the number of services and instances/CPU that are available for each service from a single point and are able to add instances of the service to enhance the capability of it to receive and treat requests. 
+For a monolithic application, this would result in vertical scaling across the system without specificity.
 </p>
 <p>
-The Eureka server is itself a microservice that is used to register and store the location of other microservices within the same system. The services register themselves to the server where they can be identified and located by other microservices when required. The service registry is like a phone-book for services within the microservice architecture. It tells each other where they live and if they exist. 
+The Eureka server is itself a microservice that is used to register and store the location of other microservices within the same system. The services register themselves to the server where they can be identified and located by other microservices when required. The service registry is therefore like a phone-book for finding if services are active and where they exist within the distributed architecture.
 </p>
 <p>
-As well as service registration, Eureka enables services to call each other by name to support the dynamic nature of the API address and port number changing. 
-Eureka also provides other key information about the service health such as available memory, CPU, number of instances launched for each service, their status, and the number of services it is receiving a renewal from. 
-</p>
-<p>
-This blog will demonstrate the use of Eureka as a service registry service where services can register to and also use to call other services. 
-We will also look into some of the health information Eureka provides and support it provides for load balancing.
+This blog will demonstrate the use of Eureka as a service registry service. The load-balancing feature of the service will be explored as well as the many 
+other benefits of Eureka to report upon health information for services and the system.
 </p>
 
 <br>
 <h4>Creating the registration server</h4>
 <p>
-The eureka server will maintain a pool of services that consistently send a heartbeat of its life.
-This is essentially an alternative to a domain name service or a load balancer as service discovery supports re-routing unhealthy instances for the consumers.
+The Eureka server is first created to maintain the pool of services that consistently send a heartbeat of their existence.
+The registration service acts as a domain name service or a load balancer as instance health is assessed and requests are routed as appropriate by the registration service for the consumers of the service.
 </p>
 <p>
-To create the registration service, you must include the dependency <code>spring-cloud-starter-eureka-server</code> which will provide the Eureka server along with Ribbon, a client-side load balancer. 
+To create the registration service, you must include the <code>spring-cloud-starter-eureka-server</code> dependency to add support for the Eureka server along with <a href="https://spring.io/guides/gs/client-side-load-balancing/" target="_blank">Netflix Ribbon</a>, a client-side load balancer. 
 
 ```
 <dependency>
@@ -60,9 +51,9 @@ To create the registration service, you must include the dependency <code>spring
 ```
 </p>
 <p>
-The main class of the new Spring project will be annotated with <code>@EnableEurekaServer</code> to instruct the service to provide service registration:
+The main class of the new Spring project will be annotated with <code>@EnableEurekaServer</code>. The annotation instructs the service to act as a Eureka server:
 
-```java
+```java{numberLines:true}
 @SpringBootApplication
 @EnableEurekaServer
 public class DiscoveryServerApplication {
@@ -80,42 +71,47 @@ In the application properties file, the server is configured to instruct upon ce
 
 ```{numberLines:true}
 server.port=9001
-eureka.server.eviction-interval-timer-in-ms=3000
-eureka.client.service-url.defaultZone= http://localhost:9001/eureka
+eureka.client.fetch-registry=false
+eureka.client.register-with-eureka=false
 ```
 The <code>server.port</code> specifies the port the Eureka service is located. By default, it is port 8761.
-The <code>eviction-interval-time</code> will define the number of milliseconds to wait for a service to be evicted from the server once it stops receiving the heartbeat. The <code>defaultZone</code> change the default behaviour of the server to to fetch the registry of services from the server.
+The <code>fetch-registry</code> will instruct the server not to store the services within its cache. We will look into this with a bit more detail further in the blog. The <code>register-with-eureka</code> property will instruct the server to not register itself with itself. By default, you will find the server as the only service registered as it will otherwise register itself as a service.
 </p>
 <p>
 If we navigate to localhost:9001, we can find the server without any instances registered to it:
 
 ![Empty Eureka server](../images/033_eureka01.png)
-
-![Empty Eureka server](../images/033_eureka02.png)
-
 </p>
 <p>
 The 'Environment' at the top of the page is defaulted to 'Test', however can be overridden within the application properties file with <code>eureka.environment</code> key. The section at the top right will show the uptime of the server and the renews threshold and renews. The threshold defines the number of expected heart beats it expects per minute. 
 </p>
 <p>
-In the second half, information including the available memory and CPUS are also gathered with the memory usage with a useful percentage for the included services. As we add instances to the discovery server, we can review how the general info changes. At the bottom of the page includes the instance information such as the address and status.
 
+![Empty Eureka server](../images/033_eureka02.png)
+
+In the second half, information including the available memory and CPUs are also shown with the memory usage and percentage for the registered services. 
+As we add instances to the Eureka server, we can review how the general info updates. 
 </p>
 
 <br>
 <h4>Configuring a Discovery client</h4>
 <p>
-In this example, we will use two clients to the eureka server. 
-1 service will provide phone numbers of different users
-1 service will be the hr-service that requests the phone numbers from the phone-book service.
+I will use two services to demonstrate how the Eureka server can be used between microservices to consume each other.
+The demonstration will include a HR-Service which represents a HR department, and a Phone-book service, which includes a service that returns user names and 
+their phone number. 
+The HR-Service will consume the phone numbers from the Phone-book service to retrieve contact information. 
 </p>
 <p>
-The client to the discovery server will require the <code>spring-cloud-starter-eureka</code> dependency to allow it to register itself. This will come with some further properties that can be configured within the properties file of the service.
+Both clients to the Eureka server will register themselves with the help of the <code>spring-cloud-starter-eureka</code> dependency. The dependency also comes with further properties that can be configured for custom behaviours. The Spring-web dependency is also required for the REST service provided by the client. 
 
 ```
 <dependency>
 	<groupId>org.springframework.cloud</groupId>
 	<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+</dependency>
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-web</artifactId>
 </dependency>
 ```
 </p>
@@ -125,8 +121,19 @@ This is a marker annotation for others to know it is a Eureka client. We do not 
 Alternatively, you can use @EnableEurekaClient. EnableDiscoveryClient will instead select the implementation (Consul, ZooKeeper, Eureka) from the classpath and assign it.
 </p>
 <p>
-The microservice will use two starter-dependencies that support the use of the service-discovery and the ability to call other services.
-Both services will include a model class called 'Contact':
+The properties file of the Phone-book service will be configured accordingly with the Eureka server:
+
+```
+server.port=9002
+spring.application.name=phone-book
+eureka.client.serviceUrl.defaultZone= http://localhost:9001/eureka/
+```
+
+The <code>application.name</code> defines the name of the service to be used as a key within the Eureka server.
+The <code>serviceUrl.defaultZone</code> will instruct where the Phone-book service will try to register itself with a Eureka Server.
+</p>
+<p>
+Both services will include a model class called 'Contact' to store a basic Contact Object with name and number. The Phone-book will later create a list of the Contact Objects and the HR-Service will consume them over a HTTP call.
 
 ```java{numberLines:true}
 public class Contact {
@@ -156,9 +163,9 @@ public class Contact {
 ```
 </p>
 <p>
-Within the phone-book service, we will use a controller class to display a list of Contacts:
+Within the Phone-book service, the controller class will be used to create and return a list of Contacts:
 
-```java
+```java{numberLines:true}
 @RestController
 public class PhoneController {
 	
@@ -174,67 +181,60 @@ public class PhoneController {
     }	
 }
 ```
+
+The above could simulate a call to a repository layer.
+The <code>ResponseEntity</code> return type of the controller defines a HTTP response that can be consumed and transformed by another service.
 </p>
 <p>
-We can navigate to the '/contacts' endpoint to retrieve the list of contact instances:
+If we navigate to the '/contacts' endpoint from the Phone-book service, we can retrieve the list of Contact instances:
 
 ![Contacts endpoint result](../images/033_postmanGet1.png)
-
 </p>
 <p>
-The properties file of the Phone-book service will be configured to register itself to the Eureka server:
-
-```
-server.port=9002
-spring.application.name=phone-book
-eureka.client.serviceUrl.defaultZone= http://localhost:9001/eureka/
-```
-
-The <code>application.name</code> will register the name of the service as the key within the Eureka server.
-The <code>serviceUrl.defaultZone</code> will instruct the Phone-book service where to register itself to the Eureka Server.
-</p>
-<p>
-In the below image you will see the client registered to the eureka service.
+We can also check the Eureka service to confirm the Phone-book service is registered.
 The Eureka service will typically take 30 seconds to show the new service registered as it requires 3 consistent heartbeats from a service for it to be registered.
-
-Upon starting the Phone-book service, you can see it registered within the Eureka server:
 
 ![Phone book registered within server](../images/033_phoneBookInServer.png)
 
-The number inside the brackets will tell you how many instances of the service are running. That is, the number of instances registered to the Eureka server with the same name. If we add more service, the number will increase and the status will show the address of each of the services:
+The number inside the brackets will tell you how many instances of a service with the same name that are running. 
+If we add more services, the number will increase and the status will show the address of each of the services:
 
 ![Phone book registered within server](../images/033_phoneBooksInServer.png)
 
+Now we can perform some load-balancing to the services!
 </p>
 
 <br>
 <h4>Consuming the Phone-book service</h4>
 <p>
-A 'HR-Service' is created to consume the Phone-book service to obtain the appropriate contact numbers.
-The Phone-book will be consumed through a RestTemplate. 
+The HR-Service is going to be built out to consume the Phone-book service and to obtain the appropriate Contact instances.
+The HR-Service will use the <code>RestTemplate</code> to consume the HTTP body of the Phone-book 'contacts' endpoint. The RestTemplate is a high-level API to the Spring framework that is used for executing synchronous HTTP requests. the RestTemplate will be defined as a Bean within the main class to be later injected:
+
+```java{numberLines:true}
+@Bean
+RestTemplate getRestTemplate(){
+	return new RestTemplate();
+}
+
+```
 </p>
 <p>
-The HR service is registered:
-The controller will use a RestTemplate to obtain the call to the phone-book.
-The RestTemplate is Ribbon-aware. Meaning ...
-
-The properties file will look as such:
+The properties file will look similar to the Phone-book service, with the addition of <code>eureka.client.fetch-registry</code>:
 
 ```numberLines:true
-eureka.client.fetchRegistry=true
 server.port=9003
+eureka.client.fetchRegistry=true
 spring.application.name=hr-service
 eureka.client.serviceUrl.defaultZone= http://localhost:9001/eureka/
 ```
-The first line will instruct the service to obtain a list of all services registered to the eureka server at to store them within the cache of the service. The cache is restored every 30 seconds.
-The server port is defined for the service
-The third line instructs the name of the service, which will be the key stored in the Eureka service. The name is used by other services to obtain the IP address and port of the service when making calls to it. 
-The fourth line will define the location of the Eureka server to register to. 
+
+The fetch-registry property will instruct the service to obtain a list of all services registered to the Eureka server. 
+The services will be stored within the client cache and is updated every 30 seconds.
 </p>
 <p>
-The controller will look as such:
+The HR-Service controller will use the RestTemplate to make a HTTP call to one of the instances of the Phone-book service with the 'contacts' endpoint:
 
-```java
+```java{numberLines:true}
 @RestController
 public class HrController {
 
@@ -242,9 +242,8 @@ public class HrController {
 	RestTemplate restTemplate;
 	
 	@GetMapping("/request-contacts")
-	@ResponseBody
 	public Contact[] contacts() {
-	        Contact[] result = restTemplate.getForObject("http://phone-book/contacts", Contact[].class);
+	        Contact[] result = restTemplate.getForObject("http://localhost:9002/contacts", Contact[].class);
 	        return result;
 	    }
 	
@@ -252,43 +251,60 @@ public class HrController {
 ```
 </p>
 <p>
-When a client registers itself to the discovery service, it registers its path, port and IP address. These details will be consistent for all instances of the client. However they will be registered under the same Key name in the discovery service. The key will be the name of the service.
+So far, this request from the controller doesn't actually need the Eureka server. What happens if port 9002 goes down or is changed? How can we better utilise the available
+instances of the Phone-book service? 
+In the next section, the Eureka service is used to perform load-balancing and dynamic access to the services.
 </p>
-
 
 <br>
 <h4>Enabling microservices to communicate through Eureka</h4>
 <p>
-A strength from the Eureka discovery service is that the services within the infrastructure do not require an understanding of the location of other services, just their name. Therefore the Eureka server is able to map requests to the appropriate service as and when they move location.
-In our example, this will involve moving a service from port 8881 to 8882 and still being able to communicate with it from the second service.
-
+The Eureka server allows our services to communicate without explicitly knowing their location (including port). With the use of the service name as a key, Eureka is able to consolidate all running instances of a server for load-balancing, and also empowers the clients of the server to refer each other upon their name, rather than address. 
+As a result, clients are able to reference each other dynamically, and requests for service consumption can be load-balanced altogether.
 </p>
 <p>
-The Spring application name is used to register to the Eureka server. Therefore important to think about the name given. This is what is used for finding services, not the port of host name. 
-You can use a configuration server for determining the port to search or live on. 
+The Spring application name, defined the properties of each service, is used as a key within the Eureka server. Before we can allow the RestTemplate to take 
+advantage of the load-balancing provided by Eureka, we must annotate it with <code>@LoadBalanced</code>:
 
-</p>
+```java{numberLines:true}
+@Bean
+@LoadBalanced
+RestTemplate getRestTemplate(){
+	return new RestTemplate();
+}
+```
+The RestTemplate is now known to be 'Ribbon aware'. 
 
-two key points; load balanced and fetchRegistry
-We use the @LoadBalanced annotation to tell Spring to create a Ribbon-backed rest template. The Ribbon slightly changes the way we interact with the service as we Spring no longer expects the physical location of the service to be provided, instead it expects the Eureka service ID (Application name) to be called.
+We use the <code>@LoadBalanced</code> annotation to tell Spring to create a Ribbon-backed rest template. The Ribbon slightly changes the way we interact with the service as we Spring no longer expects the physical location of the service to be provided, instead it expects the Eureka service ID (Application name) to be called.
+Eureka Ribbon will periodically refresh its cache of IP addresses from the discovery service so it doesn't need to keep asking the discovery service for the latest information on services. The cache is eventually consistent and refreshes every 30 seconds.
 The Ribbon-enabled RestTemplate parses the URL as the server name key to query Ribbon for a service instance.
 
-1. The service that is being called (PhoneBook) will need to expose the endpoint controller to be called by the other service.
-2. It will return a ResponseEntity<?> as we are sending HTTP messages from client to server. 
-3. We are able to configure a HTTP response by using the ResponseEntity
-<p>
-HTTP Messages (why we are using ResponseEntity<?> and ResponseBody)
-HTTP messages used for exchanging data between a client and a server. These consists of a request and a response. 
-The messages share a similar structure that consists of a start-line describing the request as a header code, optional HTTP headers to describe the message or specifying the request
-a blank line indicating all meta-data for the request has been sent, and an optional body containing the data associated with the request. 
 </p>
+<p>
+If we were to call the existing HR-Service request from the Controller, it will now search for a service within its cache under the name of 'localhost:9002'. The service will throw an error when we try to access the service name of localhost. The advantage is that the service will no longer request the exact port of the request, and can now have the request load-balanced to one of the various service instances.
+</p>
+
+<p>
+The HR-Service controller is now updated to call the Phone-book service name as the key to the Eureka server:
+
+```java{numberLines:true}
+	@GetMapping("/request-contacts")
+	public Contact[] contacts() {
+	        Contact[] result = restTemplate.getForObject("http://phone-book/contacts", Contact[].class);
+	        return result;
+	}
+```
+</p>
+
 <br>
 <h4>Summary</h4>
 <p>
-The Spring Cloud Eureka Netflix 
+Spring Cloud Eureka provides service registration within a distributed system for service to register themselves to be discovered and used upon request. 
+The Spring Cloud Eureka Netflix enables client-side load balancing
+allows microservices to communicate with each other without having to specify the exact service instance.
 
 You can find the source code from this blog on GitHub <a href="https://github.com/4neesh/DeveloperBlogDemos/tree/master/Eureka">here</a>.
 </p>
 
 <br>
-<small style="float: right;" >Picture: xxx, xxx by <a target="_blank" href="http">xxx</small></a><br>
+<small style="float: right;" >Picture: Siquijor, Philippines by <a target="_blank" href="https://unsplash.com/photos/2rH2w01umhY">Louie Martinez</small></a><br>
