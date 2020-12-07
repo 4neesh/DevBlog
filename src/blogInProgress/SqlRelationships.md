@@ -185,8 +185,16 @@ Returns:
 </p>
 
 <br>
-<h4></h4>
+<h4>Mapping Joins into Spring</h4>
+<p>
+In Spring, we can create our Object classes to represent the tables as we require.
+@Entity
+@Column
+@Id
 
+
+
+</p>
 <br>
 <h4>Summary</h4>
 <p>
