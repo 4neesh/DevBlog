@@ -68,6 +68,9 @@ bond to change in interest rate. The convexity captures the underestimations and
 reflected as a curve. 
 </p>
 
+
+what about term structure?
+
 <br>
 <h4>Pricing risks to Yield to maturity</h4>
 <p>
@@ -87,6 +90,13 @@ We define 'risk' as the degree of uncertainty upon the future returns of an inve
 </p>
 <p>
 <strong>Non-business risk</strong> can arise from political and legal instability such as taxation law changes and natural event disasters such as Coronavirus impacting market stability.
+</p>
+
+
+<br>
+<h4>Spot Curve, Future Curve and Swap Curve</h4>
+<p>
+
 </p>
 
 <br>

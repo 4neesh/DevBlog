@@ -3,7 +3,7 @@ title: 'Service discovery and load balancing with Spring Eureka'
 date: 2020-12-07 
 author: 'Aneesh Mistry'
 featuredImage: ../images/033_philippines.jpg
-subtitle: 'Create and use a discovery service as a registry for all services within a distributed system.'
+subtitle: 'Explore the Netflix Eureka discovery service to provide service registration and client-side load-balancing within a distributed system.'
 time: '10'
 tags:
 - Java
