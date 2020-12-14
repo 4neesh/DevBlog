@@ -187,10 +187,10 @@ Returns:
 <br>
 <h4>Mapping Joins into Spring</h4>
 <p>
-In Spring, we can create our Object classes to represent the tables as we require.
-@Entity
-@Column
-@Id
+In Spring, we can represent table joins using annotations within the entity classes we create for the tables.
+
+@JoinColumn("name of item")
+@OneToOne
 
 
 
