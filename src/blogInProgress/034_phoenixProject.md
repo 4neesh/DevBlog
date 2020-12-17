@@ -3,117 +3,129 @@ title: 'Key takeaways from The Phoenix Project'
 date: 2020-12-21
 author: 'Aneesh Mistry'
 featuredImage: ../images/034_arizona.jpg
-subtitle: 'My key takeaways from one of the most highly rated books on modern IT and software delivery: The Phoenix Project.'
+subtitle: 'Key takeaways from the best-selling novel on modern IT and software delivery: The Phoenix Project.'
 time: '10'
 tags:
 - DevOps
 ---
 <br>
 <strong>Key Takeaways</strong><br>
-&#8226; Review the key takeaways and values that can be taken from the Phoenix Project.<br>
-&#8226; Realise the growth of IT from a silo to a cross-business back-bone.<br>
-&#8226; Understand the value of DevOps to IT.<br>
+&#8226; Review the key points and values that can be taken from The Phoenix Project.<br>
+&#8226; Understand the importance of IT across a business when delivering value to a customer.<br>
+&#8226; Understand the various elements of DevOps and its importance to creating cohesion between business teams.<br>
 
 <br>
-<h4>The Phoenix Project by Gene Kim, Kevin Behr and George Spafford.</h4>
+<h4>The Phoenix Project by Gene Kim, Kevin Behr and George Spafford</h4>
 <p>
-The Phoenix Project is an award-winning novel that explores modern-day IT and its inseparable importance to the business operations. The mutual inclusion of business and IT within The Phoenix Project open the audience of the book beyond IT professionals to provide valuable lessons for all business leaders to delivery value through their ever-growing IT capability.
-The Phoenix Project introduces us to Bill Palmer, a newly promoted IT manager at Parts Unlimited who undertakes a series of challenges to transform the productivity and relationships of IT with the rest of the business. Amongst the challenges of the job include a major project delivery known as 'Phoenix' which will also act as milestone to the company and proving point that threatens the team's existence for being outsourced.
+The Phoenix Project is an award-winning novel that explores modern-day IT and its inseparable importance to the business operations. The mutual inclusion of business and IT within The Phoenix Project extend the audience of the book beyond IT professionals to provide valuable lessons for all business leaders on delivering value through their IT capability.
 </p>
 <p>
-Amongst the twists and turns of the story, we are introduced to common characters that we find in our own offices that entice us to read further into their professional development along with the project. Phoenix introduces the value of DevOps at all corners where IT reaches.
+The Phoenix Project introduces us to the protagonist Bill Palmer, a newly promoted IT manager at Parts Unlimited who tackles a series of challenges to transform the productivity and chemistry between teams of the same system. The focal challenge of the job regards a major project delivery known as 'Project Phoenix' which acts as milestone to the company and performance review that threatens the IT team to being outsourced.
 </p>
 <p>
-In this blog, I will look over the key points and takeaway from the story that have allowed me to reflect upon the need for DevOps in the modern delivery methodologies used by IT teams. I personally learnt about the operations of IT from before the use of Cloud for on-demand compute service amongst many other services were adopted as common proactice. For this reason, I would say there is a lot to be learnt from the Phoenix Project, whether that is to understand how DevOps can transform an IT workforce, or to develop an appreciation for how challenges of IT support across an organisation can be so difficult to manage.
+Amongst the twists and turns of the story, we are introduced to common characters that we find in our own offices that entice us to read further into their professional development. The Phoenix Project introduces the value of DevOps at all corners of the business; unsurprisingly, we will come to find that IT is no longer a business domain to keeping the costs down, but is an interconnected web between all sources of value at Parts Unlimited.
 </p>
-
+<p>
+In this blog, I will review the key points and takeaways from the novel that have allowed me to reflect upon the value of DevOps in modern delivery methodologies. 
+</p>
 
 <br>
 <h4>Part 1</h4>
 <p>
-<strong>Tracking and managing changes</strong>
-The story follows Bill along with the people he meets and challenges the company face to rectify the disorganised and inefficient IT team that exists.
-The state of IT at Parts Unlimited is demonstrated through their handling of an urgent issue within the system. As employee paychecks are yet to be sent, the source to the problem is unbeknownst to anyone amidst the many data sources involved and their intertwined relationships. There is no visibility into the changes made to the system, by who, or where. The issue becomes more and more severe as the relationship as personal identifiable data (pii) is at risk of leaking and the compliance with regulation including the Sarbanes-Oxley act (SOX), EU law become time-pressured motivators along with the moral obligation of the company to pay their employees on time.
+<strong>Tracking and managing changes</strong><br>
+The disorganised state of IT at Parts Unlimited is firstly demonstrated through their handling of an urgent issue where a software change has prevented employee paychecks from being sent. The exact cause of the problem is unbeknownst to anyone amidst the many data sources and their intertwined relationships. There is minimal visibility into the changes made to the system meaning the team were unable to identify who, when or where the critical update was performed. The issue becomes more and more severe as personal identifiable information is at risk thus introducing regulatory pressures to the moral pressure of the company to pay their employees on time.
 </p>
 <p>
-The insufficient change management process led to difficulties in explaining the error which was later incorrectly diagnosed as a 'glitch'. Software testing is shown to be disregarded for time constraints while CAB meetings are unpopular and have low attendance.
-Parts Unlimited begin by introducing cards to the CAB meeting to document the outstanding changes, these are aligned by volatility, risk and priority to make them easier to manage. Bill begins to seek guidance from an IT operations SME Erik, who begins to relate the process of an IT team with a plant factory. 
+The insufficient change management process highlighted difficulties in understanding the error which was brashly diagnosed as a 'glitch'. Why were Parts Unlimited unable to identify the source of the problem? The IT team did not utilise an approval chain, communication channel or ticketing system to track and document the updates to the system. As a result, the team were unable to understand where to look for the problem or even when it may have first occurred. As we will later review, the time constraints upon the development team meant the ticketing system along with software testing had been disregarded.
 </p>
 <p>
-        
+<strong>The Three Ways of DevOps</strong><br>
+The Phoenix Project introduces three underlying principles of DevOps that are implemented by Parts Unlimited throughout the story. The underlying principles are explored within this blog as a component to maximising workflow from the business to IT, to operations, and lastly the customer.
 </p>
 <p>
-<strong>The Three Principles of DevOps</strong><br>
-The Phoenix Project introduces three underlying principles of DevOps. The underlying principles are explored within this blog as a component to maximising workflow from the business to IT to operations and lastly the customer.
+<strong>DevOps Way 1: Systems thinking</strong><br>
+The business silos at Parts Unlimited demonstrate their lack of cohesion as marketing publicly communicated a date that was earlier than expected for the deployment of Phoenix. The premature delivery of Phoenix introduced Bill to consequences to breaking the first underlying DevOps way.
 </p>
 <p>
-<strong>Principle 1: Workflow is always downstream</strong><br>
-The business departments at Parts Unlimited demonstrate their lack of cohesion as marketing pushed a date that was earlier-than-expected for the deployment of Phoenix thus causing its deployment to be rushed. Bill is introduced to the first way of underlying DevOps processes: maximising flow of work from the business to development to operations and finally the customer.<br>
-The issues experienced at Parts Unlimited before the deployment of Phoenix is unsurprisingly experienced with the Phoenix deployment...
+Maximising workflow downstream emphasises the importance of the business to act <u>together</u> and not as individual silos. The first way instils an understanding of the system right across the workflow where business silos do not allow a defect to be passed downstream and subsequently take a view of the system and impacts of changes upon others rather than just themselves. Without the systems thinking, the issues experienced at Parts Unlimited <u>before</u> the deployment of Phoenix (such as erratic changes and fixes) were unsurprisingly experienced during the Phoenix deployment. 
 </p>
 <p>
-<strong>The different types of work</strong><br>
-Furthermore, privacy concerns are broken and the customers are required to do manual intervention while Phoenix is fixed. Phoenix is unable to generate any revenue despite its deployment, further audit reports show bad data including pii to be found thus requiring possible lawyer intervention. 
-As Bill tries to make sense of the situation, he is able to define 4 key areas of work with Erik that require treating at all times at Parts Unlimited: Planned work (work in progress), internal projects, changes, unplanned work. Brent is identified as a the constraint as the business depends upon him and thus must not be exposed to unplanned work.
+<strong>The 4 types of work</strong><br>
+As Bill tries to make sense of the problems at Parts Unlimited, he receives help from an agile 'guru' Erik who uses a plant factory as an analogy to the software delivery at Parts Unlimited. Erik introduces 4 types of work that are constantly worked upon at any business (including Parts Unlimited):<br>
+&#8226; Planned work - business projects or enhancements<br>
+&#8226; Internal projects - server migrations and software updates<br>
+&#8226; Changes - feedback driven updates to the software<br>
+&#8226; Unplanned work - escalations and fixes to delivered projects.
+</p>
+<p>
+Amongst the different types of work, <strong>unplanned work</strong> is the outlier that cannot be accounted for within a delivery plan and must be minimised as much as possible. It is important for Bill to understand the different types of work so new work can be prioritised accordingly. The optimal distribution of work will see the senior members work on planned work while new-joiners undertake the unplanned work.
 </p>
 <p>
 <strong>Constraints within the system</strong><br>
-Brent is identified as a constraint that prevents the business flow from progressing. The workload on Brent is too high thus creating a blockage in flow of all planned work. As Brent is more utilised with planned work, more planned work builds up thus creating a blockage in the flow of further work to be fixed, adjusted and maintained.
+Bill meets Brent, a senior engineer, who is the SME across the IT systems at Parts Unlimited. Brent is soon identified as a constraint to the business who is highly depended upon by multiple work streams as the only person who can resolve their problems. Brent not only has unmanageable levels of work, he is also unable to document his knowledge for others to learn from due to the same time constraint. Brent informs Bill how the ticketing system is also too timely to use thus creating a further dependency upon Brent's expertise in the future. 
 </p>
 <p>
-Bill begins to learn a little bit more about the make-up of the team at Parts Unlimited; the introduction to Brent, the SME at Parts Unlimited exposes the IT team to a highly efficient, however major constraint to the teams workflow. Bill comes to learn of the dependency they all had on Brent to resolve the problems faced. Unfortunately work is not documented and knowledge is not shared partly due to the time constraint and demand of Brent and the time-consuming ticketing system that is used. 
-As Brent is so busy doing work he doesn't document the solutions so this adds to the issue. A culture of knowledge sharing must be created, valued and practiced to avoid the rise of "Brent" who may become a dependency and bottleneck across the business. 
+Brent' responsibilities extend to completing unplanned work thus creating further bottlenecks for multiple work streams that depend upon Brent to fix their problems. The vicious cycle of Brent's knowledge retention and time consumption from fixing problems make the reliance upon him deepen with time. The organisation of the engineers to rely on Brent breaks the optimisation of the team resources where the most senior engineers are to be working solely on enhancing the software and for junior engineers to be learning about the software through unplanned work. 
 </p>
+
 <br>
 <h4>Part 2</h4>
 <p>
-<strong>Communication and trust</strong><br>
-Part 2 begins with the leaders at Parts Unlimited telling stories about themselves to build trust with each other. As unplanned work becomes a hot topic, the problem of technical debt is addressed. Erik emphasises the importance to stop planning new work and to address the unplanned work. While the due-date performance begins to improve, management become anxious to unfreeze their projects. 
+<strong>DevOps Way 2: Feedback Loops</strong><br>
+Part 2 starts on a positive note of leadership bonding followed by a retrospective where Erik emphasises the importance to prioritise and reduce unplanned work. Due-date performance begins to improve however management become anxious to unfreeze their projects. The failure of planned work continues to creates more unplanned work and the business leaders are introduced to the second way of DevOps: increasing feedback loops across the workflow.
 </p>
 <p>
-<strong>Principle 2: Feedback Loops</strong>
-The leaders begin to understand the second principle of DevOps to increase the feedback loops from the customer back to operations, development and the business. The trigger for change is always failure, without failure, there is little sight for change, and thus feedback upon failure must be present at all stages.
-The leaders explore the use of resilience engineering to understand the impact upon the capacity of the team and the value delivered from projects before starting them, and to carry out the painful elements of the delivery line more frequently to avoid larger pile-ups of unplanned work. 
+The changes within the system are always triggered by failure. Feedback upon changes must therefore be provided across the workflow to reduce the potential for further unplanned work to be created. The leadership are introduced to resilience engineering where the system is designed to withstand failure and the ability to adapt to failure becomes a strength and not a weakness of more unplanned work. 
+</p>
+<p>
+Feedback loops across the workflow are amplified and addressed directly before it can further impact downstream teams and customers. Feedback is supported across more points within the workflow and within non-production environments. The amplified feedback supports software testing for developers before moving changes to production. From a DevOps perspective, feedback loops can be automated across builds and deployments through a continuous integration and delivery pipeline. The CICD pipeline would further prevent the advancement of a software change to further deployment steps if it is detected to fail at any preceding stage.
+</p>
+<p>
+<strong>Utilising test environments</strong><br>
+The support for faster feedback at Parts Unlimited came about from a Phoenix change failure that impacted $10 million in sales. The error was traced back to the ineffective testing of a change that had performed as expected in test environments, but differently in production. The need for a preproduction environment, which is a replica of production, became evident to the developers to avoid a similar error in deployment testing. The test environment configuration is therefore important to retain and monitor to support the quality and reliability of testing before deployment to production. 
 </p>
 <p>
 <strong>Kanban boards</strong><br>
-As the management become more aware of the inefficiencies of the team as a whole, Patty begins to taking action upon lessons from the plant. Kanban boards are used to prioritise changes and the improvement Kata is reinforced to the team that a continuous improvement amongst the team is most important. As priorities are shifted, the burden upon Brent is relieved. The Kanban boards enable the team to see the work move through the organisation from business through to IT and completion. This is a very good visualisation guide to managing work. 
+A Kanban board is an agile project management tool used to visualise work across the business. Kanban boards are first used in part 1 to categorise changes when discussed within the CAB meeting. Changes are grouped by volatility, risk and priority. When Kanban boards were first introduced, some 400 changes were scattered across boards to illustrate the hectic schedule of changes at Parts Unlimited <u>before</u> the deployment of Phoenix.
 </p>
 <p>
-<strong>Unreliable test environments</strong><br>
-Amongst the growth and improvement at Parts Unlimited, the Phoenix failure has realised to impact 10 million in sales, traced back to the ineffective change management process and delayed feedback loops in product changes. The need for a preproduction environment becomes evident as the developers are unable to test their changes in an environment that is identical to production. The expectation is to decrease the time it takes for revenue to be realised from a software update and to capture unplanned work before it can exist.
+In part 2, Patty, director of IT service support, begins taking action upon lessons she has picked up from the plant. Kanban boards are used to prioritise changes. The kanban boards allow Patty to visualise the work in progress throughout the organisation and to see how work shifts and does not shift across team boundaries. 
+The visualisation allows Patty to identify where work builds up and to strategically change priorities to focus upon  objectives where bottlenecks occur most frequently. As priorities are better aligned with improved visibility across the workflow, the dependency upon Brent is relieved and spread across the teams.
 </p>
-
 
 <br>
 <h4>Part 3</h4>
 <p>
-<strong>Principle 3: Experiment and fail fast</strong><br>
-The third and final principle of DevOps is supported in the final part where a culture of continuous experimentation and learning is fostered through better support for testing, practice and feedback.
-The concept of 'Takt time' is explained to Bill as he understands the agility required from the team to adhere to customer demand and to improve time to market. The team set out to achieve the illustrious '10 deploys per day' which requires understanding the time delays that accrue throughout the process. As the developer review the deployment pipeline, they begin to identify how step-by-step it can be automated and made more efficient. The developers are able to realise the benefits that can be realised from this and become more optimistic about their efficiency capability. 
+<strong>DevOps Way 3: Experiment and fail fast</strong><br>
+The third way of DevOps requires a culture of continuous experimentation and learning which is fostered through effective support for testing, practice and feedback.
+Bill explores the concept of 'Takt time'. Takt time is the rate at which a product or feature can be delivered to a customer from its inception. Takt time underpins the agility of Parts Unlimited to adhere to customer demand with their software updates and deliveries. Parts Unlimited set out to achieve the illustrious '10 deploys per day' which requires each team to develop an understanding for where time delays accrue throughout the workflow and how feedback can be retrieved strategically for valuable insight upon deployments.
 </p>
 <p>
-<strong>Continuous Learning</strong>
-Amongst the creation of a new pipeline, the team also create a preproduction environment for testing. The benefits of Cloud technology are reviewed as they realise difficulties with their server capacity for testing. The benefit to the developers are practically demonstrated through the release of a software update that stopped out of stock items being shown. Further updates including the use of a CDN was also utilised to support greater server usage.
+As the developers review the deployment pipeline, they begin to identify how, step-by-step, it can be automated and optimised from hours to minutes. The developers realise the benefits from an automated pipeline while being encouraged to experiment with new builds that can be tested against prepared environments for feedback. 
+</p>
+<p>
+The benefits of Cloud technology are later raised as Parts Unlimited experience difficulties with their server capacity for testing. The benefit to the developers are practically demonstrated through the release of a software update that prevented 'out of stock' items from being shown on the systems. Further updates including the use of a content delivery network to support greater server usage were considered for enhancing the system thus demonstrating the agile-framed ideas of the team.
 </p>
 <p>
 <strong>Kata</strong><br>
-Kata is described within the book to describe the lean processing and ironing out of inefficiencies throughout the delivery of software. Essentially Kata enables Parts Unlimited to achieve the ten deploys per day. 
-The Kata of IT at Parts Unlimited demonstrated the presence of IT across the organisation, almost as like electricity. The view of IT had shifted from a cost to a competitive advantage as company evolved their change management process, expectation of IT and care around decisions for the growth and continued improvement of the company as a whole.
+Kata is described within The Phoenix Project to describe the lean processing and 'ironing out' of inefficiencies throughout the delivery of software. A focus upon kata enables Parts Unlimited to achieve the ten deploys per day. 
+The kata of IT at Parts Unlimited demonstrated the presence of IT across the organisation, almost as like electricity. The view of IT had shifted from a 'cost to reduce' to a source of competitive advantage. Parts Unlimited evolved their change management process, expectation of IT and care upon decisions for the growth and continued improvement of the company as a whole.
 </p>
-
 
 <br>
 <h4>Summary</h4>
 <p>
-The Phoenix Project is a 
-As an engineer with just a few years experience, The Phoenix Project opened my eyes to how Cloud technology has radically transformed the challenges of scaling servers, databases and much more to create performance changes or cost efficiencies within an IT system. My exposure to change management and ticketing had also been an assumption that I perhaps took for granted with the ease and simplicity of change. The Phoenix Project in this sense has enabled me to learn backwards about the history of IT and its transformation since the start of the millennium to enable the continued growth and adoption of IT across the business.  
+The Phoenix Project delivers an exciting introduction to DevOps in the form of a novel that navigates the challenges of change across multiple teams within an organisation. The reality of The Phoenix Project extends to the modern day as businesses change their approach to IT and embrace its potential for achieving a competitive advantage or to even maintain cost competitiveness within the market.
 </p>
 <p>
-<strong>Recommended reading</strong><br>
+While The Phoenix Project is often described to be an exaggeration of reality, it is highly regarded for capturing the most common pain-points for DevOps to drive change within an organisation.
+Beyond the focal point of DevOps, The Phoenix Project taught me about the challenges of IT before services such as Cloud enabled on-demand compute services. The Phoenix Project offers many lessons to the reader such as to understand how DevOps can transform an IT workforce, or to develop an appreciation for how multi-dimensional the challenges are for IT to support across an organisation. The Phoenix Project in this sense has enabled me to learn backwards about the modern history of IT and its transformation since the start of the millennium to foster the continued growth and adoption of across the business. 
+</p>
+
+<p>
+<strong>Related reading to The Phoenix Project</strong><br>
 <a target="_blank" href="https://www.bmc.com/blogs/devops-basics-introduction/">DevOps Guide by Stephen Watts</a><br>
 <a target="_blank" href="https://emilyfreeman.io/book">DevOps by Emily Freeman</a><br>
-
 </p>
 
 <br>
