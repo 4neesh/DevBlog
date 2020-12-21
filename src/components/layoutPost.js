@@ -38,8 +38,6 @@ const LayoutPost = ({ children }) => (
 
         <div className="container" id="content">
           
-          <StickyHeader/>
-
           <Row className="singlePostCentralCard">
             <Col >{children}</Col>
           </Row>
