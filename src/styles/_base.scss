@@ -60,9 +60,10 @@ h2{
   display:flex;
   align-items: center;
   justify-content: center;
-  height: 75vh;
+  height: 80vh;
   flex-direction: column;
   padding-top:50px;
+  
 }
 
 .stickyHeaderImage{
@@ -261,6 +262,15 @@ text-transform: uppercase;
   .stickyHeaderText{
     font-size: 3vw;
     
+  }
+  .stickyHeaderImage{
+    max-width: 130px;
+  }
+  h1{
+    font-size: 3rem;
+  }
+  h2{
+    font-size: 1.5rem;
   }
 }
 

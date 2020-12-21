@@ -52,28 +52,28 @@ const Layout = ({ children }) => (
                   href="https://www.linkedin.com/in/aneeshmistry/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{paddingRight:"20px", color:"black"}}
+                  style={{paddingRight:"30px", color:"black"}}
                 >
-                  <i className="fab fa-linkedin fa-3x" />
+                  <i className="fab fa-linkedin fa-2x" />
                 </a>
             
                 <a
                   href="https://www.github.com/4neesh"
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{paddingRight:"20px", color:"black"}}
+                  style={{paddingRight:"30px", color:"black"}}
 
                 >
-                  <i className="fab fa-github fa-3x" />
+                  <i className="fab fa-github fa-2x" />
                 </a>
 
                 <a
                 href="http://feeds.feedburner.com/aneeshBlog"
                 target="_blank" 
                 rel="noopener noreferrer"
-                style={{paddingRight:"20px", color:"black"}}
+                style={{paddingRight:"30px", color:"black"}}
                 >
-                <i class="fas fa-rss fa-3x"/>
+                <i class="fas fa-rss fa-2x"/>
                     
                 </a>
                 </span>
