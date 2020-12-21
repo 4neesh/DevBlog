@@ -109,7 +109,7 @@ The benefits of Cloud technology are later raised as Parts Unlimited experience 
 <p>
 <strong>Kata</strong><br>
 Kata is described within The Phoenix Project to describe the lean processing and 'ironing out' of inefficiencies throughout the delivery of software. A focus upon kata enables Parts Unlimited to achieve the ten deploys per day. 
-The kata of IT at Parts Unlimited demonstrated the presence of IT across the organisation, almost as like electricity. The view of IT had shifted from a 'cost to reduce' to a source of competitive advantage. Parts Unlimited evolved their change management process, expectation of IT and care upon decisions for the growth and continued improvement of the company as a whole.
+The kata of IT at Parts Unlimited demonstrated the presence of IT across the organisation, almost like electricity. The view of IT had shifted from a 'cost to reduce' to a source of competitive advantage. Parts Unlimited evolved their change management process, expectation of IT and care upon decisions for the growth and continued improvement of the company as a whole.
 </p>
 
 <br>
@@ -119,7 +119,7 @@ The Phoenix Project delivers an exciting introduction to DevOps in the form of a
 </p>
 <p>
 While The Phoenix Project is often described to be an exaggeration of reality, it is highly regarded for capturing the most common pain-points for DevOps to drive change within an organisation.
-Beyond the focal point of DevOps, The Phoenix Project taught me about the challenges of IT before services such as Cloud enabled on-demand compute services. The Phoenix Project offers many lessons to the reader such as to understand how DevOps can transform an IT workforce, or to develop an appreciation for how multi-dimensional the challenges are for IT to support across an organisation. The Phoenix Project in this sense has enabled me to learn backwards about the modern history of IT and its transformation since the start of the millennium to foster the continued growth and adoption of across the business. 
+Beyond the focal point of DevOps, The Phoenix Project taught me about the challenges of IT before services such as Cloud enabled on-demand compute services. The Phoenix Project offers many lessons to the reader such as to understand how DevOps can transform an IT workforce, or to develop an appreciation for how multi-dimensional the challenges are for IT to support across an organisation. The Phoenix Project in this sense has enabled me to learn backwards about the modern history of IT and its transformation since the start of the millennium to foster the continued growth and adoption across the business. 
 </p>
 
 <p>
