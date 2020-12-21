@@ -1,17 +1,18 @@
 import React from "react"
-import Home from "../components/home"
+import Layout from "../components/layout"
 import SEO from "../components/seo"
 import  {graphql, StaticQuery} from "gatsby"
 import Post from '../components/Post'
 import PaginationLinks from "../components/PaginationLinks"
 import Helmet from "react-helmet"
+// import ReactGa from 'react-ga'
 
 function IndexPage () {
 
   const postsPerPage = 4;
   let numberOfPages
 return(
-  <Home>
+  <Layout>
     <SEO title="Home" />
   
       <StaticQuery
@@ -65,7 +66,7 @@ return(
       />
      
 
-  </Home>
+  </Layout>
 )
 }
 

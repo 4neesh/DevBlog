@@ -14,11 +14,11 @@ export default class Sidebar extends React.Component {
 
   componentDidMount() {
 
-    window.location.href === "https://aneesh.co.uk/"
+    window.location.href === "https://aneesh.co.uk/blogs"
       ||
-      window.location.href === "https://aneesh.co.uk"
+      window.location.href === "https://aneesh.co.uk/blogs/"
       ||
-      window.location.href === "http://localhost:8000/"
+      window.location.href === "http://localhost:8000/blogs"
       ||
       window.location.href.includes("tag")
       ||
