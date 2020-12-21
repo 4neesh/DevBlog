@@ -11,7 +11,7 @@ const PaginationLinks = ({ currentPage, numberOfPages }) => {
     <Pagination >
       {isFirst ? (
         <PaginationItem disabled >
-          <PaginationLink  style={{color:"black"}} previous href="/" />
+          <PaginationLink  style={{color:"black"}} previous href="/blogs" />
         </PaginationItem>
       ) : (
         <PaginationItem >
