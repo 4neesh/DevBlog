@@ -1,5 +1,5 @@
 ---
-title: 'Ready Set Golang'
+title: 'An Introduction to Go'
 date: 2020-12-15
 author: 'Aneesh Mistry'
 featuredImage: ../images/xxx.png

@@ -44,6 +44,27 @@ code{
   }
 }
 
+h1{
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 6.5rem;
+  text-shadow: 10px;
+  color: black;
+  font-weight: bold;
+}
+h2{
+  color:rgb(90, 89, 89);
+}
+.home-container#content{
+  background-color: $light-gray;
+  text-align: center;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  flex-direction: column;
+  overflow:hidden;
+}
+
 .nav-link{
   color: $main;
   &:hover {
@@ -115,13 +136,7 @@ background-color:$main;
   color: black;
   margin-top: 55px; //sit sticky bar under navbar
   }
-  .stickyHeaderBar .stickyHeaderImage{
-    flex:0 0 170px;
-  }
-  .stickyHeaderBar .stickyHeaderImage .Image{
-    max-width: 100%;
-  }
-
+  
 
   .stickyHeaderText{
     color: white;
@@ -145,9 +160,8 @@ background-color:$main;
     display: none;
   }
   .stickyHeaderImage{
-    height: 50%;
-    width:50%;  
-    padding: 10px;
+    width:25%;  
+    display: inline-block;
   }
 
   .gatsby-highlight {
@@ -168,9 +182,11 @@ background-color:$main;
   }
 
   .navbar {
-    background-color: white;
     border-bottom: 2px solid rgba(0, 0, 0, 0.4);
     line-height: 1;
+    text-align: center;
+    display: flex;
+    justify-content: center;
   }
 
   .gatsby-highlight pre[class*="language-"].line-numbers {
