@@ -240,24 +240,8 @@ text-transform: uppercase;
   text-transform: uppercase;
   font-weight: bold;
 }
-@media  (min-width: 366px) {
-  .stickyHeaderText{
-    font-size: 4vw;
-    
-  }
-  .newslettertitle{
-   
-    font-size: 18px;
-  }
-}
-@media  (min-width: 550px) {
-  .stickyHeaderText{
-    font-size: 3.5vw;
-    
-  }
 
-}
-@media  (min-width: 800px) {
+@media  (max-width: 815px) {
 
   .stickyHeaderText{
     font-size: 3vw;
@@ -274,26 +258,5 @@ text-transform: uppercase;
   }
 }
 
-@media  (min-width: 1210px) {
-
-  .stickyHeaderText{
-    font-size: 2.5vw;
-    
-  }
-}
-@media  (min-width: 1500px) {
-
-  .stickyHeaderText{
-    font-size: 2vw;
-    
-  }
-}
-@media  (min-width: 1900px) {
-
-  .stickyHeaderText{
-    font-size: 1.5vw;
-    
-  }
-}
 
 

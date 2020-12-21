@@ -71,7 +71,7 @@ const Layout = ({ children }) => (
                 href="http://feeds.feedburner.com/aneeshBlog"
                 target="_blank" 
                 rel="noopener noreferrer"
-                style={{paddingRight:"30px", color:"black"}}
+                style={{ color:"black"}}
                 >
                 <i class="fas fa-rss fa-2x"/>
                     

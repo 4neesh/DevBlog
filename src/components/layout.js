@@ -6,7 +6,6 @@ import Header from "./header"
 import Footer from "./footer"
 import { Row, Col } from "reactstrap"
 import Sidebar from "./Sidebar"
-import StickyHeader from "./stickyHeader"
 import { Helmet } from "react-helmet"
 
 
@@ -41,7 +40,6 @@ const Layout = ({ children }) => (
 
         <Header />
 
-        <StickyHeader/>
         <div className="container" id="content">
 
           <Row >
