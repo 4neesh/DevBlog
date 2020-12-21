@@ -5,10 +5,14 @@ const PaginationLinks = ({ currentPage, numberOfPages }) => {
   const isFirst = currentPage === 1
   const isLast = currentPage === numberOfPages
   const previousPage =
-    currentPage - 1 === 1 ? '/' : '/page/' + (currentPage - 1).toString()
+    currentPage - 1 === 1 ? '/blogs' : '/page/' + (currentPage - 1).toString()
   const nextPage = '/page/' + (currentPage + 1).toString()
   return (
     <Pagination >
+
+    
+    {/* make the fist button disabled if we are on the first page */}
+
       {isFirst ? (
         <PaginationItem disabled >
           <PaginationLink  style={{color:"black"}} previous href="/blogs" />
@@ -19,6 +23,8 @@ const PaginationLinks = ({ currentPage, numberOfPages }) => {
         </PaginationItem>
       )}
   
+
+      {/* populate the middle numbers for pagination */}
       
       {Array.from({ length: numberOfPages }, (_, i) =>
         currentPage === i + 1 ? (
@@ -38,6 +44,8 @@ const PaginationLinks = ({ currentPage, numberOfPages }) => {
         )
       )}
 
+    
+    {/* make the next button disabled if on the final page*/}
 
       {isLast ? (
         <PaginationItem disabled>
