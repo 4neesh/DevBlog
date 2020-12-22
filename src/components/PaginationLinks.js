@@ -9,7 +9,7 @@ const PaginationLinks = ({ currentPage, numberOfPages }) => {
   const nextPage = '/page/' + (currentPage + 1).toString()
   const finalPage = '/page/' + numberOfPages
   const firstPage = '/blogs'
-  const middleNumber = Math.round(numberOfPages /2)
+  const middleNumber = Math.round(numberOfPages / 2)
   console.log("current: " + currentPage)
   console.log("previous: " + previousPage)
   console.log("nextPage: " + nextPage)
@@ -17,203 +17,215 @@ const PaginationLinks = ({ currentPage, numberOfPages }) => {
   return (
     <Pagination >
 
-    
-    {/* make the previous and first page button disabled if we are on the first page */}
 
-    {isFirst ? (
-        <PaginationItem disabled >
-          <PaginationLink  style={{color:"black"}} first  />
-        </PaginationItem>
-        
-      ) : (
-        <PaginationItem >
-          <PaginationLink style={{color:"black"}} first href={firstPage}/>
-        </PaginationItem>
-      )}
+      {/* make the previous and first page button disabled if we are on the first page */}
 
       {isFirst ? (
         <PaginationItem disabled >
-          <PaginationLink  style={{color:"black"}} previous  />
+          <PaginationLink className="unselectedPage" first />
         </PaginationItem>
-        
+
       ) : (
-        <PaginationItem >
-          <PaginationLink style={{color:"black"}} previous href={previousPage} />
+          <PaginationItem >
+            <PaginationLink className="unselectedPage" first href={firstPage} />
+          </PaginationItem>
+        )}
+
+      {isFirst ? (
+        <PaginationItem disabled >
+          <PaginationLink className="unselectedPage" previous />
         </PaginationItem>
-      )}
-  
+
+      ) : (
+          <PaginationItem >
+            <PaginationLink className="unselectedPage" previous href={previousPage} />
+          </PaginationItem>
+        )}
+
 
 
 
 
       {/* populate the first 3 numbers for pagination and colour active if selected */}
-      
+
       {isLast ? (
 
-<PaginationItem >
-            <PaginationLink style={{color:"black"}} href={`/${'blogs'}`}>
-              1  
+        <PaginationItem >
+          <PaginationLink className="unselectedPage" href={`/${'blogs'}`}>
+            1
             </PaginationLink>
-          </PaginationItem>
+        </PaginationItem>
 
       )
         :
         currentPage + 2 === numberOfPages ? (
           <PaginationItem  >
-            <PaginationLink style={{color:"black"}} href={`/${currentPage === 0 ? 'blogs' : 'page/' + (currentPage - 1)}`}>
-              {currentPage -1 }
+            <PaginationLink className="unselectedPage" href={`/${currentPage === 0 ? 'blogs' : 'page/' + (currentPage - 1)}`}>
+              {currentPage - 1}
             </PaginationLink>
           </PaginationItem>
         )
-        :
-        currentPage + 1 === numberOfPages ? (
-          <PaginationItem  key={`page-number${currentPage + 1}`}>
-            <PaginationLink style={{color:"black"}} href={`/${currentPage === 0 ? 'blogs' : 'page/' + (currentPage - 2)}`}>
-              {currentPage -2 }
-            </PaginationLink>
-          </PaginationItem>
-        )
-        :
-        (
+          :
+          currentPage + 1 === numberOfPages ? (
+            <PaginationItem key={`page-number${currentPage + 1}`}>
+              <PaginationLink className="unselectedPage" href={`/${currentPage === 0 ? 'blogs' : 'page/' + (currentPage - 2)}`}>
+                {currentPage - 2}
+              </PaginationLink>
+            </PaginationItem>
+          )
+            :
+            (
 
-<PaginationItem  active key={`page-number${currentPage + 1}`}>
-            <PaginationLink className="paginationLinks" href={`/${currentPage === 0 ? 'blogs' : 'page/' + (currentPage + 1)}`}>
+              <PaginationItem active key={`page-number${currentPage + 1}`}>
+                <PaginationLink className="selectedPage" href={`/${currentPage === 0 ? 'blogs' : 'page/' + (currentPage + 1)}`}>
+                  {currentPage}
+                </PaginationLink>
+              </PaginationItem>
+
+            )
+
+      }
+
+      {isLast ? (
+
+        <PaginationItem >
+          <PaginationLink className="unselectedPage" href={`/${'page/2'}`}>
+            2
+            </PaginationLink>
+        </PaginationItem>
+
+      )
+
+        :
+        currentPage + 2 === numberOfPages ? (
+          <PaginationItem active key={`page-number${currentPage + 1}`}>
+            <PaginationLink className="selectedPage" href={`/${currentPage === 0 ? 'blogs' : 'page/' + (currentPage)}`}>
               {currentPage}
             </PaginationLink>
           </PaginationItem>
-
         )
-    
-    }
+          :
+          currentPage + 1 === numberOfPages ? (
+            <PaginationItem key={`page-number${currentPage + 1}`}>
+              <PaginationLink className="unselectedPage" href={`/${currentPage === 0 ? 'blogs' : 'page/' + (currentPage - 1)}`}>
+                {currentPage - 1}
+              </PaginationLink>
+            </PaginationItem>
+          )
 
-{isLast ? (
+            :
 
-<PaginationItem >
-            <PaginationLink style={{color:"black"}} href={`/${'page/2'}`}>
-              2  
+            (
+
+              <PaginationItem>
+                <PaginationLink className="unselectedPage" href={`/${currentPage === 0 ? 'blogs' : 'page/' + (currentPage + 1)}`}>
+                  {currentPage + 1}
+                </PaginationLink>
+              </PaginationItem>
+
+            )
+
+      }
+
+      {isLast ? (
+
+        <PaginationItem disabled>
+          <PaginationLink className="unselectedPage">
+            ...
             </PaginationLink>
-          </PaginationItem>
-
-      )
-      
-        :
-        currentPage + 2 === numberOfPages ? (
-          <PaginationItem  active key={`page-number${currentPage + 1}`}>
-            <PaginationLink className="paginationLinks" href={`/${currentPage === 0 ? 'blogs' : 'page/' + (currentPage)}`}>
-              {currentPage }
-            </PaginationLink>
-          </PaginationItem>
-        )
-        :
-        currentPage + 1 === numberOfPages ? (
-          <PaginationItem  key={`page-number${currentPage + 1}`}>
-            <PaginationLink  style={{color:"black"}}  href={`/${currentPage === 0 ? 'blogs' : 'page/' + (currentPage -1 )}`}>
-              {currentPage -1 }
-            </PaginationLink>
-          </PaginationItem>
-        )
-       
-        :
-        
-        (
-
-<PaginationItem>
-            <PaginationLink style={{color:"black"}} href={`/${currentPage === 0 ? 'blogs' : 'page/' + (currentPage + 1)}`}>
-              {currentPage + 1}
-            </PaginationLink>
-          </PaginationItem>
-
-        )
-    
-    }
-
-{isLast ? (
-
-<PaginationItem >
-            <PaginationLink style={{color:"black"}} href={`/${'page/2'}`}>
-              3  
-            </PaginationLink>
-          </PaginationItem>
+        </PaginationItem>
 
       )
         :
         currentPage + 2 === numberOfPages ? (
           <PaginationItem >
-            <PaginationLink style={{color:"black"}} href={`/${currentPage === 0 ? 'blogs' : 'page/' + (currentPage + 1)}`}>
-              {currentPage + 1 }
+            <PaginationLink className="unselectedPage" href={`/${currentPage === 0 ? 'blogs' : 'page/' + (currentPage + 1)}`}>
+              {currentPage + 1}
             </PaginationLink>
           </PaginationItem>
         )
-        :
-        currentPage + 1 === numberOfPages ? (
-          <PaginationItem  active key={`page-number${currentPage + 1}`}>
-            <PaginationLink className="paginationLinks" href={`/${currentPage === 0 ? 'blogs' : 'page/' + (currentPage)}`}>
-              {currentPage }
-            </PaginationLink>
-          </PaginationItem>
-        )
-        :
-        
-        currentPage + 1 === numberOfPages ? (
-      null
-        )
-        :
-        (
+          :
+          currentPage + 1 === numberOfPages ? (
+            <PaginationItem active key={`page-number${currentPage + 1}`}>
+              <PaginationLink className="selectedPage" href={`/${currentPage === 0 ? 'blogs' : 'page/' + (currentPage)}`}>
+                {currentPage}
+              </PaginationLink>
+            </PaginationItem>
+          )
+            :
 
-<PaginationItem>
-            <PaginationLink style={{color:"black"}} href={`/${currentPage === 0 ? 'blogs' : 'page/' + (currentPage + 2)}`}>
-              {currentPage + 2}
-            </PaginationLink>
-          </PaginationItem>
+            currentPage + 1 === numberOfPages ? (
+              null
+            )
+              :
+              (
 
-        )
-    
-    }
-     
+                <PaginationItem>
+                  <PaginationLink className="unselectedPage" href={`/${currentPage === 0 ? 'blogs' : 'page/' + (currentPage + 2)}`}>
+                    {currentPage + 2}
+                  </PaginationLink>
+                </PaginationItem>
+
+              )
+
+      }
+
 
       {/* create the ellipsis and the final page pagination */}
 
-      <PaginationItem disabled >
-            <PaginationLink style={{color:"black"}}  >
-              ...
+      {isLast ? (
+        <PaginationItem >
+          <PaginationLink className="unselectedPage" href={`/${currentPage === 0 ? 'blogs' : 'page/' + (currentPage - 1)}`} >
+            {numberOfPages - 1}
+          </PaginationLink>
+        </PaginationItem>
+
+      )
+        :
+        <PaginationItem disabled >
+          <PaginationLink className="unselectedPage"  >
+            ...
             </PaginationLink>
-      </PaginationItem>
+        </PaginationItem>
+      }
 
 
-    {isLast ? (
-      <PaginationItem active >
-            <PaginationLink className="paginationLinks" href={finalPage} >
+
+
+      {isLast ? (
+        <PaginationItem active >
+          <PaginationLink className="selectedPage" href={finalPage} >
+            {numberOfPages}
+          </PaginationLink>
+        </PaginationItem>
+      ) : (
+          <PaginationItem >
+            <PaginationLink href={finalPage} className="unselectedPage"  >
               {numberOfPages}
             </PaginationLink>
-      </PaginationItem>
-    ) : (
-      <PaginationItem >
-            <PaginationLink href={finalPage} style={{color:"black"}}  >
-              {numberOfPages}
-            </PaginationLink>
-      </PaginationItem>
-    )}
+          </PaginationItem>
+        )}
 
-    {/* make the next and last page button disabled if on the final page*/}
+      {/* make the next and last page button disabled if on the final page*/}
 
       {isLast ? (
         <PaginationItem disabled>
-          <PaginationLink style={{color:"black"}} next  />
+          <PaginationLink className="unselectedPage" next />
         </PaginationItem>
       ) : (
-        <PaginationItem>
-          <PaginationLink style={{color:"black"}} next href={nextPage} />
-        </PaginationItem>
-      )}
+          <PaginationItem>
+            <PaginationLink className="unselectedPage" next href={nextPage} />
+          </PaginationItem>
+        )}
       {isLast ? (
         <PaginationItem disabled>
-          <PaginationLink style={{color:"black"}} last  />
+          <PaginationLink className="unselectedPage" last />
         </PaginationItem>
       ) : (
-        <PaginationItem>
-          <PaginationLink style={{color:"black"}} last  href={finalPage}/>
-        </PaginationItem>
-      )}
+          <PaginationItem>
+            <PaginationLink className="unselectedPage" last href={finalPage} />
+          </PaginationItem>
+        )}
     </Pagination>
   )
 }

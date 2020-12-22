@@ -208,7 +208,12 @@ background-color:$main;
   background-color: $main;
 text-transform: uppercase;
 }
-.paginationLinks{
+
+.unselectedPage{
+  color: black;
+}
+
+.selectedPage{
  background-color:$main !important;
     border-color:$main !important;
 }
