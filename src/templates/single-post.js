@@ -3,7 +3,7 @@ import { graphql, Link } from 'gatsby'
 import SEO from "../components/seo"
 import { slugify } from "../util/utilityFunctions"
 import { Card, CardBody, Badge, CardSubtitle, CardTitle } from 'reactstrap'
-import LayoutPost from '../components/layoutPost'
+import LayoutPost from '../components/layouts/layoutPost'
 import SharePost from '../components/sharePost'
 
 const SinglePost = ({  pageContext, data }) => {
@@ -25,8 +25,8 @@ const SinglePost = ({  pageContext, data }) => {
                 <CardTitle className="postTitle">{post.title}</CardTitle>    
 
                     <CardSubtitle>
-                        <span className="text-info">{post.date}</span> by{' '}
-                        <span className="text-info">{post.author}</span>
+                        <span className="postSubtitle">{post.date}</span> by{' '}
+                        <span className="postSubtitle">{post.author}</span>
                     </CardSubtitle>
                     <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
                     <ul className="post-tags">

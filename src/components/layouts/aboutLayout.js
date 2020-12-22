@@ -1,11 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { graphql, StaticQuery } from "gatsby"
-import "../styles/index.scss"
-import Header from "./header"
-import Footer from "./footer"
-import { Row, Col } from "reactstrap"
-import Sidebar from "./Sidebar"
+import "../../styles/index.scss"
+import Header from "../header"
+import Footer from "../footer"
 import { Helmet } from "react-helmet"
 
 
@@ -14,7 +12,7 @@ const Layout = ({ children }) => (
 
   <StaticQuery
     query={graphql`
-      query SiteTitleQuery {
+      query SiteTitleQuery3 {
         site {
           siteMetadata {
             title
@@ -42,13 +40,7 @@ const Layout = ({ children }) => (
 
         <div className="container" id="content">
 
-          <Row >
-            <Col md="7">{children}</Col>
-            <Col md="5">
-
-              <Sidebar />
-            </Col>
-          </Row>
+          {children}
         </div>
         <Footer />
       </>

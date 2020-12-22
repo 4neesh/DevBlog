@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from "../components/layout"
+import Layout from "../components/layouts/layout"
 import SEO from "../components/seo"
 import { Card, CardBody, CardTitle } from 'reactstrap';
 
@@ -19,7 +19,7 @@ const PrivacyPolicy = () => {
                         <p>
                             This Privacy Policy applies to visitors to our site <a rel="noopener noreferrer"href="https://aneesh.co.uk/">https://aneesh.co.uk/</a>.
                         </p>
-                        <h5>MailChimp</h5>
+                        <h4>MailChimp</h4>
                         <p>
                             This website has an email list which allows us to communicate with the regular readers of this blog. The email marketing tool MailChimp is used for this purpose.
                         <br></br>
@@ -39,7 +39,7 @@ const PrivacyPolicy = () => {
                             A list of emails sent to the student is updated by MailChimp when we send a new email to the subscribers of our newsletter.
                             You can find more information about MailChimp <a rel="noopener noreferrer" href="https://mailchimp.com/legal/privacy/" target="_blank">here</a>.
                         </p>
-                        <h5>Google Analytics</h5>
+                        <h4>Google Analytics</h4>
                         <p>
                             Our website uses Google Analytics, a web analysis service of Google, Inc., 1600 Amphitheatre Parkway, Mountain View, CA 94043 USA,
                             www.google.com (“Google Analytics” or “Google”). Google Analytics employs cookies that are stored to your computer in order to

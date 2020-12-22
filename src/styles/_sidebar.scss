@@ -15,3 +15,31 @@
   background-color: $main;
 
 }
+.subscribeButton:hover{
+  background-color: $main;
+}
+
+.hideSideBar{
+  display:none;
+}
+
+.viewBlogsHeadline{
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 20px;
+
+}
+
+.newslettertitle{
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 20px;
+}
+
+
+.subscribeButton:active{
+  background-color: $main;
+}
+.subscribeButton{
+  background-color: $main;
+}

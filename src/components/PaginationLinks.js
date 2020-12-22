@@ -9,7 +9,6 @@ const PaginationLinks = ({ currentPage, numberOfPages }) => {
   const nextPage = '/page/' + (currentPage + 1).toString()
   const finalPage = '/page/' + numberOfPages
   const firstPage = '/blogs'
-  const middleNumber = Math.round(numberOfPages / 2)
   console.log("current: " + currentPage)
   console.log("previous: " + previousPage)
   console.log("nextPage: " + nextPage)
@@ -46,7 +45,7 @@ const PaginationLinks = ({ currentPage, numberOfPages }) => {
 
 
 
-      {/* populate the first 3 numbers for pagination and colour active if selected */}
+      {/* populate the first number for pagination and colour active if selected */}
 
       {isLast ? (
 
@@ -85,6 +84,9 @@ const PaginationLinks = ({ currentPage, numberOfPages }) => {
             )
 
       }
+
+      {/* populate the second number for pagination and colour active if selected */}
+
 
       {isLast ? (
 
@@ -126,6 +128,8 @@ const PaginationLinks = ({ currentPage, numberOfPages }) => {
             )
 
       }
+
+      {/* populate the third number for pagination and colour active if selected */}
 
       {isLast ? (
 

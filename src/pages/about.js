@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import Layout from "../components/layout"
+import Layout from "../components//layouts/aboutLayout"
 import SEO from "../components/seo"
 import AboutImage from "../components/aboutImage"
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, CardBody, CardTitle, Row } from 'reactstrap';
