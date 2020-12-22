@@ -28,14 +28,13 @@ const PaginationLinks = ({ currentPage, numberOfPages }) => {
       )}
   
 
-      {/* populate the middle numbers for pagination */}
+      {/* populate the middle numbers for pagination and colour active if selected */}
       
       {Array.from({ length: numberOfPages }, (_, i) =>
         currentPage === i + 1 ? (
           <PaginationItem  active key={`page-number${i + 1}`}>
             <PaginationLink className="paginationLinks" href={`/${i === 0 ? 'blogs' : 'page/' + (i + 1)}`}>
               {i + 1}
-
             </PaginationLink>
           </PaginationItem>
         ) 
