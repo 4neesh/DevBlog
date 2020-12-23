@@ -36,9 +36,9 @@ Go aims to achieve this tri-standard.
 
 </p>
 <p>
-Go is a statically typed, compiled and highly optimised programming language. The properties of Go extend beyond the rapid compilation to provide developer support with a 
-shallow learning curve, backward compatibility and packaged support for features including web services and testing.<br>
-The extended benefits of Go can be categorised into 4 key areas:<br>
+Go is a statically typed, compiled and highly optimised programming language. Statically typed means the type of variables are known at compile time and not runtime. Despite the added work to be statically typed, Go enables rapid compilation as well as other extensive behaviours to provide developer support with a 
+shallow learning curve, backward compatibility and built-in support for features including web services and testing.<br>
+The extended features of Go can be categorised into 4 key areas:<br>
 &#8226; Simplicity of implementation.<br>
 &#8226; Concurrency support.<br>
 &#8226; Out-of-the-box experience.<br>
@@ -50,6 +50,7 @@ The extended benefits of Go can be categorised into 4 key areas:<br>
 <p>
 Go is able to pair high sophistication and rich features with an elegant approach to language design.
 The framework for testing and profiling Go is also provided as default. This supports multiple types of testing. 
+Unit tests can be written in parallel with the code and also provides in-built tools to understand test coverage and code documentation. 
 </p>
 <p>
 Go support a multi-paradigm programming language where paradigm such as OOP and procedural code can be used as required by the developer.
@@ -84,15 +85,43 @@ The package allows the developer to build HTTP services with compositional const
 Go features support for multi-threaded development with <strong>goroutines</strong> which are functions that run concurrently. A goroutine is a lightweight thread that can be run with 
 thousands of other goroutines.
 Goroutines are able to safely communicate with each other through channels using the go schedular to assign threads to tasks. Channels prevent the potential for race conditions when multiple 
-goroutines access shared memory. 
+goroutines access shared memory. Creating a goroutine can be implemented by adding the keyword <code>go</code> before calling a method (line 8 below):
 </p>
 
+```go{numberLines:true}
+func concatenate(string a, string b) (string){
+    return a + b
+}
+
+func main(){
+    concatenate("hello", "world")
+
+    go concatenate("hello world", "goroutine")
+}
+```
+
+<p>
+Go also uses <i>channels</i> to act as a conduit for goroutines to communicate with each other. In the below example, the <code><-</code> syntax is used to assign and use a value that is passed to a channel:
+
+```go{numberLines:true}
+    names := make(chan string)
+
+    go func() {
+        name <- "John Adams"
+    }()
+
+    name :=  <-names
+
+   fmt.Printf("The name we got is: %s", name)
+
+```
+</p>
 
 <br>
 <h4>Out of the box experience</h4>
 <p>
 Go achieves an enhanced user experience from its capacity to be used out of the box. 
-You are not required to pull libraries to be used with Go as comprehensive support for tools are provided as default with Go. 
+You are not required to pull libraries to be used with Go as comprehensive support for tools are provided as default with Go. Go has been supported by third parties wh have built standard libraries to support the capacity of Go as standard.
 The Go standard library comes with exceptional support for core components including:<br>
 &#8226; String manipulation.<br>
 &#8226; Data compression.<br>
@@ -111,7 +140,7 @@ The Go CLI offers further support for an out-of-the-box experience. The CLI prov
 <br>
 <h4>System performance</h4>
 <p>
-Being statically typed, the type safety of Go is verified by the program to offer an optimisation to the compiled binary output. 
+Being statically typed, the type safety of Go is verified at compile time to offer a runtime optimisation to the compiled binary output. 
 The compiler to Go is well depended upon as it provides support to the developer for optimisation in a C-inspired manner.
 All in all, Go offers improved compilation and reduced clutter as a statically typed language.
 Beyond the compiler, Go uses garbage collection for efficient memory allocation and management for the developer and also uses multiple paradigms.
@@ -126,7 +155,9 @@ The configuration of Go into a compiled binary for a certain operating system re
 Further benefits are realised from Go as it uses the garbage collector for memory management. This example demonstrates how Go combines the benefits of GC from Java with the compile performance of C++ with 
 enhanced simplicity for configuration. 
 </p>
-
+<p>
+Go applications are deployed as a binary file. The binary file removes the need for a runtime environment to be installed for use. When deploying a Go application, it therefore does not come loaded with the difficulty of packages to be updated. Go provides support for multiple operating systems and architectures to enable strong performance as default.
+</p>
 
 <br>
 <h4>Use cases for Go</h4>
@@ -177,12 +208,12 @@ the Go compiler will be able to locate the 'pkg' folder where it will store and 
 
 
 <br>
-<h4>Golang syntax</h4>
+<h4>Go syntax</h4>
 <p>
-When I review the Go syntax, I will often refer to how it would look in Java. With my confidence in Java, it is nice to be able to reflect upon how Go differs. 
+When I review the Go syntax, I will often refer to how it would look in Java. With my confidence in Java, it is nice to be able to reflect upon how Go differs. The Go syntax is largely based upon the syntax with C with some variance to make it more intuitive to write.
 </p>
 <p>
-As a developer who worked mostly with Java before Golang, there were some key distinctions in the syntax between the languages:
+The Go language syntax was built with a mantra of 'do more with less' to enable a As a developer who worked mostly with Java before Golang, there were some key distinctions in the syntax between the languages:
 
 &#8226; Method names start capitalised (inherited from C#)<br>
 &#8226; Functions are defined with func(). Function return type comes after the name.<br>
