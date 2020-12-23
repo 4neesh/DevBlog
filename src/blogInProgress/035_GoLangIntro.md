@@ -1,9 +1,9 @@
 ---
 title: 'An Introduction to Go'
-date: 2020-12-15
+date: 2021-01-04
 author: 'Aneesh Mistry'
 featuredImage: ../images/xxx.png
-subtitle: 'An introduction to using Go, the problems it is was built to resolve and its most valuable use cases.'
+subtitle: 'An introduction to using Go, the limitations it is was built to resolve and its most valuable use cases.'
 time: '10'
 tags:
 - Go
@@ -12,25 +12,25 @@ tags:
 <strong>Key Takeaways</strong><br>
 &#8226; Understand the motivations that led to the invention of Go.<br>
 &#8226; Visit the syntax and configuration of Go to begin writing Go applications.<br>
-&#8226; Review the most valuable use-cases for Go.<br>
+&#8226; Review the most valuable use-cases of Go.<br>
 
 <br>
 <h4>Intro to Go programming language</h4>
 <p>
 Go (often referred to as 'Golang') was created by 3 engineers, Ken Thompson, Rob Pike and Robert Griesemer who worked together at Google during 2009. 
-Go came about as a programming language used to tackle some of the persistent issues of compilation faced by developers of large servers and distributed applications at Google. 
-Go has since been developed from its inception as an open source language and is used with many major platforms including Docker, Kubernetes and Terraform. But what makes Go so great?
+Go came about as a programming language used to tackle some of the persistent issues of compilation faced by the developers of large servers and distributed applications at Google. 
+Go has since been developed from its inception into an open source language and is used upon many major platforms including Docker, Kubernetes and Terraform. But why is Go the language of choice in these cases?
 </p>
 <p>
-The key motivation behind the inception of Go was to resolve the excessive compilation time required for application builds. As a result, Go is the only programming language to serve all 3 sought-after capabilities:<br>
+The key motivation behind the creation of Go was to resolve the excessive compilation time required for application builds. As a result, Go is the only programming language to serve all 3 sought-after capabilities:<br>
 &#8226; Efficient compilation.<br>
 &#8226; Efficient execution.<br>
 &#8226; Ease of programming.<br>
 </p>
 <p>
-Languages such as Java and C++ provide efficient compilation and execution, languages such as JavaScript and Python are able to provide ease of programming with efficient compilation, however there had
-not been a language to offer all three. 
-Golang aims to achieve this tri-standard.
+Languages such as Java and C++ provide efficient compilation and execution, languages such as JavaScript and Python are able to provide ease of programming with efficient compilation, however before Go, there had
+not been a language to offer all three capabilities.<br>
+Go aims to achieve this tri-standard.
 
 ![Golang motivation](../images/033_golangVenn.png)
 
@@ -48,7 +48,7 @@ The extended benefits of Go can be categorised into 4 key areas:<br>
 <br>
 <h4>Simplicity of implementation</h4>
 <p>
-Go is able to pair high sophistication, rich features with an equally simple and straightforward approach to language design.
+Go is able to pair high sophistication and rich features with an elegant approach to language design.
 The framework for testing and profiling Go is also provided as default. This supports multiple types of testing. 
 </p>
 <p>
@@ -74,14 +74,14 @@ Go is backwards compatible to make implementations of Go safer to withstand the 
 <br>
 <h4>Concurrency</h4>
 <p>
-Go was developed during a modern period of computer hardware where the presence of multiple cores to a system became standard. Go places the management of multiple cores within its design 
+Go was developed during a modern period of computer hardware where the presence of multiple cores to a system were standard by design. Go places the management of multiple cores within its design 
 where other languages may fault around the challenges of maintaining database connections and managing caches. Go achieves its capacity for concurrency through the use of <i>goroutines</i>, a lightweight
-alternative to threads that support the huge scaling of Go applications.
+alternative to individual threads that consequently support a huge scaling capacity of Go applications.
 </p>
 <p>
 Go features its own network awareness where threads can be executed in a thread-safe manner. Go includes a package called 'net/http' which provides web application support.
 The package allows the developer to build HTTP services with compositional constructs. 
-GO features support for multi-threaded development with <strong>goroutines</strong> which are functions that run concurrently. A goroutine is a lightweight thread that can be run with 
+Go features support for multi-threaded development with <strong>goroutines</strong> which are functions that run concurrently. A goroutine is a lightweight thread that can be run with 
 thousands of other goroutines.
 Goroutines are able to safely communicate with each other through channels using the go schedular to assign threads to tasks. Channels prevent the potential for race conditions when multiple 
 goroutines access shared memory. 
@@ -115,7 +115,8 @@ Being statically typed, the type safety of Go is verified by the program to offe
 The compiler to Go is well depended upon as it provides support to the developer for optimisation in a C-inspired manner.
 All in all, Go offers improved compilation and reduced clutter as a statically typed language.
 Beyond the compiler, Go uses garbage collection for efficient memory allocation and management for the developer and also uses multiple paradigms.
-
+</p>
+<p>
 Go supports building applications across different operating systems with the update of 2 variables to the compiler. 
 The support of Go for cross-platform builds are that builds for different OS' can be made from the same OS and the update of 2 variables.
 The benefits of Go as a compiled language can be realised from enhanced execution time where the operating system does not need to interpret the code at runtime. 
