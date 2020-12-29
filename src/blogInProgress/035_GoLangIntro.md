@@ -10,19 +10,19 @@ tags:
 ---
 <br>
 <strong>Key Takeaways</strong><br>
-&#8226; Understand the motivations that led to the invention of Go.<br>
-&#8226; Visit the syntax and configuration of Go to begin writing Go applications.<br>
-&#8226; Review the most valuable use-cases of Go.<br>
+&#8226; Understand the drivers for the invention of Go programming language.<br>
+&#8226; Review the syntax and configuration of Go to begin writing Go applications.<br>
+&#8226; Understand the use-cases when choosing Go as the language of choice is most valuable.<br>
 
 <br>
-<h4>Intro to Go programming language</h4>
+<h4>Introduction</h4>
 <p>
 Go (often referred to as 'Golang') was created by 3 engineers, Ken Thompson, Rob Pike and Robert Griesemer who worked together at Google during 2009. 
-Go came about as a programming language used to tackle some of the persistent issues of compilation faced by the developers of large servers and distributed applications at Google. 
-Go has since been developed from its inception into an open source language and is used upon many major platforms including Docker, Kubernetes and Terraform. But why is Go the language of choice in these cases?
+Go has since been developed from its inception into an open source language and is used upon many major platforms including Docker, Kubernetes and Terraform. But why is Go chosen in these cases?
 </p>
 <p>
-The key motivation behind the creation of Go was to resolve the excessive compilation time required for application builds. As a result, Go is the only programming language to serve all 3 sought-after capabilities:<br>
+Go came about as a programming language used to tackle some of the persistent issues of slow compilation and application builds faced by the developers of large servers and distributed applications at Google. 
+As a result, Go is the only programming language to serve all 3 sought-after capabilities:<br>
 &#8226; Efficient compilation.<br>
 &#8226; Efficient execution.<br>
 &#8226; Ease of programming.<br>
@@ -36,8 +36,7 @@ Go aims to achieve this tri-standard.
 
 </p>
 <p>
-Go is a statically typed, compiled and highly optimised programming language. Statically typed means the type of variables are known at compile time and not runtime. Despite the added work to be statically typed, Go enables rapid compilation as well as other extensive behaviours to provide developer support with a 
-shallow learning curve, backward compatibility and built-in support for features including web services and testing.<br>
+Go is a statically typed, compiled and highly optimised programming language. Statically typed means the type for each variable is known at compile time and not defined at runtime. Despite the added work to be statically typed, Go enables rapid compilation as well as other extensive behaviours to provide developer support with a shallow learning curve, backward compatibility and built-in support for features such as web services and testing.<br>
 The extended features of Go can be categorised into 4 key areas:<br>
 &#8226; Simplicity of implementation.<br>
 &#8226; Concurrency support.<br>
