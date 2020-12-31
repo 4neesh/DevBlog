@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Card, CardText, CardSubtitle, CardBody, Badge } from 'reactstrap'
+import { Card,  CardText, CardSubtitle, CardBody, Badge } from 'reactstrap'
 import { slugify } from "../util/utilityFunctions"
 import Img from "gatsby-image"
 
@@ -11,6 +11,7 @@ const Post = ({slug, date,  time, fluid, tags,  subtitle }) => (
         <Img  className="card-image-top" fluid={fluid} />
         </Link>
         <CardBody>
+            
             <CardSubtitle>
                 <span >{date}</span> 
                 <span className="float-right"><strong>
