@@ -178,9 +178,14 @@ Go's 'build once and promote everywhere' principle makes it a valuable language 
 </p>
 
 <br>
+<h4>Building with Go</h4>
+<p>
+The following section of the blog will look at how we can develop a Go project on our machines and the appropriate configuration required. To get started, download Go from <a target="_blank" href="https://golang.org/">https://golang.org</a>.
+</p>
+<br>
 <h4>Configuring a Go project</h4>
 <p>
-Before we create a new Go Project, we must navigate to the Go src workspace from where packages and classes are defined. First navigate to the Go directory on your machine. You will find 3 sub directories: pkg, src, and bin. The src folder may not preexist and must therefore be created.
+Before we create a new Go Project, we must navigate to the Go src workspace from where packages and classes are defined. First navigate to the Go directory on your machine. You will find 3 sub directories: pkg, src, and bin. The src folder may not already exist and must therefore be created.
 </p>
 <p>
 Go workspaces (folders) can be created within the src folder for each project. While it is possible to create a Go workspace at any other directory in your machine, we will later review the benefits of using the Go src workspace directory as we understand how utility packages and class references are made with Go.
