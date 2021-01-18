@@ -14,8 +14,6 @@ tags:
 &#8226; The .<br>
 &#8226; The.<br>
 
-![Merge sort step 2](../../src/images/011MergeSort2.png)
-
 
 <br>
 <h4>Title</h4>
