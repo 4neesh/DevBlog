@@ -11,8 +11,8 @@ tags:
 <br>
 
 <p>
-It was roughly 5 years ago when I wrote my first line of code. I had attended a job interview for an internship when I was asked about writing macros to reflect upon my experience with Microsoft Excel. That evening I wrote my first macro to change the colour of a cell to red with a keyboard shortcut.<br>
-Two lessons were taken from that day: there are many doors in technology that allow us to achieve things we couldn't imagine, and the advent of high-level programming languages provides a more intuitive experience writing code than I could have thought.
+It was roughly 5 years ago when I wrote my first line of code. I had attended a job interview for an internship when I was asked about writing macros to reflect upon my experience with Microsoft Excel. At that point, I had no experience to reflect upon. That evening I wrote my first macro to change the colour of a cell to red with a keyboard shortcut.<br>
+Two lessons were taken from that day: there is no end to the opportunity to learn within technology, and the advent of high-level programming languages provides a more intuitive experience writing code than I could have thought.
 </p>
 </p>
 Fast-forward to the present day and I am starting a blog to document the areas of technology that I explore, find interesting, and am challenged by on a daily basis.<br>

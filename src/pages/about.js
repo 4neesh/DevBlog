@@ -62,13 +62,8 @@ const AboutPage = (props) => {
                     with a Master's degree in Computer Science.
                  </p>
                   <p>
-                    I currently work for Accenture as a software engineer. I have been developing my skills across the 
-                    SDLC using Java, Jenkins and JUnit and continue to focus on Spring and 
-                    Java microservices. I continue to broaden my understanding of financial
-                    services; I actively participate in the UKI Blockchain
-                    community of practice and work predominantly with financial services
-                    clients.
-  </p>
+                    I currently work as a software engineer at Morgan Stanley. Prior to this, I worked for Accenture for two years where I developed my skills across the 
+                    SDLC using Java and AWS.  </p>
                   <p>
                     Outside engineering, I enjoy playing golf.
                     Golf has been a hobby from a young age that I carry through today; at the height
