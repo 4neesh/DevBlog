@@ -1,6 +1,6 @@
 ---
 title: 'Modern portfolio theory and fund diversification'
-date: 2021-02-08
+date: 2021-02-15
 author: 'Aneesh Mistry'
 featuredImage: ../images/037_paris.jpg
 subtitle: 'Understand the use of modern portfolio theory to find an optimal mix of assets and how diversification can be achieved with different types of assets.'
@@ -11,36 +11,36 @@ tags:
 ---
 <br>
 <strong>Key Takeaways</strong><br>
-&#8226; Understand modern portfolio theory and its reflection of investors expectation.<br>
-&#8226; Use statistical measures such as variance, covariance and standard deviation to simulate portfolio risk and return.<br>
-&#8226; Understand the properties and differences between the asset classes.<br>
+&#8226; Understand modern portfolio theory and its application to portfolio construction.<br>
+&#8226; Use statistical measures such as variance, covariance and standard deviation to simulate portfolio risk and return profiles.<br>
+&#8226; Understand the properties and differences between the asset classes that can be combined to diversify a portfolio.<br>
 
 
 <br>
 <h4>Modern portfolio theory</h4>
 <p>
 Modern portfolio theory (MPT) was first introduced in 1952 by Harry Markowitz to describe how risk-averse investors can achieve optimal returns from their investments at a given level of risk.
-Harry later received a Nobel prize for MPT, which is still used to the present day.
+Harry later received a Nobel prize for MPT, which is still valued to the present day.
 </p>
 <p>
 MPT involves a process of identifying how the assets within a portfolio of investments contribute to the funds overall profile for risk and return. Through MPT, we are able to understand how the assets can be combined to create different risk and return values, and where an optimal mix of the assets can achieve the highest level of expected return for the fund at a given level of risk. 
 </p>
 <p>
-It is often accepted that a larger appetite for risk may yield larger returns for the investor. Despite this, a portfolio of assets may not always yield the same increments of returns for the additional risk taken, thus the relationship between risk and return is not always linear. 
+It is often accepted that a larger appetite for risk may yield larger returns for the investor. Despite this, a portfolio of assets may not always yield the same increments of returns for the additional risk taken, thus the relationship between risk and return is not linear. 
 </p>
 <p>
-In this blog, I will look at the some of the key statistical measures involved with MPT to understand what they tell us about a portfolio of assets, and what their criticisms are. 
+In this blog, I will look at the some of the key statistical measures involved with MPT to understand what they tell us about a portfolio of assets, and what their criticisms are. You can find the formulae for all calculations from my Excel sheet available on <a href="https://github.com/4neesh/DeveloperBlogDemos/tree/master/Modern%20Portfolio%20Theory" target="_blank">GitHub</a>.
 I will also review how the optimal mix of assets can be found for a portfolio. 
-I will conclude the blog by reviewing the different types of assets that can be included within a portfolio and how MPT has since been adapted to obtain further understanding of a portfolio.
+I will conclude the blog by reviewing the different types of assets that can be included within a portfolio and how MPT has since been adapted and applied within industry.
 </p>
 <br>
 <h4>Asset and portfolio risk</h4>
 <p>
-We can divide risk into two types: systematic and unsystematic risk. Systematic risk, also known as undiversifiable risk, is implicit with the market; it includes risk from market observables (such as interest rate or inflation). Unsystematic risk, also known as diversifiable risk, is present with the nature of the asset and <strong>can</strong> be mitigated with other financial products. 
-One example of an unsystematic risk may be the availability on international travel which subsequently caused the likes of Ryanair and EasyJet stock prices to tumble during Covid-19 lockdowns.
+We can divide risk into two types: systematic and unsystematic risk. Systematic risk, also known as undiversifiable risk, is implicit with the market; it includes risk from market observables (such as interest rate or inflation). Unsystematic risk, also known as diversifiable risk, is present with the nature of the asset and <strong>can</strong> be mitigated. 
+One example of an unsystematic risk may be the change in regulations to the airline industry which subsequently caused the likes of Ryanair and EasyJet stock prices to tumble during Covid-19 lockdowns.
 </p>
 <p>
-MPT calculates the risk of an asset from its <u>variance</u> which is later transformed into the <u>standard deviation</u>. The variance of an asset is used to understand how 'spread out' the values are within the data set. With MPT, variance is used to understand how the average deviation differs from mean value of the deviations between each stock price. 
+MPT calculates the risk of an asset from its <u>variance</u> which is later transformed into the <u>standard deviation</u>. The variance of an asset is used to understand how 'spread out' the values are within the data set. With MPT, variance is used to understand how the average change in stock price differs from the mean change of all the stock prices.
 In this blog I will use the stock prices of 2 different assets (Company A and Company B) to demonstrate MPT. I will construct the values based upon the past 6 days of their stock price, however in reality a much larger time frame will be used for more meaningful statistical measures of the two assets.
 </p>
 <p>
@@ -49,7 +49,7 @@ The past 6 stock prices for Company B are: 122.65, 121.11, 132.56, 124.5, 140.7,
 For the two assets, the mean values derived represent the average percentage change in the stock price from the previous stock price. For Company A, this is 5.41%, and for Company B, this is 1.58%. 
 </p>
 <p>
-To calculate the variance, I will subtract the percentage change in stock price for each point away from the asset's mean and square the value.
+To calculate the variance, I will subtract the percentage change in stock price for each price away from the asset's mean and square the value.
 I will then take the average of the individual variance values to obtain the variance for the asset.
 
 ![Company A Variance values](../images/037_companyAVar.png)
@@ -62,13 +62,13 @@ I have used Excel to calculate the variance values, you will also see the field 
 The variance of Company A and Company B is 0.0149 and 0.0067 respectively; these values, however, can become distorted as the difference between each stock price deviation and the mean is squared. 
 </p>
 <p>
-The standard deviation provides a <u>normalised</u> version of the variance to reduce the impact of an outlier on the final variance value.
-The standard deviation is the square root of the variance and provides a real value meaning from itself. For Company A and Company B, the standard deviation is 0.122 and 0.082 respectively.
-The standard deviation tells us that the Company A stock deviates from the mean percentage movement on average by 0.122%, whereas the Company B stock deviates from the mean percentage movement by 0.082% on average.
+The standard deviation provides a <u>normalised</u> version of the variance to reduce the impact of an outlier on the final value.
+The standard deviation is the square root of the variance and provides a contextual value. For Company A and Company B, the standard deviation is 0.122 and 0.082 respectively.
+The standard deviation tells us that the Company A stock deviates from the mean percentage movement on average by 0.122%, whereas the Company B stock deviates from the mean percentage movement by 0.082%.
 </p>
 
 <br>
-<h4>Constructing risk in a portfolio of assets</h4>
+<h4>Constructing risk measures in a portfolio of assets</h4>
 <p>
 The risk profile of a portfolio is derived from the <u>combined</u> risk of the assets along with the respective weight they contribute to portfolio. 
 Before we begin constructing a portfolio of assets, we must first understand how the risk profile of two assets move with respect to each other. 
@@ -81,30 +81,29 @@ The formula for covariance is below:
 
 ![Covariance formula](../images/037_covariance.png)
 
-We describe cov(x,y) as the covariance between x and y. This is the sum of each point of x less its mean multiplied by each data point of y less its mean, all divided by the sample size less 1. 
+We describe cov(x,y) as the covariance between x and y. This is the sum of each point of x less its mean, multiplied by each data point of y less its mean, all divided by the sample size less 1. 
 </p>
 <p>
 The covariance of Company A and Company B is calculated below:
 
 ![Covariance calculation](../images/037_covarianceCal.png)
 
-The covariance value of -0.007509 tells us that there is a slight negative relationship between Company A and Company B. As a result, the average movement of one of the stocks would create a slight opposite movement in the other stock.
+The covariance value of -0.007509 tells us that there is a slight negative relationship between Company A and Company B. As a result, the average movement of one of the stocks would create a slight opposite movement in the other stock (if one goes up, the other goes down).
 </p>
 <p>
-The covariance tells us the portfolio would experience a lower risk profile when the assets are combined than when they are separate. 
-A negative covariance would mean the portfolio value does not exclusively fall to the same amount that an individual asset would fall; the negative covariance in the other asset would offer a protection to some degree against the fall of one asset as it will theoretically rise in value. The relationships are implied from the historical data, however future behaviour between the assets may not always be so true.
+The covariance tells us the portfolio would expect a lower risk profile when the assets are combined than when they are separate. 
+A negative covariance would mean the portfolio value does not exclusively fall to the same amount that an individual asset value would fall; the negative covariance in the other asset would offer a protection to some degree against the fall of one asset as it will theoretically rise in value. The relationships are implied from the historical data, however future behaviour between the assets may not always be so true.
 </p>
 <p>
-The combination of assets that have a negative covariance within the same portfolio creates <u>diversification</u>. 
+The combination of differing assets within the same portfolio creates <u>diversification</u>. 
 The portfolio becomes more diversified as it adds assets which have contradicting risk exposures, thus reducing the combined risk of the portfolio.
 </p>
 
 <br>
 <h4>Using MPT to find the optimal mix of assets</h4>
 <p>
-So far we have taken a look at a few key statistical measures from the assets to understand their risk and return profile. 
-In this section, we will look at how they can be combined to create a portfolio with a single risk and return value. 
-The portfolio can be created in many different ways by combining the assets in different weights. For example, creating a portfolio with 10% of Company A stock and 90% Company B stock. 
+In this section, we will look at how the key statistical measures can be combined to create a portfolio with a single risk and return value. 
+The portfolio can be created in many different ways by combining the assets with different weights. For example, creating a portfolio with 10% of Company A stock and 90% Company B stock. 
 </p>
 <p>
 We can simulate many different portfolio combinations in Excel by changing the weights of the assets in the portfolio. 
@@ -119,8 +118,6 @@ The formula for finding the portfolio variance is slightly more complex:
 ![Portfolio variance formula](../images/037_portfolioVarianceFormula.png)
 
 In the formula, <i>w</i> represents the weight of the asset in the portfolio, and the <i>&sigma;</i> represents the standard deviation of the asset.<br>
-
-You can find the formula to calculate the variance values for each portfolio from the Excel sheet available on <a href="https://github.com/4neesh/DeveloperBlogDemos/tree/master/Modern%20Portfolio%20Theory" target="_blank">GitHub</a>.
 </p>
 
 <br>
@@ -144,8 +141,8 @@ The image below illustrates the construction of the portfolio for 100 different 
 
 ![Efficient frontier for 100 data points](../images/037_efficientFrontier3.png)
 
-We can now see how many more portfolios can be derived, and how many more sub-optimal portfolios that are possible below the efficient frontier.
-By understanding how the two assets move on average against (or with) each other, we can begin to understand how a portfolio of the assets can be derived to maximise returns for the risk desired.
+We can now see how many more portfolios can be built, and how many more sub-optimal portfolios that are possible below the efficient frontier.
+By understanding how the two assets move on average against (or with) each other, we can begin to understand how a portfolio of the assets can be created to maximise returns for a certain risk level.
 </p>
 
 <p>
@@ -162,29 +159,35 @@ Each asset classes will provide the fund with unique properties from its exposur
 <h4>Diversification with asset classes</h4>
 <p>
 Depending on where you look, you will find that assets are divided into a varied number classes, typically from 3 to 8.
-The advent of new derivatives and exotic investment products have introduced new types of asset classes including commodities, real estate, financial derivatives and most recently, cryptocurrencies. The three largest asset classes are equities, fixed income and cash/cash equivalents. In this section, I will reflect upon 5 asset classes to understand their unique properties: equities, bonds/fixed income, cash and cash equivalents, real estate and derivatives. 
+The advent of new derivatives and exotic investment products have introduced new types of asset classes including commodities, real estate, financial derivatives and most recently, cryptocurrencies. The three largest asset classes are equities, fixed income and cash/cash equivalents. In this section, I will reflect upon 5 asset classes to understand their unique properties:<br>
+&#8226; Equities<br>
+&#8226; Bonds/fixed income<br>
+&#8226; Cash and cash equivalents<br>
+&#8226; Real estate and tangible assets<br>
+&#8226; Financial Derivatives
 </p>
 <p>
 <strong>Equity</strong><br>
 Equity, also known as stocks or shares represent a percentage ownership in a publicly listed company. 
 Equities are often classed by their market capitalisation into small-cap, mid-cap and large-cap. 
-Investors of equities benefit from a potential dividend and the value of the resale of the equity in a market.
-While equity provides benefits such as company ownership and a right to vote on certain decisions, they are viewed as risky investments due to their dependence upon company performance.
+Investors of equities benefit from a potential dividend and the value of the resale of the equity in the market.
+While equity provides benefits such as company ownership and a right to vote on certain decisions, they are viewed as risky investments due to their large dependence upon company performance.
 </p>
 <p>
-The payments to an equity holder are less certain than other holders such as those of bonds. Common stock holders receive payment once all other cash flows to the company have been paid, such as workers, taxes and bondholders. The dividend payments are also not a guaranteed payment as they are reflective of company performance. 
+The payments to an equity holder are less certain than other securities such as those of bonds. Common-stock holders receive payment once all other cash flows to the company have been paid, such as workers, taxes and bondholders. The dividend payments are also not a guaranteed payment as they are reflective of company performance. 
 The value of the equity can also deteriorate under the company performance as the supply and demand of the stock changes within the market. 
 </p>
 
 <p>
 <strong>Bonds and Fixed Income</strong><br>
 Bonds represent an issued loan from a company that is repaid over the life of the bond. 
-The bond will include a maturity date - when the original investment is repaid to the investor and a coupon rate - the interest repayment to the investor at set intervals until maturity. 
+The bond will include a maturity date - when the principal of the bond is repaid to the investor and a coupon rate - the interest repayment to the investor at set intervals until maturity.
+Bonds are not always sold at the value of the principal. Bonds can come in many different forms such as zero-coupon bonds, corporate bonds and municipal bonds - all of which offer different levels of return and coupons.
 </p>
 <p>
 Bonds are often considered less risky than equity for several reasons:<br>
-&#8226; Bond investments come with a promise to be repaid at maturity unlike equity.<br>
-&#8226; The fixed interest repayment on the bond is guaranteed unlike a dividend payment on equity.<br>
+&#8226; Bond investments come with a promise to be repaid at maturity.<br>
+&#8226; The fixed interest repayment on the bond is guaranteed (unlike a dividend payment on equity).<br>
 &#8226; Bond owners have higher priority during liquidation than equity holders.
 </p>
 
@@ -198,8 +201,8 @@ The cash and cash equivalents are often shown as a company health indicator as p
 Cash and cash equivalents may also be used to finance an acquisition, however this is not of relevance for a portfolio of assets.
 </p>
 <p>
-With respect to a portfolio of assets, the cash and cash equivalents will have a low risk and return profile with high liquidity. The T Bills and other securities will carry a low duration 
-due to their short maturity dates thus providing an opportunity to lock in certain returns for the portfolio and reducing exposure to interest rate risk.
+With respect to a portfolio of assets, cash and cash equivalents will have a low risk and return profile with high liquidity. The T Bills and other securities will carry a low duration 
+due to their short maturity dates thus providing an opportunity to mitigate portfolio exposure to interest rate risk.
 </p>
 
 <p>
@@ -207,12 +210,10 @@ due to their short maturity dates thus providing an opportunity to lock in certa
 Real estate and tangible assets reflect securities that derive value from real-life assets that contain an intrinsic value. 
 The link between the security value and the asset means real estate and tangible assets offer a hedge against inflation in the currency for a portfolio.
 Tangible assets will also typically have very little in common with financial securities to offer a new element of diversification to the portfolio. 
-Real estate and tangible assets offer a stability of payments to the portfolio, however a reduced liquidity from the time it can take to sell the assets.  
+Real estate and tangible assets offer a stability of payments to the portfolio, however a reduced liquidity due to the time it can take to sell the assets.  
 </p>
 <p>
-A commodity is also considered a tangible asset. 
-A commodity is an economic good that has a fungibility. 
-The market will perceive the good as the equivalent on a global scale without concern to where it was produced.
+A commodity is also considered a tangible asset: an economic good that has a fungibility. 
 Commodities are divided into two types: hard commodities that are mined such as oil and gold, and soft commodities such as harvest (rice, wheat) or livestock (meat, cattle).
 </p>
 
@@ -221,7 +222,7 @@ Commodities are divided into two types: hard commodities that are mined such as 
 The foreign exchange (FX) market is a relatively new asset class since a free-floating exchange had been enabled following the collapse of the Bretton Woods system in the 1970s.
 FX rates offer a portfolio a hedge against currency risk as the value of other securities can vary with the FX market. 
 FX also offers portfolio growth as speculation in a currency against other currencies can create greater values in securities over others.
-The FX market is often captured through the derivatives market where they are swapped or guaranteed through contracts.
+The FX market is often captured through the derivatives market where they are swapped or secured through contracts.
 </p>
 <p>
 Derivatives represent a contractual agreement between parties where the value is 'derived' from an underlying security or asset. 
@@ -233,21 +234,21 @@ Derivatives are traded both on an exchange and over-the-counter (OTC) which prov
 Derivatives can be used to both hedge a risk (such as with a swap) or to speculate upon a price (such as a call option).
 Portfolios can therefore benefit from derivatives to achieve bespoke risk and return benefits. 
 </p>
-
 <br>
-<h4>Criticisms of MPT</h4>
+<h4>Modern Portfolio Theory today</h4>
 <p>
-Certain limitations exist as equal with other models (investors are rational, buy and hold strategies are not optial, past performance is not indicative of future performance, availability of securities within the market), however there are three 
-pivotal criticisms of MPT that may influence the use and perception of the model.
+An understanding of the different asset classes can provide a small amount of colour to the vastly complex world of portfolio construction and assets. 
+MPT has provided a well-respected, yet simplified model at understanding how assets can be combined to create a variety of expected returns at a level of risk. 
+Since its inception, limitations have been identified with MPT in-line with other theoretical models of finance: investors are not always rational, buy and hold strategies are not always optimal, past performance is not indicative of future performance, securities are not always available within the market. Amongst the limitations, there are four common criticisms of MPT that may influence the use and perception of the model.
 </p>
 <p>
-<strong>Assumption: Investments upon the efficient frontier are optimal.</strong> The curve created by the efficient frontier does not leave the portfolio manager with a complete array of portfolio combinations that are optimal with regards to the level of risk taken for the return achieved. The efficient frontier is to be better utilised by drawing a capital market line that accounts for the risk free rate of return for an investment (typically the return of a government bond) and finding a tangent to the point on the frontier. I will review the capital market line in a separate blog. The key point to note is that the efficient frontier isn't equally efficient at each point. 
+<strong>Assumption: Investments upon the efficient frontier are optimal.</strong> The curve created by the efficient frontier does not leave the manager with a complete array of portfolio combinations that are optimal with regards to the level of risk taken for the return achieved. The efficient frontier is to be better utilised by drawing a capital market line that accounts for the risk free rate of return for an investment (typically the return of a government bond) and finding a tangent to the point on the frontier. I will review the capital market line in a separate blog. The key point to note is that the efficient frontier isn't equally efficient in risk/return tradeoff at each point along the curve. 
 </p>
 <p>
 <strong>Assumption: Returns on assets are normally distributed.</strong> 
-The assumption of normal distribution of returns is reflected in our expectation that the price of an asset may rise and fall with equal probability. The reality of 
+The assumption of a normal distribution of returns is reflected in our expectation that the price of an asset may rise and fall with equal probability. The reality of 
 price movement however is often skewed to reflect the general movement of the asset price, be it upwards or downwards as per the asset classes market expectation
-at the point in time.
+at the point in time. You may consider technology-based companies over the past 10 years; we wouldn't expect the prices of their shares to equally move up and down through the years, let alone when considering inflation.
 </p>
 <p>
 <strong>Limitation: Risk is defined as both the upside and downside of price movement.</strong> MPT obtains the standard deviation of an asset from both its movement up as well as its movement down.
@@ -265,14 +266,20 @@ correlation will normalise the covariance to provide a signal on the strength of
 <br>
 <h4>Summary</h4>
 <p>
-In this blog, we have looked at modern portfolio theory to understand how the risk and return of a portfolio of assets might not always be optimised by the 
-weightings they are selected by together. 
-Amongst MPT, we have also looked at how assets will have their own variance and covariance with other securities. 
-These degrees of volatility help us to understand how different assets perform in the market against and with each other.
+In this blog, we have looked at modern portfolio theory to understand how the risk and return of a portfolio of assets might not always be optimised when grouped together. 
+Amongst MPT, we have also looked at how assets will have their own variance and covariance with other securities. The realisation of a negative covariance can enable us to reduce the variance of returns when combining assets. 
 </p>
 <p>
-When 
+The understanding of an asset or portfolio standard deviation will provide an investor an insight into the volatility of the assets together. 
+Diversification can come from many different sources including securities with a variety of companies, sectors and geographical regions, 
+however an extended range of diversification opportunity can be realised across
+different asset classes, all of which have their own unique properties and underlying characteristics within the market. 
 </p>
-
+<p>
+MPT has remained resilient with time as a tool to understanding portfolio construction and expectations.
+The criticisms of MPT have lead to further developments and extensions of the theory. In a future blog, 
+I will write about the capital market line that builds on-top of MPT to develop an understanding of the relationship a portfolio may have with the risk-free
+rate of return that could be otherwise be obtained with other securities in the market. to reiterate, you can find the exel sheet from this blog on  <a href="https://github.com/4neesh/DeveloperBlogDemos/tree/master/Modern%20Portfolio%20Theory" target="_blank">GitHub</a>.
+</p>
 <br>
 <small style="float: right;" >Picture: Paris, France by <a target="_blank" href="https://unsplash.com/@alexandrelallemand">Alexandre Lallemand</small></a><br>
