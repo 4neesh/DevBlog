@@ -140,6 +140,11 @@ export default class Sidebar extends React.Component {
                   Spring
                   </Button>
               </li>
+              <li>
+                <Button className="tagButton" href={`/tag/statistics`}>
+                  Statistics
+                  </Button>
+              </li>
             </ul>
           </CardBody>
         </Card>
