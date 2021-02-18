@@ -16,22 +16,47 @@ tags:
 
 ![Merge sort step 2](../../src/images/011MergeSort2.png)
 
-
 <br>
-<h4>How the JVM works</h4>
+<h4>Java - 30 years on</h4>
+<p>
+Java programming language is one of the most popular programming languages in the world that has shaped millions of lives (check out #movedByJava for more). 
+'Java is slow' is a popular criticism of Java. In this blog, I will look at how Java code is processed by the machine, what makes it different, and why it 
+is advantageous and disadvantageous. I will also look at some of the ways we can use Java more effectively to improve productivity and ease.
+</p>
+<p>
+
+</p>
+<br>
+<h4>Inside the JVM</h4>
+<p>
+A typical programming language will include an engine that is responsible for taking the written code and converting it into machine code that is then run by the operating system to create the application.
+Java differs from these languages as it instead produces code for a virtual machine that resides within the RAM that will execute the code, the Java Virtual Machine. It is for this reason that Java achieves its unique property of Write Once Run Everywhere; your java code will execute in the same way regardless of operating system. Other language will otherwise require an operating-system specific compiler for depending on where it is run.
+</p>
+<p>
+The JVM process for processing code is divided into many different sections:
+1. Class loader - files are loaded into the RAM of the operating system. 
+2. Method area
+3. Heap
+4. JVM Language Stacks
+5. PC Registers
+6. Native Method Stack
+7. Execution Engine - Bytecode is interpreted into machine code using Just In Time Compiler. Interpreting differs to compiling as the code is converted at the same level, not into a different level of language. 
+8. Native Method Interface
+9. Native Method Libraries
+</p>
 <p>
 Java is type-safe meaning the data type must hold the correct type of data. 
 Part of the Java compiler involves checking the types of the properties assigned
-Java compiler is a bytecode compiler meaning it will create a .class file from the java file which is
+The Java compiler is used to convert the high-level Java programming language into a lower level bytecode that is similar to machine code; this  will lead to the creation of a .class file from the java file which is
 strictly bytecode. The compiler will also check the access rights between methods with method calls.
-The bytecode .class files are platform independent and allow teh JVM to run on any operating system.
+The bytecode '.class' files are platform independent and allow the JVM to run equally on any operating system.
 </p>
 <p>
 The JVM takes the bytecode and interprets it into machine code. The JVM provides functionality to the 
 application for example with exception handling, type conversion, Object creation. 
 There are three main stages to the JVM for the execution of the bytecode in the .class files.
-The first class loaded into the JVM will contain the psvm method. The later referenced classes by the 
-psvm method will be loaded following this. 
+The first class loaded into the JVM will contain the public static void main method. The later referenced classes by the 
+public static void main method will be loaded following this. 
 
 </p>
 <p>
@@ -57,10 +82,11 @@ Once classes are loaded, the OS is able to re-use the classes during runtime. Th
 create a slower experience as the JIT compiler loads classes as they are required. 
 </p>
 <br>
-<h4></h4>
+<h4>Criticism of Java</h4>
 <p>
+Dynamic linking is done at runtime and not compile time. Therefore it slows down execution.
 
-
+Run-time interpreter for conversion of bytecode into machine code is also done at runtime. 
 </p>
 
 <br>

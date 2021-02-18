@@ -61,9 +61,7 @@ const AboutPage = (props) => {
                     </a>{" "}
                     with a Master's degree in Computer Science.
                  </p>
-                  <p>
-                    I currently work as a software engineer at Morgan Stanley. Prior to this, I worked for Accenture for two years where I developed my skills across the 
-                    SDLC using Java and AWS.  </p>
+                  
                   <p>
                     Outside engineering, I enjoy playing golf.
                     Golf has been a hobby from a young age that I carry through today; at the height
