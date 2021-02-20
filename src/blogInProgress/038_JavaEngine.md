@@ -17,14 +17,20 @@ tags:
 ![Merge sort step 2](../../src/images/011MergeSort2.png)
 
 <br>
-<h4>Java - 30 years on</h4>
+<h4>Java - a 30 year old language</h4>
 <p>
-Java programming language is one of the most popular programming languages in the world that has shaped millions of lives (check out #movedByJava for more). 
-'Java is slow' is a popular criticism of Java. In this blog, I will look at how Java code is processed by the machine, what makes it different, and why it 
-is advantageous and disadvantageous. I will also look at some of the ways we can use Java more effectively to improve productivity and ease.
+Java programming language is one of the most popular programming languages in the world that is prevalent across industries and careers. You can gather an idea of
+how diverse and important Java has been in shaping peoples lives by searching upon the hashtag #movedByJava. 
 </p>
 <p>
-
+Until recently, Java had remained as one the two most highly used languages on GitHub since 2012; it has since been overtaken by the languages Python and JavaScript. 
+The popularity of Python and JavaScript, two scripting languages, is their syntax design is easier and more intuitive to use. Rapid prototyping is supported by the languages
+and more importantly, without a typical engineering background to learn. 
+</p>
+<p>
+As a compiled and statically typed language, Java enables faster runtime speeds than Python and JavaScript, despite this, it is still criticised for its runtime speed in 
+comparison to other object-orientated programming languages such as C++. This blog will look 'under the hood' of Java to understand what happens to code when we run it and
+why it may have a performance disadvantage to its other object-orientated counterparts.
 </p>
 <br>
 <h4>Inside the JVM</h4>
