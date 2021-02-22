@@ -49,6 +49,7 @@
         "hostnames",
         "hsqldb",
         "initialise",
+        "initialisers",
         "internationalisation",
         "invokedynamic",
         "joinpoint",
@@ -101,6 +102,7 @@
         "utilised",
         "utilises",
         "visua",
+        "wora",
         "zipkin"
     ],
     "cSpell.ignoreWords": [
