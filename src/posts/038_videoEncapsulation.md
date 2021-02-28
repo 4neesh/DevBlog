@@ -1,8 +1,8 @@
 ---
-title: '[VIDEO] Encapsulation]'
+title: '[VIDEO] OOP Concepts: Encapsulation]'
 date: 2021-01-03
 author: 'Aneesh Mistry'
-featuredImage: ../images/xxx.jpg
+featuredImage: ../images/038_encapsulation.jpg
 subtitle: 'A YouTube video on Encapsulation, one of the four concepts of object-orientated programming.'
 time: '10'
 tags:
