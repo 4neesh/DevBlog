@@ -1,5 +1,5 @@
 ---
-title: '[VIDEO] OOP Concepts: Encapsulation]'
+title: '[VIDEO] OOP Concepts: Encapsulation'
 date: 2021-03-01
 author: 'Aneesh Mistry'
 featuredImage: ../images/038_encapsulation.jpg
