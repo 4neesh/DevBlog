@@ -14,7 +14,7 @@ tags:
 <p>
 In this video, I have taken a step-by-step approach to using encapsulation in software development.
 
- <img src="../images/038_encapsulation.jpg" alt="YouTube Video link" target="_blank" href="https://www.youtube.com/watch?v=mxQetSivkqs"> 
 
+[![YouTube video link](../images/038_encapsulation.jpg)](https://www.youtube.com/watch?v=mxQetSivkqs)
 
 </p>
