@@ -17,6 +17,3 @@ In this video, I have taken a step-by-step approach to using encapsulation in so
 [![YouTube video link](../images/038_encapsulation.jpg)](https://www.youtube.com/watch?v=mxQetSivkqs)
 
 </p>
-
-<br>
-<small style="float: right;" >Picture: xxx, xxx by <a target="_blank" href="http">xxx</small></a><br>
