@@ -11,7 +11,7 @@ tags:
 ---
 <br>
 <strong>Key Takeaways</strong><br>
-&#8226; Understand how Java uses its own engine to interpret and execute code.<br>
+&#8226; Understand how the Java engine works to interpret and execute code.<br>
 &#8226; Review the multiple stages of compilation and execution that support the type safety and memory management properties of Java.<br>
 
 <br>
@@ -47,8 +47,8 @@ A good analogy would be an English to French <i>interpreter</i> who simply conve
 <h4>The Java Compiler</h4>
 <p>
 Before Java code is processed by the Java engine, it is first compiled with the Java compiler.
-The Java compiler is used to convert the high-level Java programming language code into a lower level bytecode that is similar to machine code; 
-as a result, the .java files will be compiled into .class files of bytecode (see the /target directory of your project). 
+The Java compiler is used to convert the high-level Java programming language code into a lower level 'bytecode' that is similar to machine code; 
+as a result, the .java files will be compiled into .class files of bytecode (see the /target directory of your project after creating a build). 
 The bytecode is later received and processed by the Java engine.
 </p>
 <p>

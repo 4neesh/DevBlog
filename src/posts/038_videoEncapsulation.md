@@ -15,6 +15,6 @@ tags:
 In this video, I have taken a step-by-step approach to using encapsulation in software development.
 
 
-[![YouTube video link](../images/038_encapsulation.jpg)](https://www.youtube.com/watch?v=mxQetSivkqs)
+[![YouTube video link](../images/038_encapsulation.jpg)](https://www.youtube.com/watch?v=9y5N95VqygM&feature=youtu.be)
 
 </p>
