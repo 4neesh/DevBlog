@@ -131,7 +131,6 @@ module.exports = {
            {
             resolve: `gatsby-remark-social-cards`,
             options: {
-              
               title: {
                 color: "black", 
               },
@@ -147,14 +146,7 @@ module.exports = {
                 size: 32,
               },
               background: '#6db3e8'
-            },
-            plugins: [{
-              resolve: "gatsby-remark-external-links",
-              options: {
-                target: "_blank",
-                rel: "noopener noreferrer"
-              }
-            }]
+            }
           }
           // {
             
