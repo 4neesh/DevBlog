@@ -19,6 +19,6 @@ This video is a step-by-step guide on how you can use abstraction within a Java 
 
 Abstraction is used in our design of how we group behaviours of classes together. The details of how the behaviours are used by the class is delegated to the class itself, however abstraction defines a contract that enforces such behaviours to be handled by the class. 
 
-[![YouTube video link](../images/0040_abstraction.jpg)](https://youtu.be/0fqoJGPcZRg)
+[![YouTube video link](../images/040_abstraction.jpg)](https://youtu.be/0fqoJGPcZRg)
 
 </p>
