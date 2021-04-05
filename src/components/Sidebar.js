@@ -145,6 +145,11 @@ export default class Sidebar extends React.Component {
                   Statistics
                   </Button>
               </li>
+              <li>
+                <Button className="tagButton" href={`/tag/testing`}>
+                  Testing
+                  </Button>
+              </li>
             </ul>
           </CardBody>
         </Card>
