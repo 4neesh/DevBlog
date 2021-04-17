@@ -48,8 +48,7 @@ const AboutPage = (props) => {
                     I completed my bachelors degree in Banking, Finance, and Management at{" "}
                     <a rel="noopener noreferrer" href="https://www.lboro.ac.uk/" target="_blank">
                       <strong>Loughborough University</strong></a>{" "}
-                      in 2017. During my third year, I had worked within the Fixed Income team at UBS Asset Management where
-                      I obtained experience developing tools for the portfolio managers regarding OTC derivatives and money market funds. 
+                      in 2017. During my third year, I had stumbled upon visual basics during an internship with UBS. 
                       My introduction to software development sparked a passion that I am continuing to pursue. 
                       In 2018 I graduated from{" "}
                     <a
@@ -59,7 +58,7 @@ const AboutPage = (props) => {
                     >
                       <strong>The University of St Andrews</strong>
                     </a>{" "}
-                    with a Master's degree in Computer Science.
+                    with a Master's degree in Computer Science. My blog is now a project that will support my development as I document what I learn in and around my job as an engineer. 
                  </p>
                   
                   <p>

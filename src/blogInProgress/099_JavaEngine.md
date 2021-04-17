@@ -1,6 +1,6 @@
 ---
 title: 'Inside Java: why it works everywhere'
-date: 2020-09-28 16:34:00
+date: 2021-05-17
 author: 'Aneesh Mistry'
 featuredImage: ../images/xxx.jpg
 subtitle: 'Take a look under the hood of Java to understand how code is compiled, interpreted and executed within the machine.'
@@ -18,12 +18,11 @@ tags:
 <h4>Java - a 30 year old language</h4>
 <p>
 Java programming language is one of the most popular programming languages in the world that is prevalent across industries and careers. You can gather an idea of
-how diverse and important Java has been in shaping peoples lives by searching upon the hashtag #movedByJava. 
+how diverse and important Java has been in shaping peoples lives by searching upon the hashtag #movedByJava with social media platforms such as Twitter. 
 </p>
 <p>
 Until recently, Java had remained as one the two most highly used languages on GitHub since 2012; it has since been overtaken by the languages Python and JavaScript. 
-The popularity of Python and JavaScript, two scripting languages, is their syntax design is easier and more intuitive to use. Rapid prototyping is supported by the languages
-and more importantly, without a typical engineering background to learn. 
+The popularity of Python and JavaScript, two scripting languages, is due to their syntax design that makes it easier to learn and build with.
 </p>
 <p>
 As a compiled and statically typed language, Java enables faster runtime speeds than Python and JavaScript, despite this, it is still criticised for its runtime speed in 
@@ -40,25 +39,20 @@ underpin the performance and properties of the language.
 </p>
 <p>
 It is important to distinguish between the word 'compile' and 'interpret' before we begin exploring the Java engine. 'Compile' involves converting a language
-into a different level (often down) that is later used in the engine. Interpret however involves converting the language into a similar-level language.
+into a different level of language (often down). Interpret however involves converting the language into a similar-level language.
 A good analogy would be an English to French <i>interpreter</i> who simply converts one language into the other at the same level. 
 </p>
 <br>
 <h4>The Java Compiler</h4>
 <p>
 Before Java code is processed by the Java engine, it is first compiled with the Java compiler.
-The Java compiler is used to convert the high-level Java programming language code into a lower level 'bytecode' that is similar to machine code; 
-as a result, the .java files will be compiled into .class files of bytecode (see the /target directory of your project after creating a build). 
-The bytecode is later received and processed by the Java engine.
+The Java compiler will first inspect the code to ensure it can be processed by the Java engine. Code inspection includes checking for TypeErrors
+(such as passing in the incorrect parameter to a method) and Syntax errors. Compile errors are usually captured with a modern IDE as it monitors for compile errors as code is written.
 </p>
 <p>
-
-Compilation doesn't just involve the conversion of the .java files into .class files.
-
-The compiler will also check the access rights between methods with method calls.
-
-The bytecode '.class' files are platform independent and allow the JVM to run equally on any operating system.
-The bytecode is known as an assembly language, which is the only language understood by the Java engine for processing.
+The Java compiler is later used to convert the high-level Java programming language code into a lower level 'bytecode' that is similar to machine code; 
+as a result, the .java files will be compiled into .class files of bytecode (see the /target directory of your project after creating a build). 
+The bytecode is later received and processed by the Java engine.
 </p>
 
 <br>
@@ -67,92 +61,55 @@ The bytecode is known as an assembly language, which is the only language unders
 The Java engine that performs the compilation and interpretation of code is known as the Java Virtual Machine (JVM).
 The JVM resides within the RAM where it receives the bytecode following compilation. 
 The JVM acts as a runtime engine that enables Write Once Run Anywhere (WORA); unlike other languages such as C++, Java code is not converted explicitly for the operating
-system that is running the code, but just for the JVM which will be identically running the application regardless of hardware or operating system. 
+system that is running the code, but for the JVM which will be identically running the application regardless of hardware or operating system. 
 </p>
 <p>
-The JVM steps for processing code is divided into 3 key sections:
-1. Class loader - where the files are loaded into the RAM of the operating system. 
-2. Method area - where methods are run
-3. Execution Engine - Where bytecode is interpreted into machine code using Just In Time Compiler. Interpreting differs to compiling as the code is converted at the same level, not into a different level of language. 
+The JVM steps for processing code is split into 3 key sections:
+1. Class loader - where the files are loaded into the JVM to be later stored and used. 
+2. Runtime data area - where memory area is designated for classes to be stored for execution. 
+3. Execution Engine - where bytecode is interpreted into machine code using Just In Time Compiler and executed.
 </p>
 
 <br>
 <h4>Class loader</h4>
-Java is type-safe meaning the data type must hold the correct type of data. 
-Part of the Java compiler involves checking the types of the properties assigned
 <p>
-<strong>Classloader</strong> the first component
-it involves loading, linking, and initialising
-loading: .java files are compiled with the Java Compiler to create the .class files. 
-the class loader loads the .class files into the memory
-There are 3 types of classloader, bootstrap, application, and extension. 
-Bootstrap will load from runtime jar.  The runtime Jar is part of the JRE download. 
-
-Extension classloader will load the files from the jre/lib/ext folder. Such as for external applications such as MQs, DBs. These jar files are added to the extension folder and loaded
-THESE are loaded to the memory area
-
-Application will load the application files into the memory. all the .class files are loaded into the runtime environment
-
-</p>
-<p>
-Linking
-This involves 3 key activities: verify, prepare and resolve
-
-verify:
-when class files are loaded to memory, the bytecode class files are verified to standards
-Bytecode verifier
-When the class files are loaded into the JVM, they are then verified to ensure they do not perform acts that may 
-inhibit the execution of the program:
-- variables must be initialised before being used
-- the stack does not become overflowed
-- variables fall within the stack at execution
-
-
-Prepare: Memory allocated to static fields and methods and the default values are assigned
-
-Resolve: symbolic reference are resolved with actual references. 
-
-</p>
-<p>
-Initialisation
-all static variables are assigned with actual values and static initialisers are executed
+<strong>Classloader</strong>
+The Classloader is responsible for loading the .class bytecode files from the application into the JVM. This process is known as <i>loading</i>.
+<br>
+After loading, a second phase called <i>linking</i> begins. During linking, memory is designated for static variables of each class and the default values are assigned. The symbolic references of classes are replaced with actual class references that are then linked together to form a runtime state for the which the JVM can be later executed. The processing of linking involves building the relationships between classes. 
+<br>
+The final stage of the class loader is called <i>initialisation</i>. Initialisation involves assigning values to the static members of the classes so that they are ready to be used by the runtime execution and the execution of the static blocks of code within our classes e.g:
 
 ```java
-public class App{
+public class MyClass{
 
     static{
-        System.out.println("Classloader initialisation phase");
-    }
 
+        //static initialisation block
+
+    }
 }
 
 ```
 </p>
+
 <br>
-<h4>Method area</h4>
+<h4>Runtime data area</h4>
 <p>
-<strong>Method area</strong>
-This is split into 5 areas:
-1. method area for class level data 
-Heap: all objects and instance viaraible
-stack: local variable and execution stack
-PC registrar: holds execution instructions
-native method stacks: holds native method information
+The <strong>Runtime data area</strong> is split into 5 different areas:<br>
+1. Method Area: stores static variables of each class<br>
+2. Heap Area: all objects and instance variables are stored.<br>
+3. Stack Memory: holds data of latest execution block<br>
+4. PC Register: holds execution instructions<br>
+5. Native method stack: holds native method data.
 </p>
 
 <br>
 <h4>Execution engine</h4>
-The first class loaded into the JVM will contain the public static void main method. The later referenced classes by the 
-public static void main method will be loaded following this. 
-<p>
-3rd main part: Execution engine
-
-Engine that converts bytecode to machine code and executes the instructions
-consists of: interpreter, JIT compiler, java native method interface, garbage collector
-</p>
-<p>
-Interpreter: reads the bytecode from the class files and executes it sequentially. bytecode is reinterpreted even if it is a method previously called
-</p>
+The execution engine is responsible for the execution of teh bytecode by converting it to machine code to be executed. There are 4 main components to the engine.
+The Interpreter will read the bytecode to be executed in a sequential manner. 
+The JIT compiler will support the interpreter to repeatedly execute methods that are repeatedly called. The JIT will use its profiler to identify 'hotspots' which are areas within the application that are executed repeatedly. This provides a performance improvement, otherwise the interpreter would repeatedly compile the same methods over and over again. 
+The garbage collector. Responsible for managing the heap space of objects. 
 <p>
 Java code is actually compiled twice: once with the java compiler from .java files into .class files, and second within the JVM with the JIT compiler. 
 JIT compiler: resolves the problem of the interpreter that reinterepets executed code. JIT compiler will generate native machine code to 
@@ -161,17 +118,18 @@ The final stage of the compilation uses the Just-In-Time compiler where the load
 Rather than having the JVM repeatedly interpret the same code and to send it to the OS to execute the machine code, the
 OS is able to repeatedly execute the same machine code when required.
 The separation of the JVM with bytecode and the OS machine code means Java is platform independent. This same separation also creates a difference in the execution time of the program when compared to a platform-specific language that is completely compiled.
-
-</p>
-<p>
-GC: removing unused objects
-</p>
-<p>
-Java native method interface: makes native libraries available for the jvm
 </p>
 
 <br>
-<h4>Summary of the JVM</h4>
+<h4>Why Java is perceived as 'slow'</h4>
+<p>
+Despite the advantages of Java as a compiled programming language, it is often thought to be a slow execution language due to two properties:<br>
+1. The linking process during the class loader
+2. The runtime interpreter that converts bytecode to machine code further slows down runtime. 
+
+</p>
+<br>
+<h4>Summary</h4>
 <p>
 The <i>relatively</i> slow start up time for the JVM is known as the 'warm-up time'. The warm-up time means 
 the initial execution of the application may be slower than normal. 
