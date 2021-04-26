@@ -2,7 +2,7 @@
 title: 'Using Mockito Verify'
 date: 2021-05-17
 author: 'Aneesh Mistry'
-featuredImage: ../images/049_jpg.jpg
+featuredImage: ../images/049_verify.jpg
 subtitle: 'Use Mockito Verify to test method calls made within a method.'
 time: '6'
 tags:
