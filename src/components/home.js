@@ -76,6 +76,15 @@ const Layout = ({ children }) => (
                 <i class="fas fa-rss fa-2x"/>
                     
                 </a>
+                <a
+                href="https://www.youtube.com/channel/UCwEYX5WFfkw1ivWauyZLkJA"
+                target="_blank" 
+                rel="noopener noreferrer"
+                style={{ color:"black"}}
+                >
+                <i class="fab fa-youtube fa-2x"/>
+                    
+                </a>
                 </span>
         </div>
         <Footer />
