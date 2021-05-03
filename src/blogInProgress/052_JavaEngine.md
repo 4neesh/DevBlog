@@ -160,6 +160,9 @@ Dynamic linking is done at runtime and not compile time. Therefore it slows down
 
 Run-time interpreter for conversion of bytecode into machine code is also done at runtime. 
 
+Java provides the benefits of robustly typed Objects to enforce type safety with portability across operating systems. As a result, there are a few cases where
+the performance of Java are less optimised than the likes of C or C#. Nevertheless, the benefits of Java, as a compiled, portable, and type-safe languages have contributed
+to its success as a modern and powerful programming language. 
 </p>
 
 <br>

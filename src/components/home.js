@@ -71,11 +71,12 @@ const Layout = ({ children }) => (
                 href="http://feeds.feedburner.com/aneeshBlog"
                 target="_blank" 
                 rel="noopener noreferrer"
-                style={{ color:"black"}}
+                style={{paddingRight:"30px", color:"black"}}
                 >
                 <i class="fas fa-rss fa-2x"/>
                     
                 </a>
+
                 <a
                 href="https://www.youtube.com/channel/UCwEYX5WFfkw1ivWauyZLkJA"
                 target="_blank" 
