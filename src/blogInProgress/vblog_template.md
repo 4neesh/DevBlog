@@ -1,16 +1,17 @@
 ---
-title: 'xxx'
+title: 'Improve test readability with matchers'
 date: 2021-04-26
 author: 'Aneesh Mistry'
-featuredImage: ../images/xxx.jpg
-subtitle: 'xxx'
-time: 'xx'
+featuredImage: ../images/053_matchers.jpg
+subtitle: 'Use matchers to improve the readability of assertions with the assertJ library'
+time: '6'
 tags:
-- xxx
+- Java
+- Testing
 ---
 
 <br>
-<h4>Title</h4>
+<h4>Using Matchers with assertions</h4>
 <p>
 
 Encapsulation is one of the four concepts of object-orientated programming. 
@@ -20,6 +21,6 @@ IntelliJ.
 
 Encapsulation is implemented in our design of how we enable the attributes and behaviours of our classes to be seen and used by the other classes and packages of the application
 
-[![YouTube video link](../images/038_encapsulation.jpg)](https://www.youtube.com/watch?v=9y5N95VqygM&feature=youtu.be)
+[![YouTube video link](../images/053_matchers.jpg)](URL)
 
 </p>
