@@ -41,18 +41,20 @@ Component
 - used to build ui of angular
 - selector = tag name for it to be used elsewhere
 - includes imports for importing modules
-- decorator = metadata about component
+- decorator = metadata about component. Starts with an @. The selector is the name of the component as referenced from other components. 
 - class = get data in and out of the component
 
 Decorator
 - decorator start with @
 - selector = tag name for the decorator
-- templateUrl = the location of where the component is found
+- templateUrl = the location of where the component html is found. It can be 'template' where html is the value within back-ticks. 
 - it is metadata about the code
 
 Class 
 - export means another module/file can import the functionality to the file
-- export class {className}
+- export class class-name{
+
+}
 
 Declarations
 - used to import certain components used by the parent component
@@ -68,6 +70,8 @@ Modules
 Modules are defined within the app.module.ts file
 - this includes NgModule, a decorator to provide metadata for the module
 - BrowserModule is used  as a directive
+- You have many modules, typically 1 per feature
+- modules are then referenced by the main application 
 
 The bootstrap element of the ngModule will direct to the startup component (main method)
 </p>
