@@ -17,5 +17,5 @@ Discover keyboard shortcuts that can help you to find specific files, methods, c
 IntelliJ offers different ways that we can instantly specify where we would like to search and what type of item we are looking for (whether it be a class, file, method, variable and so on.)
 Lastly, we will look at how you can control-click your way around an application to see where methods are called and what their implementation is.
 
-[![YouTube video link](../images/056_navigate.jpg)](https://youtu.be/rMgGV_nFVdc)
+[![YouTube video link](../images/057_debug.jpg)](https://youtu.be/rMgGV_nFVdc)
 </p>
