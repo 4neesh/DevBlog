@@ -1,10 +1,10 @@
 ---
 title: 'The rise in importance of the XVA desk'
-date: 2021-06-01
+date: 2021-08-01
 author: 'Aneesh Mistry'
 featuredImage: ../images/xxx.jpg
-subtitle: 'xxx'
-time: 'xx'
+subtitle: 'Understand how the XVA desk has changed with time'
+time: '10'
 tags:
 - Finance
 ---

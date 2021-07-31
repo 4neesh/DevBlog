@@ -183,7 +183,42 @@ The app.module file is known as the root module which is responsible for importi
 </p>
 <p>
 
+<p>
+How do we pass components from a parent to the child?
+1. In the parent html, you will be referencing the child component
+e.g
 
+```html
+<child></child>
+```
+2. import Input decorator to the child. 
+You can do @Input variablename: any[];
+ngOnChanges(changes: SimpleChanges){
+
+}
+to then update the array each time a change is made from the parent class. 
+However we are only modifying one parameter from the parent into the child, so we will use getters and setters. 
+
+3. In the child: 
+private _variableName: Variable[] = [];
+@Input() get customers(): ICustom[]{
+    return this._variablename;
+}
+
+set customers(value: ICustomer[]){
+    if(value){
+        //call any intermediate operations with this.
+       this._variable = value;
+
+    }
+}
+
+4. the input annotation allows the child to read from the parent
+so now we can update the parent html:
+```html
+<child [variables] = "variablename"></child>
+```
+</p>
 </p>
 <br>
 <h4>Summary</h4>
