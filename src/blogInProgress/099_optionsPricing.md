@@ -41,7 +41,9 @@ Option contracts are not limited to only a single market or participant, options
 Options contracts exist for commodities, stocks, bonds, interest rates, currencies and also for swaps, known as 'Swaptions'. There are many other markets for Options, these are some of the more popular ones traded upon through an exchange.<br>
 One example of Options contracts traded without an exchange are <u>Dealer options</u>. Dealer options are used to trade commodities over the counter (OTC) without a centralised exchange. The benefit of OTC trading are the personalised terms that can be agreed upon, thus enabling both counterparties to achieve a more bespoke agreement. 
 </p>
-
+<p>
+The variety of options contract available to investors make them highly personalised and present one key advantage to using them.
+</p>
 <br>
 <h4>Why Options are used</h4>
 <p>
@@ -53,16 +55,16 @@ This property of an Options contract means they can be used with huge flexibilit
 </p>
 <p>
 <strong>Hedging strategies</strong><br>
-
+A hedging strategy may use an option contract to protect themselves from both the upward and downward movement of an interest rate.<br>
+For example, if we take a floating point interest rate that is currently 0.16%, a bank may with to take an options contract that allows them to receive payment each time the interest rate exceeds 2% and falls below 1.12%. This hedging strategy is known as a cap and floor, where the bank are capping the maximum interest rate they are exposed to at 0.2% and the minimum rate of 0.12%.
 </p>
 <p>
-Cap and floor certain floating points. 
-
-+ves:
-- hedge risk from market changes
-- speculate on market movement
-- speculate on movement up and down in the market
-- Can be structured to the exact needs of the customer. 
+<strong>Speculative strategies</strong><br>
+On the contrary, the options contract can enable an investor to benefit from the movement of an underlying asset's price, as they are able to exercise against their right when the price is deemed 'in the money'. 
+As a speculator, the benefit of an options contract can present unlimited upside, with a limited downside (the premium paid for the contract). For example, if an options contract enables an investor to buy 100kg of wheat for £1000, and the cost of the options contract is just £50, the investor will have a limited downside of £50, but a potential upside determined by the upward price of wheat within the market. If 100kg of wheat rises to £2000, the investor can make a £950 profit from exercising their options contract, whereas if the price of wheat remains below £1000, they will only ever lose the £50 premium paid up front. 
+</p>
+<p>
+When considering a hedging or speculative strategy, the benefit is realised by the holder of the contract only when it is exercised. At expiry, the options contract is deemed worthless, and the benefit of the optiosn contract creation lies with the seller of the contract. With this in mind, you may wonder how the price of an option contract is derived, and the factors that play into its value throughout it's life. 
 </p>
 
 <br>
