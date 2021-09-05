@@ -1,5 +1,5 @@
 ---
-title: 'How @InjectMocks works to inject services to classes as they're tested.'
+title: 'How @InjectMocks works with Mockito'
 date: 2021-08-09
 author: 'Aneesh Mistry'
 featuredImage: ../images/063_injectmocks.jpg
