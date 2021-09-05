@@ -29,7 +29,11 @@ As a result, the the funding of derivatives, which historically relied upon unse
 <p>
 Interbank funding, LIBOR and OIS. What are these and how do they differ?
 
-
+OIS was realised to be a more appropriate discounting rate when applied to pricing derivative securities when capturing the risk-free rate. 
+</p>
+<p>
+Pricing of derivatives relied upon the black-scholes risk-neutral pricing framework; XVA was introduced to address the limitations of the model to account for 
+risks that are not captured: credit, capital and funding valuations. 
 </p>
 
 <p>
@@ -38,24 +42,43 @@ Regulation will also require all derivatives that are traded over-the-counter (a
 The introduction of this regulation has made the cost of trading OTC more expensive. With these additional costs have come additional valuation adjustments that are made to a 
 derivative when priced upon the trading books. 
 </p>
+<p>
+Counterparty risk is bilateral. As the underlying MTM value of the derivative can change each day, the future value can be highly uncertain. As a result, both counterparties are at risk to each other at any point in time during the agreement. 
+</p>
+<p>
+The financial crisis had taught us that no counterparty, regardless of their credit rating, could be regarded as risk-free. This meant that CVA had become akin with derivatives and had now become the rule, not the exception. 
 
+</p>
 <p>
 CVA - Credit Valuation Adjustment
-
+</p>
+<p>
+the CVA desk was initially born from the defauls of significant counterparties such as Enron and WorldCom around 2002. Despite the soft introduction of counterparty risk capital in Basel I and Basel 2, banks started to price counterparty risk for specific counterpaties with high exposures. CVA would be changed to the profit of a transaction and was calculated using historical probabilities of default. It was not an actively managed risk, but rather an insurance against default. 
+</p>
+<p>
+The CVA then changed to use credit spreads to calculate adjustments rather than hisotrical default probabilities following FAS 157 standards. As credit spreads (difference in yield for a derivataive and no-risk treasury bill with equal maturities) were used for the counterparty risk adjustment, DVA was introduced, as the reverse of CVA to account fo ones own credit risk. 
+</p>
+<p>
 The CVA represents the discount upon the value of the derivative when accounting for the risk of counterparty default.
 The calculation of the CVA can become complicated, it is often split into either the cost to hedge the risk of the default, or if there are derivative cashflows, 
 forecasting and simulations of the cash flows can provide an array of potential exposures to the counterparty risk. 
-Often, the risk of counterparty default can be hedged through other derivatives such as a credit default swap. The cost the hedge such risk will therefore be removed from the 
+Often, the risk of counterparty default can be hedged through other derivatives such as a credit default swap. The cost to hedge such risk will therefore be removed from the 
 value of the derivative as a credit valuation adjustment - an adjustment made to the fair value of the derivative when accounting for the risk of counterparty default. 
+
+</p>
+<p>
+CVA became a requirement from FAS 157 accounting standards as:<br>
+<i>a fair value measurement should include a risk premium reflecting the amount market participants would demand because of the risk in the cash flows</i>
+<br>
 
 </p>
 
 <p>
 DVA - Debit Valuation Adjustment
 
-The DVA is considered to be the counter of the CVA. Rather than accounting for the cost to the derivative from the counterpartys default, 
+The DVA is considered to be the counter of the CVA. Rather than accounting for the cost to the derivative from the counterparty default, 
 the DVA considers when the bank itself may default upon the derivative when it is out-of-the-money. 
-In such a case, the counterparty would only be able to recover part of the value of the derivative, the remainder of which is considered a benefit to the bank
+In such a case, the counterparty would only be able to recover part of the value of the derivative, the remainder of which is considered a benefit to the defaulting bank
 and is thus captured within the DVA as a gain. 
 </p>
 
@@ -71,10 +94,21 @@ Alternatively, if a derivative is purchased in-the-money, the bank is to pay cas
 </p>
 
 <p>
+As the OIS replaced LIBOR in estimating the risk-free rate. OIS would rise to 350 bps before Lehman collapsed, whereas LIBOR had remained flat. The cost of borroing unsecured cash had therefore increased with the used of OIS. This borrowing cost had meant substantioal function cost, leading to the FVA. Funding value adjustment. The increase in funding costs had meant banks rightened their collateral requirements
+</p>
+
+<p>
 CollVa - Collateral Valuation Adjustment
 
 Margin is used by banks to mitigate the credit risk that is faced by their counterparty. The collateral is paid and kept on the opposing banks balance sheet. 
 Therefore if a counterparty uses cash as collateral, the receiving bank will receive the interest rate, which is typically OIS. As a result, collateral is often a heavy point for optimisation to manage a banks exposure to OIS for their positions held. Without the cash margin paid by the counterparty however, the bank will need to hedge against the resulting counterparty risk at a potentially higher rate. 
+</p>
+<p>
+This came about as there were hidden value in the collateral agreements. 
+</p>
+
+<p>
+FLRVA - 
 </p>
 
 <p>

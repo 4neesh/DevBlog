@@ -23,4 +23,9 @@ Encapsulation is implemented in our design of how we enable the attributes and b
 
 [![YouTube video link](../images/053_matchers.jpg)](URL)
 
+
+Comment, like and subscribe for more content on Java and software engineering. 
+
+Visit my website to also see my blogs: https://aneesh.co.uk
+
 </p>

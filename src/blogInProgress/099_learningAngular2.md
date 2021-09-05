@@ -35,7 +35,7 @@ In the app.component file, there are a few key parts:
 - selector = name of the component when referenced outside
 - templateUrl = link to the html for the component
 - styleUrls = link to css for component
-- template (can be used insteam of templateUrl) to inject html yourself in backticks. 
+- template (can be used instead of templateUrl) to inject html yourself in back ticks. 
 
 Each component will be exported to make it available for other components. This uses the words 'export class XXX' where XXX is the name of the module 
 </p>
@@ -94,7 +94,7 @@ export interface ITeam {
 
 <p>
 Now that we have our data, and an interface which we can bind to it, we can create a data service that will obtain the json data and create a feed that can be bound to the constructor of any component that needs it. 
-I will create a new folder called core to store the data service and any other service we may require for all other components. 
+I will create a new folder called core to store the data service typescript file and any other service we may require for all other components. 
 </p>
 <p>
 
@@ -103,15 +103,15 @@ I will create a new folder called core to store the data service and any other s
 export class DataService{}
 ```
 
-The @Injectable annotation is used to tell Angular that the class can be used within the dependency injection of the application. In other words, it can be passed into any component of the application through the constructor. 
+The @Injectable annotation (from the angular core package) is used to tell Angular that the class can be used within the dependency injection of the application. In other words, it can be passed into any component of the application through the constructor. 
 
 ```ts
 constructor(private http: HttpClient){
 
     }
 ```
-The HttpClient is imported from the angular/common/http package and instantiated through the constructor. The http client provides restful services to be used by the dataservice. 
-Within the dataservice we will use the following functions to create a getter for the teams:
+The HttpClient is imported from the angular/common/http package and instantiated through the constructor. The http client provides restful services to be used by the data service. 
+Within the data service we will use the following functions to create a getter for the teams:
 
 ```ts
     getTeams(): Observable<ITeam[]> {
@@ -163,7 +163,9 @@ The teams data is defined outside of the constructor.
 Within the constructor, the dataservice is passed in (thanks to the @Injectable() annotation) and is used  for the getTeams method. 
 The method of 'subscribe' is used to trigger the call to the restful service where an array of ITeam is returned. The array is then used to be assigned to the teamsData array for the component. 
 </p>
-
+<p>
+The DataService must be known to the application before the other modules can begin using it. Create a new core.module.ts file in the core folder and define the @ngModule({}). Within the annotation, define the imports (the modules the module uses and define the providers)
+</p>
 <p>
 Now that we have the data within the component, we need to get it to the webpage. 
 The first step involves getting the teams component to be accessed by the app component so it can be rendered within the webpage. Before we do that, the teams component must have a module that is used to export the data it contains to other components. 
