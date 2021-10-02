@@ -587,7 +587,15 @@ We can use HostListener to listen to the event and hostBinding to bind to a prop
 Services
 Used for shared code/centralised resource. e.g log service. Also really useful for component communication. 
 Name of file is x.service.ts
-Service is just a normal ts class, so no need for a decorator. 
+Service is just a normal ts class, so no need for a decorator. For example below:
+
+```ts
+export class demoService{
+    userList = ['Hello', 'World'];
+
+}
+
+```
 Angular provides a way to access the service, rather than creating an instance of the service and using it in the class. 
 This service can be injected with Dependency Injection through the constructor:
 
@@ -625,6 +633,149 @@ Similar to above, you can use ngOnInit to initialise a data array from a service
 
 </p>
 <p>
+A service can use another service by passing it in through the constructor in the service:
+
+```ts
+constructor(private otherService : OtherService){}
+```
+The metadata of the service is not passed into the service, therefore it can be attached by marking the service that is receiving the service with @Injectable. 
+
+```ts
+@Injectable()
+export class service{
+
+    constructor(private otherService: OtherService){}
+}
+```
+Adding @Injectable is a good habit to perform on all services, if they are injecting other services or not. 
+
+As a result, we no longer need to use Input/Output workflow for communicating between components.
+We can instead use EventEmitter within the service and then subscribe to it in the components that require a response from it with:
+```ts
+this.service.methodName.subscribe((string: arg) => {});
+```
+</p>
+<p>
+The logic for processing data within the service can be handled from the component by passing down the request through a method call.
+
+```ts
+export class ExampleService{
+
+    users: string[];
+
+    updateUserString(name: string){
+        users.push(name);
+    }
+}
+
+@Injectable()
+export class UserComponent{
+
+    constructor(private exampleService: ExampleService){}
+
+    onUpdateUser(name: string){
+        this.exampleService.updateUserString(name);
+    }
+
+}
+```
+</p>
+<p>
+Cross Component Communication
+
+Before, we have used @Output() to communicate between components when an item is selected. 
+Rather than doing that, we can define an EventEmitter in the recipe service that is of the same type and emit the new item into that eventEmitter when the item is selected. 
+Now the centralised EventEmitter contains the newly selected Item, we can subscribe to it where it is required:
+
+```ts
+this.service.item.subscribe((itemName: ItemType) => this.itemLocal = itemName)
+```
+
+</p>
+<p>
+Routing
+
+Routes are configured in appModule.
+a new constant appRoutes is defined in appModule of type Routes from @Angular/router.
+The below pattern is used to specify the url suffix and the component to be loaded.
+
+```ts
+const appRoutes: Routes = [
+    { path: '', component:HomeComponent }
+    { path: 'users', component:UsersComponent }
+    { path: 'servers', component:ServersComponent }
+]
+```
+The routes are registered into the app through the imports of app module:
+
+```ts
+imports:[
+    RouterModule.forRoot(appRoutes)
+]
+
+```
+ForRoot will automatically register our routes into the app. 
+
+Where is this rendered?
+In the HTML, we add a directive: 
+
+```html
+<router-outlet></router-outlet>
+```
+</p>
+<p>
+We can navigate to different routes through links. 
+We don't want to navigate via href as this sends a new request to the server, and reloads the page.
+Therefore this is least efficient and reloads all the data. 
+
+Instead we use routerLink to parse a string to tell angular to handle the link differently:
+Router link prevents the default message to be sent to the server. It takes the string, parses it and checks if it fits a given route within the application. 
+
+```html
+<a routerLink="/router">Router</a>
+```
+</p>
+<p>
+Navigation paths
+
+In routerLink, if we don't add the slash, it is a relative path.
+'router' will append /router to current path. '/router' will go to /router path from the home page. 
+'router' == './router'.
+You can also navigate backwards in navigation: '../router' etc. 
+
+CSS for active tabs
+We can use routerLinkActive="active" to mark a tab as active in css if the url matches the navigation. 
+This means / will always be marked as active, so we can use the routerLinkActiveOptions to mark home as only active when it is a perfect match
+
+```html
+<li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/">Home</a></li>
+```
+</p>
+<p>
+We can use buttons and logic to navigate to different paths. 
+We will need to inject the Router to our component and use the navigate method, passing in an array of routes to return to. This approach does not know our current path, so what we pass in will be absolute:
+
+```ts
+constructor(private router: Router){}
+
+onReload(){
+    this.router.navigate(['server'])
+}
+```
+We can tell the router to know our current location by passing in the configuration of relativeTo:
+
+
+```ts
+onReload(){
+    this.router.navigate(['server'], {relativeTo:ActivatedRoute})
+}
+```
+
+Where ActivatedRoute is imported from @angular/router
+</p>
+<p>
+We can use .slice() to return a copy of an object, and not the object itself
+
 Why we initialise within ngOnInit and not constructor
 </p>
 <br>

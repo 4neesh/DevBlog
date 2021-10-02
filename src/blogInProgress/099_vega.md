@@ -64,6 +64,35 @@ As implied volatility represents market opinion, this relationship can help impa
 Higher implied volatility will result in higher premiums on the Option. 
 </p>
 
+
+<p>
+ Intrinsic value measures the profitability of the options contract, whereas the time value reflects the asset's volatility during the life of the contract. 
+</p>
+<p>
+Through the life of the option contract, the price of the option contract will change as the market price of the underlying asset changes. For example, the price of an option contract to buy at a certain price will increase as the market price of the asset rises. This is because the option can be deemed more valuable as it is more likely to become in-the-money. The same applies to a put contract, where the value will fall as the market price rises, as selling for a pre-defined price will create further losses to the counterparty. 
+</p>
+<p>
+The extrinsic value on an options contract will correlate with the time to expiry. The longer the option has until expiry, the more opportunity it has to become in-the-money and thus present the owner of the contract with a profitable position. The options price will typically lose one third of its price within the first half of its life. 
+</p>
+<p>
+Given the influence of market price movements in an asset and the sensitivity of the options price to its time to expiry, the volatility of the underlying asset's price will therefore have an important role to play in how susceptible the options price is to change. An asset with high volatility will sustain its price better with time, as the opportunity to become in-the-money can remain likely. An asset with low volatility will create lower time-value as their price movement will require more time to accumulate. 
+</p>
+
+<br>
+<h4>The Greeks</h4>
+<p>
+The sensitivity and variety of influences upon an Options price has lead to the use of the Greeks to denote the various sensitivities an Options price may have. <br>
+The Greeks are:<br>
+
+
+Delta
+Vega
+
+</p>
+<p>
+I will follow this blog with a future post on the Greeks as they will require further detail for explanation. 
+</p>
+
 <br>
 <h4>Conclusion</h4>
 <p>

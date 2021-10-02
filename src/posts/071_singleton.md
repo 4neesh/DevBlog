@@ -1,6 +1,6 @@
 ---
 title: 'When and how to use the Singleton design pattern'
-date: 2021-09-20
+date: 2021-09-27
 author: 'Aneesh Mistry'
 featuredImage: ../images/069_singleton.jpg
 subtitle: 'Understand when the singleton design pattern can be useful and implemented within your application'
