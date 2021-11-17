@@ -1,6 +1,6 @@
 ---
 title: 'Improve test readability with matchers'
-date: 2021-04-26
+date: 2021-11-22
 author: 'Aneesh Mistry'
 featuredImage: ../images/053_matchers.jpg
 subtitle: 'Use matchers to improve the readability of assertions with the assertJ library'
@@ -21,11 +21,17 @@ IntelliJ.
 
 Encapsulation is implemented in our design of how we enable the attributes and behaviours of our classes to be seen and used by the other classes and packages of the application
 
+🕒 Timestamps 🕒
+
+
+00:00 - Introduction
+00:54 - forEach
+03:20 - getOrDefault
+06:10 - putIfAbsent
+08:10 - replace
+09:40 - replaceAll
+11:10 - compute
+13:00 - merge
+
 [![YouTube video link](../images/053_matchers.jpg)](URL)
-
-
-Comment, like and subscribe for more content on Java and software engineering. 
-
-Visit my website to also see my blogs: https://aneesh.co.uk
-
 </p>

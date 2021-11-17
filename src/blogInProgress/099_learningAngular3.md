@@ -28,6 +28,7 @@ tags:
 </p>
 <p>
 NgModule
+- converts a class from a regular typescript class into an Angular module
 bootstrap decorator is used for starting the index.html file
 declarations: what components are in the application?
 imports: add modules to the module. 
@@ -771,8 +772,564 @@ onReload(){
 }
 ```
 
-Where ActivatedRoute is imported from @angular/router
+Where ActivatedRoute is imported from @angular/router.
+
+If we were to add a forward-slash at the start, it will be an absolute path:
+
+```ts
+onReload(){
+    this.router.navigate(['/server'])
+}
+```
+
+so If we are already on /server page, it will not do anything. If we remove the forward-slash, it will work fine with the navigate method. Unlike the routerLink, the navigate method doesnt know which link you are in. RouterLink however knows the component and link you are in. 
+The navigate method can find out where we are by using {relativeTo:ActiveRoute} so it knows where we are. We get the route by injecting private route: ActivatedRoute to the constructor. 
+
+```ts
+onReload(){
+    this.router.navigate(['/server'], {relativeTo:this.route})
+}
+```
 </p>
+
+<p>
+Loading routes with parameters. 
+We can add a dynamic section to our routes
+
+```ts
+const appRoutes: Routes = [
+    { path: '', component:HomeComponent }
+    { path: 'users', component:UsersComponent }
+    { path: 'servers', component:ServersComponent }
+    { path: 'users:id', component:UserComponent }
+]
+```
+
+Where anything after users/ will load the user component. 
+We can access the data in the url through the component with the snapshot and params:
+
+```ts
+
+constructor(private route: ActivatedRoute){}
+
+ngOnInit(){
+    this.id = this.route.snapshot.params['id']
+}
+```
+
+The snapshot means Angular will not reload the component if we navigate back to the same url even with different parameters. 
+Therefore if we change the url params, it will not update the data. 
+Instead, we can use this.route.params, which is an Observable, which allows for asynchronous tasks (such as changing the url params).
+We therefore need to subscribe to the params:
+
+```ts
+ngOnInit(){
+    this.route.params
+    .subscribe(
+        (params: Params) => {
+            this.user.id = params['id'];
+            this.user.name = params['name'];
+        }
+    );
+}
+
+```
+The subscribe is just safety catching against the component being reloaded when within the same component. Otherwise always use the subscribe. 
+</p>
+<p>
+We can use the RouterLink to navigate to different routes from a HTML button by using the routerlink:
+
+```html
+<a [routerLink]="['server',5,'ad']"></a>
+
+```
+Which will go to /server/5/ad
+
+</p>
+<p>
+Query parameters can also be used within the route such as '?name=alex' rather than just /alex etc. 
+
+We use the [queryParams] property of the router link directive to pass in the JSON to define parameters added:
+
+```html
+<a [routerLink]="['server',5,'ad']"
+[queryParams]="{edit: '1' & to:'2'}"></a>
+
+```
+will return: server/5/ad?edit=1?to:2
+
+Fragments can also be added:
+
+```html
+<a [routerLink]="['server',5,'ad']"
+[queryParams]="{edit: '1' & to:'2'}"
+fragment="loading"></a>
+
+```
+will return: server/5/ad?edit=1?to:2#loading
+
+We can set these dynamically within the component when we want to use router.navigate. Below is an example of how a routerlink can be constrcuted.
+It an be made dynamically by passing in parameters such as id when looping through users or items etc. 
+
+```ts
+
+this.router.navigate(['server',id,'edit'], {queryParams: {edit:'1', fragment:'loading'}})
+
+```
+
+The query parameters and fragments can then be retrieved:
+The ActivatedRoute needs to be imported to the component retrieving the query parameters and fragment:
+
+```ts
+constructor(private route: ActivatedRoute){}
+```
+Then we can access the queryParams and fragment:
+
+```ts
+this.route.snapshot.queryParams
+this.route.snapshot.fragment
+
+```
+Alternatively, you can subscribe to these to react to their changes as above:
+
+```ts
+this.route.queryParams.subscribe()
+this.route.fragment.subscribe()
+```
+If the parameter is a number, start the call with + to translate the string number to number type.
+</p>
+<p>
+Nested routes
+
+We can add children routes, to transform our routes in the app component from:
+
+```ts
+const appRoutes: Routes=[
+    { path: '', component: HomeComponent},
+    { path: 'users', component: UsersComponent},
+    { path: 'users/:id', component: UserComponent},
+    { path: 'servers', component: ServersComponent},
+    { path: 'servers/:id', component: ServerComponent},
+    { path: 'servers/:id/edit', component: ServerEditComponent}
+]
+```
+
+Into:
+
+```ts
+const appRoutes: Routes=[
+    { path: '', component: HomeComponent},
+    { path: 'users', component: UsersComponent},
+    { path: 'users/:id', component: UserComponent},
+    { path: 'servers', component: ServersComponent}, children:[
+        { path: ':id', component: ServerComponent},
+        { path: ':id/edit', component: ServerEditComponent}
+    ]}
+]
+
+```
+
+Now our router-outlet can no longer see the children routes, so we need to add them into the serversComponent, where they are used. 
+In the Servers component html, I will need to add a new router-outlet. This is used for all child routes of the ServersComponent. 
+This is why subscribing to changes in a component is important. as the larger component (servers) will not always reload, but just the sub-component. 
+</p>
+<p>
+We can use relative routing in our ts component:
+
+```ts
+constructor(private router: Router){}
+
+onSelect(){
+    this.router.navigate(['edit', {relativeTo: this.route}])
+}
+
+```
+
+Query params and fragments can be obtained through the subscribe() method from the ActivatedRoute in the component. 
+The value can then be assigned to a variable:
+
+```ts
+
+this.route.queryParams
+.subscribe(queryParams: Params) => this.allowEdit = queryParams['allowEdit'] === '1';
+
+```
+</p>
+<p>
+Preserving query parameters when loading a new component
+
+
+When we use this.router.navigate, we can merge query params into the current url:
+
+```ts
+onEdit(){
+    this.router.navigate(['edit'], {relativeTo: this.route})
+}
+
+```
+The above will remove all query params when selected. It will just go to /edit using the relative path. 
+By using queryParamsHandling: 'preserve', we are telling JavaScript to preserve the query params:
+```ts
+onEdit(){
+    this.router.navigate(['edit'], {relativeTo: this.route, queryParamsHandling: 'preserve'})
+}
+
+```
+
+</p>
+<p>
+Handling errors and redirecting when the page is not existing. 
+
+```ts
+{ path: 'not-found', component:PageNotFoundComponent}.
+{ path: '**', redirectTo: '/not-found'}
+
+```
+
+Using above, all paths that are unknown (**) are redirected to '/not-found', which loads a component called PageNotFound. Ensure ** is the last path defined in the Routes section in the app module. 
+We will often have the Routes defined in their own module used by the AppModule, so routes do not intrude in the whole file too much
+
+app-routing.module.ts
+
+```ts
+const appRoutes: Routes = [
+
+    ...
+]
+
+@NgModule({
+    imports:[
+        RouterModule.forRoot(appRoutes)
+    ],
+    exports:[RouterModule]
+})
+export class AppRoutingModule{
+
+
+}
+```
+Exports tell you, if you were to import the module from another module, what components do we want to be accessible? 
+</p>
+<p>
+Guards
+
+Guards are the function/code that is executed before a route is loaded. This is useful for ensuring components are only available 
+if a user is logged in etc. It would be inefficient to check authentication etc in the onInit section of each component. 
+Instead, we use the 'canActivate' guard to protect routes. 
+
+In the root, we add auth-guard.service.ts. 
+
+```ts
+
+
+export class AuthGuard implements CanActivate{
+    
+    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean{
+
+return this.authService.isAuthenticated()
+.then(
+    (authenticated: boolean) =>{
+        if(authenticated){
+            return true;
+        }
+        else{
+            this.router.navigate(['/']);
+        }
+    }
+)
+
+    }
+}
+
+```
+
+The Guard can work synchronously or asynchronously (and thus can return an observable/promise or a boolean itself)
+In the App module, we define which route is protected by the guard. we add 'canActivate' with an array of guards to apply to the route:
+
+```ts
+{ path: 'servers', canActivate:[AuthGuard], component: ServersComponent, children:[]}
+```
+Rather than copying the canActivate to all the children routes, we can use canActivateChild and make a call to the canActivate method in the guard:
+
+```ts
+    canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean{
+
+        return this.canActivate(route, state);
+    }
+
+```
+And then use canActivateChild in the route to stream the guard down to all children. 
+
+```ts
+{ path: 'servers', canActivateChild:[AuthGuard], component: ServersComponent, children:[]}
+
+```
+</p>
+<p>
+Similar to canActivate, we can also use can Deactivate to control if we can leave a site.
+We will want to deactivate is used to stop going to a certain route (such as confirming a form submission). 
+We can create a canDeactivate Guard and reference it within the routes:
+
+```ts
+{ path: 'servers', canDeactivate:[CanDeactivateGuard], component: ServersComponent, children:[]}
+
+```
+If we have an update button, we will mark the changes as saved (true) and then navigate back a page.
+If the user accidentally navigates back without changes saved, we need to ask them if they really want to leave.
+ We will ned to access the guard in the ngOnit and the save changes method so we know whether or not to save the changes. 
+ The guard must be a service, so  we need to 1. access the code in the component and 2. acces guard service.
+
+ This is done through a new service
+
+ ```ts
+
+
+export interface CanComponentDeactivate{
+
+    canDeactivate: () => Observable<boolean> | Promise<boolean> | boolean;
+}
+
+export class CanDeactivateGuard implements CanDeactivate<CanComponentDeactivate>{
+
+    canDeactivate(component: CanComponentDeactivate, currentRoute: ActivatedRouteSnapshot, currentState: RouterStateSnapshot, nextState?: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean{
+        return component.canDeactivate();
+    }
+}
+ ```
+ the canDeactivate method in the CanDeactivateGuard will be called when the router tries to leave a route. 
+ By using the above service, the angular route can call canDeactivate in the service, and can rely on the component having the canDeactivate method as well. 
+
+ In the app routing module:
+
+ ```ts
+
+{path: 'servers', component: ServersComponent, canDeactivate:[CanDeactivateGuard]}
+
+ ```
+ So whenever we try to leave the component, the CanDeactivateGuard will be called. Lastly, the ServerComponent must implement CanComponentDeactivate interface, which will override the canDeactivate() method:
+
+ ```ts
+ export class ServersComponent implements CanComponentDeactivate{
+
+     canDeactivate(): Observable<boolean> | Promise<boolean> | boolean{
+         //logic run when the canDeactivateGuard is run by the guard
+         if(changesSaved){
+             return true;
+         }
+        if(this.serverName !== this.server.name && !changesSaved){
+            return confirm('Do you want to save changes?')
+        }else{
+            return true;
+        }
+     }
+ }
+ ```
+</p>
+<p>
+Passing static data to a route
+
+You can pass static data from a route into a component through the route:
+
+```ts
+{ path: 'server', component: ServerComponent, data: {message: 'server page'}}
+```
+Then in the component, you can access the data:
+
+```ts
+this.message = this.route.snapshot.data['message'];
+this.route.data.subscribe(
+    (data : Data)=>{
+        this.message = data['message'];
+    }
+)
+```
+
+</p>
+<p>
+Resolving dynamic data
+
+A resolver allows us to run some code before a component is loaded. Also known as pre-loading, used to fetch data from a backend etc. 
+This is about loading data before displaying a component
+1. create a server-resolver.service.ts file
+
+```ts
+
+@Injectable()
+export class ServerResolver implements Resolve<{id: number, name: string, status:string}>{
+
+    constructor(private serverService: ServersService){ }
+
+    resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<id: number, name: string, status:string}> | Promise<{id: number, name: string, status:string}> | {id: number, name: string, status:string}{
+
+        
+        return serverService.getServer(+route.params['id'])
+
+    }
+
+}
+```
+In the above code, we have implemented the Resolve interface and overridden the resolve method appropriately. It will use the serverService to return the Server. 
+Important to remember, using this service will be used for pre-loading a component when navigated to, so we will also provide logic in this part to get the data. 
+We then use the resolver by adding it to the routing module:
+```ts
+{path: ':id', component:ServersComponent, resolve:{server:ServerResolver}}
+```
+Using above, the 'server' property is now available in the ServersComponent, and will contain the server from the ServerResolver. So in the ServersComponent, we no longer need to define the server object it has in ngOnInit, as it comes from the Resolver. 
+
+```ts
+ngOnInit(){
+    this.route.data
+    .subscribe(
+        (data:Data) =>{
+            this.server = data['server']
+        }
+    )
+}
+```
+where 'server' is matching the resolve key from the route. Using a resolver is really useful when using asynchronous data in the backend that may be updated. 
+</p>
+<p>
+Using Routing in the project (taking all routing instruction into the project)
+
+1. In our app routing module, the import under NgModule will readily configure the RouterModule with the const of appRoutes we define. Then to make it available to the app.module, we must export the RouterModule which is then readily available. The Components will now be displayed where we add the 'router-outlet' dom in the app-component html. 
+2. You can also add a redirectTo: line to the appRoutes to define any pages that are to be redirected to. Use pathMatch:'full' to ensure only the full URL is redirected upon. 
+3. To hook a button up to a link, you can simply add 'routerLink="/xyz"' to the DOM element in the HTML file. This can be improved with dynamic property url building
+4. Use "routerLinkActive ="active"" on buttons to display CSS when a button is selected. 
+5. To achieve a pointer cursor on a clickable item, use style="cursor:pointer" and avoid using href="#". Otherwise page will reload to /#. 
+6. When creating a child route, the new path will already use the path of the parent with '/' appended. 
+7. use ActivatedRoute to get the parameter from the url. use this.route.subscribe() to subscribe to the observable to get it as it changes. 
+8. RouterLinkActive is a property for a dom where you can set the class of the style depending if the button is selected. routerLinkActive="active" is a common pattern. 
+9. Use [routerLink]="[x]" to set the relative route of a button to a value. You can use @Input() to pass down the value from other components to then set the new url. For hard-coded route, use a click listener and Router with navigate: this.router.navigate(['new'], {relativeTo:this.route})
+10. A more complex way of navigating would be to chain commands to the URL: this.router.navigate(['../'], this.id, ['edit']). This will go up one level, then add /[id]/edit
+11. When defining routes, any non-dynamic child routes must be defined before (higher) in the list from the dynamic routes(that us :). 
+</p>
+
+
+<p>
+Understanding Observables: Course Module
+You can use pipe() to stream and transform a subscription before handling it. 
+Look at pipe() operators to understand intermediate operations that can be performed on a data stream within a subscription
+</p>
+<p>
+Subjects
+Subjects offer a new approach to obtaining information between components. Rather than creating an event emitter within a service and subscribing to it, we can use a Subject<>().
+Subjects differ from Observables as they are actively obtained using the next() method. Observables are passive, they provide data as it is readily available by internally calling next(). 
+Subject can however be triggered to return the next() method and data that comes with it on demand, and in code. It is more efficient to use a Subject than an Observable when we only want to 
+trigger when the data comes to us, and not to receive it all the time. 
+
+This is a consideration to make when using the event emitter  vs a subject. Nothing else changes within the application. When you want to emit an event from the Subject, use 
+
+```ts
+this.service.subejct.next(123);
+```
+to assign the value of 123 to the Subject. This is the only way Subject differs from Subscription, where Subscription would otherwise use 'emit' to send out data. 
+
+Similar to a subscription, use onDestroy to unsubscribe from the Subject. 
+Import Subscription from rxjs, assign the subject to the subscription within ngOnInit, then unsubscribe with the Destroy() method. 
+</p>
+
+
+<p>
+Forms Module
+
+
+Angular transforms forms into JSON with key-value pairs and metadata that can allow us to handle and process the forms within the app. 
+There are two approaches, template driven (TD) and reactive. 
+</p>
+<p>
+Template Driven Forms
+
+Angular handles requests (HTTP) so we do not specify a post action on the form tag.
+
+Creating a form
+Import FormsModule in the app module
+Angular does not detect input objects from a form. This is to provide more control on what is processed by Angular. Such as UI components to the form and 3rd party packages.
+So I must tell Angular what is controlled within the form so it then becomes part of the JSON representation of the form. 
+Example form:
+
+```html
+<form>
+ <div id="user-data">
+    <div class="form-grou">
+        <label for="username">Username</label>
+        <input type="text" id="username" class="form-control">
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+ </div>
+</form>
+```
+
+To pass control of the form to Angular, we add ngModel and name to the form item:
+```html
+<form>
+ <div id="user-data">
+    <div class="form-grou">
+        <label for="username">Username</label>
+        <input type="text" id="username" class="form-control" ngModel name="username">
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+ </div>
+</form>
+```
+The ngModel is a directive available from the FormsModule. The name is added as the key value in the json form created. 
+
+Obtaining the JSON data
+When we submit a form, we can have a click listener on the form. We do not attach the click listener to the submit button as angular instead takes advantage of the in-built events that are triggered from submit that are in-built with HTML. So instead, attach the listener to the form, where the FormsModule and angular will process the JSON data accordingly. (ngSubmit) is an angular directive that is submitted on the form. 
+```html
+<form (ngSubmit) = "onSubmit()">
+ <div id="user-data">
+    <div class="form-grou">
+        <label for="username">Username</label>
+        <input type="text" id="username" class="form-control" ngModel name="username">
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+ </div>
+</form>
+```
+Where onSubmit() is a method in the component. 
+
+To access the form created by angular, we need to get access to the form in html and to pass it into the submit method.
+To get access, we define  #form and = it to "ngForm", then we pass form into the submit and accept and process it from the component. 
+```html
+<form (ngSubmit) = "onSubmit(form)" #form="ngForm">
+ <div id="user-data">
+    <div class="form-grou">
+        <label for="username">Username</label>
+        <input type="text" id="username" class="form-control" ngModel name="username">
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+ </div>
+</form>
+```
+Then
+
+```ts
+
+onSubmit(form: ngForm){
+    console.log(form);
+}
+
+```
+
+You can also access the form with @ViewChild rather than passing the form through the html
+
+```ts
+
+export class formComponent{
+
+@ViewChild('form') submittedForm : ngForm;
+
+onSubmit(){
+    console.log(submittedForm)
+}
+}
+
+```
+
+Validating forms
+
+</p>
+
 <p>
 We can use .slice() to return a copy of an object, and not the object itself
 
