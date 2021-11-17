@@ -17,5 +17,5 @@ Functional interfaces are an important component to Java 8 in it's strive toward
 This video will look at 4 key functional interfaces provided in Java 8 to support Lambda functional writing.
 First we will look at why they are needed and how they work, then we will explore the extended functional interfaces such as the unary and binary operator. 
 
-[![YouTube video link](../images/074_functionalinterfaces.jpg)](https://youtu.be/0zcnv4hVvVw)
+[![YouTube video link](../images/074_functionalinterface.jpg)](https://youtu.be/0zcnv4hVvVw)
 </p>

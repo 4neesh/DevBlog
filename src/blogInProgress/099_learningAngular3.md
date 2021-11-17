@@ -1301,7 +1301,6 @@ To get access, we define  #form and = it to "ngForm", then we pass form into the
  </div>
 </form>
 ```
-Then
 
 ```ts
 
