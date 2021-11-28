@@ -1250,7 +1250,7 @@ Example form:
 ```html
 <form>
  <div id="user-data">
-    <div class="form-grou">
+    <div class="form-group">
         <label for="username">Username</label>
         <input type="text" id="username" class="form-control">
     </div>
@@ -1259,11 +1259,11 @@ Example form:
 </form>
 ```
 
-To pass control of the form to Angular, we add ngModel and name to the form item:
+To pass control of the form to Angular, we add ngModel and name to the form item. We define a name as this is the key that will be assigned in the JSON object. The id on the input is used for only HTML purposes. 
 ```html
 <form>
  <div id="user-data">
-    <div class="form-grou">
+    <div class="form-group">
         <label for="username">Username</label>
         <input type="text" id="username" class="form-control" ngModel name="username">
     </div>
@@ -1278,7 +1278,7 @@ When we submit a form, we can have a click listener on the form. We do not attac
 ```html
 <form (ngSubmit) = "onSubmit()">
  <div id="user-data">
-    <div class="form-grou">
+    <div class="form-group">
         <label for="username">Username</label>
         <input type="text" id="username" class="form-control" ngModel name="username">
     </div>
@@ -1309,6 +1309,57 @@ onSubmit(form: ngForm){
 }
 
 ```
+For creating a dropdown, you can create a select DOM element:
+
+```html
+
+<select id="gender" name="gender" ngModel class="form-control">
+  <option value="Male">Male</option>
+<option value="Female">Female</option>
+</select>
+
+```
+
+You can default the selected item by using one-way binding of ngModel and defining it to a value within the component:
+
+```html
+
+<select id="gender" name="gender" [ngModel]="selectedGender" class="form-control">
+  <option value="Male">Male</option>
+<option value="Female">Female</option>
+</select>
+```
+
+```ts
+FormComponent{
+    selectedGender = "Male"
+}
+
+```
+The 1-way binding means that when the option is changed, the value in the component is not updated.
+
+</p>
+
+<p>
+Adding prompts for validation
+
+We already know we can make a field required and email specific with the keywords.
+If we want the user to be prompted on a field, we can use do this accordingly:
+
+```html
+<input type="text" id="email" ngModel name="email" required email>
+<span>Email must be present</span>
+```
+
+We can add a new local reference 'email':
+```html
+<input type="text" id="email" ngModel name="email" #email="ngModel" required email>
+<span class="help-block" *ngIf="!email.valid && email.touched>Email must be present</span>
+```
+
+Then using ngIf to show the prompt if #email is touched and invalid. use help-block class on the span to give bootstrap styling
+
+</p>
 
 You can also access the form with @ViewChild rather than passing the form through the html
 
@@ -1324,11 +1375,234 @@ onSubmit(){
 }
 
 ```
-
 Validating forms
 
+
+Within an input box for html, you can use the term 'required' to ensure it is not empty. Angular will now check the validity of the box. If the input is an email, you can also use 'email' which is an in-built validator with Angular to check it is a valid email:
+
+```html
+
+<input id="email" ngModel name="email" type="text">
+
+```
+
+Becomes:
+
+```html
+
+<input type="text" id="email" ngModel name="email" required email>
+```
 </p>
 
+<p>
+Reactive approach to forms
+
+In your component, create a variable of type FormGroup imported from Angular/forms
+This property will hold the form.
+
+The appModule does not need FormsModule, but it needs the ReactiveFormsModule from angular/forms in the imports. 
+
+use the onInit method to initialise the form 
+
+```ts
+
+myForm : FormGroup;
+
+onInit(){
+    this.myForm = new FormGroup({
+        'email': new FormControl(null, [Validators.required, Validators.email]),
+        'gender': new FormControl('Male', Validators.required),
+        'password': new FormControl(null)
+    });
+}
+```
+We place controls (key-value pairs) into the FormGroup
+In the FormControl = initial state, second = validators such as Validators.required, in an array if multiple. 
+
+This form can now be connected with the HTML code. 
+
+```html
+<form>
+    <div class="form-group">
+        <label for="mail">Mail</label>
+        <input type="text" id="mail" class="form-control">
+    </div>
+</form>
+
+```
+
+To synchronize the form with the ts form, we bind the form tag with [formGroup] to the name of our form:
+
+```html
+<form [formGroup]="myForm">
+    <div class="form-group">
+        <label for="mail">Mail</label>
+        <input type="text" id="mail" class="form-control">
+    </div>
+</form>
+```
+We then connect the controls using a directive: formControlName
+
+```html
+<form [formGroup]="myForm">
+    <div class="form-group">
+        <label for="mail">Mail</label>
+        <input type="text" id="mail" formControlName="mail" class="form-control">
+    </div>
+</form>
+```
+
+Submitting the form with the reactive approach:
+
+Similar to the template approach, we use (ngSubmit) to the form. 
+
+```html
+<form (ngSubmit)="onSubmit()" [formGroup]="myForm">
+    <div class="form-group">
+        <label for="mail">Mail</label>
+        <input type="text" id="mail" formControlName="mail" class="form-control">
+    </div>
+</form>
+```
+
+The form already exists within the ts code, therefore we do not need a reference of the form from the html (#myForm) in reactive approach. 
+
+Validation messages
+We no longer need to add a reference to the input type when doing *ngIf on our blocks. 
+
+```html
+<form (onSubmit)="onSubmit()" [formGroup]="myForm">
+    <div class="form-group">
+        <label for="mail">Mail</label>
+        <input type="text" id="mail" formControlName="mail" class="form-control">
+    </div>
+    <span class="help-block" *ngIf="!myForm.get('mail').valid">Please enter mail!</span>
+</form>
+```
+So we just reference the form name with the getter for the item. Then we can use boolean on that value. 
+
+We can define nested form groups in the ts where necessary:
+
+```ts
+
+myForm : FormGroup;
+
+onInit(){
+    this.myForm = new FormGroup({
+        'userData' : new FormGroup({
+        'email': new FormControl(null, [Validators.required, Validators.email]),
+        'gender': new FormControl('Male', Validators.required),
+        }),
+        'password': new FormControl(null)
+    });
+}
+```
+Then the accompanying html can be changed to group form data:
+```html
+<form (onSubmit)="onSubmit()" [formGroup]="myForm">
+    <div formGroupName="userData" class="form-group">
+        <label for="mail">Mail</label>
+        <input type="text" id="mail" formControlName="mail" class="form-control">
+    </div>
+    <span class="help-block" *ngIf="!myForm.get('mail').valid">Please enter mail!</span>
+</form>
+```
+
+Using an array to populate a field. we use a FormArray to have a number of items in a form:
+
+```ts
+
+myForm : FormGroup;
+
+onInit(){
+    this.myForm = new FormGroup({
+        'userData' : new FormGroup({
+        'email': new FormControl(null, [Validators.required, Validators.email]),
+        'gender': new FormControl('Male', Validators.required),
+        }),
+        'password': new FormControl(null),
+        'hobby' : new FormArray([])
+    });
+}
+
+```
+
+Within the html, you will need to update the form. First surround the fields with a new div and use formGroupName to mention the new name (userData). 
+Then where the field is referenced within the *ngIf statements, add the group name at the start. 
+
+```html
+<form (onSubmit)="onSubmit()" [formGroup]="myForm">
+    <div formGroupName="userData" class="form-group">
+        <label for="mail">Mail</label>
+        <input type="text" id="mail" formControlName="mail" class="form-control">
+    </div>
+    <span class="help-block" *ngIf="!myForm.get('userData.mail').valid">Please enter mail!</span>
+</form>
+```
+
+We can populate the hobby item:
+
+```ts
+
+onAddHobby(){
+    const hobby = new FormControl(null, Validators.required)
+    (<FormArray>this.myForm.get('hobby')).push(hobby);
+}
+
+```
+In the html, we add formArrayName to the div holding the hobbies. 
+
+```html
+<div formArrayName="hobby">
+    <div class="form-group" *ngFor="let hobby of myForm.get('hobby').controls let i = index">
+    <input type="text" class="form-control" [formControlName] = "i">
+</div>
+
+```
+Each time we run onAddHobby() a  new input field will appear. 
+</p>
+<p>
+Reactive form custom validation. We return a JSON object with the key as a string, and value of boolean
+
+```ts
+customValidator(control: FormControl): {[s: string]: boolean}{
+
+    if(this.listOfBadNames.indexOf(control.value) !== -1){
+        return {'nameIsForbidden': true};
+    }
+    return null;
+
+}
+
+```
+
+We return nothing or null if the validator is successful. This = valid. 
+Then add the custom validator to the FormControl
+
+```ts
+'gender': new FormControl('Male', [Validators.required, this.customValidator.bind(this)]),
+```
+We use bind(this) to ensure 'this' refers to the Object of the typescript class. 
+
+You can closely watch the value and status of a form using this.myForm.statusChanges.subscribe(() => {}); and this.myForm.valueChanges.subscribe(() => {});
+
+</p>
+<p>
+Form arrays
+
+This is used when populating or creating a form with an array of items (such as multiple items)
+
+Create the form array with new FormArray([]);
+
+</p>
+<p>
+reactive form pointers
+
+1. use [formGroup]="x" in the form DOM element to link the form with the ts code
+2. use formControlName on each input field.
+3. use [disabled]="!v.valid" on the submit button to check form is valid. 
+
+</p>
 <p>
 We can use .slice() to return a copy of an object, and not the object itself
 

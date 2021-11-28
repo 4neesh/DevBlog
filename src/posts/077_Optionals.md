@@ -19,6 +19,6 @@ No longer will you be required to perform repetitive and cumbersome null pointer
 conveniently handle potential nulls values with the Optional class API.
 
 
-[![YouTube video link](../images/077_optional.jpg)]( URL )
+[![YouTube video link](../images/077_optional.jpg)](  https://youtu.be/79wLNFwZRho  )
 
 </p>
