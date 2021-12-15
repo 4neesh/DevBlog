@@ -19,10 +19,7 @@ This video is a step-by-step guide on how you can develop software using encapsu
 IntelliJ.
 
 
-Encapsulation is implemented in our design of how we enable the attributes and behaviours of our classes to be seen and used by the other classes and packages of the application
-
 🕒 Timestamps 🕒
-
 
 00:00 - Introduction
 00:54 - forEach

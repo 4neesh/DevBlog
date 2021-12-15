@@ -1,5 +1,5 @@
 ---
-title: 'Improve test readability with matchers'
+title: 'Changing default Mock behaviour'
 date: 2022-01-03
 author: 'Aneesh Mistry'
 featuredImage: ../images/085_changeDefaultMock.jpg
@@ -11,18 +11,14 @@ tags:
 ---
 
 <br>
-<h4>Using Matchers with assertions</h4>
+<h4>Changing default mock behaviour</h4>
 <p>
 
-Encapsulation is one of the four concepts of object-orientated programming. 
-This video is a step-by-step guide on how you can develop software using encapsulation with Java. There will be an overview of the key access modifiers and a demonstration within 
-IntelliJ.
-
-
-Encapsulation is implemented in our design of how we enable the attributes and behaviours of our classes to be seen and used by the other classes and packages of the application
+This video will explore the 5 different ways that a default Mock Object can be returned to the test class from a method call.
+By understanding how mock Object behaviour can be changed, we can transform Null Object responses into mocked, Spy or real Object representations. 
+As a result, test methods can be more fluent and resistant to empty and null default values. 
 
 🕒 Timestamps 🕒
-
 
 00:00 - Introduction
 00:54 - forEach

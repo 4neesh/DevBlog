@@ -1,5 +1,5 @@
 ---
-title: 'Improve test readability with matchers'
+title: 'How to stub void methods'
 date: 2021-12-27
 author: 'Aneesh Mistry'
 featuredImage: ../images/084_stubVoid.jpg
@@ -11,18 +11,14 @@ tags:
 ---
 
 <br>
-<h4>Using Matchers with assertions</h4>
+<h4>How to stub a void method</h4>
 <p>
+This video will look ath the different ways that we can control our system under test when using void methods with Mockito.
+This video explores how we would want to handle void methods when using a mock or a spy, and how the answer functional interface also 
+presents unique ways to provide custom logic to a void method, and when it would be most appropriate. 
 
-Encapsulation is one of the four concepts of object-orientated programming. 
-This video is a step-by-step guide on how you can develop software using encapsulation with Java. There will be an overview of the key access modifiers and a demonstration within 
-IntelliJ.
-
-
-Encapsulation is implemented in our design of how we enable the attributes and behaviours of our classes to be seen and used by the other classes and packages of the application
 
 🕒 Timestamps 🕒
-
 
 00:00 - Introduction
 00:54 - forEach

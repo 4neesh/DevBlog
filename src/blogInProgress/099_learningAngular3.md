@@ -1603,6 +1603,66 @@ reactive form pointers
 3. use [disabled]="!v.valid" on the submit button to check form is valid. 
 
 </p>
+
+<h1>Pipes</h1>
+<p>
+Pipes can be used with string interpolation e.g {{ name | uppercase}} or {{ cob | date }}
+
+We can parameterize a pipe as well e.g. {{ cob | date:'fullDate'}}
+
+Multiple parameters can be used too: {{ cob | date:'fullDate':'other'}}
+Check the angular documentation for configurations to the built-in pipes.
+
+Pipes can also be chained:
+{{ cob | date:'fullDate' | uppercase }}
+Where pipes are processed in-order of left to right. 
+
+We can also create our own pipe:
+1. create a new file with the name {name}.pipe.ts
+2. add the Pipe decorator to the class. @Pipe({name:'x'})... use ng g p 'x' to generate a pipe at the cli
+3. where x is the name of the pipe when used
+4. export class that implements PipeTransform
+5. override transform(value: any)
+6. ensure the transform method returns something. 
+7. add the pipe to declarations in the app.module (just like all other components)
+8. use the pipe: {{name | x}} where x is the name value as according to the pipe decorator in step 2. 
+9. You can accept arguments by changing the signature of 5:
+10. transform(value: any, limit: number) which now accepts a second argument (to be used in the pipe)
+
+Pipe can also be used for filtering an array as you type. First create the ngModel in [] and () input value and assign to a value. 
+Then create a pipe that accepts the array of values and a parameter of the ngModel. Then filter the array and return it from a new array when the ngModel is updated. 
+
+The pipe does not update the array piped on when it is changed, if active. The pipe is not re-run when the data changes. 
+Changing the data does not re-trigger the pipe. This would be bad due to performance costs if it did. 
+Therefore filtering is not useful for pipes. 
+
+If we want to recalculate the pipe whenever the data changes, we can force the pipe to update. 
+In the pipe decorator, add a property: pure:false
+This will update the pipe each time the data changes. 
+</p>
+
+<h1>Persisting with Firebase</h1>
+<p>
+Create a realtime database in firebase
+
+HTTP with Angular
+We need the HTTPClient Module from @Angular/common/http in the AppModule. This is then imported within imports.
+
+Posting data
+Inject httpClient within the class using the request
+
+```ts
+this.http.post('URL', postData);
+```
+For the url, append 'posts.json' to the url. The postData is not json, it is a JavaScript object, which Angular will translate to JSON. 
+Angular uses Observables for this, so we need to subscribe to the Observable that obtains the http request. 
+Post returns an Observable that wraps the request:
+```ts
+this.http.post('URL', postData).subscribe(responseData => {
+    console.log(responseData);
+});
+```
+</p>
 <p>
 We can use .slice() to return a copy of an object, and not the object itself
 
