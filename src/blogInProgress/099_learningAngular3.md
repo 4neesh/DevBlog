@@ -1662,6 +1662,74 @@ this.http.post('URL', postData).subscribe(responseData => {
     console.log(responseData);
 });
 ```
+
+
+Getting data
+```ts
+this.http.get('URL').subscribe(posts => {
+    console.log(posts);
+})
+```
+The data needs to be transformed to a JavaScript Object data. 
+We can use the pipe to funnel the observable data through operators. 
+```ts
+this.http.get('url')
+.pipe(map(responseData => {
+    const postsArray = [];
+    for(const key in responseData){
+        if(responseData.hasOwnProperty(key){
+        postsArray.push(...responseData[key], id: key)
+        })
+    }
+}))
+.subscribe(data => {
+    console.log(data);
+})
+```
+Note that the spread separator ... will pull out all the key-value pairs in the responseData
+
+You can attach the response to a Type:
+```ts
+this.http.get('url')
+.pipe(map(responseData { [key: string]: Model}=> {
+    const postsArray: Model[] = [];
+    for(const key in responseData){
+        if(responseData.hasOwnProperty(key){
+        postsArray.push(...responseData[key], id: key)
+        })
+    }
+}))
+.subscribe(data => {
+    console.log(data);
+})
+```
+Where model is an interface:
+
+```ts
+export Interface Model{ name: string, age:number}
+```
+
+This can be modified using generics:
+```ts
+this.http.get<[key:string]: Model>('url')
+.pipe(map(responseData => {
+    const postsArray: Model[] = [];
+    for(const key in responseData){
+        if(responseData.hasOwnProperty(key){
+        postsArray.push(...responseData[key], id: key)
+        })
+    }
+}))
+.subscribe(data => {
+    console.log(data);
+})
+```
+And again with posts:
+```ts
+this.http.post<{name: string}>('URL', postData).subscribe(responseData => {
+    console.log(responseData);
+});
+```
 </p>
 <p>
 We can use .slice() to return a copy of an object, and not the object itself

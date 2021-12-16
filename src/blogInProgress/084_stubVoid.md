@@ -20,14 +20,12 @@ presents unique ways to provide custom logic to a void method, and when it would
 
 🕒 Timestamps 🕒
 
-00:00 - Introduction
-00:54 - forEach
-03:20 - getOrDefault
-06:10 - putIfAbsent
-08:10 - replace
-09:40 - replaceAll
-11:10 - compute
-13:00 - merge
+00:00 - Overview
+00:40 - Class under test
+01:50 - doNothing
+03:12 - callRealMethod
+05:08 - doThrow
+07:16 - doAnswer
 
 [![YouTube video link](../images/084_stubVoid.jpg)](URL)
 </p>
