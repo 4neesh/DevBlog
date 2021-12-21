@@ -14,20 +14,18 @@ tags:
 <h4>Changing default mock behaviour</h4>
 <p>
 
-This video will explore the 5 different ways that a default Mock Object can be returned to the test class from a method call.
+This video will explore the 3 different ways that a default Mock Object can be returned to the test class from a method call.
 By understanding how mock Object behaviour can be changed, we can transform Null Object responses into mocked, Spy or real Object representations. 
 As a result, test methods can be more fluent and resistant to empty and null default values. 
 
 🕒 Timestamps 🕒
 
 00:00 - Introduction
-00:54 - forEach
-03:20 - getOrDefault
-06:10 - putIfAbsent
-08:10 - replace
-09:40 - replaceAll
-11:10 - compute
-13:00 - merge
+00:40 - Class under test
+03:26 - SmartNull
+05:50 - Mocks
+08:06 - Deep Stubs
 
-[![YouTube video link](../images/085_changeDefaultMock.jpg)](URL)
+
+[![YouTube video link](../images/085_changeDefaultMock.jpg)]()
 </p>

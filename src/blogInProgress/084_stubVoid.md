@@ -4,7 +4,7 @@ date: 2021-12-27
 author: 'Aneesh Mistry'
 featuredImage: ../images/084_stubVoid.jpg
 subtitle: 'Use matchers to improve the readability of assertions with the assertJ library'
-time: '6'
+time: '10'
 tags:
 - Java
 - Testing
@@ -17,15 +17,5 @@ This video will look ath the different ways that we can control our system under
 This video explores how we would want to handle void methods when using a mock or a spy, and how the answer functional interface also 
 presents unique ways to provide custom logic to a void method, and when it would be most appropriate. 
 
-
-🕒 Timestamps 🕒
-
-00:00 - Overview
-00:40 - Class under test
-01:50 - doNothing
-03:12 - callRealMethod
-05:08 - doThrow
-07:16 - doAnswer
-
-[![YouTube video link](../images/084_stubVoid.jpg)](URL)
+[![YouTube video link](../images/084_stubVoid.jpg)](https://youtu.be/4Vbp7rwQeLA)
 </p>
