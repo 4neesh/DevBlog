@@ -19,13 +19,5 @@ To conclude, we will create the table and populate it with some data.
 
 Link to source code: https://github.com/4neesh/YouTube-Channel/tree/main/Store
 
-🕒 Timestamps 🕒
-
-00:00 - Introduction
-00:29 - Download MySQL and MySQL Workbench
-01:39 - Create a MySQL Table
-04:50 - Insert Data to a MySQL Table
-
-
 [![YouTube video link](../images/090_MySqlTable.jpg)](https://youtu.be/o4yPYWIRQG4)
 </p>

@@ -20,14 +20,5 @@ a Controller layer that will store endpoints that we interact with through the b
 We will register some GET endpoints that will return data to the user, and we will explore how
 JSON data appears within the browser.
 
-
-
-🕒 Timestamps 🕒
-
-00:00 - Introduction
-00:24 - Create a Spring Web Server
-02:43 - Create Endpoints with a Controller
-
-
 [![YouTube video link](../images/089_RestController.jpg)](https://youtu.be/c9iKKAZY00g)
 </p>

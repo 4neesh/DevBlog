@@ -23,16 +23,5 @@ and present them to the user as a JSON response.
 
 Link to source code: https://github.com/4neesh/YouTube-Channel/tree/main/Store
 
-🕒 Timestamps 🕒
-
-00:00 - Introduction
-00:24 - Create a model class
-01:49 - Connect MySQL with Spring Boot
-03:04 - Create an Entity Class
-06:28 - Configuring Spring with MySQL
-08:11 - Spring data JPA
-09:37 - Create a Controller class
-
-
 [![YouTube video link](../images/091_SpringToMySqlpng.jpg)](https://youtu.be/KbXeVexjy7A)
 </p>
