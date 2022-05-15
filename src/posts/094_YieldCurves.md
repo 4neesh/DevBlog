@@ -26,7 +26,7 @@ Then finally we will look at the yield curve, to understand what it looks like, 
 Yield curves are used within finance to measure the risk appetite of bond investors.  
 A typical yield curve may look like this:
 
-![Yield curve graph](../../src/images/094_yield.png)
+![Yield curve graph](../../src/images/094_yield.jpg)
 
 The yield curve has two axis, one for yield (return percentage) and one for time to maturity. 
 We can see that as maturity years change for a bond, the expected yield changes, rising quickly at the start, and then slightly flattening towards the end. But wait, what is a bond?
@@ -35,7 +35,7 @@ We can see that as maturity years change for a bond, the expected yield changes,
 <br>
 <h4>Bonds</h4>
 <p>
-A bond is a <strong>fixed income instrument</strong> that represents a loan that an investor makes to a borrower (typically a corporation or government entity). The bond will have a few key properties:
+A bond is a <strong>fixed income instrument</strong> that represents a loan that an investor makes to a borrower (typically a corporation or government entity). The bond will have a few key properties:<br>
 &#8226; Principal: the amount of money the corporation is borrowing.<br>
 &#8226; Coupon: a percentage amount of the principal the corporation will pay the investor at fixed intervals (which is typically every 6 months).<br>
 &#8226; Maturity: when the bond will expire and the principal amount is repaid to the investor by the corporation.<br>
@@ -62,7 +62,7 @@ As a bond-holder, you will be also be conscious to the current interest rate and
 Bonds act as an alternative low-risk investment option for your money when compared to a savings account. Leaving your money in a savings account will guarantee a return of the interest rate, whereas investing the money in a bond will return the coupon rate for that bond. Buying a bond means your capital is tied up with the corporation until maturity, but in return you receive the bi-annual coupon return for the investment.
 </p>
 <p>
-Using the example from above, if interest rates were 1%, I would probably prefer to invest my £100 by buying a bond, as the coupon rate is %2 and earn more money over 3 years, than just the 1% interest I receive each year from my bank. This is provided I would not like to access my £100 during that time.
+Using the example from above, if interest rates were 1%, I would probably prefer to invest my £100 by buying a bond, as the coupon rate is 2% and earn more money over 3 years, than just the 1% interest I receive each year from my bank. This is provided I would not like to access my £100 during that time. The benefit of leaving my money in a savings account means I can withdraw it when required, such a benefit does not exist with a bond, unless I sell it within the market.
 </p>
 <p>
 When we later look at yield curves, we will be able to reflect upon interest rates as their expected long-term behaviour can influence the expected returns an investor has for a bond.
@@ -81,7 +81,7 @@ Given any individual yield curve can be reflective of a bond's credit quality, y
 <p>
 We have seen what a normal yield curve looks like earlier in this blog:
 
-![Yield curve graph](../../src/images/094_yield.png)
+![Yield curve graph](../../src/images/094_yield.jpg)
 
 Let's break it down slightly to understand why it is the shape it is. When an investor commits funds to an bond, they are leaving their capital at risk. If you were to invest £10 for 1 month, and were offered £1 back as profit (so £11 return in 1 month), you probably wouldn't be as happy with an offer of receiving £11 back in 2 months time. Investing money for longer periods of time means your invested capital is at risk (in the event that the principal cannot be repaid) for a longer period, and is therefore at more risk.
 As a result, investors therefore expect higher returns when the time to repayment (maturity) is longer. Equally, if the money were left in a savings account, it may accrue more interest in a longer period of time.
@@ -99,7 +99,7 @@ So what does this all mean, and why do yield curves differ?
 Yield curves are often used to understand how the investors expect long term interest rates to behave. Why? Because if an investor is able to establish an opinion on how they expect interest rates to move, they will therefore have an expectation on what yield to demand for a similar maturity of a bond. 
 </p>
 <p>
-Let's head back to our example from earlier. Let's say we expect interest rates to rise to 5% in 1 years time, and 10% in two years time. All of sudden, the current interest rate of 1% doesn't seem so bad to begin investing with. And all of a sudden, our bond, which pays a stead 2% each each is not looking so good. If we have good reason to believe interest rates are going to skyrocket in the coming periods, then we can rightfully expect bonds to beat those interest rates for an investment of the same period. Why? Because bonds naturally carry more (be it very little amounts) of risk than a regular savings account. Investors will not be so keen to buy the 2% bond if they expect the interest rates to rise so quickly over the same period of time.
+Let's head back to our example from earlier. Let's say we expect interest rates to rise to 5% in 1 years time, and 10% in two years time. All of sudden, the current interest rate of 1% doesn't seem so bad to begin investing with. And all of a sudden, our bond, which pays a 2% coupon every 6 months is not looking so good. If we have good reason to believe interest rates are going to skyrocket in the coming periods, then we can rightfully expect bonds to beat those interest rates for an investment of the same period. Why? Because bonds naturally carry more (be it very little amounts) of risk than a regular savings account. Investors will not be so keen to buy the 2% bond if they expect the interest rates to rise so quickly over the same period of time.
 </p>
 
 <br>
