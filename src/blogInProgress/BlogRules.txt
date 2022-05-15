@@ -1,8 +1,0 @@
-
-<code class="language-java">////</code>     is used for any method, object, class, Exception in the code reference
-
-<strong>////</strong>                       is used for any instruction to select, Keywords, annotations, arguments, directories
-
-<h4>///</h4> <h5>///</h5>                   always has <br> before
-
-<small>////</small>                        always has a <br> before

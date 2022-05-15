@@ -2128,14 +2128,274 @@ We can use exhasustMap() from the rxjs operators to combine these subscriptions.
 It awaits for the first to complete, the calls the second:
 
 ```ts
+<<<<<<< HEAD
 
 
 ```
+=======
+this.authService.user.pipe(
+        take(1), //only takes the first one. It is not an ongoing subscription, it will unsubscribe on its own. So when we call this method, it will take the first token
+        exhaustMap(userParam => { //exhaust map waits for the first observable to complete, and then uses this data in the new observable.
+            return this.http.get<{ [key: string]: Balance }>('https://ng-wheretoinvest-default-rtdb.firebaseio.com/balanceSheet.json',
+            {
+                params: new HttpParams().set('auth', userParam.getToken())
+            })//so we have now returned a new http request that has the params attached to the observable below
+            .pipe(map(responseData => {
+                const stockArr: Balance[] = [];
+
+                for (const key in responseData) {
+                    if (responseData.hasOwnProperty(key)) {
+                        stockArr.push({ ...responseData[key], id: key })
+                    }
+                }
+                return stockArr;
+            })
+        );
+    })
+);
+
+```
+So we can see that first we extract the userParam from the user pipe Ibservable, then we use exhaustMap and pass that user into the next subscription that is made to the HTTP Get endpoint. 
+As a result we can use the token obtained from the userParam and pass it into the get request. 
+
+One note to make, is that the http request looks like this:
+
+https://ng-wheretoinvest-default-rtdb.firebaseio.com/balanceSheet.json?auth=user.getToken();
+But rather than hard-coding it in, we usse the params: 'auth', userParam.getToken() style to make it a little neater. 
+
+
+</p>
+<p>
+So far we have used a fairly complicated way of adding the most recently available token to our request when it is made.
+But lets say we have loads of these requests, that means a lot of repeated code. 
+We can instead just add this logic to the interceptor on the requests. To extract the most recent live token and to add it to the request. 
+
+1. create a new interceptor service. we do not provide in root, we provide it to http as later explained
+2. As it is an interceptor, I have to implement HttpInterceptor
+3. it will override the request of type HttpRequest and the handler HttpHandler. 
+4. Then we add the constructor to the request and return it:
+
+
+```ts
+@Injectable()
+export class AuthInterceptorService implements HttpInterceptor{
+
+    constructor(private authService: AuthService){ }
+
+    intercept(req : HttpRequest<any>, next HttpHandler){
+        
+        //now we add the latest token to the request and pass it onward to the handler.
+        this.authservice.user.pipe(
+            take(1),
+            exhaustMap(user => {
+                const modifiedReq = req.clone(params: new HttpParams().set('auth', user.token))
+
+                return next.handle(req);
+            })
+        )
+
+    }
+}
+```
+Within the app module we need to provide this service in a special way: 
+```ts
+{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true}
+```
+We say multi: true because it allows multiple interceptors to be used. 
+
+Now we can remove the complexity of our request from exhaustMap from the service:
+
+```ts
+   return this.http.get<{ [key: string]: Balance }>('https://ng-wheretoinvest-default-rtdb.firebaseio.com/balanceSheet.json')
+        .pipe(map(responseData => {
+            const stockArr: Balance[] = [];
+
+            for (const key in responseData) {
+                if (responseData.hasOwnProperty(key)) {
+                    stockArr.push({ ...responseData[key], id: key })
+                }
+            }
+            return stockArr;
+        })
+    );
+)
+);
+```
+As we are using an interceptor with the token on the user, we will need to catch the login script which will be passing in null
+as the token as the BehaviorSubject is null when we instantiate it. 
+</p>
+<h1>Logging out</h1>
+<p>
+All we need to do is change the user subject to null:
+
+```ts
+this.user.next(null);
+```
+</p>
+<h1>Persist token so it is there after reloading app</h1>
+<p>
+The token is stored in memory and cleared when the application is restarted. 
+We need to store the token in a persistence that can be written to and fetched from. 
+Local storage is managed by the browser and will allow us to store data in key-value pairs that is retained by the browser. 
+An alternative may also be a cookie. 
+
+We can store data in the localStorage:
+
+```ts
+localStorage.setItem('userData', JSON.stringify(user))
+```
+Stringify will serialise a JS Object. 
+
+We then need to create an autologin method that will check the localstorage and create a new user with the data whenever the page is loaded. 
+We refresh the application and the app.component.html will always be created. 
+So in the ts file, we will add an ngOnInit function and pass in a new function called autologin()
+</p>
+<p>
+Autologin is a function we create in the auth service. 
+It will use JSON.parse to parse the userData from the localStorage. Then it creates a new user from the data and loads it in:
+
+```ts
+autoLogin(){
+        const userData: {
+            email:string;
+            id:string;
+            _token:string;
+            _tokenExpirationDate: string;
+        } = JSON.parse(localStorage.getItem('userData'));
+
+        if(!userData){
+            return;
+        }
+
+        const loadedUser = new User(userData.email, userData.id, userData._token, new Date(userData._tokenExpirationDate));
+        if(!loadedUser.getToken()){
+            return;
+        }
+        this.user.next(loadedUser);
+    }
+```
+</p>
+<h1>Auto logout</h1>
+<p>
+We have used localStorage to store user data when they are logged in. But we also want to ensure that the local storage is cleared when they log out.
+So we will clear locaStorage on logout. 
+
+```ts
+localStorage.removeItem('userData')
+```
+
+Now we need an autologout to manage a timer to log the user out. 
+First we define a new variable tokenExpirationTimer of type any. This will store the timer. 
+Then, we have the autologout function that takes a number. When the timout has been reached, the logout function is called.
+To ensure the timer is reset whenever the logout function is called, we will call clearTimeout and set the expiration timer to null in the logout fn.
+
+```ts
+private tokenExpirationTimer : any;
+
+autoLogout(expirationDuration: number){
+     this.tokenExpirationTimer = setTimeout(() => {
+         this.logout();
+        
+     }, expirationDuration);
+}
+
+logout(){
+    
+    ...
+
+    if(this.tokenExpirationTime){
+        clearTimeout(this.tokenExpirationTimer)
+    }
+    this.tokenExpirationTimer = null;
+}
+```
+
+We need to call autologout whenever a new user is added to our application. So we will need to do this when the user logs in, and when the
+page is refreshed and the user is autologged in. 
+
+```ts
+handleAuthentication(){
+    this.user.next(user);
+    this.autologout(expiresIn * 1000)
+}
+
+autologin(){
+    this.user.next(loadedUser);
+    const expirationDuration = new Date(userData.tokenExpirationDate).getTime() - new Date().getTime();
+    this.autologout(expirationDuration);
+}
+
+```
+</p>
+<h1>Auth guard</h1>
+<p>
+Auth guard is used to prevent direct access to links without authentication.
+We can use route guard to run logic before a route is loaded. 
+
+```ts
+@Injectable
+export class Authguard implements CanActivate{
+
+    constructor(private authService: AuthServiec){}
+
+    canActivate(route: ActivatedRouteSnapshot, router: RouterStateSnapshot) : boolean | Promise<boolean> | Observable<boolean>{
+
+        //we return status as derive it from the auth service. 
+        return this.authService.user.pipe(map => {
+            return !!user;
+        });
+    }
+
+}
+```
+In the app-routing module, we protect the paths we care about:
+
+```ts
+const appRoutes: Routes = [
+    {
+        path: 'hello',
+        component: helloComponent,
+        canActivate: [AuthGuard],
+
+    }
+]
+```
+
+We would also like to direct the user to the auth page when they try to manually go to a url by typing it in. 
+The CanActivate method can allow redirecting.
+
+```ts
+canActivate(route: ActivatedRouteSnapshot, router: RouterStateSnapshot) : boolean | Promise<boolean | UrlTree> | Observable<boolean | UrlTree>{
+
+        //we return status as derive it from the auth service. 
+        return this.authService.user.pipe(
+            take(1),
+            map => {
+            const isAuth = !!user;
+            if(isAuth){
+                return true;
+            }
+            return this.router.createUrlTree(['/auth'])
+        });
+    }
+```
+</p>
+
+<h1>Dynamic Components</h1>
+<p>
+This allows us to load new components at runtime. 
+First we create the new component. 
+We can use ngIf to dynamically load a component
+Alternatively, we can use a dynamic component loader
+This is about creating a component in code, and manually attaching it. 
+We control how it is instantiated and managed. 
+>>>>>>> 3e8e5f0d481df6518bf3c940112e7ec07644661d
 </p>
 <p>
 We can use .slice() to return a copy of an object, and not the object itself
 
 Why we initialise within ngOnInit and not constructor
+what is _variable underscore for
 </p>
 <br>
 <small style="float: right;" >Picture: xxx, xxx by <a target="_blank" href="http">xxx</small></a><br>
