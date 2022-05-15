@@ -18,14 +18,5 @@ This video will explore the 3 different ways that a default Mock Object can be r
 By understanding how mock Object behaviour can be changed, we can transform Null Object responses into mocked, Spy or real Object representations. 
 As a result, test methods can be more fluent and resistant to empty and null default values. 
 
-🕒 Timestamps 🕒
-
-00:00 - Introduction
-00:40 - Class under test
-03:26 - SmartNull
-05:50 - Mocks
-08:06 - Deep Stubs
-
-
 [![YouTube video link](../images/085_changeDefaultMock.jpg)]()
 </p>

@@ -81,20 +81,12 @@ A subject is a special type of observable. EventEmitter requires us to wrap the 
 What I don't understand is why in the component i need to assign it twice. 
 </p>
 
-<h1>Handling subscriptions</h1>
-<p>
-It is a good idea to destroy subscriptions when a component doesn't need it. So implement onDestroy, create a private x: Subscription variable. 
-In the subscription in onInit, assign the Subscription to the variable. 
-In ngOnDestroy() call the subscription variable and call .unsubscribe(). 
-
-</p>
-
 <h1>Forms</h1>
 <p>
 Mark input fields with formNameControl
 Mark the form with [formGroup]
 Use this.form.reset() to clear it
-
+Validators comes from 
 </p>
 <br>
 <small style="float: right;" >Picture: xxx, xxx by <a target="_blank" href="http">xxx</small></a><br>
