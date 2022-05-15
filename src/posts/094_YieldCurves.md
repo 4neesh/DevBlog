@@ -2,7 +2,7 @@
 title: 'Yield Curves'
 date: 2022-04-28
 author: 'Aneesh Mistry'
-featuredImage: ../../public/yield-curves/twitter-card.jpg
+featuredImage: ../images/094_yieldIm.jpg
 subtitle: 'Understand what a yield curve is, and how they are used for understanding interest rate expectations.'
 time: '10'
 tags:
@@ -149,4 +149,4 @@ The yield curve is used to understand the expected returns of an investor for a 
 </p>
 
 <br>
-<small style="float: right;" >Picture: xxx, xxx by <a target="_blank" href="http">xxx</small></a><br>
+<small style="float: right;" >Picture: Warsaw, Poland by <a target="_blank" href="https://unsplash.com/@lasmaa">Lāsma Artmane</small></a><br>
