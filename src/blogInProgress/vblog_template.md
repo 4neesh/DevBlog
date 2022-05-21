@@ -22,10 +22,10 @@ IntelliJ.
 🕒 Timestamps 🕒
 
 00:00 - Introduction
-00:54 - forEach
-03:20 - getOrDefault
-06:10 - putIfAbsent
-08:10 - replace
+00:18 - Manual column populating
+00:55 - Java multi-dimensional arrays
+02:51 - Populating multiple columns
+04:09 - Adding Excel Headers
 09:40 - replaceAll
 11:10 - compute
 13:00 - merge
