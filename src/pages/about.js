@@ -63,12 +63,7 @@ const AboutPage = (props) => {
                     </a>{" "}
                     with a Master's degree in Computer Science. My blog is now a project that will support my development as I document what I learn in and around my job as an engineer. 
                  </p>
-                  
-                  <p>
-                    Outside engineering, I enjoy playing golf and strength lifting.
-                    Golf has been a hobby from a young age that I carry through today and I firmly believe staying active 
-                    complements the quality of service I provide in my career.
-  </p>
+                
                   <div style={{ width: '50%' }}>
                     <AboutImage />
                   </div>
