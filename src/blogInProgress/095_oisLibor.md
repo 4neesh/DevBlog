@@ -12,45 +12,40 @@ tags:
 <strong>Key Takeaways</strong><br>
 &#8226; Overview of the interbank market and why they exist.<br>
 &#8226; Understand the two interest rates of LIBOR and OIS.<br>
-&#8226; Understand how the spread between LIBOR and OIS can be a valuable indicator to the financial market.<br>
+&#8226; Understand how the spread between LIBOR and OIS can be a good indicator to the confidence banks have with each other.<br>
 
 <br>
 <h4>Interbank markets</h4>
 <p>
-The interbank market differs from the 'open market' as it only enables specific banks to lend and trade with each other. The interbank market often refers to the interbank foreign exchange (FX) market where currency and currency deriviates are traded. We also have the interbank lending market where short term loans are also traded amongst banks to better manage their capital reserves and liquidity requirements. This blog will focus on the interbank lending market. 
-</p>
-<p>
-The interbank FX market is an unregulated market where banks act as market makers by both buying and selling within the market and setting prices. As a result, the rates are floating and adjusted based on supply and demand.
-</p>
-<p>
-At the very core, the interbank FX market enables banks to manage their funds and holdings in an efficient way. 
-The interbank FX market enables banks to manage their currency exposure by trading currencies on the spot, forward or swap market. 
+The interbank market differs from the 'open market' as it only enables specific banks to lend and trade with each other. The interbank market often refers to the interbank foreign exchange (FX) market where currency and currency deriviates are traded. We also have the interbank lending market where short term loans are also traded amongst banks to enable them to better manage their capital reserves and liquidity requirements. This blog will focus on the interbank lending market. 
 </p>
 <p>
 The interbank lending market enables banks to manage their liquidity risk to meet stringent requirements to ensure they are able to withstand any potential 'bank runs' by customers. Alternatively, banks with excess levels of liquidity can lend their reserves to earn an interest income.
+</p>
+<p>
+Why would banks want to lend to each other? Imagine if Bank A has borrowed £10 million pounds from the Bank of England and are paying interest on the loan at the current bank rate of 1%. Bank A will be able to make a nice profit by lending £8 million of that loan to commercial purposes at an interest rate of 2%. But Bank A has not yet found a purpose for the other £2 million on it's books. So rather than letting it sit in the bank earning nothing, they can then lend to other banks in the <i>interbank lending market</i> for a set period of time until they find a more lucrative use for the capital. 
+</p> 
+<p>
+On the other hand, Bank B, which may require extra short-term capital for their own books (perhaps to meet liquidity requirements or to satisfy a new loan opportuntity) are able to borrow capital on the interbank market at a certain interest rate. Bank A and Bank B will agree a certain timeframe for which the money is lent; Bank A is happy as they find a use for their extra £2 million and Bank B is happy because they are able to satisfy their capital requirements. 
+</p>
+<p>
+The banks that are participating in the interbank market tend to be high-credit quality institutions. As the market involves unsecured lending, there is a degree of dependency on each other to repay loans as expected, and at a competitively low interest rate to reflect the high credit-quality of the participants. 
 </p>
 
 <br>
 <h4>LIBOR</h4>
 <p>
-LIBOR - The London Interbank Offer Rate is a benchmark interest rate that is used by banks for short term interbank lending.
-LIBOR is the average interest rate that banks will charge each other for short-term, unsecured lending. 
+LIBOR - The London Interbank Offer Rate is a variable interest rate that is used by banks for short-term, unsecured interbank lending.
 </p>
 <p>
-Why would banks want to lend to each other? Imagine if Bank A has borrowed £10 million pounds from the Bank of England and are paying interest on the loan at the current bank rate of 1%. Bank A will be able to make a nice profit by lending £8 million of that loan to commercial purposes at an interest rate of 2%. But Bank A has not yet found a purpose for the other £2 million on it's books. So rather than letting it sit in the bank earning nothing, they can then lend to other banks in the <i>interbank lending market</i> for a set period of time. 
-</p> 
-<p>
-On the other hand, Bank B, which may require extra capital for their own books (perhaps to meet liquidity requirements or to satisfy a new loan opporuntity) are able to borrow capital on the interbank market at a certain interest rate. Bank A and Bank B will agree a certain timeframe for which the money is lent; Bank A is happy as they find a use for their extra £2 million and Bank B is happy because they are able to satisfy their capital requirements easily and relatively cheaply. 
-</p>
-<p>
-The banks that are participating in the interbank market tend to be high-credit quality banks. As the market involves unsecured lending, there is a degree of dependency on each other to repay loans as expected, and for a competitively low interest rate to reflect the high credit-quality of the participants. 
-</p>
-<p>
-LIBOR is a globally accepted benchmark and reflects the cost of lending between banks. LIBOR is based on the lending of 5 currencies: USD, EUR, GBP, JPY and CHF.
+LIBOR is a globally accepted benchmark and reflects the cost of lending between banks. LIBOR is calculated on the rate that a consortium of banks lend 5 currencies: USD, EUR, GBP, JPY and CHF.
 There are 7 different maturities for LIBOR that include: overnight, 1 week and 1, 2, 3, 6, and 12 months. Despite there being 35 different LIBOR combinations of currency and maturity, the 3-month USD LIBOR rate is most commonly quoted as the 'current LIBOR rate'.
 </p>
 <p>
-The LIBOR rate is posted on a daily basis. It is calculated by the British Banking Association who ask major global banks what they would charge for short term loans. They then remove the tail-end values and finding the average. This is known as a 'trimmed average'. The daily rate is published by the ICE (Intercontinental Exchange) Benchmark Administration. The rate that each bank offers for short term lending will change each day to reflect credit risk on the loan. Credit risk is the risk that the original loan amount will not be repaid. As the length of the loan increases, so does (in theory) the credit risk, as there is a longer period of time where the loanee may default and be unable to repay the loan in full. 
+The LIBOR rate is posted on a daily basis. It is calculated by the British Banking Association who ask major global banks what they would charge for short term loans. They then remove the tail-end values and finding the average. This is known as a 'trimmed average'. The daily rate is published by the ICE (Intercontinental Exchange) Benchmark Administration. 
+</p>
+<p>
+The rate that each bank offers for short term lending will change each day to reflect credit risk on the loan. Credit risk is the risk that the original loan amount will not be repaid. As the length of the loan increases, so does (in theory) the credit risk, as there is a longer period of time where the loanee may default and be unable to repay the loan in full. 
 </p>
 <p>
 So why do we care about LIBOR?
@@ -133,4 +128,4 @@ The LIBOR-OIS spread is a useful indicator to summarise the confidence banks hav
 </p>
 
 <br>
-<small style="float: right;" >Picture: xxx, xxx by <a target="_blank" href="http">xxx</small></a><br>
+<small style="float: right;" >Picture: Madrid, Spain by <a target="_blank" href="https://unsplash.com/@jorgefdezsalas">Jorge Fernández Salas</small></a><br>
