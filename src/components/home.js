@@ -73,7 +73,7 @@ const Layout = ({ children }) => (
                 rel="noopener noreferrer"
                 style={{paddingRight:"30px", color:"black"}}
                 >
-                <i class="fas fa-rss fa-2x"/>
+                <i className="fas fa-rss fa-2x"/>
                     
                 </a>
 
@@ -83,7 +83,7 @@ const Layout = ({ children }) => (
                 rel="noopener noreferrer"
                 style={{ color:"black"}}
                 >
-                <i class="fab fa-youtube fa-2x"/>
+                <i className="fab fa-youtube fa-2x"/>
                     
                 </a>
                 </span>

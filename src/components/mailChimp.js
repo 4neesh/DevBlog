@@ -47,7 +47,7 @@ export default class mailChimp extends React.Component {
         rel="noopener noreferrer"
         target="_blank" 
         href="http://feeds.feedburner.com/aneeshBlog">
-        RSS feed <i class="fas fa-rss"/>
+        RSS feed <i className="fas fa-rss"/>
         </Button>
       </FormGroup>
       

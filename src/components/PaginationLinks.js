@@ -9,9 +9,6 @@ const PaginationLinks = ({ currentPage, numberOfPages }) => {
   const nextPage = '/page/' + (currentPage + 1).toString()
   const finalPage = '/page/' + numberOfPages
   const firstPage = '/blogs'
-  console.log("current: " + currentPage)
-  console.log("previous: " + previousPage)
-  console.log("nextPage: " + nextPage)
 
   return (
     <Pagination >
