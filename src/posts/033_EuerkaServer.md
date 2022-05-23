@@ -322,6 +322,3 @@ Spring Cloud Eureka provides load-balancing as a service to the system to suppor
 The Eureka package has also made it intuitive and simple with bootstrapped annotations to implement the discovery server and to also use the discovery server with auto-configured service discovery implementations and configured properties.<br>
 You can find the source code from this blog on GitHub <a href="https://github.com/4neesh/DeveloperBlogDemos/tree/master/Eureka">here</a> where you launch your own Eureka server to open and consume services through a load-balanced server.
 </p>
-
-<br>
-<small style="float: right;" >Picture: Siquijor, Philippines by <a target="_blank" href="https://unsplash.com/photos/2rH2w01umhY">Louie Martinez</small></a><br>

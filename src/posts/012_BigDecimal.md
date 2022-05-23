@@ -139,6 +139,3 @@ The Base 2 function for deriving floating point values introduces a degree of pr
 BigDecimal is a class within the math package of Java and enables decimal values to be computed against a Base 10. As a result, the decimal value created does not contain an unexpected rounded value.<br>
 BigDecimal is a useful class implemented with applications that handle currencies. BigDecimal however introduces performance costs that are to be considered with their use.
 </p>
-
-<br>
-<small style="float: right;" >Picture: Black River, Mauritius by <a target="_blank" href="https://unsplash.com/@xaviercoiffic">Xavier Coiffic</small></a><br>

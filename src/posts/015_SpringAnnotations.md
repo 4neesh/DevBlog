@@ -124,6 +124,3 @@ The Spring framework is constructed of 3 layers that separate the responsibility
 The ApplicationContext container is a heavy-weight framework for dependency injection that supports annotation-based injection. The <strong>@Component</strong> annotation is used to register a bean at the class-level into the ApplicationContext. 
 The Spring framework offers three further annotations that extend from <strong>@Component</strong> to provide unique properties the bean generated to assist with the responsibility of each layer.
 </p>
-
-<br>
-<small style="float: right;" >Picture: Wellington, New Zealand by <a target="_blank" href="https://unsplash.com/@glebelt_">Guillaume Lebelt</small></a><br>

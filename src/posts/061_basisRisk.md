@@ -111,6 +111,3 @@ Basis risk exists at all times within the life of a futures contract where the c
 <p>
 Perfect markets would mean basis risk is minimised at all expiry dates of all futures contracts. However future contracts are not always perfect for the risk that is hedged by the buyer of the contract. Factors such as the asset, asset quantity, date of delivery, and market pressures, can all mean the futures contract is sold before its expiry, and therefore expose the selling party to the basis risk of the contract. 
 </p>
-
-<br>
-<small style="float: right;" >Picture: Edinburgh, Vereinigtes Königreich by <a target="_blank" href="https://unsplash.com/@peter_cordes">Peter Cordes</small></a><br>

@@ -250,6 +250,3 @@ The stack memory is designed with a pointer to quickly navigate methods and remo
 <p>
 Our understanding of the heap and stack can enable us to better understand runtime errors that may arise and how the application can make use of the stack direct addressing and recursive nature to optimise runtime performance. 
 </p>
-
-<br>
-<small style="float: right;" >Picture: Furnace Creek, USA by <a target="_blank" href="https://unsplash.com/@garciasaldana_">Pablo García Saldaña</small></a><br>

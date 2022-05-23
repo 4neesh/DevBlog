@@ -159,6 +159,3 @@ An application that complies with the SRP will enable the developer to understan
 </p>
 
 <strong>Series link: Go to the next SOLID principle: <a href="https://aneesh.co.uk/open-closed-principle">Open-Closed Principle</a></strong>
-
-<br>
-<small style="float: right;" >Picture: St. Joseph, IL by <a target="_blank" href="https://unsplash.com/@drice22">Danielle Rice</small></a><br>

@@ -227,6 +227,3 @@ so now we can update the parent html:
 
 
 </p>
-
-<br>
-<small style="float: right;" >Picture: xxx, xxx by <a target="_blank" href="http">xxx</small></a><br>

@@ -2390,5 +2390,3 @@ We can use .slice() to return a copy of an object, and not the object itself
 Why we initialise within ngOnInit and not constructor
 what is _variable underscore for
 </p>
-<br>
-<small style="float: right;" >Picture: xxx, xxx by <a target="_blank" href="http">xxx</small></a><br>

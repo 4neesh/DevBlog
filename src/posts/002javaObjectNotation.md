@@ -130,6 +130,3 @@ By breaking down an algorithm and understanding how the resource consumption of 
 Calculating the Big O will encourage you to explore and utilise the various data structures and methods available to create CPU-optimised algorithms.<br>
 The time complexity of our algorithms provide a measurable and reflective purpose for us to review how well each operation within our algorithms can scale with input elements.
 </p>
-<br>
-<small style="float: right;" >Picture: Cocora Valley, Salento by <a target="_blank" href="https://unsplash.com/@shawn_appel">Shawn Appel</small></a><br>
-

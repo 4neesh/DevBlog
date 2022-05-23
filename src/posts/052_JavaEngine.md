@@ -158,5 +158,4 @@ When comparing Java with other languages, there will always be arguments for and
 vital role on a case-by-case basis. 
 By understanding these concepts with reference to Java, you can begin to understand why certain technologies can be more appropriate to use in certain contexts, and when Java
 can be the technology of choice for you.  
-<br>
-<small style="float: right;" >Picture: Nine Arches Bridge, Elle, Sri Lanka by <a target="_blank" href="https://unsplash.com/@egle_sidaraviciute">Egle Sidaraviciute</small></a><br>
+</p>

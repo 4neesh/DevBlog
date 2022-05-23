@@ -177,6 +177,3 @@ The Stream API introduces a new paradigm of functional programming that Java did
 The <code language="java">Collectors.toMap()</code> method can been overloaded with 3 implementations to provide different levels of Map transformations.
 The source code from the example in this blog can be found on GitHub <a target="_blank" href="https://github.com/4neesh/DeveloperBlogDemos/tree/master/StreamMap">here.</a>
 </p>
-
-<br>
-<small style="float: right;" >Picture: Bastrop, United States by <a target="_blank" href="https://unsplash.com/@natalie_rhea">Natalie Rhea Riggs</small></a><br>

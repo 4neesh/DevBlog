@@ -87,5 +87,3 @@ Mark the form with [formGroup]
 Use this.form.reset() to clear it
 Validators comes from 
 </p>
-<br>
-<small style="float: right;" >Picture: xxx, xxx by <a target="_blank" href="http">xxx</small></a><br>

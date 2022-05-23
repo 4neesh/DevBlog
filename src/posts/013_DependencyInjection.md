@@ -231,6 +231,3 @@ When using test-driven-development, or any kind of unit test, dependency injecti
 As well as improving code readability and reducing boilerplate code, dependency injection shifts the implementation of an application away from individual classes, and into a modular framework. <br>
 The code sample from this blog can be found on GitHub <a target="_blank" href="https://github.com/4neesh/DeveloperBlogDemos/tree/master/DependencyInjectionDemo">here.</a>
 </p>
-
-<br>
-<small style="float: right;" >Picture: Tissamaharama, Sri Lanka by <a target="_blank" href="https://unsplash.com/@roxannedesgagnes">Roxanne Desgagnés</small></a><br>

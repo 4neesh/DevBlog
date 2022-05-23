@@ -113,6 +113,3 @@ In this post, we have looked at the Options contract and how it can be used for 
 <p>
 The benefit of 'optionality' from the contract exposes the price of the Options contract to multiple variances within the market and time that can influence their price. As a result, complex mathematical models are used to best estimate the present value of the Options contract within the market. When reviewing Option prices, the sensitivities that are exposed to the price have led to the use of the 'Greeks' a group of well defined variances to the Option price. 
 </p>
-
-<br>
-<small style="float: right;" >Picture: Gibbs's Hill Lighthouse, Bermuda by <a target="_blank" href="https://unsplash.com/@seitamaaphotography">Sandra Seitamaa</small></a><br>

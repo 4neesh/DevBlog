@@ -111,5 +111,3 @@ Popular sorting algorithms such as QuickSort and Merge sort implement divide and
 By understanding how logarithms are used within data structures and algorithms, we are better positioned to understand how time complexity can accrue and where it can be optimized.
 </p>
 
-<br>
-<small style="float: right;" >Picture: Serengeti, Tanzania by <a target="_blank" href="https://unsplash.com/@huchenme">Hu Chen</small></a><br>

@@ -370,5 +370,3 @@ The most valuable features of Go exist from its lightweight design and niche use
 <p>
 In my next blog, I will use Go to create a RESTful API service to crete and return JSON data to other services.
 </p>
-<br>
-<small style="float: right;" >Picture: Beijing, China by <a target="_blank" href="https://unsplash.com/@hjiang">Hong Jiang</small></a><br>

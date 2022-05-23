@@ -146,6 +146,3 @@ It can also be interesting to take a look at yield curves today, to understand h
 <p>
 The yield curve is used to understand the expected returns of an investor for a given bond at a given maturity. The yield curve helps us to understand future expecations of interest rates as investments with bonds are often compared with risk-free savings. Analyst will create historical yield spreads to compare different bonds, and to understand when some bonds are trading at a premium than they previously have against others. 
 </p>
-
-<br>
-<small style="float: right;" >Picture: Warsaw, Poland by <a target="_blank" href="https://unsplash.com/@lasmaa">Lāsma Artmane</small></a><br>

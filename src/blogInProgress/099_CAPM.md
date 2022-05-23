@@ -51,6 +51,3 @@ The Sharpe ratio may seem like a useful metric to understand the risk-return pro
 
 
 </p>
-
-<br>
-<small style="float: right;" >Picture: xxx, xxx by <a target="_blank" href="http">xxx</small></a><br>

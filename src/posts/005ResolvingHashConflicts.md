@@ -130,5 +130,3 @@ When a search is conducted upon the hash table, the hash function will identify 
 Hash functions are algorithms that are used to convert a key into an arbitrary integer. Hash functions enable the hash table to have an efficient computer memory consumption by defining the boundaries of possible index positions in which a value can be stored. Collision resolution techniques are important to understand as they support the use of hash functions by maintaining the integrity and performance of the hash table.<br>
 By understanding the differences between open and closed addressing, a hash table can be designed to store collided hash values in an optimised manner. 
 </p>
-<br>
-<small style="float: right;" >Picture: Riobamba, Ecuador by <a target="_blank" href="https://unsplash.com/@ezekiel">Fernando Tapia</small></a><br>

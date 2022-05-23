@@ -147,6 +147,3 @@ When we are designing our applications, it is important to always consider if a 
 </p>
 
 <strong>Series link: Go to the next SOLID principle: <a href="https://aneesh.co.uk/liskov-substitution-principle">Liskov Substitution Principle</a></strong>
-
-<br>
-<small style="float: right;" >Picture by <a target="_blank" href="https://unsplash.com/@slangston">Langston</small></a><br>

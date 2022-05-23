@@ -223,6 +223,3 @@ Anonymous classes offer a compiled implementation of interfaces within the calli
 Lambda functions introduce functional interface implementations that support behaviours of the application at runtime. The lambda function enables developers to reduce boilerplate code for implementations of functional interfaces using a unique three-part instruction.<br>
 Lambda functions can be flexible to support multiple parameters and return types and can be passed around the application and used as arguments to create dynamic and independent behaviours.
 </p>
-
-<br>
-<small style="float: right;" >Picture: Paris, France by <a target="_blank" href="https://unsplash.com/@allewollenalex">Alexander Kagen</small></a><br>

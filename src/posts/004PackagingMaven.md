@@ -293,6 +293,3 @@ The example we have used has only touched upon the various message types and for
 If you would like to implement logging across your application with enhanced control and structure, please visit my blog on aspect-orientated-programming <a target = "_blank" href="https://aneesh.co.uk/implementing-aop-in-a-spring-application">here</a>.<br>
 Finally, you can find the source code from this blog via GitHub <a target = "_blank" href="https://github.com/4neesh/JavaToolBoilerplate">here</a>.
 </p>
-
-<br>
-<small style="float: right;" >Picture: Machu Picchu, Peru by <a target="_blank" href="https://unsplash.com/@willianjusten">Willian Justen de Vasconcellos</small></a><br>

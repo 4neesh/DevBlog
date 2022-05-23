@@ -110,6 +110,3 @@ The interface segregation principle leverages the inheritance of interfaces to b
 </p>
 
 <strong>Series link: Go to the next SOLID principle: <a href="https://aneesh.co.uk/dependency-inversion-principle">Dependency Inversion Principle</a></strong>
-
-<br>
-<small style="float: right;" >Picture by <a target="_blank" href="https://unsplash.com/@pkripperprivate">Parker Johnson</small></a><br>

@@ -402,6 +402,3 @@ Each client within the system registers its configuration to the server with the
 <p>
 You can get started with centralised configuration from with the source code from this blog on GitHub <a href="https://github.com/4neesh/DeveloperBlogDemos/tree/master/SpringConfig" target="_blank">here</a>.
 </p>
-
-<br>
-<small style="float: right;" >Picture: Petra, Jordan by <a target="_blank" href="https://unsplash.com/@aqaisieh">Ahmad Qaisieh</small></a><br>

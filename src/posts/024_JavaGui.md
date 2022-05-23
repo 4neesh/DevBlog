@@ -244,6 +244,3 @@ The capacity for creating a GUI with Java extends much further than the JFrame a
 Creating a GUI can prove valuable for resolving data analysis and algorithmic solutions; I would encourage you to explore how the capacity for Java as a front-end component can be used to improve user interaction as a stand-alone application.
 The source code from this blog can be found on GitHub <a href="https://github.com/4neesh/DeveloperBlogDemos/tree/master/JavaGui">here</a>. 
 </p>
-
-<br>
-<small style="float: right;" >Picture: Roma, Italy by <a target="_blank" href="https://unsplash.com/@cristina_gottardi">Cristina Gottardi</small></a><br>

@@ -280,5 +280,3 @@ The criticisms of MPT have lead to further developments and extensions of the th
 I will write about the capital market line that builds on-top of MPT to develop an understanding of the relationship a portfolio may have with the risk-free
 rate of return that could be otherwise be obtained with other securities in the market. To reiterate, you can find the excel sheet from this blog on  <a href="https://github.com/4neesh/DeveloperBlogDemos/tree/master/Modern%20Portfolio%20Theory" target="_blank">GitHub</a>.
 </p>
-<br>
-<small style="float: right;" >Picture: Paris, France by <a target="_blank" href="https://unsplash.com/@alexandrelallemand">Alexandre Lallemand</small></a><br>

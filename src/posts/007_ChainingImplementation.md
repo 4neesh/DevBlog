@@ -306,6 +306,3 @@ Total collisions: 1
 The implementation of chaining in a hash table can be achieved with just a few methods that cover the load factor evaluation, rehash, and put. By experimenting with the hash function, MAX_LOAD_FACTOR and the number of buckets from instantiation, the performance of the hash table can be altered to reduce the number of rehashes required, the bunching of values in buckets and collision frequency.<br>
 Feel free to clone the source code from this blog on <a target="_blank" href="https://github.com/4neesh/DeveloperBlogDemos/tree/master/ChainingDemo"><u>GitHub</u></a> to test the impact of more entries on the performance of the hash table.
 </p>
-
-<br>
-<small style="float: right;" >Picture: Bariloche, Argentina by <a target="_blank" href="https://unsplash.com/@ggiqueaux">Geronimo Giqueaux</small></a><br>

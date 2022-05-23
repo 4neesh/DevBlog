@@ -109,6 +109,3 @@ The importance of continuous delivery is to support a reliable, predictable and 
 <p>
 Continuous delivery and continuous deployment play a major role in the modern software delivery cycle where code is rigorously integrated, built, tested and deployed to the production environment. The automation of continuous delivery enhances the feedback loop from functional testing to support frequent, incremental and efficient upgrades to software system. 
 </p>
-
-<br>
-<small style="float: right;" >Picture: Yosemite, California by <a target="_blank" href="https://unsplash.com/@annaaelizabeth">Anna Elizabeth</small></a><br>

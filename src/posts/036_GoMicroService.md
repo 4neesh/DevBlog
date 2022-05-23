@@ -899,6 +899,3 @@ Go also provides comprehensive documentation for the available methods and respo
 <p>
 You can find the source code from this blog on GitHub. The non persisted code: <a href="https://github.com/4neesh/DeveloperBlogDemos/tree/master/Simple%20go%20web%20service" target="_blank">here</a> and the source code with MySQL persistance: <a href="https://github.com/4neesh/DeveloperBlogDemos/tree/master/Persisted%20Go%20web%20service" target="_blank">here</a>. 
 </p>
-
-<br>
-<small style="float: right;" >Picture: Santorini, Greece by <a target="_blank" href="https://unsplash.com/@tamarabudai">Tamara Budai</small></a><br>

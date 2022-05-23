@@ -215,6 +215,3 @@ The JSON format of data can be passed into a POJO that can be used to resolve bu
 <br>
 The source code from this blog can be found on GitHub <a target="_blank" href="https://github.com/4neesh/DeveloperBlogDemos/tree/master/ConsumingRestAPIDemo">here</a>.
 </p>
-
-<br>
-<small style="float: right;" >Picture: Ella, Sri Lanka by <a target="_blank" href="https://unsplash.com/@the_bracketeer">Hendrik Cornelissen</small></a><br>

@@ -200,6 +200,3 @@ In Spring, we can represent table joins using annotations within the entity clas
 
 
 </p>
-
-<br>
-<small style="float: right;" >Picture: xxx, xxx by <a target="_blank" href="http">xxx</small></a><br>

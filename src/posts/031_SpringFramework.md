@@ -341,6 +341,3 @@ Spring Boot introduced Autoconfiguration that uses convention over configuration
 As a result, Spring Boot enables the developer to create out-of-the-box production-ready applications with minimal configuration required with the flexibility of customisation. 
 You can read more about Spring and its features from the excellent documentation <a href="https://docs.spring.io/spring-framework/docs/current/reference/html/" target="_blank">here</a>
 </p>
-
-<br>
-<small style="float: right;" >Picture: Tokyo, Japan by <a target="_blank" href="https://unsplash.com/@geniequo">Heshan Perera</small></a><br>

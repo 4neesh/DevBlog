@@ -216,6 +216,3 @@ Spring Cloud Tasks enable tasks with a set start and end time to be decoupled wi
 The Spring Cloud Task can be taken further by deploying it into a Maven repository where it can be called upon by other microservices. <br>
 The code sample from this blog can be found on GitHub <a target="_blank" href="https://github.com/4neesh/DeveloperBlogDemos/tree/master/SpringCloudTask">here</a>.
 </p>
-
-<br>
-<small style="float: right;" >Picture: Split Rock Lighthouse, Minnesota by <a target="_blank" href="https://unsplash.com/@saluken">Luke Tanis</small></a><br>

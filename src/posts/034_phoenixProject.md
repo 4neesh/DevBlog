@@ -126,6 +126,3 @@ Beyond the focal point of DevOps, The Phoenix Project taught me about the challe
 <a target="_blank" href="https://www.bmc.com/blogs/devops-basics-introduction/">DevOps Guide by Stephen Watts</a><br>
 <a target="_blank" href="https://emilyfreeman.io/book">DevOps by Emily Freeman</a><br>
 </p>
-
-<br>
-<small style="float: right;" >Picture: Phoenix, Arizona by <a target="_blank" href="https://unsplash.com/@joecook">Joe Cook</small></a><br>

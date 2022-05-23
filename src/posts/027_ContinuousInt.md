@@ -141,7 +141,3 @@ building a new artefact to be taken through delivery. Continuous integration can
 Continuous integration tools can be used to build pipelines that automate the process for integration code updates into builds in a centralised environment.<br>
 Jenkins is one such tool that can be used to build interactive reports to obtain an insight to the step-by-step process for builds. Jenkins also provides useful plugins to trigger builds, visualise performance reports and send email notifications upon events. 
 </p>
-
-<br>
-<small style="float: right;" >Picture: Taba, Egypt by <a target="_blank" href="https://unsplash.com/@rawanyasser">Rawan Yasser</small></a><br>
-

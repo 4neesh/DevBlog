@@ -289,5 +289,3 @@ The <i>Synchronized</i> keyword in Java allows a thread to obtain a key to a cod
 <p>
 The Atomic package and Synchronized keyword are useful tools that assert an element of determinism about a multi-threaded application. These tools enable execution order to be achieved and cached memory to be shared between threads to reduce non-deterministic behaviour within their domains.
 </p>
-<br>
-<small style="float: right;" >Picture: Williamsburg, United States by <a target="_blank" href="https://unsplash.com/@benst287">Ben Stern</small></a><br>

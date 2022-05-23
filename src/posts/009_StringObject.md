@@ -134,6 +134,3 @@ An additional benefit to using the StringBuffer and StringBuilder aligns to thei
 <p>
 The String class is uniquely handled by the JVM with an optimized pipeline and storage. The immutability of a String means new Objects are created when the String value is modified. A String Object can be instantiated into the heap area which effectively alters how the String Object is equated to other String Objects. Lastly, the JVM offers StringBuffer and StringBuilder classes to provide functionality for String Objects as a mutable Object.
 </p>
-
-<br>
-<small style="float: right;" >Picture: Ayers Rock, Uluru by <a target="_blank" href="https://unsplash.com/@henriquefelix">Henrique Félix</small></a><br>

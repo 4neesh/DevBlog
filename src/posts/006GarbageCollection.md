@@ -204,5 +204,3 @@ Garbage collectors introduce different types of mechanisms for allocating and fr
 There are many variables that are involved with garbage collection that require consideration. The many types of implementations also allow the garbage collector to leverage different styles to efficiently manage memory. The JVM garbage collector process covered in this blog post is the default serial garbage collector. The multi-threaded capability of Java can enable concurrent garbage collectors to minimise the use of stop the world events. There are three other collectors that can be used in Java which offer various advantages and drawbacks for application behaviour: G1, parallel, and CMS.
 </p>
 
-<br>
-<small style="float: right;" >Picture: Golden Gate Bridge, San Francisco by <a target="_blank" href="https://unsplash.com/@mvdheuvel">Maarten van den Heuvel</small></a><br>

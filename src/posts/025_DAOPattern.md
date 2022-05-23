@@ -249,6 +249,3 @@ The Hibernate and Spring data packages support multiple designs of the repositor
 This blog has used the DAO pattern to support the growth of an application with multiple data stores. Two different strategies have been used to demonstrate how the DAO can be applied to different levels of abstractions of the repository layer. The specific support for database sessions and transactions can therefore be delegated to the implementations of the DAO to enable the repository layer to remain open to extension.
 You can find the source code from this blog on GitHub <a target="_blank" href="https://github.com/4neesh/DeveloperBlogDemos/tree/master/DAO">here</a>.
 </p>
-
-<br>
-<small style="float: right;" >Picture: Kyoto, Japan by <a target="_blank" href="https://unsplash.com/@boontohhgraphy">Sorasak</small></a><br>

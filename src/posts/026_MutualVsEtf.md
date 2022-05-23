@@ -108,5 +108,3 @@ Pooled funds offer investors the opportunity to diversify their investments and 
 <p>
 By understanding the differences between fund structures, active and passive management and associate costs, it can become easier to differentiate funds by their objectives and suitability to the investors goals.
 </p>
-<br>
-<small style="float: right;" >Picture: Marina Bay Sands, Singapore by <a target="_blank" href="https://unsplash.com/@zyteng1997">Kelvin Zyteng</small></a><br>

@@ -133,7 +133,3 @@ While it may seem natural to extend classes that fit into the "IS A" Object cons
 </p>
 
 <strong>Series link: Go to the next SOLID principle: <a href="https://aneesh.co.uk/interface-segregation-principle">Interface segregation Principle</a></strong>
-
-
-<br>
-<small style="float: right;" >Picture by <a target="_blank" href="https://unsplash.com/@zhenhu2424">Zhen Hu</small></a><br>

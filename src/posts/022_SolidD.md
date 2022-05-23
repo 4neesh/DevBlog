@@ -198,8 +198,3 @@ The introduction of an abstraction between the high and low level class creates 
 If you would like to dive deeper into the ways dependency inversion can be applied with Spring, visit my blog <a href="https://aneesh.co.uk/using-dependency-injection" target="blank">here</a> for more information. 
 
 </p>
-
-
-
-<br>
-<small style="float: right;" >Picture by <a target="_blank" href="https://unsplash.com/@debidiemski">Deborah Diem</small></a><br>
