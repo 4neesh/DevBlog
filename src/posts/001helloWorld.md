@@ -1,5 +1,5 @@
 ---
-title: 'Hello World'
+title: 'Hello World - My first blog'
 date: 2020-04-06 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/001London.jpg

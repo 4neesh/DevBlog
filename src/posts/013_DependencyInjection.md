@@ -1,5 +1,5 @@
 ---
-title: 'Using dependency injection'
+title: 'Using dependency injection with Spring'
 date: 2020-06-29 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/013Tissamaharama.jpg

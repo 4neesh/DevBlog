@@ -1,5 +1,5 @@
 ---
-title: 'Dependency inversion principle'
+title: 'The Dependency inversion principle'
 date: 2020-08-31 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/022_Winterthur.jpg

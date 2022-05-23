@@ -1,5 +1,5 @@
 ---
-title: '[VIDEO] OOP Concepts: Polymorphism'
+title: 'OOP Concepts: Polymorphism'
 date: 2021-03-22
 author: 'Aneesh Mistry'
 featuredImage: ../images/041_polymorphism.jpg

@@ -24,9 +24,7 @@ const postList = props => {
             tags={node.frontmatter.tags}
             author={node.frontmatter.author}
             subtitle={node.frontmatter.subtitle}
-            time={node.frontmatter.time}
-            fluid={node.frontmatter.featuredImage.childImageSharp.fluid} />
-
+            time={node.frontmatter.time} />
         ))
         }
 
@@ -56,13 +54,6 @@ export const postListQuery = graphql`
               tags
               time
               subtitle
-              featuredImage {
-                childImageSharp {
-                  fluid(maxWidth: 600) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
             }
             fields {
               slug

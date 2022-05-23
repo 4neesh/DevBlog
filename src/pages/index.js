@@ -8,7 +8,7 @@ import Helmet from "react-helmet"
 
 function IndexPage () {
 
-  const postsPerPage = 4;
+  const postsPerPage = 5;
   let numberOfPages
 return(
   <Home>
@@ -49,7 +49,6 @@ return(
                   author={node.frontmatter.author}
                   body={node.excerpt}
                   date={node.frontmatter.date}
-                  fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
                   tags={node.frontmatter.tags}
                   subtitle={node.frontmatter.subtitle}
                   time={node.frontmatter.time}
@@ -94,13 +93,6 @@ query {
           tags
           time
           subtitle
-          featuredImage{
-            childImageSharp{
-              fluid(maxWidth: 600){
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
         }
         fields{
           slug

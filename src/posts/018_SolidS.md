@@ -1,5 +1,5 @@
 ---
-title: 'Single responsibility principle'
+title: 'The Single responsibility principle'
 date: 2020-08-03 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/018_StJoseph.jpg

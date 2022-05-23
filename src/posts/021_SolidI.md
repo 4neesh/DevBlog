@@ -1,5 +1,5 @@
 ---
-title: 'Interface segregation principle'
+title: 'The Interface segregation principle'
 date: 2020-08-24 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/021_parker.jpg

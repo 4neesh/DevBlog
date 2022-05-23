@@ -1,5 +1,5 @@
 ---
-title: 'Spring architecture layers'
+title: 'The Spring architecture layers'
 date: 2020-07-13 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/015Wellington.jpg

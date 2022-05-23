@@ -18,7 +18,9 @@ li{
 }
 .indexCard{
   box-shadow: 3px 3px 3px black;
-
+  border-color: $main;
+  background-color: $main;
+  border-radius: 8px;
 }
 .card-image-top{
   border-radius: 1px 1px 1px 1px;

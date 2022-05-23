@@ -1,5 +1,5 @@
 ---
-title: '[VIDEO] OOP Concepts: Abstraction'
+title: 'OOP Concepts: Abstraction'
 date: 2021-03-15
 author: 'Aneesh Mistry'
 featuredImage: ../images/040_abstraction.jpg

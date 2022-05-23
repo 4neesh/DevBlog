@@ -1,5 +1,5 @@
 ---
-title: 'Data Access Object pattern'
+title: 'The Data Access Object pattern'
 date: 2020-09-21 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/025_kyoto.jpg

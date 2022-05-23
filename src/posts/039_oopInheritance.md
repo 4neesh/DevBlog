@@ -1,5 +1,5 @@
 ---
-title: '[VIDEO] OOP Concepts: Inheritance'
+title: 'OOP Concepts: Inheritance'
 date: 2021-03-08
 author: 'Aneesh Mistry'
 featuredImage: ../images/039_Inheritance.jpg

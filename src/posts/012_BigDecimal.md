@@ -1,5 +1,5 @@
 ---
-title: 'Floating point precision'
+title: 'Understanding Floating point precision'
 date: 2020-06-22 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/012BlackRiver.jpg

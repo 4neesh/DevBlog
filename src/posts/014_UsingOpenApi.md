@@ -1,5 +1,5 @@
 ---
-title: 'Using a RESTful API'
+title: 'Using a RESTful API in Spring'
 date: 2020-07-06 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/014Ella.jpg

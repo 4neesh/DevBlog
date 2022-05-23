@@ -68,13 +68,6 @@ export const postQuery = graphql`
                 author
                 date(formatString: "Do MMM YYYY")
                 tags
-                featuredImage{
-                    childImageSharp{
-                      fluid(maxWidth: 600){
-                        ...GatsbyImageSharpFluid
-                      }
-                    }
-                }
             }
         }
     }

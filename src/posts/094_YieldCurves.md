@@ -1,5 +1,5 @@
 ---
-title: 'Yield Curves'
+title: 'An Introduction to Yield Curves'
 date: 2022-04-28
 author: 'Aneesh Mistry'
 featuredImage: ../images/094_yieldIm.jpg

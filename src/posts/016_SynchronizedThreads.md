@@ -1,5 +1,5 @@
 ---
-title: 'Creating multi-threaded visibility'
+title: 'Creating multi-threaded visibility in Java'
 date: 2020-07-20 16:34:00
 author: 'Aneesh Mistry'
 featuredImage: ../images/016_Williamsburg.jpg

@@ -51,7 +51,8 @@ BLOG POST STYLING
 
 .postBadge{
   background-color: $main;
-text-transform: uppercase;
+  text-transform: uppercase;
+  border-radius: 8px;
 }
 
 h1{
