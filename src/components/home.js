@@ -78,7 +78,7 @@ const Layout = ({ children }) => (
                 </a>
 
                 <a
-                href="https://www.youtube.com/channel/UCwEYX5WFfkw1ivWauyZLkJA"
+                href="https://www.youtube.com/c/AneeshMistry"
                 target="_blank" 
                 rel="noopener noreferrer"
                 style={{ color:"black"}}
