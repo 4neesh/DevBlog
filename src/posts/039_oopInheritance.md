@@ -2,7 +2,6 @@
 title: 'OOP Concepts: Inheritance'
 date: 2021-03-08
 author: 'Aneesh Mistry'
-featuredImage: ../images/039_Inheritance.jpg
 subtitle: 'A YouTube video on Inheritance, one of the four concepts of object-orientated programming.'
 time: '15'
 tags:

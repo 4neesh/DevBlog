@@ -2,7 +2,6 @@
 title: 'Using dependency injection with Spring'
 date: 2020-06-29 16:34:00
 author: 'Aneesh Mistry'
-featuredImage: ../images/013Tissamaharama.jpg
 subtitle: 'Dependency injection is a design pattern used to decouple classes within an application and to delegate the implementation of an application to a framework. Explore how dependency injection can be implemented within class design and by using the Spring framework.'
 time: '8'
 tags:

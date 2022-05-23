@@ -2,7 +2,6 @@
 title: 'Modern portfolio theory and fund diversification'
 date: 2021-02-15
 author: 'Aneesh Mistry'
-featuredImage: ../images/037_paris.jpg
 subtitle: 'Understand the use of modern portfolio theory to find an optimal mix of assets and how diversification can be achieved with different types of assets.'
 time: '10'
 tags:

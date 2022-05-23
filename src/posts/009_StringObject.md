@@ -2,7 +2,6 @@
 title: 'Exploring the String Class'
 date: 2020-06-01 16:34:00
 author: 'Aneesh Mistry'
-featuredImage: ../images/009Uluru.jpg
 subtitle: 'Understand how the JVM manages String Objects in memory and at runtime. Review the functionality of the StringBuffer and StringBuilder class.'
 time: '6'
 tags:

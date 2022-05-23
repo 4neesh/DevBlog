@@ -2,7 +2,6 @@
 title: 'Enhanced exceptions testing with catch-exception'
 date: 2021-05-31
 author: 'Aneesh Mistry'
-featuredImage: ../images/051_exceptions2.jpg
 subtitle: 'Use the catch-exception library to enhance the readability and detail of assertions made when testing for exceptions.'
 time: '11'
 tags:

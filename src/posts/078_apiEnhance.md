@@ -2,7 +2,6 @@
 title: 'Exploring Collection API Enhancements from Java 8'
 date: 2021-11-15
 author: 'Aneesh Mistry'
-featuredImage: ../images/078_apiEnhance.jpg
 subtitle: 'Explore the various enhancements introduced with Java 8 to eliminate some of the boilerplate operations we perform on our collections.'
 time: '8'
 tags:

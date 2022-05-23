@@ -2,7 +2,6 @@
 title: 'Using Evaluate Expression and Watches in IntelliJ.'
 date: 2021-08-16
 author: 'Aneesh Mistry'
-featuredImage: ../images/064_evalExp.jpg
 subtitle: 'Use the evaluate expression and watches tools with the IntelliJ debugger to monitor Objects as they are modified frame by frame.'
 time: '8'
 tags:

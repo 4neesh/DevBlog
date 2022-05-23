@@ -2,7 +2,6 @@
 title: 'Using the different JUnit assertions'
 date: 2021-04-05
 author: 'Aneesh Mistry'
-featuredImage: ../images/043_junit1.jpg
 subtitle: 'JUnit assertions allow us to validate our expected behaviour with the actual application behaviour to create unit tests.'
 time: '10'
 tags:

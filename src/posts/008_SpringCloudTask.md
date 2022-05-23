@@ -2,7 +2,6 @@
 title: 'Connecting MySQL to a Spring cloud task'
 date: 2020-05-25 16:34:00
 author: 'Aneesh Mistry'
-featuredImage: ../images/008SplitRock.jpg
 subtitle: 'Run an asynchronous task with Spring Cloud Task and store the values from the output into a MySQL database.'
 time: '6'
 tags:

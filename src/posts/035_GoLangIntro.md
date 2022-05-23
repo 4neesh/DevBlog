@@ -2,7 +2,6 @@
 title: 'An Introduction to Go'
 date: 2021-01-04
 author: 'Aneesh Mistry'
-featuredImage: ../images/035_beijing.jpg
 subtitle: 'An introduction to using Go, the limitations it is was built to resolve and its most valuable use cases.'
 time: '10'
 tags:

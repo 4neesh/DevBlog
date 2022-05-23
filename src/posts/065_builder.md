@@ -2,7 +2,6 @@
 title: 'Using the Builder design pattern.'
 date: 2021-08-23
 author: 'Aneesh Mistry'
-featuredImage: ../images/065_builder.jpg
 subtitle: 'Use the Builder design pattern to create complex Objects in a structured and readable way.'
 time: '8'
 tags:

@@ -2,7 +2,6 @@
 title: 'Navigating across IntelliJ'
 date: 2021-06-28
 author: 'Aneesh Mistry'
-featuredImage: ../images/056_navigate.jpg
 subtitle: 'Become familiar with key keyboard shortcuts to search across application files and method calls.'
 time: '8'
 tags:

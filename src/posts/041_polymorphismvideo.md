@@ -2,7 +2,6 @@
 title: 'OOP Concepts: Polymorphism'
 date: 2021-03-22
 author: 'Aneesh Mistry'
-featuredImage: ../images/041_polymorphism.jpg
 subtitle: 'A YouTube video on Polymorphism, one of the four concepts of object-orientated programming.'
 time: '11'
 tags:

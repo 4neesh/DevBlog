@@ -2,7 +2,6 @@
 title: 'Using the Rule Annotation'
 date: 2021-06-21
 author: 'Aneesh Mistry'
-featuredImage: ../images/055_rule.jpg
 subtitle: 'Use the Rule annotation and the TemporaryFolder to create and teardown files for use within unit testing.'
 time: '9'
 tags:

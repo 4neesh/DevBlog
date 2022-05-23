@@ -2,7 +2,6 @@
 title: 'OOP Concepts: Abstraction'
 date: 2021-03-15
 author: 'Aneesh Mistry'
-featuredImage: ../images/040_abstraction.jpg
 subtitle: 'A YouTube video on Abstraction, one of the four concepts of object-orientated programming.'
 time: '25'
 tags:

@@ -2,7 +2,6 @@
 title: 'Syntax changes with Java 9'
 date: 2022-01-24
 author: 'Aneesh Mistry'
-featuredImage: ../images/088_syntax.jpg
 subtitle: 'Look at the 3 main changes introduced with Java 9 Syntax'
 time: '11'
 tags:

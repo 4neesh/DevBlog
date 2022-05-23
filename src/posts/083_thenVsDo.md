@@ -2,7 +2,6 @@
 title: 'ThenReturn vs DoReturn'
 date: 2021-12-20
 author: 'Aneesh Mistry'
-featuredImage: ../images/083_thenVsDo.jpg
 subtitle: 'Use matchers to improve the readability of assertions with the assertJ library'
 time: '6'
 tags:

@@ -2,7 +2,6 @@
 title: 'Avoid the NullPointerException when using the .equals method.'
 date: 2021-08-30
 author: 'Aneesh Mistry'
-featuredImage: ../images/066_equals.jpg
 subtitle: 'Understand how the structure of a boolean can be designed to avoid a NullPointerException.'
 time: '4'
 tags:

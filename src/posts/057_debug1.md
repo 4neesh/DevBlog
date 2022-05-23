@@ -2,7 +2,6 @@
 title: 'Exploring stack calls with the debugger'
 date: 2021-07-05
 author: 'Aneesh Mistry'
-featuredImage: ../images/057_debug.jpg
 subtitle: 'Become familiar with the core debugging tools available with IntelliJ.'
 time: '8'
 tags:

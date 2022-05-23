@@ -2,7 +2,6 @@
 title: 'When and how to use Lambda expressions'
 date: 2021-10-04
 author: 'Aneesh Mistry'
-featuredImage: ../images/072_lambda.jpg
 subtitle: 'Understand how to create functional interface instances with a Lambda expression with Java 8'
 time: '10'
 tags:

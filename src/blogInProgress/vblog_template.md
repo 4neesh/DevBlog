@@ -2,7 +2,6 @@
 title: 'Improve test readability with matchers'
 date: 2021-11-22
 author: 'Aneesh Mistry'
-featuredImage: ../images/053_matchers.jpg
 subtitle: 'Use matchers to improve the readability of assertions with the assertJ library'
 time: '6'
 tags:

@@ -2,7 +2,6 @@
 title: 'How to use the ArgumentCaptor from Mockito'
 date: 2021-07-26
 author: 'Aneesh Mistry'
-featuredImage: ../images/060_argument.jpg
 subtitle: 'Use the argumentcaptor from Mockito to extract arguments passed within a method call to later test upon.'
 time: '7'
 tags:

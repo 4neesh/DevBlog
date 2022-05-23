@@ -2,7 +2,6 @@
 title: 'Getting started with Mockito'
 date: 2021-05-03
 author: 'Aneesh Mistry'
-featuredImage: ../images/047_mockito.jpg
 subtitle: 'Use the mock, when and thenReturn keywords to get starting with mocking frameworks.'
 time: '11'
 tags:

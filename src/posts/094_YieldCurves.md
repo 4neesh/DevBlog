@@ -2,7 +2,6 @@
 title: 'An Introduction to Yield Curves'
 date: 2022-04-28
 author: 'Aneesh Mistry'
-featuredImage: ../images/094_yieldIm.jpg
 subtitle: 'Understand what a yield curve is, and how they are used for understanding interest rate expectations.'
 time: '10'
 tags:

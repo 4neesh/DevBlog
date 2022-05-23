@@ -2,7 +2,6 @@
 title: 'How @InjectMocks works with Mockito'
 date: 2021-08-09
 author: 'Aneesh Mistry'
-featuredImage: ../images/063_injectmocks.jpg
 subtitle: 'Learn about how you can use @InjectMocks to automatically add services to classes as they are tested with Mockito.'
 time: '8'
 tags:

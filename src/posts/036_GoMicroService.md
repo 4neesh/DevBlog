@@ -2,7 +2,6 @@
 title: 'Creating a RESTful web service in Go'
 date: 2021-01-18
 author: 'Aneesh Mistry'
-featuredImage: ../images/036_santorini.jpg
 subtitle: 'Visit the design patterns for creating a RESTful web service in Go.'
 time: '15'
 tags:

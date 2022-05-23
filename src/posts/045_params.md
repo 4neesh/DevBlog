@@ -2,7 +2,6 @@
 title: 'When and how to use parameterized unit testing'
 date: 2021-04-19
 author: 'Aneesh Mistry'
-featuredImage: ../images/045_params.jpg
 subtitle: 'Using parameterized testing can enable you to efficiently test different cases for a method with different method arguments.'
 time: '12'
 tags:

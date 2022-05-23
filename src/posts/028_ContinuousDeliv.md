@@ -2,7 +2,6 @@
 title: 'How continuous delivery supports functional testing'
 date: 2020-10-12
 author: 'Aneesh Mistry'
-featuredImage: ../images/028_yosemite.jpg
 subtitle: 'Explore the value continuous delivery can bring during the phases of functional testing.'
 time: '8'
 tags:

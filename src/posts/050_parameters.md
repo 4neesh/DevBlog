@@ -2,7 +2,6 @@
 title: 'How to choose the tests to write'
 date: 2021-05-24
 author: 'Aneesh Mistry'
-featuredImage: ../images/050_parameters.jpg
 subtitle: 'Understand how to design the tests to write for the purposes of a method and its place within an application.'
 time: '12'
 tags:

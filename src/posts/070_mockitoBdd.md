@@ -2,7 +2,6 @@
 title: 'Introduction to MockitoBDD'
 date: 2021-09-13
 author: 'Aneesh Mistry'
-featuredImage: ../images/070_mockitobdd.jpg
 subtitle: 'Explore the available methods that MockitoBDD offers to support behaviour-driven-development testing.'
 time: '6'
 tags:

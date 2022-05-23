@@ -2,7 +2,6 @@
 title: 'Key takeaways from The Phoenix Project'
 date: 2020-12-21
 author: 'Aneesh Mistry'
-featuredImage: ../images/034_arizona.jpg
 subtitle: 'Key takeaways from the best-selling novel on modern IT and software delivery: The Phoenix Project.'
 time: '10'
 tags:

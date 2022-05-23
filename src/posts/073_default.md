@@ -2,7 +2,6 @@
 title: 'Creating default methods within interfaces'
 date: 2021-10-11
 author: 'Aneesh Mistry'
-featuredImage: ../images/073_default.jpg
 subtitle: 'Use default methods to create backward-compatible functionality within interfaces with Java 8.'
 time: '6'
 tags:

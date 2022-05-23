@@ -2,7 +2,6 @@
 title: 'How the JVM uses the heap and stack'
 date: 2020-10-19
 author: 'Aneesh Mistry'
-featuredImage: ../images/029_dv.jpg
 subtitle: 'Explore how the JVM uses the heap space and stack memory to manage the runtime and Objects.'
 time: '6'
 tags:

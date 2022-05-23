@@ -2,7 +2,6 @@
 title: 'Connect a Spring Boot REST Server with a MySQL Database'
 date: 2022-02-11
 author: 'Aneesh Mistry'
-featuredImage: ../images/091_SpringToMySqlpng.jpg
 subtitle: 'Connect a Spring REST server with a MySQL Database to return persisted data to a GET request.'
 time: '16'
 tags:

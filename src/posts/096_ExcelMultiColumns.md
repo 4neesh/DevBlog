@@ -2,7 +2,6 @@
 title: 'Populate multiple Excel columns in Java'
 date: 2022-05-17
 author: 'Aneesh Mistry'
-featuredImage: ../images/096_Excel2.jpg
 subtitle: 'Use the apache poi library to create and populate an Excel workbook'
 time: '6'
 tags:

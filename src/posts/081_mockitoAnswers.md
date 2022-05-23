@@ -2,7 +2,6 @@
 title: 'Intro to Mockito Answers'
 date: 2021-12-06
 author: 'Aneesh Mistry'
-featuredImage: ../images/081_mockitoAnswer.jpg
 subtitle: 'Explore Mockito Answers and understand how they can support dynamic mocking of method calls.'
 time: '6'
 tags:

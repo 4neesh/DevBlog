@@ -2,7 +2,6 @@
 title: 'Update a REST Controller with PUT, POST and DELETE endpoints'
 date: 2022-02-13
 author: 'Aneesh Mistry'
-featuredImage: ../images/092_PutPostDelete.jpg
 subtitle: ''
 time: '10'
 tags:

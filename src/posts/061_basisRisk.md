@@ -2,7 +2,6 @@
 title: 'An introduction to basis risk'
 date: 2021-07-26
 author: 'Aneesh Mistry'
-featuredImage: ../images/061_edinburgh.jpg
 subtitle: 'Understand how basis risk is derived and why it is important to consider with hedging strategies.'
 time: '10'
 tags:

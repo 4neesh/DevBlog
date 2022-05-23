@@ -2,7 +2,6 @@
 title: 'Create a MySQL Database table'
 date: 2022-02-09
 author: 'Aneesh Mistry'
-featuredImage: ../images/090_MySqlTable.jpg
 subtitle: 'Install and download MySQL and MySQL workbench and create a table with data.'
 time: '8'
 tags:

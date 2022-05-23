@@ -2,7 +2,6 @@
 title: 'Inside Java: why it works everywhere'
 date: 2021-06-07
 author: 'Aneesh Mistry'
-featuredImage: ../images/052_elle.jpg
 subtitle: 'Take a look under the hood of Java to understand how code is compiled, interpreted and executed within the machine.'
 time: '8'
 tags:

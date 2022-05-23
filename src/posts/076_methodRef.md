@@ -2,7 +2,6 @@
 title: 'Using method references with Java 8'
 date: 2021-11-01
 author: 'Aneesh Mistry'
-featuredImage: ../images/076_methodRef.jpg
 subtitle: 'Begin using method references to improve the readability of your Lambda expressions.'
 time: '8'
 tags:

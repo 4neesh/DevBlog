@@ -2,7 +2,6 @@
 title: 'Core text file operations with the Linux CLI'
 date: 2021-09-06
 author: 'Aneesh Mistry'
-featuredImage: ../images/067_textOps.jpg
 subtitle: 'Learn about the 5 ways you can view files within the Linux CLI.'
 time: '6'
 tags:

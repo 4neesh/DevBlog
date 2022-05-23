@@ -2,7 +2,6 @@
 title: 'Intro to the Java 8 Optional class'
 date: 2021-11-08
 author: 'Aneesh Mistry'
-featuredImage: ../images/077_optional.jpg
 subtitle: 'Understand why the Optional class was introduced with Java 8 and how you can use it to improve and reduce verbose code for Null checking.'
 time: '8'
 tags:

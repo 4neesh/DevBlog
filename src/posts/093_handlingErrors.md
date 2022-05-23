@@ -2,7 +2,6 @@
 title: 'Customise and format REST API Error responses'
 date: 2022-03-07
 author: 'Aneesh Mistry'
-featuredImage: ../images/093_errorResponse.jpg
 subtitle: 'Look at how we can customise API error messages we receive from REST API requestes'
 time: '13'
 tags:

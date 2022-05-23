@@ -2,7 +2,6 @@
 title: 'The LIBOR/OIS Spread'
 date: 2021-05-15
 author: 'Aneesh Mistry'
-featuredImage: ../images/xxx.jpg
 subtitle: 'A look into the OIS Libor spread and why it is important'
 time: '10'
 tags:
@@ -126,6 +125,3 @@ OIS is a rate used by banks to borrow overnight, and therefore greately reduces 
 <br>
 The LIBOR-OIS spread is a useful indicator to summarise the confidence banks have in lending to each other as it reflects the credit risk they perceive for longer term loans. 
 </p>
-
-<br>
-<small style="float: right;" >Picture: Madrid, Spain by <a target="_blank" href="https://unsplash.com/@jorgefdezsalas">Jorge Fernández Salas</small></a><br>

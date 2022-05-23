@@ -2,7 +2,6 @@
 title: 'How to stub void methods'
 date: 2021-12-27
 author: 'Aneesh Mistry'
-featuredImage: ../images/084_stubVoid.jpg
 subtitle: 'Use matchers to improve the readability of assertions with the assertJ library'
 time: '10'
 tags:

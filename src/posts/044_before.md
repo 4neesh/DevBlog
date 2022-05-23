@@ -2,7 +2,6 @@
 title: 'Using the @Before Annotation with JUnit'
 date: 2021-04-12
 author: 'Aneesh Mistry'
-featuredImage: ../images/044_before.jpg
 subtitle: 'The @Before annotation allows us to run custom logic before each unit test of a test class.'
 time: '6'
 tags:

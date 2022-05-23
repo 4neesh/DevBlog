@@ -2,7 +2,6 @@
 title: 'Hello World - My first blog'
 date: 2020-04-06 16:34:00
 author: 'Aneesh Mistry'
-featuredImage: ../images/001London.jpg
 subtitle: 'My first blog post. How I found my passion for software engineering and what I aim to achieve with my blog.'
 time: '3'
 tags: 

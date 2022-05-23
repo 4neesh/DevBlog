@@ -2,7 +2,6 @@
 title: 'Testing private methods with Powermock'
 date: 2021-07-19
 author: 'Aneesh Mistry'
-featuredImage: ../images/059_private.jpg
 subtitle: 'Understand how the reflection utils and Powermock library offer ways that we can test private methods.'
 time: '9'
 tags:

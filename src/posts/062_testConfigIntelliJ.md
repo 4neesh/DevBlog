@@ -2,7 +2,6 @@
 title: 'Customise the IntelliJ test view'
 date: 2021-08-02
 author: 'Aneesh Mistry'
-featuredImage: ../images/062_customtestoutput.jpg
 subtitle: 'Explore the custom settings in IntelliJ to modify the feedback, reports and navigation options after running a test class.'
 time: '11'
 tags:

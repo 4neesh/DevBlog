@@ -2,7 +2,6 @@
 title: 'Create an Excel workbook in Java'
 date: 2022-05-10
 author: 'Aneesh Mistry'
-featuredImage: ../images/095_excel1.jpg
 subtitle: 'Use the apache poi library to create and populate an Excel workbook'
 time: '6'
 tags:

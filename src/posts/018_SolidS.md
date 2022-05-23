@@ -2,7 +2,6 @@
 title: 'The Single responsibility principle'
 date: 2020-08-03 16:34:00
 author: 'Aneesh Mistry'
-featuredImage: ../images/018_StJoseph.jpg
 subtitle: 'The single responsibility principle is the first of the SOLID design principles. The single responsibility of classes promotes modularity and cohesion.'
 time: '10'
 tags:

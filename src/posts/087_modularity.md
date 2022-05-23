@@ -2,7 +2,6 @@
 title: 'Java 9 Modularity - Java Tutorial'
 date: 2022-01-17
 author: 'Aneesh Mistry'
-featuredImage: ../images/087_java9Mod.jpg
 subtitle: 'Create strong encapsulation with Java 9 modularity.'
 time: '10'
 tags:

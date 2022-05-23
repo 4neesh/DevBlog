@@ -2,7 +2,6 @@
 title: 'Liskov substitution principle'
 date: 2020-08-17 16:34:00
 author: 'Aneesh Mistry'
-featuredImage: ../images/020_zhen.jpg
 subtitle: 'The Liskov substitution principle emphasises the importance to inspect the behaviours that subclasses inherit from their parents to ensure they can be completely substitutable for all instances of the parent.'
 time: '5'
 tags:

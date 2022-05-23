@@ -2,7 +2,6 @@
 title: 'Testing the content and order of collections'
 date: 2021-07-12
 author: 'Aneesh Mistry'
-featuredImage: ../images/058_collections.jpg
 subtitle: 'Explore 3 different assertion methods from the AssertJ library that can help us to test the content and order of items within a collection.'
 time: '9'
 tags:

@@ -2,7 +2,6 @@
 title: 'Using lambda for functional methods'
 date: 2020-10-26
 author: 'Aneesh Mistry'
-featuredImage: ../images/030_paris.jpg
 subtitle: 'Use lambda expressions to introduce functional programming with Java.'
 time: '6'
 tags:

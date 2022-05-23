@@ -2,7 +2,6 @@
 title: 'Using the Single Responsibility Principle'
 date: 2021-03-29
 author: 'Aneesh Mistry'
-featuredImage: ../images/042_srp.jpg
 subtitle: 'Use the single responsibility principle development design to reduce the complexity of each class.'
 time: '11'
 tags:

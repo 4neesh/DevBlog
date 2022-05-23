@@ -2,7 +2,6 @@
 title: 'Creating multi-threaded visibility in Java'
 date: 2020-07-20 16:34:00
 author: 'Aneesh Mistry'
-featuredImage: ../images/016_Williamsburg.jpg
 subtitle: 'This post will explore how the race condition arises within multi-threaded applications, and how you can resolve it with atomic values and synchronization.'
 time: '10'
 tags:

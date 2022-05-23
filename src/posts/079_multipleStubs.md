@@ -2,7 +2,6 @@
 title: 'Stubbing consecutive calls with Mockito'
 date: 2021-11-22
 author: 'Aneesh Mistry'
-featuredImage: ../images/079_multiStub.jpg
 subtitle: 'Use thenReturn from Mockito to efficiently stub different method responses with Mockito'
 time: '12'
 tags:

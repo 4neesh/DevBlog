@@ -2,7 +2,6 @@
 title: 'Testing the Entity Manager API'
 date: 2021-12-13
 author: 'Aneesh Mistry'
-featuredImage: ../images/082_entityManager.jpg
 subtitle: 'Use matchers to improve the readability of assertions with the assertJ library'
 time: '7'
 tags:

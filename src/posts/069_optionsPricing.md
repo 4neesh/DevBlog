@@ -2,7 +2,6 @@
 title: 'Options contract and their pricing'
 date: 2021-09-13
 author: 'Aneesh Mistry'
-featuredImage: ../images/069_options.jpg
 subtitle: 'Understand the Options contract is and how it is priced'
 time: '8'
 tags:

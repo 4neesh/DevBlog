@@ -2,7 +2,6 @@
 title: 'Changing default Mock behaviour'
 date: 2022-01-03
 author: 'Aneesh Mistry'
-featuredImage: ../images/085_changeDefaultMock.jpg
 subtitle: 'Use matchers to improve the readability of assertions with the assertJ library'
 time: '6'
 tags:

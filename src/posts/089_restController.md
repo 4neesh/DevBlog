@@ -2,7 +2,6 @@
 title: 'Create a Responsive REST Controller'
 date: 2022-02-07
 author: 'Aneesh Mistry'
-featuredImage: ../images/089_RestController.jpg
 subtitle: 'Learn how to create a responsive REST service with Spring Boot'
 time: '11'
 tags:

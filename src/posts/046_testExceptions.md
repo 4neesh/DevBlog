@@ -2,7 +2,6 @@
 title: 'Testing for exceptions with JUnit'
 date: 2021-04-26
 author: 'Aneesh Mistry'
-featuredImage: ../images/046_exceptions.jpg
 subtitle: 'Use JUnit to test for exceptions within our class methods.'
 time: '7'
 tags:

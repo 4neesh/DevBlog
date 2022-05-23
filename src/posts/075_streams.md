@@ -2,7 +2,6 @@
 title: 'Using the Java 8 Stream API'
 date: 2021-10-25
 author: 'Aneesh Mistry'
-featuredImage: ../images/075_stream.jpg
 subtitle: 'Explore the various functionality that can be achieved with the stream API to transform and collect data.'
 time: '6'
 tags:

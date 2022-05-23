@@ -2,7 +2,6 @@
 title: 'xxx'
 date: 2021-06-01
 author: 'Aneesh Mistry'
-featuredImage: ../images/xxx.jpg
 subtitle: 'xxx'
 time: 'xx'
 tags:

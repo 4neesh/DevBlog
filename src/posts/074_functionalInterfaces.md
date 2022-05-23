@@ -2,7 +2,6 @@
 title: 'Out of the box functional interfaces with Java 8'
 date: 2021-10-18
 author: 'Aneesh Mistry'
-featuredImage: ../images/074_functionalinterface.jpg
 subtitle: 'Explore the common and most useful functional interfaces with Java 8.'
 time: '10'
 tags:

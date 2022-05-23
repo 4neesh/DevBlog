@@ -2,7 +2,6 @@
 title: 'Mock, Stub, and Spy with Mockito'
 date: 2021-05-10
 author: 'Aneesh Mistry'
-featuredImage: ../images/048_mockStubSpy.jpg
 subtitle: 'Use mock, stub and spy to create different types of test doubles with unit testing'
 time: '15'
 tags:

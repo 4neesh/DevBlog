@@ -2,7 +2,6 @@
 title: 'Improve test readability with matchers'
 date: 2021-06-14
 author: 'Aneesh Mistry'
-featuredImage: ../images/054_customMatchers.jpg
 subtitle: 'Create a custom matcher to enhance assertion readability and logical processing with the AssertJ library'
 time: '12'
 tags:

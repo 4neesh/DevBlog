@@ -2,7 +2,6 @@
 title: 'How to use JShell - Java 9 Tutorial'
 date: 2022-01-10
 author: 'Aneesh Mistry'
-featuredImage: ../images/086_jshell.jpg
 subtitle: 'Learn about the key functions and work processes when using JShell'
 time: '12'
 tags:
