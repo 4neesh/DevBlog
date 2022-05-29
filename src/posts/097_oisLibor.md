@@ -1,6 +1,6 @@
 ---
 title: 'The LIBOR/OIS Spread'
-date: 2022-05-24
+date: 2022-05-29
 author: 'Aneesh Mistry'
 subtitle: 'A look into the OIS Libor spread and why it is important'
 time: '10'
