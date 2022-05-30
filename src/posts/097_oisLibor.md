@@ -16,17 +16,17 @@ tags:
 <br>
 <h4>Interbank markets</h4>
 <p>
-The interbank market differs from the 'open market' as it only enables specific banks to trade with each other. The interbank market often refers to the interbank foreign exchange (FX) market where currency and currency deriviates are traded. There also exists an interbank lending market where short term loans are also traded amongst banks to enable them to better manage their capital reserves and liquidity requirements. This blog will focus on the interbank lending market. 
+The interbank market differs from the 'open market' as it only enables specific banks to trade with each other. The interbank market often refers to the interbank foreign exchange (FX) market where currency and currency derivatives are traded. There also exists an interbank lending market where short term loans are also traded amongst banks to enable them to better manage their capital reserves and liquidity requirements. This blog will focus on the interbank lending market. 
 </p>
 <p>
 The interbank lending market enables banks to manage their liquidity risk to meet stringent requirements. Amongst many, one reason these requirements are in place are to ensure the banks are able to withstand any potential 'bank runs' by customers. On the other hand, banks with excess levels of capital can lend their reserves to earn an interest income.
 </p>
 <p>
 Why would banks want to lend to each other?<br>
-Imagine if Bank A has has £10 million pounds. Bank A will be able to make a nice profit by lending £8 million of that loan to commercial purposes at an interest rate of 2%. But Bank A has not yet found a purpose for the other £2 million on it's books. So rather than letting it sit in the bank earning nothing, they can then lend to other banks in the <i>interbank lending market</i> for a set period of time until they find a more lucrative use for the capital. 
+Imagine if Bank A has £10 million pounds. Bank A will be able to make a nice profit by lending £8 million of that loan to commercial purposes at an interest rate of 2%. But Bank A has not yet found a purpose for the other £2 million on it's books. So rather than letting it sit in the bank earning nothing, they can then lend to other banks in the <i>interbank lending market</i> for a set period of time until they find a more lucrative use for the capital. 
 </p> 
 <p>
-Bank B may be a customer to Bank A as they may require extra short-term capital for their own books (perhaps to meet liquidity requirements or to satisfy a new loan opportuntity). They are able to borrow capital on the interbank market at an agreed interest rate. Bank A and Bank B will agree a timeframe for which the money is lent; Bank A is happy as they find a use for their extra £2 million and Bank B is happy because they are able to satisfy their immediate capital requirements. 
+Bank B may be a customer to Bank A as they may require extra short-term capital for their own books (perhaps to meet liquidity requirements or to satisfy a new loan opportunity). They are able to borrow capital on the interbank market at an agreed interest rate. Bank A and Bank B will agree a timeframe for which the money is lent; Bank A is happy as they find a use for their extra £2 million and Bank B is happy because they are able to satisfy their immediate capital requirements. 
 </p>
 <p>
 The banks that are participating in the interbank market tend to be of high-credit quality. The interbank market is unique as loans are made without collateral and at a very low interest rate to reflect the credit-quality of the participants. 
@@ -47,16 +47,16 @@ The LIBOR rate is posted on a daily basis. It is calculated by the British Banki
 The rate that each bank offers for short term lending will change each day to reflect credit risk on the loan. Credit risk is the risk that the original loan amount will not be repaid. As the length of the loan increases, so does the credit risk, as there is a longer period of time where the loanee may default and be unable to repay the loan in full. LIBOR is known as a <strong>forward-looking</strong> interest rate as it is a determined rate that is set at the beginning of the loan, and is paid at the loan's maturity. 
 </p>
 <p>
-So why would an everday person care about LIBOR?
+So why would an everyday person care about LIBOR?
 </p>
 <p>
-As a bank customer, you may also be impacted by LIBOR. LIBOR is often used to determine the interest rate on various products such as credit cards, loans and mortgages. As LIBOR impacts the rate at which a bank can obtain a loan at, it will impact subsuequent loans the bank makes to its customers to therefore ensure they remain profitable.
+As a bank customer, you may also be impacted by LIBOR. LIBOR is often used to determine the interest rate on various products such as credit cards, loans and mortgages. As LIBOR impacts the rate at which a bank can obtain a loan at, it will impact subsequent loans the bank makes to its customers to therefore ensure they remain profitable.
 </p>
 
 <br>
 <h4>Overnight Index Swap</h4>
 <p>
-The overnight index swap is a fixed-floating interest rate swap. The swap uses an overnight index as the floating rate. The overnight index is calculated by compounding an overnight undsecured lending rate to a new maturity. The overnight unsecured index rate is reflective of a single central bank. Indexes include:<br>
+The overnight index swap is a fixed-floating interest rate swap. The swap uses an overnight index as the floating rate. The overnight index is calculated by compounding an overnight unsecured lending rate to a new maturity. The overnight unsecured index rate is reflective of a single central bank. Indexes include:<br>
 &#8226; SONIA: Sterling Overnight Index Average<br>
 &#8226; EONIA: Euro Overnight Index Average<br>
 &#8226; SARON: Swiss Average Rate Overnight Index<br>
@@ -95,7 +95,7 @@ One assumption made within an investment bank is the presence of a 'Chinese wall
 If the LIBOR submitters for a bank are aware that a specifically higher or lower LIBOR can benefit the net position of their traders, they may be motivated to post artificially high or low LIBOR rates to the BBA. It is also believed that up to 20 banks colluded to submitting LIBOR rates that were not strictly competitive to benefit their positions. 
 </p>
 <p>
-A further drive behind collusion in submitting LIBOR rates that were not competitive were to give a false premise for the banks position to borrow and lend in the market. If a bank considered themselves riskier to lend to, they may reduce the LIBOR rate thay they think they can lend at. As a result the LIBOR rate for the day may be reduced, thus enabling the bank that submitted the lower rate to borrow more cheaply. 
+A further drive behind collusion in submitting LIBOR rates that were not competitive were to give a false premise for the banks position to borrow and lend in the market. If a bank considered themselves riskier to lend to, they may reduce the LIBOR rate they they think they can lend at. As a result the LIBOR rate for the day may be reduced, thus enabling the bank that submitted the lower rate to borrow more cheaply. 
 </p>
 <p>
 In the aftermath of the scandal, believed to have started since 2003, LIBOR is currently being phased out, expected to be completed by June 30 2023. 
@@ -103,7 +103,7 @@ In the aftermath of the scandal, believed to have started since 2003, LIBOR is c
 <br>
 <h4>Summary</h4>
 <p>
-The interbank lending market enables banks to efficiently allocate and obtain capital dependening on whether they hold excess amounts or require it for short-term unsecured borrowing. LIBOR is a variable interest rate that determines the rate which banks can lend to each other in 35 different currency/maturity combinations. 
+The interbank lending market enables banks to efficiently allocate and obtain capital depending on whether they hold excess amounts or require it for short-term unsecured borrowing. LIBOR is a variable interest rate that determines the rate which banks can lend to each other in 35 different currency/maturity combinations. 
 <br>
 OIS is a rate used by banks to borrow overnight, and therefore reflects a reduced presence of credit risk in the pricing.
 <br>

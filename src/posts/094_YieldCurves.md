@@ -86,7 +86,7 @@ Let's break it down slightly to understand why it is the shape it is. When an in
 As a result, investors therefore expect higher returns when the time to repayment (maturity) is longer. Equally, if the money were left in a savings account, it may accrue more interest in a longer period of time.
 </p>
 <p>
-The yield curve for a bond is not linear, afterall we may not expect the exact same yield for 2 months as we do receive for 1 month. We can see in the graph that the yield for 20 year maturity is only slightly less (3.9%) than the maturity for 30 years (4%).
+The yield curve for a bond is not linear, after all we may not expect the exact same yield for 2 months as we do receive for 1 month. We can see in the graph that the yield for 20 year maturity is only slightly less (3.9%) than the maturity for 30 years (4%).
 </p>
 <p>
 The yield curve typically increases at a steeper rate during the early period, and then flattens towards the longer maturities from 20 years to 30 years. 
@@ -114,7 +114,7 @@ We may also yield curves steepen:
 
 ![Steep yield curve graph](../../src/images/094_steepYield.jpg)
 
-A steepening yield curve will see yields on bonds that mature at dates further into the future return significantly higher yields than those in the short term. A steepening curve reflects a steepening long maturity or a shallowing short maturity. It is indicitive of expectations for higher interest rates in the future, so corporations are willing to provide greater returns on their long-term bonds. 
+A steepening yield curve will see yields on bonds that mature at dates further into the future return significantly higher yields than those in the short term. A steepening curve reflects a steepening long maturity or a shallowing short maturity. It is indicative of expectations for higher interest rates in the future, so corporations are willing to provide greater returns on their long-term bonds. 
 </p>
 <p>
 Lastly, we can also see an inverted yield curve:
@@ -144,5 +144,5 @@ It can also be interesting to take a look at yield curves today, to understand h
 <br>
 <h4>Summary</h4>
 <p>
-The yield curve is used to understand the expected returns of an investor for a given bond at a given maturity. The yield curve helps us to understand future expecations of interest rates as investments with bonds are often compared with risk-free savings. Analyst will create historical yield spreads to compare different bonds, and to understand when some bonds are trading at a premium than they previously have against others. 
+The yield curve is used to understand the expected returns of an investor for a given bond at a given maturity. The yield curve helps us to understand future expectations of interest rates as investments with bonds are often compared with risk-free savings. Analyst will create historical yield spreads to compare different bonds, and to understand when some bonds are trading at a premium than they previously have against others. 
 </p>

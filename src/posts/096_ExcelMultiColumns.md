@@ -10,7 +10,7 @@ tags:
 ---
 
 <br>
-<h4>Populate mutliple Excel Columns with Java</h4>
+<h4>Populate multiple Excel Columns with Java</h4>
 <p>
 Use a multi-dimensional Java array pattern to efficiently populate multiple columns in an Excel worksheet with Java. 
 We will first look at how you can manually create cells and populate them with data in a for-loop, then improve our design by populating a multi-dimensional array and filling the day in accordingly. 

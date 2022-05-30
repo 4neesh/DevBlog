@@ -1,11 +1,11 @@
 ---
-title: 'xxx'
-date: 2020-09-28 16:34:00
+title: 'Introduction to Repos'
+date: 2022-06-03
 author: 'Aneesh Mistry'
 subtitle: 'xxx'
-time: 'xx'
+time: '10'
 tags:
-- xxx
+- Finance
 ---
 <br>
 <strong>Key Takeaways</strong><br>
@@ -13,155 +13,106 @@ tags:
 &#8226; The .<br>
 &#8226; The.<br>
 
-![Merge sort step 2](../../src/images/011MergeSort2.png)
-
+<br>
+<h4>An asset repurchase agreement</h4>
+<p>
+I originally expected this blog to be fairly short; while the Repo market is worth trillions of dollars in a global market, it is a fairly simple concept (as we will later see). However the importance of Repos as the 'pipelines of the global financial system' will take this blog through a more interesting turn into understanding fiscal monetary policy and how a government can shape the behaviour of the financial markets, but more worryingly, how the opposite can also occur.
+</p>
 
 <br>
-<h4>Pricing a bond</h4>
+<h4>What is a Repo?</h4>
 <p>
-We use pricing on bonds to find a fair value of them in the market.
-Pricing a bond consists of calculating the value of the bonds future cash flow and the value upon maturity (face value).
-A <u>rate of return</u> is defined for the bond to determine if the investment in the bond is worthwhile.
-
+The term 'Repo' is short for repurchase agreement. A repurchase agreement is commonly referred to as a 'pawn shop' for banks, but I don't really understand it that way, perhaps it's the wording..
 </p>
 <p>
-Before we look deeper on the price valuation of a bond, there are a few definitions to clear:
-<strong>Coupon rate</strong>: The interest return on the investment paid each year until maturity.
-<strong>Maturity rate</strong>: The date at which the face value of the bond is repaid. Face value is not always equal to the amount invested.
-<strong>Current price</strong>: The price of the bond with reference to the interest rate. As interest rates rise, the current price will decrease as the bond is seen as less valuable to buy compared to interest rate.
+A repurchase agreement is used by banks to trade debt for cash. So with this in mind, banks <u>need</u> cash and are happy to trade their debt for it. Repurchase agreements are typically traded on an exchange, so let's look at an example: <br>
+Bank A holds a government bond, Bond A, but needs to raise some short term capital for it's own purposes. One way a bank can do this is by selling Bond A on the market, but what if Bank A would also like to keep Bond A in its portfolio for a longer term? Well, Bank A can sell Bond A and then repurchase it after the short-term capital requirement is satisfied.
+</p>
+On the other hand, Bank B has excess capital sitting in its reserves, and would like to make a return on that capital rather than have it sit there earning nothing. Let's take a look at how Bank A and Bank B can create a nice agreement:<br>
+Bank A sells Bond A to Bank B. Bank B transfers cash to Bank A and receives Bond A for £100. Bank A only needs the £100 cash overnight, so they agree Bank B to sell Bond A back to Bank A the next day. Bank B will sell this bond for £101 to realise a £1 profit. Bank A is satisfied that they have ultimately obtained their £100 capital for a cost of £1. 
 </p>
 <p>
-The price of a bond is reflected by its yield to maturity. The yield to maturity of a bond is represented by the coupon returns each year multiplied by a discount rate of the expected interest return. 
-Using the same yield curve, we are able to determine the face value of what is returned at the value today. If interest rates are 3% in 2 years time, the face value will be worth what is paid and today it will be less (as it accumulates value from 3% year year).
-The price of the coupons however increase as we understand they can be reinvested to return more. 
-The face value divided by the compounded interest payments can be used to calculate the price of a zero-coupon bond. These are usually traded below par price to the face value to hedge against interest rates. 
-</p>
-<br>
-<h4>Yield curves</h4>
-<p>
-A yield curve is used to benchmark the return on interest for business lending. 
-A yield curve is used to plot the interest rate of a bond of equal risk (credit worthiness), but with different maturities.
-A normal yield curve will look as so:
-
-//insert image
-
-Where the  longer the term of the maturity, the higher the yield (return on interest). This suggests risks with time. 
-
-A flat yield curve means investors expect the interest rates to remain the same 
-
-An inverted curve, where short term interest is greater than long term interest shows an expectation that the short term rates to decrease.
-
-The yield curve is an indicator of expectations. 
-The yield curve also used to suggest inflation rates and the long-term prediction of the economy. 
-The yield curve is used as a benchmark for debt within the market such as lending rates. It predicts output in the economy and growth. 
-
+What we have is a repurchase agreement; a short term <i>collateralised</i> loan between two banks. The loan is collateralised because Bank B is effectively lending Bank A the money they require, and in-turn receive Bond A as collateral. If Bank A is unable to repurchase Bond A (and thus default on the repo), Bank B is't facing a heavy risk as they can simply liquidate Bond A. 
 </p>
 <p>
-The yield curve is an illustration of the relationship between interest rates and bond yield for treasury bills and bonds. 
+The percentage difference between the price Bond A is sold for and the price Bond A is repurchased for is known as the <strong>repo rate</strong>. In our case, Bond A is sold for £100 and bought back for £101, creating a repo rate of 1%. As a repo is effectively a return on a low-risk short term collateralised loan, a repo rate can be considered a proxy for an overnight risk-free loan.
 </p>
-<p>
-By understanding the relationship between a yield curve and a bond price, we can further understand <i>yield curve risk</i> that is exposed to a bond's price.
-When the interest rates change, the yield curve will shift. If interest rates fall, the curve will become more inverse, thus reducing the cash flow from the coupons and reducing the value of the bond.
-The relationship between interest rates and bonds expose the bond to an <i>interest rate risk</i>. Portfolios of assets will therefore use the duration of a fixed income instrument to understand the exposure of the
-bond to change in interest rate. The convexity captures the underestimations and overestimations of price increases and decreases respectively from the duration. Duration is a straight-line tangent that is better
-reflected as a curve. 
-</p>
-
-
-what about term structure?
 
 <br>
-<h4>Pricing risks to Yield to maturity</h4>
+<h4>The Reverse Repo</h4>
 <p>
-We define 'risk' as the degree of uncertainty upon the future returns of an investment. Risk arises from due to the unpredictability of the market and can be derived from multiple sources:
+a reverse repo is where you are sitting on the other side and are sell a security to a ctpy and agree to repurchae at a  lower price. 
+</p>
+
+<br>
+<h4>Benefits of a Repo</h4>
+<p>
+benefit of a repo
+allows companies to satisfy cash shortfalls with securities
+if you have too much cash, it is basd and doesnt earn interst. it is only useful for day to day activities
+therefore if yhey need cash they can just use a repo to get it.
+</p>
+
+<br>
+<h4>Repo Haircuts</h4>
+<p>
+Haircuts exist on the securities where they are posted to a higher value than the cash to account for volatility of the underlying. In case it rises or falls in value. 
+In a repo exchange the secutiy may have volatility that means it falls below value of the loan. This ensures the loan is fully collateralised. 
 </p>
 <p>
-<strong>Interest rate risk</strong> reflects the impact of changes in interest rate (set by the central bank) to the yield of the bond.<br>
-</p>
-<p>
-<strong>Call risk</strong> occurs when a bond is created with the right of the issuer of the bond to take back the bond before maturity.<br>
-</p>
-<p>
-<strong>Credit/Default rate risk</strong> arises from the possibility of the bond issuer to not pay the coupon or principal at maturity.<br>
-</p>
-<p>
-<strong>Inflation risk</strong> arises from a fall in the purchasing power of the yield of the bond with time.<br>
-</p>
-<p>
-<strong>Non-business risk</strong> can arise from political and legal instability such as taxation law changes and natural event disasters such as Coronavirus impacting market stability.
+105 Lehman 
+Lehman realised they could publihs a 5% haircut and treat the repo as a sale, not a repo. This changed their balance sheet and made accountants happy. 
 </p>
 
 
 <br>
-<h4>Spot Curve, Future Curve and Swap Curve</h4>
+<h4>Repos and monetary policy</h4>
 <p>
+So far we understand that repos are used by banks to control their cash balances, and that they typically hold high-grade debt instruments that are traded as collateral to the short term loan. The instruments traded are typically governement debt as the debt will hold it's value in turbulent markets and therefore requries less of a haircut on the trade.
+</p>
+<p>
+The functionality of government debt in the financial market enables governments to influence the behaviours of banks. For example, a governemnt can issue new debt into the market that can then be used for repos by banks. By issuing new debt into the market, banks are able to directly buy more debt for a return for their excessive cash holdings. Issuing new debt can therefore drain cash reserves from the financial markets as banks buy more governement debt with their cash for an improved return. 
+</p>
+<p>
+Similarly, governments are able to inject capital into the financial market by buying back their debt from banks in place of capital. 
+</p>
+
+<br>
+<h4>Bank reserves</h4>
+<p>
+Bank reserves refer to the amount of cash they hold, that is readily available. 
+Governments impose a minimum level of cash reserves as a target for banks. 
+</p>
+
+
+
+<br>
+<h4>September 2019</h4>
+<p>
+In septemebr 2019 the repo rate spiked to as high as 10%. 
+even with this, banks with excess cash refused to lend 
+Strange as repo rate should equal OIS rate
+Rate rise was driven by 2 key items: 
+quarterly corporate teaxes were due to raise demand for cash
+settlement date for previous treasury securities were due. So this mean more cash was outflowing as they had to purchase the securities. So cash was reduced on balance sheets in future.
+Cash reserves went from the banks to the governement due to the 2 items above. 
+
+So why was it so volatile?
+Prior to 2008, banks had a 'scarce reserves' framework where they held only enough reserves needed. 
+From 2008 to 2014 there was a lot of Quantitative easing. 
+This meant the federal reserve would buy a lot of treasuries and inject cash into the financial markets. Banks now had 'ample reserves' on their balance sheet. 
+
+
+</p>
+<p>
+Ample reserves
+
+The federal reserve used two strategies to control financing:
 
 </p>
 
 <br>
-<h4>Interest risk and Default risk</h4>
+<h4>An asset repurchase agreement</h4>
 <p>
-Amongst the risk imposed by the YTM of the bond, the interest rate risk and the default risk are amongst the most common risks that are hedge against using further financial products.
-</p>
-<p>
-Interest rate risk has an inverted relationship to the price of a bond. When interest rates rise, the yield of the coupons may rise as they receive a greater interest return, however the value of the bond decreases with the opportunity cost of the investment. The risk associated with the bond (default risk, call risk etc) can be avoided without purchasing the security and saving the investment instead. 
-</p>
-<p>
-The default risk of the Bond reflects the performance of the bond issuer and their ability to repay the yield of the Bond. The default risk of a bond can be offset using a credit default swap (CDS) almost as an insurance against default. The Bond owner will pay a CDS issuer a fixed fee during the life of the Bond up to maturity. In the event of default, the CDS issue will repay the Bond holder the yield as defined in the contract. 
-</p>
-<p>
-
-</p>
-<br>
-<h4>Duration and Convexity</h4>
-<p>
-The price of a bond is used by the market to value the expected returns of the bond. We have been able to establish the relationship of interest rates to the value of a bond and the risk that can arise from interest rates. 
-This poses the question of how bonds price are exposed (or at risk) to interest rates.<br>
-Duration and convexity are two measures used by Fixed income teams to understand the exposure of a bond to interest rates. Duration is used to understand the sensitivity of a bond's price to a
-change in interest rate, whereas convexity reflects the interaction of a bond's price and the yield to changes in interest rate. 
-</p>
-<p>
-Duration measures the sensitivity of the price of a bond or other debt instrument to a change in interest rate. As we have discussed, the price of a bond reflects its YTM that is in turn impacted by other risks. 
-The <i>Macaulay duration</i> is used to estimate the <u>time in years</u> it would take an investor to be repaid the bond's price by the total yield of coupons and face value repayment.
-</p>
-<p>
-The duration of a bond reflects the degree of interest rate risk the bond has, as a rise in interest rate of 1% is reflected as a single year of duration. To understand duration further, we can reflect upon the factors of duration.
-We will consider Bond A: With a coupon of 1%, a face value of £100 and a time to maturity of 5 years. 
-Bond A will repay £1 each year for 5 years and then a face value of £100 on the fifth year for a YTM of 1.05.
-</p>
-<p>
-The <strong>time to maturity</strong> of Bond A will impact the duration of the bond. The longer the time to maturity, the higher the duration. A longer time to maturity means the cash flows of the duration are more exposed to interest rate. If interest rates rose, Bond A would be exposed for 5 years that may impact the demand for the bond for a long period of time. Alternatively, if Bond A were to mature in 1 year, a rise in interest rates would not be so influential on the bond price as the opportunity cost of higher interest rates are less.
-</p>
-<p>
-The <strong>coupon rate</strong> of a bond will also impact the duration. A higher coupon rate will allow the bond to repay its cost faster than a bond with lower coupon (or no) rate. If Bond A were to reduce its coupon to 0.5%, the interest rate risk would be higher as the price of the bond is more weighted towards the maturity of the bond rather than the coupon returns. 
-</p>
-<br>
-<h4>Pricing Options and Swaps</h4>
-<p>
-Swaps have two numerical expressions that depict their consumption: a price and a value. 
-The price reflects the inital term between the counterparties for the swap at the beginning of its life.
-The value of the swap reflects the market value of the swap during its life.
-</p>
-
-<br>
-<h4>Pricing derivatives: The Greeks</h4>
-<p>
-The greeks are used in mathematical finance for representing the sensitivity of a derivative to external factors. 
-The Greeks are: Delta, Vega, Theta, Rho, Lambda, Epsilon.
-The Greeks are used by derivative traders to understand the exposures of their portfolios to various changes in market conditions
-market return = beta
-alpha comes from betting against others
-
-</p>
-<p>
-<strong>Delta</strong> represents the change in a securities price.
-<strong>Gamma</strong> represents the rate of change in Delta.
-<strong>Vega</strong> 
-<strong>Theta</strong> 
-</p>
-<br>
-<h4>Conclusion</h4>
-<p>
-
 
 </p>
