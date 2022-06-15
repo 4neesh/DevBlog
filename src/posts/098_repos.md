@@ -16,13 +16,13 @@ tags:
 <br>
 <h4>About this blog</h4>
 <p>
-I originally expected this blog to be fairly short; while the Repo market is worth trillions of dollars in a global market, it consists of a fairly simple exchange (as we will later see). The elevated importance of Repos as the 'pipelines of the global financial system' will take this blog through a more interesting turn to understanding monetary policy and as a means for governments can influence the behaviour of the repo market participants.
+I originally expected this blog to be fairly short; while the Repo market is worth trillions of dollars in a global market, it consists of a fairly simple exchange (as we will later see). The elevated importance of Repos as the 'pipelines of the global financial system' will take this blog through a more interesting turn to understanding monetary policy and as a means for central banks to influence the behaviour of the repo market participants.
 </p>
 
 <br>
 <h4>What is a Repo?</h4>
 <p>
-The term 'Repo' is short for repurchase agreement. A repurchase agreement is commonly referred to as a 'pawn shop' for banks, let's look at why..
+The term 'Repo' is short for repurchase agreement. A repurchase agreement is commonly referred to as a 'pawn shop' for banks, let's look at why...
 </p>
 <p>
 A repurchase agreement is used by banks to trade debt for cash. With this in mind, this means banks <u>need</u> cash and are happy to trade the high-grade securities they own for it. In a single line, a Repo is a 'short term collateralised loan', where emphasis on 'collateralised' should be taken. The debt traded in a Repo tends to be of high credit quality, such as a government bond. Repurchase agreements are typically traded on an exchange; let's look at an example: <br>
@@ -42,8 +42,8 @@ The percentage difference between the price Bond A is sold for and the price Bon
 <br>
 <h4>The Reverse Repo</h4>
 <p>
-The reverse repo is used with the intention of purchasing a security and reselling it at a higher price. A government may use reverse repos to inject capital into the market. They offer reverse repo's to eligible counterparties that can purchase bonds from them with an agreement to be repurchased at a higher price.
-The transfer of bonds from the government with cash from the banks will allow the government to increase their capital stores while draining the capital reserves of the banks. We will later see how reverse repos are useful for the central banks.
+The reverse repo is used with the intention of purchasing a security and reselling it at a higher price. A central bank may use reverse repos to inject capital into the market. They offer reverse repo's to eligible counterparties that can purchase bonds from them with an agreement to be repurchased at a higher price.
+The transfer of bonds from the government with cash from the banks will allow the government to increase their capital stores while draining the capital reserves of the banks. We will later see when reverse repos are used in action.
 </p>
 
 <br>
@@ -79,7 +79,7 @@ Similarly, governments are able to inject capital into the financial market by b
 While reading about the Repo market, I came across a recent market event that illustrated how the monetary policy of a central bank can shape the repo market. In September 2019, the secured overnight financing rate, also known as SOFR, had a huge spike creating headline news... 
 </p>
 <p>
-SOFR measures the cost of overnight borrowing of dollar-denominated repo transactions. SOFR is one of many overnight reference rates, others include SONIA for Sterling interbank money market trades, and EONIA for the Euro. These reference rates are calculated using real trade data for derivatives and aim to replace reference rates from LIBOR, which is based upon estimates. You can read more about LIBOR in my blog <a href="https://aneesh.co.uk/the-liborois-spread" target="_blank">here</a>.
+SOFR measures the cost of overnight borrowing of dollar-denominated repo transactions. SOFR is one of many overnight reference rates, others include SONIA for Sterling interbank money market trades, and EONIA for the Euro. These reference rates are calculated using real trade data for derivatives and aim to replace reference rates from LIBOR, which are based upon estimates. You can read more about LIBOR in my blog <a href="https://aneesh.co.uk/the-liborois-spread" target="_blank">here</a>.
 </p>
 
 <br>
@@ -122,7 +122,7 @@ The Federal Reserve implemented Quantitative Easing by purchasing treasury secur
 </p>
 <p>
 Since 2014, the banks have applied an 'ample reserves' framework on their balance sheet. 
-The Federal Reserve introduced a new interest rate 'interest on excess reserves' (IOER) where banks were paid an additional interest rate for holding excess amount of reserves in their books. The IOER encouraged banks to hold further reserves, but also placed a new rate for the Federal Reserve to control that would influence the amounts of cash reserves the banks held. Increasing IOER would encourage more excess reserves, while the opposite would have the opposite effect.
+The Federal Reserve introduced a new interest rate 'interest on excess reserves' (IOER) where banks were paid a separate interest rate for holding excess amount of reserves in their books. IOER encouraged banks to hold further reserves, but also placed a new rate for the Federal Reserve to control that would influence the amounts of cash reserves the banks held. Increasing IOER would encourage more excess reserves, while the opposite would have the opposite effect.
 </p>
 <p>
 A further instrument of the ample reserves framework were the overnight reverse repos (ON RRP). 
@@ -153,7 +153,7 @@ The Federal Reserve were able to intervene to the SOFR hike to provide means for
 This was achieved by growing their balance sheet (increasing the assets they held) and then 
 offering $75 billion in cash to borrowers on the repo market. The array of collateral that was accepted by the New York Fed increased to include Treasury Securities, agency debt securities and agency mortgage-backed securities. This made it easier for participants to access the cash injection.
 <br>
-Further intervention involved lowering the IEOER rate to 20 basis points below the top of its target range to also discourage discourage excess reserves held by banks.
+Further intervention involved lowering the IEOER rate to 20 basis points below the top of its target range to also discourage excess reserves held by banks.
 From October 11th 2019, the Fed also injected reserves into the financial system by purchasing Treasury Bills to the value of roughly $60 billion per month
 through the second quarter of 2020. 
 </p>
