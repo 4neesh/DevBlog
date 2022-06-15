@@ -58,7 +58,7 @@ The additional value of the security in the trade is known as the <strong>haircu
 </p>
 <p>
 <strong>An interesting story on repo haircuts..</strong><br>
-<i>In the 2008, Lehman Brothers had found a unique accounting loophole regarding repos that allowed them to hide liabilities. During the life of a repo, the debt is not actually exchanged, but is only used as collateral. Where a haircut on a repo was large enough, Lehman Brothers were able to project the incoming cash <u>as a sale</u> of an asset that can be used to hide liabilities. As we know, all Repos are meant to be repurchased, therefore the 1st leg of the repo transaction (the 1st exchange) should not be treated as a sale, as the security is going to be repurchased during the 2nd leg. This is known as the 105 rule, read about it <a href="https://blogs.harvard.edu/michaellaw/2014/01/29/lehman-brothers-repo-105-recap/" target="_blank">here</a>.
+<i>In 2008, Lehman Brothers had found a unique accounting loophole regarding repos that allowed them to hide liabilities. During the life of a repo, the debt is not actually exchanged, but is only used as collateral. Where a haircut on a repo was large enough, Lehman Brothers were able to project the incoming cash <u>as a sale</u> of an asset that can be used to hide liabilities. As we know, all Repos are meant to be repurchased, therefore the 1st leg of the repo transaction (the 1st exchange) should not be treated as a sale, as the security is going to be repurchased during the 2nd leg. This is known as the 105 rule, read about it <a href="https://blogs.harvard.edu/michaellaw/2014/01/29/lehman-brothers-repo-105-recap/" target="_blank">here</a>.</i>
 </p>
 
 <br>
