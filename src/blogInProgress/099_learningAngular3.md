@@ -1219,7 +1219,7 @@ trigger when the data comes to us, and not to receive it all the time.
 This is a consideration to make when using the event emitter  vs a subject. Nothing else changes within the application. When you want to emit an event from the Subject, use 
 
 ```ts
-this.service.subejct.next(123);
+this.service.subject.next(123);
 ```
 to assign the value of 123 to the Subject. This is the only way Subject differs from Subscription, where Subscription would otherwise use 'emit' to send out data. 
 
@@ -1440,7 +1440,7 @@ To synchronize the form with the ts form, we bind the form tag with [formGroup] 
     </div>
 </form>
 ```
-We then connect the controls using a directive: formControlName
+We then connect the controls using a directive: formControlName. FormControlName will map the value we pass into the form to the component formGroup. 
 
 ```html
 <form [formGroup]="myForm">
@@ -1598,7 +1598,7 @@ Create the form array with new FormArray([]);
 reactive form pointers
 
 1. use [formGroup]="x" in the form DOM element to link the form with the ts code
-2. use formControlName on each input field.
+2. use formControlName on each input field to map the form in html to component ts
 3. use [disabled]="!v.valid" on the submit button to check form is valid. 
 
 </p>

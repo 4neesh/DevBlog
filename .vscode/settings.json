@@ -109,6 +109,8 @@
         "zipkin"
     ],
     "cSpell.ignoreWords": [
+        "FRBNY",
         "griesemer"
-    ]
+    ],
+    "cSpell.language": "en-GB"
 }
