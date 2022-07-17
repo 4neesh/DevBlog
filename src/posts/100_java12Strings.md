@@ -21,5 +21,5 @@ String.transform() will allow you to pass in a functional interface to accept a 
 00:08 - String.indent()
 01:33 - String.transform()
 
-[![YouTube video link](../images/053_matchers.jpg)](https://youtu.be/6jNKXdOjCzo)
+[![YouTube video link](../images/100_java12String.jpg)](https://youtu.be/6jNKXdOjCzo)
 </p>
