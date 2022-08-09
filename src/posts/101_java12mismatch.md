@@ -16,11 +16,5 @@ Files mismatch will help us to determine the exact index position where the cont
 will differ. This video will use an example of two files to see how the method can be used to 
 compare the content of two files, and to see what is returned with identical and different files.
 
-🕒 Timestamps 🕒
-
-00:00 - Introduction
-00:08 - String.indent()
-01:33 - String.transform()
-
-[![YouTube video link](../images/053_matchers.jpg)](https://youtu.be/6jNKXdOjCzo)
+[![YouTube video link](../images/101_java12mismatch.jpg)](https://youtu.be/g_t1Rhi-22U)
 </p>
