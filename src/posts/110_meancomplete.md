@@ -23,7 +23,6 @@ https://github.com/4neesh/MyDiary
 
 🕒 Timestamps 🕒
 
-00:00 - Introduction
 00:41 - Setting up Angular
 03:22 - Adding Bootstrap 3
 04:27 - Creating a HTML Table
@@ -34,31 +33,25 @@ https://github.com/4neesh/MyDiary
 11:14 - Angular Subjects
 13:39 - Angular Reactive Forms for adding entries
 20:07 - Editing a Diary Entry
-20:22 - Application overview
-03:13 - Creating a node server
-
-00:00 - Introduction
-00:22 - Getting started with Express
-04:08 - Using next()
-05:03 - Registering URI's
-05:50 - Migrating Data from Angular to Express
-07:48 - Angular HTTP requests
-
-00:00 - Introduction
-00:14 - Making POST requests
-04:26 - Making DELETE requests
-08:24 - Making PUT requests
-
-00:00 - Introduction
-00:26 - Setting up MongoDB
-02:54 - Using Mongoose
-06:36 - Connection our app to MongoDB
-08:38 - Saving to MongoDB
-09:22 - MongoDB Shell
-10:58 - Fetching data with MongoDB
-13:58 - Deleting from MongoDB
-16:10 - Editing data with MongoDB
+26:12 - Splitting the Application
+29:11 - Creating a node server
+33:12 - Getting started with Express
+37:03 - Using next()
+37:56 - Registering URI's
+38:44 - Migrating Data from Angular to Express
+40:41 - Angular HTTP requests
+48:15 - Making POST requests
+52:22 - Making DELETE requests
+56:22 - Making PUT requests
+01:00:00 - Setting up MongoDB
+01:02:30 - Using Mongoose
+01:06:10 - Connection our app to MongoDB
+01:08:11 - Saving to MongoDB
+01:08:56 - MongoDB Shell
+01:10:32 - Fetching data with MongoDB
+01:13:33 - Deleting from MongoDB
+01:15:43 - Editing data with MongoDB
 
 
-[![YouTube video link](../images/109_mean5.jpg)](https://youtu.be/ttF2oG0EA2U)
+[![YouTube video link](../images/110_mean6.jpg)](https://youtu.be/ZictJujePhs)
 </p>

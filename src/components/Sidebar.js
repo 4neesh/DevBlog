@@ -98,6 +98,11 @@ export default class Sidebar extends React.Component {
                   </Button>
               </li>
               <li>
+                <Button className="tagButton" href={`/tag/express`}>
+                  Express
+                  </Button>
+              </li>
+              <li>
                 <Button className="tagButton" href={`/tag/finance`}>
                   Finance
                   </Button>
@@ -137,13 +142,21 @@ export default class Sidebar extends React.Component {
                   Microservices
                   </Button>
               </li>
-
+              <li>
+                <Button className="tagButton" href={`/tag/mongodb`}>
+                  MongoDB
+                  </Button>
+              </li>
               <li>
                 <Button className="tagButton" href={`/tag/multi-threading`}>
                   Multi-threading
                   </Button>
               </li>
-
+              <li>
+                <Button className="tagButton" href={`/tag/node`}>
+                  Node JS
+                  </Button>
+              </li>
               <li>
                 <Button className="tagButton" href={`/tag/patterns`}>
                   Patterns
