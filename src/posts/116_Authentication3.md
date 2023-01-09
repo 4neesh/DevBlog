@@ -19,12 +19,5 @@ Join along with this tutorial with the source code below:
 There you will find a before and after folder that contains the code at the stand and end of the video.
 Link to source code: https://github.com/4neesh/YouTube-Channel/tree/main/mongodb-auth-3
 
-🕒 Timestamps 🕒
-
-00:00 - Introduction
-00:54 - Send token to the backend
-02:32 - Enriching the HTTP requests
-07:30 - Verifying the token 
-
 [![YouTube video link](../images/116_auth3.jpg)](https://youtu.be/ZEBRsSfobeM)
 </p>
