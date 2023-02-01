@@ -17,7 +17,9 @@ Link to source code:
 🕒 Timestamps 🕒
 
 00:00 - Introduction
-00:18 - Manual column populating
+00:47 - Logging
+04:09 - Timed
+06:28 - Automated
 
 [![YouTube video link](../images/053_matchers.jpg)](URL)
 </p>
