@@ -68,6 +68,11 @@ export default class Sidebar extends React.Component {
                   </Button>
               </li>
               <li>
+                <Button className="tagButton" href={`/tag/commodities`}>
+                  Commodities
+                  </Button>
+              </li>
+              <li>
                 <Button className="tagButton" href={`/tag/databases`}>
                   Databases
                   </Button>
