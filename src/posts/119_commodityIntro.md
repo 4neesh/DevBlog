@@ -33,8 +33,8 @@ So with that said, let's take a look at the bare bones of Commodity derivates, b
 Commodity markets, just like other asset classes, are classified into smaller segments that focus on specific products. What's unique here, is that commodities represent real, tangible products that are used in the world around us. There may be some overlap between markets, however the main ones are as follows:
 </p>
 <p>
-<strong>Energy Markets</strong><br>
-Energy markets trade crude oil, refined products, power, natural gas, natural gas liquids and coal.
+<strong><u>Energy Markets</u></strong><br>
+Energy markets include the trade of crude oil, refined products, power, natural gas, natural gas liquids and coal.
 </p>
 <p>
 Crude oil fossil fuels are found between sedimentary rock under the Earth's surface. They are a combination of hydrocarbons (a chemical compound of hydrogen and carbon) formed over millions of years from the remains of animals and plants. Over the years, the remains are covered in layers of sand and rock to create the raw product under heat and pressure. 
@@ -56,7 +56,7 @@ Natural gas liquids are components of natural gas that have been separated from 
 </p>
 
 <p>
-<strong>Industrial Metals</strong><br>
+<strong><u>Industrial Metals</u></strong><br>
 Industrial metals include copper and aluminium. 
 </p>
 <p>
@@ -67,7 +67,7 @@ Aluminium is one of the most widespread metals on Earth. It is soft and malleabl
 </p>
 
 <p>
-<strong>Precious metals</strong><br>
+<strong><u>Precious Metals</u></strong><br>
 Precious metals include gold and silver. Gold is a durable metal that will not rust or erode with time. Gold is malleable and conductive, making it useful for carrying electrical currents in your smart-phone, but is more commonly used for ornamental objects such as medals and fine jewellery. 
 <p>
 <p>
@@ -77,14 +77,14 @@ Silver is not quite as dense as gold, meaning it will be less durable, but is mo
 The ownership of these precious metals extend beyond their use to create products, and are also held for hedging against inflation. We will see more on this in a future blog.
 </p>
 
-<strong>Agriculture</strong><br>
+<strong><u>Agriculture</u></strong><br>
 Agriculture include 'soft' commodities that are grown, such as grains and coffee, as well as livestock. 
 </p>
 <p>
 Grains are widely consumed and include wheat, corn, soybeans, rice and oats. Livestock includes animals that are grown for meat production, accessory production (such as wool or worm casting) or human consumption (such as dairy products, honey or leather).  
 </p>
 <p>
-<strong>Speciality Commodities</strong><br>
+<strong><u>Speciality Commodities</u></strong><br>
 The last commodity subdivision captures unique products and derivatives such as forest production, carbon emissions, weather and freight. 
 </p>
 <p>
@@ -112,18 +112,21 @@ Producers are responsible for sourcing the raw commodity, refiners will transfor
 Unlike financial derivatives, commodities cannot be created and placed in a deal book in an instance. There is a timeline for it's creation, production and delivery. This timeline exposes multiple participants to a price risk. For example, the farmer who grows grain will be exposed to future demand and subsequent price volatility. The refiner will be exposed to the cost of delivery and storage to their facility, and the consumer will be exposed to all of these compounded fees.
 </p>
 <p>
-As a result of the vast number of participants and timeline for product delivery, price discovery plays a major role to all players in the commodities market.
+As a result of the vast number of participants and timeline for product delivery, price discovery plays a major role to all members of the commodities supply-chain.
 </p>
 <br>
-<h4>Defining a fair price</h4>
+<h4>A common challenge in Commodities</h4>
 <p>
-Beyond price volatility, all participants in the physical market of commodities will have other operational risks to consider, such as credit protection from supply chain participants, logistical movement and storage of the commodity, and sourcing the expected quality and quantity. 
+As with all asset classes, commodities presents their own unique challenges for market participants and financial institutions. One challenge I will repeatedly refer to within my blogs are price discovery. 
 </p>
 <p>
-A unique challenge with commodities, and one that will repeatedly come up in topic, is price discovery. The many grades of each commodity, participants and timelines for each product can introduce challenges along the supply chain for participants to know if they are receiving a 'fair price'. Commodity markets are also vast with different qualities of each product, meaning markets are not always liquid enough to provide natural price discovery via an exchange.
+Price discovery is a term that will enable all market participants to understand what a 'fair price' is for the product they are buying. Each participant in the supply chain will be exposed to unique price factors that can influence the value of the commodity as it is extracted, refined and transported. Some factors can include operational costs such as credit protection and transportation and storage fees. As well as the availability of the commodity in the region it is sourced, and also at a grade quality that is expected.
+</p>
+<p> 
+Commodity markets are vast with different qualities of each product, meaning markets are not always liquid enough to provide natural price discovery via an exchange.
 </p>
 <p>
-A price reporting agency (PRA) is an independent research provider that provides pricing indexes for commodities, thus bringing price transparency to physical commodity markets. The price indexes are available from the agency through a subscription and can be used to understand prices across entire commodity segments. 
+A solution to this challenge exists in the form of a price reporting agency (PRA). This is an independent research provider that provides pricing indexes for commodities, thus bringing price transparency to physical commodity markets. The price indexes are available from the agency through a subscription and can be used to understand prices across entire commodity segments. 
 </p>
 <p>
 Popular PRA's include IOSCO and Platts, who are responsible for deriving commodity index markets. These indexes can then be used for commercial contracts and wholesale commodity deals.
