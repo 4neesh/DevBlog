@@ -1,5 +1,5 @@
 ---
-title: 'An into to commodity derivatives'
+title: 'An intro to commodity derivatives'
 date: 2023-07-12
 author: 'Aneesh Mistry'
 subtitle: 'A look into the various commodity segments, key players in the market and my career change'
