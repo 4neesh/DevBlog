@@ -24,18 +24,18 @@ In my last <a href="https://aneesh.co.uk/an-intro-to-commodity-derivatives" targ
 Amongst investment banks, there are many other types of financial institutions that play a role within the commodities markets, including: commodity trading houses, hedge funds, and real money accounts. 
 </p>
 <p>
-<strong><u>Investment Banks</u></strong>
+<strong><u>Investment Banks</u></strong><br>
 Investment banks typically act across a variety of services with commodities. A 'full service' investment bank will exist to deal with financial derivatives, but also to act as a counterparty in the physical trade of the commodity. As a result, an investment bank can play a pivotal role in the delivery of commodities with their cash-rich position and ability to hedge risk at scale. Some examples of how they can be influence the physical commodity market include:<br>
 &#8226; Owning inventory for refiner participants to reduce their operational capital requirement.<br>
 &#8226; Purchasing storage facilities or pipelines to transport and store commodities between market participants.<br>
 &#8226; Provide financial support to supply chain participants.
 </p>
 <p>
-<strong><u>Commodity Trading Houses (CTH)</u></strong>
+<strong><u>Commodity Trading Houses (CTH)</u></strong><br>
 A CTH originally existed as a middle-man between consumers and producers of commodities, earning a profit from buying and selling commodities at wholesale. CTH have since evolved to own parts of the supply chains. They therefore solve a similar problem that investment banks do with financing participants and facilitating supply chains to remain operational.
 </p>
 <p>
-<strong><u>Hedge Funds</u></strong>
+<strong><u>Hedge Funds</u></strong><br>
 Hedge funds operate to serve a smaller pool of investors when compared to investment banks. They tend to use actively managed strategies with the goal of generating a profit in all market conditions. As a result, fees tend to be higher to the investor. 
 </p>
 <p>
@@ -43,7 +43,7 @@ The smaller size and specific goal-driven business of a hedge fund will more oft
 </p>
 
 <p>
-<strong><u>Real Money Accounts</u></strong>
+<strong><u>Real Money Accounts</u></strong><br>
 Some financial institutions do not have a similar capacity to borrow money to finance larger operations like an investment bank. Such accounts include those for insurance and pension funds as well as retail and private banks. They will therefore use commodity derivatives as an investment vehicle for purposes such as hedging risk and seeking diversification in their portfolios to match the goals (risk profile and return) of the fund. 
 </p>
 
