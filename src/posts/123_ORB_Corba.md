@@ -60,7 +60,7 @@ To explain how CORBA works, I will introduce the individual components one by on
 Below is an image of the CORBA architecture to capture the individual elements for a request.
 (Image by Vinoski via: https://www.dre.vanderbilt.edu/~schmidt/PDF/vinoski.pdf)
 
-[![Image of CORBA Network](../images/123_corba.jpg)]
+![Image of CORBA Network](../images/123_corba.jpg)
 
 </p>
 
@@ -142,7 +142,6 @@ Both the stub and the skeleton have dynamic elements. The dynamic invocation int
 Now that we have touched on each of the components, we can begin to appreciate the many steps taken by our client, ORB, and server when we submit a request upon a remote Object with CORBA:
 </p>
 <p>
-
 1. The CORBA Server is responsible for registering Object-name bindings in the naming service.  
 2. The CORBA Client queries the naming service for an Object reference it can create a request upon.
 3. Each Object will contain an IDL that the client can use to understand structure and methods for invocation. The Client submits a request.
