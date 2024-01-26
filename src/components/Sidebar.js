@@ -177,7 +177,16 @@ export default class Sidebar extends React.Component {
                   Personal
                   </Button>
               </li>
-
+              <li>
+                <Button className="tagButton" href={`/tag/python`}>
+                  Python
+                  </Button>
+              </li>
+              <li>
+                <Button className="tagButton" href={`/tag/quant-finance`}>
+                  Quant Finance
+                  </Button>
+              </li>
               <li>
                 <Button className="tagButton" href={`/tag/spring`}>
                   Spring
