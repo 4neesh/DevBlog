@@ -45,7 +45,7 @@ const Layout = ({ children }) => (
           </div>
             <h1 >Aneesh Mistry</h1>
 
-            <h2>Fintech Engineer Blog</h2>
+            <h2>Java | Python | Quantitative Finance</h2>
             </span>
             <span style={{paddingTop:"15px"}}>
                 <a
