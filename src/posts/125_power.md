@@ -139,7 +139,7 @@ When buying and selling electricity, both parties will reference specific time p
 The wholesale contracts can be traded in large periods ahead of time to secure the delivery and price of electricity. As you may expect, the demand for electricity in a normal household will not be equal at all times. The typical 'peak hours' are from 7am until 7pm. As a result of the higher demand during these hours, the energy suppliers must increase their orders of electricity during these periods, which can be achieved through a 'peakload' contract. The process of matching the specific demand of electricity for all hours of the day is known as 'adding shape'.
 </p>
 <p>
-In the image below, I have used a red line to illustrate how the forecasted demand of electricity can change within a given day. We can then see how a supplied can meet that demand with individual baseload and peakload contracts. The outstanding gap between the red line and the blocks can be met with more granular agreements in the market.
+In the image below, I have used a red line to illustrate how the forecasted demand of electricity can change within a given day. We can then see how a supplier can meet that demand with individual baseload and peakload contracts. The outstanding gap between the red line and the blocks can be met with more granular agreements in the market.
 
 ![Demand of electricity in a day](../../src/images/125_demand.png)
 </p>
@@ -170,7 +170,7 @@ The capacity market was first auctioned in 2014 and works in two auctions: T-4 a
 <br>
 <h4>Ancillary Services</h4>
 <p>
-Ancillary services captures ways that generators can earn money through services that support the stability and efficiency of the power grid. Ancillary services can be split into 6 responsibilities: frequency response, reactive power, voltage management, inertia services, reserve services and restoration.
+Ancillary services capture ways that generators can earn money through services that support the stability and efficiency of the power grid. Ancillary services can be split into 6 responsibilities: frequency response, reactive power, voltage management, inertia services, reserve services and restoration.
 </p>
 <p>
 The frequency response service exists to ensure transmission towers run at a target frequency of 50 hertz. This frequency of electrical transmission is important to maintain as it can otherwise create blackouts or damage the equipment. The frequency response service will manage frequency on a second-by-second basis to actively manage frequency by ramping power up and down. 
@@ -243,6 +243,7 @@ Each EFA block can be split in half, to give us 1a, 1b, 2a, 2b etc. And EFA bloc
 These blocks are typically traded at at larger time-scales before delivery, whereas smaller blocks of delivery are traded closer to the time of delivery as forecasts for demand are better known from the purchasers of power. 
 
 ![The EFA Blocks](../../src/images/125_efa.png)
+<br>
 <small style="float: right;" >Picture: EFA Blocks from YouTube Video by <a href='https://www.youtube.com/watch?v=ycu24MfufJk&t=63s'>Modo Energy</small></a><br>
 </p>
 
@@ -278,13 +279,13 @@ Participants are known as Balancing Mechanism Units (BM Units) and they contribu
 These bid and offer prices can also be negative, where the participants are paid to reduce/increase against their original plans. Once the National Grid have accepted a price, they issue a Balancing Offer Acceptance (known as a BOA).
 </p>
 <p>
-There is a further mechanism beyond the BMU's to ensure the balancing mechanism works, and this is through net imbalance volumes. Once the BMU participants are selected, and the National Grid see a balance between supply and demand, there is still a dependency for all participants to contribute as expected. If there is a shortfall, for example a generator not contributing as expected, Elexon are responsible for meeting the shortfall. Participants that fail to deliver are considered 'out of position' and must therefore pay Elexon what is known as a 'system price' or 'cash out' price for failing to meet what is due. The system price is considered a penalty as the price paid will be greater than the market rate for electricity, whether it is for a difference in supply or demand. 
+There is a further mechanism beyond the BMU's to ensure the balancing mechanism works, and this is through net imbalance volumes. Once the BMU participants are selected, and the National Grid see a balance between supply and demand, there is still a dependency for all participants to contribute as expected. If there is a shortfall, for example a generator not contributing as expected, or a financial participant has agreed to buy and sell unequal amounts of electricity, Elexon are responsible for meeting the shortfall. Participants that fail to deliver are considered 'out of position' and must therefore pay Elexon what is known as a 'system price' or 'cash out' price for failing to meet what is due. The system price is considered a penalty as the price paid will be greater than the market rate for electricity, whether it is for a difference in supply or demand. 
 </p>
 <p>
 When an imbalance occurs, Elexon will turn to a new participant for the generation of electricity, and these are generators who have excess demand available that they had not assigned to the grid. Generators will receive payment at the system price for the excess electricity that is required, thus possibly realising a greater profit for their electricity than they had at a market price. This unique situation has lead to the term 'NIV Chasing', where generators can deliberately over-generate on the possibility of receiving exposure to the system price. 
 </p>
 <p>
-With the contribution from BMU's and generators who contribute to net imbalancing, the National Grid are able to manage the supply and demand of electricity across the grid at all times of the day to minimise the potential for unused electricity while ensuring the expected demand of electricity is met.
+With the facility from BMU's and generators who contribute to net imbalancing, the National Grid are able to manage the supply and demand of electricity across the grid at all times of the day to minimise the potential for unused electricity while ensuring the expected demand of electricity is met.
 </p>
 <br>
 <h4>Summary</h4>
