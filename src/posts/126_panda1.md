@@ -1,5 +1,5 @@
 ---
-title: 'Python Pandas '
+title: 'Series and DataFrames with Python Pandas'
 date: 2024-02-24
 author: 'Aneesh Mistry'
 subtitle: 'An introduction to panda series, DataFrames and lambda functions'
