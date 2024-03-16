@@ -1,25 +1,21 @@
 ---
-title: 'Python Pandas '
-date: 2024-02-24
+title: 'Combining dataframes with Pandas'
+date: 2024-03-22
 author: 'Aneesh Mistry'
-subtitle: 'Subtitle'
+subtitle: 'A quick demonstration on how you can concatenate DataFrames along both axis using a shared index'
 time: '6'
 tags:
-- Java
+- Python
 ---
 
 <br>
-<h4>Title</h4>
+<h4>Combining DataFrames with Pandas</h4>
 <p>
 
-Link to source code: 
+Walkthrough how you can use the concat method with the pandas library to combine DataFrames both on the x axis and y axis. 
 
-🕒 Timestamps 🕒
+Link to source code: https://github.com/4neesh/YouTube-Channel/tree/main/Python
+File: Pandas_3.ipynb
 
-00:00 - Introduction
-00:47 - Logging
-04:09 - Timed
-06:28 - Automated
-
-[![YouTube video link](../images/126_panda1.jpg)](URL)
+[![YouTube video link](../images/128_panda3.jpg)](https://youtu.be/WG4o79N9f-c)
 </p>
