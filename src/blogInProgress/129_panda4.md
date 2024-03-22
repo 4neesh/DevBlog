@@ -1,25 +1,20 @@
 ---
-title: 'Python Pandas '
-date: 2024-02-24
+title: 'How to merge data with Panda DataFrames'
+date: 2024-03-29
 author: 'Aneesh Mistry'
-subtitle: 'Subtitle'
-time: '6'
+subtitle: 'Take a look at inner, outer, left and right joins when using the merge function with pandas'
+time: '10'
 tags:
-- Java
+- Python
 ---
 
 <br>
-<h4>Title</h4>
+<h4>Merging data with Panda DataFrames - Python Tutorial</h4>
 <p>
+Explore some of the ways you can merge DataFrames with the pandas library. This involves handling indexed columns, specifying columns to merge upon and how to merge with an inner, left, right and outer join.
 
-Link to source code: 
+Link to source code: https://github.com/4neesh/YouTube-Channel/tree/main/Python
+File: Pandas 4.ipynb
 
-🕒 Timestamps 🕒
-
-00:00 - Introduction
-00:47 - Logging
-04:09 - Timed
-06:28 - Automated
-
-[![YouTube video link](../images/126_panda1.jpg)](URL)
+[![YouTube video link](../images/129_panda4.jpg)](https://youtu.be/qH8DYzoEqLs)
 </p>
