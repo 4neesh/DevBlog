@@ -88,6 +88,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
 
     const postsPerPage = 5
+    //if changing postsPerPage, update limit on the blogs js
     const numberOfPages = Math.ceil(posts.length / postsPerPage)
 
     Array.from({ length: numberOfPages }).forEach((_, index) => {

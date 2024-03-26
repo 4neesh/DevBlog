@@ -1,6 +1,6 @@
 ---
 title: 'Black Scholes - An Introduction'
-date: 2023-12-01
+date: 2024-03-27
 author: 'Aneesh Mistry'
 subtitle: 'Subtitle'
 time: '10'

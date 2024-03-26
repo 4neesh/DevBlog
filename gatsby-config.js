@@ -3,7 +3,7 @@ module.exports = {
     title: `Aneesh Mistry | Software Engineer`,
     description: `Aneesh is a software engineer within financial services based in London.`,
     author: `Aneesh Mistry`,
-    keywords: `blog, java, spring, algorithms, software engineer, finance`,
+    keywords: `blog, java, python, commodities, software engineer, finance`,
     siteUrl:`https://aneesh.co.uk`,
   },
   plugins: [
