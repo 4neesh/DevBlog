@@ -45,8 +45,8 @@ const AboutPage = (props) => {
                 </CardTitle>
                 <CardBody>
                   <p>
-                    I am a software engineer and enjoy solving problems, learning about modern technologies 
-                    and the asset management field I apply it within.  </p>
+                    I am a software engineer based in Sydney, Australia and have built my career solving technical problems in the capital markets industry. 
+                    Learning about technology and the domain to which it applies has been a continuous journey that I am sharing with my blog.</p>
                   <p>
                     I completed my bachelors degree in Banking, Finance, and Management at{" "}
                     <a rel="noopener noreferrer" href="https://www.lboro.ac.uk/" target="_blank">
